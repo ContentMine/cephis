@@ -44,10 +44,10 @@
     </parent>
     
     <groupId>org.contentmine</groupId>
-    <artifactId>ches2</artifactId>
+    <artifactId>cephis</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <name>CHES</name>
-    <description>A Java library superset of Cproject Html Euclid Svg</description>
+    <name>CEPHIS</name>
+    <description>A Java library superset of Cproject Html Euclid PDF2SVG ImageAnalysis Svg; the acronym is a variant of Cepphis (a moth)</description>
     <url>http://contentmine.org/ches</url>
     
     <developers>
