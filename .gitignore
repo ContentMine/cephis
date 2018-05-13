@@ -1,0 +1,8 @@
+.classpath
+.settings/
+.project
+misc/
+target
+OLD/
+src/test/resources/org/OLD/
+bin/
