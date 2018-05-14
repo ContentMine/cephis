@@ -1,0 +1,21 @@
+<cProject>
+	<p>CProject file container. </p>
+	<file name="manifest.xml" count="1,1">
+	  <p>Manifest listing all cTrees in the cProject. There may be other non-CTree controlled files in this directory. 
+	  Follows structure of this file.</p>
+	</file>
+	<file name="log.xml"  count="0,1">
+	  <p>LOG file for processing. Likely to change repeatedly.</p>
+	</file>
+	<dir type="CTree" count="0,9999999999">
+	  <p>Lists name (maybe provenance) of CTrees but not their contents.</p>
+	  <!-- manifest.xml is mandatory and defines CTree -->
+  	  <file name="manifest.xml" count="1,1"/>
+	</dir>
+	<file name="eupmc_results.json" count="0,1">
+	  <p>Concatenated results.json files from searches such as EUPMC. Require splitting into CTree directories</p>
+	</file>
+	<dir name="results" count="0,1">
+	  <p>Concatenated results from individual cTree/results/ directories. Will probably have same structure as the results/ directories</p>
+	</dir>
+</cProject>

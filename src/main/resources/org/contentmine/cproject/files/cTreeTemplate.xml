@@ -1,0 +1,68 @@
+<cTree>
+	<file name="manifest.xml">
+	  <p>Manifest listing all files in the tree, and other controlled files in this directory. 
+	  Follows structure of this file.</p>
+	</file>
+	<file name="fulltext.html" count="0,1">
+	    <p>Raw HTML from publisher site. May not be well-formed or valid HTML5.</p>
+	</file>
+	<file name="fulltext.pdf" count="0,1">
+	    <p>Raw PDF from publisher site. </p>
+	</file>
+	<file name="fulltext.pdf.txt" count="0,1">
+	    <p>Text file created from fulltext.xml with a converter. </p>
+	</file>
+	<file name="fulltext.txt" count="0,1">
+	    <p>Raw TXT from publisher site. </p>
+	</file>
+	<file name="fulltext.xml" count="0,1">
+	    <p>Raw XML from publisher site. Probably well-formed but not necessarily schema-compliant.</p>
+	</file>
+	<file name="results.json" count="0,1">
+	    <p>Metadata and manifest output by quickscrape.</p>
+	</file>
+	<file name="scholarly.html" count="0,1">
+	    <p>Scholarly HTML, normally created by transforming a fulltext.* input</p>
+	</file>
+	<dir name="expected">
+	    <p>Expected output for results/ directory; used for unit tests. Ofen an exact copy of results/</p>
+	  <plugin count="*">
+	    <pluginType>
+	      <file name="results.xml" count="0,1"/>
+	      <file name="results.html" count="0,1"/>
+	    </pluginType>
+	  </plugin>
+	</dir>
+	<dir type="images">
+	    <p>Images or similar graphics downloaded from publisher site. There may be many images for one CTree, one directory per downloaded image.
+	     Numbering and naming may be ad hoc until we work it out./</p>
+	  <dir name="image_\d+">
+	    <file name="image.gif" count="0,1"/>
+	    <file name="image.png" count="0,1"/>
+	    <file name="image.svg" count="0,1"/>
+	  </dir>
+	</dir>
+	<dir name="results">
+	    <p>Output from ami plugins. Each plugin generates a new child of "results/", so "ami-word" will create a subdirectory "word".
+	    Most pugins have options and these create sub-subdirectories. Not sure if this is a fixed format yet.</p>
+	  <plugin count="*">
+	    <pluginType>
+	      <file name="results.xml" count="0,1">
+	      	<p>The results. The format will depend onthe plugin, but a commone example is entity in context for each fact.</p>
+     	  </file>
+	      <file name="results.html" count="0,1">
+	      	 <p>Html transformation of XML, normally for easier viewing</p>
+	      </file>
+	    </pluginType>
+	  </plugin>
+	</dir>
+	<dir name="suppData">
+	  <p>Supplemntary data from quickscrape or other scrapers, downloaders. One directory per data package. Formats will be highly
+	  variable, but here are some below.</p>
+	  <dir name="*">
+	    <file name="data.csv" count="0,1"/>
+	    <file name="data.txt" count="0,1"/>
+	    <file name="data.xml" count="0,1"/>
+	  </dir>
+	</dir>
+</cTree>
