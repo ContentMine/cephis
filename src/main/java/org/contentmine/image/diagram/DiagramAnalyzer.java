@@ -1119,7 +1119,7 @@ public class DiagramAnalyzer {
 			double rotate2Diff = Math.abs(Math.round(rotate2Div) - rotate2Div);
 			Angle rotate = (rotate1Diff < rotate2Diff ? rotate1 : rotate2);
 			LOG.trace("Rotating " + line1 + " by " + rotate);
-			line1.applyTransform(Transform2.getRotationAboutPoint(rotate.multiplyBy(-1), line1.getMidPoint()));
+			line1.applyTransformPreserveUprightText(Transform2.getRotationAboutPoint(rotate.multiplyBy(-1), line1.getMidPoint()));
 		}
 	}
 

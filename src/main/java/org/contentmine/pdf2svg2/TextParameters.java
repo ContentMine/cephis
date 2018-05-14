@@ -5,7 +5,10 @@ import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.util.Matrix;
+import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
+import org.contentmine.eucl.euclid.RealSquareMatrix;
+import org.contentmine.eucl.euclid.Transform2;
 
 public class TextParameters {
 	private static final Logger LOG = Logger.getLogger(TextParameters.class);
@@ -15,17 +18,24 @@ public class TextParameters {
 
 	private Matrix matrix;
 	private PDFont font;
+	private Transform2 transform2;
+	private Angle angle;
 
 	public TextParameters(Matrix matrix, PDFont font) {
 		this.matrix = matrix;
 		this.font = font;
+		double[][] array = matrix.getValuesAsDouble();
+		RealSquareMatrix rsm = new RealSquareMatrix(array);
+		transform2 = new Transform2(rsm);
+		angle = transform2.getAngleOfRotation();
+		LOG.debug("angle "+angle);
 		if (matrix == null) {
 			throw new RuntimeException("null matrix");
 		}
 		if (font == null) {
 			throw new RuntimeException("null font");
 		}
-    	LOG.debug(matrix.getScaleX()+
+    	LOG.trace(matrix.getScaleX()+
     			"/"+matrix.getScaleY()+
     			"/"+matrix.getScalingFactorX()+
     			"/"+matrix.getScalingFactorY()+
@@ -38,7 +48,7 @@ public class TextParameters {
     			 
     	PDFontDescriptor fdesc = font.getFontDescriptor();
     	// more later
-		LOG.debug("fw "+font.getAverageFontWidth()+   // 472.5 
+		LOG.trace("fw "+font.getAverageFontWidth()+   // 472.5 
     			"/sw "+font.getSpaceWidth()+            // 633.78906
     			"/ty "+font.getType()+                  // Font
     			"/st "+font.getSubType()+               // TrueType
@@ -105,6 +115,14 @@ public class TextParameters {
 
 	public Double getFontSize() {
 		return new Double(matrix.getScaleX());
+	}
+
+	public Transform2 getTransform2() {
+		return transform2;
+	}
+
+	public Angle getAngle() {
+		return angle;
 	}
 
 	

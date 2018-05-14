@@ -149,7 +149,7 @@ public class SVGCircle extends SVGShape {
 			);
 	}
 	
-	public void applyTransform(Transform2 transform) {
+	public void applyTransformPreserveUprightText(Transform2 transform) {
 		Real2 xy = this.getXY();
 		setXY(xy.getTransformed(transform));
 		Real2 rxy = new Real2(this.getRad(), 0);

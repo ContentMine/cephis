@@ -4,15 +4,11 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Paint;
-import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
-import java.awt.geom.Area;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.awt.image.WritableRaster;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -24,7 +20,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
-import org.apache.pdfbox.pdmodel.graphics.color.PDPattern;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImage;
 import org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
@@ -32,8 +27,10 @@ import org.apache.pdfbox.rendering.PageDrawer;
 import org.apache.pdfbox.rendering.PageDrawerParameters;
 import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.Vector;
+import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.RealArray;
+import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.graphics.svg.SVGClipPath;
 import org.contentmine.graphics.svg.SVGDefs;
@@ -41,6 +38,7 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGText;
+import org.contentmine.graphics.svg.SVGText.RotateText;
 import org.contentmine.graphics.svg.SVGUtil;
 
 public class PDF2SVGParser extends PageDrawer    {
@@ -58,6 +56,7 @@ public class PDF2SVGParser extends PageDrawer    {
 	private double yEpsilon = 0.05; // guess
 	private double scalesEpsilon = 0.1; // guess
 	private int nPlaces = 3;
+	private double angleEps = 0.005;
 	
 	private SVGText currentSVGText;
 	private TextParameters currentTextParameters;
@@ -79,6 +78,7 @@ public class PDF2SVGParser extends PageDrawer    {
 	private AMIGraphicsState savedTextState;
 
 	private AMIGraphicsState graphicsState;
+
 
 
 	PDF2SVGParser(PageDrawerParameters parameters) throws IOException        {
@@ -126,10 +126,12 @@ public class PDF2SVGParser extends PageDrawer    {
     	
     	textParameters = new TextParameters(textRenderingMatrix, font);
     	Real2 scales = textParameters.getScales();
+    	Angle rotAngle = textParameters.getAngle();
     	double x = Util.format((double) textRenderingMatrix.getTranslateX(), nPlaces);
     	double y = Util.format((double) textRenderingMatrix.getTranslateY(), nPlaces);
     	currentXY = new Real2(x, y);
-    	currentDisplacement = new Real2(displacementxy.getX(), displacementxy.getY());
+    	currentDisplacement = new Real2(displacementxy.getX(), displacementxy.getY()).format(nPlaces);
+    	LOG.debug("vec "+currentDisplacement);
 //    	double xsep = Util.format((double) displacementxy.getX(), nPlaces);
 //    	double ysep = Util.format((double) displacementxy.getY(), nPlaces);
     	if (currentSVGText == null || currentTextParameters == null) {
@@ -150,7 +152,18 @@ public class PDF2SVGParser extends PageDrawer    {
     	currentSVGText.appendText(unicode);
     	currentSVGText.appendX(x);
     	currentSVGText.setY(y);
-		LOG.debug(x+"/"+y+"/"+currentSVGText.toXML());
+    	if (!rotAngle. isEqualTo(0.0, angleEps)) {
+//    		Transform2 t2 = textParameters.getTransform2();
+    		Transform2 t2 = Transform2.getRotationAboutPoint(rotAngle, currentXY);
+    		LOG.debug(t2);
+    		LOG.debug(currentSVGText.toXML());
+//    		currentSVGText.rotateTextAboutPoint(currentXY, t2);
+    		currentSVGText.applyTransform(t2, RotateText.TRUE);
+    		currentSVGText.format(nPlaces);
+    		LOG.debug(currentSVGText.toXML());
+    		LOG.debug("ROTATE");
+    	}
+    	
 
 //        // bbox in EM -> user units
         Shape bbox = new Rectangle2D.Float(0, 0, font.getWidth(code) / 1000, 1);

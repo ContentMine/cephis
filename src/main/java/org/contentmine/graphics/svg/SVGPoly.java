@@ -183,7 +183,7 @@ public abstract class SVGPoly extends SVGShape {
 		return path2;
 	}
 	
-	public void applyTransform(Transform2 t2) {
+	public void applyTransformPreserveUprightText(Transform2 t2) {
 		Real2Array xy = this.getReal2Array();
 		xy.transformBy(t2);
 		setReal2Array(xy);

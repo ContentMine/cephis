@@ -77,7 +77,7 @@ public class SVGScript extends SVGElement {
 		return null;
 	}
 	
-	public void applyTransform(Transform2 t2) {
+	public void applyTransformPreserveUprightText(Transform2 t2) {
 		// no-op
 	}
 	

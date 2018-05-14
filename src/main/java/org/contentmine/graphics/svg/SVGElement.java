@@ -385,7 +385,7 @@ public class SVGElement extends GraphicsElement {
 		Attribute transformAttribute = this.getAttribute(TRANSFORM);
 		if (transformAttribute != null) {
 			Transform2 transform2 = createTransform2FromTransformAttribute(transformAttribute.getValue());
-			this.applyTransform(transform2);
+			this.applyTransformPreserveUprightText(transform2);
 			getAttribute(TRANSFORM).detach();
 			double det = transform2.determinant();
 			// improper rotation ?
@@ -458,7 +458,7 @@ public class SVGElement extends GraphicsElement {
 	 * subclassed by elements with coordinates
 	 * @param transform
 	 */
-	public void applyTransform(Transform2 transform) {
+	public void applyTransformPreserveUprightText(Transform2 transform) {
 		if (this instanceof SVGDefs) { // maybe add others
 		} else {
 			LOG.info("No transform applied to: "+this.getClass());
@@ -1744,12 +1744,12 @@ public class SVGElement extends GraphicsElement {
 			if (svgElement instanceof SVGText) {
 				SVGText text1 = (SVGText) elementCopy;
 //				text1.rotateTextAboutPoint(centre, rotationTransform);
-				text1.applyTransform(rotationTranslationTransform);
+				text1.applyTransformPreserveUprightText(rotationTranslationTransform);
 				text1.removeAttribute(TRANSFORM);
 				g.appendChild(text1);
 			} else {
 				Class<?> clazz = elementCopy.getClass();
-				elementCopy.applyTransform(rotationTranslationTransform);
+				elementCopy.applyTransformPreserveUprightText(rotationTranslationTransform);
 				g.appendChild(elementCopy);
 			}
 		}

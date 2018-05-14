@@ -295,7 +295,7 @@ public class SVGLine extends SVGShape {
 		this.euclidLine = euclidLine;
 	}
 
-	public void applyTransform(Transform2 transform) {
+	public void applyTransformPreserveUprightText(Transform2 transform) {
 		Real2 xy = this.getXY(0);
 		setXY(xy.getTransformed(transform), 0);
 		xy = this.getXY(1);

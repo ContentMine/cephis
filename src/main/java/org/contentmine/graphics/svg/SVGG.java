@@ -103,7 +103,7 @@ public class SVGG extends SVGElement {
 	 * The logic of this has not been tested
 	 * @param transform
 	 */
-	public void applyTransform(Transform2 transform) {
+	public void applyTransformPreserveUprightText(Transform2 transform) {
 		List<SVGElement> childElements = this.getChildSVGElements();
 	}
 	

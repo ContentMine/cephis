@@ -208,7 +208,7 @@ public class SVGMarker extends SVGElement {
 		restoreGraphicsSettingsAndTransform(g2d);
 	}
 	
-	public void applyTransform(Transform2 t2) {
+	public void applyTransformPreserveUprightText(Transform2 t2) {
 		//assume scale and translation only
 //		Real2 xy = getXY();
 //		xy.transformBy(t2);

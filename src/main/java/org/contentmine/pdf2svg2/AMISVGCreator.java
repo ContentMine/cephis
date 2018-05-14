@@ -47,6 +47,12 @@ public class AMISVGCreator
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
+	
+	private PDF2SVGParser svg2PDFParser;
+	private PDDocument doc;
+	private AMIPDFRenderer renderer;
+	private BufferedImage renderedImage;
+	private SVGG svgg;
 
 	public static void main(String[] args) throws IOException
     {
@@ -54,20 +60,34 @@ public class AMISVGCreator
                 "custom-render-demo.pdf");
         
         AMISVGCreator svgCreator = new AMISVGCreator();
-        svgCreator.createSVG(file);
+        SVGG svgg = svgCreator.createSVG(file);
+        SVGSVG.wrapAndWriteAsSVG(svgg, new File("target/pdf2svg2/examples/custom.svg"));
+        BufferedImage renderedImage = svgCreator.getRenderedImage();
+        ImageIO.write(renderedImage, "PNG", new File("custom-render.png"));
     }
 
-	private PDF2SVGParser svg2PDFParser;
+	public SVGG createSVG(File file) throws InvalidPasswordException, IOException {
+        createRenderedImage(file);
+        svgg = extractSVGG();
+        return svgg;
+	}
 
-	public void createSVG(File file) throws InvalidPasswordException, IOException {
-        PDDocument doc = PDDocument.load(file);
-        AMIPDFRenderer renderer = new AMIPDFRenderer(doc);
-        BufferedImage image = renderer.renderImage(0);
-        ImageIO.write(image, "PNG", new File("custom-render.png"));
-        this.svg2PDFParser = renderer.getPDF2SVGParser();
-        SVGG svgg = svg2PDFParser.getSVGG();
-        SVGSVG.wrapAndWriteAsSVG(svgg, new File("target/pdf2svg2/examples/custom.svg"));
+	private SVGG extractSVGG() {
+		this.svg2PDFParser = renderer.getPDF2SVGParser();
+        svgg = svg2PDFParser.getSVGG();
+		return svgg;
+	}
+
+	private BufferedImage createRenderedImage(File file) throws InvalidPasswordException, IOException {
+		doc = PDDocument.load(file);
+        renderer = new AMIPDFRenderer(doc);
+        renderedImage = renderer.renderImage(0);
         doc.close();
+        return renderedImage;
+	}
+
+	public BufferedImage getRenderedImage() {
+		return renderedImage;
 	}
 
 }

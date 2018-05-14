@@ -215,9 +215,9 @@ public class TextStructurer {
 			Transform2 rotation = new Transform2(angle);
 			Real2Range boundingBox = new Real2Range();
 			for (SVGText text : rawCharacters) {
-				text.applyTransform(rotation);
+				text.applyTransformPreserveUprightText(rotation);
 				Transform2 rotChar = Transform2.getRotationAboutPoint(angle, text.getXY());
-				text.applyTransform(rotChar);
+				text.applyTransformPreserveUprightText(rotChar);
 				boundingBox = boundingBox.plus(text.getBoundingBox());
 			}
 		}

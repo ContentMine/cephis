@@ -54,7 +54,7 @@ public class SVGGlyph extends SVGPath {
 			Real2 r2 = new Real2(bboxOrigin);
 			r2.negative();
 			Transform2 t2 = new Transform2(new Vector2(r2));
-			this.applyTransform(t2);
+			this.applyTransformPreserveUprightText(t2);
 		}
 		
 	}

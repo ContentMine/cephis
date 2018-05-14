@@ -143,7 +143,7 @@ public class SVGEllipse extends SVGShape {
 		return this.getCoordinateValueDefaultZero(RY);
 	}
 	
-	public void applyTransform(Transform2 transform) {
+	public void applyTransformPreserveUprightText(Transform2 transform) {
 		Real2 xy = this.getCXY();
 		setCXY(xy.getTransformed(transform));
 		Real2 rxy = this.getRXY();

@@ -456,7 +456,7 @@ public class SVGPath extends SVGShape {
 			SVGPath path = (SVGPath) this.copy();
 			path.normalizeOrigin();
 			Transform2 t2 = new Transform2(new double[]{s,0.,0.,0.,s,0.,0.,0.,1.});
-			path.applyTransform(t2);
+			path.applyTransformPreserveUprightText(t2);
 			SVGPath path22 = (SVGPath) path2.copy();
 			path22.normalizeOrigin();
 			if (!path.hasEqualCoordinates(path22, epsilon)) {
@@ -556,7 +556,7 @@ public class SVGPath extends SVGShape {
 		this.path2 = path2;
 	}
 	
-	public void applyTransform(Transform2 t2) {
+	public void applyTransformPreserveUprightText(Transform2 t2) {
 		PathPrimitiveList pathPrimitives = this.getOrCreatePathPrimitives();
 		for (SVGPathPrimitive primitive : pathPrimitives) {
 			primitive.transformBy(t2);

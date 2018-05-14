@@ -189,7 +189,7 @@ public class SVGImage extends SVGShape {
      height="199" 
      preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink"/>
 	 */
-	public void applyTransform(Transform2 t2) {
+	public void applyTransformPreserveUprightText(Transform2 t2) {
 		Real2 xy = getXY();
 		xy.transformBy(t2);
 		setXY(xy);

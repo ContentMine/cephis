@@ -56,6 +56,13 @@ public class SVGText extends SVGElement {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
+	
+	public enum RotateText {
+		TRUE,
+		FALSE,
+		;
+	}
+
 
 	// just in case there is a scaling problem
 	private static final double _SVG2AWT_FONT_SCALE = 1.0;
@@ -312,8 +319,17 @@ public class SVGText extends SVGElement {
 		restoreGraphicsSettingsAndTransform(g2d);
 	}
 
-	public void applyTransform(Transform2 t2) {
+	public void applyTransformPreserveUprightText(Transform2 t2) {
 		// transform the position and scale
+		applyTransform(t2, RotateText.FALSE);
+	}
+
+	/** if TRUE the characters are rotated back to be Upright
+	 * 
+	 * @param t2
+	 * @param rotateText
+	 */
+	public void applyTransform(Transform2 t2, RotateText rotateText) {
 		Real2 xy = getXY();
 		xy.transformBy(t2);
 		this.setXY(xy);
@@ -321,8 +337,13 @@ public class SVGText extends SVGElement {
 		Angle angle = t2.getAngleOfRotation();
 		//rotate characters to preserve relative orientation
 		if (angle != null && !angle.isEqualTo(0.0, SVGLine.EPS)) {
-			angle = angle.multiplyBy(-1.0);
+			if (RotateText.FALSE.equals(rotateText)) {
+				angle = angle.multiplyBy(-2.0);
+			} else if (RotateText.TRUE.equals(rotateText)) {
+				angle = angle.multiplyBy(-1.0);
+			}
 			Transform2 t = Transform2.getRotationAboutPoint(angle, xy);
+			
 			t = t.concatenate(t2);
 			this.setTransform(t);
 		}

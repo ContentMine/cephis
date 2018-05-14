@@ -119,7 +119,7 @@ public class SVGUtil {
 	public static void applyCumulativeTransforms(List<SVGElement> svgElements) {
 		for (SVGElement svgElement : svgElements) {
 			Transform2 t2 = svgElement.getCumulativeTransform();
-			svgElement.applyTransform(t2);
+			svgElement.applyTransformPreserveUprightText(t2);
 		}
 	}
 

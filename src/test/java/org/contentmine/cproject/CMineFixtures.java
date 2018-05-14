@@ -95,4 +95,9 @@ public class CMineFixtures {
 		return metadataByCTree == null ? new ArrayList<String>() : createSortedStringList(metadataByCTree.entrySet());
 	}
 
+	public static boolean roughlyEqual(int expected, int actual, double maxErrorRatio) {
+		double diffRatio = Math.abs(expected - actual)/(double)expected;
+		return diffRatio < maxErrorRatio;
+	}
+
 }

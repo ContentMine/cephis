@@ -248,7 +248,7 @@ public class SVGRect extends SVGShape {
 	 *  this only works for 0 += PI/2, +- PI
 	 *  if you want to rotate by other angles convert to a SVGPolygon
 	 */
-	public void applyTransform(Transform2 t2) {
+	public void applyTransformPreserveUprightText(Transform2 t2) {
 		//assume scale and translation only
 		Real2 xy = getXY();
 		xy.transformBy(t2);
