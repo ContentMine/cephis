@@ -1,10 +1,14 @@
 package org.contentmine.graphics.svg.fonts;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.path.PathPrimitiveList;
 
@@ -21,10 +25,13 @@ public class SVGGlyph extends SVGPath {
 		LOG.setLevel(Level.DEBUG);
 	}
 
+	public static final String TAG = "glyph";
+	
 	private Real2 bboxOrigin;
 
 	public SVGGlyph() {
 		super();
+		this.setSubtype(TAG);
 	}
 
 	public static SVGGlyph createRelativeToBBoxOrigin(PathPrimitiveList pathPrimitiveList) {
@@ -79,34 +86,31 @@ public class SVGGlyph extends SVGPath {
 		String s = bboxOrigin+": "+getOrCreateSignatureAttributeValue();
 		return s;
 	}
-//	public String getOrCreateSignature() {
-//		if (this.signature == null) {
-////			getOrCreatePath();
-//			signature = this.getSignature();
-//		}
-//		return signature;
-//		
-//	}
 
 	public String getOrCreateSignature() {
 		String signature = getOrCreateSignatureAttributeValue();
 		return signature;
 	}
 
-//	/** gets the path.
-//	 * if null, try to creat from Primitives.
-//	 * @return
-//	 */
-//	public SVGPath getOrCreatePath() {
-//		if pathPrimitiveList != null) {
-//			this.this = new SVGPath(this.pathPrimitiveList);
-//		}
-//		return path;
-//	}
+	public static List<SVGGlyph> extractSelfAndDescendantGlyphs(SVGElement inputSVGElement) {
+		List<SVGGlyph> extractedGlyphs = new ArrayList<SVGGlyph>();
+		List<SVGElement> descendants = SVGElement.extractSelfAndDescendantElements(inputSVGElement);
+		for (SVGElement element : descendants) {
+			if (element instanceof SVGPath && TAG.equals(element.getSubtype())) {
+				SVGGlyph newGlyph = SVGGlyph.createSVGGlyph((SVGPath) element);
+				extractedGlyphs.add(newGlyph);
+			}
+		}
+		return extractedGlyphs;
+	}
 
-//	@Override
-//	public Real2Range getBoundingBox() {
-//		return path == null ? null : path.getBoundingBox();
-//	}
+	private static SVGGlyph createSVGGlyph(SVGPath element) {
+		SVGGlyph newGlyph = null;
+		if (TAG.equals(element.getSubtype())) {
+			newGlyph = new SVGGlyph();
+			newGlyph.copyAttributesChildrenElements(element);
+		}
+		return newGlyph;
+	}
 
 }

@@ -12,7 +12,6 @@ import org.contentmine.eucl.euclid.util.MultisetUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGTitle;
 import org.contentmine.graphics.svg.text.build.Phrase;
 import org.contentmine.svg2xml.util.GraphPlot;
@@ -153,7 +152,7 @@ public class TableBodySection extends TableSection {
 				Real2Range colManagerBox = new Real2Range(new RealRange(columnManager.getEnclosingRange()), boundingBox.getYRange());
 				String title = "BODYCOLUMN: "+i+"/"+columnManager.getStringValue();
 				SVGTitle svgTitle = new SVGTitle(title);
-				SVGShape plotBox = GraphPlot.createBoxWithFillOpacity(colManagerBox, colors[1], opacity[1]);
+				SVGElement plotBox = GraphPlot.createBoxWithFillOpacity(colManagerBox, colors[1], opacity[1]);
 				plotBox.appendChild(svgTitle);
 				g.appendChild(plotBox);
 			}
@@ -191,7 +190,7 @@ public class TableBodySection extends TableSection {
 				xRange.extendLowerEndBy(xIndent);
 				for (int i = 0; i < indentRangeArray.size(); i++) {
 					Real2Range subTable = new Real2Range(xRange, indentRangeArray.get(i));
-					SVGShape plotBox = GraphPlot.createBoxWithFillOpacity(subTable, colors[i % colors.length], opacity[i % opacity.length]);
+					SVGElement plotBox = GraphPlot.createBoxWithFillOpacity(subTable, colors[i % colors.length], opacity[i % opacity.length]);
 					g.appendChild(plotBox);
 				}
 			}

@@ -14,6 +14,7 @@ import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.graphics.svg.SVGCircle;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGPolygon;
@@ -392,7 +393,7 @@ public class PixelSegmentList implements List<PixelSegment> {
 		if (g == null) {
 			g = new SVGG();
 			g.setStrokeWidth(1.0); // alter later
-			for (SVGLine line : svgLineList) {
+			for (SVGElement line : svgLineList) {
 				g.appendChild(line.copy());
 			}
 		}

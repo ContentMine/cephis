@@ -12,11 +12,9 @@ import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.path.ClosePrimitive;
 import org.contentmine.graphics.svg.path.CubicPrimitive;
 import org.contentmine.graphics.svg.path.LinePrimitive;
@@ -197,7 +195,7 @@ public class SVGPathTest {
 		SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.MOLECULES_DIR, "image.g.2.13.svg"))
 				.getChildElements().get(0).getChildElements().get(0);
 		SVGPath newPath = svgPath.replaceAllUTurnsByButt(ANGLE_EPS);
-		SVGLine line = newPath.createLineFromMLLLL(ANGLE_EPS, LINE_EPS);
+		SVGElement line = newPath.createLineFromMLLLL(ANGLE_EPS, LINE_EPS);
 		Assert.assertNotNull("line", line);
 		Assert.assertEquals("line", "<line xmlns=\"http://www.w3.org/2000/svg\" x1=\"415.5\" y1=\"517.98\" x2=\"415.5\" y2=\"526.26\" />",
 				line.toXML().trim());
@@ -215,7 +213,7 @@ public class SVGPathTest {
 			LOG.trace(path.getOrCreateSignatureAttributeValue());
 			SVGPath newPath = path.replaceAllUTurnsByButt(angleEps);
 			if (newPath != null) {
-				SVGLine line = newPath.createLineFromMLLLL(angleEps, LINE_EPS);
+				SVGElement line = newPath.createLineFromMLLLL(angleEps, LINE_EPS);
 				if (line != null) {
 					g.appendChild(line);
 				} else {
@@ -243,7 +241,7 @@ public class SVGPathTest {
 		Assert.assertEquals("uturns", 2, quadrantStartList.size());
 		SVGPath newPath = path.replaceAllUTurnsByButt(angle2);
 		Assert.assertEquals("new sig", "MLLLL", newPath.getOrCreateSignatureAttributeValue());
-		SVGShape line = newPath.createLineFromMLLLL(angle2, MAX_WIDTH);
+		SVGElement line = newPath.createLineFromMLLLL(angle2, MAX_WIDTH);
 		Assert.assertNotNull(line);
 	}
 

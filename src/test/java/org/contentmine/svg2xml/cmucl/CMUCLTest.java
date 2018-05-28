@@ -135,7 +135,7 @@ public class CMUCLTest {
 			List<SVGShape> shapes = new Path2ShapeConverter().convertPathsToShapes(paths);
 			SVGG g = new SVGG();
 			Multiset<String> classSet = HashMultiset.create();
-			for (SVGShape shape : shapes) {
+			for (SVGElement shape : shapes) {
 				g.appendChild(shape);
 				classSet.add(shape.getClass().getSimpleName());
 			}
@@ -181,7 +181,7 @@ public class CMUCLTest {
 			String transform = "scale("+scale+") ";
 			transform += " translate("+(-1.0*corner.getX())+","+(-1.0*corner.getY())+")";
 			g.addAttribute(new Attribute("transform", transform));
-			SVGShape bboxRect = SVGRect.createFromReal2Range(bbox);
+			SVGElement bboxRect = SVGRect.createFromReal2Range(bbox);
 			bboxRect.setStroke("black");
 			bboxRect.setStrokeWidth(2.);
 			bboxRect.setFill("none");

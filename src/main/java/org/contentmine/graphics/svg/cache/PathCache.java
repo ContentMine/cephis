@@ -30,6 +30,7 @@ import com.google.common.collect.Multiset.Entry;
  */
 public class PathCache extends AbstractCache{
 
+	private static final String ID_PREFIX = "p";
 	private static final Logger LOG = Logger.getLogger(PathCache.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -52,6 +53,8 @@ public class PathCache extends AbstractCache{
 	private List<SVGPath> currentPathList;
 	private List<SVGPath> positiveBoxPathList;
 	
+	private Map<String, SVGPath> pathById;
+	
 	public void setPositiveXBox(Real2Range positiveXBox) {
 		this.positiveXBox = positiveXBox;
 		
@@ -65,6 +68,7 @@ public class PathCache extends AbstractCache{
 		long millis = System.currentTimeMillis();
 		this.originalPathList = SVGPath.extractPaths(svgElement);
 		SVGPath.addSignatures(originalPathList);
+		addIDs();
 		positiveBoxPathList = new ArrayList<SVGPath>(originalPathList);
 		SVGElement.removeElementsOutsideBox(positiveBoxPathList, positiveXBox);
 		nonNegativePathList = SVGPath.removePathsWithNegativeY(positiveBoxPathList);
@@ -74,6 +78,16 @@ public class PathCache extends AbstractCache{
 		currentPathList = SVGPath.removeShadowedPaths(currentPathList);
 		LOG.trace("Paths time: "+(System.currentTimeMillis() - millis)/1000);
 		return;
+	}
+
+	private void addIDs() {
+		for (int i = 0; i < originalPathList.size(); i++) {
+			originalPathList.get(i).setId(createId(i));
+		}
+	}
+
+	private String createId(int i) {
+		return ID_PREFIX+i;
 	}
 
 	public PathCache(ComponentCache svgStore) {

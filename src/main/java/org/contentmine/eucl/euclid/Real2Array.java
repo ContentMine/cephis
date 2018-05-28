@@ -488,7 +488,7 @@ public class Real2Array implements EuclidConstants ,  Iterable<Real2>  {
 		return idx == -1 ? null : get(idx);
 	}
 	
-	private int getIndexOfPointWithMinimumX() {
+	public int getIndexOfPointWithMinimumX() {
 		RealArray xArray = getXArray();
 		return (xArray == null || xArray.size() == 0) ? -1 : xArray.indexOfSmallestElement();
 	}
@@ -498,9 +498,9 @@ public class Real2Array implements EuclidConstants ,  Iterable<Real2>  {
 		return idx == -1 ? null : get(idx);
 	}
 	
-	private int getIndexOfPointWithMaximumX() {
+	public int getIndexOfPointWithMaximumX() {
 		RealArray xArray = getXArray();
-		return (xArray == null || xArray.size() == 0) ? -1 : xArray.indexOfSmallestElement();
+		return (xArray == null || xArray.size() == 0) ? -1 : xArray.indexOfLargestElement();
 	}
     
 	public Real2 getPointWithMinimumY() {
@@ -508,7 +508,7 @@ public class Real2Array implements EuclidConstants ,  Iterable<Real2>  {
 		return idx == -1 ? null : get(idx);
 	}
 	
-	private int getIndexOfPointWithMinimumY() {
+	public int getIndexOfPointWithMinimumY() {
 		RealArray yArray = getYArray();
 		return (yArray == null || yArray.size() == 0) ? -1 : yArray.indexOfSmallestElement();
 	}
@@ -518,9 +518,9 @@ public class Real2Array implements EuclidConstants ,  Iterable<Real2>  {
 		return idx == -1 ? null : get(idx);
 	}
 	
-	private int getIndexOfPointWithMaximumY() {
+	public int getIndexOfPointWithMaximumY() {
 		RealArray yArray = getYArray();
-		return (yArray == null || yArray.size() == 0) ? -1 : yArray.indexOfSmallestElement();
+		return (yArray == null || yArray.size() == 0) ? -1 : yArray.indexOfLargestElement();
 	}
 
 	/** gets average of two Real2Arrays.

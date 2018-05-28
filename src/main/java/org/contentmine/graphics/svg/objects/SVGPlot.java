@@ -5,8 +5,8 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
 
 public class SVGPlot extends SVGDiagram {
@@ -17,7 +17,7 @@ public class SVGPlot extends SVGDiagram {
 		LOG.setLevel(Level.DEBUG);
 	}
 	
-	private SVGShape mainRect;
+	private SVGElement mainRect;
 	private List<SVGLine> horizontalList;
 	private List<SVGLine> verticalList;
 

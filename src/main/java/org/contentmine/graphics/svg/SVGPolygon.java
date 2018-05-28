@@ -45,6 +45,7 @@ public class SVGPolygon extends SVGPoly {
 
 	public final static String ALL_POLYGON_XPATH = ".//svg:polygon";
 	public final static String TAG ="polygon";
+
 	
 	/** constructor
 	 */
@@ -328,7 +329,6 @@ public class SVGPolygon extends SVGPoly {
 		return polygonList;
 	}
 
-	
 
 
 }

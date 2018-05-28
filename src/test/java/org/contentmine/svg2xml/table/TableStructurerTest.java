@@ -645,7 +645,7 @@ public class TableStructurerTest {
 	
 	private void debugLines(List<SVGLine> lineList) {
 		SVGG g = new SVGG();
-		for (SVGLine line : lineList) {
+		for (SVGElement line : lineList) {
 			g.appendChild(line);
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File("target/table/dobsonShapes.svg"));

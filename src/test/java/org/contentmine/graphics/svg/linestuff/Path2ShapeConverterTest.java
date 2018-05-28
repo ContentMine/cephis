@@ -137,7 +137,7 @@ public class Path2ShapeConverterTest {
 		@Test
 		public void testReplaceTwoQuadrantCapsByButt() {
 			SVGElement svgElement = convertPathsToShapes(new File(SVGHTMLFixtures.PATHS_DIR, "roundedline.svg"));
-			SVGLine line = (SVGLine) svgElement.getChildElements().get(0).getChildElements().get(0);
+			SVGElement line = (SVGElement) svgElement.getChildElements().get(0).getChildElements().get(0);
 			Assert.assertEquals("path converted to line", 
 					"<line class=\"lineFromShape\" signature=\"MLCCLCC\" style=\"fill:#000000;stroke:black;stroke-width:0.0;\" x1=\"172.38\" y1=\"504.06\" x2=\"172.38\" y2=\"512.88\" id=\"line.0\" />",
 					line.toXML());
@@ -149,7 +149,7 @@ public class Path2ShapeConverterTest {
 					.getChildElements().get(0);
 			Assert.assertEquals("sig",  "MLLL", svgPath.getOrCreateSignatureAttributeValue());
 			Path2ShapeConverter p2sConverter = new Path2ShapeConverter(svgPath);
-			SVGShape line = p2sConverter.createNarrowLine();
+			SVGElement line = p2sConverter.createNarrowLine();
 			Assert.assertNotNull("line", line);
 		}
 		
@@ -166,7 +166,7 @@ public class Path2ShapeConverterTest {
 					.getChildElements().get(0);
 			Assert.assertEquals("sig",  "MCCCCZ", svgPath.getOrCreateSignatureAttributeValue());
 			Path2ShapeConverter p2sConverter = new Path2ShapeConverter();
-			SVGShape circle = p2sConverter.convertPathToShape(svgPath);
+			SVGElement circle = p2sConverter.convertPathToShape(svgPath);
 			Assert.assertNotNull("circle", circle);
 			Assert.assertTrue("circle", circle instanceof SVGCircle);
 			SVGCircle svgCircle = (SVGCircle) circle;
@@ -382,7 +382,7 @@ public class Path2ShapeConverterTest {
 				"464.854 286.872 464.854 294.622"
 		};
 		for (int i = 0; i < shapes.size(); i++) {
-			SVGShape shape = shapes.get(i);
+			SVGElement shape = shapes.get(i);
 			Assert.assertEquals("SVGLine", shape.getClass().getSimpleName());
 			SVGLine line = (SVGLine) shape; 
 			Assert.assertEquals(lineValue[i], String.valueOf(line.getGeometricHash()));
@@ -401,9 +401,9 @@ public class Path2ShapeConverterTest {
 		g.appendChild(path);
 		List<SVGShape> shapes = path2ShapeConverter.convertPathsToShapes(g);
 		Assert.assertEquals(1, shapes.size());
-		SVGShape shape = shapes.get(0);
+		SVGElement shape = shapes.get(0);
 		Assert.assertEquals("SVGRect", shape.getClass().getSimpleName());
-		SVGShape rect = (SVGShape) shape;
+		SVGElement rect = (SVGElement) shape;
 		Assert.assertEquals("((34.264,133.58),(165.875,177.159))", rect.toString());
 	}
 
@@ -423,7 +423,7 @@ public class Path2ShapeConverterTest {
 		List<SVGShape> shapes = path2ShapeConverter.convertPathsToShapes(g);
 		Assert.assertEquals(2, shapes.size());
 //		Collections.sort(shapes);
-		SVGShape rect0 = (SVGShape) shapes.get(0);
+		SVGElement rect0 = (SVGElement) shapes.get(0);
 		Assert.assertEquals("((34.264,133.58),(165.875,177.159))", rect0.toString());
 		SVGRect rect1 = (SVGRect) shapes.get(1);
 		rect1.format(3);
@@ -459,7 +459,7 @@ public class Path2ShapeConverterTest {
     public void testMakeRect() {
     	String pathXML = "<path id=\"path1676\" d=\"M128.441 668.122 L135.743 668.122 L135.743 559.484 L128.441 559.484 Z\" stroke-width=\"0.31\" fill=\"#cccccc\" clip-path=\"url(#clipPath1)\" stroke=\"black\"/>";
     	SVGPath path = (SVGPath) SVGElement.readAndCreateSVG(XMLUtil.parseXML(pathXML));
-    	SVGShape shape = new Path2ShapeConverter().convertPathToShape(path);
+    	SVGElement shape = new Path2ShapeConverter().convertPathToShape(path);
     	Assert.assertEquals(shape.getClass(), SVGRect.class);
     }
 
@@ -496,7 +496,7 @@ public class Path2ShapeConverterTest {
 	private void writeColouredShapes(List<SVGShape> shapes, File file) {
 		SVGG gg = new SVGG();
 		for (int i = 0; i < shapes.size(); i++) {
-			SVGShape shape = shapes.get(i);
+			SVGElement shape = shapes.get(i);
 			shape.setFill(COLORS[i % COLORS.length]);
 			gg.appendChild(shape.copy());
 		}

@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.IntRange;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.rule.Rule;
 import org.contentmine.graphics.svg.text.build.Word;
@@ -24,7 +25,7 @@ public class HorizontalRule extends Rule {
 	
 	private List<Word> wordList;
 
-	public HorizontalRule(SVGLine line) {
+	public HorizontalRule(SVGElement line) {
 		super(line);
 	}
 	

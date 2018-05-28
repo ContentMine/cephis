@@ -8,8 +8,8 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.Util;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.rule.horizontal.LineChunk;
 
 import nu.xom.Element;
@@ -30,7 +30,7 @@ public abstract class Rule extends LineChunk {
 		this.setSVGClassName(TAG);
 	}
 
-	public Rule(SVGLine line) {
+	public Rule(SVGElement line) {
 		this();
 		this.appendChild(line.copy());
 	}
@@ -66,7 +66,7 @@ public abstract class Rule extends LineChunk {
 	@Override
 	public String toString() {
 		String s = "";
-		SVGShape svgLine = getSVGLine();
+		SVGElement svgLine = getSVGLine();
 		if (svgLine != null) { 
 			s += svgLine.toString();
 		}

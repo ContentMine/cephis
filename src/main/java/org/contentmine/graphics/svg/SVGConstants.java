@@ -15,8 +15,8 @@
  */
 
 package org.contentmine.graphics.svg;
-import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.eucl.xml.XMLConstants;
+import org.contentmine.graphics.AbstractCMElement;
 
 import nu.xom.XPathContext;
 

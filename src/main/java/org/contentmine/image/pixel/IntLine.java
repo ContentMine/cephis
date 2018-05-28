@@ -3,6 +3,7 @@ package org.contentmine.image.pixel;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.Real2;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.image.pixel.IntLine.ChangeDirection;
 
@@ -41,7 +42,7 @@ public class IntLine {
 		if (xy == 1) return xy1;
 		return null;
 	}
-	public SVGLine createSVG() {
+	public SVGElement createSVG() {
 		SVGLine line = new SVGLine(new Real2(xy0), new Real2(xy1));
 		line.setStrokeWidth(0.1);
 		return line;

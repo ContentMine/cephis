@@ -5,6 +5,7 @@ import java.awt.geom.Line2D.Double;
 
 import org.contentmine.eucl.euclid.Line2;
 import org.contentmine.eucl.euclid.Real2;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGRect;
 
@@ -141,7 +142,7 @@ public class PixelSegment {
 		return line;
 	}
 
-	public SVGLine getSVGLine(String color) {
+	public SVGElement getSVGLine(String color) {
 		line.setStroke(color);
 		return line;
 	}

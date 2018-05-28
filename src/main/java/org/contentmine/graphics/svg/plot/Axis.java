@@ -452,7 +452,7 @@ public class Axis {
 		jointG.setSVGClassName(tickType);
 		svgg.appendChild(jointG);
 		for (Joint joint : tickList) {
-			SVGLine line = joint.getLine();
+			SVGElement line = joint.getLine();
 			line.detach();
 			jointG.appendChild(line);
 		}

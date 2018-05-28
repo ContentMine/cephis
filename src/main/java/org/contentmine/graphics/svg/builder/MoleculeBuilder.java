@@ -207,7 +207,7 @@ public class MoleculeBuilder {
 	private SVGG debugBonds() {
 		SVGG g = new SVGG();
 		for (int j = 0; j < getBondList().size(); j++) {
-			SVGLine line = getBondList().get(j);
+			SVGElement line = getBondList().get(j);
 			g.appendChild(line.copy());
 		}
 		return g;
@@ -232,14 +232,14 @@ public class MoleculeBuilder {
 	private List<SVGBond> createBondList(List<SVGLine> lineList) {
 		bondList = new ArrayList<SVGBond>();
 		for (int i = 0; i < lineList.size(); i++) {
-			SVGLine line = lineList.get(i);
+			SVGElement line = lineList.get(i);
 			SVGBond bond = this.createBond(line);
 			addBondAndCreateId(bond);
 		}
 		return bondList;
 	}
 
-	private SVGBond createBond(SVGLine line) {
+	private SVGBond createBond(SVGElement line) {
 		SVGBond bond = new SVGBond(line);
 		bond.setMoleculeBuilder(this);
 		return bond;

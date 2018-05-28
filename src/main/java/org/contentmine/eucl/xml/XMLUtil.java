@@ -20,6 +20,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -1135,6 +1136,8 @@ public abstract class XMLUtil implements XMLConstants {
 		Document document = null;
 		try {
 			document = new Builder().build(xmlFile);
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("cannot find file: "+xmlFile.getAbsolutePath(), e);
 		} catch (Exception e) {
 			throw new RuntimeException("cannot parse/read file: "+xmlFile.getAbsolutePath(), e);
 		}

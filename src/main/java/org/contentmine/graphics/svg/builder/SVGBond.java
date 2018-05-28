@@ -7,6 +7,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGText;
@@ -22,7 +23,7 @@ public class SVGBond extends SVGEdge {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	public SVGBond(SVGLine line) {
+	public SVGBond(SVGElement line) {
 		super(line);
 	}
 	

@@ -4,6 +4,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 
@@ -62,19 +63,19 @@ public class SVGErrorBar extends SVGG {
 	// direction of bar starting from central point;
 	private BarDirection barDirection;
 	// optional crossbar (for visual effect only)
-	private SVGLine crossbar;
+	private SVGElement crossbar;
 	
 	public SVGErrorBar(SVGLine line) {
 		this.setLine(line);
 	}
 
-	public SVGErrorBar(BarDirection top, SVGLine svgLine, SVGLine crossbar) {
+	public SVGErrorBar(BarDirection top, SVGLine svgLine, SVGElement crossbar) {
 		this.setBarDirection(barDirection);
 		this.setLine(svgLine);
 		this.setCrossbar(crossbar);
 	}
 
-	private void setCrossbar(SVGLine crossbar) {
+	private void setCrossbar(SVGElement crossbar) {
 		this.crossbar = crossbar;
 	}
 

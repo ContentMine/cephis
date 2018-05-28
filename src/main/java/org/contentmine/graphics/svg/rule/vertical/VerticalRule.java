@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.IntRange;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.rule.Rule;
 
@@ -22,7 +23,7 @@ public class VerticalRule extends Rule {
 	/** allowed misalignment for "same X"*/
 	public static final double X_TOLERANCE = 2.0;
 	
-	public VerticalRule(SVGLine line) {
+	public VerticalRule(SVGElement line) {
 		super(line);
 	}
 	

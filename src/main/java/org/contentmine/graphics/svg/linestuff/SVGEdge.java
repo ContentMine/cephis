@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGText;
@@ -32,7 +33,7 @@ public class SVGEdge extends SVGLine {
 		getOrCreateNodeList();
 	}
 
-	public SVGEdge(SVGLine line) {
+	public SVGEdge(SVGElement line) {
 		super();
 		this.copyAttributesChildrenElements(line);
 		return;

@@ -9,13 +9,13 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGCircle;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.plot.SVGBarredPoint;
 import org.contentmine.graphics.svg.plot.SVGBarredPointList;
@@ -125,7 +125,7 @@ public class SVGBarredPointTest {
 				line.setStroke("red");
 				g.appendChild(line);
 			}
-			SVGShape shape = barredPoint.getErrorShape();
+			SVGElement shape = barredPoint.getErrorShape();
 			shape.setFill("none");
 			g.appendChild(shape);
 		}

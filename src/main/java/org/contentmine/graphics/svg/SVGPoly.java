@@ -28,15 +28,16 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.ArrayBase;
+import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
-import org.contentmine.eucl.euclid.Transform2;
-import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.RealArray.Monotonicity;
+import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.objects.SVGRhomb;
 import org.contentmine.graphics.svg.path.PathPrimitiveList;
 
 import nu.xom.Attribute;
@@ -463,9 +464,31 @@ public abstract class SVGPoly extends SVGShape {
 		if (isBox(epsilon)) {
 			Real2Range r2r = getBoundingBox();
 			rect = new SVGRect(r2r.getLLURCorners()[0], r2r.getLLURCorners()[1]);
-			rect.setFill("none");
+			rect.copyAttributesFromOriginatingShape(this);
 		}
 		return rect;
+	}
+
+	public SVGRhomb createRhomb(double epsilon) {
+		SVGRhomb rhomb = null;
+		Real2Array xy2 = this.getReal2Array();
+		if (xy2.size() == 4) {
+			int ixmin = xy2.getIndexOfPointWithMinimumX();
+			int ixmax = xy2.getIndexOfPointWithMaximumX(); 
+			int iymin = xy2.getIndexOfPointWithMinimumY();
+			int iymax = xy2.getIndexOfPointWithMaximumY();
+			int dixy0 = Math.floorMod(iymax - ixmin, 4); // always nonnegative
+//			LOG.debug(ixmin+"/"+iymin+"/"+ixmax+"/"+iymax+"//"+xy2);
+			// are points on edges 
+			if (Math.abs(ixmax - ixmin) != 2 ||
+			    Math.abs(iymax - iymin) != 2 ||
+				(dixy0 != 1 && dixy0 != 3 )) {
+			    	LOG.debug("not a rhomb");
+			    	return rhomb;
+		    }
+			rhomb = new SVGRhomb(xy2);
+		}
+		return rhomb;
 	}
 
 	public Boolean isClosed() {
@@ -602,7 +625,7 @@ public abstract class SVGPoly extends SVGShape {
 	}
 	
 	@Override
-	protected boolean isGeometricallyEqualTo(SVGShape shape, double epsilon) {
+	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		if (shape != null && shape instanceof SVGPoly && this.getClass().equals(shape.getClass())) {
 			return this.getReal2Array().isEqualTo(((SVGPoly) shape).getReal2Array(), epsilon);
 		}

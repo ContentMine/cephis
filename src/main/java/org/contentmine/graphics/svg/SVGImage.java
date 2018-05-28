@@ -609,7 +609,7 @@ private void addXlinkHref(String href) {
 	/** cannot easily implement this, return false;
 	 * 
 	 */
-	protected boolean isGeometricallyEqualTo(SVGShape shape, double epsilon) {
+	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		return false;
 	}
 

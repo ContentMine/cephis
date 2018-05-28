@@ -13,7 +13,6 @@ import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGRect;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGTitle;
 import org.contentmine.graphics.svg.text.build.Phrase;
 import org.contentmine.graphics.svg.text.build.Word;
@@ -187,7 +186,7 @@ public class ColumnManager {
 		Real2 xy = bbox.getLLURCorners()[0];
 		Word emptyWord = Word.createEmptyWord(xy, fontSize);
 		Phrase emptyPhrase = new Phrase(emptyWord);
-		SVGShape plotBox = GraphPlot.createBoxWithFillOpacity(bbox, "green", 0.1);
+		SVGElement plotBox = GraphPlot.createBoxWithFillOpacity(bbox, "green", 0.1);
 		emptyPhrase.appendChild(plotBox);
 		columnPhrases.add(yPointer, emptyPhrase);
 	}

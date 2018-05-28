@@ -2,7 +2,7 @@ package org.contentmine.graphics.svg.builder;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.contentmine.graphics.svg.SVGLine;
+import org.contentmine.graphics.svg.SVGElement;
 
 /** holds multiple bond partners until we can sort them out later.
  * 
@@ -16,10 +16,10 @@ public class MultipleBond {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	private SVGLine linei;
-	private SVGLine linej;
+	private SVGElement linei;
+	private SVGElement linej;
 
-	public MultipleBond(SVGLine linei, SVGLine linej) {
+	public MultipleBond(SVGElement linei, SVGElement linej) {
 		this.linei = linei;
 		this.linej = linej;
 	}

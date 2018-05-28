@@ -392,8 +392,8 @@ public class TableStructurer {
 		SVGG g = new SVGG();
 		int i = 0; 
 		String[] color = {"red", "green", "blue", "yellow", "cyan", "magenta", "black"};
-		for (SVGShape shape : shapeList) {
-			SVGShape shapeNew = (SVGShape) shape.copy();
+		for (SVGElement shape : shapeList) {
+			SVGElement shapeNew = (SVGElement) shape.copy();
 			shapeNew.setFill(color[i++ % color.length]);
 			shapeNew.setFill("none");
 			shapeNew.setStroke("black");
@@ -411,7 +411,7 @@ public class TableStructurer {
 			RealRange yRange = bbox.getYRange();
 			List<SVGRect> horizontalSpanRects = new ArrayList<SVGRect>();
 			List<SVGRect> verticalSpanRects = new ArrayList<SVGRect>();
-			for (SVGShape shape : shapeList) {
+			for (SVGElement shape : shapeList) {
 				if (shape instanceof SVGRect) {
 					SVGRect rect = (SVGRect) shape;
 					RealRange xRange1 = rect.getRealRange(Direction.HORIZONTAL);
@@ -505,7 +505,7 @@ public class TableStructurer {
 
 	public static List<SVGRect> extractRects(List<SVGShape> shapeList) {
 		List<SVGRect> rectList = new ArrayList<SVGRect>();
-		for (SVGShape shape : shapeList) {
+		for (SVGElement shape : shapeList) {
 			if (shape instanceof SVGRect) {
 				SVGRect rect = (SVGRect) shape;
 				rectList.add(rect);
@@ -516,7 +516,7 @@ public class TableStructurer {
 	
 	public static List<SVGLine> extractLines(List<SVGShape> shapeList, Line2 axis) {
 		List<SVGLine> lineList = new ArrayList<SVGLine>();
-		for (SVGShape shape : shapeList) {
+		for (SVGElement shape : shapeList) {
 			if (shape instanceof SVGLine) {
 				SVGLine line = (SVGLine) shape;
 				addAxiallyAlignedLineToList(axis, lineList, line);
@@ -534,7 +534,7 @@ public class TableStructurer {
 
 	public static List<SVGRect> extractRects(List<SVGShape> shapeList, Line2 axis) {
 		List<SVGRect> rectList = new ArrayList<SVGRect>();
-		for (SVGShape shape : shapeList) {
+		for (SVGElement shape : shapeList) {
 			if (shape instanceof SVGRect) {
 				SVGRect rect = (SVGRect) shape;
 				rectList.add(rect);

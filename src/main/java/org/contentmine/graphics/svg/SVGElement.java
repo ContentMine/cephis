@@ -81,6 +81,7 @@ public class SVGElement extends GraphicsElement {
 
 
 
+	private static final String PARENT_ID = "parentId";
 	public static final Logger LOG = Logger.getLogger(SVGElement.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -107,6 +108,7 @@ public class SVGElement extends GraphicsElement {
 	public final static String YMINUS = "-Y";
 	public final static String YPLUS = "Y";
 	public static final String SVG = ".svg";
+	public final static String SUBTYPE = "subtype"; // subclassed elements which are not full SVG
 
 	public static final String STROKE_DASHARRAY = "stroke-dasharray";
 
@@ -1148,7 +1150,7 @@ public class SVGElement extends GraphicsElement {
 		}
 	}
 
-	public SVGShape createGraphicalBoundingBox() {
+	public SVGElement createGraphicalBoundingBox() {
 		Real2Range r2r = this.getBoundingBox();
 		SVGRect rect = createGraphicalBox(r2r, getBBStroke(), getBBFill(), getBBStrokeWidth(), getBBOpacity());
 		if (this.getAttribute(TRANSFORM) != null) {
@@ -1912,5 +1914,19 @@ public class SVGElement extends GraphicsElement {
 	public String getSingleValueWithClassValue(String value) {
 		SVGElement element = this.getSingleElementWithClassValue(value);
 		return element == null ? null : element.getValue();
+	}
+	
+	public void setSubtype(String subtype) {
+		this.addAttribute(new Attribute(SUBTYPE, subtype));
+	}
+	
+	public String getSubtype() {
+		return this.getAttributeValue(SUBTYPE);
+	}
+
+	public void setParentID(String id) {
+		if (id != null) {
+			this.addAttribute(new Attribute(PARENT_ID, id));
+		}
 	}
 }

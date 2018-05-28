@@ -298,7 +298,7 @@ public class SVGCircle extends SVGShape {
 	}
 
 	@Override
-	protected boolean isGeometricallyEqualTo(SVGShape shape, double epsilon) {
+	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		if (shape != null && shape instanceof SVGCircle) {
 			SVGCircle circle = (SVGCircle) shape;
 			return (this.getXY().isEqualTo(circle.getXY(), epsilon) &&

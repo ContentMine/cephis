@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.svg2xml.paths.Chunk;
 
 import nu.xom.Builder;
@@ -306,7 +305,7 @@ public class SVG2XMLFixtures {
 	
 	public static void drawChunkBoxes(List<Chunk> finalChunkList) {
 		for (Chunk chunk : finalChunkList) {
-			SVGShape bbox = chunk.createGraphicalBoundingBox();
+			SVGElement bbox = chunk.createGraphicalBoundingBox();
 			if (bbox != null) {
 				chunk.appendChild(bbox);
 			}

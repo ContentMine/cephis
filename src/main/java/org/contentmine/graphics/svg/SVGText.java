@@ -14,6 +14,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
+import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.EuclidConstants;
 import org.contentmine.eucl.euclid.EuclidRuntimeException;
 import org.contentmine.eucl.euclid.Real;
@@ -25,14 +26,13 @@ import org.contentmine.eucl.euclid.RealSquareMatrix;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.euclid.Vector2;
-import org.contentmine.eucl.euclid.Angle.Units;
+import org.contentmine.eucl.xml.XMLConstants;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlSub;
 import org.contentmine.graphics.html.HtmlSup;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
 import org.contentmine.graphics.svg.fonts.FontWidths;
-import org.contentmine.eucl.xml.XMLConstants;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -338,7 +338,7 @@ public class SVGText extends SVGElement {
 		//rotate characters to preserve relative orientation
 		if (angle != null && !angle.isEqualTo(0.0, SVGLine.EPS)) {
 			if (RotateText.FALSE.equals(rotateText)) {
-				angle = angle.multiplyBy(-2.0);
+				angle = angle.multiplyBy(0.0);
 			} else if (RotateText.TRUE.equals(rotateText)) {
 				angle = angle.multiplyBy(-1.0);
 			}
@@ -787,7 +787,7 @@ public class SVGText extends SVGElement {
 		return (newText != null);
 	}
 	
-	public SVGShape getBoundingSVGRect() {
+	public SVGElement getBoundingSVGRect() {
 		Real2Range r2r = getBoundingBox();
 		SVGRect rect = new SVGRect();
 		rect.setBounds(r2r);

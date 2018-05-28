@@ -354,7 +354,7 @@ public class SVGRect extends SVGShape {
 	}
 
 	@Override
-	protected boolean isGeometricallyEqualTo(SVGShape shape, double epsilon) {
+	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		if (shape != null && shape instanceof SVGRect) {
 			return this.isEqual((SVGRect) shape, epsilon);
 		}

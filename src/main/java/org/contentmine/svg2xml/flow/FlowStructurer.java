@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGShape;
@@ -36,7 +37,7 @@ public class FlowStructurer {
 	
 	public static List<SVGRect> extractRects(List<SVGShape> shapeList) {
 		List<SVGRect> rectList = new ArrayList<SVGRect>();
-		for (SVGShape shape : shapeList) {
+		for (SVGElement shape : shapeList) {
 			if (shape instanceof SVGRect) {
 				SVGRect rect = (SVGRect) shape;
 				rectList.add(rect);

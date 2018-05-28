@@ -30,6 +30,7 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
+import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
@@ -37,7 +38,8 @@ import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
-import org.contentmine.eucl.euclid.Angle.Units;
+import org.contentmine.eucl.xml.XMLConstants;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.path.Arc;
 import org.contentmine.graphics.svg.path.ClosePrimitive;
@@ -46,8 +48,6 @@ import org.contentmine.graphics.svg.path.LinePrimitive;
 import org.contentmine.graphics.svg.path.MovePrimitive;
 import org.contentmine.graphics.svg.path.PathPrimitiveList;
 import org.contentmine.graphics.svg.path.SVGPathParser;
-import org.contentmine.eucl.xml.XMLConstants;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -157,6 +157,9 @@ public class SVGPath extends SVGShape {
 	
 	public SVGPath(PathPrimitiveList primitiveList, SVGPath reference) {
 		this();
+		if (primitiveList == null) {
+			throw new RuntimeException("null primitiveList");
+		}
 		if (reference != null) {
 			XMLUtil.copyAttributes(reference, this);
 			// might be cached
@@ -311,7 +314,7 @@ public class SVGPath extends SVGShape {
 			SVGPath path = (SVGPath) copy();
 			Real2 orig = path.getOrigin();
 			path.normalizeOrigin();
-			SVGShape line = path.createHorizontalOrVerticalLine(SVGLine.EPS);
+			SVGElement line = path.createHorizontalOrVerticalLine(SVGLine.EPS);
 			symbol.appendChild(path);
 			symbol.setId(path.getId()+".s");
 			List<SVGElement> defsNodes = SVGUtil.getQuerySVGElements(this, "/svg:svg/svg:defs");
@@ -320,7 +323,7 @@ public class SVGPath extends SVGShape {
 		return symbol;
 	}
 
-	private SVGShape createHorizontalOrVerticalLine(double eps) {
+	private SVGElement createHorizontalOrVerticalLine(double eps) {
 		SVGLine  line = null;
 		Real2Array coords = getCoords();
 		if (coords.size() == 2) {
@@ -956,7 +959,7 @@ public class SVGPath extends SVGShape {
 	}
 
 	@Override
-	protected boolean isGeometricallyEqualTo(SVGShape shape, double epsilon) {
+	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		if (shape != null && shape instanceof SVGPath) {
 			return this.hasEqualCoordinates((SVGPath) shape, epsilon);
 		}

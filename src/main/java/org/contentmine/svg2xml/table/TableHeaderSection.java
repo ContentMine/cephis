@@ -10,7 +10,6 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGTitle;
 import org.contentmine.graphics.svg.rule.horizontal.HorizontalElement;
 import org.contentmine.graphics.svg.rule.horizontal.HorizontalRule;
@@ -119,7 +118,7 @@ public class TableHeaderSection extends TableSection {
 						new RealRange(colGroup.getBoundingBox().getYRange().getMax(), yRange.getMax());
 					String title = "HEADERCOLUMN: "+i+"/"+columnManager.getStringValue();
 					SVGTitle svgTitle = new SVGTitle(title);
-					SVGShape plotBox = GraphPlot.createBoxWithFillOpacity(new Real2Range(xRange, yRange1), colors[1], opacity[1]);
+					SVGElement plotBox = GraphPlot.createBoxWithFillOpacity(new Real2Range(xRange, yRange1), colors[1], opacity[1]);
 					plotBox.appendChild(svgTitle);
 					g.appendChild(plotBox);
 				}
@@ -155,7 +154,7 @@ public class TableHeaderSection extends TableSection {
 			HeaderRow headerRow = headerRowList.get(i);
 			for (ColumnGroup columnGroup : headerRow.getOrCreateColumnGroupList()) {
 				Real2Range bbox = columnGroup.getBoundingBox();
-				SVGShape plotBox = GraphPlot.createBoxWithFillOpacity(bbox, colors[1], opacity[1]);
+				SVGElement plotBox = GraphPlot.createBoxWithFillOpacity(bbox, colors[1], opacity[1]);
                                 List<Phrase> colGroupPhrases = columnGroup.getPhrases();
                                 String colGroupPhraseString = "";
                                 for (Phrase phrase : colGroupPhrases) {

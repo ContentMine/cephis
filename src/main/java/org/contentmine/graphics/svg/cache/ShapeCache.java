@@ -18,6 +18,7 @@ import org.contentmine.graphics.svg.SVGPolyline;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.linestuff.Path2ShapeConverter;
+import org.contentmine.graphics.svg.objects.SVGRhomb;
 import org.contentmine.graphics.svg.objects.SVGTriangle;
 
 /** extracts and tidies shapes read from SVG.
@@ -41,6 +42,7 @@ public class ShapeCache extends AbstractCache {
 	private List<SVGPolygon> polygonList;
 	private List<SVGPolyline> polylineList;
 	private List<SVGRect> rectList;
+	private List<SVGRhomb> rhombList;
 	private List<SVGTriangle> triangleList;
 	private List<SVGShape> unknownShapeList;
 	private List<SVGShape> allShapeList;
@@ -62,6 +64,7 @@ public class ShapeCache extends AbstractCache {
 		polygonList = new ArrayList<SVGPolygon>();
 		polylineList = new ArrayList<SVGPolyline>();
 		rectList = new ArrayList<SVGRect>();
+		rhombList = new ArrayList<SVGRhomb>();
 		triangleList = new ArrayList<SVGTriangle>();
 	}
 	
@@ -84,15 +87,19 @@ public class ShapeCache extends AbstractCache {
 					addToListAndSetId(ellipseList, (SVGEllipse) shape);
 				} else if (shape instanceof SVGLine) {
 					addToListAndSetId(lineList, (SVGLine) shape);
-				} else if (shape instanceof SVGPolygon) {
-					addToListAndSetId(polygonList, (SVGPolygon) shape);
-				} else if (shape instanceof SVGPolyline) {
-					addToListAndSetId(polylineList, (SVGPolyline) shape);
+				} else if (shape instanceof SVGRhomb) {
+					// must preceed superclass SVGPolygon
+					addToListAndSetId(getOrCreateRhombList(), (SVGRhomb) shape);
+				} else if (shape instanceof SVGTriangle) {
+					// must preceed superclass SVGPolygon
+					addToListAndSetId(lineList, (SVGLine) shape); // why?
+					triangleList.add((SVGTriangle) shape);
 				} else if (shape instanceof SVGRect) {
 					addToListAndSetId(rectList, (SVGRect) shape);
-				} else if (shape instanceof SVGTriangle) {
-					addToListAndSetId(lineList, (SVGLine) shape);
-					triangleList.add((SVGTriangle) shape);
+				} else if (shape instanceof SVGPolygon) {
+					addToListAndSetId(polygonList, (SVGPolygon) shape); // may be glyphs
+				} else if (shape instanceof SVGPolyline) {
+					addToListAndSetId(polylineList, (SVGPolyline) shape);
 				} else if (shape instanceof SVGPath) {
 					addToListAndSetId(pathList, (SVGPath) shape);
 					LOG.trace("unprocessed shape: "+shape);
@@ -104,6 +111,13 @@ public class ShapeCache extends AbstractCache {
 		}
 		LOG.trace("polylines:: "+polylineList);
 		return;
+	}
+
+	public List<SVGRhomb> getOrCreateRhombList() {
+		if (rhombList == null) {
+			rhombList = new ArrayList<SVGRhomb>();			
+		}
+		return rhombList;
 	}
 
 	/** form id as elementName.toLowerCase()+listcount
@@ -210,6 +224,9 @@ public class ShapeCache extends AbstractCache {
 		polylineList.addAll(polylines);
 		List<SVGRect> rects = SVGRect.extractSelfAndDescendantRects(svgElement);
 		rectList.addAll(rects);
+		// these will be polygons
+		List<SVGRhomb> rhombs = SVGRhomb.extractSelfAndDescendantRhombs(svgElement);
+		rhombList.addAll(rhombs);
 		
 	}
 
@@ -220,6 +237,7 @@ public class ShapeCache extends AbstractCache {
 		SVGElement.removeElementsOutsideBox(polylineList, positiveXBox);
 		SVGElement.removeElementsOutsideBox(polygonList, positiveXBox);
 		SVGElement.removeElementsOutsideBox(rectList, positiveXBox);
+//		SVGElement.removeElementsOutsideBox(rhombList, positiveXBox);
 		SVGElement.removeElementsOutsideBox(triangleList, positiveXBox);
 		SVGElement.removeElementsOutsideBox(unknownShapeList, positiveXBox);
 	}
@@ -231,6 +249,7 @@ public class ShapeCache extends AbstractCache {
 		SVGElement.removeElementsInsideBox(polylineList, positiveXBox);
 		SVGElement.removeElementsInsideBox(polygonList, positiveXBox);
 		SVGElement.removeElementsInsideBox(rectList, positiveXBox);
+//		SVGElement.removeElementsInsideBox(rhombList, positiveXBox);
 		SVGElement.removeElementsInsideBox(triangleList, positiveXBox);
 		SVGElement.removeElementsInsideBox(unknownShapeList, positiveXBox);
 	}
@@ -250,6 +269,7 @@ public class ShapeCache extends AbstractCache {
 		// derived
 		debug(g, rectList, "black", "#ffff77", 0.2);
 		debug(g, polygonList, "black", "orange", 0.3);
+		debug(g, rhombList, "black", "#ff77ff", 0.3);
 		debug(g, triangleList, "black", "#ffeeff", 0.3);
 		debug(g, ellipseList, "black", "red", 0.3);
 		debug(g, lineList, "cyan", "red", 0.3);
@@ -308,9 +328,10 @@ public class ShapeCache extends AbstractCache {
 		if (allShapeList == null) {
 			allShapeList = new ArrayList<SVGShape>();
 		// how to do this properly? help!
-			addShapes(rectList);
 			addShapes(polygonList);
 			addShapes(polylineList);
+			addShapes(rectList);
+			addShapes(rhombList);
 			addShapes(triangleList);
 			addShapes(ellipseList);
 			addShapes(lineList);
@@ -341,6 +362,7 @@ public class ShapeCache extends AbstractCache {
 		polygonList = null;
 		polylineList = null;
 		rectList = null;
+		rhombList = null;
 		triangleList = null;
 		unknownShapeList = null;
 		allShapeList = null;

@@ -14,9 +14,8 @@ import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGPolygon;
 import org.contentmine.graphics.svg.SVGPolyline;
-import org.contentmine.graphics.svg.SVGShape;
 
-public class SVGTriangle extends SVGPolygon {
+public class SVGTriangle extends AbstractSubtypedPolygon {
 	
 	private static final Logger LOG = Logger.getLogger(SVGTriangle.class);
 	static {
@@ -27,25 +26,17 @@ public class SVGTriangle extends SVGPolygon {
 	public static final String TRIANGLE = "triangle";
 	public static final String CONVEX_ARROWHEAD = "MCLCCC";
 	
-	private SVGPolyline polyline;
-	
 	public SVGTriangle() {
 		super();
 		this.setSVGClassName(TRIANGLE);
 	}
 
 	public SVGTriangle(SVGPolygon polygon) {
-		this();
-		setReal2Array(polygon.getReal2Array());
+		super(polygon);
 	}
 
 	public SVGTriangle(SVGPolyline polyline) {
-		this();
-		if (!(polyline.getLineList().size() == 3 && polyline.isClosed())) {
-			throw new RuntimeException("Not a triangle");
-		}
-		this.polyline = polyline;
-		getReal2Array();
+		super(polyline);
 	}
 	
 	public SVGTriangle(Real2Array real2Array) {
@@ -90,7 +81,7 @@ public class SVGTriangle extends SVGPolygon {
 		return triangle;
 	}
 
-	public SVGShape getLine(int serial) {
+	public SVGElement getLine(int serial) {
 		return polyline.getLineList().get(serial % 3);
 	}
 
@@ -151,6 +142,11 @@ public class SVGTriangle extends SVGPolygon {
 	public static List<SVGTriangle> extractSelfAndDescendantTriangles(AbstractCMElement g) {
 		List<SVGPolygon> polygonList = SVGPolygon.extractSelfAndDescendantPolygons(g);
 		return SVGTriangle.extractTriangles(polygonList);
+	}
+
+	@Override
+	protected int getSubtypeSize() {
+		return 3;
 	}
 
 

@@ -29,8 +29,8 @@ import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
-import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.AbstractCMElement;
 
 import nu.xom.Element;
 import nu.xom.Node;
@@ -243,7 +243,7 @@ public class SVGPolyline extends SVGPoly {
 	private static void replaceLineAndCloseUp(int iline, SVGPolyline newLine, List<SVGPolyline> polylineListNew) {
 		polylineListNew.set(iline, newLine);
 		polylineListNew.remove(iline + 1);
-		LOG.debug("POLYSIZE "+polylineListNew.size());
+		LOG.trace("POLYSIZE "+polylineListNew.size());
 	}
 
 	/** merges lines where endA = startB.

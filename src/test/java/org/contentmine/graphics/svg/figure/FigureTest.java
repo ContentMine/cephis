@@ -22,6 +22,7 @@ import org.contentmine.graphics.svg.SVGTextComparator;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.SVGTextComparator.TextComparatorType;
 import org.contentmine.graphics.svg.cache.ComponentCache;
+import org.contentmine.graphics.svg.plot.AbstractPlotBox;
 import org.contentmine.graphics.svg.plot.SVGBarredPoint;
 import org.contentmine.graphics.svg.plot.XPlotBox;
 import org.contentmine.graphics.svg.plot.YPlotBox;
@@ -89,7 +90,7 @@ public class FigureTest {
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputFile);
-		YPlotBox yPlotBox = new YPlotBox();
+		AbstractPlotBox yPlotBox = new YPlotBox();
 		ComponentCache componentCache = new ComponentCache(yPlotBox);
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
 		List<SVGLine> horizontalLines = componentCache.getOrCreateLineCache().getOrCreateHorizontalLineList();

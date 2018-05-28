@@ -132,7 +132,7 @@ public class HiddenGraphicsTest {
 		circle = new SVGCircle(new Real2(120., 120.), 30.);
 		circle.setFill("red");
 		g.appendChild(circle);
-		SVGLine line = new SVGLine(new Real2(100., 200.), new Real2(150, 50.));
+		SVGElement line = new SVGLine(new Real2(100., 200.), new Real2(150, 50.));
 		g.appendChild(line);
 		return g;
 	}

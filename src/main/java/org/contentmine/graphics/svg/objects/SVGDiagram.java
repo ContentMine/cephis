@@ -7,6 +7,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGPath;
@@ -57,7 +58,7 @@ public class SVGDiagram extends SVGG {
 		
 		newG = new SVGG();
 		for (List<SVGShape> shapeList : shapeListList) {
-			for (SVGShape shape : shapeList) {
+			for (SVGElement shape : shapeList) {
 				if (shape == null) {
 					continue;
 				}

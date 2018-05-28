@@ -143,7 +143,7 @@ public abstract class SVGShape extends SVGElement {
 		}
 	}
 
-	public static int indexOfGeometricalEquivalent(List<SVGShape> shapes, SVGShape shape, double epsilon) {
+	public static int indexOfGeometricalEquivalent(List<SVGShape> shapes, SVGElement shape, double epsilon) {
 		int index = -1;
 		if (shape != null) {
 			for (int i = 0; i < shapes.size(); i++) {
@@ -164,7 +164,7 @@ public abstract class SVGShape extends SVGElement {
 	 * @param epsilon tolerance
 	 * @return equivalence
 	 */
-	protected abstract boolean isGeometricallyEqualTo(SVGShape shape, double epsilon);
+	protected abstract boolean isGeometricallyEqualTo(SVGElement shape, double epsilon);
 
 	public void addTitle(String title) {
 		SVGTitle svgTitle = new SVGTitle(title);
@@ -179,7 +179,7 @@ public abstract class SVGShape extends SVGElement {
 	 * @param epsilon tolerance
 	 * @return empty array if none, else serial numbers
 	 */
-	public static IntArray indexesOfGeometricalEquivalent(List<SVGShape> shapes, SVGShape shape, double epsilon) {
+	public static IntArray indexesOfGeometricalEquivalent(List<SVGShape> shapes, SVGElement shape, double epsilon) {
 		IntArray intArray = new IntArray();
 		if (shapes != null && shape != null) {
 			for (int i = 0; i < shapes.size(); i++) {
@@ -205,7 +205,7 @@ public abstract class SVGShape extends SVGElement {
 	public static void removeShadowedShapes(List<? extends SVGShape> shapeList) {
 		Set<String> xmlSet = new HashSet<String>();
 		for (int i = shapeList.size() - 1; i >= 0; i--) {
-			SVGShape shape = shapeList.get(i);
+			SVGElement shape = shapeList.get(i);
 			SVGShape copy = (SVGShape) shape.copy();
 			SVGElement.removeStyleAttributes(copy);
 			SVGElement.removeAttributeByName(copy, "id");
@@ -218,6 +218,23 @@ public abstract class SVGShape extends SVGElement {
 			}
 		}
 	}
+
+	/**
+	 * when a line is created from another element, copy some of the attributes. 
+	 * This is empirical. 
+	 * The ID is not copied nor the class. The originatingElement ID/s is/are set as parent of the line
+	 * IN this way the history of the creation can be followed.
+	 * Will be messy and empirical
+	 * 
+	 * @param origShape
+	 */
+	public void copyAttributesFromOriginatingShape(SVGShape origShape) {
+		this.setFill(origShape.getFill());
+		this.setStroke(origShape.getStroke());
+		this.setOpacity(origShape.getOpacity());
+		this.setParentID(origShape.getId());
+	}
+	
 
 	@Override
 	public String toString() {

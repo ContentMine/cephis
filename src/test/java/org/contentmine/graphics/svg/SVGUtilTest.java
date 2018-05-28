@@ -24,7 +24,6 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.junit.Assert;
@@ -86,7 +85,7 @@ public class SVGUtilTest {
 	public void testAffineTransformationScale() throws Exception { 
 		double[] matrix = new double[6];
 		SVGG svgG = new SVGG();
-		SVGShape rect = new SVGRect(new Real2(100.,  100.), new Real2(150., 170.));
+		SVGElement rect = new SVGRect(new Real2(100.,  100.), new Real2(150., 170.));
 		svgG.appendChild(rect);
 		int width = 300;
 		int height = 300;
@@ -116,7 +115,7 @@ public class SVGUtilTest {
 		Real2 xy00 = new Real2(10.,  10.);
 		SVGCircle circle0 = createCircle(xy00, 20., "red", "black", 2.0);
 		Real2 xy01 = new Real2(50.,  30.);
-		SVGShape rect0 = createRect(xy00, xy01, "red", "black", 1.0);
+		SVGElement rect0 = createRect(xy00, xy01, "red", "black", 1.0);
 		svg.appendChild(circle0);
 		svg.appendChild(rect0);
 		

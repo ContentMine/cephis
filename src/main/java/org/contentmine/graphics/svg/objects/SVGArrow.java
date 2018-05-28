@@ -3,11 +3,11 @@ package org.contentmine.graphics.svg.objects;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGMarker;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGPolyline;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGUtil;
 
 public class SVGArrow extends SVGLine {
@@ -46,7 +46,7 @@ private static final Logger LOG = Logger.getLogger(SVGArrow.class);
 		
 	}
 
-	private SVGShape subline;
+	private SVGElement subline;
 	/** the serial number of the end of the line that is part of the arrow */
 	private int linePoint;
 	private SVGTriangle triangle;

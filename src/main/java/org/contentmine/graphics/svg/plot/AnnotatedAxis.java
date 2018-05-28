@@ -10,6 +10,7 @@ import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.RealArray.Monotonicity;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGLineList;
@@ -80,7 +81,7 @@ public class AnnotatedAxis {
 		this.singleLine = singleLine;
 	}
 
-	public SVGLine getSingleLine() {
+	public SVGElement getSingleLine() {
 		return singleLine;
 	}
 	
@@ -132,7 +133,7 @@ public class AnnotatedAxis {
 		return axisType;
 	}
 
-	SVGLine getOrCreateSingleLine() {
+	SVGElement getOrCreateSingleLine() {
 		LineCache lineCache = plotBox.getComponentCache().getOrCreateLineCache();
 		if (singleLine == null) {
 			if (lineCache.getFullLineBox() != null) {

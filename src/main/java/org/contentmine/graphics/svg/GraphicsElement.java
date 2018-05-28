@@ -32,9 +32,9 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Transform2;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.normalize.AttributeComparer;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Node;
@@ -205,9 +205,10 @@ public class GraphicsElement extends AbstractCMElement implements SVGConstants {
 	}
 
 	/**
-	 * @param fill the fill to set
+	 * @param fill the fill to set ; if null, use "none"
 	 */
 	public GraphicsElement setFill(String fill) {
+		fill = fill == null ? NONE : fill;
 		setSubStyle(StyleBundle.FILL, fill);
 		return this;
 	}
@@ -220,9 +221,11 @@ public class GraphicsElement extends AbstractCMElement implements SVGConstants {
 	}
 
 	/**
-	 * @param stroke the stroke to set
+	 * @param stroke the stroke to set ; if null, use "none"
+	 * 
 	 */
 	public GraphicsElement setStroke(String stroke) {
+		stroke = stroke == null ? NONE : stroke;
 		setSubStyle(StyleBundle.STROKE, stroke);
 		return this;
 	}
@@ -314,9 +317,12 @@ public class GraphicsElement extends AbstractCMElement implements SVGConstants {
 	}
 
 	/**
-	 * @param strokeWidth the stroke width to set
+	 * @param strokeWidth the stroke width to set; if null use 0.0
 	 */
 	public GraphicsElement setStrokeWidth(Double strokeWidth) {
+		if (strokeWidth == null) {
+			strokeWidth = 0.0;
+		}
 		setSubStyle(StyleBundle.STROKE_WIDTH, getDouble(strokeWidth));
 		return this;
 
@@ -328,9 +334,11 @@ public class GraphicsElement extends AbstractCMElement implements SVGConstants {
 	}
 
 	public GraphicsElement setStrokeDashArray(String dashArray) {
-		setSubStyle(StyleBundle.DASHARRAY, dashArray);
-		addAttribute(new Attribute(StyleBundle.DASHARRAY, dashArray));
-		LOG.trace("DASH "+dashArray);
+		if (dashArray != null) {
+			setSubStyle(StyleBundle.DASHARRAY, dashArray);
+			addAttribute(new Attribute(StyleBundle.DASHARRAY, dashArray));
+			LOG.trace("DASH "+dashArray);
+		}
 		return this;
 	}
 

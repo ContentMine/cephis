@@ -249,7 +249,7 @@ public class SVGEllipse extends SVGShape {
 	}
 
 	@Override
-	protected boolean isGeometricallyEqualTo(SVGShape shape, double epsilon) {
+	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		if (shape != null && shape instanceof SVGEllipse) {
 			SVGEllipse ellipse = (SVGEllipse) shape;
 			return (this.getXY().isEqualTo(ellipse.getXY(), epsilon) &&

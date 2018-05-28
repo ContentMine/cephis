@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.objects.SVGContentBox;
@@ -182,7 +183,7 @@ public class GenericRow {
 		return type;
 	}
 
-	public SVGLine getLine() {
+	public SVGElement getLine() {
 		return line;
 	}
 

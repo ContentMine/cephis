@@ -660,8 +660,8 @@ public class SVGLine extends SVGShape {
 	 * @param angleEps to test whether anti/parallel
 	 * @return null if lines not parallel
 	 */
-	public SVGShape getMeanLine(SVGLine line, Angle angleEps) {
-		SVGShape meanLine = null;
+	public SVGElement getMeanLine(SVGLine line, Angle angleEps) {
+		SVGElement meanLine = null;
 		if (isParallelTo(line, angleEps)) {
 			meanLine = new SVGLine(getXY(0).getMidPoint(line.getXY(0)), 
 			                       getXY(1).getMidPoint(line.getXY(1)));
@@ -685,7 +685,7 @@ public class SVGLine extends SVGShape {
 	public static AbstractCMElement plotPointsAsTouchingLines(List<Real2> points, boolean close) {
 		AbstractCMElement g = new SVGG();
 		for (int i = 0; i < points.size() - 1; i++) {
-			SVGLine line = new SVGLine(points.get(i), points.get((i + 1)));
+			SVGElement line = new SVGLine(points.get(i), points.get((i + 1)));
 			g.appendChild(line);
 		}
 		if (close) {
@@ -828,7 +828,7 @@ public class SVGLine extends SVGShape {
 						lineListNew.remove(iline);
 						lineListNew.add(newLine);
 						LOG.trace("after close lines "+lineListNew.size());
-						for (SVGLine line : lineListNew) {
+						for (SVGElement line : lineListNew) {
 							LOG.trace(">> "+line.toXML());
 						}
 						change = true;
@@ -922,7 +922,7 @@ public class SVGLine extends SVGShape {
 	}
 
 	@Override
-	protected boolean isGeometricallyEqualTo(SVGShape shape, double epsilon) {
+	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		if (shape instanceof SVGLine) {
 			return SVGLine.isEqual(this, (SVGLine) shape, epsilon);
 		}
@@ -974,7 +974,7 @@ public class SVGLine extends SVGShape {
 	/**
 	 * @deprecated Use {@link org.contentmine.graphics.svg.SVGLine#getTJunction(List<SVGLine>,int)} instead
 	 */
-	public SVGLine getTJunction(List<SVGLine> horizontalLines, SVGLine verticalLine, int end) {
+	public SVGElement getTJunction(List<SVGLine> horizontalLines, SVGLine verticalLine, int end) {
 		return verticalLine.getTJunctionCrossbar(horizontalLines, end);
 	}
 	
@@ -985,7 +985,7 @@ public class SVGLine extends SVGShape {
 	 * @param end
 	 * @return
 	 */
-	public SVGLine getTJunctionCrossbar(List<SVGLine> perpendicularLines, int end) {
+	public SVGElement getTJunctionCrossbar(List<SVGLine> perpendicularLines, int end) {
 		for (SVGLine perpendicularLine : perpendicularLines) {
 			Real2 midPoint = perpendicularLine.getMidPoint();
 			double dist = midPoint.getDistance(getXY(end));
@@ -994,6 +994,21 @@ public class SVGLine extends SVGShape {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * when a line is created from another element, copy some of the attributes. 
+	 * This is empirical. If originator is not a line, then its fill becomes the stroke.
+	 * The ID is not copied nor the class. The originatingElement ID/s is/are set as parent of the line
+	 * IN this way the history of the creation can be followed.
+	 * Will be messy and empirical
+	 * 
+	 * @param originatingElement
+	 */
+	public void copyAttributesFromOriginating(SVGElement originatingElement) {
+		this.setStroke(originatingElement.getFill());
+		this.setOpacity(originatingElement.getOpacity());
+		this.setParentID(originatingElement.getId());
 	}
 
 

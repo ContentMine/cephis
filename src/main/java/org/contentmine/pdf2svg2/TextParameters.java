@@ -22,16 +22,16 @@ public class TextParameters {
 	private Angle angle;
 
 	public TextParameters(Matrix matrix, PDFont font) {
+		if (matrix == null) {
+			throw new RuntimeException("null matrix");
+		}
 		this.matrix = matrix;
 		this.font = font;
 		double[][] array = matrix.getValuesAsDouble();
 		RealSquareMatrix rsm = new RealSquareMatrix(array);
 		transform2 = new Transform2(rsm);
 		angle = transform2.getAngleOfRotation();
-		LOG.debug("angle "+angle);
-		if (matrix == null) {
-			throw new RuntimeException("null matrix");
-		}
+		LOG.trace("angle "+angle);
 		if (font == null) {
 			throw new RuntimeException("null font");
 		}

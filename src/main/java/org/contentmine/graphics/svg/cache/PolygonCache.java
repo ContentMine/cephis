@@ -7,6 +7,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGPolygon;
+import org.contentmine.graphics.svg.objects.SVGRhomb;
+import org.contentmine.graphics.svg.objects.SVGTriangle;
 
 /** extracts polygons within graphic area.
  * 
@@ -22,7 +24,8 @@ public class PolygonCache extends AbstractCache {
 	private double panelEps = DEFAULT_PANEL_EPS = 3.0;
 
 	private List<SVGPolygon> polygonList;
-//	private List<SVGPolygon> horizontalPanelList;
+//	private List<SVGRhomb> rhombList;
+//	private List<SVGTriangle> triangleList;
 	private double DEFAULT_PANEL_EPS;
 	
 	private PolygonCache() {
@@ -63,5 +66,20 @@ public class PolygonCache extends AbstractCache {
 		superClearAll();
 		polygonList = null;
 	}
+
+//	public List<SVGRhomb> getOrCreateRhombList() {
+//		if (rhombList == null) {
+//			rhombList = new ArrayList<SVGRhomb>();
+//		}
+//		LOG.debug("RL "+rhombList.size());
+//		return rhombList;
+//	}
+//
+//	public List<SVGTriangle> getOrCreateTriangleList() {
+//		if (triangleList == null) {
+//			triangleList = new ArrayList<SVGTriangle>();
+//		}
+//		return triangleList;
+//	}
 
 }

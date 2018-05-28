@@ -11,7 +11,6 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGPolyline;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.graphics.svg.cache.ComponentCache;
 import org.contentmine.graphics.svg.cache.LineCache;
 import org.contentmine.graphics.svg.cache.RectCache;
 import org.contentmine.graphics.svg.cache.ShapeCache;
@@ -42,7 +41,7 @@ public class YPlotBox extends AbstractPlotBox {
 	}
 	
 	public void readAndCreateBarPlot(AbstractCMElement svgElement) {
-		componentCache = new ComponentCache(this);
+		getOrCreateComponentCache();
 		componentCache.setFileRoot(fileRoot);
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
 		// these need changing for bar plots
@@ -114,7 +113,7 @@ public class YPlotBox extends AbstractPlotBox {
 	}
 
 	public void readAndCreateCSVPlot(AbstractCMElement svgElement) {
-		componentCache = new ComponentCache(this);
+		getOrCreateComponentCache();
 		componentCache.setFileRoot(fileRoot);
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
 		makeAxialTickBoxesAndPopulateContents();
@@ -124,9 +123,12 @@ public class YPlotBox extends AbstractPlotBox {
 		extractDataScreenPoints();
 		scaleXYDataPointsToValues();
 		createCSVContent();
+		
 		writeProcessedSVG(svgOutFile);
 		writeCSV(csvOutFile);
 	}
+
+	
 
 
 	// graphics

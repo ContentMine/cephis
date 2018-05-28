@@ -4,7 +4,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGTitle;
 import org.contentmine.svg2xml.util.GraphPlot;
 
@@ -45,7 +44,7 @@ public class TableTitleSection extends TableSection {
 		} else {
 			String title = "TITLE: "+this.getFontInfo()+" //" +this.getStringValue();
 			SVGTitle svgTitle = new SVGTitle(title);
-			SVGShape plotBox = GraphPlot.createBoxWithFillOpacity(boundingBox, colors[0], opacity[0]);
+			SVGElement plotBox = GraphPlot.createBoxWithFillOpacity(boundingBox, colors[0], opacity[0]);
 			plotBox.appendChild(svgTitle);
 			g.appendChild(plotBox);
 			TableContentCreator.shiftToOrigin(svgChunk, g);

@@ -151,7 +151,7 @@ public class PageLayoutAnalyzerNEW {
 		SVGElement.rotateAndAlsoUpdateTransforms(shapeList, chunk.getCentreForClockwise90Rotation(), angle);
 		chunk.removeChildren();
 		XMLUtil.transferChildren(rotatedVerticalText, chunk);
-		for (SVGShape shape : shapeList) {
+		for (SVGElement shape : shapeList) {
 			shape.detach();
 			chunk.appendChild(shape);
 		}

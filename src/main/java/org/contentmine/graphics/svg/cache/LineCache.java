@@ -89,6 +89,9 @@ public class LineCache extends AbstractCache {
 	}
 
 	public List<SVGLine> getOrCreateLineList() {
+		if (lineList == null) {
+			
+		}
 		return lineList;
 	}
 	

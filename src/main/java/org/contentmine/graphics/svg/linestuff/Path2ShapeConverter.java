@@ -28,6 +28,7 @@ import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.StyleAttributeFactory;
 import org.contentmine.graphics.svg.StyleBundle;
+import org.contentmine.graphics.svg.objects.SVGRhomb;
 import org.contentmine.graphics.svg.objects.SVGTriangle;
 import org.contentmine.graphics.svg.path.Arc;
 import org.contentmine.graphics.svg.path.LinePrimitive;
@@ -149,22 +150,6 @@ public class Path2ShapeConverter {
 	}
 	
 	/** 
-	 * Main routine if path list has been read in
-	 * <p>
-	 * @deprecated Use {@link convertPathsToShapes(pathList)}
-	 * 
-	 * @return a list of shapes; each a rect, circle, line, polygon or polyline as appropriate; if none are then the original path
-	 */
-//	@Deprecated
-//	public List<SVGShape> convertPathsToShapes() {
-//		List<SVGShape> shapeListOut = null;
-//		if (pathListIn != null) {
-//			shapeListOut = convertPathsToShapes0(pathListIn);
-//		}
-//		return shapeListOut;
-//	}
-	
-	/** 
 	 * Main routine for list of paths. Doesn't observe splitAtMoveCommands.
 	 * 
 	 * @param pathList
@@ -203,6 +188,9 @@ public class Path2ShapeConverter {
 			List<SVGShape> shapeList = new ArrayList<SVGShape>();
 			for (SVGPath path : pathList) {
 				SVGShape shape = convertPathToShape(path);
+				if (shape instanceof SVGRhomb) {
+					LOG.debug("RHOMB "+shape.toString());
+				}
 				// unconverted path, add as raw
 				if (shape == null) {
 					shape = path;
@@ -242,7 +230,6 @@ public class Path2ShapeConverter {
 				SVGPolyline polyline = ((SVGPolyline) shape);
 				List<SVGLine> lineList = polyline.createLineList();
 				copyAttributes(shape, lineList);
-//				shape.format(decimalPlaces);
 				shapeList1.addAll(lineList);
 			} else {
 				shapeList1.add(shape);
@@ -303,8 +290,8 @@ public class Path2ShapeConverter {
 		SVGShape shape = null;
 		SVGShape polygon = null;
 		SVGPolyline polyline = null;
-		SVGShape triangle = null;
-		SVGShape rect = null;
+		SVGElement triangle = null;
+		SVGElement rect = null;
 		shape = createRectOrAxialLine(path, rectEpsilon);
 		if (shape == null) {
 			shape = path.createRoundedBox(ROUNDED_BOX_EPS);
@@ -325,7 +312,7 @@ public class Path2ShapeConverter {
 				shape = polyline.createSingleLine();
 				if (shape == null) {
 					//Or a polygon?
-					shape = createPolygonRectTriangleOrLine(shape, polyline);
+					shape = createPolygonRectTriangleLineRhomb(polyline);
 					if (shape instanceof SVGPolygon) {
 						polygon = (SVGPolygon) shape;
 						shape = polygon;
@@ -347,15 +334,20 @@ public class Path2ShapeConverter {
 				}
 			}
 		}
-		if (shape instanceof SVGPath) {
+		if (shape != null && shape instanceof SVGPath) {
 			shape = applyHeuristics((SVGPath)shape);
+			shape.copyAttributesFromOriginatingShape(path);
 		}
 		copyAttributesIncludingSpecialCases(path, shape);
-		LOG.trace("shape: "+shape.getClass()+" shape: "+shape);
-		if (shape instanceof SVGPolyline) LOG.trace("POLYLINE "+shape);
 		return shape;
 	}
 
+	/** 
+	 * see also copyAttributesFrom()
+	 * 
+	 * @param path
+	 * @param shape
+	 */
 	private void copyAttributesIncludingSpecialCases(SVGPath path, SVGShape shape) {
 		if (shape != null) {
 			// lines created from thin rects may have a different stroke-width to the original
@@ -375,8 +367,6 @@ public class Path2ShapeConverter {
 			StyleAttributeFactory.deleteOldStyleAttributes(shape);
 			shape.format(decimalPlaces);
 			shape.removeAttribute(SVGPath.D);
-// keep signature as part of history
-//			shape.removeAttribute(SVGPath.SIGNATURE);
 		}
 	}
 
@@ -469,7 +459,7 @@ public class Path2ShapeConverter {
 	 * @return a rect, circle, line, polygon or polyline as appropriate; if none are then the original path
 	 */
 	@Deprecated
-	private SVGShape convertPathToShape() {
+	private SVGElement convertPathToShape() {
 		return convertPathToShape(svgPath);
 	}
 
@@ -490,13 +480,14 @@ public class Path2ShapeConverter {
 			line = (newLine1 == null ? newLine2 : (newLine2 == null ? newLine1 : (newLine1.getLength() > newLine2.getLength() ? newLine1 : newLine2)));
 			if (line != null) {
 				line.setSVGClassName(LINE_FROM_SHAPE);
+				line.copyAttributesFromOriginating(polygon);
 			}
 		}
 		return line;
 	}
 	
 	/**
-	 * Converts a polyline into a narrow line (assumes one end is open)
+	 * Converts a U-shaped polyline into a narrow line (assumes one end is open)
 	 * 
 	 * @return null on failure
 	 */
@@ -515,26 +506,39 @@ public class Path2ShapeConverter {
 		
 		
 	}
-	private SVGShape createPolygonRectTriangleOrLine(SVGShape shape, SVGPolyline polyline) {
+	private SVGShape createPolygonRectTriangleLineRhomb(SVGPolyline polyline) {
+		SVGShape shape = null;
 		if (polyline != null) {
 			SVGPolygon polygon = (SVGPolygon) polyline.createPolygon(rectEpsilon);
 			if (polygon != null) {
 				if (polygon.size() == 2) {
 					shape = new SVGLine(polygon);
+					String stroke = polygon.getFill(); 
+					shape.setStroke(stroke);
 				} else if (polygon.size() == 3) {
-						shape = new SVGTriangle(polygon);
-				} else {
+					shape = new SVGTriangle(polygon);
+				} else if (polygon.size() == 4) {
 					SVGRect rect = polygon.createRect(rectEpsilon);
-					SVGLine line = createLineFromRect(rect);
-					if (line != null) {
-						shape = line;
-					} else if (rect != null){
-						shape = rect;
+					if (rect != null) {
+						SVGLine line = createLineFromRect(rect);
+						if (line != null) {
+							shape = line;
+						} else if (rect != null){
+							shape = rect;
+						}
 					} else {
-						shape = polygon;
+						// test as rhombus
+						SVGRhomb rhomb = polygon.createRhomb(rectEpsilon);
+						shape = rhomb;
 					}
+						
+				} else {
+					shape = polygon;
 				}
 			}
+		}
+		if (shape != null) {
+			shape.copyAttributesFromOriginatingShape(polyline);
 		}
 		return shape;
 	}
@@ -563,7 +567,7 @@ public class Path2ShapeConverter {
 		}
 		for (int i = 0; i < pathList.size(); i++) {
 			SVGPath path = pathList.get(i);
-			SVGShape shape = shapeList.get(i);
+			SVGElement shape = shapeList.get(i);
 			ParentNode parent = path.getParent();
 			LOG.trace("Parent "+parent);
 			if (parent != null) {
@@ -588,7 +592,7 @@ public class Path2ShapeConverter {
 			LOG.trace("Parent " + parent);
 			if (parent != null) {
 				int position = parent.indexOf(path);
-				for (SVGShape shape : shapeList) {
+				for (SVGElement shape : shapeList) {
 					LOG.trace("CONV " + shape.toXML());
 					//if (shape instanceof SVGPath) {
 						//No need to replace as no conversion done
@@ -814,7 +818,7 @@ public class Path2ShapeConverter {
 	public List<SVGLine> splitPolylinesToLines(List<SVGShape> shapeList) {
 		LOG.trace("minLines: "+minLinesInPolyline);
 		List<SVGLine> totalSplitLineList = new ArrayList<SVGLine>();
-		for (SVGShape shape : shapeList) {
+		for (SVGElement shape : shapeList) {
 			if (shape instanceof SVGPolyline) {
 				SVGPoly polyline = (SVGPoly) shape;
 				List<SVGLine> lines = polyline.createLineList();
@@ -1063,7 +1067,7 @@ public class Path2ShapeConverter {
 		for (List<SVGShape> shapeList : shapeListList) {
 			Iterator<SVGShape> it = shapeList.iterator();
 			while (it.hasNext()) {
-				SVGShape shape = it.next();
+				SVGElement shape = it.next();
 				if (shape != null && shape instanceof SVGPath) {
 					String d = ((SVGPath) shape).getDString();
 					if (d != null) {
@@ -1095,10 +1099,10 @@ public class Path2ShapeConverter {
 	 * @return
 	 */
 	@Deprecated
-	public SVGShape createNarrowLine() {
+	public SVGElement createNarrowLine() {
 		maxPathWidth = 1.0;
 		if (svgPath == null) return null;
-		SVGShape line = null;
+		SVGElement line = null;
 		String signature = svgPath.getOrCreateSignatureAttributeValue();
 		if (MLLL.equals(signature) || MLLLL.equals(signature)) {
 			PathPrimitiveList primList = svgPath.getOrCreatePathPrimitiveList();

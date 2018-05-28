@@ -159,6 +159,7 @@ public class ComponentCache extends AbstractCache {
 	TextCache textCache;
 	private PolylineCache polylineCache;
 	private PolygonCache polygonCache;
+	private GlyphCache glyphCache;
 	private LineCache lineCache;
 	private MathCache mathCache;
 	private RectCache rectCache;
@@ -173,6 +174,7 @@ public class ComponentCache extends AbstractCache {
 
 	public String fileRoot;
 	public String debugRoot = "target/debug/";
+	private String glyphDebug = "target/glyphs/";
 	private String imageDebug = "target/images/";
 	private String pathDebug = "target/paths/";
 	private String shapeDebug = "target/shapes/";
@@ -322,6 +324,18 @@ public class ComponentCache extends AbstractCache {
 			LOG.trace("shapes: "+(System.currentTimeMillis() - millis)/1000);
 		}
 		return shapeCache;
+	}
+
+	public GlyphCache getOrCreateGlyphCache() {
+		if (glyphCache == null) {
+			this.glyphCache = new GlyphCache(this);
+			
+			List<SVGPath> pathList = getOrCreatePathCache().getCurrentPathList();
+			for (SVGPath path : pathList) {
+				
+			}
+		}
+		return glyphCache;
 	}
 
 	public LineCache getOrCreateLineCache() {
@@ -688,6 +702,7 @@ public class ComponentCache extends AbstractCache {
 			// first pass creates raw caches which may be elaborated later
 			// GEOMETRY
 			cascadingCacheList.add(getOrCreateShapeCache());
+			cascadingCacheList.add(getOrCreateGlyphCache());
 			cascadingCacheList.add(getOrCreateLineCache());
 			cascadingCacheList.add(getOrCreateRectCache());
 			cascadingCacheList.add(getOrCreatePolylineCache());

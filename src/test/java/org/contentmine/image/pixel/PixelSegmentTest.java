@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGSVG;
@@ -58,7 +59,7 @@ public class PixelSegmentTest {
 		Assert.assertTrue("line", new Real2(44.0, 130.0).isEqualTo(lineList.get(0).getXY(0), 0.001));
 		SVGG g = new SVGG();
 		g.setCSSStyle("stroke:red;stroke-width:1;");
-		for (SVGLine line : lineList) {
+		for (SVGElement line : lineList) {
 			g.appendChild(line.copy());
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File("target/segment/edge.svg"));

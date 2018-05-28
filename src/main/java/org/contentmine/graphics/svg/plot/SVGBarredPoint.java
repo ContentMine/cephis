@@ -11,6 +11,7 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGConstants;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGLineList;
@@ -187,8 +188,8 @@ public class SVGBarredPoint extends SVGG {
 	 * 
 	 * @return
 	 */
-	public SVGShape getErrorShape() {
-		SVGShape shape = null;
+	public SVGElement getErrorShape() {
+		SVGElement shape = null;
 		Real2Range errorBox = getOrCreateErrorBox();
 		if (errorBox.getXRange().getRange() < SVGConstants.EPS ||
 			errorBox.getYRange().getRange() < SVGConstants.EPS) {
@@ -204,8 +205,8 @@ public class SVGBarredPoint extends SVGG {
 	public static List<SVGBarredPoint> extractErrorBarsFromIBeams(List<SVGLine> horizontalLines, List<SVGLine> verticalLines) {
 		List<SVGBarredPoint> barredPoints = new ArrayList<SVGBarredPoint>();
 		for (SVGLine verticalLine : verticalLines) {
-			SVGLine horizontal0 = verticalLine.getTJunctionCrossbar(horizontalLines, 0);
-			SVGLine horizontal1 = verticalLine.getTJunctionCrossbar(horizontalLines, 1);
+			SVGElement horizontal0 = verticalLine.getTJunctionCrossbar(horizontalLines, 0);
+			SVGElement horizontal1 = verticalLine.getTJunctionCrossbar(horizontalLines, 1);
 			if (horizontal0 != null && horizontal1 != null) {
 				SVGBarredPoint barredPoint = new SVGBarredPoint(verticalLine.getMidPoint());
 				List<SVGLine> splitLines = verticalLine.createSplitLines(2);

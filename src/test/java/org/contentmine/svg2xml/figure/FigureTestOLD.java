@@ -21,6 +21,7 @@ import org.contentmine.graphics.svg.SVGTextComparator;
 import org.contentmine.graphics.svg.SVGTextComparator.TextComparatorType;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.cache.ComponentCache;
+import org.contentmine.graphics.svg.plot.AbstractPlotBox;
 import org.contentmine.graphics.svg.plot.YPlotBox;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 
@@ -81,7 +82,7 @@ public class FigureTestOLD {
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputFile);
-		YPlotBox yPlotBox = new YPlotBox();
+		AbstractPlotBox yPlotBox = new YPlotBox();
 		ComponentCache componentCache = new ComponentCache(yPlotBox);
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
 		SVGG g = extractErrorBars(componentCache);
@@ -97,8 +98,8 @@ public class FigureTestOLD {
 		List<SVGLine> verticalLines = componentCache.getOrCreateLineCache().getOrCreateVerticalLineList();
 		SVGG g = new SVGG();
 		for (SVGLine verticalLine : verticalLines) {
-			SVGLine horizontal0 = getTJunction(horizontalLines, verticalLine, 0);
-			SVGLine horizontal1 = getTJunction(horizontalLines, verticalLine, 1);
+			SVGElement horizontal0 = getTJunction(horizontalLines, verticalLine, 0);
+			SVGElement horizontal1 = getTJunction(horizontalLines, verticalLine, 1);
 			if (horizontal0 != null && horizontal1 != null) {
 				AbstractCMElement gt = new SVGG();
 				gt.appendChild(verticalLine.copy());
@@ -110,7 +111,7 @@ public class FigureTestOLD {
 		return g;
 	}
 
-	private SVGLine getTJunction(List<SVGLine> horizontalLines, SVGLine verticalLine, int end) {
+	private SVGElement getTJunction(List<SVGLine> horizontalLines, SVGLine verticalLine, int end) {
 		for (SVGLine horizontalLine : horizontalLines) {
 			Real2 midPoint = horizontalLine.getMidPoint();
 			double dist = midPoint.getDistance(verticalLine.getXY(end));

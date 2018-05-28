@@ -15,10 +15,10 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
-import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.svg.linestuff.Path2ShapeConverter;
 import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.linestuff.Path2ShapeConverter;
 
 import nu.xom.Attribute;
 import nu.xom.Builder;
