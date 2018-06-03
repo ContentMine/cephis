@@ -39,7 +39,7 @@ public class CacheIT {
 	public void testSingleFigure() throws IOException {
 		String fileRoot = "10.1186_s12885-016-2685-3_page7";
 		ComponentCache cache = new ComponentCache();
-		File inputSVGFile = new File(SVGHTMLFixtures.FIGURE_DIR, fileRoot+".svg");
+		File inputSVGFile = new File(SVGHTMLFixtures.G_S_FIGURE_DIR, fileRoot+".svg");
 		cache.readGraphicsComponentsAndMakeCaches(inputSVGFile);
 		List<Real2Range> boundingBoxes = cache.getMergedBoundingBoxes(2.0);
 		SVGCacheTest.displayBoxes(new File("target/plot/debug"), cache, fileRoot, boundingBoxes, "pink");
@@ -50,7 +50,7 @@ public class CacheIT {
 	public void testCreateHTMLPageAllCrop() throws IOException {
 		HtmlElement div = new HtmlDiv();
 		for (int i = 1; i <= 9; i++) {
-			File svgFile = new File(SVGHTMLFixtures.PAGE_DIR, "varga/compact/fulltext-page"+i+".svg");
+			File svgFile = new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga/compact/fulltext-page"+i+".svg");
 			ComponentCache cache = new ComponentCache();
 			cache.readGraphicsComponentsAndMakeCaches(svgFile);
 			TextCache textCache = cache.getOrCreateTextCache();

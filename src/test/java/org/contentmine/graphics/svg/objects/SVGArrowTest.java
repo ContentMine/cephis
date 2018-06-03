@@ -31,7 +31,7 @@ public class SVGArrowTest {
 	// these files already have triangles
 	@Test
 	public void testArrowFactory() throws FileNotFoundException {
-		AbstractCMElement g = (AbstractCMElement) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.OBJECTS_DIR, "arrows.svg")).getChildElements().get(0);
+		AbstractCMElement g = (AbstractCMElement) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_OBJECTS_DIR, "arrows.svg")).getChildElements().get(0);
 		List<SVGTriangle> triangleList = SVGTriangle.extractSelfAndDescendantTriangles(g);
 		Assert.assertEquals(2,  triangleList.size());
 		List<SVGLine> lineList = SVGLine.extractSelfAndDescendantLines(g);
@@ -61,7 +61,7 @@ public class SVGArrowTest {
 	 * @throws FileNotFoundException
 	 */
 	public void testArrowFactory1() throws FileNotFoundException {
-		AbstractCMElement g = (AbstractCMElement) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.OBJECTS_DIR, "arrows.svg")).getChildElements().get(0);
+		AbstractCMElement g = (AbstractCMElement) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_OBJECTS_DIR, "arrows.svg")).getChildElements().get(0);
 		ArrowFactory arrowFactory = new ArrowFactory();
 		arrowFactory.setMarkerEnd(SVGArrow.ARROWHEAD);
 		arrowFactory.setStroke("red");
@@ -76,7 +76,7 @@ public class SVGArrowTest {
 	
 	@Test
 	public void testMultiArrows() throws FileNotFoundException {
-		AbstractCMElement g = (AbstractCMElement) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.OBJECTS_DIR, "multiTextBox.svg")).getChildElements().get(0);
+		AbstractCMElement g = (AbstractCMElement) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_OBJECTS_DIR, "multiTextBox.svg")).getChildElements().get(0);
 		ArrowFactory arrowFactory = new ArrowFactory();
 		arrowFactory.setMarkerEnd(SVGArrow.ARROWHEAD);
 		arrowFactory.setStroke("orange");

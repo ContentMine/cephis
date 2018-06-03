@@ -22,7 +22,7 @@ public class LinePrimitiveTest {
 
 	@Test
 	public void testLinePrimitive() {
-		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.PATHS_DIR, "hollowcorner.svg"));
+		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_PATHS_DIR, "hollowcorner.svg"));
 		SVGPath svgPath = SVGPath.extractSelfAndDescendantPaths(svgElement).get(0);
 		Assert.assertEquals("sig",  "MLCLLLCL", svgPath.getOrCreateSignatureAttributeValue());
 		PathPrimitiveList primList = svgPath.getOrCreatePathPrimitiveList();
@@ -42,7 +42,7 @@ public class LinePrimitiveTest {
 	
 	@Test
 	public void testCalculateMeanLine() {
-		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.PATHS_DIR, "hollowcorner.svg"));
+		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_PATHS_DIR, "hollowcorner.svg"));
 		SVGPath svgPath = SVGPath.extractSelfAndDescendantPaths(svgElement).get(0);
 		PathPrimitiveList primList = svgPath.getOrCreatePathPrimitiveList();
 		LinePrimitive line1 = (LinePrimitive) primList.get(1);

@@ -75,7 +75,7 @@ public class ForestPlotTest {
 		
 		Multiset<Object> colorSet0 = HashMultiset.create();
 		colorSet0.addAll(colorList);
-		Iterable<Multiset.Entry<Object>> colorIterable = MultisetUtil.getObjectEntriesSortedByCount(colorSet0);
+		Iterable<Multiset.Entry<Object>> colorIterable = MultisetUtil.getEntriesSortedByCount(colorSet0);
 		for (Entry<Object> entry : colorIterable) {
 			int count = entry.getCount(); 
 			int rgb = ((RGBColor) entry.getElement()).getRGBInteger();

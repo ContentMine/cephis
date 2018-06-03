@@ -119,7 +119,7 @@ public class SVGPathDStringParserTest {
 
 	@Test
 	public void testRelativeCubic1() {
-		AbstractCMElement svgElement = SVGSVG.readAndCreateSVG(new File(SVGHTMLFixtures.PATHS_DIR, "relcubics.svg"));
+		AbstractCMElement svgElement = SVGSVG.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_PATHS_DIR, "relcubics.svg"));
 		SVGPath path = SVGPath.extractPaths(svgElement).get(0);
 		path.detach();
 		path.getAttribute("stroke").detach();
@@ -144,7 +144,7 @@ public class SVGPathDStringParserTest {
 	
 	@Test
 	public void testRelativeCubic1a() {
-		AbstractCMElement svgElement = SVGSVG.readAndCreateSVG(new File(SVGHTMLFixtures.PATHS_DIR, "relcubics.svg"));
+		AbstractCMElement svgElement = SVGSVG.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_PATHS_DIR, "relcubics.svg"));
 		SVGPath path = SVGPath.extractPaths(svgElement).get(0);
 		path.detach();
 		path.getAttribute("stroke").detach();

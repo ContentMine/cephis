@@ -61,7 +61,7 @@ public class PageCacheTest {
 	 */
 	@Test
 	public void testDisplayStyles() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "styledequations.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "styledequations.svg");
 		SVGElement svgElement = SVGElement.readAndCreateSVG(svgFile);
 		List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgElement));
 		StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
@@ -76,7 +76,7 @@ public class PageCacheTest {
 	 */
 	@Test
 	public void testDissectMainPage() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "styledequations.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "styledequations.svg");
 		File targetDir = new File("target/demos/varga/");
 		SVGElement svgElement = SVGElement.readAndCreateSVG(svgFile);
 		List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgElement));
@@ -132,7 +132,7 @@ public class PageCacheTest {
 	 */
 	@Test
 	public void testPageStyleCache() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "styledequations.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "styledequations.svg");
 		File targetDir = new File("target/demos/varga/");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
@@ -189,7 +189,7 @@ public class PageCacheTest {
 		
 		for (int ipage = 1; ipage <= 9; ipage++) {
 		
-		File pageFile = new File(SVGHTMLFixtures.PAGE_DIR, "varga/box/"+FULLTEXT_PAGE+ipage+".box.svg");
+		File pageFile = new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga/box/"+FULLTEXT_PAGE+ipage+".box.svg");
 		AbstractCMElement pageElement = SVGElement.readAndCreateSVG(pageFile);
 		List<SVGRect> rectList = SVGRect.extractSelfAndDescendantRects(pageElement);
 		PageCache pageCache = new PageCache();  // just for the test
@@ -255,7 +255,7 @@ public class PageCacheTest {
 		
 		int ipage = 7;
 		
-		File pageFile = new File(SVGHTMLFixtures.PAGE_DIR, "varga/box/"+FULLTEXT_PAGE+ipage+".box.svg");
+		File pageFile = new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga/box/"+FULLTEXT_PAGE+ipage+".box.svg");
 		AbstractCMElement pageElement = SVGElement.readAndCreateSVG(pageFile);
 		List<SVGRect> rectList = SVGRect.extractSelfAndDescendantRects(pageElement);
 		PageCache pageCache = new PageCache();  // just for the test
@@ -333,7 +333,7 @@ public class PageCacheTest {
 	 */
 	@Test
 	public void testAdjustTextBoxSizesAutomatically() {
-		File svgFile = new File(SVGHTMLFixtures.LAYOUT_DIR, "asgt/middle7.text.svg");
+		File svgFile = new File(SVGHTMLFixtures.GR_LAYOUT_DIR, "asgt/middle7.text.svg");
 		File targetDir = new File("target/demos/varga/");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);

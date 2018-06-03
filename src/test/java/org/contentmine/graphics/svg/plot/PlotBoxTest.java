@@ -32,7 +32,7 @@ public class PlotBoxTest {
 			return;
 		}
 		AbstractPlotBox plotBox = new XYPlotBox();
-		File inputSVGFile = new File(SVGHTMLFixtures.PLOT_DIR, "bakker2014-page11b.svg");
+		File inputSVGFile = new File(SVGHTMLFixtures.G_S_PLOT_DIR, "bakker2014-page11b.svg");
 		plotBox.setCsvOutFile(new File("target/plot/bakker1.csv"));
 		plotBox.setSvgOutFile(new File("target/plot/bakker1.svg"));
 		plotBox.readAndCreateCSVPlot(inputSVGFile);
@@ -49,7 +49,7 @@ public class PlotBoxTest {
 //		String fileRoot = "kerr";
 //		String fileRoot = "dong";
 		AbstractPlotBox plotBox = new XYPlotBox();
-		File inputSVGFile = new File(SVGHTMLFixtures.PLOT_DIR, fileRoot+"plot.svg");
+		File inputSVGFile = new File(SVGHTMLFixtures.G_S_PLOT_DIR, fileRoot+"plot.svg");
 		plotBox.readAndCreateCSVPlot(inputSVGFile);
 		plotBox.writeProcessedSVG(new File(TARGET_PLOT+fileRoot+".svg"));
 		plotBox.writeCSV(new File(TARGET_PLOT+fileRoot+".csv"));
@@ -60,7 +60,7 @@ public class PlotBoxTest {
 	public void test6400831a1() throws IOException {
 		String fileRoot = "6400831a1";
 		AbstractPlotBox plotBox = new XYPlotBox();
-		File inputSVGFile = new File(SVGHTMLFixtures.PLOT_DIR, fileRoot+".svg");
+		File inputSVGFile = new File(SVGHTMLFixtures.G_S_PLOT_DIR, fileRoot+".svg");
 		plotBox.setCsvOutFile(new File(TARGET_PLOT+fileRoot+".csv"));
 		plotBox.readAndCreateCSVPlot(inputSVGFile);
 		plotBox.writeProcessedSVG(new File(TARGET_PLOT+fileRoot+".svg"));
@@ -74,7 +74,7 @@ public class PlotBoxTest {
 	public void testScatter13148() throws IOException {
 		String fileRoot = "13148-016-0230-5fig2";
 		AbstractPlotBox plotBox = new XYPlotBox();
-		File inputSVGFile = new File(SVGHTMLFixtures.PLOT_DIR, fileRoot+".svg");
+		File inputSVGFile = new File(SVGHTMLFixtures.G_S_PLOT_DIR, fileRoot+".svg");
 		plotBox.setCsvOutFile(new File(TARGET_PLOT+fileRoot+".csv"));
 		try {
 			plotBox.readAndCreateCSVPlot(inputSVGFile);
@@ -89,7 +89,7 @@ public class PlotBoxTest {
 	@Test
 	@Ignore // too many for routine tests
 	public void testTilburgVectors() throws IOException {
-		File TILBURG_DIR = new File(SVGHTMLFixtures.PLOT_DIR, "tilburgVectors");
+		File TILBURG_DIR = new File(SVGHTMLFixtures.G_S_PLOT_DIR, "tilburgVectors");
 		String[] roots = {
 				"10.1186_s12885-016-2685-3_1",
 				"10.1186_s12889-016-3083-0_1",
@@ -137,7 +137,7 @@ public class PlotBoxTest {
 	@Test
 	@Ignore
 	public void testTilburgVector0() throws IOException {
-		File TILBURG_DIR = new File(SVGHTMLFixtures.PLOT_DIR, "tilburgVectors");
+		File TILBURG_DIR = new File(SVGHTMLFixtures.G_S_PLOT_DIR, "tilburgVectors");
 		String root =
 // 25 examples				
 //				"10.1186_s12885-016-2685-3_1"        // OK

@@ -38,7 +38,7 @@ public class MathCacheTest {
 	
 	@Test
 	public void testStyles() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -51,7 +51,7 @@ public class MathCacheTest {
 	@Test
 	@Ignore
 	public void testLines() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		MathCache mathCache = cache.getOrCreateMathCache();
@@ -68,7 +68,7 @@ public class MathCacheTest {
 	@Test
 	@Ignore
 	public void testIndents() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		File targetDir = new File("target/demos/varga/");
 		ComponentCache componentCache = new ComponentCache();
 		componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
@@ -85,7 +85,7 @@ public class MathCacheTest {
 	@Test
 	@Ignore
 	public void testJoinLinesAtIndents() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		File targetDir = new File("target/demos/varga/");
 		ComponentCache componentCache = new ComponentCache();
 		componentCache.readGraphicsComponentsAndMakeCaches(svgFile);

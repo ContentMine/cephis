@@ -45,7 +45,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	@Test
 	public void testAsciiCompact() {
 		ComponentCache componentCache = new ComponentCache();
-		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.FONTS_DIR, "bugascii.svg"));
+		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_FONTS_DIR, "bugascii.svg"));
 		TextCache textCache = new TextCache(componentCache);
 		textCache.setUseCompactOutput(true);
 		textCache.extractTexts(svgElement);
@@ -63,7 +63,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	// FIXME
 	public void testCompactBug() {
 		ComponentCache componentCache = new ComponentCache();
-		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.FONTS_DIR, "bug.svg"));
+		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_FONTS_DIR, "bug.svg"));
 		TextCache textCache = new TextCache(componentCache);
 		textCache.setUseCompactOutput(true);
 		textCache.extractTexts(svgElement);
@@ -81,7 +81,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	@Test
 	public void testExtendBug() {
 		ComponentCache componentCache = new ComponentCache();
-		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.FONTS_DIR, "bug.svg"));
+		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_FONTS_DIR, "bug.svg"));
 		TextCache textCache = new TextCache(componentCache);
 		textCache.setUseCompactOutput(false);
 		textCache.extractTexts(svgElement);
@@ -95,7 +95,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	
 	@Test
 	public void testStyles() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -107,7 +107,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 		
 	@Test
 	public void testLines() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -123,7 +123,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 		
 	@Test
 	public void testIndents() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache componentCache = new ComponentCache();
 		componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = componentCache.getOrCreateTextCache();
@@ -143,7 +143,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	@Test
 	
 	public void testJoinLinesAtIndents() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		File targetDir = new File("target/math/demos/varga/");
 		ComponentCache componentCache = new ComponentCache();
 		componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
@@ -158,7 +158,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 
 	@Test
 	public void testMinorFontSizes() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -169,7 +169,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	@Test
 	@Ignore // not yet ready
 	public void testMinorFontTextLines() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -195,7 +195,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 		
 	@Test
 	public void testAddSuscript0() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equation1.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equation1.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -207,7 +207,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 
 	@Test
 	public void testAddSuscripts() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -219,7 +219,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 
 	@Test
 	public void testAddSuscriptsAndJoin0() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations2.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations2.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -236,7 +236,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 
 	@Test
 	public void testAddSuscriptsAndJoin() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -254,7 +254,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 
 	@Test
 	public void testAddSuscriptsAndJoin1() {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -267,7 +267,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 
 	@Test
 	public void testCreateHTML2() throws IOException {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations2.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations2.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -278,7 +278,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 
 	@Test
 	public void testCreateHTML() throws IOException {
-		File svgFile = new File(SVGHTMLFixtures.MATH_DIR, "equations7.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_MATH_DIR, "equations7.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -290,7 +290,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	
 	@Test
 	public void testCreateHTMLPage2() throws IOException {
-		File svgFile = new File(SVGHTMLFixtures.PAGE_DIR, "varga/compact/page2.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga/compact/page2.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();
@@ -304,7 +304,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	public void testCreateWrappedColumn() throws IOException {
 		HtmlElement div = new HtmlDiv();
 		int page = 7;
-		File svgFile = new File(SVGHTMLFixtures.PAGE_DIR, "varga/compact/fulltext-page"+page+".svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga/compact/fulltext-page"+page+".svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		TextCache textCache = cache.getOrCreateTextCache();

@@ -89,7 +89,7 @@ public class PageCacheIT {
 	 */
 	@Test
 	public void testArticlesWhitespace() {
-		File[] journalDirs = SVGHTMLFixtures.TABLE_DIR.listFiles();
+		File[] journalDirs = SVGHTMLFixtures.G_S_TABLE_DIR.listFiles();
 		for (File journalDir : journalDirs) {
 			System.out.print("*");
 			String root = journalDir.getName();
@@ -113,7 +113,7 @@ public class PageCacheIT {
 	 */
 	@Test
 	public void testSuperPixelArrayForArticles() {
-		File[] journalDirs = SVGHTMLFixtures.TABLE_DIR.listFiles();
+		File[] journalDirs = SVGHTMLFixtures.G_S_TABLE_DIR.listFiles();
 		for (File journalDir : journalDirs) {
 			if (!journalDir.isDirectory()) continue;
 			System.out.println(">>"+journalDir);
@@ -151,7 +151,7 @@ public class PageCacheIT {
 	public void testArticleWhitespace() {
 		String root = "10.1136_bmjopen-2016-011048";
 		File outDir = new File(SVGHTMLFixtures.TARGET_TABLE_CACHE_DIR, root);
-		File journalDir = new File(SVGHTMLFixtures.TABLE_DIR, root);
+		File journalDir = new File(SVGHTMLFixtures.G_S_TABLE_DIR, root);
 		File svgDir = new File(journalDir, "svg");
 		for (File svgFile : svgDir.listFiles()) {
 			System.out.print(".");
@@ -169,7 +169,7 @@ public class PageCacheIT {
 	public void testSuperPixelArray() {
 		String root = "10.1136_bmjopen-2016-011048";
 		File outDir = new File(SVGHTMLFixtures.TARGET_TABLE_CACHE_DIR, root);
-		File journalDir = new File(SVGHTMLFixtures.TABLE_DIR, root);
+		File journalDir = new File(SVGHTMLFixtures.G_S_TABLE_DIR, root);
 		File svgDir = new File(journalDir, "svg");
 		SuperPixelArray versoPixelArray = null;
 		SuperPixelArray rectoPixelArray = null;
@@ -207,7 +207,7 @@ public class PageCacheIT {
 	 */
 	@Test
 	public void testDisplayPage() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "styledequations.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "styledequations.svg");
 		ComponentCache cache = new ComponentCache();
 		cache.readGraphicsComponentsAndMakeCaches(svgFile);
 		List<SVGText> svgTexts = cache.getOrCreateTextCache().getOrCreateOriginalTextList();
@@ -221,7 +221,7 @@ public class PageCacheIT {
 	@Test
 	public void testPages() {
 		for (int i = 1; i <= 9; i++) {
-			File svgFile = new File(SVGHTMLFixtures.PAGE_DIR, "varga/compact/fulltext-page"+i+".svg");
+			File svgFile = new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga/compact/fulltext-page"+i+".svg");
 			File targetDir = new File("target/demos/varga/");
 			ComponentCache cache = new ComponentCache();
 			cache.readGraphicsComponentsAndMakeCaches(svgFile);
@@ -246,7 +246,7 @@ public class PageCacheIT {
 			RealRange leftXRange = new RealRange(13, 300);
 			RealRange rightXRange = new RealRange(200, 600);
 			RealRange yRange = new RealRange(63, 683);
-			File cTreeDir = new File(SVGHTMLFixtures.PAGE_DIR, "TimmermansPLOS");
+			File cTreeDir = new File(SVGHTMLFixtures.G_S_PAGE_DIR, "TimmermansPLOS");
 			List<Real2Range> boxes = Arrays.asList(new Real2Range[] {
 	//				new Real2Range(leftXRange, yRange),
 					new Real2Range(rightXRange, yRange),

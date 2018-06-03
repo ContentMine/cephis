@@ -30,7 +30,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	public void testDocument() {
 		DocumentCache documentCache = new DocumentCache();
 		documentCache.setCreateSummaryBoxes(true);
-		documentCache.processSVGInCTreeDirectory(new File(SVGHTMLFixtures.PAGE_DIR, "varga1"));
+		documentCache.processSVGInCTreeDirectory(new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga1"));
 		// superimposed pages
 		SVGElement g = documentCache.getOrCreateConvertedSVGElement();
 		Assert.assertNotNull("non-null g", g);
@@ -48,7 +48,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 		
 		DocumentCache documentCache = new DocumentCache();
 		LOG.warn("incomplete, pageLayout not fixed");
-		documentCache.analyzePages(SVGHTMLFixtures.PAGE_DIR, PageLayout.AMSOCGENE_RESOURCE, 9, "varga1/", new File("target/cache"));
+		documentCache.analyzePages(SVGHTMLFixtures.G_S_PAGE_DIR, PageLayout.AMSOCGENE_RESOURCE, 9, "varga1/", new File("target/cache"));
 //		documentCache.analyzePages(PageLayout.BMC, 8, "bmc/1471-2148-11-329/", new File("target/cache"));
 //		documentCache.analyzePages(PageLayout.PLOSONE2016, 15, "TimmermansPLOS/", new File("target/cache"));
 	}
@@ -57,7 +57,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	@Test
 	public void testCreateHTMLPageAllCrop() throws IOException {
 		File targetDir = new File("target/document/varga1");
-		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.PAGE_DIR, "varga1/"), targetDir);
+		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga1/"), targetDir);
 		DocumentCache documentCache = new DocumentCache(targetDir);
 		documentCache.processSVGInCTreeDirectory(targetDir);
 		XMLUtil.debug(documentCache.getHtmlDiv(), new File("target/html/pages.html"), 1);
@@ -68,7 +68,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	public void testCropBMC() throws IOException {
 		// 295
 		File targetDir = new File("target/document/bmc/12936_2017_Article_1948/");
-		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.CORPUS_DIR, "mosquitos/12936_2017_Article_1948/"), targetDir);
+		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.G_S_CORPUS_DIR, "mosquitos/12936_2017_Article_1948/"), targetDir);
 		DocumentCache documentCache = new DocumentCache(targetDir);
 		documentCache.processSVGInCTreeDirectory(targetDir);
 		XMLUtil.debug(documentCache.getHtmlDiv(), new File(targetDir, "pages.html"), 1);

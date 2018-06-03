@@ -27,7 +27,7 @@ public class StyleRecordIT {
 	private static final String BAKKER_SVG_DIR = CHESConstants.SRC_TEST_TOP+"/graphics/svg/bar/BakkerVanDijkWicherts2012/svg/";
 	@Test
 		public void testCreateStyleRecordsFromPage() {
-			File infile = new File(SVGHTMLFixtures.TEXT_DIR, "CM_pdf2svg_BMCCancer_9_page4.svg");
+			File infile = new File(SVGHTMLFixtures.G_S_TEXT_DIR, "CM_pdf2svg_BMCCancer_9_page4.svg");
 			AbstractCMElement svgElement = SVGElement.readAndCreateSVG(infile);
 			StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
 			StyleRecordSet cssStyleRecordSet = styleRecordFactory.createStyleRecordSet(svgElement);
@@ -128,7 +128,7 @@ public class StyleRecordIT {
 	 */
 	@Test
 	public void testGetSingleStyleRecordByStyle() {
-		File infile = new File(SVGHTMLFixtures.TEXT_DIR, "CM_pdf2svg_BMCCancer_9_page4.svg");
+		File infile = new File(SVGHTMLFixtures.G_S_TEXT_DIR, "CM_pdf2svg_BMCCancer_9_page4.svg");
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(infile);
 		StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
 		StyleRecordSet cssStyleRecordSet = styleRecordFactory.createStyleRecordSet(svgElement);

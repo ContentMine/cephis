@@ -28,7 +28,7 @@ public class MoleculeBuilderTest {
 	@Test
 	public void testCreateFullMolecule() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "atomSymbolsFromPaths", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "atomSymbolsFromPaths", "glyphs/figure1.M1");
 	}
 
 	/*
@@ -81,7 +81,7 @@ Edges: [
 	@Test
 	public void testCreateSimpleMolecule0() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "simpleMolecule0", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "simpleMolecule0", "glyphs/figure1.M1");
 
 	}
 
@@ -92,7 +92,7 @@ Edges: [
 	@Test
 	public void testDoubleBond() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "doubleBond", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "doubleBond", "glyphs/figure1.M1");
 
 	}
 
@@ -103,7 +103,7 @@ Edges: [
 	@Test
 	public void testHetero() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "hetero", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "hetero", "glyphs/figure1.M1");
 
 	}
 
@@ -115,7 +115,7 @@ Edges: [
 	@Test
 	public void testStubJoin() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "stubJoin", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "stubJoin", "glyphs/figure1.M1");
 
 	}
 
@@ -126,7 +126,7 @@ Edges: [
 	@Test
 	public void testUndeletedAtom() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "propionic", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "propionic", "glyphs/figure1.M1");
 
 	}
 
@@ -137,7 +137,7 @@ Edges: [
 	@Test
 	public void testFormic() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "formic", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "formic", "glyphs/figure1.M1");
 
 	}
 
@@ -148,7 +148,7 @@ Edges: [
 	@Test
 	public void testM1a() throws IOException {
 		MoleculeBuilder moleculeBuilder = new MoleculeBuilder();
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "m1", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "m1", "glyphs/figure1.M1");
 
 	}
 
@@ -163,7 +163,7 @@ Edges: [
 		// 0.1 misses a join while 0.3 fails to join an N-N bond.
 		// needs more work
 		moleculeBuilder.setEndDelta(0.2);
-		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.SVG_DIR, "doubleBond1", "glyphs/figure1.M1");
+		moleculeBuilder.createTestMoleculeAndDefaultOutput(SVGHTMLFixtures.GR_SVG_DIR, "doubleBond1", "glyphs/figure1.M1");
 
 	}
 
@@ -173,7 +173,7 @@ Edges: [
 		String dirRoot = "molecules/cypMolecules";
 		String fileroot = "m1";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		SVGElement svgElement = SVGElement.readAndCreateSVG(inputFile);
 		XPlotBox xPlotBox = new XPlotBox();

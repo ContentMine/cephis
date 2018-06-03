@@ -24,7 +24,7 @@ public class CorpusCacheTest {
 	@Test
 	@Ignore // toolong // FIXME
 	public void testCorpusCache() {
-		File corpusDir = new File(SVGHTMLFixtures.CORPUS_DIR, "mosquitos/");
+		File corpusDir = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, "mosquitos/");
 		if (!corpusDir.exists()) {
 			LOG.info("directory not found: "+corpusDir);
 			return;
@@ -43,7 +43,7 @@ public class CorpusCacheTest {
 	@Test
 	@Ignore // toolong // FIXME
 	public void testCorpusCache1() {
-		File corpusDir = new File(SVGHTMLFixtures.CORPUS_DIR, "mosquitos1/");
+		File corpusDir = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, "mosquitos1/");
 		if (!corpusDir.exists()) {
 			LOG.info("directory not found: "+corpusDir);
 			return;

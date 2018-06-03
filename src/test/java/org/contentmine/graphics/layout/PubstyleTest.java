@@ -98,7 +98,7 @@ public class PubstyleTest {
 	@Test
 	public void testGuessPubstyle() {
 		PubstyleManager pubstyleManager = new PubstyleManager();
-		File inputSvgFile = new File(SVGHTMLFixtures.CORPUS_DIR, 
+		File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, 
 				"mosquitos1/12936_2017_Article_1948/svg/fulltext-page1.svg.compact.svg");
 		SVGPubstyle pubstyle = pubstyleManager.guessPubstyleFromFirstPage(inputSvgFile);
 		Assert.assertNotNull("bmc", pubstyle);
@@ -172,7 +172,7 @@ public class PubstyleTest {
 			} else {
 				pubstyleHeader = pubstyle.getHeader(PageType.P2);
 			}
-			File inputSvgFile = new File(SVGHTMLFixtures.CORPUS_DIR, 
+			File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, 
 					"mosquitos1/12936_2017_Article_1948/svg/fulltext-page"+ipage+".svg.compact.svg");
 			SVGElement inputSVGElement = SVGElement.readAndCreateSVG(inputSvgFile);
 			Map<String, String> keyValues = pubstyleHeader.extractKeyValues(inputSVGElement);
@@ -197,7 +197,7 @@ public class PubstyleTest {
 		for (int page = start; page <= end; page++) {
 			LOG.debug("===================== current "+page+"====================");
 			pubstyle.setCurrentPage(page);
-			File inputSvgFile = new File(SVGHTMLFixtures.CORPUS_DIR, pageRoot+page+".svg.compact.svg");
+			File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, pageRoot+page+".svg.compact.svg");
 			if (!inputSvgFile.exists()) {
 				LOG.debug("====================FINISHED=================");
 				break;
@@ -240,7 +240,7 @@ public class PubstyleTest {
 			pubstyle.setDirRoot(dirRoot);
 			for (int page = start; page <= end; page++) {
 				pubstyle.setCurrentPage(page);
-				File inputSvgFile = new File(SVGHTMLFixtures.CORPUS_DIR, pageRoot+page+".svg.compact.svg");
+				File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, pageRoot+page+".svg.compact.svg");
 				if (!inputSvgFile.exists()) {
 					LOG.debug("====================FINISHED=================");
 					break;

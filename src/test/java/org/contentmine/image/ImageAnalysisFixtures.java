@@ -80,6 +80,10 @@ public class ImageAnalysisFixtures {
 	public final static String ELECTRONIC = "electronic";
 	public final static File ELECTRONIC_DIR = getDiagramsDirectory(ELECTRONIC);
 
+	public final static String FOREST = "forest";
+	public final static File FOREST_DIR = getDiagramsDirectory(FOREST);
+	public final static File TARGET_FOREST_DIR = new File(TARGET_DIR, FOREST+"/");
+	
 	public final static File TARGET_ELECTRONIC_DIR = new File(TARGET_DIR, ELECTRONIC+"/");
 	public final static String PLOT = "plot";
 	public final static File PLOT_DIR = getDiagramsDirectory(PLOT);

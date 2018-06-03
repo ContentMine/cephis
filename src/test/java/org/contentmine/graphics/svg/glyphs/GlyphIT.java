@@ -26,7 +26,7 @@ public class GlyphIT {
 		String fileroot = "figure2b";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		GlyphSet glyphSet = new GlyphSet();
@@ -38,14 +38,14 @@ public class GlyphIT {
 		String fileroot = "figure2b";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		GlyphSet glyphSet2b= new GlyphSet();
 		glyphSet2b.createGlyphSetsAndAnalyze(fileroot, outputDir, inputFile);
 		fileroot = "figure4b";
 		dirRoot = "glyphs";
 		outputDir = new File("target/", dirRoot);
-		inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		inputFile = new File(inputDir, fileroot + ".svg");
 		GlyphSet glyphSet4b = new GlyphSet();
 		glyphSet4b.createGlyphSetsAndAnalyze(fileroot, outputDir, inputFile);

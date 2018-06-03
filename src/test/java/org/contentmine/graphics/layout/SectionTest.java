@@ -26,7 +26,7 @@ public class SectionTest {
 	@Test
 	public void testCaptureMarkedSections() {
 		File targetDir = new File("target/layout/bmc");
-		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.LAYOUT_DIR, "bmc/"), targetDir);
+		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.GR_LAYOUT_DIR, "bmc/"), targetDir);
 		File svgFile = new File(targetDir, "middle3.html.svg");
 		ComponentCache componentCache = ComponentCache.readAndCreateComponentCache(svgFile);
 		List<SVGRect> rectList = componentCache.getOrCreateRectCache().getOrCreateRectList();

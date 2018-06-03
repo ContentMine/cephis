@@ -18,7 +18,7 @@ public class MathMLElementTest {
 	
 	@Test
 	public void testMathML() throws IOException {
-		File mathFile = new File(SVGHTMLFixtures.MATHML_DIR, "math.mml");
+		File mathFile = new File(SVGHTMLFixtures.GR_MATHML_DIR, "math.mml");
 		MathMLElement element = MathMLElement.create(XMLUtil.parseQuietlyToDocument(mathFile).getRootElement());
 		XMLUtil.debug(element, new File("target/mathml/test/element.xml"), 1);
 

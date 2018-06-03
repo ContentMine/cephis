@@ -28,7 +28,7 @@ public class TextNormalizerTest {
 	 * 
 	 */
 	public void testCompactY1Line() {
-		SVGSVG pageSvg = (SVGSVG) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.TEXT_DIR, "oneLine.svg"));
+		SVGSVG pageSvg = (SVGSVG) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_TEXT_DIR, "oneLine.svg"));
 		List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(pageSvg);
 		Assert.assertEquals(69,  texts.size());
 		TextDecorator textDecorator = new TextDecorator();
@@ -44,7 +44,7 @@ public class TextNormalizerTest {
 	 */
 	public void testCompactPara() {
 		String fileRoot = "onePara.svg";
-		SVGSVG pageSvg = (SVGSVG) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.TEXT_DIR, fileRoot));
+		SVGSVG pageSvg = (SVGSVG) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_TEXT_DIR, fileRoot));
 		List<SVGText> singleTexts = SVGText.extractSelfAndDescendantTexts(pageSvg);
 		Assert.assertEquals(449,  singleTexts.size());
 		TextDecorator textDecorator = new TextDecorator();
@@ -59,7 +59,7 @@ public class TextNormalizerTest {
 	 */
 	public void testCompactPage() {
 		String fileRoot = "CM_pdf2svg_BMCCancer_9_page4.svg";
-		File file = new File(SVGHTMLFixtures.TEXT_DIR, fileRoot);
+		File file = new File(SVGHTMLFixtures.G_S_TEXT_DIR, fileRoot);
 		Assert.assertEquals("filesize",  1082352, FileUtils.sizeOf(file));
 		SVGSVG pageSvg = (SVGSVG) SVGElement.readAndCreateSVG(file);
 		List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(pageSvg);

@@ -35,7 +35,7 @@ public class FigureIT {
 		String fileroot = "figure2graphic";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot+"/"+fileroot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputFile);

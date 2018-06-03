@@ -34,7 +34,7 @@ public class MoleculeBuilderIT {
 			String dirRoot = "molecules/cypMolecules";
 			String fileroot = "moleculesInBoxes";
 			File outputDir = new File("target/", dirRoot);
-			File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+			File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 			File inputFile = new File(inputDir, fileroot + ".svg");
 			SVGElement svgElement = SVGElement.readAndCreateSVG(inputFile);
 			XPlotBox xPlotBox = new XPlotBox();

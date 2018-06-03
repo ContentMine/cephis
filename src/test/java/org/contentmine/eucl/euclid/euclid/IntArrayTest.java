@@ -19,11 +19,14 @@ package org.contentmine.eucl.euclid.euclid;
 import static org.contentmine.eucl.euclid.EuclidConstants.S_EMPTY;
 import static org.contentmine.eucl.euclid.EuclidConstants.S_RBRAK;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.contentmine.eucl.euclid.ArrayBase.Trim;
 import org.contentmine.eucl.euclid.EuclidRuntimeException;
 import org.contentmine.eucl.euclid.Int;
+import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntSet;
@@ -812,6 +815,52 @@ public class IntArrayTest {
 		// note this has nearest integers
 		segmentedArray = testArray.createSegmentedArray(nsegments);
 		Assert.assertEquals("(2,8,12,18)", segmentedArray.toString());
+	}
+
+	@Test
+	public void testGetIntArrayFromInt2List() {
+		List<Int2> int2List = new ArrayList<Int2>();
+		int2List.add(new Int2(1,5));
+		int2List.add(new Int2(2,6));
+		int2List.add(new Int2(3,7));
+		
+		IntArray xArray = IntArray.getIntArray(int2List, 0);
+		Assert.assertEquals("x", "(1,2,3)", xArray.toString());
+		IntArray yArray = IntArray.getIntArray(int2List, 1);
+		Assert.assertEquals("x", "(5,6,7)", yArray.toString());
+		
+	}
+
+	@Test
+	public void testGetIntArrayFromInt2ListNull() {
+		IntArray xArray = IntArray.getIntArray(null, 0);
+		Assert.assertNull("null array", xArray);
+		
+		List<Int2> int2List = new ArrayList<Int2>();
+		int2List.add(new Int2(1,5));
+		int2List.add(new Int2(2,6));
+		int2List.add(new Int2(3,7));
+		
+		xArray = IntArray.getIntArray(int2List, -1);
+		Assert.assertNull("null array", xArray);
+		
+		xArray = IntArray.getIntArray(int2List, 2);
+		Assert.assertNull("null array", xArray);
+		
+	}
+	
+	@Test
+	public void testGetIntegerArray() {
+		IntArray intArray = new IntArray(new int[]{ 1, 1, 2, 3, 5, 8});
+		List<Integer> integerList = intArray.getIntegerList();
+		Assert.assertEquals("integers", "[1, 1, 2, 3, 5, 8]", String.valueOf(integerList));
+		intArray = new IntArray();
+		Assert.assertEquals("integers", "[]", String.valueOf(intArray.getIntegerList()));
+		intArray.addElement(3);
+		intArray.addElement(5);
+		intArray.addElement(1);
+		Assert.assertEquals("integers", "[3, 5, 1]", String.valueOf(intArray.getIntegerList()));
+		
 	}
 
 

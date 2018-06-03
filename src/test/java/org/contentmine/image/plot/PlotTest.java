@@ -791,6 +791,7 @@ public class PlotTest {
 	}
 
 	@Test
+	@Ignore // file does not exist
 	public void testCCJ() {
 
 		String[] args = { "--input",
@@ -820,6 +821,7 @@ public class PlotTest {
 	}
 	
 	@Test
+	@Ignore // file does not exist
 	public void testCCJ1() {
 
 		String[] args = { "--input",

@@ -21,7 +21,7 @@ public class ArcTest {
 
 	@Test
 	public void testArc() {
-		SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.PATHS_DIR, "hollowcorner.svg"))
+		SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_PATHS_DIR, "hollowcorner.svg"))
 				.getChildElements().get(0);
 		Assert.assertEquals("sig",  "MLCLLLCL", svgPath.getOrCreateSignatureAttributeValue());
 		PathPrimitiveList primList = svgPath.getOrCreatePathPrimitiveList();
@@ -38,7 +38,7 @@ public class ArcTest {
 
 	@Test
 	public void testMeanArc() {
-		SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.PATHS_DIR, "hollowcorner.svg"))
+		SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_PATHS_DIR, "hollowcorner.svg"))
 				.getChildElements().get(0);
 		PathPrimitiveList primList = svgPath.getOrCreatePathPrimitiveList();
 		Arc meanArc = primList.createMeanCubic(2, 6);

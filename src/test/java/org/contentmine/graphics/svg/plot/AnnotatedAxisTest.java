@@ -45,7 +45,7 @@ public class AnnotatedAxisTest {
 	@Test
 	@Ignore // changes every time we change parameters
 	public void testFunnelXYAxis() throws FileNotFoundException {
-		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.PLOT_DIR, "bakker2014-page11b.svg")));
+		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.G_S_PLOT_DIR, "bakker2014-page11b.svg")));
 		AbstractPlotBox plotBox = new XYPlotBox();
 		plotBox.readAndCreateCSVPlot(svgElement);
 		SVGSVG.wrapAndWriteAsSVG(plotBox.getComponentCache().getOrCreateConvertedSVGElement(), new File("target/plot/bakker.svg"));
@@ -387,7 +387,7 @@ public class AnnotatedAxisTest {
 	// ================================================
 	
 	private static AnnotatedAxis[] getAxisArrayAndTestFullBox(String svgName, String boxCoords) throws FileNotFoundException {
-		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.PLOT_DIR, svgName)));
+		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.G_S_PLOT_DIR, svgName)));
 		AbstractPlotBox plotBox = new XYPlotBox();
 		try {
 			plotBox.readAndCreateCSVPlot(svgElement);

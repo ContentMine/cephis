@@ -27,7 +27,7 @@ public class PubstyleIT {
 			SVGPubstyle pubstyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
 			int end = 99; // break after file-not-found
 			int start = 1;
-			File cProject = new File(SVGHTMLFixtures.CORPUS_DIR, "mosquitos");
+			File cProject = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, "mosquitos");
 			LOG.debug("CPROJECT: "+cProject);
 	//		Assert.assertEquals(1,  cProject.get);
 			String dirRoot = "12936_2017_Article_1948";

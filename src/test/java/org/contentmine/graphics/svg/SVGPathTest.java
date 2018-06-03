@@ -139,7 +139,7 @@ public class SVGPathTest {
 
 	@Test 
 	public void testGetSkeleton() {
-		SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.PATHS_DIR, "hollowcorner.svg"))
+		SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(new File(SVGHTMLFixtures.G_S_PATHS_DIR, "hollowcorner.svg"))
 				.getChildElements().get(0);
 		PathPrimitiveList primList = svgPath.getOrCreatePathPrimitiveList();
 		

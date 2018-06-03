@@ -2,8 +2,9 @@ package org.contentmine.svg2xml.pdf;
 
 import java.io.File;
 
-import org.junit.Test;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class PDFAnalyzerTest {
 
@@ -12,7 +13,7 @@ public class PDFAnalyzerTest {
 	}
 
 	@Test
-	//@Ignore
+	@Ignore
 	public void testPDFAnalyzerPDFWithSVG() {
 		PDFAnalyzer analyzer = new PDFAnalyzer();
 		analyzer.analyzePDFFile(SVG2XMLFixtures.MULTIPLE312_PDF);

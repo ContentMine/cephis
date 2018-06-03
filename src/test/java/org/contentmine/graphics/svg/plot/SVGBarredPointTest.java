@@ -34,7 +34,7 @@ public class SVGBarredPointTest {
 	
 	@Test
 	public void testBarredPoint() throws IOException {
-		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.PLOT_DIR, "barredPoints.svg")));
+		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.G_S_PLOT_DIR, "barredPoints.svg")));
 		List<SVGPath> pathList = SVGPath.extractPaths(svgElement);
 		List<SVGCircle> circleList = SVGPath.createCirclesFromPaths(pathList);
 		Assert.assertEquals("circles",  52, circleList.size());
@@ -49,7 +49,7 @@ public class SVGBarredPointTest {
 	
 	@Test
 	public void testErrorBar() throws IOException {
-		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.PLOT_DIR, "barredPoints.svg")));
+		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.G_S_PLOT_DIR, "barredPoints.svg")));
 		List<SVGPath> pathList = SVGPath.extractPaths(svgElement);
 		List<SVGCircle> circleList = SVGPath.createCirclesFromPaths(pathList);
 		List<SVGLineList> lineListList = SVGPath.createLineListListFromPaths(pathList, null);
@@ -67,7 +67,7 @@ public class SVGBarredPointTest {
 	
 	@Test
 	public void testErrorBars() throws IOException {
-		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.PLOT_DIR, "barredPoints.svg")));
+		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.G_S_PLOT_DIR, "barredPoints.svg")));
 		List<SVGPath> pathList = SVGPath.extractPaths(svgElement);
 		List<SVGCircle> circleList = SVGPath.createCirclesFromPaths(pathList);
 		List<SVGLineList> lineListList = SVGPath.createLineListListFromPaths(pathList, null);
@@ -92,7 +92,7 @@ public class SVGBarredPointTest {
 	
 	@Test
 	public void testErrorBarList() throws IOException {
-		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.PLOT_DIR, "barredPoints.svg")));
+		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.G_S_PLOT_DIR, "barredPoints.svg")));
 		List<SVGPath> pathList = SVGPath.extractPaths(svgElement);
 		List<SVGCircle> circleList = SVGPath.createCirclesFromPaths(pathList);
 		List<SVGLineList> lineListList = SVGPath.createLineListListFromPaths(pathList, null);
@@ -112,7 +112,7 @@ public class SVGBarredPointTest {
 	
 	@Test
 	public void testDrawErrorBarList() throws IOException {
-		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.PLOT_DIR, "barredPoints.svg")));
+		AbstractCMElement svgElement = SVGUtil.parseToSVGElement(new FileInputStream(new File(SVGHTMLFixtures.G_S_PLOT_DIR, "barredPoints.svg")));
 		List<SVGPath> pathList = SVGPath.extractPaths(svgElement);
 		List<SVGCircle> circleList = SVGPath.createCirclesFromPaths(pathList);
 		List<SVGLineList> lineListList = SVGPath.createLineListListFromPaths(pathList, null);

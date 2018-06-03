@@ -45,7 +45,7 @@ public class GlyphTest {
 		String fileroot = "figure4b";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputFile);
@@ -80,7 +80,7 @@ public class GlyphTest {
 		String fileroot = "figure4b";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputFile);
@@ -106,7 +106,7 @@ public class GlyphTest {
 		String fileroot = "figure4b";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputFile);
@@ -129,7 +129,7 @@ public class GlyphTest {
 		String fileroot = "figure4b";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		GlyphSet glyphSet = new GlyphSet();
@@ -145,7 +145,7 @@ public class GlyphTest {
 		String fileroot = "figure1";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		GlyphSet glyphSet = new GlyphSet();
@@ -164,7 +164,7 @@ public class GlyphTest {
 		String fileroot = "figure1.M1";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		GlyphSet glyphSet = new GlyphSet();
@@ -184,7 +184,7 @@ public class GlyphTest {
 		String fileroot = "figure1.M1";
 		String dirRoot = "glyphs";
 		File outputDir = new File("target/", dirRoot);
-		File inputDir = new File(SVGHTMLFixtures.SVG_DIR, dirRoot);
+		File inputDir = new File(SVGHTMLFixtures.GR_SVG_DIR, dirRoot);
 		File inputFile = new File(inputDir, fileroot + ".svg");
 		Assert.assertTrue("exists: "+inputFile, inputFile.exists());
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputFile);

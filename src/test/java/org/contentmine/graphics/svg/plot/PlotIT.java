@@ -29,7 +29,7 @@ public class PlotIT {
 			};
 		for (String fileRoot : fileRoots) {
 			AbstractPlotBox plotBox = new XYPlotBox();
-			File inputSVGFile = new File(SVGHTMLFixtures.PLOT_DIR, fileRoot + ".svg");
+			File inputSVGFile = new File(SVGHTMLFixtures.G_S_PLOT_DIR, fileRoot + ".svg");
 			try {
 				plotBox.readAndCreateCSVPlot(inputSVGFile);
 			} catch (RuntimeException e) {

@@ -30,7 +30,7 @@ public class StyleRecordTest {
 	 * 
 	 */
 	public void testGetMultipleStyleRecordsByStyle() {
-		File infile = new File(SVGHTMLFixtures.TEXT_DIR, "CM_pdf2svg_BMCCancer_9_page4.svg");
+		File infile = new File(SVGHTMLFixtures.G_S_TEXT_DIR, "CM_pdf2svg_BMCCancer_9_page4.svg");
 		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(infile);
 		StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
 		StyleRecordSet cssStyleRecordSet = styleRecordFactory.createStyleRecordSet(svgElement);
@@ -46,7 +46,7 @@ public class StyleRecordTest {
 	 */
 	@Test
 	public void testFontFill() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "page1.blue.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "page1.blue.svg");
 		List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgFile));
 		StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
 		StyleRecordSet cssStyleRecordSet = styleRecordFactory.createStyleRecordSet(svgTexts);
@@ -60,7 +60,7 @@ public class StyleRecordTest {
 	 */
 	@Test
 	public void testExtractEquations() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "styledequations.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "styledequations.svg");
 		List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgFile));
 		StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
 		StyleRecordSet styleRecordSet = styleRecordFactory.createStyleRecordSet(svgTexts);
@@ -131,7 +131,7 @@ public class StyleRecordTest {
 	 */
 	@Test
 	public void testDisplayStyles() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "styledequations.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "styledequations.svg");
 		List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgFile));
 		StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
 		StyleRecordSet styleRecordSet = styleRecordFactory.createStyleRecordSet(svgTexts);
@@ -144,7 +144,7 @@ public class StyleRecordTest {
 	 */
 	@Test
 	public void testDisplayStylesDocument() {
-		List<File> svgFiles = SVGElement.extractSVGFiles(new File(SVGHTMLFixtures.PAGE_DIR, "bmc"));
+		List<File> svgFiles = SVGElement.extractSVGFiles(new File(SVGHTMLFixtures.G_S_PAGE_DIR, "bmc"));
 		for (File svgFile : svgFiles) {
 			String name = svgFile.getName();
 			List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgFile));
@@ -160,7 +160,7 @@ public class StyleRecordTest {
 	 */
 	@Test
 	public void testDisplayStylesDocument1() {
-		List<File> svgFiles = SVGElement.extractSVGFiles(new File(SVGHTMLFixtures.PAGE_DIR, "varga/compact"));
+		List<File> svgFiles = SVGElement.extractSVGFiles(new File(SVGHTMLFixtures.G_S_PAGE_DIR, "varga/compact"));
 		for (File svgFile : svgFiles) {
 			String name = svgFile.getName();
 			List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgFile));
@@ -176,7 +176,7 @@ public class StyleRecordTest {
 	 */
 	@Test
 	public void testStyleArrays() {
-		File svgFile = new File(SVGHTMLFixtures.FONTS_DIR, "styledequations.svg");
+		File svgFile = new File(SVGHTMLFixtures.G_S_FONTS_DIR, "styledequations.svg");
 		List<SVGText> svgTexts = SVGText.extractSelfAndDescendantTexts(SVGElement.readAndCreateSVG(svgFile));
 		StyleRecordFactory styleRecordFactory = new StyleRecordFactory();
 		StyleRecordSet styleRecordSet = styleRecordFactory.createStyleRecordSet(svgTexts);
