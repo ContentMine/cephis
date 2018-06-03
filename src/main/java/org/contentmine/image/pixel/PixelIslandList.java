@@ -112,8 +112,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	public static PixelIslandList createSuperThinnedPixelIslandListNew(
 			BufferedImage image) {
 		MainPixelProcessor pixelProcessor = new MainPixelProcessor(image);
-		PixelIslandList islandList = pixelProcessor
-				.getOrCreatePixelIslandList();
+		PixelIslandList islandList = pixelProcessor.getOrCreatePixelIslandList();
 		islandList.doSuperThinning();
 		return islandList;
 	}
@@ -214,12 +213,6 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		return null;
 	}
 
-//	private void rearrangeYJunctions() {
-//		for (PixelIsland island : this) {
-//			island.rearrangeYJunctions();
-//		}
-//	}
-
 	public void setDiagonal(boolean b) {
 		this.diagonal = b;
 		for (PixelIsland island : this) {
@@ -299,17 +292,6 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	public void setPixelColor(String color) {
 		this.pixelColor = color;
 	}
-
-//	public List<List<SVGPolyline>> createPolylinesIteratively(double dpEpsilon,
-//			int maxiter) {
-//		List<List<SVGPolyline>> polylineListList = new ArrayList<List<SVGPolyline>>();
-//		for (PixelIsland island : this) {
-//			List<SVGPolyline> polylineList = island.createPolylinesIteratively(
-//					dpEpsilon, maxiter);
-//			polylineListList.add(polylineList);
-//		}
-//		return polylineListList;
-//	}
 
 	public PixelList getPixelList() {
 		PixelList pixelList = new PixelList();
@@ -663,9 +645,10 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		}
 	}
 
-	public void sortBySizeDescending() {
+	public PixelIslandList sortBySizeDescending() {
 		sortSize();
 		reverse();
+		return this;
 	}
 
 	public PixelIsland getLargestIsland() {

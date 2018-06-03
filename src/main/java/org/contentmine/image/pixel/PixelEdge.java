@@ -649,4 +649,22 @@ public class PixelEdge {
 		}
 		return cyclic;
 	}
+
+	public SVGLine getLine() {
+		SVGLine line = null;
+		PixelNodeList nodeList = this.getNodes();
+		if (nodeList.size() == 2) {
+			Real2 xy0 = nodeList.get(0).getReal2();
+			Real2 xy1 = nodeList.get(1).getReal2();
+			line = new SVGLine(xy0, xy1);
+		}
+		return line;
+	}
+
+	public double getLength() {
+		PixelNodeList nodeList = this.getNodes();
+		Real2 xy0 = new Real2(getFirst().getInt2());
+		Real2 xy1 = new Real2(getLast().getInt2());
+		return xy0.getDistance(xy1);
+	}
 }

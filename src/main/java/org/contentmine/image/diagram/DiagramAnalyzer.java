@@ -30,6 +30,7 @@ import org.contentmine.graphics.svg.SVGPolygon;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.builder.SimpleBuilder;
+import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ArgIterator;
 import org.contentmine.image.ImageProcessor;
 import org.contentmine.image.pixel.MainPixelProcessor;
@@ -100,7 +101,8 @@ public class DiagramAnalyzer {
 	protected File skipFile;
 	private String outputFilename;
 	private File inputFile;
-	protected String fileroot;
+	// FIXME - get rid of file stuff
+	protected String fileRoot;
 	private String[] extensions;
 	private boolean recurse;
 	private SVGParameters svgParameters;
@@ -108,6 +110,8 @@ public class DiagramAnalyzer {
 	private SVGG svgg;
 	protected List<PixelGraph> pixelGraphList;
 	private String logFile;
+
+	private File inputDir;
 
 	public DiagramAnalyzer() {
 		setDefaults();
@@ -127,7 +131,7 @@ public class DiagramAnalyzer {
 	public void clearVariables() {
 		this.skipFile = null;
 		this.inputFile = null;
-		this.fileroot = null;
+		this.fileRoot = null;
 
 		imageProcessor.clearVariables();
 	}
@@ -225,14 +229,14 @@ public class DiagramAnalyzer {
 	}
 
 	protected void runCommandsIteratively() {
-		this.fileroot = null;
+		this.fileRoot = null;
 		List<File> inputFiles = getInputFiles();
 		LOG.debug("input"+inputFiles);
 		if (inputFiles.size() == 0) {
 			LOG.debug("No input file given");
 		} else if (inputFiles.size() == 1) {
 			this.inputFile = inputFiles.get(0);
-			this.fileroot = FilenameUtils.getBaseName(inputFile.toString());
+			this.fileRoot = FilenameUtils.getBaseName(inputFile.toString());
 			runCommandsAndOutput();
 		} else {
 			int count = 0;
@@ -240,7 +244,7 @@ public class DiagramAnalyzer {
 				clearVariables();
 				inputFile = file;
 				LOG.debug("===========INPUT " + inputFile + "================");
-				this.fileroot = FilenameUtils.getBaseName(inputFile.toString());
+				this.fileRoot = FilenameUtils.getBaseName(inputFile.toString());
 				this.skipFile = generateFileWithSubstitutions(skipFileString);
 				runCommandsAndOutput();
 				count++;
@@ -294,7 +298,7 @@ public class DiagramAnalyzer {
 	protected File generateFileWithSubstitutions(String fileString) {
 		File file = null;
 		if (fileString != null) {
-			fileString = fileString.replaceAll(ROOT_REGEX, fileroot);
+			fileString = fileString.replaceAll(ROOT_REGEX, fileRoot);
 			LOG.trace(" file: " + fileString);
 			file = new File(fileString);
 		}
@@ -349,9 +353,10 @@ public class DiagramAnalyzer {
 		return pixelProcessor;
 	}
 
-	protected void setOutputDir(File file) {
+	public DiagramAnalyzer setOutputDir(File file) {
 		ensureImageProcessor();
 		imageProcessor.setOutputDir(file);
+		return this;
 	}
 
 	public File getOutputDir() {
@@ -359,9 +364,10 @@ public class DiagramAnalyzer {
 		return imageProcessor.getOutputDir();
 	}
 
-	public void setThinning(Thinning thinning) {
+	public DiagramAnalyzer setThinning(Thinning thinning) {
 		ensureImageProcessor();
 		imageProcessor.setThinning(thinning);
+		return this;
 	}
 
 	public Thinning getThinning() {
@@ -369,9 +375,10 @@ public class DiagramAnalyzer {
 		return imageProcessor.getThinning();
 	}
 
-	public void setBase(String base) {
+	public DiagramAnalyzer setBase(String base) {
 		ensureImageProcessor();
 		this.imageProcessor.setBase(base);
+		return this;
 	}
 
 	public String getBase() {
@@ -395,6 +402,11 @@ public class DiagramAnalyzer {
 	public PixelIslandList getOrCreatePixelIslandList() {
 		ensureImageProcessor();
 		return imageProcessor.getOrCreatePixelIslandList();
+	}
+
+	public PixelIslandList getOrCreateSortedPixelIslandList() {
+		ensureImageProcessor();
+		return imageProcessor.getOrCreatePixelIslandList().sortBySizeDescending();
 	}
 
 	public void readAndProcessInputFile(File file) {
@@ -1375,10 +1387,81 @@ public class DiagramAnalyzer {
 		return this.getOrCreateGraphList();
 	}
 
+	public void writeBinarizedFile(File outputFile) {
+		BufferedImage binarizedImage = getImageProcessor().getBinarizedImage();
+		ImageIOUtil.writeImageQuietly(binarizedImage, outputFile);
+	}
+
+	public void scanThresholds(int[] thresholds) {
+		if (getBase() == null) {
+			throw new RuntimeException("null base");
+		}
+		if (getOutputDir() == null || !getOutputDir().exists()) {
+			throw new RuntimeException("null or non-existent outputDir: "+getOutputDir());
+		}
+		for (int threshold : thresholds) {
+			getImageProcessor().setThreshold(threshold);
+			setThinning(null);
+			File file = ensureInputFile();
+			readAndProcessInputFile(file);
+			writeBinarizedFile(new File(getOutputDir(), "binarized"+threshold+".png"));
+		}
+	}
+
+	private File ensureInputFile() {
+		File file = new File(inputDir, getBase()+".png");
+		return file;
+	}
+
 	public static void main(String[] args) throws Exception {
 		DiagramAnalyzer analyzer = new DiagramAnalyzer();
 		analyzer.setInputFile(new File(args[0]));
 		SVGUtil.debug(analyzer.convertPixelsToSVG(), new FileOutputStream(new File(args[1])), 0);
+	}
+
+	public DiagramAnalyzer setInputDir(File inputDir) {
+		getImageProcessor().setInputDir(inputDir);
+		return this;
+	}
+	
+	public File getInputDir() {
+		return getImageProcessor().getInputDir();
+	}
+
+	public DiagramAnalyzer setThreshold(int threshold) {
+		getImageProcessor().setThreshold(threshold);
+		return this;
+	}
+
+	public void readAndProcessInputFile() {
+		ensureImageProcessor();
+		File inputFile = imageProcessor.getInputFile();
+		if (inputFile == null) {
+			if (imageProcessor.getInputDir() != null &&
+				imageProcessor.getBase() != null &&
+				imageProcessor.getInputSuffix() != null) {
+			inputFile = new File(imageProcessor.getInputDir(), imageProcessor.getBase()+
+				imageProcessor.getInputSuffix());
+			} else {
+				throw new RuntimeException("Cannot create default input file");
+			}
+		}
+		readAndProcessInputFile(inputFile);
+	}
+
+	public PixelIslandList writeLargestPixelIsland() {
+		PixelIslandList pixelIslandList = getOrCreateSortedPixelIslandList();
+		SVGSVG.wrapAndWriteAsSVG(getLargestIsland(pixelIslandList).getOrCreateSVGG(), new File(getOutputDir(), "largestIsland.svg"));
+		return pixelIslandList;
+	}
+
+	private PixelIsland getLargestIsland(PixelIslandList pixelIslandList) {
+		return pixelIslandList.get(0);
+	}
+
+	public PixelIsland getLargestIsland() {
+		PixelIslandList islandList = getOrCreateSortedPixelIslandList();
+		return islandList == null ? null : islandList.get(0);
 	}
 
 }

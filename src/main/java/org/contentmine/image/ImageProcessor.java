@@ -59,14 +59,11 @@ public class ImageProcessor {
 	private static final String TARGET = "target";
 	private static final String THINNED_PNG = "thinned.png";
 
-	private String base;
 	private boolean binarize;
 	private boolean debug = true;
 	private BufferedImage image;
 	private Thinning thinning;
 	private int threshold;
-	private File inputFile;
-	private File outputDir;
 	private MainPixelProcessor mainProcessor;
 	private ImageParameters parameters;
 	private PixelIslandList islandList = null;
@@ -76,6 +73,12 @@ public class ImageProcessor {
 	private PixelIsland selectedPixelIsland;
 	private BufferedImage binarizedImage;
 	private BufferedImage thinnedImage;
+
+	private String base;
+	private File inputFile;
+	private File inputDir;
+	private String inputSuffix;
+	private File outputDir;
 
 	public ImageProcessor() {
 		setDefaults();
@@ -97,6 +100,7 @@ public class ImageProcessor {
 		this.setOutputDir(getDefaultOutputDirectory());
 		this.setBinarize(true);
 		this.setThreshold(DEFAULT_THRESHOLD);
+		this.setInputSuffix(".png");
 	}
 
 	public void clearVariables() {
@@ -138,6 +142,12 @@ public class ImageProcessor {
 	public void setThinning(Thinning thinning) {
 		this.thinning = thinning;
 	}
+	
+	public void setInputSuffix(String inputSuffix) {
+		this.inputSuffix = inputSuffix;
+	}
+
+
 
 	/**
 	 * sets threshold.
@@ -161,9 +171,14 @@ public class ImageProcessor {
 			throw new RuntimeException("Image file is null: "
 					+ file);
 		} else if (!file.exists()) {
-			LOG.error(file.getAbsolutePath().toString());
-			throw new RuntimeException("Image file is missing: "
-					+ file);
+			if (inputDir != null) {
+				file = new File(inputDir, file.getName());
+			}
+			if (!file.exists()) {
+				LOG.error(file.getAbsolutePath().toString());
+				throw new RuntimeException("Image file is missing: "
+						+ file);
+			}
 		} else if (file.isDirectory()) {
 				throw new RuntimeException("Image file is directory: "
 						+ file);
@@ -639,6 +654,18 @@ public class ImageProcessor {
 			}
 		}
 		return newImage;
+	}
+
+	public void setInputDir(File inputDir) {
+		this.inputDir = inputDir;
+	}
+	
+	public File getInputDir() {
+		return inputDir;
+	}
+
+	public String getInputSuffix() {
+		return inputSuffix;
 	}
 
 }

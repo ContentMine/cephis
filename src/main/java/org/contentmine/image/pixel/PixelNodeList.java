@@ -10,6 +10,8 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Int2;
+import org.contentmine.eucl.euclid.IntArray;
+import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.image.pixel.PixelComparator.ComparatorType;
 
@@ -233,6 +235,39 @@ public class PixelNodeList implements Iterable<PixelNode> {
 		}
 		
 		return -1;
+	}
+
+	/** gets coordinate pairs from nodeList.
+	 * Int2Array does not exist so use List<Int2>
+	 * 
+	 * keeps order consistent
+	 * 
+	 * @return list of coordinates
+	 */
+	public List<Int2> getXY2List() {
+		List<Int2> xy2List = new ArrayList<Int2>();
+		for (PixelNode node : this) {
+			xy2List.add(node.getInt2());
+		}
+		return xy2List;
+	}
+
+	/** gets x-coordinates from nodeList.
+	 * keeps order consistent
+	 * 
+	 * @return list of x-coordinates
+	 */
+	public IntArray getXArray() {
+		return IntArray.getIntArray(getXY2List(), 0);
+	}
+
+	/** gets y-coordinates from nodeList.
+	 * keeps order consistent
+	 * 
+	 * @return list of y-coordinates
+	 */
+	public IntArray getYArray() {
+		return IntArray.getIntArray(getXY2List(), 1);
 	}
 
 }

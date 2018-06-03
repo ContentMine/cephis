@@ -233,5 +233,17 @@ public class PixelNode implements Comparable<PixelNode> {
 		}
 		return nodeList;
 	}
+
+	public int edgeCountLongerThan(int minLength) {
+		PixelEdgeList nodeEdges = getEdges();
+		int count = 0;
+		for (PixelEdge edge : nodeEdges) {
+			double len = edge.getLength();
+			if (len > minLength) {
+				count++;
+			}
+		}
+		return count;
+	}
 	
 }
