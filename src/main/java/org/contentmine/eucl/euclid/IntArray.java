@@ -16,6 +16,7 @@
 
 package org.contentmine.eucl.euclid;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -518,23 +519,6 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
             array[i] = -array[i];
         }
     }
-    /**
-     * add a scalar to all elements. creates new array; does NOT modify 'this';
-     * for subtraction use negative scalar
-     * 
-     * @param f
-     *            to add
-     * @return new array
-     */
-    /*--
-     public RealArray addScalar(int f) {
-     RealArray m = (RealArray) this.clone();
-     for(int i = 0; i < nelem; i++) {
-     m.array[i] += f;
-     }
-     return m;
-     }
-     --*/
     /**
      * array multiplication by a scalar. creates new array; does NOT modify
      * 'this'
@@ -1449,6 +1433,34 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
 	 */
 	public static IntArray naturalNumbers(int n) {
 		return new IntArray(n + 1, 0, 1);
+	}
+	
+	/** extract the array of x- or y- coordinates.
+	 * because there is currently no Int2Array
+	 * 
+	 * @param xy2List list of Int2s
+	 * @param xy 0 for x, 1 for y
+	 * @return
+	 */
+	public static IntArray getIntArray(List<Int2> xy2List, int xy) {
+		IntArray intArray = null;
+		if (xy2List != null && xy >= 0 &&  xy <= 1) {
+			intArray = new IntArray();
+			for (Int2 xy2 : xy2List) {
+				intArray.addElement((xy == 0 ? xy2.getX() : xy2.getY()));
+			}
+		}
+		return intArray;
+	}
+	
+	public List<Integer> getIntegerList() {
+		List<Integer> integerList = new ArrayList<Integer>();
+		if (array != null) {
+			for (int i = 0; i < nelem; i++) {
+				integerList.add(array[i]);
+			}
+		}
+		return integerList;
 	}
 	
 }

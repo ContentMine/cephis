@@ -626,4 +626,15 @@ public class Real2 implements EuclidConstants {
     	y = Util.format(y, places);
     	return this;
     }
+    /**
+     * formats coordinates to x,y
+     * e.g. "123,456"
+     * 
+     * @return formatted trimmed value
+     */
+	public String trimToIntegersWithoutBrackets() {
+		return String.valueOf(format(0))
+				.replaceAll("\\(|\\)", "")
+				.replaceAll("\\.0", "");
+	}
 }
