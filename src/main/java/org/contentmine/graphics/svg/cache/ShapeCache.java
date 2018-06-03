@@ -92,7 +92,7 @@ public class ShapeCache extends AbstractCache {
 					addToListAndSetId(getOrCreateRhombList(), (SVGRhomb) shape);
 				} else if (shape instanceof SVGTriangle) {
 					// must preceed superclass SVGPolygon
-					addToListAndSetId(lineList, (SVGLine) shape); // why?
+//					addToListAndSetId(shapeList, (SVGLine) shape); // why?
 					triangleList.add((SVGTriangle) shape);
 				} else if (shape instanceof SVGRect) {
 					addToListAndSetId(rectList, (SVGRect) shape);

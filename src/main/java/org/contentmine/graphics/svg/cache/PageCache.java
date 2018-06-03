@@ -135,7 +135,7 @@ public class PageCache extends ComponentCache {
 		AbstractCMElement boxg = this.getStyledBoxes(intBoxes1);
 		getOrCreateExtractedSVGElement().appendChild(boxg);
 		Multiset<Int2Range> intBoxes = intBoxes1;
-		List<Multiset.Entry<Int2Range>> sortedIntBoxes1 = MultisetUtil.createInt2RangeListSortedByCount(intBoxes);
+		List<Multiset.Entry<Int2Range>> sortedIntBoxes1 = MultisetUtil.createListSortedByCount(intBoxes);
 		for (Multiset.Entry<Int2Range> box : sortedIntBoxes1) {
 			int count = box.getCount();
 			if (count > 1) {

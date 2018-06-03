@@ -231,10 +231,10 @@ public class TableSection {
 			fontStyleSet.add(String.valueOf(phrase.getFontStyle()));
 		}
 		StringBuilder sb = new StringBuilder();
-		sb.append("{"+MultisetUtil.getEntriesSortedByCount(fontFamilySet).toString()+"}");
+		sb.append("{"+MultisetUtil.getStringEntriesSortedByCount(fontFamilySet).toString()+"}");
 		sb.append("{"+MultisetUtil.getDoubleEntriesSortedByCount(fontSizeSet).toString()+"}");
-		sb.append("{"+MultisetUtil.getEntriesSortedByCount(fontWeightSet).toString()+"}");
-		sb.append("{"+MultisetUtil.getEntriesSortedByCount(fontStyleSet).toString()+"}");
+		sb.append("{"+MultisetUtil.getStringEntriesSortedByCount(fontWeightSet).toString()+"}");
+		sb.append("{"+MultisetUtil.getStringEntriesSortedByCount(fontStyleSet).toString()+"}");
 		return sb.toString();
 	}
 

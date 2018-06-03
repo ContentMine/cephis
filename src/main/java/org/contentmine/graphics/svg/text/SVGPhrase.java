@@ -286,7 +286,7 @@ public class SVGPhrase extends SVGG {
 	 */
 	public SVGPhrase getWordsWithHighestXValue(int nplaces) {
 		Multiset<Double> xSet = this.createXValueSet(nplaces);
-		Double x = MultisetUtil.getHighestValue(xSet);
+		Double x = (Double) MultisetUtil.getHighestValue(xSet);
 		double eps = 1.0 / (Math.pow(10.0, (double)nplaces));
 		SVGPhrase phrase = new SVGPhrase();
 		for (SVGWord word : wordList) {

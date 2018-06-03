@@ -1468,6 +1468,10 @@ public class SVGText extends SVGElement {
 		xArray.addElement(x);
 		this.setX(xArray);
 	}
+
+	public static SVGText createDefaultText(Real2 xy, String text, int fontSize, String stroke) {
+		return createText(xy, text, "font-size:"+fontSize+";stroke:"+stroke+";"+"font-family:Helvetica");
+	}
 	
 
 
