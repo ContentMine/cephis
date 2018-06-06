@@ -97,14 +97,18 @@ public class SVGHTMLFixtures {
 
 	public static final File EARLY_DIR = new File(I_DIAGRAMS_DIR, "early");
 	public static final File EARLY_TARGET_DIR = new File(I_DIAGRAMS_TARGET_DIR, "early");
-	public static final File EARLY_CHEM_DIR = new File(EARLY_DIR, "chem");
-	public static final File EARLY_CHEM_TARGET_DIR = new File(EARLY_TARGET_DIR, "chem");
-	public static final File EARLY_MAP_DIR = new File(EARLY_DIR, "maps");
-	public static final File EARLY_MAP_TARGET_DIR = new File(EARLY_TARGET_DIR, "map");
-	public static final File EARLY_PHYLO_DIR = new File(EARLY_DIR, "phylo");
-	public static final File EARLY_PHYLO_TARGET_DIR = new File(EARLY_TARGET_DIR, "phylo");
-	public static final File EARLY_PLOT_DIR = new File(EARLY_DIR, "plot");
-	public static final File EARLY_PLOT_TARGET_DIR = new File(EARLY_TARGET_DIR, "plot");
+	public static final String EARLY_CHEM = "chem";
+	public static final File EARLY_CHEM_DIR = new File(EARLY_DIR, EARLY_CHEM);
+	public static final File EARLY_CHEM_TARGET_DIR = new File(EARLY_TARGET_DIR, EARLY_CHEM);
+	public static final String EARLY_MAPS = "maps";
+	public static final File EARLY_MAP_DIR = new File(EARLY_DIR, EARLY_MAPS);
+	public static final File EARLY_MAP_TARGET_DIR = new File(EARLY_TARGET_DIR, EARLY_MAPS);
+	public static final String EARLY_PHYLO = "phylo";
+	public static final File EARLY_PHYLO_DIR = new File(EARLY_DIR, EARLY_PHYLO);
+	public static final File EARLY_PHYLO_TARGET_DIR = new File(EARLY_TARGET_DIR, EARLY_PHYLO);
+	public static final String EARLY_PLOT = "plot";
+	public static final File EARLY_PLOT_DIR = new File(EARLY_DIR, EARLY_PLOT);
+	public static final File EARLY_PLOT_TARGET_DIR = new File(EARLY_TARGET_DIR, EARLY_PLOT);
 	
 	public static final File LINEPLOTS_10_2_SVG = new File(G_S_PLOT_DIR, "lineplots.g.10.2.svg");
 	public static final File SCATTERPLOT_FIVE_7_2_SVG = new File(G_S_PLOT_DIR, "scatterplot5.g.7.2.svg");

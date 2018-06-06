@@ -8,45 +8,45 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGG;
 
-public class PixelRingList implements Iterable<PixelList> {
+public class PixelRingList implements Iterable<PixelRing> {
 
 	private final Logger LOG = Logger.getLogger(PixelRingList.class);
 	
 	public static final String[] DEFAULT_COLOURS = {"red", "cyan", "orange", "green", "magenta", "blue"};
-	private List<PixelList> ringList;
+	private List<PixelRing> ringList;
 	private PixelIsland island;
 
-	private PixelList outline;
+	private PixelRing outline;
 	
 	public PixelRingList() {
 		init();
 	}
 
 	private void init() {
-		ringList = new ArrayList<PixelList>();
+		ringList = new ArrayList<PixelRing>();
 	}
 	
-	public PixelRingList(Collection<PixelList> pixelCollection) {
+	public PixelRingList(Collection<PixelRing> pixelCollection) {
 		init();
 		ringList.addAll(pixelCollection);
 	}
 
-	public Iterator<PixelList> iterator() {
+	public Iterator<PixelRing> iterator() {
 		return ringList.iterator();
 	}
 	
-	public PixelList get(int i) {
+	public PixelRing get(int i) {
 		return (ringList == null || i < 0 || i >= ringList.size()) ? null : ringList.get(i);
 	}
 	
-	public void add(PixelList pixelList) {
+	public void add(PixelRing pixelRing) {
 		if (ringList == null) {
 			init();
 		}
-		ringList.add(pixelList);
+		ringList.add(pixelRing);
 	}
 	
-	public List<PixelList> getList() {
+	public List<PixelRing> getList() {
 		return ringList;
 	}
 
@@ -85,8 +85,8 @@ public class PixelRingList implements Iterable<PixelList> {
 		}
 		int i = 0;
 		
-		for (PixelList pixelList : this) {
-			SVGG g = pixelList.plotPixels(fill[i]);
+		for (PixelRing pixelRing : this) {
+			SVGG g = pixelRing.getOrCreatePixelList().plotPixels(fill[i]);
 			gg.appendChild(g);
 			i = (i + 1) % fill.length;
 		}
@@ -107,15 +107,15 @@ public class PixelRingList implements Iterable<PixelList> {
 	 */
 	public void removeMinorIslands(int size) {
 		for (int ring = 0; ring < ringList.size(); ring++) {
-			PixelList ringPixels = ringList.get(ring);
+			PixelRing pixelRing = ringList.get(ring);
 			// make copy of ring as island to isolate the ring
-			PixelIsland newIsland = PixelIsland.createSeparateIslandWithClonedPixels(ringPixels, true);
+			PixelIsland newIsland = PixelIsland.createSeparateIslandWithClonedPixels(pixelRing.getOrCreatePixelList(), true);
 			int oldSize = newIsland.size();
 			newIsland.removeMinorIslands(size);
 			int newSize = newIsland.size();
 			// if it's changed swap the old pixels for the new
 			if (newSize != oldSize) {
-				ringList.set(ring, newIsland.getPixelList());
+				ringList.set(ring, new PixelRing(newIsland.getPixelList()));
 				LOG.trace("island size after "+newIsland.size());
 			}
 		}
@@ -135,7 +135,7 @@ public class PixelRingList implements Iterable<PixelList> {
 		SVGG g = new SVGG();
 		PixelList outline;
 		if (size() > 1) {
-			outline = get(0).getPixelsWithOrthogonalContactsTo(get(1), island);
+			outline = get(0).getOrCreatePixelList().getPixelsWithOrthogonalContactsTo(get(1).getOrCreatePixelList(), island);
 			outline.plotPixels(g, fill[0]);
 			PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline, true);
 			PixelGraph graph = PixelGraph.createGraph(outlineIsland);
@@ -149,7 +149,7 @@ public class PixelRingList implements Iterable<PixelList> {
 		return g;
 	}
 
-	public PixelList getOrCreateOutline() {
+	public PixelRing getOrCreateOutline() {
 		if (outline == null) {
 			if (size() > 1) {
 				outline = get(1).getPixelsTouching(get(0));
@@ -165,14 +165,14 @@ public class PixelRingList implements Iterable<PixelList> {
 		return g;
 	}
 
-	public PixelList getOuterPixelRing() {
+	public PixelRing getOuterPixelRing() {
 		return get(0);
 	}
 	
-	public PixelList getRing(int i) {
-		PixelList ring1 = get(i);
-		PixelList ring0 = get(i-1);
-		PixelList ring = ring0 == null ? ring1 : ring1.getPixelsTouching(ring0);
+	public PixelRing getRing(int i) {
+		PixelRing ring1 = get(i);
+		PixelRing ring0 = get(i-1);
+		PixelRing ring = ring0 == null ? ring1 : ring1.getPixelsTouching(ring0);
 		return ring;
 	}
 

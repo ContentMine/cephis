@@ -1,4 +1,4 @@
-package org.contentmine.image.plot.early.map;
+package org.contentmine.image.plot.early.maps;
 
 import java.io.File;
 
@@ -7,14 +7,13 @@ import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.image.ImageAnalysisFixtures;
 import org.contentmine.image.diagram.DiagramAnalyzer;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.contentmine.image.pixel.PixelList;
 import org.contentmine.image.pixel.PixelListFloodFill;
+import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
-import org.eclipse.jetty.util.log.Log;
 import org.junit.Test;
 
 import junit.framework.Assert;
@@ -44,18 +43,21 @@ public class CholeraTest {
 		diagramAnalyzer.readAndProcessInputFile(snowFile);
 	}
 
+	/** extracts the balck islands.
+	 * Slowish as it writes SVG.
+	 */
 	@Test
 	public void testCholeraSmallExtractBlackIslands() {
 		String fileRoot = "choleraSmall";
-		File targetDir = new File(new File("target"), fileRoot);
+		File targetDir = new File(SVGHTMLFixtures.EARLY_MAP_TARGET_DIR, fileRoot);
 		File snowFile = new File(SVGHTMLFixtures.EARLY_MAP_DIR, fileRoot + ".png");
 		DiagramAnalyzer diagramAnalyzer = new DiagramAnalyzer();
 		// get the blocks
 		diagramAnalyzer.setThinning(null);
 		diagramAnalyzer.readAndProcessInputFile(snowFile);
-		PixelIslandList pixelIslandList = diagramAnalyzer.getOrCreatePixelIslandList();
+		diagramAnalyzer.writeBinarizedFile(new File(targetDir, "pixelIslandList.png"));
+		PixelIslandList pixelIslandList = diagramAnalyzer.getOrCreateSortedPixelIslandList();
 		Assert.assertEquals("islands", 66, pixelIslandList.size());
-		pixelIslandList.sortBySizeDescending();
 		// get the largest one
 		PixelIsland island0 = pixelIslandList.get(0);
 		Assert.assertEquals("island0", 26600, island0.size());
@@ -67,17 +69,18 @@ public class CholeraTest {
 		for (int i = 0; i < pixelRingList.size(); i++) {
 			pixelRingList.get(i).plotPixels(g, FILL[i % FILL.length]);
 		}
+		// lengthy and large
 		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "pixelRings"+".svg"));
 		// cut island at level 2 to create new sub-islands
 		// disconnects the weakly connected islands but some are still merged
-		PixelList list2 = pixelRingList.get(2);
-		SVGG gg = list2.getOrCreateSVG();
+		PixelRing ring2 = pixelRingList.get(2);
+		SVGG gg = ring2.getOrCreateSVG();
 		SVGSVG.wrapAndWriteAsSVG(gg, new File(targetDir, "pixelRings2"+".svg"));
 		// severer cut
-		PixelList list4 = pixelRingList.get(4);
-		gg = list4.getOrCreateSVG();
+		PixelRing ring4 = pixelRingList.get(4);
+		gg = ring4.getOrCreateSVG();
 		SVGSVG.wrapAndWriteAsSVG(gg, new File(targetDir, "pixelRings4"+".svg"));
-		PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(list4);
+		PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(ring4.getOrCreatePixelList());
 		PixelIslandList separatedIslandList = pixelListFloodFill.getIslandList();
 		separatedIslandList.sortBySizeDescending();
 		Assert.assertEquals("separated pixelRingList", 11, separatedIslandList.size());
@@ -89,8 +92,36 @@ public class CholeraTest {
 		SVGG shell1SVG = shell1.getRing(0).getOrCreateSVG();
 		LOG.debug(shell1SVG.toXML());
 		SVGSVG.wrapAndWriteAsSVG(shell1SVG, new File(targetDir, "shell1"+".svg"));
-		LOG.debug("fin");
 
+	}
+
+	/** adds outer pixelRings that have been clipped to separate islands
+	 * 
+	 */
+	@Test
+	public void testAddClippedRingsBridges() {
+		String fileRoot = "choleraSmall";
+		File targetDir = new File(SVGHTMLFixtures.EARLY_MAP_TARGET_DIR, fileRoot);
+		File snowFile = new File(SVGHTMLFixtures.EARLY_MAP_DIR, fileRoot + ".png");
+		DiagramAnalyzer diagramAnalyzer = new DiagramAnalyzer();
+		// get the blocks
+		diagramAnalyzer.setThinning(null);
+		diagramAnalyzer.readAndProcessInputFile(snowFile);
+		diagramAnalyzer.writeBinarizedFile(new File(targetDir, "pixelIslandList.png"));
+		PixelIslandList pixelIslandList = diagramAnalyzer.getOrCreateSortedPixelIslandList();
+		// get the largest one
+		PixelIsland island0 = pixelIslandList.get(0);
+		PixelRingList pixelRingList = island0.getOrCreateInternalPixelRings();
+		// cut island at level 2 to create new sub-islands
+		// disconnects the weakly connected islands but some are still merged
+		PixelRing ring2 = pixelRingList.get(2);
+		PixelRing ring3 = pixelRingList.get(3);
+		PixelRing ring1 = ring2.expandRingOutside(ring3);
+		SVGSVG.wrapAndWriteAsSVG(ring1.getOrCreateSVG(), new File(targetDir, "ring1.svg"));
+		PixelRing ring0 = ring1.expandRingOutside(ring2);
+		LOG.debug("ring0 "+ring0.size());
+		SVGSVG.wrapAndWriteAsSVG(ring0.getOrCreateSVG(), new File(targetDir, "ring0.svg"));
+		
 	}
 
 }

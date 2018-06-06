@@ -1205,5 +1205,60 @@ public class PixelGraph {
 		}
 		
 	}
+	/** merge nodes closer than a given distance.
+	 * exploratory! 
+	 * @param d
+	 */
+	public void mergeNodesCloserThan(double d) {
+		getOrCreateEdgeList();
+//		getOrCreateNodeList();
+		boolean change = true;
+		while (change) {
+			change = false;
+			for (int i = 0; i < this.edgeList.size(); i++) {
+				PixelEdge edge = edgeList.get(i);
+				if (edge.getLength() < d) {
+					change = true;
+					condenseEdgeAndRemoveOneNode(edge);
+
+				}
+			}
+		}
+	}
+
+	/** replace node1 by node0 and tidy nodeLists and edgeLists
+	 * 
+	 * @param edge
+	 */
+	public void condenseEdgeAndRemoveOneNode(PixelEdge edge) {
+		PixelNode node0 = edge.getPixelNode(0);
+		PixelNode node1 = edge.getPixelNode(1);
+		// randomly choose a node to remove 
+		Int2 newXY = node0.getInt2().getMidPoint(node1.getInt2());
+		node0.setInt2(newXY);
+		// remove node 1
+		this.nodeList.remove(node1);
+		// remove the edge
+		this.edgeList.remove(edge);
+		node0.removeEdge(edge);
+		node1.removeEdge(edge);
+		// move existing edges from node 1
+		PixelEdgeList edges1 = node1.getEdges();
+		for (PixelEdge edge1 : edges1) {
+			if (edge1.equals(edge)) {
+				throw new RuntimeException("failed to remove edge");
+			} else {
+				// check for triangles
+				if (edge.getOtherNode(node0).equals(edge1.getOtherNode(node1))) {
+					LOG.debug("removed triangle edge");
+					this.edgeList.remove(edge1);
+				} else {
+					// move node0 to take role of node1
+					edge1.replaceNode(node1, node0);
+				}
+			}
+		}
+	}
+
 
 }

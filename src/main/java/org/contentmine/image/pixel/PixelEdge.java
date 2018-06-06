@@ -667,4 +667,22 @@ public class PixelEdge {
 		Real2 xy1 = new Real2(getLast().getInt2());
 		return xy0.getDistance(xy1);
 	}
+
+	/** replace node 
+	 * 
+	 * @param node0 to replace
+	 * @param node1 replacement
+	 * @return true if successful
+	 */
+	public boolean replaceNode(PixelNode node0, PixelNode node1) {
+		int index0 = this.indexOf(node0);
+		boolean changed = false;
+		if (index0 != -1) {
+			nodeList.set(index0, node1);
+			changed = true;
+		}
+		return changed;
+	}
+	
+
 }

@@ -1,0 +1,103 @@
+package org.contentmine.image.pixel;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.contentmine.graphics.svg.SVGG;
+/** a ring of pixels around another ring or point.
+ * 
+ * @author pm286
+ *
+ */
+public class PixelRing implements Iterable<Pixel> {
+	private static final Logger LOG = Logger.getLogger(PixelRing.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
+
+	private PixelList pixelList;
+	
+	public PixelRing() {
+	}
+	
+	public PixelRing(PixelList pixelList) {
+		this();
+		this.pixelList = pixelList;
+	}
+
+	public PixelList getOrCreatePixelList() {
+		if (pixelList == null) {
+			this.pixelList = new PixelList();
+		}
+		return pixelList;
+	}
+	
+	@Override
+	public Iterator<Pixel> iterator() {
+		return pixelList.iterator();
+	}
+
+	public boolean contains(Pixel pixel) {
+		return getOrCreatePixelList().contains(pixel);
+	}
+
+	public PixelRing getPixelsTouching(PixelRing pixelRing) {
+		PixelList touchingPixels = null;
+		if (pixelRing != null) {
+			touchingPixels = this.pixelList.getPixelsTouching(pixelRing.getOrCreatePixelList());
+		}
+		return new PixelRing(touchingPixels);
+	}
+
+	public SVGG getOrCreateSVG() {
+		return getOrCreatePixelList().getOrCreateSVG();
+	}
+
+	public int size() {
+		return getOrCreatePixelList().size();
+	}
+
+	public void plotPixels(SVGG g, String fill) {
+		this.getOrCreatePixelList().plotPixels(g, fill);
+	}
+
+
+	/** grows a new ring "outside" this.
+	 * currently developed for nested pixel rings
+	 * experimental
+	 * 
+	 * In principle we could determine the outside by sectioning, but here we assume an onion
+	 * ring structure with innerRingList representing the inside
+	 * the ouside is simply "not innerRingList" - it need not be whitespace
+	 * 
+	 * @param innerRingList
+	 * @return
+	 */
+	public PixelRing expandRingOutside(PixelRing innerRing) {
+		PixelIsland island = this.getOrCreatePixelList().getIsland();
+		PixelRing newRing = new PixelRing();
+		for (Pixel node : this) {
+			PixelList pixelList = node.getOrCreateNeighbours(island);
+			for (Pixel pixel : pixelList) {
+				if (this.contains(pixel)) {
+					LOG.trace("skip this");
+				} else if (innerRing.contains(pixel)) {
+					LOG.trace("skip inner");
+				} else {
+					LOG.trace("adding "+pixel);
+					newRing.add(pixel);
+				}
+			}
+		}
+		return newRing;
+	}
+
+	public void add(Pixel pixel) {
+		this.getOrCreatePixelList().add(pixel);
+	}
+
+
+}

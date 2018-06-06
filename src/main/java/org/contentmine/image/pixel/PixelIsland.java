@@ -614,7 +614,7 @@ public class PixelIsland implements Iterable<Pixel> {
 					exposedList.add(neighbour);
 				}
 			}
-			rings.add(exposedList);
+			rings.add(new PixelRing(exposedList));
 		}
 		return rings;
 	}
@@ -692,11 +692,11 @@ public class PixelIsland implements Iterable<Pixel> {
 			internalPixelRings.setIsland(this);
 			setDiagonal(true);
 			findRidge();
-			PixelList list = getPixelsWithValue(1);
+			PixelList pixelList = getPixelsWithValue(1);
 			int ring = 1;
-			while (list.size() > 0) {
-				internalPixelRings.add(list);
-				list = growFrom(list, ring++);
+			while (pixelList.size() > 0) {
+				internalPixelRings.add(new PixelRing(pixelList));
+				pixelList = growFrom(pixelList, ring++);
 			}
 		}
 		return internalPixelRings;
@@ -1135,7 +1135,7 @@ public class PixelIsland implements Iterable<Pixel> {
 		SVGG g = new SVGG();
 		getOrCreateInternalPixelRings();
 		plot(g, plotInternalRings, getInternalRingName(), internalPixelRings);
-		plot(g, plotOutline, getOutlineName(), internalPixelRings.getOrCreateOutline());
+		plot(g, plotOutline, getOutlineName(), internalPixelRings.getOrCreateOutline().getOrCreatePixelList());
 //		plot(g, plotFirstOutline, getFirstOutlineName(), internalPixelRings.getOrCreateFirstOutline());
 		return g;
 	}

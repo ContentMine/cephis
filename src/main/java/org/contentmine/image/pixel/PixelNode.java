@@ -245,5 +245,14 @@ public class PixelNode implements Comparable<PixelNode> {
 		}
 		return count;
 	}
+
+	/** change coordinates
+	 * don't change any other parameters
+	 * 
+	 * @param newXY
+	 */
+	public void setInt2(Int2 newXY) {
+		this.getCentrePixel().setInt2(newXY);
+	}
 	
 }

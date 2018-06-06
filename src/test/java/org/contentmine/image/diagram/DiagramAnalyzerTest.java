@@ -25,6 +25,7 @@ import org.contentmine.image.pixel.PixelGraph;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.contentmine.image.pixel.PixelList;
+import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
 import org.contentmine.image.pixel.PixelSegment;
 import org.contentmine.image.pixel.PixelSegmentList;
@@ -299,12 +300,12 @@ public class DiagramAnalyzerTest {
 		Iterator<String> iterator = ColorStore.getColorIterator(ColorizerType.CONTRAST);
 		for (PixelIsland island : islandList) {
 			PixelRingList pixelRingList = island.getOrCreateInternalPixelRings();
-			for (PixelList pixelList : pixelRingList) {
-				SVGG gg = pixelList.getOrCreateSVG();
+			for (PixelRing pixelRing : pixelRingList) {
+				SVGG gg = pixelRing.getOrCreateSVG();
 				gg.setCSSStyle("stroke-width:1.0;stroke:"+iterator.next()+";");
 //				g.appendChild(gg);
 			}
-			PixelList outline = pixelRingList.getOuterPixelRing();
+			PixelRing outline = pixelRingList.getOuterPixelRing();
 			if (outline != null) {
 				SVGG gg = outline.getOrCreateSVG();
 				gg.setCSSStyle("stroke-width:0.2;stroke:"+"black"+"; fill: none;");

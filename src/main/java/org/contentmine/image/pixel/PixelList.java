@@ -777,5 +777,4 @@ public class PixelList implements Iterable<Pixel> {
 		return false;
 	}
 
-
 }

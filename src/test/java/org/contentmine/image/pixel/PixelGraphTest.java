@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ImageAnalysisFixtures;
 import org.contentmine.image.ImageUtil;
@@ -256,5 +257,56 @@ public class PixelGraphTest {
 		Assert.assertEquals("[<(0,2)>]", connectedList.toString());
 		
 		
+	}
+
+	/** condense edge.
+	 * tested on toy graph, and may not test all properties
+	 * 
+	 */
+	@Test
+	
+	public void testCondenseEdgeAndRemoveOneNode() {
+		PixelGraph graph = PixelGraph.createEmptyGraph();
+		
+		PixelNode node0 = new PixelNode();
+		node0.setCentrePixel(new Pixel(new Int2(0,0)));
+		graph.addNode(node0);
+
+		PixelNode node1 = new PixelNode();
+		node1.setCentrePixel(new Pixel(new Int2(0,10)));
+		PixelEdge edge01 = new PixelEdge(graph);
+		graph.addNode(node1);
+		edge01.addNode(node0, 0);
+		edge01.addNode(node1, 1);
+		graph.addEdge(edge01);
+
+		PixelNode node2 = new PixelNode();
+		node2.setCentrePixel(new Pixel(new Int2(10,0)));
+		PixelEdge edge02 = new PixelEdge(graph);
+		graph.addNode(node2);
+		edge02.addNode(node0, 0);
+		edge02.addNode(node2, 1);
+		graph.addEdge(edge02);
+
+		PixelNode node3 = new PixelNode();
+		node3.setCentrePixel(new Pixel(new Int2(10,10)));
+		PixelEdge edge23 = new PixelEdge(graph);
+		graph.addNode(node3);
+		edge23.addNode(node2, 0);
+		edge23.addNode(node3, 1);
+		graph.addEdge(edge23);
+
+		Assert.assertEquals(4, graph.getOrCreateNodeList().size());
+		Assert.assertEquals(3, graph.getOrCreateEdgeList().size());
+		Assert.assertEquals("[<(0,0)><(0,10)><(10,0)><(10,10)>]", graph.getOrCreateNodeList().toString());
+		Assert.assertEquals("pixelList: null; nodeList: [<(0,0)><(0,10)>]", graph.getOrCreateEdgeList().get(0).toString());
+		Assert.assertEquals("pixelList: null; nodeList: [<(0,0)><(10,0)>]", graph.getOrCreateEdgeList().get(1).toString());
+		Assert.assertEquals("pixelList: null; nodeList: [<(10,0)><(10,10)>]", graph.getOrCreateEdgeList().get(2).toString());
+		graph.condenseEdgeAndRemoveOneNode(edge02);
+		Assert.assertEquals(3, graph.getOrCreateNodeList().size());
+		Assert.assertEquals(2, graph.getOrCreateEdgeList().size());
+		Assert.assertEquals("[<(5,0)><(0,10)><(10,10)>]", graph.getOrCreateNodeList().toString());
+		Assert.assertEquals("pixelList: null; nodeList: [<(5,0)><(0,10)>]", graph.getOrCreateEdgeList().get(0).toString());
+		Assert.assertEquals("pixelList: null; nodeList: [<(5,0)><(10,10)>]", graph.getOrCreateEdgeList().get(1).toString());
 	}
 }

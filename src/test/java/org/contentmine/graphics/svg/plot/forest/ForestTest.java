@@ -19,6 +19,7 @@ import org.contentmine.image.pixel.PixelGraph;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.contentmine.image.pixel.PixelList;
+import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -151,7 +152,7 @@ public class ForestTest {
 					if (island != null) {
 						pixelRingList = island.getOrCreateInternalPixelRings();
 						if (pixelRingList != null && pixelRingList.size() > ring) {
-							PixelList outline = pixelRingList.get(ring).getPixelsTouching(pixelRingList.get(ring0));
+							PixelRing outline = pixelRingList.get(ring).getPixelsTouching(pixelRingList.get(ring0));
 							if (outline != null) {
 								outline.plotPixels(g, "blue");
 							}
@@ -231,7 +232,7 @@ public class ForestTest {
 					if (island != null) {
 						pixelRingList = island.getOrCreateInternalPixelRings();
 						if (pixelRingList != null && pixelRingList.size() > ring) {
-							PixelList outline = pixelRingList.get(ring).getPixelsTouching(pixelRingList.get(ring0));
+							PixelRing outline = pixelRingList.get(ring).getPixelsTouching(pixelRingList.get(ring0));
 							if (outline != null) {
 								outline.plotPixels(g, "blue");
 							}
@@ -273,7 +274,7 @@ public class ForestTest {
 		int maxSize0 = maxSize - 1;
 		SVGG g = new SVGG();
 		if (pixelRingList.size() > maxSize) {
-			PixelList outline = pixelRingList.get(maxSize).getPixelsTouching(pixelRingList.get(maxSize0));
+			PixelRing outline = pixelRingList.get(maxSize).getPixelsTouching(pixelRingList.get(maxSize0));
 			outline.plotPixels(g, "black");
 			// this is the outline of the symbol
 			File file = new File("target/" + fileRoot + "/plotLine"+isl+"Points"+maxSize0+""+maxSize+".svg");

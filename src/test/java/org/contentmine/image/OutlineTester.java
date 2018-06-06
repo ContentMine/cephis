@@ -11,8 +11,8 @@ import org.contentmine.image.pixel.PixelEdgeList;
 import org.contentmine.image.pixel.PixelGraph;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
-import org.contentmine.image.pixel.PixelList;
 import org.contentmine.image.pixel.PixelNodeList;
+import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
 import org.contentmine.image.pixel.PixelSegmentList;
 import org.contentmine.image.plot.PlotTest;
@@ -68,7 +68,7 @@ public class OutlineTester {
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File(outdir, inname + "AllRings."+currentIslandIndex+".svg"));
 	
-		PixelList outline = pixelRingList.get(1).getPixelsTouching(pixelRingList.get(0));
+		PixelRing outline = pixelRingList.get(1).getPixelsTouching(pixelRingList.get(0));
 		for (int iRing = 0; iRing < Math.min(expectedRingSizes.length, pixelRingList.size()); iRing++) {
 			LOG.debug("ser "+currentIslandIndex+", iRing "+iRing);
 			Assert.assertEquals("ring"+iRing, expectedRingSizes[currentIslandIndex][iRing], pixelRingList.get(iRing).size());
@@ -80,9 +80,9 @@ public class OutlineTester {
 	
 		// just plots the first ring. may change this?
 		g = new SVGG();
-		outline = pixelRingList.get(0).getPixelsWithOrthogonalContactsTo(pixelRingList.get(1), islandSerial);
+		outline = new PixelRing(pixelRingList.get(0).getOrCreatePixelList().getPixelsWithOrthogonalContactsTo(pixelRingList.get(1).getOrCreatePixelList(), islandSerial));
 		outline.plotPixels(g, PlotTest.BLUE);
-		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline, true);
+		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline.getOrCreatePixelList(), true);
 		PixelGraph graph = PixelGraph.createGraph(outlineIsland);
 		PixelNodeList nodeList = graph.getOrCreateNodeList();
 		Assert.assertEquals("nodes", nodes[currentIslandIndex], nodeList.size());

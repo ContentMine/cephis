@@ -27,6 +27,7 @@ import org.contentmine.image.pixel.PixelIslandList;
 import org.contentmine.image.pixel.PixelList;
 import org.contentmine.image.pixel.PixelListFloodFill;
 import org.contentmine.image.pixel.PixelNodeList;
+import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
 import org.contentmine.image.pixel.PixelSegmentList;
 import org.junit.Assert;
@@ -437,7 +438,7 @@ public class PlotTest {
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File("target/" + SHARK + "/errorbar1AllRings.svg"));
 
-		PixelList outline = pixelRingList.get(1).getPixelsTouching(pixelRingList.get(0));
+		PixelRing outline = pixelRingList.get(1).getPixelsTouching(pixelRingList.get(0));
 		Assert.assertEquals("outline0", 198, pixelRingList.get(0).size());
 		Assert.assertEquals("outline1", 47, pixelRingList.get(1).size());
 		Assert.assertEquals("outline", 64, outline.size());
@@ -448,9 +449,9 @@ public class PlotTest {
 
 		// just plots the diamond
 		g = new SVGG();
-		outline = pixelRingList.get(0).getPixelsWithOrthogonalContactsTo(pixelRingList.get(1), errorIsland);
+		outline = new PixelRing(pixelRingList.get(0).getOrCreatePixelList().getPixelsWithOrthogonalContactsTo(pixelRingList.get(1).getOrCreatePixelList(), errorIsland));
 		outline.plotPixels(g, BLUE);
-		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline, true);
+		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline.getOrCreatePixelList(), true);
 		PixelGraph graph = PixelGraph.createGraph(outlineIsland);
 		PixelNodeList nodeList = graph.getOrCreateNodeList();
 		Assert.assertEquals("nodes", 1, nodeList.size());
@@ -513,7 +514,7 @@ public class PlotTest {
 		SVGSVG.wrapAndWriteAsSVG(g, new File("target/" + SHARK + "/plotLine.svg"));
 
 		g = new SVGG();
-		PixelList outline = pixelRingList.get(3).getPixelsTouching(pixelRingList.get(2));
+		PixelRing outline = pixelRingList.get(3).getPixelsTouching(pixelRingList.get(2));
 		outline.plotPixels(g, "black");
 		// this is the outline of the symbol
 		SVGSVG.wrapAndWriteAsSVG(g, new File("target/" + SHARK + "/plotLinePoints23.svg"));
@@ -595,10 +596,10 @@ public class PlotTest {
 			if (island != null) {
 				PixelRingList pixelRingList = island.getOrCreateInternalPixelRings();
 				if (pixelRingList != null && pixelRingList.size() > ring1) {
-					PixelList list0 = pixelRingList.get(ring0);
-					PixelList list1 = pixelRingList.get(ring1);
-					PixelList outline = list1.getPixelsTouching(list0);
-					PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(outline);
+					PixelRing list0 = pixelRingList.get(ring0);
+					PixelRing list1 = pixelRingList.get(ring1);
+					PixelRing outline = list1.getPixelsTouching(list0);
+					PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(outline.getOrCreatePixelList());
 					pixelListFloodFill.fill();
 					PixelIslandList pixelIslandList1 = pixelListFloodFill.getIslandList();
 					List<PixelIsland> outlineList = pixelIslandList1.getList();
