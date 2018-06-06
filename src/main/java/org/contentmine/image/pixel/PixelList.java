@@ -41,7 +41,7 @@ public class PixelList implements Iterable<Pixel> {
 	public final static Pattern COORD_PATTERN = Pattern.compile("\\((\\d+),(\\d+)\\)");
 	private static final String DEFAULT_FILL = "red";
 
-	private List<Pixel> list;
+	protected List<Pixel> list;
 	private Real2Array points;
 	private PixelIsland island;
 	private Map<Int2, Pixel> pixelByCoordinateMap;

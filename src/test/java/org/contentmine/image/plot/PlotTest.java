@@ -449,9 +449,9 @@ public class PlotTest {
 
 		// just plots the diamond
 		g = new SVGG();
-		outline = new PixelRing(pixelRingList.get(0).getOrCreatePixelList().getPixelsWithOrthogonalContactsTo(pixelRingList.get(1).getOrCreatePixelList(), errorIsland));
+		outline = new PixelRing(pixelRingList.get(0).getPixelsWithOrthogonalContactsTo(pixelRingList.get(1), errorIsland));
 		outline.plotPixels(g, BLUE);
-		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline.getOrCreatePixelList(), true);
+		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline, true);
 		PixelGraph graph = PixelGraph.createGraph(outlineIsland);
 		PixelNodeList nodeList = graph.getOrCreateNodeList();
 		Assert.assertEquals("nodes", 1, nodeList.size());
@@ -599,7 +599,7 @@ public class PlotTest {
 					PixelRing list0 = pixelRingList.get(ring0);
 					PixelRing list1 = pixelRingList.get(ring1);
 					PixelRing outline = list1.getPixelsTouching(list0);
-					PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(outline.getOrCreatePixelList());
+					PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(outline);
 					pixelListFloodFill.fill();
 					PixelIslandList pixelIslandList1 = pixelListFloodFill.getIslandList();
 					List<PixelIsland> outlineList = pixelIslandList1.getList();

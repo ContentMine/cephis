@@ -86,7 +86,7 @@ public class PixelRingList implements Iterable<PixelRing> {
 		int i = 0;
 		
 		for (PixelRing pixelRing : this) {
-			SVGG g = pixelRing.getOrCreatePixelList().plotPixels(fill[i]);
+			SVGG g = pixelRing.plotPixels(fill[i]);
 			gg.appendChild(g);
 			i = (i + 1) % fill.length;
 		}
@@ -109,7 +109,7 @@ public class PixelRingList implements Iterable<PixelRing> {
 		for (int ring = 0; ring < ringList.size(); ring++) {
 			PixelRing pixelRing = ringList.get(ring);
 			// make copy of ring as island to isolate the ring
-			PixelIsland newIsland = PixelIsland.createSeparateIslandWithClonedPixels(pixelRing.getOrCreatePixelList(), true);
+			PixelIsland newIsland = PixelIsland.createSeparateIslandWithClonedPixels(pixelRing, true);
 			int oldSize = newIsland.size();
 			newIsland.removeMinorIslands(size);
 			int newSize = newIsland.size();
@@ -135,7 +135,7 @@ public class PixelRingList implements Iterable<PixelRing> {
 		SVGG g = new SVGG();
 		PixelList outline;
 		if (size() > 1) {
-			outline = get(0).getOrCreatePixelList().getPixelsWithOrthogonalContactsTo(get(1).getOrCreatePixelList(), island);
+			outline = get(0).getPixelsWithOrthogonalContactsTo(get(1), island);
 			outline.plotPixels(g, fill[0]);
 			PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline, true);
 			PixelGraph graph = PixelGraph.createGraph(outlineIsland);

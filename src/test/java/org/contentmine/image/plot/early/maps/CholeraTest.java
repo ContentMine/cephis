@@ -80,7 +80,7 @@ public class CholeraTest {
 		PixelRing ring4 = pixelRingList.get(4);
 		gg = ring4.getOrCreateSVG();
 		SVGSVG.wrapAndWriteAsSVG(gg, new File(targetDir, "pixelRings4"+".svg"));
-		PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(ring4.getOrCreatePixelList());
+		PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(ring4);
 		PixelIslandList separatedIslandList = pixelListFloodFill.getIslandList();
 		separatedIslandList.sortBySizeDescending();
 		Assert.assertEquals("separated pixelRingList", 11, separatedIslandList.size());

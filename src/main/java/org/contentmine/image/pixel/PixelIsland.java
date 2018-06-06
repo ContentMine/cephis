@@ -1135,7 +1135,7 @@ public class PixelIsland implements Iterable<Pixel> {
 		SVGG g = new SVGG();
 		getOrCreateInternalPixelRings();
 		plot(g, plotInternalRings, getInternalRingName(), internalPixelRings);
-		plot(g, plotOutline, getOutlineName(), internalPixelRings.getOrCreateOutline().getOrCreatePixelList());
+		plot(g, plotOutline, getOutlineName(), internalPixelRings.getOrCreateOutline());
 //		plot(g, plotFirstOutline, getFirstOutlineName(), internalPixelRings.getOrCreateFirstOutline());
 		return g;
 	}

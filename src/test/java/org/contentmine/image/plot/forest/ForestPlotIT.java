@@ -85,7 +85,7 @@ public class ForestPlotIT {
 			for (int i = 0; i < pixelRingList.size(); i+=5) {
 				PixelRing pixelRing = pixelRingList.get(i);
 				g = null;
-				g = pixelRing.getOrCreatePixelList().plotPixels(g, "red");
+				g = pixelRing.plotPixels(g, "red");
 				SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, fileRoot+"/allRings"+i+".svg"));
 			}
 			PixelRing pixelRing10 = pixelRingList.get(10);

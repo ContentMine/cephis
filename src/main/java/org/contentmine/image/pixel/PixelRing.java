@@ -12,57 +12,57 @@ import org.contentmine.graphics.svg.SVGG;
  * @author pm286
  *
  */
-public class PixelRing implements Iterable<Pixel> {
+public class PixelRing extends PixelList {
 	private static final Logger LOG = Logger.getLogger(PixelRing.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	private PixelList pixelList;
+//	private PixelList pixelList;
 	
 	public PixelRing() {
 	}
 	
 	public PixelRing(PixelList pixelList) {
-		this();
-		this.pixelList = pixelList;
+		super();
+		super.list = pixelList.getList();
 	}
 
-	public PixelList getOrCreatePixelList() {
-		if (pixelList == null) {
-			this.pixelList = new PixelList();
-		}
-		return pixelList;
-	}
+//	public PixelList getOrCreatePixelList() {
+//		if (pixelList == null) {
+//			this.pixelList = new PixelList();
+//		}
+//		return pixelList;
+//	}
 	
-	@Override
-	public Iterator<Pixel> iterator() {
-		return pixelList.iterator();
-	}
+//	@Override
+//	public Iterator<Pixel> iterator() {
+//		return pixelList.iterator();
+//	}
 
-	public boolean contains(Pixel pixel) {
-		return getOrCreatePixelList().contains(pixel);
-	}
+//	public boolean contains(Pixel pixel) {
+//		return getOrCreatePixelList().contains(pixel);
+//	}
 
 	public PixelRing getPixelsTouching(PixelRing pixelRing) {
 		PixelList touchingPixels = null;
 		if (pixelRing != null) {
-			touchingPixels = this.pixelList.getPixelsTouching(pixelRing.getOrCreatePixelList());
+			touchingPixels = super.getPixelsTouching(pixelRing);
 		}
 		return new PixelRing(touchingPixels);
 	}
 
-	public SVGG getOrCreateSVG() {
-		return getOrCreatePixelList().getOrCreateSVG();
-	}
+//	public SVGG getOrCreateSVG() {
+//		return getList().getOrCreateSVG();
+//	}
 
-	public int size() {
-		return getOrCreatePixelList().size();
-	}
+//	public int size() {
+//		return getOrCreatePixelList().size();
+//	}
 
-	public void plotPixels(SVGG g, String fill) {
-		this.getOrCreatePixelList().plotPixels(g, fill);
-	}
+//	public void plotPixels(SVGG g, String fill) {
+//		this.getOrCreatePixelList().plotPixels(g, fill);
+//	}
 
 
 	/** grows a new ring "outside" this.
@@ -77,7 +77,7 @@ public class PixelRing implements Iterable<Pixel> {
 	 * @return
 	 */
 	public PixelRing expandRingOutside(PixelRing innerRing) {
-		PixelIsland island = this.getOrCreatePixelList().getIsland();
+		PixelIsland island = this.getIsland();
 		PixelRing newRing = new PixelRing();
 		for (Pixel node : this) {
 			PixelList pixelList = node.getOrCreateNeighbours(island);
@@ -95,9 +95,9 @@ public class PixelRing implements Iterable<Pixel> {
 		return newRing;
 	}
 
-	public void add(Pixel pixel) {
-		this.getOrCreatePixelList().add(pixel);
-	}
+//	public void add(Pixel pixel) {
+//		this.getOrCreatePixelList().add(pixel);
+//	}
 
 
 }
