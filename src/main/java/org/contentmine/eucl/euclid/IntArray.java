@@ -252,8 +252,7 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
     /**
      * copy constructor.
      * 
-     * @param m
-     *            array to copy
+     * @param m array to copy
      */
     public IntArray(IntArray m) {
         this.shallowCopy(m);
@@ -678,53 +677,99 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
      * stepwise
      * </P>
      * 
+     * NOT SURE THIS IS CORRECT
+     * 
      * @param filter
      *            to apply normally smaller than this
      * @return filtered array
+     * @deprecated ("probably wrong")
      */
     public IntArray applyFilter(IntArray filter) {
         if (nelem == 0 || filter == null || filter.nelem <= 1) {
             return this;
         }
-        int nfilter = filter.size();
-        int midfilter = (nfilter - 1) / 2;
+        int filterSize = filter.size();
+        int midfilter = (filterSize - 1) / 2;
         IntArray temp = new IntArray(nelem);
-        int wt = 0;
-        int sum = 0;
         for (int j = 0; j < midfilter; j++) {
-            // get weight
-            wt = 0;
-            sum = 0;
-            int l = 0;
-            for (int k = midfilter - j; k < nfilter; k++) {
-                wt += Math.abs(filter.array[k]);
-                sum += filter.array[k] * this.array[l++];
-            }
-            temp.array[j] = sum / wt;
+            int start = midfilter - j;
+			int end = filterSize;
+            int arrayIndex = 0;
+            temp.array[j] = createWeightedSum(filter, arrayIndex, start, end);
         }
-        wt = filter.absSumAllElements();
         for (int j = midfilter; j < nelem - midfilter; j++) {
-            sum = 0;
-            int l = j - midfilter;
-            for (int k = 0; k < nfilter; k++) {
-                sum += filter.array[k] * this.array[l++];
-            }
-            temp.array[j] = sum / wt;
+            int arrayIndex = j - midfilter;
+            int start = 0;
+			int end = filterSize;
+            temp.array[j] = createWeightedSum(filter, arrayIndex, start, end);
         }
         for (int j = nelem - midfilter; j < nelem; j++) {
             // get weight
-            wt = 0;
-            sum = 0;
-            int l = j - midfilter;
-            for (int k = 0; k < midfilter + nelem - j; k++) {
-                wt += Math.abs(filter.array[k]);
-                sum += filter.array[k] * this.array[l++];
-            }
-            temp.array[j] = sum / wt;
+            int arrayIndex = j - midfilter;
+            int start = 0;
+			int end = midfilter + nelem - j;
+            temp.array[j] = createWeightedSum(filter, arrayIndex, start, end);
         }
         return temp;
     }
+	private int createWeightedSum(IntArray filter, int l, int start, int end) {
+		int wt;
+		int sum;
+		wt = 0;
+		sum = 0;
+		for (int k = start; k < end; k++) {
+		    wt += Math.abs(filter.array[k]);
+		    sum += filter.array[k] * this.array[l++];
+		}
+		int weightedSum = sum / wt;
+		return weightedSum;
+	}
+	
     /**
+     * apply filter. convolute array with another array. This is 1-D image
+     * processing. If <TT>filter</TT> has <= 1 element, return <TT>this</TT>
+     * unchanged. <TT>filter</TT> should have an odd number of elements. The
+     * filter can be created with a IntArray constructor filter is moved along
+     * stepwise
+     * </P>
+     * 
+     * @param filter to apply normally smaller than this
+     * @return filtered array (null if filter == null)
+     */
+    public IntArray applyFilterNew(IntArray filter) {
+        IntArray newArray = null;
+        if (filter != null) {
+//	        newArray = new IntArray(this);
+	        newArray = new IntArray(this.size());
+	        int nsteps = this.size() - filter.size() + 1;
+	        LOG.trace("ns "+nsteps);
+	        int midFilter = (filter.size() - 1) / 2;
+	        int replaceIndex = -1;
+	        for (int thisIndex = 0; thisIndex < nsteps; thisIndex++) {
+	        	int convolutedSum = convolutedSum(thisIndex, filter);
+				replaceIndex = thisIndex + midFilter;
+				LOG.trace("r "+replaceIndex+"; "+convolutedSum);
+				newArray.array[replaceIndex] = convolutedSum;
+	        }
+//	        LOG.debug("s "+midFilter+" : "+replaceIndex);
+        }
+        return newArray;
+    }
+
+    private int convolutedSum(int thisIndex, IntArray filter) {
+    	int sum = 0;
+    	for (int filterIndex = 0; filterIndex < filter.size(); filterIndex++) {
+    		LOG.trace(this);
+    		LOG.trace("\nt "+thisIndex+"/f "+filterIndex);
+    		int tval = this.array[thisIndex++];
+			int fval = filter.array[filterIndex];
+			LOG.trace(tval+"/"+fval);
+			sum += tval * fval;
+    	}
+    	return sum;
+	}
+    
+	/**
      * trims array to lie within limit.
      * 
      * if flag == BELOW values below limit are set to limit. if flag == ABOVE
@@ -1185,6 +1230,7 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
         }
     }
     private static final int XXCUTOFF = 16;
+//	private int nfilter;
     /**
      * get indexes of ascending sorted array. this array NOT MODIFIED
      * 
