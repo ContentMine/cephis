@@ -1465,4 +1465,13 @@ public class DiagramAnalyzer {
 		return islandList == null ? null : islandList.get(0);
 	}
 
+	public void scanThresholdsAndWriteBinarizedFiles(File targetDir, int[] thresholds, File chemFile) {
+		for (int threshold : thresholds) {
+			setThreshold(threshold);
+			readAndProcessInputFile(chemFile);
+			File binarizedFile = new File(targetDir, "binarized"+threshold+".png");
+			writeBinarizedFile(binarizedFile);
+		}
+	}
+
 }

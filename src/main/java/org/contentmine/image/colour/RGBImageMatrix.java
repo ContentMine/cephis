@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.ArrayBase.Trim;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
 import org.contentmine.image.ImageUtil;
@@ -13,12 +14,13 @@ import org.contentmine.image.ImageUtil;
  * @author pm286
  *
  */
-public class RGBMatrix {
-	private static final Logger LOG = Logger.getLogger(RGBMatrix.class);
+public class RGBImageMatrix {
+	private static final Logger LOG = Logger.getLogger(RGBImageMatrix.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
 
+	public static int TYPE13 = 13;  // no idea what is does but ...
 	
 	/** matrices are m[x][y] , i.e. m[cols][rows]
 	 * 
@@ -34,12 +36,12 @@ public class RGBMatrix {
 	 * @param mb
 	 * @return null if mr, mg null or incompatible
 	 */
-	public static RGBMatrix createMatrix(int[][] mr, int[][] mg, int[][] mb) {
-		RGBMatrix rgbMatrix = null;
+	public static RGBImageMatrix createMatrix(int[][] mr, int[][] mg, int[][] mb) {
+		RGBImageMatrix rgbMatrix = null;
 		if (mr != null && mg != null && mb != null) {
 			int cols = mr.length;
 			if (cols > 0 && mg.length == cols && mb.length == cols) {
-				rgbMatrix = new RGBMatrix();
+				rgbMatrix = new RGBImageMatrix();
 				rgbMatrix.createMatrixArray(mr, mg, mb);
 			}
 		}
@@ -65,7 +67,7 @@ public class RGBMatrix {
 		return matrix;
 	}
 
-	private RGBMatrix() {
+	private RGBImageMatrix() {
 	}
 
 	public int getRows() {
@@ -83,7 +85,7 @@ public class RGBMatrix {
 	 * @param image
 	 * @return
 	 */
-	public static RGBMatrix extractMatrix(BufferedImage image) {
+	public static RGBImageMatrix extractMatrix(BufferedImage image) {
 		int ymax = image.getHeight();
 		int xmax = image.getWidth();
 		int[][] mr = new int[xmax][ymax];
@@ -100,7 +102,7 @@ public class RGBMatrix {
 				mb[x][y] = ImageUtil.getBlue(rgb);
 			}
 		}
-		RGBMatrix rgbMatrix = RGBMatrix.createMatrix(mr, mg, mb);
+		RGBImageMatrix rgbMatrix = RGBImageMatrix.createMatrix(mr, mg, mb);
 		return rgbMatrix;
 	}
 
@@ -115,10 +117,15 @@ public class RGBMatrix {
 		image = new BufferedImage(xmax, ymax, imageType);
 		for (int y = 0; y < ymax; y++) {
 			for (int x = 0; x < xmax; x++) {
-				// x and y run differently im image
+				// x and y run differently in image ?? do they??
+				// old failing code
 				int red = rm.elementAt(y, x);
 				int green = gm.elementAt(y, x);
 				int blue = bm.elementAt(y, x);
+//				// new to re-test
+//				int newred = rm.elementAt(x, y);
+//				int newgreen = gm.elementAt(x, y);
+//				int newblue = bm.elementAt(x, y);
 				int rgb = ImageUtil.setRgb(red, green, blue);
 				image.setRGB(x, y, rgb);
 			}
@@ -164,25 +171,61 @@ public class RGBMatrix {
 	
 	/** apply simple sharpening function to image.
 	 * 
+	 * PROBABLY WRONG
 	 */
-	public RGBMatrix applyFilter(IntArray function) {
-		RGBMatrix newMatrix = this.copy();
+	public RGBImageMatrix applyFilter(IntArray function) {
+		LOG.debug("function: "+function);
+		RGBImageMatrix newMatrix = this.copy();
 		for (int channel = 0; channel < ImageUtil.RGB.length; channel++) {
+			LOG.debug("channel: "+channel);
 			IntMatrix matrix = newMatrix.getMatrix(channel);
 			// extract row, filter and replace
 			for (int iRow = 0; iRow < matrix.getRows(); iRow++) {
 				IntArray row = matrix.extractRowData(iRow);
 				IntArray row1 = row.applyFilter(function);
+//				row1 = row; // only for debug
 				// try to get rid of negative values
 //				row1 = row1.trim(Trim.BELOW, 0).trim(Trim.ABOVE, 0xffff);
+				matrix.replaceRowData(iRow, row1);
+			}
+			boolean debug = true;
+			if (!debug) {
+			// extract column, filter and replace
+			for (int icol = 0; icol < matrix.getCols(); icol++) {
+				IntArray col = matrix.extractColumnData(icol);
+				IntArray col1 = col.applyFilter(function);
+//				col1 = col; // only for debug
+				// try to get rid of negative values
+//				col1 = col1.trim(Trim.BELOW, 0).trim(Trim.ABOVE, 0xffff);
+				matrix.replaceColumnData(icol, col1);
+			}
+			}
+			newMatrix.mrgb[channel] = matrix;
+		}
+		return newMatrix;
+	}
+
+	/** apply simple sharpening function to image.
+	 * 
+	 */
+	public RGBImageMatrix applyFilterNew(IntArray function) {
+		RGBImageMatrix newMatrix = this.copy();
+		for (int channel = 0; channel < ImageUtil.RGB.length; channel++) {
+			IntMatrix matrix = newMatrix.getMatrix(channel);
+			
+			// extract row, filter and replace
+			for (int iRow = 0; iRow < matrix.getRows(); iRow++) {
+				IntArray row = matrix.extractRowData(iRow);
+				IntArray row1 = row.applyFilterNew(function);
+				row1 = row1.trim(Trim.BELOW, 0).trim(Trim.ABOVE, 255);
 				matrix.replaceRowData(iRow, row1);
 			}
 			// extract column, filter and replace
 			for (int icol = 0; icol < matrix.getCols(); icol++) {
 				IntArray col = matrix.extractColumnData(icol);
-				IntArray col1 = col.applyFilter(function);
+				IntArray col1 = col.applyFilterNew(function);
 				// try to get rid of negative values
-//				col1 = col1.trim(Trim.BELOW, 0).trim(Trim.ABOVE, 0xffff);
+				col1 = col1.trim(Trim.BELOW, 0).trim(Trim.ABOVE, 255);
 				matrix.replaceColumnData(icol, col1);
 			}
 			newMatrix.mrgb[channel] = matrix;
@@ -190,8 +233,8 @@ public class RGBMatrix {
 		return newMatrix;
 	}
 
-	public RGBMatrix copy() {
-		RGBMatrix newMatrix = new RGBMatrix();
+	public RGBImageMatrix copy() {
+		RGBImageMatrix newMatrix = new RGBImageMatrix();
 		newMatrix.mrgb = new IntMatrix[3];
 		for (int i = 0; i < ImageUtil.RGB.length; i++) {
 			newMatrix.mrgb[i] = new IntMatrix(mrgb[i]);

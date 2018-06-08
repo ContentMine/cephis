@@ -229,8 +229,8 @@ public class ColorAnalyzer {
 	
 	public BufferedImage sharpenImage(BufferedImage image) {
 		BufferedImage newImage = null;
-		RGBMatrix rgbMatrix = RGBMatrix.extractMatrix(image);
-		RGBMatrix filtered = rgbMatrix.applyFilter(ImageUtil.SHARPEN_ARRAY);
+		RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
+		RGBImageMatrix filtered = rgbMatrix.applyFilter(ImageUtil.SHARPEN_ARRAY);
 		return newImage;
 	}
 

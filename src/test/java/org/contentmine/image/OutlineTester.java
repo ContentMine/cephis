@@ -80,9 +80,9 @@ public class OutlineTester {
 	
 		// just plots the first ring. may change this?
 		g = new SVGG();
-		outline = new PixelRing(pixelRingList.get(0).getOrCreatePixelList().getPixelsWithOrthogonalContactsTo(pixelRingList.get(1).getOrCreatePixelList(), islandSerial));
+		outline = new PixelRing(pixelRingList.get(0).getPixelsWithOrthogonalContactsTo(pixelRingList.get(1), islandSerial));
 		outline.plotPixels(g, PlotTest.BLUE);
-		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline.getOrCreatePixelList(), true);
+		PixelIsland outlineIsland = PixelIsland.createSeparateIslandWithClonedPixels(outline, true);
 		PixelGraph graph = PixelGraph.createGraph(outlineIsland);
 		PixelNodeList nodeList = graph.getOrCreateNodeList();
 		Assert.assertEquals("nodes", nodes[currentIslandIndex], nodeList.size());

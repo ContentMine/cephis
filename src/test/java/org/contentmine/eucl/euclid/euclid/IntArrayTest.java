@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.ArrayBase.Trim;
 import org.contentmine.eucl.euclid.EuclidRuntimeException;
 import org.contentmine.eucl.euclid.Int;
@@ -31,6 +33,7 @@ import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntSet;
 import org.contentmine.eucl.euclid.test.StringTestBase;
+import org.eclipse.jetty.util.log.Log;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +45,10 @@ import org.junit.Test;
  * 
  */
 public class IntArrayTest {
+	private static final Logger LOG = Logger.getLogger(IntArrayTest.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
 
 	IntArray a0;
 
@@ -861,6 +868,19 @@ public class IntArrayTest {
 		intArray.addElement(1);
 		Assert.assertEquals("integers", "[3, 5, 1]", String.valueOf(intArray.getIntegerList()));
 		
+	}
+	
+	/** convolution of arrays (filtering).
+	 * has previously had bugs
+	 * 
+	 */
+	@Test
+	public void testApplyFilterNew() {
+		IntArray array = new IntArray("0 1 3 6 3 1 0");
+		IntArray filter = new IntArray("-1 3 -1");
+		IntArray newArray = array.applyFilterNew(filter);
+		Assert.assertEquals("convoluted", "(0,0,2,12,2,0,0)", newArray.toString());
+		LOG.debug("n "+newArray);
 	}
 
 
