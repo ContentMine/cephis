@@ -1272,7 +1272,7 @@ public class RealArrayTest {
 	public void testDifferences() {
 		RealArray realArray = new RealArray("1 2 3 4 5  8 9 10  13 14 15 16");
 		Multiset<Double> diffs = realArray.createDoubleDifferenceMultiset(1);
-		List<Multiset.Entry<Double>> diffList = MultisetUtil.createDoubleListSortedByCount(diffs);
+		List<Multiset.Entry<Double>> diffList = MultisetUtil.createListSortedByCount(diffs);
 		Assert.assertEquals("sorted", "[1.0 x 9, 3.0 x 2]", diffList.toString());
 		Multiset.Entry<Double> diff0 = diffList.get(0);
 		Assert.assertEquals("commonest", "1.0 x 9", diff0.toString());

@@ -14,7 +14,12 @@ import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.linestuff.ComplexLine.LineOrientation;
 
-
+/** supports a list of Real2Ranges
+ * may be superseded by Real2RangeList
+ * 
+ * @author pm286
+ *
+ */
 
 public class BoundingBoxManager {
 
@@ -89,12 +94,19 @@ public class BoundingBoxManager {
 
 	}
 	
-	private List<Real2Range> bboxList;
+	protected List<Real2Range> bboxList;
 	private Real2Range totalBox = null;
-	private List<SVGElement> elementList;
 
 
 	public BoundingBoxManager() {
+		getOrCreateBBoxList();
+	}
+
+	public List<Real2Range> getOrCreateBBoxList() {
+		if (bboxList == null) {
+			bboxList = new ArrayList<Real2Range>();
+		}
+		return bboxList;
 	}
 
 	public static List<Real2Range> createBBoxList(List<? extends SVGElement> elementList) {
@@ -157,9 +169,9 @@ public class BoundingBoxManager {
 		this.bboxList = bboxList;
 	}
 	
-	public void add(Real2Range r2r) {
+	public boolean add(Real2Range r2r) {
 		ensureBoundingBoxList();
-		bboxList.add(r2r);
+		return bboxList.add(r2r);
 	}
 	
 	private void ensureBoundingBoxList() {
@@ -265,7 +277,7 @@ public class BoundingBoxManager {
 				frontOfLastBox = Math.max(frontOfCurrentBox, frontOfLastBox);
 			} else {
 				// found some whitespace, create a box
-				Real2Range emptyBox = createBox(frontOfLastBox, rearOfCurrentBox, edge, otherEdge);
+				Real2Range emptyBox = BoundingBoxManager.createBox(frontOfLastBox, rearOfCurrentBox, edge, otherEdge);
 				emptyBoxList.add(emptyBox);
 				frontOfLastBox = frontOfCurrentBox;
 			}
@@ -273,7 +285,7 @@ public class BoundingBoxManager {
 		return emptyBoxList;
 	}
 
-	private Real2Range createBox(Double coord0, Double coord1, BoxEdge edge, RealRange otherRange) {
+	private static Real2Range createBox(Double coord0, Double coord1, BoxEdge edge, RealRange otherRange) {
 		Real2Range box = null;
 		RealRange range = new RealRange(coord0, coord1);
 		if (BoxEdge.XMAX.equals(edge) || BoxEdge.XMIN.equals(edge)) {

@@ -114,8 +114,8 @@ public class PathCache extends AbstractCache{
 		createCharBySig();
 		AbstractCMElement gg = annotatePaths();
 		g.appendChild(gg);
-		Iterable<Entry<String>> iterable = MultisetUtil.getStringEntriesSortedByCount(sigSet);
-		List<Entry<String>> list = MultisetUtil.createStringEntryList(iterable);
+		Iterable<Entry<String>> iterable = MultisetUtil.getEntriesSortedByCount(sigSet);
+		List<Entry<String>> list = MultisetUtil.createEntryList(iterable);
 		AbstractCMElement ggg = annotatePathsWithSignatures();
 		g.appendChild(ggg);
 	}

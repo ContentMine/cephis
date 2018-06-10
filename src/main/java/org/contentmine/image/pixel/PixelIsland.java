@@ -69,7 +69,6 @@ public class PixelIsland implements Iterable<Pixel> {
 	PixelIslandList islandList;
 	PixelList pixelList; // these may have original coordinates
 	private boolean allowDiagonal = false;
-//	boolean allowDiagonal = true;
 	private Int2Range int2range;
 	private Real2Range real2range;
 	private Int2 leftmostCoord;
@@ -93,17 +92,8 @@ public class PixelIsland implements Iterable<Pixel> {
 
 	// plotting stuff
 	private PixelPlotter pixelPlotter;
-	private String internalRingName;
-	private boolean plotInternalRings;
-	private String islandName;
-	private boolean plotIsland;
-	private String outlineName;
-	private boolean plotOutline;
-	private String ridgeName;
-	private boolean plotRidge;
-	private String thinnedName;
-	private boolean plotThinned;
-
+	private PixelIslandAnnotation islandAnnotation;
+	
 	
 	
 	public PixelIsland() {
@@ -113,15 +103,16 @@ public class PixelIsland implements Iterable<Pixel> {
 
 	private void setDefaults() {
 		pixelPlotter = new PixelPlotter();
-		plotInternalRings = true;
-		setIslandName(DEFAULT_ISLAND_NAME);
-		plotIsland = true;
-		setOutlineName(DEFAULT_OUTLINE_NAME);
-		plotOutline = true;
-		setRidgeName(DEFAULT_RIDGE_NAME);
-		plotRidge = true;
-		setThinnedName(DEFAULT_THINNED_NAME);
-		plotThinned = true;
+		setIslandAnnotation(new PixelIslandAnnotation());
+		getIslandAnnotation().setPlotInternalRings(true);
+		getIslandAnnotation().setIslandName(DEFAULT_ISLAND_NAME);
+		getIslandAnnotation().setPlotIsland(true);
+		getIslandAnnotation().setOutlineName(DEFAULT_OUTLINE_NAME);
+		getIslandAnnotation().setPlotOutline(true);
+		getIslandAnnotation().setRidgeName(DEFAULT_RIDGE_NAME);
+		getIslandAnnotation().setPlotRidge(true);
+		getIslandAnnotation().setThinnedName(DEFAULT_THINNED_NAME);
+		getIslandAnnotation().setPlotThinned(true);
 	}
 
 	@Deprecated // shallow copy
@@ -1134,8 +1125,8 @@ public class PixelIsland implements Iterable<Pixel> {
 	public SVGG plotIsland() {
 		SVGG g = new SVGG();
 		getOrCreateInternalPixelRings();
-		plot(g, plotInternalRings, getInternalRingName(), internalPixelRings);
-		plot(g, plotOutline, getOutlineName(), internalPixelRings.getOrCreateOutline());
+		plot(g, getIslandAnnotation().isPlotInternalRings(), getIslandAnnotation().getInternalRingName(), internalPixelRings);
+		plot(g, getIslandAnnotation().isPlotOutline(), getIslandAnnotation().getOutlineName(), internalPixelRings.getOrCreateOutline());
 //		plot(g, plotFirstOutline, getFirstOutlineName(), internalPixelRings.getOrCreateFirstOutline());
 		return g;
 	}
@@ -1169,147 +1160,147 @@ public class PixelIsland implements Iterable<Pixel> {
 		this.pixelPlotter = pixelPlotter;
 	}
 	
-	/**
-	 * @return the plotInternalRings
-	 */
-	public boolean isPlotInternalRings() {
-		return plotInternalRings;
-	}
-
-	/**
-	 * @param plotInternalRings the plotInternalRings to set
-	 */
-	public void setPlotInternalRings(boolean plotInternalRings) {
-		this.plotInternalRings = plotInternalRings;
-	}
-
-	/** get root name for internal rings.
-	 * 
-	 * @return name
-	 */
-	public String getInternalRingName() {
-		return internalRingName;
-	}
-
-	/** root of filenames with internalRings.
-	 * 
-	 * @param name if not null draws rings and outputs file with that name
-	 */
-	public void setInternalRingName(String name) {
-		this.internalRingName = name;
-	}
-
-	/**
-	 * @return the islandName
-	 */
-	public String getIslandName() {
-		return islandName;
-	}
-
-	/**
-	 * @param islandName the islandName to set
-	 */
-	public void setIslandName(String islandName) {
-		this.islandName = islandName;
-	}
-
-	/**
-	 * @return the plotIsland
-	 */
-	public boolean isPlotIsland() {
-		return plotIsland;
-	}
-
-	/**
-	 * @param plotIsland the plotIsland to set
-	 */
-	public void setPlotIsland(boolean plotIsland) {
-		this.plotIsland = plotIsland;
-	}
-
-	/**
-	 * @return the outlineName
-	 */
-	public String getOutlineName() {
-		return outlineName;
-	}
-
-	/**
-	 * @param outlineName the outlineName to set
-	 */
-	public void setOutlineName(String outlineName) {
-		this.outlineName = outlineName;
-	}
-
-	/**
-	 * @return the plotOutline
-	 */
-	public boolean isPlotOutline() {
-		return plotOutline;
-	}
-
-	/**
-	 * @param plotOutline the plotOutline to set
-	 */
-	public void setPlotOutline(boolean plotOutline) {
-		this.plotOutline = plotOutline;
-	}
-
-	/**
-	 * @return the ridgeName
-	 */
-	public String getRidgeName() {
-		return ridgeName;
-	}
-
-	/**
-	 * @param ridgeName the ridgeName to set
-	 */
-	public void setRidgeName(String ridgeName) {
-		this.ridgeName = ridgeName;
-	}
-
-	/**
-	 * @return the plotRidge
-	 */
-	public boolean isPlotRidge() {
-		return plotRidge;
-	}
-
-	/**
-	 * @param plotRidge the plotRidge to set
-	 */
-	public void setPlotRidge(boolean plotRidge) {
-		this.plotRidge = plotRidge;
-	}
-
-	/**
-	 * @return the thinnedName
-	 */
-	public String getThinnedName() {
-		return thinnedName;
-	}
-
-	/**
-	 * @param thinnedName the thinnedName to set
-	 */
-	public void setThinnedName(String thinnedName) {
-		this.thinnedName = thinnedName;
-	}
-
-	/**
-	 * @return the plotThinned
-	 */
-	public boolean isPlotThinned() {
-		return plotThinned;
-	}
-
-	/**
-	 * @param plotThinned the plotThinned to set
-	 */
-	public void setPlotThinned(boolean plotThinned) {
-		this.plotThinned = plotThinned;
-	}
+//	/**
+//	 * @return the plotInternalRings
+//	 */
+//	public boolean isPlotInternalRings() {
+//		return plotInternalRings;
+//	}
+//
+//	/**
+//	 * @param plotInternalRings the plotInternalRings to set
+//	 */
+//	public void setPlotInternalRings(boolean plotInternalRings) {
+//		this.plotInternalRings = plotInternalRings;
+//	}
+//
+//	/** get root name for internal rings.
+//	 * 
+//	 * @return name
+//	 */
+//	public String getInternalRingName() {
+//		return internalRingName;
+//	}
+//
+//	/** root of filenames with internalRings.
+//	 * 
+//	 * @param name if not null draws rings and outputs file with that name
+//	 */
+//	public void setInternalRingName(String name) {
+//		this.internalRingName = name;
+//	}
+//
+//	/**
+//	 * @return the islandName
+//	 */
+//	public String getIslandName() {
+//		return islandName;
+//	}
+//
+//	/**
+//	 * @param islandName the islandName to set
+//	 */
+//	public void setIslandName(String islandName) {
+//		this.islandName = islandName;
+//	}
+//
+//	/**
+//	 * @return the plotIsland
+//	 */
+//	public boolean isPlotIsland() {
+//		return plotIsland;
+//	}
+//
+//	/**
+//	 * @param plotIsland the plotIsland to set
+//	 */
+//	public void setPlotIsland(boolean plotIsland) {
+//		this.plotIsland = plotIsland;
+//	}
+//
+//	/**
+//	 * @return the outlineName
+//	 */
+//	public String getOutlineName() {
+//		return outlineName;
+//	}
+//
+//	/**
+//	 * @param outlineName the outlineName to set
+//	 */
+//	public void setOutlineName(String outlineName) {
+//		this.outlineName = outlineName;
+//	}
+//
+//	/**
+//	 * @return the plotOutline
+//	 */
+//	public boolean isPlotOutline() {
+//		return plotOutline;
+//	}
+//
+//	/**
+//	 * @param plotOutline the plotOutline to set
+//	 */
+//	public void setPlotOutline(boolean plotOutline) {
+//		this.plotOutline = plotOutline;
+//	}
+//
+//	/**
+//	 * @return the ridgeName
+//	 */
+//	public String getRidgeName() {
+//		return ridgeName;
+//	}
+//
+//	/**
+//	 * @param ridgeName the ridgeName to set
+//	 */
+//	public void setRidgeName(String ridgeName) {
+//		this.ridgeName = ridgeName;
+//	}
+//
+//	/**
+//	 * @return the plotRidge
+//	 */
+//	public boolean isPlotRidge() {
+//		return plotRidge;
+//	}
+//
+//	/**
+//	 * @param plotRidge the plotRidge to set
+//	 */
+//	public void setPlotRidge(boolean plotRidge) {
+//		this.plotRidge = plotRidge;
+//	}
+//
+//	/**
+//	 * @return the thinnedName
+//	 */
+//	public String getThinnedName() {
+//		return thinnedName;
+//	}
+//
+//	/**
+//	 * @param thinnedName the thinnedName to set
+//	 */
+//	public void setThinnedName(String thinnedName) {
+//		this.thinnedName = thinnedName;
+//	}
+//
+//	/**
+//	 * @return the plotThinned
+//	 */
+//	public boolean isPlotThinned() {
+//		return plotThinned;
+//	}
+//
+//	/**
+//	 * @param plotThinned the plotThinned to set
+//	 */
+//	public void setPlotThinned(boolean plotThinned) {
+//		this.plotThinned = plotThinned;
+//	}
 
 	/** creates edge from string representation.
 	 * 
@@ -1341,6 +1332,14 @@ public class PixelIsland implements Iterable<Pixel> {
 		graph.tidyEdgePixelLists();
 		graph.compactCloseNodes(3);
 		return graph;
+	}
+
+	public PixelIslandAnnotation getIslandAnnotation() {
+		return islandAnnotation;
+	}
+
+	public void setIslandAnnotation(PixelIslandAnnotation islandAnnotation) {
+		this.islandAnnotation = islandAnnotation;
 	}
 
 

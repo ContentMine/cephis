@@ -2244,7 +2244,7 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
 	 */
 	public List<Multiset.Entry<Double>> createSortedDoubleDifferenceList(int nplaces) {
 		Multiset<Double> diffSet = createDoubleDifferenceMultiset(nplaces);
-		List<Multiset.Entry<Double>> diffList = MultisetUtil.createDoubleListSortedByCount(diffSet);
+		List<Multiset.Entry<Double>> diffList = MultisetUtil.createListSortedByCount(diffSet);
 		return diffList;
 	}
 

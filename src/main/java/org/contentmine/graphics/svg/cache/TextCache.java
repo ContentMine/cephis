@@ -396,7 +396,7 @@ public class TextCache extends AbstractCache {
 	}
 
 	private void createAttributeFactoryLists(Multiset<String> horizontalStyleSet) {
-		sortedHorizontalStyles = MultisetUtil.createStringListSortedByCount(horizontalStyleSet);
+		sortedHorizontalStyles = MultisetUtil.createListSortedByCount(horizontalStyleSet);
 		totalAttributeFactoryList = new ArrayList<StyleAttributeFactory>();
 		for (Multiset.Entry<String> entry : sortedHorizontalStyles) {
 			String style = entry.getElement();
@@ -441,7 +441,7 @@ public class TextCache extends AbstractCache {
 	}
 
 	public List<String> createRowOfStyles(Multiset<String> styleSet) {
-		List<Multiset.Entry<String>> entryList = MultisetUtil.createStringListSortedByCount(styleSet);
+		List<Multiset.Entry<String>> entryList = MultisetUtil.createListSortedByCount(styleSet);
 		List<String> row = new ArrayList<String>(); 
 		// limit number of styles
 		int entryCount = entryList.size();

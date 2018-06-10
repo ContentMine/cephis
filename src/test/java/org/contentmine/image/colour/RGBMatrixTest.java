@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.IntArray;
-import org.contentmine.eucl.euclid.IntMatrix;
+import org.contentmine.eucl.euclid.RealMatrix;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ImageAnalysisFixtures;
@@ -102,13 +102,125 @@ public class RGBMatrixTest {
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
 			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilterNew(array);
 			rgbMatrix1 = rgbMatrix1.applyFilterNew(array);
-			rgbMatrix1 = rgbMatrix1.applyFilterNew(array);
-			rgbMatrix1 = rgbMatrix1.applyFilterNew(array);
-			rgbMatrix1 = rgbMatrix1.applyFilterNew(array);
-			newImage = rgbMatrix1.createImage(13);
+			newImage = rgbMatrix1.createImage(RGBImageMatrix.TYPE13);
 		}
 		ImageIOUtil.writeImageQuietly(newImage, new File(
 				SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0Sharp.png"));
+	}
+
+	@Test
+	/** image is rather fuzzy
+	 * 
+	 * @throws IOException
+	 */
+	public void testLaplacianFilterOnImage() throws IOException {
+		BufferedImage newImage = null;
+		RealMatrix filter = new RealMatrix(
+				// sharpen
+				new double[][] {
+					new double[] {-1./9.,-1./9.,-1./9.,}, 
+					new double[] {-1./9., 17./9.,-1./9.,}, 
+					new double[] {-1./9.,-1./9.,-1./9.,}, 
+				}
+				);
+		BufferedImage  image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		if (image != null) {
+			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
+			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(filter);
+			newImage = rgbMatrix1.createImage(RGBImageMatrix.TYPE13);
+			ImageIOUtil.writeImageQuietly(newImage, new File(
+					SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0NewSharp.png"));
+		}
+	}
+
+	@Test
+	public void testIdentityFilterOnImage() throws IOException {
+		BufferedImage newImage = null;
+		RealMatrix filter = new RealMatrix(
+				new double[][] {
+					new double[] {1.0}, 
+				}
+				);
+		BufferedImage  image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		if (image != null) {
+			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
+			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(filter);
+			newImage = rgbMatrix1.createImage(RGBImageMatrix.TYPE13);
+			ImageIOUtil.writeImageQuietly(newImage, new File(
+					SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0Identity.png"));
+		}
+	}
+
+	@Test
+	public void testSobellFilter() throws IOException {
+		BufferedImage newImage = null;
+		RealMatrix filter = new RealMatrix(
+				new double[][] {
+					new double[] {1.0, 0.0, -1.0}, 
+					new double[] {2.0, 0.0, -2.0}, 
+					new double[] {1.0, 0.0, -1.0}, 
+				}
+				);
+		BufferedImage  image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		if (image != null) {
+			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
+			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(filter);
+			newImage = rgbMatrix1.createImage(RGBImageMatrix.TYPE13);
+			ImageIOUtil.writeImageQuietly(newImage, new File(
+					SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0Sobelx.png"));
+		}
+	}
+	
+	@Test
+	public void testGrayScaleAndFilters() throws IOException {
+		ColorAnalyzer colorAnalyzer = new ColorAnalyzer();
+		colorAnalyzer.readImage(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		BufferedImage grayImage = colorAnalyzer.getGrayscaleImage();
+		ImageIOUtil.writeImageQuietly(grayImage, new File(
+				SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0Gray.png"));
+		RealMatrix sharpenFilter = new RealMatrix(
+				// sharpen
+				new double[][] {
+					new double[] {-1./9.,-1./9.,-1./9.,}, 
+					new double[] {-1./9., 17./9.,-1./9.,}, 
+					new double[] {-1./9.,-1./9.,-1./9.,}, 
+				}
+				);
+		RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(grayImage);
+		RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(sharpenFilter);
+		BufferedImage newImage = rgbMatrix1.createImage(RGBImageMatrix.TYPE13);
+		ImageIOUtil.writeImageQuietly(newImage, new File(
+				SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0GraySharp.png"));
+		RealMatrix edgex = new RealMatrix(
+//				new double[][] {
+//					new double[] {1.0, 0.0, -1.0}, 
+//					new double[] {2.0, 0.0, -2.0}, 
+//					new double[] {1.0, 0.0, -1.0}, 
+//				}
+				new double[][] {
+				new double[] {1.0, -1.0}, 
+			}
+		);
+		RealMatrix edgey = new RealMatrix(
+				new double[][] {
+				new double[] {1.0},
+				new double[] {-1.0}, 
+			}
+		);
+		RGBImageMatrix rgbMatrix2 = rgbMatrix1.applyFilter(edgex);
+		newImage = rgbMatrix2.createImage(RGBImageMatrix.TYPE13);
+		ImageIOUtil.writeImageQuietly(newImage, new File(
+				SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0GrayEdgex.png"));
+		rgbMatrix2 = rgbMatrix1.applyFilter(edgey);
+		newImage = rgbMatrix2.createImage(RGBImageMatrix.TYPE13);
+		ImageIOUtil.writeImageQuietly(newImage, new File(
+				SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0GrayEdgey.png"));
+		rgbMatrix2 = rgbMatrix1.applyFilter(edgex);
+		rgbMatrix2 = rgbMatrix2.applyFilter(edgey);
+		newImage = rgbMatrix2.createImage(RGBImageMatrix.TYPE13);
+		ImageIOUtil.writeImageQuietly(newImage, new File(
+				SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, "adrenaline0GrayEdgexy.png"));
+
 	}
 
 }

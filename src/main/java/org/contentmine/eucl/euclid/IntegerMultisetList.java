@@ -196,8 +196,8 @@ public class IntegerMultisetList implements List<Multiset<Integer>> {
 	private void createLimits(IntArray array, int binsize) {
 		rawSet = HashMultiset.create();
 		rawSet.addAll(array.getIntegerList());
-		List<Multiset.Entry<Integer>> entriesSortedByValue = MultisetUtil.createIntegerEntryList(
-			MultisetUtil.getIntegerEntriesSortedByValue(rawSet));
+		List<Multiset.Entry<Integer>> entriesSortedByValue = MultisetUtil.createEntryList(
+			MultisetUtil.getEntriesSortedByValue(rawSet));
 		minval = entriesSortedByValue.get(0).getElement();
 		maxval = entriesSortedByValue.get(entriesSortedByValue.size() - 1).getElement();
 		startValue = getStartValue();

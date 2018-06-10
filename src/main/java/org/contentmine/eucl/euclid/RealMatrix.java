@@ -1683,4 +1683,111 @@ public class RealMatrix implements EuclidConstants {
 		LOG.trace(newMatrix.format(2));
 		return newMatrix;
 	}
+	/**
+	 * convolute this with a filter matrix. 
+	 * 
+	 * filter has frowCount and fcolCount
+	 * filter has hotspot origin at ( fcolOrig = (fcolCount - 1)/2, frowOrig = (frowCount - 1)/2)
+	 * if filter has odd row/col counts this is mid point. 
+	 * 
+	 * start of filter moves from 
+	 *   0 -> (cols - fcolCount) ; 
+	 *   0 -> (rows - frowCount)
+	 * origin of filter moves from 
+	 *   fcolOrig -> cols - fcolCount + fcolOrig;
+	 *   frowOrig -> rows - frowCount + frowOrig;
+	 * 
+	 * @param filter to apply
+	 * @return if either filter.rows or filter.cols are zero or bigger than this.rows/this.cols
+	 *  return null
+	 */
+	public RealMatrix applyFilter(RealMatrix filter) {
+		RealMatrix result = null;
+		if (filter == null || filter.rows < 1 || filter.cols < 1) {
+			return result;
+		}
+		if (cols < filter.cols || rows < filter.rows) {
+			return null;
+		}
+		// the 99999 is to trap errors; is should be overwritten
+		result = new RealMatrix(rows, cols, -99999.);
+		int rowHotSpot = filter.getHotSpot().y;
+		int frowCount = filter.rows;
+		int rowMax = rows - frowCount;
+		int colHotSpot = filter.getHotSpot().x;
+		int fcolCount = filter.cols;
+		int colMax = cols - fcolCount;
+
+		/** because the hotspot is offset and margins are not filled
+		 * 
+		 */
+		copyLowRowMargin(result, rowHotSpot);
+		copyHighRowMargin(result, rowHotSpot, frowCount);
+		copyLowColMargin(result, colHotSpot);
+		copyHighColMargin(result, colHotSpot, fcolCount);
+		
+		for (int irow = 0; irow <= rowMax; irow++) {
+			int rowEnd = irow + frowCount - 1;
+			for (int icol = 0; icol <= colMax; icol++) {
+				int colEnd = icol + fcolCount - 1;
+				double val = getConvolutedValue(new Int2(icol, irow), new Int2(colEnd, rowEnd), filter);
+				result.setElementAt(irow + rowHotSpot, icol + colHotSpot, val);
+			}
+		}
+		
+		return result;
+	}
+	private void copyHighRowMargin(RealMatrix result, int rowHotSpot, int frowCount) {
+		for (int irow = rows - (frowCount - 1) + rowHotSpot; irow < rows; irow++) {
+			copyRow(result, irow);
+		}
+	}
+	private void copyLowRowMargin(RealMatrix result, int rowHotSpot) {
+		for (int irow = 0; irow < rowHotSpot; irow++) {
+			copyRow(result, irow);
+		}
+	}
+	private void copyRow(RealMatrix result, int irow) {
+		for (int icol = 0; icol < cols; icol++) {
+			result.setElementAt(irow, icol, this.elementAt(irow, icol));
+		}
+	}
+	private void copyHighColMargin(RealMatrix result, int colHotSpot, int fcolCount) {
+		for (int icol = cols - (fcolCount - 1) + colHotSpot; icol < cols; icol++) {
+			copyCol(result, icol);
+		}
+	}
+	private void copyLowColMargin(RealMatrix result, int colHotSpot) {
+		for (int icol = 0; icol < colHotSpot; icol++) {
+			copyCol(result, icol);
+		}
+	}
+	private void copyCol(RealMatrix result, int icol) {
+		for (int irow = 0; irow < rows; irow++) {
+			result.setElementAt(irow, icol, this.elementAt(irow, icol));
+		}
+	}
+
+	private double getConvolutedValue(Int2 start, Int2 end, RealMatrix filter) {
+		double sum = 0;
+		for (int irow = 0; irow < filter.rows; irow++) {
+			int row = start.y + irow;
+			for (int icol = 0; icol < filter.cols; icol++) {
+				double fval = filter.elementAt(irow, icol);
+				double thisVal = this.elementAt(row, start.x + icol);
+				LOG.trace(irow+","+icol+" = "+fval+">"+thisVal);
+				sum += fval * thisVal;
+			}
+		}
+		return sum;
+	}
+	/** the indexes of the "centre" of the matrix
+	 * used for computing coordinates of convolutions
+	 * defined as (cols - 1) / 2, (rows - 1) / 2
+	 * 
+	 * @return
+	 */
+	public Int2 getHotSpot() {
+		return (cols == 0 || rows == 0) ? null : new Int2((cols - 1) / 2, (rows - 1) / 2);
+	}
 }

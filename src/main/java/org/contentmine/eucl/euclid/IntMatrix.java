@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.ArrayBase.Trim;
 
 /**
  * rectangular real number matrix class IntMatrix represents a rectangular m-x-n
@@ -1567,5 +1568,20 @@ public class IntMatrix implements EuclidConstants {
 			intList.add(irow);
 		}
 		return intList;
+	}
+	
+	/** replace values outside limits with limits.
+	 * alters this
+	 * @param lowLimit
+	 * @param hiLimit
+	 * @return this (alters this)
+	 */
+	public void trim(int lowLimit, int hiLimit) {
+		for (int icol = 0; icol < this.getCols(); icol++) {
+			IntArray col = this.extractColumnData(icol);
+			// try to get rid of negative values
+			col = col.trim(Trim.BELOW, lowLimit).trim(Trim.ABOVE, hiLimit);
+			this.replaceColumnData(icol, col);
+		}
 	}
 }

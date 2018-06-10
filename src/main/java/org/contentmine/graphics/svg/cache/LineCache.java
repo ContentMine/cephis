@@ -370,7 +370,7 @@ public class LineCache extends AbstractCache {
 		Multiset<Double> lineWidths = getHorizontalLineStrokeWidthSet();
 		AbstractCMElement g = new SVGG();
 		if (lineWidths != null) {
-			List<Multiset.Entry<Double>> sortedLineWidths = MultisetUtil.createDoubleListSortedByCount(lineWidths);
+			List<Multiset.Entry<Double>> sortedLineWidths = MultisetUtil.createListSortedByCount(lineWidths);
 			for (SVGLine line : lines) {
 				Double strokeWidth = line.getStrokeWidth();
 				for (int i = 0; i < sortedLineWidths.size(); i++) {

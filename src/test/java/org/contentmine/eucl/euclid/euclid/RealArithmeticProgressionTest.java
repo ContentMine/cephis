@@ -82,7 +82,7 @@ public class RealArithmeticProgressionTest {
 		RealArithmeticProgression arithmeticProgression = RealArithmeticProgression.createAP(realArray, epsilon);
 		Assert.assertNull("cannot parse", arithmeticProgression);
 		Multiset<Double> diffs = realArray.createDoubleDifferenceMultiset(1);
-		List<Multiset.Entry<Double>> diffList = MultisetUtil.createDoubleListSortedByCount(diffs);
+		List<Multiset.Entry<Double>> diffList = MultisetUtil.createListSortedByCount(diffs);
 		Assert.assertEquals("sorted", "[1.0 x 9, 3.0 x 2]", diffList.toString());
 		Multiset.Entry<Double> diff0 = diffList.get(0);
 		Assert.assertEquals("commonest", "1.0 x 9", diff0.toString());

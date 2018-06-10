@@ -1,5 +1,8 @@
 package org.contentmine;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class CHESConstants {
 
 
@@ -38,6 +41,20 @@ public class CHESConstants {
 	public static final String SRC_GRAPHICS_RESOURCES = SRC_MAIN_TOP+"/"+GRAPHICS;
 	
 	public final static String SRC_TEST_CPROJECT_TOP = SRC_TEST_TOP + "/" + CPROJECT;
+
+	public final static String[] DEFAULT_COLORS = {
+			"red",
+			"green",
+			"blue",
+//			"yellow",
+			"cyan",
+			"magenta",
+			"brown",
+			"orange",
+//			"pink",
+			"purple",
+	};
+	public final static List<String> DEFAULT_COLOR_LIST = Arrays.asList(DEFAULT_COLORS);
 
 
 }

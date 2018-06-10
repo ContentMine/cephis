@@ -84,8 +84,8 @@ public class StyleRecord {
 	}
 
 	public String toString() {
-		List<Multiset.Entry<String>> characterEntries = MultisetUtil.createStringListSortedByValue(characterSet);
-		List<Multiset.Entry<Double>> yCoordinateEntries = MultisetUtil.createDoubleListSortedByValue(yCoordinateSet);
+		List<Multiset.Entry<String>> characterEntries = MultisetUtil.createListSortedByValue(characterSet);
+		List<Multiset.Entry<Double>> yCoordinateEntries = MultisetUtil.createListSortedByValue(yCoordinateSet);
 		return "chars: total: "+characterSet.size()+"; unique: "+characterEntries.size()+"; coords: "+yCoordinateEntries.size()+" "+yCoordinateEntries.toString();
 	}
 

@@ -4,16 +4,19 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.contentmine.CHESConstants;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.eucl.euclid.Real2RangeList;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.graphics.svg.SVGG;
@@ -41,6 +44,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	public enum Operation {
 		BINARIZE, DEHYPOTENUSE, THIN
 	}
+				
 
 	private List<PixelIsland> list;
 	private String pixelColor;
@@ -50,6 +54,8 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	private boolean diagonal;
 	private List<PixelGraph> graphList;
 	private List<PixelList> outlineList;
+	private List<String> defaultColorList;
+	private Real2RangeList bboxList;
 
 	public PixelIslandList() {
 		list = new ArrayList<PixelIsland>();
@@ -62,7 +68,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	}
 
 	private void init() {
-
+		defaultColorList = Arrays.asList(CHESConstants.DEFAULT_COLORS);
 	}
 
 	public PixelIslandList(Collection<PixelIsland> collection) {
@@ -407,7 +413,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	private SVGG createSVGG() {
 		this.svgg = new SVGG();
 		for (PixelIsland pixelIsland : list) {
-			svgg.appendChild(pixelIsland.getSVGG().copy());
+			svgg.appendChild(pixelIsland.getOrCreateSVGG().copy());
 		}
 		return svgg;
 	}
@@ -710,4 +716,25 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		outlineList.add(outline);
 	}
 
+	public void setColourIslands() {
+		setColourIslands(defaultColorList);
+	}
+
+	public void setColourIslands(List<String> colorList) {
+		int i = 0;
+		for (PixelIsland island : this) {
+			PixelIslandAnnotation islandAnnotation = island.getIslandAnnotation();
+			islandAnnotation.setPlotColor(colorList.get(i++ % colorList.size()));
+		}
+	}
+
+	public Real2RangeList getOrCreateBoundingBoxList() {
+		if (bboxList == null) {
+			bboxList = new Real2RangeList();
+			for (PixelIsland pixelIsland : this) {
+				bboxList.add(pixelIsland.getBoundingBox());
+			}
+		}
+		return bboxList;
+	}
 }

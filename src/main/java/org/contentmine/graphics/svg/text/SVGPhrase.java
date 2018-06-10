@@ -250,7 +250,7 @@ public class SVGPhrase extends SVGG {
 	 */
 	public SVGPhrase getWordsWithCommonestYValue(int nplaces) {
 		Multiset<Double> ySet = this.createYValueSet(nplaces);
-		Double y = org.contentmine.eucl.euclid.util.MultisetUtil.getCommonestValue(ySet);
+		Double y = (Double) MultisetUtil.getCommonestValue(ySet);
 		double eps = 1.0 / (Math.pow(10.0, (double)nplaces));
 		SVGPhrase phrase = new SVGPhrase();
 		for (SVGWord word : wordList) {
@@ -268,7 +268,7 @@ public class SVGPhrase extends SVGG {
 	 */
 	public SVGPhrase getWordsWithLowestYValue(int nplaces) {
 		Multiset<Double> ySet = this.createYValueSet(nplaces);
-		Double y = org.contentmine.eucl.euclid.util.MultisetUtil.getLowestValue(ySet);
+		Double y = (Double) MultisetUtil.getLowestValue(ySet);
 		double eps = 1.0 / (Math.pow(10.0, (double)nplaces));
 		SVGPhrase phrase = new SVGPhrase();
 		for (SVGWord word : wordList) {

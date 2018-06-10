@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.ArrayBase.Trim;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
+import org.contentmine.eucl.euclid.RealMatrix;
 import org.contentmine.image.ImageUtil;
 
 /** holds the RGB channels for a buffered image as matrices
@@ -20,10 +21,13 @@ public class RGBImageMatrix {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	public static int TYPE13 = 13;  // no idea what is does but ...
+	public static int TYPE13 = 13;  // no idea what is does but it works
 	
 	/** matrices are m[x][y] , i.e. m[cols][rows]
 	 * 
+	 * 
+	 */
+	/** 3 matrices , R, G, B channels 
 	 * 
 	 */
 	private IntMatrix[] mrgb;
@@ -173,6 +177,7 @@ public class RGBImageMatrix {
 	 * 
 	 * PROBABLY WRONG
 	 */
+	@Deprecated //"probably wrong"
 	public RGBImageMatrix applyFilter(IntArray function) {
 		LOG.debug("function: "+function);
 		RGBImageMatrix newMatrix = this.copy();
@@ -238,6 +243,19 @@ public class RGBImageMatrix {
 		newMatrix.mrgb = new IntMatrix[3];
 		for (int i = 0; i < ImageUtil.RGB.length; i++) {
 			newMatrix.mrgb[i] = new IntMatrix(mrgb[i]);
+		}
+		return newMatrix;
+	}
+
+	public RGBImageMatrix applyFilter(RealMatrix filter) {
+		RGBImageMatrix newMatrix = this.copy();
+		for (int channel = 0; channel < ImageUtil.RGB.length; channel++) {
+			IntMatrix matrix = newMatrix.getMatrix(channel);
+			RealMatrix realMatrix = new RealMatrix(matrix);
+			RealMatrix filteredMatrix = realMatrix.applyFilter(filter);
+			IntMatrix filteredIntMatrix = new IntMatrix(filteredMatrix);
+//			filteredIntMatrix.trim(0, 255);
+			newMatrix.mrgb[channel] = filteredIntMatrix;
 		}
 		return newMatrix;
 	}

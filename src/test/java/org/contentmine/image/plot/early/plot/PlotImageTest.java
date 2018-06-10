@@ -122,11 +122,11 @@ public class PlotImageTest {
 				}
 			}
 		}
-		List<Multiset.Entry<Integer>> horizontalLengths = MultisetUtil.createIntegerEntryList(
-				 MultisetUtil.getIntegerEntriesSortedByCount(horizontalLengthSet));
+		List<Multiset.Entry<Integer>> horizontalLengths = MultisetUtil.createEntryList(
+				 MultisetUtil.getEntriesSortedByCount(horizontalLengthSet));
 		LOG.debug("hor "+horizontalLengths);
 		
-		List<Multiset.Entry<Integer>> verticalLengths = MultisetUtil.createIntegerListSortedByCount(verticalLengthSet);
+		List<Multiset.Entry<Integer>> verticalLengths = MultisetUtil.createListSortedByCount(verticalLengthSet);
 		LOG.debug("vert "+verticalLengths);
 		SVGSVG.wrapAndWriteAsSVG(gg, new File(targetDir, "gridLines.svg"));
 		
@@ -164,11 +164,11 @@ public class PlotImageTest {
 			}
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "nodes.svg"));
-		List<Multiset.Entry<Integer>> xEntries = MultisetUtil.createIntegerEntryList(
-				 MultisetUtil.getIntegerEntriesSortedByValue(xSet));
+		List<Multiset.Entry<Integer>> xEntries = MultisetUtil.createEntryList(
+				 MultisetUtil.getEntriesSortedByValue(xSet));
 		LOG.debug("x "+xEntries);
-		List<Multiset.Entry<Integer>> yEntries = MultisetUtil.createIntegerEntryList(
-				 MultisetUtil.getIntegerEntriesSortedByValue(ySet));
+		List<Multiset.Entry<Integer>> yEntries = MultisetUtil.createEntryList(
+				 MultisetUtil.getEntriesSortedByValue(ySet));
 		LOG.debug("y "+yEntries);
 	}
 	
@@ -213,13 +213,13 @@ public class PlotImageTest {
 			}
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "nodes.svg"));
-		List<Multiset.Entry<Integer>> xEntries = MultisetUtil.createIntegerEntryList(
-				 MultisetUtil.getIntegerEntriesSortedByValue(xSet));
+		List<Multiset.Entry<Integer>> xEntries = MultisetUtil.createEntryList(
+				 MultisetUtil.getEntriesSortedByValue(xSet));
 		IntArray xBins = createIndexBins(xEntries);
 		LOG.debug("x "+xBins);
 		LOG.debug(MultisetUtil.createEntriesWithCountGreater(xEntries, 6));
-		List<Multiset.Entry<Integer>> yEntries = MultisetUtil.createIntegerEntryList(
-				 MultisetUtil.getIntegerEntriesSortedByValue(ySet));
+		List<Multiset.Entry<Integer>> yEntries = MultisetUtil.createEntryList(
+				 MultisetUtil.getEntriesSortedByValue(ySet));
 		IntArray yBins = createIndexBins(yEntries);
 		LOG.debug(MultisetUtil.createEntriesWithCountGreater(yEntries, 6));
 	}

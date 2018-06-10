@@ -48,6 +48,8 @@ public class PixelPlotter {
 	private Double opacity;
 	private String stroke;
 	private Double strokeWidth;
+
+	private String name;
 	
 	public PixelPlotter() {
 		setDefaults();
@@ -310,5 +312,9 @@ public class PixelPlotter {
 		setSerial(serial);
 		PixelRingList ringList = island.getOrCreateInternalPixelRings();
 		plotPixelsToFile(ringList);
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

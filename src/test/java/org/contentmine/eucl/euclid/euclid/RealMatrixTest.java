@@ -1244,6 +1244,146 @@ public class RealMatrixTest{
 			10.0,18.4,31.2,60.0,20.0,6.8,2.0,		}, newMatrix.getMatrixAsArray(), 0.1);
 		
 	}
+	
+	/** applies a filter to a matrix
+	 * I haven't checked the inner values by hand
+	 * The main thing here is to check the margins
+	 */
+	@Test
+	public void testApplyFilter() {
+		RealMatrix matrix = new RealMatrix(
+			new double[][] {
+				new double[] {0., 1., 2., 3., 4., 5., 6.},
+				new double[] {10., 11., 12., 13., 14., 15., 16.},
+				new double[] {20., 21., 22., 23., 24., 25., 26.},
+				new double[] {30., 31., 32., 33., 34., 35., 36.},
+				new double[] {40., 41., 42., 43., 44., 45., 46.},
+			});
+		RealMatrix filter = new RealMatrix(
+			new double[][] {
+				new double[] {3., 2., 1., 0.},
+				new double[] {13., 12., 11., 10.},
+				new double[] {23., 22., 21., 20.},
+			}
+		);
+		RealMatrix filteredMatrix = matrix.applyFilter(filter);
+		Assert.assertNotNull(filteredMatrix);
+		filteredMatrix = filteredMatrix.format(1);
+		Assert.assertEquals("filtered", "{5,7}\n"
++"(0.0,1.0,2.0,3.0,4.0,5.0,6.0)\n"
++"(10.0,2372.0,2510.0,2648.0,2786.0,15.0,16.0)\n"
++"(20.0,3752.0,3890.0,4028.0,4166.0,25.0,26.0)\n"
++"(30.0,5132.0,5270.0,5408.0,5546.0,35.0,36.0)\n"
++"(40.0,41.0,42.0,43.0,44.0,45.0,46.0)",
+		filteredMatrix.toString());
+	}
 
+	/** simple case 1*1 on 3*3
+	 * all squares are scaled
+	 */
+	@Test
+	public void test11on33() {
+		RealMatrix matrix = new RealMatrix(
+				new double[][] {
+					new double[] {0., 1., 2.},
+					new double[] {10., 11., 12.},
+					new double[] {20., 21., 22.},
+				});
+			RealMatrix filter = new RealMatrix(
+				new double[][] {
+					new double[] {10},
+				}
+			);
+			RealMatrix filteredMatrix = matrix.applyFilter(filter);
+			Assert.assertNotNull(filteredMatrix);
+			filteredMatrix = filteredMatrix.format(1);
+			Assert.assertEquals("filtered", "{3,3}\n"
+	+"(0.0,10.0,20.0)\n"
+	+"(100.0,110.0,120.0)\n"
+	+"(200.0,210.0,220.0)",
+			filteredMatrix.toString());
+	}
+
+	/** simple case 3*3 on 3*3
+	 * only the centre point is transformed (sum of all 9 squares)
+	 */
+	@Test
+	public void test33() {
+		RealMatrix matrix = new RealMatrix(
+				new double[][] {
+					new double[] {0., 1., 2.},
+					new double[] {10., 11., 12.},
+					new double[] {20., 21., 22.},
+				});
+			RealMatrix filter = new RealMatrix(
+				new double[][] {
+					new double[] {1., 1., 1.,},
+					new double[] {1., 1., 1.,},
+					new double[] {1., 1., 1.,},
+				}
+			);
+			RealMatrix filteredMatrix = matrix.applyFilter(filter);
+			Assert.assertNotNull(filteredMatrix);
+			filteredMatrix = filteredMatrix.format(1);
+			Assert.assertEquals("filtered", "{3,3}\n"
+	+"(0.0,1.0,2.0)\n"
+	+"(10.0,99.0,12.0)\n"
+	+"(20.0,21.0,22.0)",
+			filteredMatrix.toString());
+	}
+
+	/** simple case 2*2 on 3*3
+	 * the top left 2*2 square is transformed as the hotspot is at 0,0
+	 */
+	@Test
+	public void test22on33() {
+		RealMatrix matrix = new RealMatrix(
+				new double[][] {
+					new double[] {0., 1., 2.},
+					new double[] {10., 11., 12.},
+					new double[] {20., 21., 22.},
+				});
+			RealMatrix filter = new RealMatrix(
+				new double[][] {
+					new double[] {1., 1.},
+					new double[] {1., 1.},
+				}
+			);
+			RealMatrix filteredMatrix = matrix.applyFilter(filter);
+			Assert.assertNotNull(filteredMatrix);
+			filteredMatrix = filteredMatrix.format(1);
+			Assert.assertEquals("filtered", "{3,3}\n"
+	+"(22.0,26.0,2.0)\n"
+	+"(62.0,66.0,12.0)\n"
+	+"(20.0,21.0,22.0)",
+			filteredMatrix.toString());
+	}
+
+	/** simple case 2*2 on 3*3
+	 * the top left 2*2 square is transformed as the hotspot is at 0,0
+	 */
+	@Test
+	public void testtooBig() {
+		RealMatrix matrix = new RealMatrix(
+				new double[][] {
+					new double[] {0., 1.},
+					new double[] {10., 11.},
+				});
+			RealMatrix filter = new RealMatrix(
+				new double[][] {
+					new double[] {1., 1.},
+					new double[] {1., 1.},
+					new double[] {1., 1.},
+				}
+			);
+			RealMatrix filteredMatrix = matrix.applyFilter(filter);
+			Assert.assertNotNull(filteredMatrix);
+			filteredMatrix = filteredMatrix.format(1);
+			Assert.assertEquals("filtered", "{3,3}\n"
+	+"(22.0,26.0,2.0)\n"
+	+"(62.0,66.0,12.0)\n"
+	+"(20.0,21.0,22.0)",
+			filteredMatrix.toString());
+	}
 
 }

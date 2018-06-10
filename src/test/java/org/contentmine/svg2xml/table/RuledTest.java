@@ -87,9 +87,9 @@ public class RuledTest {
 		Assert.assertEquals("length", 
 				"(409.205,408.941,146.852,146.853,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941,408.941)",
 				lengthArray.toString());
-		List<Multiset.Entry<Double>> lengthSet = MultisetUtil.createDoubleListSortedByValue(lengthArray.createDoubleMultiset(3));
+		List<Multiset.Entry<Double>> lengthSet = MultisetUtil.createListSortedByValue(lengthArray.createDoubleMultiset(3));
 		Assert.assertEquals("lengths", "[146.852, 146.853, 408.941 x 16, 409.205]",  lengthSet.toString());
-		List<Multiset.Entry<Double>> widthSet = MultisetUtil.createDoubleListSortedByValue(widthArray.createDoubleMultiset(3));
+		List<Multiset.Entry<Double>> widthSet = MultisetUtil.createListSortedByValue(widthArray.createDoubleMultiset(3));
 		Assert.assertEquals("widths", "[0.093 x 14, 0.234 x 4, 0.469]",  widthSet.toString());
 		File svgOutFile = SVGFilenameUtils.getCompactSVGFilename(new File("target/"+RULED), new File("target/"+RULED+"/"+svgFile.getPath()+"micro"));
 		SVGSVG.wrapAndWriteAsSVG(svgElement, svgOutFile, 1000., 1000.);

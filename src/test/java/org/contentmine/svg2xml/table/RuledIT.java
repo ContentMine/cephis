@@ -38,8 +38,8 @@ public class RuledIT {
 			widthSet.add(Util.format(mergedLine.getStrokeWidth(), 2));
 			lengthSet.add(Util.format(mergedLine.getLength(), 0));
 		}
-		List<Multiset.Entry<Double>> lengthEntryList = MultisetUtil.createDoubleListSortedByValue(lengthSet);
-		List<Multiset.Entry<Double>> widthEntryList = MultisetUtil.createDoubleListSortedByValue(widthSet);
+		List<Multiset.Entry<Double>> lengthEntryList = MultisetUtil.createListSortedByValue(lengthSet);
+		List<Multiset.Entry<Double>> widthEntryList = MultisetUtil.createListSortedByValue(widthSet);
 	}
 
 	/** test joining lines
@@ -95,9 +95,9 @@ public class RuledIT {
 				widthSet.add(Util.format(mergedLine.getStrokeWidth(), 2));
 				lengthSet.add(Util.format(mergedLine.getLength(), 0));
 			}
-			List<Multiset.Entry<Double>> lengthEntryList = MultisetUtil.createDoubleListSortedByValue(lengthSet);
+			List<Multiset.Entry<Double>> lengthEntryList = MultisetUtil.createListSortedByValue(lengthSet);
 			Assert.assertEquals("length "+i, lengths[i], lengthEntryList.toString());
-			List<Multiset.Entry<Double>> widthEntryList = MultisetUtil.createDoubleListSortedByValue(widthSet);
+			List<Multiset.Entry<Double>> widthEntryList = MultisetUtil.createListSortedByValue(widthSet);
 			Assert.assertEquals("length "+i, widths[i], widthEntryList.toString());
 			i++;
 			

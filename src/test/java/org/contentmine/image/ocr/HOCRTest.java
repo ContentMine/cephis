@@ -6,16 +6,20 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.CHESConstants;
 import org.contentmine.eucl.euclid.IntArray;
+import org.contentmine.eucl.euclid.Real2RangeList;
+import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
+import org.contentmine.graphics.svg.SVGSVG;
+import org.contentmine.graphics.svg.linestuff.BoundingBoxManager;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
-import org.contentmine.image.ImageAnalysisFixtures;
 import org.contentmine.image.ImageUtil;
 import org.contentmine.image.colour.RGBImageMatrix;
 import org.contentmine.image.diagram.DiagramAnalyzer;
+import org.contentmine.image.pixel.PixelIslandList;
 import org.junit.Test;
 
 
@@ -99,6 +103,60 @@ public class HOCRTest {
 			newImage = rgbMatrix1.createImage(image.getType());
 		}
 		ImageIOUtil.writeImageQuietly(newImage, new File(targetDir, "sharpen.png"));
+	}
+
+	@Test
+	/** gets some junk but also the text.
+	 * 
+	 * @throws IOException
+	 */
+	public void testCharactersSVG() throws IOException {
+		String fileRoot = "adrenaline0";
+		File targetDir = new File(SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, fileRoot);
+		File chemFile = new File(SVGHTMLFixtures.EARLY_CHEM_DIR, fileRoot + ".png");
+		DiagramAnalyzer diagramAnalyzer = new DiagramAnalyzer();
+		// get the blocks
+		diagramAnalyzer.setThinning(null);
+		diagramAnalyzer.scanThresholdsAndWriteBinarizedFiles(targetDir, new int[]{100,105,110,115,120,125}, chemFile);
+		int threshold = 120;
+		diagramAnalyzer.setThreshold(threshold);
+		diagramAnalyzer.readAndProcessInputFile(chemFile);
+		File binarizedFile = new File(targetDir, "binarized"+threshold+".png");
+		diagramAnalyzer.writeBinarizedFile(binarizedFile);
+		File htmlOutfile = new File(targetDir, "hocrFile.html");
+		OCRProcessor ocrProcessor = new OCRProcessor();
+		HOCRReader hocrReader = ocrProcessor.createHOCRReaderAndProcess(binarizedFile, htmlOutfile);
+		SVGSVG svg = (SVGSVG) hocrReader.getOrCreateSVG();
+		SVGSVG.wrapAndWriteAsSVG(svg, new File(targetDir, "hocr.svg"));
+	}
+
+
+	@Test
+	/** gets some junk but also the text.
+	 * 
+	 * @throws IOException
+	 */
+	public void testBBoxes() throws IOException {
+		String fileRoot = "adrenaline0";
+		File targetDir = new File(SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, fileRoot);
+		File chemFile = new File(SVGHTMLFixtures.EARLY_CHEM_DIR, fileRoot + ".png");
+		DiagramAnalyzer diagramAnalyzer = new DiagramAnalyzer();
+		// get the blocks
+		diagramAnalyzer.setThinning(null);
+//		diagramAnalyzer.scanThresholdsAndWriteBinarizedFiles(targetDir, new int[]{100,105,110,115,120,125}, chemFile);
+		int threshold = 120;
+		diagramAnalyzer.setThreshold(threshold);
+		diagramAnalyzer.readAndProcessInputFile(chemFile);
+		File binarizedFile = new File(targetDir, "binarized"+threshold+".png");
+		diagramAnalyzer.writeBinarizedFile(binarizedFile);
+		PixelIslandList pixelIslandList = diagramAnalyzer.getOrCreatePixelIslandList();
+		SVGG g = new SVGG();
+		g.appendChild(pixelIslandList.getOrCreateSVGG().copy());
+		Real2RangeList bboxList = pixelIslandList.getOrCreateBoundingBoxList();
+		bboxList.setStrokeList(CHESConstants.DEFAULT_COLOR_LIST);
+		bboxList.setAddNumbers(true);
+		g.appendChild(bboxList.createSVG());
+		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "islands.svg"));
 	}
 
 

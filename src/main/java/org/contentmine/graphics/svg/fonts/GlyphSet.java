@@ -93,13 +93,13 @@ public class GlyphSet {
 
 	public List<Multiset.Entry<String>> getOrCreateSignaturesSortedByCount() {
 		signatureSet = getOrCreateSignatureSet();
-		signatureListSortedByCount = MultisetUtil.createStringListSortedByCount(signatureSet);
+		signatureListSortedByCount = MultisetUtil.createListSortedByCount(signatureSet);
 		return signatureListSortedByCount;
 	}
 
 	public List<Multiset.Entry<String>> getGlyphsSortedBySignatureCount() {
 		Multiset<String> signatureSet = getOrCreateSignatureSet();
-		List<Multiset.Entry<String>> sigsByCount = MultisetUtil.createStringListSortedByCount(signatureSet);
+		List<Multiset.Entry<String>> sigsByCount = MultisetUtil.createListSortedByCount(signatureSet);
 		return sigsByCount;
 	}
 

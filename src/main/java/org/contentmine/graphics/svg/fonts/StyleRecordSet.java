@@ -292,8 +292,8 @@ public class StyleRecordSet implements Iterable<StyleRecord> {
 			gg.appendChild(svgText.copy());
 			g.appendChild(gg);
 		}
-		drawWeightedVerticalLines(g, MultisetUtil.createIntegerListSortedByCount(xStarts), "blue");
-		drawWeightedVerticalLines(g, MultisetUtil.createIntegerListSortedByCount(xEnds), "green");
+		drawWeightedVerticalLines(g, MultisetUtil.createListSortedByCount(xStarts), "blue");
+		drawWeightedVerticalLines(g, MultisetUtil.createListSortedByCount(xEnds), "green");
 		return g;
 	}
 

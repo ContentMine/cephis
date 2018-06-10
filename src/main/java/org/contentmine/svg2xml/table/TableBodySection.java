@@ -119,7 +119,7 @@ public class TableBodySection extends TableSection {
 		for (int i = 0; i < allPhrasesInSection.size(); i++) {
 			yCoordSet.add(allPhrasesInSection.get(i).getY());
 		}
-		Iterable<Entry<Double>> yCoords = MultisetUtil.getDoubleEntriesSortedByValue(yCoordSet);
+		Iterable<Entry<Double>> yCoords = MultisetUtil.getEntriesSortedByValue(yCoordSet);
 		for (Entry<Double> yCoord : yCoords) {
 			yCoordArray.addElement(yCoord.getElement());
 		}

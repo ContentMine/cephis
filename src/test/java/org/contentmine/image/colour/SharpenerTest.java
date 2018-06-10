@@ -25,6 +25,7 @@ public class SharpenerTest {
 	/** apply simple sharpening function to image.
 	 * @throws IOException 
 	 * 
+	 * not working yet - maybe obsolete
 	 * 
 	 */
 	@Test
