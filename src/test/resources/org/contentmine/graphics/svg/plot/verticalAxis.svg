@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="800.0" width="700.0" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  
+  <!-- y-axis -->
+  <path fill="none" clip-path="url(#clipPath1)" stroke="red" stroke-width="1.138" d="M340.174 253.945 L340.174 47.19 "/>
+  <path fill="none" clip-path="url(#clipPath1)" stroke="red" stroke-width="1.275" d="M344.874 253.945 L340.174 253.945 M342.525 247.094 L340.174 247.094 M342.525 240.244 L340.174 240.244 M342.525 233.256 L340.174 233.256 M342.525 226.405 L340.174 226.405 M344.874 219.554 L340.174 219.554 M342.525 212.566 L340.174 212.566 M342.525 205.716 L340.174 205.716 M342.525 198.865 L340.174 198.865 M342.525 191.877 L340.174 191.877 M344.874 185.026 L340.174 185.026 M342.525 178.176 L340.174 178.176 M342.525 171.188 L340.174 171.188 M342.525 164.337 L340.174 164.337 M342.525 157.486 L340.174 157.486 M344.874 150.498 L340.174 150.498 M342.525 143.648 L340.174 143.648 M342.525 136.797 L340.174 136.797 M342.525 129.81 L340.174 129.81 M342.525 122.958 L340.174 122.958 M344.874 116.108 L340.174 116.108 M342.525 109.12 L340.174 109.12 M342.525 102.27 L340.174 102.27 M342.525 95.418 L340.174 95.418 M342.525 88.43 L340.174 88.43 M344.874 81.58 L340.174 81.58 M344.874 81.58 L340.174 81.58 M342.525 74.73 L340.174 74.73 M342.525 67.742 L340.174 67.742 M342.525 60.89 L340.174 60.89 M342.525 54.04 L340.174 54.04 "/>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="333.469" y="256.259" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">0</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="328.183" y="221.867" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">0</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="250.0" x="331.707" y="221.867" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">.</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="333.469" y="221.867" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">5</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="333.469" y="187.338" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">1</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="328.183" y="152.809" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">1</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="250.0" x="331.707" y="152.809" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">.</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="333.469" y="152.809" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">5</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="333.469" y="118.416" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">2</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="328.183" y="83.887" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">2</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="250.0" x="331.707" y="83.887" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">.</text>
+  <text stroke="none" fill="red" clip-path="url(#clipPath1)" svgx:fontName="Times-Roman" svgx:width="500.0" x="333.469" y="83.887" font-size="7.018" font-family="Times-Roman" font-weight="bold" xmlns:svgx="http://www.xml-cml.org/schema/svgx">5</text>
+  
+ </g>
+</svg>
