@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.CTree.TableFormat;
 import org.contentmine.cproject.util.CMineTestFixtures;
-import org.contentmine.cproject.util.CMineUtil;
+import org.contentmine.eucl.euclid.test.TestUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGText;
 import org.junit.Assert;
@@ -84,7 +84,7 @@ public class CTreeFilesTest {
 			Assert.assertEquals("svgFiles ", svgCounts[i], svgFiles.size());
 			SVGElement svg = SVGElement.readAndCreateSVG(svgFiles.get(0));
 			List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(svg);
-			Assert.assertTrue("svgTexts "+i+": "+texts.size(), CMineFixtures.roughlyEqual(textCounts[i], texts.size(), 0.01));
+			Assert.assertTrue("svgTexts "+i+": "+texts.size(), TestUtil.roughlyEqual(textCounts[i], texts.size(), 0.01));
 		}
 		
 	}

@@ -630,7 +630,7 @@ project2
 		List<File> fulltextFiles = globber.listFiles();
 		Assert.assertEquals(5,  fulltextFiles.size());
 		Assert.assertTrue("filename", fulltextFiles.toString().contains("target/makeproj/10.1007_s00213-016-4471-y/fulltext.pdf"));
-		Assert.assertTrue("filename", fulltextFiles.toString().contains("target/makeproj/10.1007_s00213-016-4477-5/fulltext.pdf"));
+		Assert.assertTrue("filename ", fulltextFiles.toString().contains("target/makeproj/10.1007_s00213-016-4477-5/fulltext.pdf"));
 	}
 	
 

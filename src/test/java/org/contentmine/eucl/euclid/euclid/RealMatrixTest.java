@@ -1365,25 +1365,19 @@ public class RealMatrixTest{
 	@Test
 	public void testtooBig() {
 		RealMatrix matrix = new RealMatrix(
-				new double[][] {
-					new double[] {0., 1.},
-					new double[] {10., 11.},
-				});
-			RealMatrix filter = new RealMatrix(
-				new double[][] {
-					new double[] {1., 1.},
-					new double[] {1., 1.},
-					new double[] {1., 1.},
-				}
-			);
-			RealMatrix filteredMatrix = matrix.applyFilter(filter);
-			Assert.assertNotNull(filteredMatrix);
-			filteredMatrix = filteredMatrix.format(1);
-			Assert.assertEquals("filtered", "{3,3}\n"
-	+"(22.0,26.0,2.0)\n"
-	+"(62.0,66.0,12.0)\n"
-	+"(20.0,21.0,22.0)",
-			filteredMatrix.toString());
+			new double[][] {
+				new double[] {0., 1.},
+				new double[] {10., 11.},
+			});
+		RealMatrix filter = new RealMatrix(
+			new double[][] {
+				new double[] {1., 1.},
+				new double[] {1., 1.},
+				new double[] {1., 1.},
+			}
+		);
+		RealMatrix filteredMatrix = matrix.applyFilter(filter);
+		Assert.assertNull(filteredMatrix);
 	}
 
 }

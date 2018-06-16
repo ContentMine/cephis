@@ -14,7 +14,6 @@ import org.contentmine.eucl.euclid.Real2RangeList;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.linestuff.BoundingBoxManager;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ImageUtil;
 import org.contentmine.image.colour.RGBImageMatrix;
@@ -155,10 +154,27 @@ public class HOCRTest {
 		Real2RangeList bboxList = pixelIslandList.getOrCreateBoundingBoxList();
 		bboxList.setStrokeList(CHESConstants.DEFAULT_COLOR_LIST);
 		bboxList.setAddNumbers(true);
+		LOG.debug("height "+bboxList.getCommonestIntegerHeight());
 		g.appendChild(bboxList.createSVG());
 		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "islands.svg"));
 	}
 
+	@Test
+	/** gets some junk but also the text.
+	 * 
+	 * @throws IOException
+	 */
+	public void testCharactersY() throws IOException {
+		String fileRoot = "yvalues";
+		File targetDir = new File(SVGHTMLFixtures.EARLY_PLOT_TARGET_DIR, fileRoot);
+		File valueFile = new File(SVGHTMLFixtures.EARLY_PLOT_DIR, fileRoot + ".png");
+		File htmlOutfile = new File(targetDir, "hocrFile.html");
+		OCRProcessor ocrProcessor = new OCRProcessor();
+		HOCRReader hocrReader = ocrProcessor.createHOCRReaderAndProcess(valueFile, htmlOutfile);
+		SVGSVG svg = (SVGSVG) hocrReader.getOrCreateSVG();
+		SVGSVG.wrapAndWriteAsSVG(svg, new File(targetDir, "yvalues.svg"));
+		// not good enough for reading.
+	}
 
 
 }

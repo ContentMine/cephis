@@ -20,9 +20,11 @@ public class BoundingBoxManagerTest {
 	public void testConstructorAndDefaults() {
 		BoundingBoxManager boundingBoxManager = new BoundingBoxManager();
 		List<Real2Range> bboxList = boundingBoxManager.getBBoxList();
-		Assert.assertNull(bboxList);
+		Assert.assertNotNull(bboxList);
+		Assert.assertEquals(0, bboxList.size());
 		List<Real2Range> emptyBoxList = boundingBoxManager.createEmptyBoxList(BoxEdge.XMIN);
-		Assert.assertNull(emptyBoxList);
+		Assert.assertNotNull(emptyBoxList);
+		Assert.assertEquals(0, emptyBoxList.size());
 		Real2Range totalBox = boundingBoxManager.getTotalBox();
 		Assert.assertNull(totalBox);
 	}

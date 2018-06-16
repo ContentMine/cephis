@@ -1,6 +1,7 @@
 package org.contentmine.image.ocr;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -40,7 +41,7 @@ public class OCRProcessor {
 		ImageToHOCRConverter imageToHOCRConverter = this.getOrCreateImageToHOCRConverter();
 		File htmlFile = imageToHOCRConverter.convertImageToHOCR(imageFile, hocrOutfile);
 		if (htmlFile == null || !htmlFile.exists()) {
-			HOCRTest.LOG.error("cannot run tesseract");
+			LOG.error("cannot run tesseract");
 			return null;
 		}
 		HOCRReader hocrReader = new HOCRReader();

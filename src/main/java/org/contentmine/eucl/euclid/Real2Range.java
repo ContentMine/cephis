@@ -795,4 +795,14 @@ public class Real2Range implements EuclidConstants {
 		return getYMax() < box2.getYMin();
 	}
 	
+	public Double getHeight() {
+		RealRange yrange = getYRange();
+		return yrange == null ? null : yrange.getRange();
+	}
+	
+	public Double getWidth() {
+		RealRange xrange = getXRange();
+		return xrange == null ? null : xrange.getRange();
+	}
+	
 }

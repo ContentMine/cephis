@@ -1,15 +1,14 @@
 package org.contentmine.image.colour;
 
 import java.awt.image.BufferedImage;
-import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
 import org.contentmine.eucl.euclid.RealMatrix;
-import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ImageAnalysisFixtures;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import junit.framework.Assert;
@@ -29,6 +28,7 @@ public class SharpenerTest {
 	 * 
 	 */
 	@Test
+	@Ignore
 	public void testSharpenImage() throws IOException {
 		BufferedImage newImage = null;
 		File colourFile = new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png");
@@ -37,7 +37,8 @@ public class SharpenerTest {
 			throw new RuntimeException("Cannot find / read file:"+colourFile);
 		}
 		Assert.assertEquals(13, image.getType());
-		ImageIOUtil.writeImageQuietly(newImage, new File("target/sharpen/sharpened.png"));
+		
+//		ImageIOUtil.writeImageQuietly(newImage, new File("target/sharpen/sharpened.png"));
 	}
 
 	public RealMatrix makeSharpenerMatrix() {

@@ -384,6 +384,8 @@ public class DefaultArgProcessor {
 	}
 
 	public void parseMakeProject(ArgumentOption option, ArgIterator argIterator) {
+		String defalt = option.getDefaultString();
+		LOG.debug("defalt: "+defalt);
 		outputFileRegex = argIterator.getString(option);
 	}
 

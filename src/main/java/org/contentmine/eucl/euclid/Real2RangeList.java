@@ -5,20 +5,25 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.swing.Box;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.util.MultisetUtil;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.linestuff.BoundingBoxManager;
+
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
 
 public class Real2RangeList extends BoundingBoxManager implements Iterable<Real2Range>, Collection<Real2Range> {
 	private static final Logger LOG = Logger.getLogger(Real2RangeList.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
+
+	private Multiset<Integer> heightSet;
+	private Multiset<Integer> widthSet;
 	
 	private List<String> strokeList;
 	private double strokeWidth;
@@ -133,4 +138,36 @@ public class Real2RangeList extends BoundingBoxManager implements Iterable<Real2
 		this.addNumbers = addNumbers;
 	}
 
+	public Integer getCommonestIntegerHeight() {
+		getOrCreateIntegerHeightSet();
+		LOG.debug("heights "+heightSet);
+		return (Integer) MultisetUtil.getCommonestValue(heightSet);
+	}
+
+	private Multiset<Integer> getOrCreateIntegerHeightSet() {
+		if (heightSet == null) {
+			heightSet = HashMultiset.create();
+			for (Real2Range bbox : this) {
+				Integer height = (int) Util.format(bbox.getHeight(), 0);
+				heightSet.add(height);
+			}
+		}
+		return heightSet;
+	}
+
+	public Integer getCommonestWidth() {
+		getOrCreateIntegerWidthSet();
+		return (Integer) MultisetUtil.getCommonestValue(widthSet);
+	}
+
+	private Multiset<Integer> getOrCreateIntegerWidthSet() {
+		if (widthSet == null) {
+			widthSet = HashMultiset.create();
+			for (Real2Range bbox : this) {
+				Integer width = (int) Util.format(bbox.getWidth(), 0);
+				heightSet.add(width);
+			}
+		}
+		return widthSet;
+	}
 }
