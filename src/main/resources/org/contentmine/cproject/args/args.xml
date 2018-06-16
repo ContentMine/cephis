@@ -210,7 +210,7 @@
  <arg name="makeProject"
   long="--makeProject"
   args="fileFilter"
-  countRange="{1,1}"
+  countRange="{0,1}"
   parseMethod="parseMakeProject"
   finalMethod="finalMakeProject"
   >
@@ -224,6 +224,8 @@
   foo/a123/fulltext.pdf
   foo/b123/fulltext.pdf
   requires a --fileFilter to aggregate the files. Should only be used for homogeneous collection of files, i.i. not mixed types.
+  
+  NYI If no args are given, adds the string (including --fileFilter as default) NYI
   </help>
  </arg> 
    
