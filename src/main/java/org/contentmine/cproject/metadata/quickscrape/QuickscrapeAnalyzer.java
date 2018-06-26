@@ -9,8 +9,8 @@ import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.files.CTree;
 import org.contentmine.cproject.files.CTreeList;
 import org.contentmine.cproject.metadata.AbstractMDAnalyzer;
-import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.html.HtmlElement;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;

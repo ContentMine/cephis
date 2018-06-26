@@ -10,8 +10,6 @@ import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGPath;
-import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGPolygon;
 import org.contentmine.graphics.svg.SVGPolyline;
 

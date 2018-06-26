@@ -18,13 +18,12 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLConstants;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.util.HtmlUtil;
 import org.contentmine.graphics.svg.SVGConstants;
 import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.eucl.xml.XMLConstants;
-import org.contentmine.eucl.xml.XMLUtil;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import nu.xom.Attribute;
 import nu.xom.Comment;

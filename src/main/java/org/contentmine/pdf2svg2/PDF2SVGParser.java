@@ -104,6 +104,8 @@ public class PDF2SVGParser extends PageDrawer    {
 
 	private int fontPrecision = 2;
 
+	private Double maxSpaceRatio = 1.2;
+
 
 
 	PDF2SVGParser(PageDrawerParameters parameters) throws IOException        {
@@ -116,10 +118,6 @@ public class PDF2SVGParser extends PageDrawer    {
     	svgg.setFill("none");
     	integerByClipStringMap = new HashMap<String, Integer>();
     	yMax = 800; // hopefully overwritten by mediaBox
-    	// no graphics state yet!
-//    	getGraphicsState().setNonStrokingColor(null);
-//    	getGraphicsState().setStrokingColor(null);
-//    	getGraphicsState().setLineWidth((float)0.0);
 	}
 
 	/**
@@ -132,9 +130,9 @@ public class PDF2SVGParser extends PageDrawer    {
         // if this is the non-stroking color
         if (getGraphicsState().getNonStrokingColor() == color) {
         	String fill = "#"+Integer.toHexString(color.toRGB());
-			LOG.trace("color++++++++++++ "+fill+"/lw "+getGraphicsState().getLineWidth());
+//			LOG.trace("color++++++++++++ "+fill+"/lw "+getGraphicsState().getLineWidth());
         } else {
-        	LOG.debug("non- ???? nonStroking "+color);        	
+//        	LOG.trace("non- ???? nonStroking "+color);        	
         }
         return super.getPaint(color);
     }
@@ -154,58 +152,69 @@ public class PDF2SVGParser extends PageDrawer    {
     	textParameters = new TextParameters(textRenderingMatrix, font);
     	Real2 scales = textParameters.getScales();
     	Angle rotAngle = textParameters.getAngle();
-    	double x = Util.format((double) textRenderingMatrix.getTranslateX(), nPlaces);
-    	double y = createY(Util.format((double) textRenderingMatrix.getTranslateY(), nPlaces));
+    	Double x = Util.format((double) textRenderingMatrix.getTranslateX(), nPlaces);
+    	Double y = createY(Util.format((double) textRenderingMatrix.getTranslateY(), nPlaces));
+    	addSpaceIfSpaceLargerThanRatio(x, y);
     	currentXY = new Real2(x, y);
-    	currentDisplacement = new Real2(displacementxy.getX(), displacementxy.getY()).format(nPlaces);
-    	LOG.trace("vec "+currentDisplacement);
-    	boolean created = true;
+    	currentDisplacement = new Real2(
+    			displacementxy.getX() * scales.getX(), displacementxy.getY() * scales.getY()).format(nPlaces);
+    	
+    	boolean newText = true;
     	if (currentSVGText == null || currentTextParameters == null) {
-    		LOG.debug("start");
+    		LOG.trace("start");
     		createAndAddCurrentSVGText();
     	} else if (!currentTextParameters.hasEqualFont(textParameters)) {
-    		LOG.debug("font changed");
+    		LOG.trace("font changed");
     		createAndAddCurrentSVGText();
     	} else if (isYChanged(y)) {
-    		LOG.debug("y changed");
+    		LOG.trace("y changed");
     		createAndAddCurrentSVGText();
     	} else if (isScaleChanged(scales)) {
-    		LOG.debug("scale changed");
+    		LOG.trace("scale changed");
     		createAndAddCurrentSVGText();
     	} else {
-    		// current SVGText is already created and in list
-    		created = false;
+    		newText = false;
     	}
     	currentSVGText.appendText(unicode);
     	currentSVGText.appendX(x);
     	currentSVGText.setY(y);
-    	if (created) {
+    	if (newText) {
     		addCurrentTextAttributes(currentSVGText);
     	}
-    	
-    	// process non-zero rotations
-    	if (!rotAngle. isEqualTo(0.0, angleEps)) {
-    		Transform2 t2 = Transform2.getRotationAboutPoint(rotAngle, currentXY);
-    		LOG.trace("t2 "+t2);
-    		LOG.trace(currentSVGText.toXML());
-    		currentSVGText.applyTransform(t2, RotateText.FALSE);
-    		currentSVGText.format(nPlaces);
-    		LOG.trace(currentSVGText.toXML());
-    		LOG.trace("ROTATE");
-    	}
-    	
+    	processNonZeroRotations(rotAngle);
 
 //        // bbox in EM -> user units
         Shape bbox = new Rectangle2D.Float(0, 0, font.getWidth(code) / 1000, 1);
         AffineTransform at = textRenderingMatrix.createAffineTransform();
         bbox = at.createTransformedShape(bbox);
                 
-        currentX = x;
+        saveUpdatedParameters(scales, x, y);
+    }
+
+	private void saveUpdatedParameters(Real2 scales, Double x, Double y) {
+		currentX = x;
         currentY = y;
         currentTextParameters = textParameters;
 		currentScales = scales;
+	}
 
-    }
+	private void processNonZeroRotations(Angle rotAngle) {
+		if (!rotAngle. isEqualTo(0.0, angleEps)) {
+    		Transform2 t2 = Transform2.getRotationAboutPoint(rotAngle, currentXY);
+    		currentSVGText.applyTransform(t2, RotateText.FALSE);
+    		currentSVGText.format(nPlaces);
+    	}
+	}
+
+	private void addSpaceIfSpaceLargerThanRatio(Double x, Double y) {
+		Double deltaX = (currentX == null || x == null) ? null : Util.format(x - currentX, 2);
+    	Double spaceOffsetRatio = (deltaX == null || currentDisplacement == null) ? null : deltaX / currentDisplacement.getX();
+    	if (spaceOffsetRatio != null && spaceOffsetRatio > maxSpaceRatio ) {
+        	currentSVGText.appendText(" ");
+        	currentSVGText.appendX(currentX + currentDisplacement.getX());
+        	currentSVGText.setY(y);
+    	}
+	}
     
     @Override
     public void beginText() throws IOException {
@@ -216,41 +225,10 @@ public class PDF2SVGParser extends PageDrawer    {
     public void endText() throws IOException {
     	super.endText();
     }
-    
-
 
 	private double createY(double y) {
 		return yMax - y;
 	}
-
-//	/** processes both stroke and fill for paths
-//	 * 
-//	 * @param windingRule if not null implies fill else stroke
-//	 * @param currentPaint
-//	 */
-//	private void createAndAddSVGPath(Integer windingRule, Paint currentPaint) {
-////		graphicsState = AMIGraphicsState.createGraphicsState(getGraphicsState());
-//		GeneralPath generalPath = getLinePath();
-//		if (windingRule != null) {
-//			generalPath.setWindingRule(windingRule);
-//		}
-//		SVGPath svgPath = new SVGPath(generalPath);
-//		clipString = getAndFormatClipPath();
-//		svgPath.setClipPath(clipString);
-//		setClipPath(svgPath, clipString, integerByClipStringMap.get(clipString));
-//		if (windingRule != null) {
-//			svgPath.setFill(getCSSColor(currentPaint));
-//		} else {
-//			svgPath.setStroke(getCSSColor(currentPaint));
-//		}
-////		if (graphicsState.getDashPattern() != null) {
-////			setDashArray(svgPath);
-////		}
-////		svgPath.setStrokeWidth((double)graphicsState.getLineWidth());
-//		svgPath.format(nPlaces);
-//		svgg.appendChild(svgPath);
-//		generalPath.reset();
-//	}
 
 	private boolean isScaleChanged(Real2 scales) {
 		if (currentScales == null || scales == null) {
@@ -268,8 +246,10 @@ public class PDF2SVGParser extends PageDrawer    {
 	}
 
 	private void createAndAddCurrentSVGText() {
-		LOG.debug("previous text " +(currentSVGText == null ? "nullText" : currentSVGText.toXML()));
 		currentSVGText = new SVGText();
+		Real2 fontSizes = textParameters.getScales();
+		double yScale = fontSizes.getY();
+		currentSVGText.setFontSize(yScale);
 		RealArray xArray = new RealArray();
 		currentSVGText.setX(xArray);
 		addCurrentPathAttributes(currentSVGText);
@@ -288,7 +268,6 @@ public class PDF2SVGParser extends PageDrawer    {
 		addCurrentPathAttributes(currentSvgPath);
 
 		svgg.appendChild(currentSvgPath);
-    	LOG.debug("g*************?? "+currentSvgPath);
     	
         // draw path (note that getLinePath() is now reset)
         super.fillPath(windingRule);
@@ -301,42 +280,13 @@ public class PDF2SVGParser extends PageDrawer    {
     @Override
     public void showAnnotation(PDAnnotation annotation) throws IOException {
     	super.showAnnotation(annotation);
-    	LOG.debug("showAnnotation");
-//        // save
-//        saveGraphicsState();
-//        
-//        // 35% alpha
-//        getGraphicsState().setNonStrokeAlphaConstant(0.35);
-//        super.showAnnotation(annotation);
-//        
-//        // restore
-//        restoreGraphicsState();
     }
     
     @Override
     public void strokePath() throws IOException {
     	super.strokePath();
-    	LOG.debug("strokePath");
-//        Composite strokingJavaComposite = getGraphicsState().getStrokingJavaComposite();
-//		graphics.setComposite(strokingJavaComposite);
-//		stroke = getRGBStroke();
-//        setClip();
-        //TODO bbox of shading pattern should be used here? (see fillPath)
-//        graphics.draw(linePath);
-//        linePath.reset();
     }
 
-//	private String getRGBStroke() throws IOException {
-//		PDColor strokingColor = getGraphicsState().getStrokingColor();
-//		return strokingColor == null ? null : "#"+Integer.toHexString(strokingColor.toRGB());
-//	}
-//
-//	private String getRGBFill() throws IOException {
-//		PDColor nonStrokingColor = getGraphicsState().getNonStrokingColor();
-//		return nonStrokingColor == null ? null : "#"+Integer.toHexString(nonStrokingColor.toRGB());
-//	}
-
-    
     /**
      * Fills and then strokes the path.
      *
@@ -346,22 +296,11 @@ public class PDF2SVGParser extends PageDrawer    {
     @Override
     public void fillAndStrokePath(int windingRule) throws IOException {
     	super.fillAndStrokePath(windingRule);
-    	LOG.debug("???????????????????/fillAndStrokePath");
-//    	stroke = getRGBStroke();
-//    	fill = getRGBFill();
-//        // TODO can we avoid cloning the path?
-//        GeneralPath path = (GeneralPath)linePath.clone();
-//        fillPath(windingRule);
-//        linePath = path;
-//        strokePath();
     }
 
     @Override
     public void clip(int windingRule) {
     	super.clip(windingRule);
-    	LOG.debug("clip");
-        // the clipping path will not be updated until the succeeding painting operator is called
-//        clipWindingRule = windingRule;
     }
 
     @Override
@@ -372,7 +311,6 @@ public class PDF2SVGParser extends PageDrawer    {
     		currentPathPrimitiveList = new PathPrimitiveList();
     	}
     	checkNotNullAndAdd(mp);
-    	LOG.debug("mp "+mp);
     }
 
     @Override
@@ -380,7 +318,6 @@ public class PDF2SVGParser extends PageDrawer    {
     	super.lineTo(x, y);
     	LinePrimitive lp = new LinePrimitive(new Real2(x, createY((double)y)));
     	checkNotNullAndAdd(lp);
-    	LOG.debug("lp "+lp);
     }
 
     @Override
@@ -390,7 +327,6 @@ public class PDF2SVGParser extends PageDrawer    {
     	Real2Array r2a = Real2Array.createFromPairs(coordString, ",");
     	CubicPrimitive cp = new CubicPrimitive(r2a); 
     	checkNotNullAndAdd(cp);
-    	LOG.debug("cup "+cp);
     }
 
     @Override
@@ -428,22 +364,10 @@ public class PDF2SVGParser extends PageDrawer    {
 //    		currentSvgPath.setStrokeWidth((double)graphicsState.getLineWidth());
 
     		svgg.appendChild(currentSvgPath);
-    		LOG.debug("endPath "+currentSvgPath);
+//    		LOG.debug("endPath "+currentSvgPath);
     	}
 		currentSvgPath = null;
 		
-//
-//        if (clipWindingRule != -1) {
-//            linePath.setWindingRule(clipWindingRule);
-//            getGraphicsState().intersectClippingPath(linePath);
-//
-//            // PDFBOX-3836: lastClip needs to be reset, because after intersection it is still the same 
-//            // object, thus setClip() would believe that it is cached.
-//            lastClip = null;
-//
-//            clipWindingRule = -1;
-//        }
-//        linePath.reset();
     }
 
 	private void addCurrentPathAttributes(SVGElement element) {
@@ -455,13 +379,13 @@ public class PDF2SVGParser extends PageDrawer    {
 	
 	private void addCurrentTextAttributes(SVGText text) {
 		addCurrentPathAttributes(text);
+		Real2 scales = textParameters.getScales();
 		PDTextState textState = getGraphicsState().getTextState();
 		PDFont font = textState.getFont();
 		PDFontDescriptor fontDescriptor = font.getFontDescriptor();
 		
 		float fontSize2 = textState.getFontSize();
-		Double fontSize = new Double(fontSize2);
-		LOG.debug("fontSz "+fontSize2);
+		Double fontSize = new Double(fontSize2) * scales.getY();
 		text.setFontSize(Util.format(fontSize, fontPrecision));
 
 		String fontName = font.getName();
@@ -617,7 +541,6 @@ public class PDF2SVGParser extends PageDrawer    {
     @Override
     public void drawPage(Graphics g, PDRectangle pageSize) throws IOException
     {
-    	LOG.trace("page draw");
     	super.drawPage(g, pageSize);
     	mediaBox = new Real2Range(
     			new RealRange(pageSize.getLowerLeftX(), pageSize.getUpperRightX()),
@@ -660,22 +583,19 @@ public class PDF2SVGParser extends PageDrawer    {
 		String rgb = getRGB(nonStrokingColor);
         Color paint = (Color) getGraphics().getPaint();
         rgb = getCSSColor(paint);
-		LOG.debug("nonStroke "+nonStrokingColor+"/"+rgb+" // "+paint);
+//		LOG.debug("nonStroke "+nonStrokingColor+"/"+rgb+" // "+paint);
 		return rgb;
 	}
 
 	private String getAMIStroke() {
 		PDColor strokingColor = getGraphicsState().getStrokingColor();
         Paint paint = getGraphics().getPaint();
-
 		String rgb = getRGB(strokingColor);
-		LOG.debug("stroke "+strokingColor+"/"+rgb+" // "+paint);
 		return rgb;
 	}
 
 	private Double getAMIStrokeWidth() {
 		float width = getGraphicsState().getLineWidth();
-		LOG.debug("width: "+width);
 		return new Double(width);
 	}
 
@@ -706,16 +626,7 @@ public class PDF2SVGParser extends PageDrawer    {
 		}
 		return clipString;
 	}
-
     
-//    /**
-//     * Returns the underlying Graphics2D. May be null if drawPage has not yet been called.
-//     */
-//    protected final Graphics2D getGraphicsxx()
-//    {
-//        return super.getGraphics();
-//    }
-
 	public SVGG getSVGG() {
 		return svgg;
 	}
@@ -788,7 +699,7 @@ public class PDF2SVGParser extends PageDrawer    {
 			int rgb = (r<<16)+(g<<8)+b;
 			colorS = String.format("#%06x", rgb);
 			if (rgb != 0) {
-				LOG.trace("Paint "+rgb+" "+colorS);
+//				LOG.trace("Paint "+rgb+" "+colorS);
 			}
 		}
 		return colorS;

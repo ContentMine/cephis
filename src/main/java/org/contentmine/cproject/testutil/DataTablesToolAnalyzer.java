@@ -4,11 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlTable;
 import org.contentmine.graphics.html.HtmlTh;
 import org.contentmine.graphics.html.HtmlTr;
-import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Assert;
 
 import nu.xom.Element;

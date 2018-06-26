@@ -15,9 +15,9 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlHtml;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import com.google.common.collect.ImmutableSortedMultiset;
 import com.google.common.collect.Lists;

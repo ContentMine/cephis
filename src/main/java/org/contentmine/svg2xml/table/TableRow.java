@@ -6,12 +6,12 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.RealRangeArray;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlTh;
 import org.contentmine.graphics.html.HtmlTr;
 import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Element;
 import nu.xom.Nodes;

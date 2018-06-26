@@ -7,8 +7,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGPolygon;
-import org.contentmine.graphics.svg.objects.SVGRhomb;
-import org.contentmine.graphics.svg.objects.SVGTriangle;
 
 /** extracts polygons within graphic area.
  * 

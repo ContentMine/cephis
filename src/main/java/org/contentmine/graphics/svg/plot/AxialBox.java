@@ -10,8 +10,8 @@ import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
+import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.plot.AbstractPlotBox.AxisType;
 
 /** managaes the contents of a region associated with an axis.

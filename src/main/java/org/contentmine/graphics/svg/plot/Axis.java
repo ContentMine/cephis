@@ -12,6 +12,9 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
+import org.contentmine.eucl.stml.STMLArray;
+import org.contentmine.eucl.stml.STMLScalar;
+import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
@@ -21,16 +24,13 @@ import org.contentmine.graphics.svg.SVGPolyline;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.linestuff.BoundingBoxManager;
-import org.contentmine.graphics.svg.linestuff.ComplexLine;
-import org.contentmine.graphics.svg.linestuff.Joint;
 import org.contentmine.graphics.svg.linestuff.BoundingBoxManager.BoxEdge;
+import org.contentmine.graphics.svg.linestuff.ComplexLine;
 import org.contentmine.graphics.svg.linestuff.ComplexLine.CombType;
 import org.contentmine.graphics.svg.linestuff.ComplexLine.LineOrientation;
+import org.contentmine.graphics.svg.linestuff.Joint;
 import org.contentmine.graphics.svg.text.TextAnalyzerUtils;
 import org.contentmine.graphics.svg.words.TypedNumber;
-import org.contentmine.eucl.stml.STMLArray;
-import org.contentmine.eucl.stml.STMLScalar;
-import org.contentmine.eucl.xml.XMLConstants;
 
 import nu.xom.Attribute;
 

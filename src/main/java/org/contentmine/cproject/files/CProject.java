@@ -1,7 +1,6 @@
 package org.contentmine.cproject.files;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,12 +17,12 @@ import org.contentmine.cproject.CProjectArgProcessor;
 import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.args.FileXPathSearcher;
 import org.contentmine.cproject.metadata.AbstractMetadata;
-import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.contentmine.cproject.metadata.AbstractMetadata.Type;
+import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
-import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.html.HtmlElement;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;

@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
@@ -27,7 +28,6 @@ import org.contentmine.graphics.svg.text.structure.AbstractContainer;
 import org.contentmine.svg2xml.pdf.ChunkId;
 import org.contentmine.svg2xml.pdf.PDFAnalyzer;
 import org.contentmine.svg2xml.util.SVG2XMLConstantsX;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Element;

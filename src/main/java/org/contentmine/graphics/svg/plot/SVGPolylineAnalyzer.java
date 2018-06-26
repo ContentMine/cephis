@@ -8,13 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
-import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.RealArray.Monotonicity;
+import org.contentmine.eucl.stml.STMLArray;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGElement;
@@ -29,7 +30,6 @@ import org.contentmine.graphics.svg.linestuff.BoundingBoxManager;
 import org.contentmine.graphics.svg.linestuff.BoundingBoxManager.BoxEdge;
 import org.contentmine.graphics.svg.linestuff.ComplexLine.LineOrientation;
 import org.contentmine.graphics.svg.util.GraphUtil;
-import org.contentmine.eucl.stml.STMLArray;
 
 import nu.xom.Attribute;
 import nu.xom.Element;

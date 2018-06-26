@@ -19,10 +19,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 
+import org.apache.log4j.Logger;
+
 import nu.xom.Serializer;
 import nu.xom.Text;
-
-import org.apache.log4j.Logger;
 
 @Deprecated // moved to svg package
 public class SVGSerializer extends Serializer {

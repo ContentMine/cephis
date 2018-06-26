@@ -269,7 +269,7 @@ public class ColorAnalyzer {
 					int xmax = pixelList.getIntBoundingBox().getXRange().getMax();
 					int ymax = pixelList.getIntBoundingBox().getYRange().getMax();
 					File file = new File(outputDirectory, i+"_"+hexColorS+".svg");
-					LOG.debug("output pixels "+file);
+					LOG.trace("output pixels "+file);
 					SVGSVG.wrapAndWriteAsSVG(g, file, xmax, ymax);
 				}
 			}

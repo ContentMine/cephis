@@ -11,12 +11,12 @@ import java.util.Properties;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.cache.PageCache;
 import org.contentmine.graphics.svg.util.SVGHtmlProperties;
 import org.contentmine.graphics.util.FilePathGlobber;
-import org.contentmine.eucl.xml.XMLUtil;
 
 /** manages the pubstyles on the system.
  *  and tries to identify the pubstyle of a document.

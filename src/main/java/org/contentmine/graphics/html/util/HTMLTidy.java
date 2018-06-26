@@ -11,9 +11,9 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlFactory;
-import org.contentmine.eucl.xml.XMLUtil;
 import org.joda.time.DateTime;
 import org.w3c.tidy.Tidy;
 

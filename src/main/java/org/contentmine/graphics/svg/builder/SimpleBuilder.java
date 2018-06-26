@@ -9,13 +9,13 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
+import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.Line2;
 import org.contentmine.eucl.euclid.Line2AndReal2Calculator;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
-import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.util.GrahamScan;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGLine;

@@ -1,16 +1,15 @@
 package org.contentmine.svg2xml.words;
 
 import java.util.ArrayList;
-
 import java.util.Iterator;
 import java.util.List;
 
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.Util;
+import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.graphics.svg.SVGTSpan;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.eucl.xml.XMLConstants;
 
 public class TypedNumberList implements Iterable<TypedNumber> {
 	List<TypedNumber> typedNumberList;

@@ -442,7 +442,7 @@ public class PixelSegmentList implements List<PixelSegment> {
 		circle = polygon.createCircle(maxMeanDevation);
 		if (circle != null) {
 			RealArray deviations = circle.calculateUnSignedDistancesFromCircumference(polygon.getReal2Array());
-			LOG.debug("DEVIATION from circle "+deviations.format(1));
+			LOG.trace("DEVIATION from circle "+deviations.format(1));
 			circle.format(3);
 		}
 		return circle;
@@ -478,7 +478,7 @@ public class PixelSegmentList implements List<PixelSegment> {
 			}
 			polygonXY.addElement(nodeXY);
 		}
-		LOG.debug("polygon ("+size+") "+polygonXY);
+		LOG.trace("polygon ("+size+") "+polygonXY);
 		return new SVGPolygon(polygonXY);
 	}
 
@@ -498,11 +498,8 @@ public class PixelSegmentList implements List<PixelSegment> {
 		for (int i = 0; i < size ; i++) {
 			segmentList.add(get(i));
 		}
-		LOG.debug("SL"+segmentList);
 		Real2 startXY = segmentList.get(0).getPoint(0);
-		LOG.debug("START"+startXY);
 		SVGCircle circle = createCircle(startXY, 2 * maxMeanDeviation);
-		LOG.info("CYCLE: "+(circle == null ? null : circle.toXML()));
 		return circle;
 	}
 }

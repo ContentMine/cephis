@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlB;
 import org.contentmine.graphics.html.HtmlCaption;
 import org.contentmine.graphics.html.HtmlElement;
@@ -12,7 +13,6 @@ import org.contentmine.graphics.html.HtmlP;
 import org.contentmine.graphics.html.HtmlTable;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.svg2xml.util.SVG2XMLUtil;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Element;

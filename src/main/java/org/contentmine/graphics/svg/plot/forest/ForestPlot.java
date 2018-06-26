@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg.plot.forest;
 
 import java.io.File;
-import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -10,7 +9,6 @@ import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGPolygon;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.plot.AbstractPlotBox;
 

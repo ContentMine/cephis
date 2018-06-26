@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg.cache;
 
 import java.io.File;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -37,7 +36,6 @@ import org.contentmine.graphics.svg.plot.AbstractPlotBox;
 import org.contentmine.graphics.svg.text.build.TextChunkList;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.graphics.svg.util.SuperPixelArray;
-import org.junit.Test;
 
 /** stores SVG primitives for access by analysis programs
  * 
@@ -914,6 +912,18 @@ public class ComponentCache extends AbstractCache {
 		SVGSVG.wrapAndWriteAsSVG(getOrCreateConvertedSVGElement(), outfile);
 		List<? extends SVGElement> componentList = getOrCreateElementList();
 		return componentList;
+	}
+
+	public static ComponentCache createComponentCache(File file) {
+		ComponentCache componentCache = null;
+		if (file != null) {
+			SVGElement svgElement = SVGElement.readAndCreateSVG(file);
+			if (svgElement != null) {
+				componentCache = new ComponentCache();
+				componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
+			}
+		}
+		return componentCache;
 	}
 
 }

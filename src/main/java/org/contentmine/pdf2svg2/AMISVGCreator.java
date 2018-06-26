@@ -20,6 +20,8 @@ package org.contentmine.pdf2svg2;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -48,11 +50,12 @@ public class AMISVGCreator
 		LOG.setLevel(Level.DEBUG);
 	}
 	
-	private PDF2SVGParser svg2PDFParser;
-	private PDDocument doc;
+	private PDF2SVGParser pdf2svgParser;
+	private PDDocument currentDoc;
 	private AMIPDFRenderer renderer;
 	private BufferedImage renderedImage;
-	private SVGG svgg;
+	private SVGG currentSVGG;
+	private File currentFile;
 
 	public static void main(String[] args) throws IOException
     {
@@ -62,32 +65,58 @@ public class AMISVGCreator
         AMISVGCreator svgCreator = new AMISVGCreator();
         SVGG svgg = svgCreator.createSVG(file);
         SVGSVG.wrapAndWriteAsSVG(svgg, new File("target/pdf2svg2/examples/custom.svg"));
-        BufferedImage renderedImage = svgCreator.getRenderedImage();
-        ImageIO.write(renderedImage, "PNG", new File("custom-render.png"));
+        BufferedImage renderedImage = svgCreator.createRenderedImageList().get(0);
+        ImageIO.write(renderedImage, "PNG", new File("target/pdf2svg2/examples/custom.ami.png"));
     }
 
 	public SVGG createSVG(File file) throws InvalidPasswordException, IOException {
-        createRenderedImage(file);
-        svgg = extractSVGG();
-        return svgg;
+		this.currentFile = file;
+        createRenderedImageList();
+        currentSVGG = extractSVGG();
+        return currentSVGG;
 	}
 
 	private SVGG extractSVGG() {
-		this.svg2PDFParser = renderer.getPDF2SVGParser();
-        svgg = svg2PDFParser.getSVGG();
-		return svgg;
+		this.pdf2svgParser = renderer.getPDF2SVGParser();
+        currentSVGG = pdf2svgParser.getSVGG();
+		return currentSVGG;
 	}
 
-	private BufferedImage createRenderedImage(File file) throws InvalidPasswordException, IOException {
-		doc = PDDocument.load(file);
-        renderer = new AMIPDFRenderer(doc);
-        renderedImage = renderer.renderImage(0);
-        doc.close();
-        return renderedImage;
+	public List<BufferedImage> createRenderedImageList() throws InvalidPasswordException, IOException {
+		if (currentFile != null) {
+			return (currentFile == null) ? null : createRenderedImageList(currentFile);
+		}
+		currentDoc = PDDocument.load(currentFile);
+		List<BufferedImage> renderedImageList = new ArrayList<BufferedImage>();
+        renderer = new AMIPDFRenderer(currentDoc);
+        for (int i = 0; i < currentDoc.getNumberOfPages(); i++) {
+        	renderedImageList.add(renderer.renderImage(i));
+        }
+        currentDoc.close();
+        return renderedImageList;
 	}
 
-	public BufferedImage getRenderedImage() {
-		return renderedImage;
+	public List<BufferedImage> createRenderedImageList(File file) throws InvalidPasswordException, IOException {
+		currentDoc = PDDocument.load(file);
+		List<BufferedImage> renderedImageList = new ArrayList<BufferedImage>();
+        renderer = new AMIPDFRenderer(currentDoc);
+        for (int i = 0; i < currentDoc.getNumberOfPages(); i++) {
+        	renderedImageList.add(renderer.renderImage(i));
+        }
+        currentDoc.close();
+        return renderedImageList;
 	}
+
+//	private BufferedImage createRenderedImagePage0(File file) throws InvalidPasswordException, IOException {
+//		doc = PDDocument.load(file);
+//        renderer = new AMIPDFRenderer(doc);
+//        renderedImage = renderer.renderImage(0);
+//        doc.close();
+//        return renderedImage;
+//	}
+
+//	public BufferedImage getRenderedImage() {
+//		return renderedImage;
+//	}
 
 }

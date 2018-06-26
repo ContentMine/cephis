@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg.objects;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.apache.log4j.Level;

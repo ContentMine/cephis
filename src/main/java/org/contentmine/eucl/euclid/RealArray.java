@@ -22,7 +22,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.util.MultisetUtil;
-import org.junit.Test;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
@@ -2004,6 +2003,7 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
 	 * 
 	 * @return new IntArray
 	 */
+	@Deprecated // use createRoundIntArray
 	public IntArray createIntArray() {
 		IntArray intArray = new IntArray(nelem);
 		for (int i = 0; i < nelem; i++) {
@@ -2421,6 +2421,14 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
 			}
 		}
 		return newArray;
+	}
+	
+	public IntArray createRoundIntArray() {
+		IntArray intArray = new IntArray();
+		for (int i = 0; i < nelem; i++) {
+			intArray.addElement((int) Math.round(array[i]));
+		}
+		return intArray;
 	}
 
 }

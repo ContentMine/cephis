@@ -17,20 +17,19 @@
 package org.contentmine.font;
 
 import java.util.Arrays;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Util;
+import org.contentmine.pdf2svg.util.PConstants;
+
 import nu.xom.Attribute;
 import nu.xom.Builder;
 import nu.xom.Element;
 import nu.xom.Elements;
-
-import org.apache.log4j.Logger;
-import org.contentmine.eucl.euclid.Util;
-import org.contentmine.pdf2svg.util.PConstants;
 
 /** local implementation of codePointSet
  * 

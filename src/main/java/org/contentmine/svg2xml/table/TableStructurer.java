@@ -17,6 +17,7 @@ import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.RealRange.Direction;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlBr;
 import org.contentmine.graphics.html.HtmlCaption;
@@ -55,7 +56,6 @@ import org.contentmine.graphics.svg.text.build.TextChunkList;
 import org.contentmine.graphics.svg.text.line.ScriptLine;
 import org.contentmine.graphics.svg.text.line.TextLine;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Attribute;
 

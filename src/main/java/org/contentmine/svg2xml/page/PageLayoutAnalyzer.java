@@ -14,13 +14,11 @@ import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.Univariate;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.rule.horizontal.HorizontalElement;
 import org.contentmine.graphics.svg.rule.horizontal.HorizontalRule;
 import org.contentmine.graphics.svg.text.build.PhraseChunk;
 import org.contentmine.graphics.svg.text.build.TextChunk;
-import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.table.TableGrid;
 import org.contentmine.svg2xml.table.TableStructurer;
 

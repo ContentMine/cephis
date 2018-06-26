@@ -13,8 +13,8 @@ import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGTitle;
 import org.contentmine.graphics.svg.rule.horizontal.HorizontalElement;
 import org.contentmine.graphics.svg.rule.horizontal.HorizontalRule;
-import org.contentmine.graphics.svg.text.build.PhraseChunk;
 import org.contentmine.graphics.svg.text.build.Phrase;
+import org.contentmine.graphics.svg.text.build.PhraseChunk;
 import org.contentmine.svg2xml.util.GraphPlot;
 
 /** manages the table header, including trying to sort out the column spanning

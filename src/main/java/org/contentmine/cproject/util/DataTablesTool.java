@@ -10,6 +10,7 @@ import org.contentmine.graphics.html.HtmlBody;
 import org.contentmine.graphics.html.HtmlButton;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlElement.Target;
 import org.contentmine.graphics.html.HtmlHead;
 import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.html.HtmlScript;
@@ -20,7 +21,6 @@ import org.contentmine.graphics.html.HtmlTfoot;
 import org.contentmine.graphics.html.HtmlTh;
 import org.contentmine.graphics.html.HtmlThead;
 import org.contentmine.graphics.html.HtmlTr;
-import org.contentmine.graphics.html.HtmlElement.Target;
 
 public class DataTablesTool {
 

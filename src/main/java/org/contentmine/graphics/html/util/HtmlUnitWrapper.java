@@ -1,15 +1,14 @@
 package org.contentmine.graphics.html.util;
 
 import java.io.File;
-
 import java.io.FileOutputStream;
 import java.net.URL;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlFactory;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;

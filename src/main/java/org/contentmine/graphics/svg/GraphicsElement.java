@@ -167,7 +167,11 @@ public class GraphicsElement extends AbstractCMElement implements SVGConstants {
     	StyleAttributeFactory styleAttributeFactory = new StyleAttributeFactory(this.getAttributeValue(STYLE));
     	StyleAttributeFactory bundleAttributeFactory = new StyleAttributeFactory(styleBundle.toString());
     	StyleAttributeFactory newStyleAttributeFactory = styleAttributeFactory.createMergedAttributeFactory(bundleAttributeFactory);
-    	addAttribute(new Attribute(StyleBundle.STYLE, newStyleAttributeFactory.getAttributeValue()));
+    	String attributeValue = newStyleAttributeFactory.getAttributeValue();
+//    	if (attributeValue.contains("font-size:1.0px")) {
+//    		LOG.debug("font: "+attributeValue);
+//    	}
+		addAttribute(new Attribute(StyleBundle.STYLE, attributeValue));
     }
     
 	public boolean isUseStyleAttribute() {

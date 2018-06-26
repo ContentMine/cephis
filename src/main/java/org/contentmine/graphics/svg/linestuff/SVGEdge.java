@@ -10,7 +10,6 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.graphics.svg.builder.MultipleBond;
 
 public class SVGEdge extends SVGLine {
 	private static final Logger LOG = Logger.getLogger(SVGEdge.class);

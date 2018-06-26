@@ -16,10 +16,10 @@
 package org.contentmine.font;
 
 
+import org.apache.log4j.Logger;
+
 import nu.xom.Attribute;
 import nu.xom.Element;
-
-import org.apache.log4j.Logger;
 
 public class CodePoint extends Element {
 

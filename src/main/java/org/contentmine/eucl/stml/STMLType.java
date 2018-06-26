@@ -20,14 +20,14 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.List;
 
-import nu.xom.Element;
-import nu.xom.Node;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.eucl.xml.XMLUtil;
+
+import nu.xom.Element;
+import nu.xom.Node;
 
 /**
  * 

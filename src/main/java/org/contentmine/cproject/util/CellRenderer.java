@@ -6,8 +6,8 @@ import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.PluginOption;
 import org.contentmine.graphics.html.HtmlA;
 import org.contentmine.graphics.html.HtmlElement;
-import org.contentmine.graphics.html.HtmlSpan;
 import org.contentmine.graphics.html.HtmlElement.Target;
+import org.contentmine.graphics.html.HtmlSpan;
 
 import nu.xom.Attribute;
 

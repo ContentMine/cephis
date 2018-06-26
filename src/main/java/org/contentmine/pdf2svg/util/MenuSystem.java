@@ -16,7 +16,6 @@
 package org.contentmine.pdf2svg.util;
 
 import java.io.File;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;

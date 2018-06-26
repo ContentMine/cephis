@@ -13,6 +13,7 @@ import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.Univariate;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
@@ -27,7 +28,6 @@ import org.contentmine.graphics.svg.text.build.TextChunkList;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.table.TableGrid;
 import org.contentmine.svg2xml.table.TableStructurer;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;

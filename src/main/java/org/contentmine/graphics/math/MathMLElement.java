@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.AbstractCMElement;
 
 import nu.xom.Attribute;
 import nu.xom.Element;

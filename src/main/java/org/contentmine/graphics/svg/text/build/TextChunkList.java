@@ -9,13 +9,13 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlLi;
 import org.contentmine.graphics.html.HtmlP;
 import org.contentmine.graphics.html.HtmlUl;
 import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Element;
 

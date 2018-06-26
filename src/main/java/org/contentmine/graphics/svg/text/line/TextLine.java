@@ -19,6 +19,7 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
+import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlP;
@@ -37,7 +38,6 @@ import org.contentmine.graphics.svg.text.structure.RawWords;
 import org.contentmine.graphics.svg.text.structure.TextAnalyzer;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.graphics.svg.util.SVGZUtil;
-import org.contentmine.eucl.xml.XMLConstants;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;

@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real;
+import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.AbstractCMElement;
 
@@ -143,5 +144,13 @@ public class SVGLineList extends SVGG implements Iterable<SVGLine> {
 			}
 		}
 		return bbox;
+	}
+	
+	public Real2Array createMidPoints() {
+		Real2Array points = new Real2Array();
+		for (SVGLine line : this) {
+			points.addElement(line.getMidPoint());
+		}
+		return points;
 	}
 }

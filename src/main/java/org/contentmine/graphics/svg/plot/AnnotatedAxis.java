@@ -7,14 +7,14 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
-import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.RealArray.Monotonicity;
+import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
+import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.cache.LineCache;
 import org.contentmine.graphics.svg.plot.AbstractPlotBox.AxisType;
 

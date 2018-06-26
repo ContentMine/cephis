@@ -11,7 +11,6 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.IntArray;
-import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.image.pixel.PixelComparator.ComparatorType;
 

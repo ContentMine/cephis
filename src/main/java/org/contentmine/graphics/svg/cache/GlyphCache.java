@@ -5,10 +5,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2Range;
-import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGImage;
 import org.contentmine.graphics.svg.fonts.SVGGlyph;
 
 /** holds Paths which may be Glyphs.

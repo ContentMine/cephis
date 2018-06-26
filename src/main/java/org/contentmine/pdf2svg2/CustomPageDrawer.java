@@ -28,11 +28,13 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.pdfbox.contentstream.PDFGraphicsStreamEngine;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
@@ -41,6 +43,7 @@ import org.apache.pdfbox.rendering.PageDrawer;
 import org.apache.pdfbox.rendering.PageDrawerParameters;
 import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.Vector;
+import org.eclipse.jetty.util.log.Log;
 
 /**
  * Example showing custom rendering by subclassing PageDrawer.
@@ -50,20 +53,38 @@ import org.apache.pdfbox.util.Vector;
  * cases where the goal is to render onto a Graphics2D surface.
  *
  * @author John Hewson
+ * cloned and hacked with thanks by pm286
  */
-public class CustomPageDrawerOrig
+
+public class CustomPageDrawer
 {
-    public static void main(String[] args) throws IOException
+	
+
+	private static final Logger LOG = Logger.getLogger(CustomPageDrawer.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
+
+    private static final File TEST_PDF_DIR = new File("src/main/resources/org/contentmine/pdf2svg2/");
+
+	public static void main(String[] args) throws IOException
     {
-        File file = new File("src/main/resources/org/apache/pdfbox/examples/rendering/",
-                             "custom-render-demo.pdf");
-        
-        PDDocument doc = PDDocument.load(file);
-        PDFRenderer renderer = new MyPDFRenderer(doc);
-        BufferedImage image = renderer.renderImage(0);
-        ImageIO.write(image, "PNG", new File("custom-render.png"));
-        doc.close();
+        renderDoc(TEST_PDF_DIR, "custom-render-demo", new int[]{0});
+        renderDoc(TEST_PDF_DIR, "1471-2148-11-313", new int[]{0, 1, 2, 7});
     }
+
+	private static void renderDoc(File file, String path, int[] pages) throws InvalidPasswordException, IOException {
+        File targetDir = new File("target/pdf2svg2/", path);
+        targetDir.mkdirs();
+		PDDocument doc = PDDocument.load(new File(file, path+".pdf"));
+        for (int i : pages) {
+        	LOG.debug(">> "+i);
+	        PDFRenderer renderer = new MyPDFRenderer(doc);
+	        BufferedImage image = renderer.renderImage(i);
+			ImageIO.write(image, "PNG", new File(targetDir, "page"+i+".png"));
+        }
+        doc.close();
+	}
 
     /**
      * Example PDFRenderer subclass, uses MyPageDrawer for custom rendering.

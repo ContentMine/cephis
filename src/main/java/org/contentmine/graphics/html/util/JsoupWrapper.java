@@ -1,7 +1,6 @@
 package org.contentmine.graphics.html.util;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 public class JsoupWrapper {
 

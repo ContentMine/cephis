@@ -18,8 +18,8 @@ import org.contentmine.cproject.metadata.crossref.CrossrefMD;
 import org.contentmine.cproject.metadata.epmc.EpmcMD;
 import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineUtil;
-import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.html.HtmlElement;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;

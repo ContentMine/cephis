@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg.text.structure;
 
 import java.util.ArrayList;
-
 import java.util.Iterator;
 import java.util.List;
 

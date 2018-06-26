@@ -16,12 +16,11 @@
 
 package org.contentmine.eucl.euclid;
 
+import org.apache.commons.math.linear.Array2DRowRealMatrix;
+import org.apache.commons.math.linear.EigenDecompositionImpl;
+import org.apache.commons.math.linear.InvalidMatrixException;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
-import org.apache.commons.math.linear.EigenDecompositionImpl;
-import org.apache.commons.math.linear.Array2DRowRealMatrix;
-import org.apache.commons.math.linear.InvalidMatrixException;
 
 /**
  * square matrix class

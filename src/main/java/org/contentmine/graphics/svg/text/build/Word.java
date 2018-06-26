@@ -13,6 +13,7 @@ import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlSpan;
@@ -22,7 +23,6 @@ import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.StyleBundle;
 import org.contentmine.graphics.svg.linestuff.Path2ShapeConverter;
 import org.contentmine.graphics.svg.rule.horizontal.LineChunk;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Element;

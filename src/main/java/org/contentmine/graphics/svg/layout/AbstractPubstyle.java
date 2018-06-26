@@ -9,13 +9,13 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.util.NamePattern;
-import org.contentmine.eucl.xml.XMLUtil;
 
 /** a pubstyle and/or its components
  * 

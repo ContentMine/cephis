@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real;
+import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGTSpan;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.eucl.xml.XMLConstants;
 
 import nu.xom.Attribute;
 

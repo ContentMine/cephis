@@ -26,10 +26,10 @@ import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.cproject.util.XMLUtils;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlFactory;
 import org.contentmine.graphics.html.HtmlHtml;
-import org.contentmine.eucl.xml.XMLUtil;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;

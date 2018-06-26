@@ -20,12 +20,10 @@ public class AMIPDFRenderer extends PDFRenderer {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-//    private AMISVGCreator svgCreator;
 	private PDF2SVGParser pdf2svgParser;
 
 	AMIPDFRenderer(PDDocument document) {
         super(document);
-//        this.svgCreator = svgCreator;
     }
 
     @Override

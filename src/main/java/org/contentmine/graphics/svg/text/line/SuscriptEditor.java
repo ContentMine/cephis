@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg.text.line;
 
 import org.apache.log4j.Level;
-
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.text.build.Phrase;

@@ -13,6 +13,7 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
+import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
@@ -20,7 +21,6 @@ import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGScript;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.linestuff.BoundingBoxManager;
-import org.contentmine.eucl.xml.XMLConstants;
 
 import nu.xom.Builder;
 import nu.xom.Document;

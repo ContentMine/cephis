@@ -6,7 +6,6 @@ import java.util.Queue;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.jetty.util.log.Log;
 
 public abstract class FloodFill {
 	private static final Logger LOG = Logger.getLogger(FloodFill.class);
@@ -68,7 +67,7 @@ public abstract class FloodFill {
 	private void add(PixelIsland island) {
 		ensureIslandList();
 		islandList.add(island);
-		LOG.debug("islandList "+islandList.size());
+		LOG.trace("islandList "+islandList.size());
 	}
 
 	private void ensureIslandList() {

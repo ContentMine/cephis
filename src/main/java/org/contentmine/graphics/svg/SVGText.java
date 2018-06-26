@@ -170,7 +170,7 @@ public class SVGText extends SVGElement {
 
 	public static void setDefaultStyle(SVGElement text) {
 		text.setStroke("none");
-		text.setFontSize(1.0);
+//		text.setFontSize(1.0);
 	}
 	
 	/** constructor
@@ -1469,6 +1469,14 @@ public class SVGText extends SVGElement {
 		this.setX(xArray);
 	}
 
+	/** use when you want a text that has default font-family
+	 * 
+	 * @param xy
+	 * @param text
+	 * @param fontSize
+	 * @param stroke
+	 * @return
+	 */
 	public static SVGText createDefaultText(Real2 xy, String text, int fontSize, String stroke) {
 		return createText(xy, text, "font-size:"+fontSize+";stroke:"+stroke+";"+"font-family:Helvetica");
 	}

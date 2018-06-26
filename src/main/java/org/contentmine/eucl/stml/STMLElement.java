@@ -17,22 +17,10 @@
 package org.contentmine.eucl.stml;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Writer;
-
-import nu.xom.Attribute;
-import nu.xom.Comment;
-import nu.xom.Document;
-import nu.xom.Element;
-import nu.xom.IllegalAddException;
-import nu.xom.Node;
-import nu.xom.ParentNode;
-import nu.xom.ProcessingInstruction;
-import nu.xom.Serializer;
-import nu.xom.Text;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Util;
@@ -46,6 +34,17 @@ import org.contentmine.eucl.stml.attribute.StringSTAttribute;
 import org.contentmine.eucl.stml.attribute.UnitsAttribute;
 import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.eucl.xml.XMLUtil;
+
+import nu.xom.Attribute;
+import nu.xom.Comment;
+import nu.xom.Document;
+import nu.xom.Element;
+import nu.xom.IllegalAddException;
+import nu.xom.Node;
+import nu.xom.ParentNode;
+import nu.xom.ProcessingInstruction;
+import nu.xom.Serializer;
+import nu.xom.Text;
 
 /**
  * base class for all STML elements

@@ -1,12 +1,7 @@
 package org.contentmine.image.pixel;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.contentmine.graphics.svg.SVGG;
 /** a ring of pixels around another ring or point.
  * 
  * @author pm286

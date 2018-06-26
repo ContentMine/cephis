@@ -6,8 +6,8 @@ import java.util.Comparator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
+import org.contentmine.graphics.svg.SVGLineList;
 
 /** lines parallel to axes
  * 
