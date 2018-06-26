@@ -178,18 +178,6 @@
  <text svgx:fontName="AXYSWV+OTNEJMScalaSansLF" svgx:width="0.0" x="300.478" y="613.157" style="fill:#000000;font-family:Helvetica;font-size:7.0px;font-weight:normal;">0</text>
  </g>
  
- <g opacity="0.3" title="yscale" class="yaxis.ticks">
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 477.153 L304.791 477.153 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 493.905 L304.791 493.905 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 510.657 L304.791 510.657 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 527.409 L304.791 527.409 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 544.162 L304.791 544.162 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 560.913 L304.791 560.913 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 577.665 L304.791 577.665 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 594.417 L304.791 594.417 "/>
- <path fill="none" style="stroke:#000000;stroke-width:0.5;" d="M308.041 611.169 L304.791 611.169 "/>
- </g>
- 
  </g>
  
  

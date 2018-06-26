@@ -225,7 +225,7 @@
  <!-- not yet edited fully -->
  <g opacity="0.9" title="placebo" class="plot">
  
-  <g opacity="0.9" title="plot.polyline">
+  <g opacity="0.9" class="plot.polyline">
   <path fill="none" style="stroke:#000000;stroke-width:0.75;" d="M333.281 126.538 L364.226 126.538 L333.281 126.538 L518.034 126.538 "/>
  </g>
  
@@ -428,3 +428,20 @@
   
 </g>
 </svg>
+<!--I have extracted the timecourses from Bel2014 Fig 2A:
+Here are the coords for the mepolizumab trace:
+mepx (329.782,360.378,391.215,421.986,452.689,483.459,514.274)
+mepy (126.505,126.505,152.454,166.426,177.972,160.958,186.369)
+
+I can do the same for placebo (needs a bit more hacking - the source was jumbled).
+
+So I am reasonable confident of recreating the guts of 2A. (I will need to add errors bars).
+I think 2C will be more exciting as there are more points but I have to hack this.
+(the extraction can be done with Caches, but I am taking it simply to avoid problems)
+
+I can also do 2B I think. This will be fun as we can transform to deltas as well.
+
+I think CSV and your yellow tables or an Excel plot will show them we have extracted the data. It will be a nice technical demo which will convince them we can do things other people can't
+
+
+-->
