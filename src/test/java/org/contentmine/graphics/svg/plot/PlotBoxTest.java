@@ -6,8 +6,6 @@ import java.io.IOException;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
-import org.contentmine.graphics.svg.plot.AbstractPlotBox;
-import org.contentmine.graphics.svg.plot.XYPlotBox;
 import org.junit.Ignore;
 import org.junit.Test;
 

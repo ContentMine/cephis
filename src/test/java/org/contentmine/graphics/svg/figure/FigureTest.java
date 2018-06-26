@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg.figure;
 
 import java.io.File;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -19,8 +18,8 @@ import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.SVGTextComparator;
-import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.SVGTextComparator.TextComparatorType;
+import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.cache.ComponentCache;
 import org.contentmine.graphics.svg.plot.AbstractPlotBox;
 import org.contentmine.graphics.svg.plot.SVGBarredPoint;
@@ -72,7 +71,6 @@ public class FigureTest {
 			rect.setCSSStyle("fill:none;stroke-width:1.0;stroke:red;");
 			g.appendChild(rect);
 			g.appendChild(label);
-			LOG.debug(label.toXML());
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File(outputDir, "rects.svg"));
 		
@@ -98,14 +96,14 @@ public class FigureTest {
 		List<SVGBarredPoint> barredPoints = SVGBarredPoint.extractErrorBarsFromIBeams(horizontalLines, verticalLines);
 		
 		File file = new File(outputDir, "errorBars.svg");
-		LOG.debug("wrote "+file.getAbsolutePath());
+		LOG.trace("wrote "+file.getAbsolutePath());
 		SVGG g = new SVGG();
 		// barred point isn't a true SVGElement yet so have to create the G
 		for (SVGBarredPoint barredPoint : barredPoints) {
 			g.appendChild(barredPoint.createSVGElement()); 
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, file);
-		LOG.debug("barred:"+file+";"+g.toXML());
+		LOG.trace("barred:"+file+";"+g.toXML());
 		Assert.assertTrue("exists "+file, file.exists());
 	}
 

@@ -6,8 +6,6 @@ import org.apache.log4j.Logger;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
-import org.contentmine.graphics.svg.plot.GraphPlotBox;
-import org.contentmine.graphics.svg.plot.SVGLineAnalyzer;
 import org.junit.Ignore;
 import org.junit.Test;
 

@@ -7,10 +7,7 @@ import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.cache.ComponentCache;
-import org.contentmine.graphics.svg.cache.LineCache;
 import org.junit.Assert;
 import org.junit.Test;
 

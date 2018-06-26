@@ -6,13 +6,12 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.IntRange;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGImage;
 import org.contentmine.graphics.svg.SVGUtil;
-import org.contentmine.graphics.svg.image.ImageConverter;
-import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Assert;
 import org.junit.Test;
 

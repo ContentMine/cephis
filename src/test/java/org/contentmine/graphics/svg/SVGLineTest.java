@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -10,7 +9,6 @@ import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
-import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
 import org.junit.Assert;
 import org.junit.Test;

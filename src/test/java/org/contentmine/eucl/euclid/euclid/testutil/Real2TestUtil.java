@@ -2,9 +2,9 @@ package org.contentmine.eucl.euclid.euclid.testutil;
 
 import static org.contentmine.eucl.euclid.EuclidConstants.S_RBRAK;
 
-import org.junit.Assert;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.test.DoubleTestBase;
+import org.junit.Assert;
 
 public class Real2TestUtil {
 	/**

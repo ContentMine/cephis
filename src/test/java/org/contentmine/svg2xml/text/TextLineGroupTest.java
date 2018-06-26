@@ -3,12 +3,12 @@ package org.contentmine.svg2xml.text;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.graphics.svg.text.line.ScriptLine;
 import org.contentmine.graphics.svg.text.line.TextLine;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TextLineGroupTest {
 

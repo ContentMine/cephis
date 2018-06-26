@@ -4,14 +4,14 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.graphics.svg.text.build.PhraseChunk;
 import org.contentmine.graphics.svg.text.build.Phrase;
+import org.contentmine.graphics.svg.text.build.PhraseChunk;
 import org.contentmine.graphics.svg.text.build.Word;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class PhraseListTest {
 	private static final Logger LOG = Logger.getLogger(PhraseListTest.class);

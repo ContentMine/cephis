@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg;
 
 import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.svg.SVGElement;
 import org.junit.Test;
 
 public class StyleBundleTest {

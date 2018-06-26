@@ -18,15 +18,15 @@ package org.contentmine.eucl.euclid.euclid;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.Line2;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Vector2;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 
 /**

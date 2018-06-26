@@ -5,8 +5,6 @@ import java.io.File;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
-import org.contentmine.cproject.files.CContainer;
-import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.metadata.AbstractMetadata.Type;
 import org.junit.Assert;
 import org.junit.Test;

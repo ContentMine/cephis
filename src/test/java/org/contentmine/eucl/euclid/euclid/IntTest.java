@@ -16,9 +16,9 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
+import org.contentmine.eucl.euclid.Int;
 import org.junit.Assert;
 import org.junit.Test;
-import org.contentmine.eucl.euclid.Int;
 
 /**
  * test Int.

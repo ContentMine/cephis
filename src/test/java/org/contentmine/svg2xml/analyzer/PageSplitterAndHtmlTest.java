@@ -3,13 +3,13 @@ package org.contentmine.svg2xml.analyzer;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
-import org.contentmine.eucl.xml.XMLUtil;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import nu.xom.Element;
 

@@ -6,9 +6,6 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
@@ -24,6 +21,9 @@ import org.contentmine.graphics.svg.cache.ComponentCache;
 import org.contentmine.graphics.svg.plot.AbstractPlotBox;
 import org.contentmine.graphics.svg.plot.YPlotBox;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class FigureTestOLD {
 	private static final Logger LOG = Logger.getLogger(FigureTestOLD.class);

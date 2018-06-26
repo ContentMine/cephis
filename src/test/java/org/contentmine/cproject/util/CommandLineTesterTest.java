@@ -1,6 +1,5 @@
 package org.contentmine.cproject.util;
 
-import org.contentmine.cproject.util.CommandLineTester;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

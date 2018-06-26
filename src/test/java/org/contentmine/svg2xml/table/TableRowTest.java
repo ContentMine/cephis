@@ -3,14 +3,14 @@ package org.contentmine.svg2xml.table;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGUtil;
-import org.contentmine.eucl.xml.XMLUtil;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import nu.xom.Element;
 

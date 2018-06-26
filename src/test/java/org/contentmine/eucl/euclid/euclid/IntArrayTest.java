@@ -33,7 +33,6 @@ import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntSet;
 import org.contentmine.eucl.euclid.test.StringTestBase;
-import org.eclipse.jetty.util.log.Log;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

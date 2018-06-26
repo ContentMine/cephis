@@ -6,8 +6,6 @@ import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.symbol.CircledCross;
-import org.contentmine.graphics.svg.symbol.Square;
 import org.contentmine.graphics.svg.symbol.AbstractSymbol.SymbolFill;
 import org.junit.Test;
 

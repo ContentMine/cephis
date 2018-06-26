@@ -4,10 +4,10 @@ import java.io.File;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Test;
 import org.contentmine.graphics.svg.text.build.TextChunk;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Test;
 
 public class SubSuperscriptTest {
 

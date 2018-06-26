@@ -7,9 +7,6 @@ import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
@@ -20,6 +17,9 @@ import org.contentmine.graphics.svg.objects.SVGArrow;
 import org.contentmine.graphics.svg.text.build.TextChunk;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 @Ignore // currently not being developed and occasionally throws platform-dependent errors
 

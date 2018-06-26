@@ -8,7 +8,6 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
-import org.contentmine.cproject.metadata.MetadataManager;
 import org.contentmine.cproject.util.RectangularTable;
 import org.junit.Assert;
 import org.junit.Ignore;

@@ -4,7 +4,6 @@ import java.util.Map;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.contentmine.cproject.metadata.bibjson.BibJSON;
 import org.junit.Before;
 import org.junit.Test;
 

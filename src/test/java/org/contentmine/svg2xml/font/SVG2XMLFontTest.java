@@ -8,16 +8,14 @@ import java.awt.image.BufferedImage;
 import java.io.PrintStream;
 import java.util.List;
 
-import org.junit.Assert;
-
 import org.apache.log4j.Logger;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class SVG2XMLFontTest {
 

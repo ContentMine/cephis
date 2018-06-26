@@ -3,7 +3,6 @@ package org.contentmine.graphics.svg.linestuff;
 
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.linestuff.Joint;
 import org.contentmine.graphics.svg.linestuff.ComplexLine.SideOrientation;
 import org.junit.Assert;
 import org.junit.Test;

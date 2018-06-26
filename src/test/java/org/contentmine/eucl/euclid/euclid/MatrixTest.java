@@ -23,13 +23,13 @@ import static org.contentmine.eucl.euclid.test.EuclidTestBase.getAssertFormat;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Int;
 import org.contentmine.eucl.euclid.IntMatrix;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.RealMatrix;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test Matrix stuff.

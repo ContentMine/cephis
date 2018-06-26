@@ -3,18 +3,17 @@ package org.contentmine.svg2xml.table;
 import java.io.File;
 import java.util.List;
 
-import org.junit.Assert;
-import nu.xom.Element;
-
 import org.apache.log4j.Logger;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.RealRangeArray;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGShape;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.eucl.xml.XMLUtil;
+import org.junit.Assert;
+import org.junit.Test;
+
+import nu.xom.Element;
 
 /** 
  * test for TableChunkList

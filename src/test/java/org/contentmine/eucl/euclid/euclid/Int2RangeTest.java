@@ -16,12 +16,12 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntRange;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test Int2Range

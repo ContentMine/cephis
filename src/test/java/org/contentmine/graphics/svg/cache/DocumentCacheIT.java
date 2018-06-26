@@ -5,12 +5,10 @@ import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.cache.DocumentCache;
-import org.contentmine.graphics.svg.cache.PageLayout;
-import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

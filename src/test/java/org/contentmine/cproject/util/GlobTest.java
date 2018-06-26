@@ -7,7 +7,6 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.contentmine.cproject.util.CMineGlobber;
 import org.junit.Assert;
 import org.junit.Test;
 

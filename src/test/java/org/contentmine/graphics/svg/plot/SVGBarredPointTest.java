@@ -17,9 +17,6 @@ import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGUtil;
-import org.contentmine.graphics.svg.plot.SVGBarredPoint;
-import org.contentmine.graphics.svg.plot.SVGBarredPointList;
-import org.contentmine.graphics.svg.plot.SVGErrorBar;
 import org.junit.Assert;
 import org.junit.Test;
 

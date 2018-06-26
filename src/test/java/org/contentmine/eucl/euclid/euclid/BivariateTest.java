@@ -1,11 +1,11 @@
 package org.contentmine.eucl.euclid.euclid;
 
 
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Bivariate;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.RealArray;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class BivariateTest {
 

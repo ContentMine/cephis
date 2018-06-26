@@ -14,9 +14,6 @@ import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGUtil;
-import org.contentmine.graphics.svg.objects.ArrowFactory;
-import org.contentmine.graphics.svg.objects.SVGArrow;
-import org.contentmine.graphics.svg.objects.SVGTriangle;
 import org.junit.Assert;
 import org.junit.Test;
 

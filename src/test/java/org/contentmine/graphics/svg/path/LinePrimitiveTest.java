@@ -9,8 +9,6 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.path.LinePrimitive;
-import org.contentmine.graphics.svg.path.PathPrimitiveList;
 import org.junit.Assert;
 import org.junit.Test;
 

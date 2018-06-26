@@ -1,11 +1,11 @@
 package org.contentmine.svg2xml.analyzer;
 
-import org.junit.Assert;
-import nu.xom.Element;
-
-import org.junit.Test;
-import org.contentmine.svg2xml.util.SVG2XMLUtil;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.svg2xml.util.SVG2XMLUtil;
+import org.junit.Assert;
+import org.junit.Test;
+
+import nu.xom.Element;
 
 public class AbstractpageAnalyzerTest {
 

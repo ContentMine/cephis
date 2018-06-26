@@ -2,17 +2,17 @@ package org.contentmine.svg2xml.text;
 
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.RealArray;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.svg.text.build.Phrase;
 import org.contentmine.graphics.svg.text.build.Word;
 import org.contentmine.graphics.svg.text.line.TextLine;
 import org.contentmine.graphics.svg.text.structure.RawWords;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
-import org.contentmine.eucl.xml.XMLUtil;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class RawWordsTest {
 

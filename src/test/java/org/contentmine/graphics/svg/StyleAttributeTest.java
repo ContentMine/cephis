@@ -1,11 +1,6 @@
 package org.contentmine.graphics.svg;
 
 import org.contentmine.eucl.euclid.Real2;
-import org.contentmine.graphics.svg.GraphicsElement;
-import org.contentmine.graphics.svg.SVGCircle;
-import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.StyleAttributeFactory;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Test;
 

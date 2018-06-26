@@ -6,15 +6,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
+import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.EuclidTestUtils;
 import org.contentmine.eucl.euclid.Real2Array;
-import org.contentmine.eucl.euclid.Angle.Units;
-import org.contentmine.graphics.svg.SVGCircle;
-import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGPath;
-import org.contentmine.graphics.svg.SVGPoly;
-import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.path.ClosePrimitive;
 import org.contentmine.graphics.svg.path.CubicPrimitive;
 import org.contentmine.graphics.svg.path.LinePrimitive;

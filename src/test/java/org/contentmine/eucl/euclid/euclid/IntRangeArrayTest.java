@@ -1,9 +1,9 @@
 package org.contentmine.eucl.euclid.euclid;
 
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntRangeArray;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class IntRangeArrayTest {
 

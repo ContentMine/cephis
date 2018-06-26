@@ -17,15 +17,14 @@
 package org.contentmine.eucl.euclid.euclid;
 
 import org.apache.log4j.Level;
-
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Int;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
 import org.contentmine.eucl.euclid.IntSquareMatrix;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test IntSquareMatrix.

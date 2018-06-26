@@ -7,10 +7,6 @@ import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.AbstractCMElement;
@@ -28,6 +24,10 @@ import org.contentmine.graphics.svg.text.structure.RawWords;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.util.SVG2XMLConstantsX;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import com.google.common.collect.Multiset;
 

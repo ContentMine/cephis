@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.Util;
@@ -15,6 +13,8 @@ import org.contentmine.graphics.svg.text.build.Word;
 import org.contentmine.graphics.svg.text.structure.RawWords;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class WordTest {
 	private static final Logger LOG = Logger.getLogger(WordTest.class);

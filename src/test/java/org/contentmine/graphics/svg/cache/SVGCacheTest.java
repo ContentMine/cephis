@@ -12,7 +12,6 @@ import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.cache.ComponentCache;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

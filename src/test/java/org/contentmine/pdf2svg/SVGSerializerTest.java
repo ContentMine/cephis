@@ -20,7 +20,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
-import org.contentmine.pdf2svg.SVGSerializer;
 import org.junit.Assert;
 import org.junit.Test;
 

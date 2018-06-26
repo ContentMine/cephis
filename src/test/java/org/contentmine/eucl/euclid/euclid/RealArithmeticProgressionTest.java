@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.RealArithmeticProgression;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.util.MultisetUtil;
+import org.junit.Test;
 
 import com.google.common.collect.Multiset;
 

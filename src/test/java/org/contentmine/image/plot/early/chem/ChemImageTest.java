@@ -6,7 +6,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.image.ImageAnalysisFixtures;
 import org.contentmine.image.diagram.DiagramAnalyzer;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.junit.Test;

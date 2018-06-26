@@ -16,16 +16,16 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import static org.contentmine.eucl.euclid.EC.EPS;
+import static org.contentmine.eucl.euclid.EuclidConstants.EPS;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.contentmine.eucl.euclid.Axis.Axis3;
 import org.contentmine.eucl.euclid.Point3;
 import org.contentmine.eucl.euclid.Real3Range;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform3;
-import org.contentmine.eucl.euclid.Axis.Axis3;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test Real3Range.

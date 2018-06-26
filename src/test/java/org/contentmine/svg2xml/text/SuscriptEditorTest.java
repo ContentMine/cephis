@@ -2,9 +2,6 @@ package org.contentmine.svg2xml.text;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGText;
@@ -14,6 +11,9 @@ import org.contentmine.graphics.svg.text.build.SusType;
 import org.contentmine.graphics.svg.text.build.TextChunk;
 import org.contentmine.graphics.svg.text.build.Word;
 import org.contentmine.graphics.svg.text.line.SuscriptEditor;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class SuscriptEditorTest {
 

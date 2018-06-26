@@ -4,9 +4,9 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import org.junit.Test;
 import org.contentmine.image.ImageAnalysisFixtures;
 import org.contentmine.image.moments.ImageMomentGenerator;
+import org.junit.Test;
 
 public class ImageMomentGeneratorTest {
 

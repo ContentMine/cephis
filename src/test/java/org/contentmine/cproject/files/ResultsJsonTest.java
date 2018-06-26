@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
-import org.contentmine.cproject.files.CTree;
 import org.junit.Assert;
 import org.junit.Test;
 

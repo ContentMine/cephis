@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.text.TextCoordinate;
 import org.contentmine.graphics.svg.text.line.TextLine;
 import org.contentmine.graphics.svg.text.structure.RawWords;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
-import org.contentmine.eucl.xml.XMLUtil;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multiset.Entry;

@@ -5,15 +5,14 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 @Ignore // old style
 public class TableMarkupTest {

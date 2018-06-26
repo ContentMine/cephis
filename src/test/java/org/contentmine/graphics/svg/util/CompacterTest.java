@@ -5,13 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.graphics.svg.util.Compacter;
 import org.junit.Assert;
 import org.junit.Test;
 

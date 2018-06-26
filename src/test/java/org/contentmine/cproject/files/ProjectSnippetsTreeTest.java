@@ -6,8 +6,6 @@ import java.io.IOException;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
-import org.contentmine.cproject.files.ProjectSnippetsTree;
-import org.contentmine.cproject.files.SnippetsTree;
 import org.contentmine.cproject.util.CMineTestFixtures;
 import org.junit.Assert;
 import org.junit.Test;

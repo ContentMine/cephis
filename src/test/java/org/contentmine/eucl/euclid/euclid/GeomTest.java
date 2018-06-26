@@ -16,14 +16,14 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Line3;
 import org.contentmine.eucl.euclid.Plane3;
 import org.contentmine.eucl.euclid.Point3;
 import org.contentmine.eucl.euclid.Transform3;
 import org.contentmine.eucl.euclid.Vector3;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * parent class for geom tests.

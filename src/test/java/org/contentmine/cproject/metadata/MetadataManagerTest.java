@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.files.CTree;
-import org.contentmine.cproject.metadata.MetadataManager;
 import org.contentmine.cproject.util.RectangularTable;
 import org.junit.Assert;
 import org.junit.Test;

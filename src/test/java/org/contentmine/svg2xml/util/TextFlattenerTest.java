@@ -3,9 +3,8 @@ package org.contentmine.svg2xml.util;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.junit.Assert;
-
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 

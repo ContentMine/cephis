@@ -6,13 +6,10 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGSVG;
@@ -22,6 +19,8 @@ import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.page.PageLayoutAnalyzerNEW;
 import org.contentmine.svg2xml.table.TableStructurer;
+import org.junit.Assert;
+import org.junit.Test;
 
 
 public class RotateTest {

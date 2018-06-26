@@ -3,7 +3,6 @@ package org.contentmine.graphics.svg.cache;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2Range;
-import org.contentmine.graphics.svg.cache.PageLayout;
 import org.junit.Test;
 
 import junit.framework.Assert;

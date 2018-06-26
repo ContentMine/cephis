@@ -16,14 +16,14 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import static org.contentmine.eucl.euclid.EC.EPS;
+import static org.contentmine.eucl.euclid.EuclidConstants.EPS;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.IntRange;
+import org.contentmine.eucl.euclid.RealRange;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.contentmine.eucl.euclid.IntRange;
-import org.contentmine.eucl.euclid.RealRange;
 
 /**
  * tests RealRange.

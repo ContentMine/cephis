@@ -5,7 +5,6 @@ import java.util.Iterator;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.contentmine.graphics.svg.util.ColorStore;
 import org.contentmine.graphics.svg.util.ColorStore.ColorizerType;
 import org.junit.Test;
 

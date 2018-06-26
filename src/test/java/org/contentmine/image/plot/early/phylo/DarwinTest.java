@@ -1,6 +1,5 @@
 package org.contentmine.image.plot.early.phylo;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -17,7 +16,6 @@ import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.contentmine.image.pixel.PixelNodeList;
 import org.contentmine.image.processing.ZhangSuenThinning;
-import org.eclipse.jetty.util.log.Log;
 import org.junit.Test;
 
 import junit.framework.Assert;

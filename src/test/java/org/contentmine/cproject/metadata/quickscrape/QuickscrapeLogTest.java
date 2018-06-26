@@ -7,8 +7,6 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
-import org.contentmine.cproject.metadata.quickscrape.QSRecord;
-import org.contentmine.cproject.metadata.quickscrape.QuickscrapeLog;
 import org.contentmine.cproject.util.CMineUtil;
 import org.junit.Assert;
 import org.junit.Test;

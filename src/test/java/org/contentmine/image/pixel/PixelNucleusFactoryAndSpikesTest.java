@@ -1,9 +1,9 @@
 package org.contentmine.image.pixel;
 
 import org.apache.log4j.Logger;
+import org.contentmine.image.ImageAnalysisFixtures;
 import org.junit.Assert;
 import org.junit.Test;
-import org.contentmine.image.ImageAnalysisFixtures;
 
 public class PixelNucleusFactoryAndSpikesTest {
 	

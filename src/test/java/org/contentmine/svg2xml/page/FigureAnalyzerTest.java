@@ -1,9 +1,9 @@
 package org.contentmine.svg2xml.page;
 
-import nu.xom.Element;
-
 import org.apache.log4j.Logger;
 import org.junit.Test;
+
+import nu.xom.Element;
 
 public class FigureAnalyzerTest {
 

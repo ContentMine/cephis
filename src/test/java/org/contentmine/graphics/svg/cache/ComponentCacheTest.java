@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg.cache;
 
 import java.io.File;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,6 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.cache.ComponentCache;
-import org.contentmine.graphics.svg.cache.TextCache;
 import org.contentmine.graphics.svg.cache.ComponentCache.Feature;
 import org.contentmine.graphics.svg.util.ColorStore;
 import org.contentmine.graphics.svg.util.ColorStore.ColorizerType;

@@ -5,9 +5,6 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.test.StringTestBase;
@@ -19,6 +16,9 @@ import org.contentmine.graphics.svg.text.line.TextLine;
 import org.contentmine.graphics.svg.text.line.TextLineSet;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;

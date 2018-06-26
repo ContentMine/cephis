@@ -6,8 +6,6 @@ import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import org.contentmine.graphics.svg.SVGPath;
-
 /**main purpose is to provide a simple area for visual inspection of 
  * drawing to Graphics (drawElement())
  * @author pm286

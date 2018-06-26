@@ -4,9 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.contentmine.eucl.euclid.RealComparator;
 import org.junit.Assert;
 import org.junit.Test;
-import org.contentmine.eucl.euclid.RealComparator;
 
 public class RealComparatorTest {
 

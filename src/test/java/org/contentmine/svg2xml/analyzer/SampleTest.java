@@ -3,10 +3,10 @@ package org.contentmine.svg2xml.analyzer;
 import java.io.File;
 
 import org.apache.log4j.Logger;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.page.PageAnalyzerTest;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class SampleTest {
 

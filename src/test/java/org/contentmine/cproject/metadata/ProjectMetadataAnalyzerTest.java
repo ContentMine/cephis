@@ -9,8 +9,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.CProject;
-import org.contentmine.cproject.metadata.AbstractMetadata;
-import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -2,11 +2,11 @@ package org.contentmine.svg2xml.image;
 
 import java.io.File;
 
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.page.PageAnalyzer;
 import org.contentmine.svg2xml.pdf.PDFAnalyzer;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class ImageTest {
 	@Test

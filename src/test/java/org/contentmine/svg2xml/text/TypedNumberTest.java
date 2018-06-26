@@ -3,17 +3,17 @@ package org.contentmine.svg2xml.text;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.RealArray;
+import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGTSpan;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.words.TypedNumber;
 import org.contentmine.graphics.svg.words.TypedNumberList;
-import org.contentmine.eucl.xml.XMLConstants;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TypedNumberTest {
 

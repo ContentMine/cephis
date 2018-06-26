@@ -24,7 +24,6 @@ import org.contentmine.image.pixel.PixelEdge;
 import org.contentmine.image.pixel.PixelGraph;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
-import org.contentmine.image.pixel.PixelList;
 import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
 import org.contentmine.image.pixel.PixelSegment;

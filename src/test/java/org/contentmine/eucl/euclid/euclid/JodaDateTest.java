@@ -18,12 +18,12 @@ package org.contentmine.eucl.euclid.euclid;
 
 import java.util.Date;
 
+import org.contentmine.eucl.euclid.JodaDate;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.contentmine.eucl.euclid.JodaDate;
 
 public class JodaDateTest {
 

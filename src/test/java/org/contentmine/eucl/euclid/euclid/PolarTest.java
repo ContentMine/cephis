@@ -16,15 +16,15 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import static org.contentmine.eucl.euclid.EC.EPS;
+import static org.contentmine.eucl.euclid.EuclidConstants.EPS;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Complex;
 import org.contentmine.eucl.euclid.Polar;
 import org.contentmine.eucl.euclid.Real2;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test Polar.

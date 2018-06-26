@@ -1,7 +1,6 @@
 package org.contentmine.graphics.svg;
 
 import java.awt.image.BufferedImage;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,8 +12,6 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
-
-import com.gargoylesoftware.htmlunit.javascript.host.Element;
 
 public class SVGHTMLFixtures {
 	
@@ -30,6 +27,7 @@ public class SVGHTMLFixtures {
 	
 	private static final String ORG_CONTENTMINE_GRAPHICS = "org/contentmine/graphics/";
 	public static final File GR_SVG_DIR = new File(RESOURCES_DIR, ORG_CONTENTMINE_GRAPHICS + "svg");
+	public static final File TARGET_SVG_DIR = new File(TARGET_DIR, "svg");
 	public static final File GR_MATHML_DIR = new File(RESOURCES_DIR, ORG_CONTENTMINE_GRAPHICS + "math");
 	public static final File GR_LAYOUT_DIR = new File(RESOURCES_DIR, ORG_CONTENTMINE_GRAPHICS + "layout");
 
@@ -89,6 +87,7 @@ public class SVGHTMLFixtures {
 	public static final File G_S_PAGE_DIR = new File(GR_SVG_DIR, "page");
 	public static final File G_S_PATH_DIR = new File(GR_SVG_DIR, "path");
 	public static final File G_S_PLOT_DIR = new File(GR_SVG_DIR, "plot");
+	public static final File TARGET_PLOT_DIR = new File(TARGET_SVG_DIR, "plot");
 	public static final File G_S_TABLE_DIR = new File(GR_SVG_DIR, "table");
 	public static final File G_S_TEXT_DIR = new File(GR_SVG_DIR, "text");
 
@@ -114,6 +113,8 @@ public class SVGHTMLFixtures {
 	public static final File SCATTERPLOT_FIVE_7_2_SVG = new File(G_S_PLOT_DIR, "scatterplot5.g.7.2.svg");
 	public static final File SCATTERPLOT_7_2_SVG = new File(G_S_PLOT_DIR, "scatterplot.g.7.2.svg");
 	
+	public static final File TIMECOURSE_DIR = new File(G_S_PLOT_DIR, "timecourse");
+	public static final File TARGET_TIMECOURSE_DIR = new File(TARGET_PLOT_DIR, "timecourse");
 	public static final File FOREST_DIR = new File(G_S_PLOT_DIR, "forest");
 	public static final File FUNNEL_DIR = new File(G_S_PLOT_DIR, "funnel");
 	public static final File TEX_PLOT_DIR = new File(G_S_PLOT_DIR, "tex");

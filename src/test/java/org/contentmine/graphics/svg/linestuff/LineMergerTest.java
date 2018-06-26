@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.linestuff.LineMerger;
 import org.contentmine.graphics.svg.linestuff.LineMerger.MergeMethod;
 import org.junit.Assert;
 import org.junit.Test;

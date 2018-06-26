@@ -21,9 +21,6 @@ import static org.contentmine.eucl.euclid.EuclidConstants.EPS;
 import java.util.Iterator;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.ArrayBase;
 import org.contentmine.eucl.euclid.EC;
 import org.contentmine.eucl.euclid.Real2;
@@ -31,6 +28,9 @@ import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test Real2Array

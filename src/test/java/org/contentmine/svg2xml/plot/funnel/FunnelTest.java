@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.plot.PlotStructurerTest;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class FunnelTest {
 	

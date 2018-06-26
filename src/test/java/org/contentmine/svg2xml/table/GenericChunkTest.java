@@ -2,12 +2,11 @@ package org.contentmine.svg2xml.table;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRangeArray;
+import org.junit.Assert;
+import org.junit.Test;
 
 
 

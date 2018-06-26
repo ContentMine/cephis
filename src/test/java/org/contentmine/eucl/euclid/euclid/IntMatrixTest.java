@@ -16,16 +16,13 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import static org.contentmine.eucl.euclid.EC.S_RBRAK;
+import static org.contentmine.eucl.euclid.EuclidConstants.S_RBRAK;
 
 import java.io.IOException;
 import java.io.StringWriter;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.EuclidRuntimeException;
 import org.contentmine.eucl.euclid.Int;
 import org.contentmine.eucl.euclid.Int2;
@@ -33,6 +30,9 @@ import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntSet;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test IntMatrix

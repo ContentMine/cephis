@@ -20,8 +20,6 @@ import org.contentmine.cproject.metadata.AbstractCM;
 import org.contentmine.cproject.metadata.CMDOI;
 import org.contentmine.cproject.metadata.CMURL;
 import org.contentmine.cproject.metadata.DOIResolver;
-import org.contentmine.cproject.metadata.crossref.CrossrefDownloader;
-import org.contentmine.cproject.metadata.crossref.CrossrefMD;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.cproject.util.RectangularTable;
 import org.junit.Assert;

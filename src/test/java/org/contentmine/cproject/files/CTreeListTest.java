@@ -4,8 +4,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.CHESConstants;
 import org.contentmine.cproject.CMineFixtures;
-import org.contentmine.cproject.files.CProject;
-import org.contentmine.cproject.files.CTreeList;
 import org.junit.Assert;
 import org.junit.Test;
 

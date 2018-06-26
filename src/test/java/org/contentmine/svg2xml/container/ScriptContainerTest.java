@@ -8,10 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.RealRange;
-import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGSVG;
@@ -23,6 +20,8 @@ import org.contentmine.graphics.svg.text.structure.PageAnalyzer;
 import org.contentmine.graphics.svg.text.structure.ScriptContainer;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class ScriptContainerTest {
 

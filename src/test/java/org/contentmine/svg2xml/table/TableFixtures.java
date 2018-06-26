@@ -3,17 +3,16 @@ package org.contentmine.svg2xml.table;
 import java.io.File;
 import java.util.List;
 
-import nu.xom.Element;
-
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.RealRangeArray;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
-import org.contentmine.eucl.xml.XMLUtil;
+
+import nu.xom.Element;
 
 public class TableFixtures {
 

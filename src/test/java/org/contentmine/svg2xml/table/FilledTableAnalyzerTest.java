@@ -9,7 +9,6 @@ import java.util.Set;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.Real2;
@@ -26,6 +25,7 @@ import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.cache.ComponentCache;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.util.SVGFilenameUtils;
+import org.junit.Test;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;

@@ -16,13 +16,13 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Complex;
 import org.contentmine.eucl.euclid.Polar;
 import org.contentmine.eucl.euclid.Real2;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test Complex.

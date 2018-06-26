@@ -3,13 +3,13 @@ package org.contentmine.svg2xml.text;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.graphics.svg.rule.horizontal.LineChunk;
 import org.contentmine.graphics.svg.text.line.TextLine;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class LineChunkTest {
 

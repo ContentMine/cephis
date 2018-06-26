@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
+import org.contentmine.image.ImageAnalysisFixtures;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.contentmine.image.ImageAnalysisFixtures;
 
 public class JunctionTest {
 

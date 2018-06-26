@@ -9,13 +9,6 @@ import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.RealArray;
-import org.contentmine.graphics.svg.SVGCircle;
-import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGPath;
-import org.contentmine.graphics.svg.SVGPolygon;
-import org.contentmine.graphics.svg.SVGPolyline;
-import org.contentmine.graphics.svg.SVGRect;
-import org.contentmine.graphics.svg.SVGShape;
 import org.junit.Assert;
 import org.junit.Test;
 

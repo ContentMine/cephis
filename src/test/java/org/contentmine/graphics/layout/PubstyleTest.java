@@ -36,7 +36,7 @@ public class PubstyleTest {
 		PubstyleManager pubstyleManager = new PubstyleManager();
 		SVGElement svgElement = SVGElement.readAndCreateSVG(new File(CHESConstants.SRC_GRAPHICS_RESOURCES+"/pubstyle/bmc/pubstyle.svg"));
 		SVGPubstyle pubstyle = new SVGPubstyle(svgElement, pubstyleManager);
-		LOG.debug("ABS "+pubstyle.getAbstract().toXML());
+		LOG.trace("ABS "+pubstyle.getAbstract().toXML());
 		Assert.assertEquals(" DOI ", "10.1186", pubstyle.getDoi());
 		Assert.assertEquals("PUBLISHER ", "BioMedCentral", pubstyle.getPublisher());
 		Assert.assertEquals("PUBSTYLE ", "bmc", pubstyle.getPubstyleName());
@@ -48,8 +48,8 @@ public class PubstyleTest {
 		Assert.assertEquals("COL 1 ", ColumnPosition.LEFT, pubstyle.getColumnPositions()[1]);
 		Assert.assertEquals("COL 2 ", ColumnPosition.RIGHT, pubstyle.getColumnPositions()[2]);
 		Assert.assertNull("NULL FOOT ", pubstyle.getFooter(pageType));
-		LOG.debug("HEADER "+pubstyle.getHeader(pageType).toXML());
-		LOG.debug("RAW "+pubstyle.getRawPage(pageType).toXML());
+		LOG.trace("HEADER "+pubstyle.getHeader(pageType).toXML());
+		LOG.trace("RAW "+pubstyle.getRawPage(pageType).toXML());
 		Assert.assertEquals("TYPE ", PageType.PN, pubstyle.getPageType());
 		LOG.debug("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
 		Assert.assertNull("WIDEIMAGE ", pubstyle.getWideImage(pageType));
@@ -63,10 +63,10 @@ public class PubstyleTest {
 		Assert.assertEquals("COL 1 ", ColumnPosition.LEFT, pubstyle.getColumnPositions()[1]);
 		Assert.assertEquals("COL 2 ", ColumnPosition.RIGHT, pubstyle.getColumnPositions()[2]);
 		Assert.assertNull("NULL FOOT ", pubstyle.getFooter(pageType));
-		LOG.debug("HEADER "+pubstyle.getHeader(pageType).toXML());
-		LOG.debug("RAW "+pubstyle.getRawPage(pageType).toXML());
+		LOG.trace("HEADER "+pubstyle.getHeader(pageType).toXML());
+		LOG.trace("RAW "+pubstyle.getRawPage(pageType).toXML());
 		Assert.assertEquals("TYPE ", PageType.PN, pubstyle.getPageType());
-		LOG.debug("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
+		LOG.trace("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
 		Assert.assertNull("WIDEIMAGE ", pubstyle.getWideImage(pageType));
 		Assert.assertNull("WIDETABLE ", pubstyle.getWideTable(pageType));
 		// PageN
@@ -77,9 +77,9 @@ public class PubstyleTest {
 		Assert.assertEquals("COL 0 ", ColumnPosition.WIDE, pubstyle.getColumnPositions()[0]);
 		Assert.assertEquals("COL 1 ", ColumnPosition.LEFT, pubstyle.getColumnPositions()[1]);
 		Assert.assertEquals("COL 2 ", ColumnPosition.RIGHT, pubstyle.getColumnPositions()[2]);
-		LOG.debug("FOOT "+ pubstyle.getFooter(pageType));
-		LOG.debug("HEADER "+pubstyle.getHeader(pageType).toXML());
-		LOG.debug("RAW "+pubstyle.getRawPage(pageType).toXML());
+		LOG.trace("FOOT "+ pubstyle.getFooter(pageType));
+		LOG.trace("HEADER "+pubstyle.getHeader(pageType).toXML());
+		LOG.trace("RAW "+pubstyle.getRawPage(pageType).toXML());
 		Assert.assertEquals("TYPE ", PageType.PN, pubstyle.getPageType());
 		LOG.debug("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
 		Assert.assertNull("WIDEIMAGE ", pubstyle.getWideImage(pageType));

@@ -16,18 +16,18 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import static org.contentmine.eucl.euclid.EC.S_EMPTY;
+import static org.contentmine.eucl.euclid.EuclidConstants.S_EMPTY;
 
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.EC;
 import org.contentmine.eucl.euclid.EuclidRuntimeException;
 import org.contentmine.eucl.euclid.Int;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntSet;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test IntSet.

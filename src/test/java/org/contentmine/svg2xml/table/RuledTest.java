@@ -7,8 +7,6 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange.Direction;
@@ -23,6 +21,8 @@ import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.cache.ComponentCache;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.util.SVGFilenameUtils;
+import org.junit.Assert;
+import org.junit.Test;
 
 import com.google.common.collect.Multiset;
 

@@ -3,11 +3,11 @@ package org.contentmine.eucl.euclid.euclid;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.RealComparator;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.RealRangeComparator;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class RealRangeComparatorTest {
 

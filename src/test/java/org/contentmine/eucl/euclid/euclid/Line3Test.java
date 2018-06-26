@@ -16,17 +16,16 @@
 
 package org.contentmine.eucl.euclid.euclid;
 
-import static org.contentmine.eucl.euclid.EC.EPS;
+import static org.contentmine.eucl.euclid.EuclidConstants.EPS;
 
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.EC;
 import org.contentmine.eucl.euclid.Line3;
 import org.contentmine.eucl.euclid.Point3;
 import org.contentmine.eucl.euclid.Vector3;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * test Line3

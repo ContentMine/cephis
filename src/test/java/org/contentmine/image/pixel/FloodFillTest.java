@@ -6,9 +6,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import org.apache.log4j.Logger;
+import org.contentmine.image.ImageAnalysisFixtures;
 import org.junit.Assert;
 import org.junit.Test;
-import org.contentmine.image.ImageAnalysisFixtures;
 
 public class FloodFillTest {
 	private static final Logger LOG = Logger.getLogger(FloodFillTest.class);

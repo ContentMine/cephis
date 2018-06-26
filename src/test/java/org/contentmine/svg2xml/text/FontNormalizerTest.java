@@ -8,15 +8,15 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.text.structure.FontNormalizer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 
 public class FontNormalizerTest {

@@ -8,8 +8,6 @@ import org.apache.log4j.Logger;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
-import org.contentmine.graphics.svg.cache.CorpusCache;
-import org.contentmine.graphics.svg.cache.DocumentCache;
 import org.junit.Ignore;
 import org.junit.Test;
 

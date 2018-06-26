@@ -8,8 +8,6 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
@@ -18,6 +16,8 @@ import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.text.build.TextChunk;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class PlotStructurerTest {
 	

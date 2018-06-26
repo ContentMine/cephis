@@ -2,10 +2,10 @@ package org.contentmine.eucl.euclid.euclid;
 
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.eucl.euclid.ParsedSymop;
 import org.contentmine.eucl.euclid.Transform3;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class ParsedSymopTest {
 

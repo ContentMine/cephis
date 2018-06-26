@@ -19,13 +19,6 @@ import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.AbstractCMElement;
-import org.contentmine.graphics.svg.SVGCircle;
-import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGRect;
-import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.graphics.svg.SVGUtil;
 import org.junit.Assert;
 import org.junit.Test;
 

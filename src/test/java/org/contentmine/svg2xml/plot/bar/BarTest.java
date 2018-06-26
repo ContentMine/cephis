@@ -2,13 +2,13 @@ package org.contentmine.svg2xml.plot.bar;
 
 import java.io.File;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.plot.YPlotBox;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 /** test bar plot
  * 

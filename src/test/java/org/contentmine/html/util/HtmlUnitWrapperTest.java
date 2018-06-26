@@ -3,9 +3,9 @@ package org.contentmine.html.util;
 import java.io.FileOutputStream;
 import java.net.URL;
 
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.util.HtmlUnitWrapper;
-import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

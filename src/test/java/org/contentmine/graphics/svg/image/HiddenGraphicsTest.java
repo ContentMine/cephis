@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGElement;
@@ -14,8 +15,6 @@ import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGImage;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.image.HiddenGraphics;
-import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -4,12 +4,12 @@ import java.io.File;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
 import org.contentmine.graphics.svg.text.line.StyleSpans;
 import org.contentmine.graphics.svg.text.structure.TextStructurer;
 import org.contentmine.svg2xml.SVG2XMLFixtures;
 import org.contentmine.svg2xml.container.ScriptContainerTest;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class ScriptLineTest {
 

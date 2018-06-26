@@ -3,9 +3,7 @@ package org.contentmine.graphics.svg;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
-
 import org.contentmine.eucl.testutil.TestUtils;
-import org.eclipse.jetty.util.log.Log;
 import org.junit.Assert;
 import org.junit.Test;
 

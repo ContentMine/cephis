@@ -3,10 +3,9 @@ package org.contentmine.image.plot;
 import java.io.File;
 import java.io.IOException;
 
-import org.junit.Test;
 import org.contentmine.image.ImageAnalysisFixtures;
 import org.contentmine.image.OutlineTester;
-import org.contentmine.image.diagram.DiagramAnalyzerTest;
+import org.junit.Test;
 
 public class PlotIT {
 

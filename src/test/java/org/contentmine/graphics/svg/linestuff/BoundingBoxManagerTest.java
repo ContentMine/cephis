@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
-import org.contentmine.graphics.svg.linestuff.BoundingBoxManager;
 import org.contentmine.graphics.svg.linestuff.BoundingBoxManager.BoxEdge;
 import org.junit.Assert;
 import org.junit.Test;
