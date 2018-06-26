@@ -183,6 +183,7 @@
             <version>${pdfbox.version}</version>
         </dependency>
 		-->
+		<!--  usePDFBox 2 from here -->
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
