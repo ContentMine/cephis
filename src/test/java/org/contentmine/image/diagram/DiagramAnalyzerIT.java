@@ -182,7 +182,7 @@ public class DiagramAnalyzerIT {
 		ColorFrequenciesMap colorFrequencies = colorAnalyzer.getOrCreateColorFrequenciesMap();
 		for (RGBColor color : colorFrequencies.keySet()) {
 			String hex = color.getHex();
-			LOG.debug(hex+": "+colorFrequencies.get(color));
+			LOG.trace(hex+": "+colorFrequencies.get(color));
 			BufferedImage image1 = colorAnalyzer.getImage(color);
 			File hexFile = new File(ImageAnalysisFixtures.TARGET_BIO_DIR, fileroot+"/.poster."+hex+".png");
 			ImageIOUtil.writeImageQuietly(image1, hexFile);
@@ -219,7 +219,7 @@ public class DiagramAnalyzerIT {
 		PixelIsland pixelIsland = pixelIslandList.get(0);
 		PixelGraph graph = new PixelGraph(pixelIsland);
 		graph.compactCloseNodes(3);
-		LOG.debug(graph);
+		LOG.trace(graph);
 	}
 
 	@Test

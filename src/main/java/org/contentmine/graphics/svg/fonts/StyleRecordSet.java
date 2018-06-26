@@ -328,7 +328,7 @@ public class StyleRecordSet implements Iterable<StyleRecord> {
 		for (StyleRecord styleRecord : this) {
 			StyleBundle styleBundle = styleRecord.getStyleBundle();
 			String newFontName = styleBundle.createNormalizedFontName();
-			LOG.debug("new fontName "+newFontName);
+			LOG.trace("new fontName "+newFontName);
 		}
 	}
 

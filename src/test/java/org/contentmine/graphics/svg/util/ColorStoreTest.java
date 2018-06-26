@@ -21,7 +21,7 @@ public class ColorStoreTest {
 		Iterator<String> colorIterator = colorStore.getColorIterator();
 		int count = 0;
 		while (count++ < 20 && colorIterator.hasNext()) {
-			LOG.debug(">> "+colorIterator.next());;
+			LOG.trace(">> "+colorIterator.next());;
 		}
 	}
 	
@@ -31,7 +31,7 @@ public class ColorStoreTest {
 		Iterator<Color> colorIterator = colorStore.getJavaColorIterator();
 		int count = 0;
 		while (count++ < 20 && colorIterator.hasNext()) {
-			LOG.debug(">> "+colorIterator.next());;
+			LOG.trace(">> "+colorIterator.next());;
 		}
 	}
 	@Test
@@ -39,7 +39,7 @@ public class ColorStoreTest {
 		Iterator<Color> colorIterator = ColorStore.getJavaColorIterator(ColorizerType.CONTRAST);
 		int count = 0;
 		while (count++ < 20 && colorIterator.hasNext()) {
-			LOG.debug(">> "+colorIterator.next());;
+			LOG.trace(">> "+colorIterator.next());;
 		}
 	}
 }

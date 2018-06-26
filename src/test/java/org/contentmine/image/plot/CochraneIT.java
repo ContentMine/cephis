@@ -41,7 +41,7 @@ public class CochraneIT {
 //			pixelRingListList.sort((Comparator<PixelRingList>)pixelRingListComparator);
 			Collections.reverse(pixelRingListList);
 			for (PixelRingList pixelRingList : pixelRingListList) {
-				LOG.debug(pixelRingList.get(0).size());
+				LOG.trace(pixelRingList.get(0).size());
 			}
 			PixelRingList pixelRingList = pixelRingListList.get(0);
 			SVGG g = null;
@@ -56,7 +56,7 @@ public class CochraneIT {
 	//			i++;
 	//		}
 			PixelRing pixelRing10 = pixelRingList.get(10);
-			LOG.debug("PR "+pixelRing10);
+			LOG.trace("PR "+pixelRing10);
 			PixelIslandList pl;
 	//		PixelIslandList ringIslandList = PixelIslandList.;
 		}
