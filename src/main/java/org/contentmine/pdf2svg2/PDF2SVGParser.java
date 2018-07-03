@@ -9,7 +9,9 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -24,6 +26,7 @@ import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImage;
+import org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState;
 import org.apache.pdfbox.pdmodel.graphics.state.PDTextState;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.rendering.PageDrawer;
@@ -38,10 +41,13 @@ import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Util;
+import org.contentmine.graphics.svg.GraphicsElement.FontStyle;
+import org.contentmine.graphics.svg.GraphicsElement.FontWeight;
 import org.contentmine.graphics.svg.SVGClipPath;
 import org.contentmine.graphics.svg.SVGDefs;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
+import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGPath;
 import org.contentmine.graphics.svg.SVGPathPrimitive;
 import org.contentmine.graphics.svg.SVGRect;
@@ -54,6 +60,8 @@ import org.contentmine.graphics.svg.path.LinePrimitive;
 import org.contentmine.graphics.svg.path.MovePrimitive;
 import org.contentmine.graphics.svg.path.PathPrimitiveList;
 
+import nu.xom.Attribute;
+
 /** intercepts graphics primitives sent to Java AWT
  *  
  *  NOTE: all subclassed methods must call super as this keeps the state.
@@ -62,7 +70,6 @@ import org.contentmine.graphics.svg.path.PathPrimitiveList;
  *  Clipping and defs not supported
  *  
  * @author pm286
- *
  */
 public class PDF2SVGParser extends PageDrawer    {
 	private static final Logger LOG = Logger.getLogger(PDF2SVGParser.class);
@@ -71,8 +78,8 @@ public class PDF2SVGParser extends PageDrawer    {
 	}
 
 	private static final String CLIP_PATH = "clipPath";
-
 	private static final Graphics2D TEXT = null;
+	private static final String SVG_RHMARGIN = "svg_rhmargin";
 
 	private SVGG svgg;
 	private double yEpsilon = 0.05; // guess
@@ -90,6 +97,7 @@ public class PDF2SVGParser extends PageDrawer    {
 	private String clipString;
 	private Real2 currentDisplacement;
 	private Real2 currentXY;
+	private int codepoint;
 	// clipping
 	private Map<String, Integer> integerByClipStringMap;
 	private Set<String> clipStringSet;
@@ -101,11 +109,11 @@ public class PDF2SVGParser extends PageDrawer    {
 	private double yMax;
 	private Real2Range mediaBox;
 	private int pageRotation;
-
 	private int fontPrecision = 2;
-
 	private Double maxSpaceRatio = 1.2;
+	private List<BufferedImage> rawImageList;
 
+	private Double minBoldWeight = 500.;
 
 
 	PDF2SVGParser(PageDrawerParameters parameters) throws IOException        {
@@ -118,6 +126,8 @@ public class PDF2SVGParser extends PageDrawer    {
     	svgg.setFill("none");
     	integerByClipStringMap = new HashMap<String, Integer>();
     	yMax = 800; // hopefully overwritten by mediaBox
+    	rawImageList = new ArrayList<BufferedImage>();
+
 	}
 
 	/**
@@ -126,6 +136,7 @@ public class PDF2SVGParser extends PageDrawer    {
      */
     @Override
     protected Paint getPaint(PDColor color) throws IOException {
+    	
     	super.getPaint(color);
         // if this is the non-stroking color
         if (getGraphicsState().getNonStrokingColor() == color) {
@@ -148,9 +159,14 @@ public class PDF2SVGParser extends PageDrawer    {
     protected void showGlyph(Matrix textRenderingMatrix, PDFont font, int code, String unicode,
                              Vector displacementxy) throws IOException    {
     	super.showGlyph(textRenderingMatrix, font, code, unicode, displacementxy);
-    	
+    	this.codepoint = code;
+
+    	Vector v = font.getDisplacement(codepoint);
+    	if (v.getY() != 0.0) {
+    		throw new RuntimeException(" unprocessed y fontDisplacement: "+v); // y doesn't seem to be used
+    	}
     	textParameters = new TextParameters(textRenderingMatrix, font);
-    	Real2 scales = textParameters.getScales();
+    	Real2 scales = textParameters.getScales().format(nPlaces);
     	Angle rotAngle = textParameters.getAngle();
     	Double x = Util.format((double) textRenderingMatrix.getTranslateX(), nPlaces);
     	Double y = createY(Util.format((double) textRenderingMatrix.getTranslateY(), nPlaces));
@@ -158,29 +174,29 @@ public class PDF2SVGParser extends PageDrawer    {
     	currentXY = new Real2(x, y);
     	currentDisplacement = new Real2(
     			displacementxy.getX() * scales.getX(), displacementxy.getY() * scales.getY()).format(nPlaces);
-    	
     	boolean newText = true;
     	if (currentSVGText == null || currentTextParameters == null) {
-    		LOG.trace("start");
     		createAndAddCurrentSVGText();
     	} else if (!currentTextParameters.hasEqualFont(textParameters)) {
-    		LOG.trace("font changed");
     		createAndAddCurrentSVGText();
     	} else if (isYChanged(y)) {
-    		LOG.trace("y changed");
     		createAndAddCurrentSVGText();
     	} else if (isScaleChanged(scales)) {
-    		LOG.trace("scale changed");
     		createAndAddCurrentSVGText();
     	} else {
     		newText = false;
     	}
-    	currentSVGText.appendText(unicode);
-    	currentSVGText.appendX(x);
-    	currentSVGText.setY(y);
+    	if (unicode.equals(" ") && newText) {
+    		// skip leading space
+    	} else {
+	    	currentSVGText.appendText(unicode);
+	    	currentSVGText.appendX(x);
+	    	currentSVGText.setY(y);
+    	}
     	if (newText) {
     		addCurrentTextAttributes(currentSVGText);
     	}
+    	addRightTextLimitToCurrentText(x, v.getX());
     	processNonZeroRotations(rotAngle);
 
 //        // bbox in EM -> user units
@@ -191,6 +207,16 @@ public class PDF2SVGParser extends PageDrawer    {
         saveUpdatedParameters(scales, x, y);
     }
 
+    /** create rightmost extent of text.
+     * add characterWidth (displacement) * fontSize to X-coord
+     * This is invisible "right margin" of text
+     * @param x
+     */
+	private void addRightTextLimitToCurrentText(double currentX, float displacement) {
+		double xLimit = Util.format(currentX + textParameters.getFontSize() * displacement, nPlaces);
+		currentSVGText.addAttribute(new Attribute(SVG_RHMARGIN, String.valueOf(xLimit)));
+	}
+
 	private void saveUpdatedParameters(Real2 scales, Double x, Double y) {
 		currentX = x;
         currentY = y;
@@ -199,7 +225,7 @@ public class PDF2SVGParser extends PageDrawer    {
 	}
 
 	private void processNonZeroRotations(Angle rotAngle) {
-		if (!rotAngle. isEqualTo(0.0, angleEps)) {
+		if (rotAngle != null && !rotAngle. isEqualTo(0.0, angleEps)) {
     		Transform2 t2 = Transform2.getRotationAboutPoint(rotAngle, currentXY);
     		currentSVGText.applyTransform(t2, RotateText.FALSE);
     		currentSVGText.format(nPlaces);
@@ -246,15 +272,56 @@ public class PDF2SVGParser extends PageDrawer    {
 	}
 
 	private void createAndAddCurrentSVGText() {
+		drawRHMargin();
 		currentSVGText = new SVGText();
-		Real2 fontSizes = textParameters.getScales();
-		double yScale = fontSizes.getY();
+		currentSVGText.setFontFamily(textParameters.getFontFamily());
+		currentSVGText.setFontStyle(
+				(textParameters.isItalic() ? FontStyle.ITALIC.toString() : FontStyle.NORMAL.toString()));
+		currentSVGText.setFontWeight(textParameters.isForceBold() ? FontWeight.BOLD : FontWeight.NORMAL);
+		if (!currentSVGText.isBold()) {
+			addBoldFromFontWeight();
+		}
+		Real2 scales = textParameters.getScales().format(3);
+		double yScale = scales.getY();
 		currentSVGText.setFontSize(yScale);
 		RealArray xArray = new RealArray();
 		currentSVGText.setX(xArray);
-		addCurrentPathAttributes(currentSVGText);
 		addCurrentTextAttributes(currentSVGText);
 		svgg.appendChild(currentSVGText);
+	}
+
+	private void addBoldFromFontWeight() {
+		Double fontWeight = textParameters.getFontWeight();
+		if (fontWeight > 0.0) {
+			LOG.trace("wt: "+fontWeight);
+			if (fontWeight > minBoldWeight ) {
+				currentSVGText.setFontWeight(FontWeight.BOLD);
+			}
+		}
+	}
+
+	private void drawRHMargin() {
+		if (currentSVGText != null) {
+			Double yLast = currentSVGText.getY();
+			if (yLast == null) {
+				LOG.trace("curr: "+currentSVGText.toXML().toString());
+			}
+			Double xLast = Double.valueOf(currentSVGText.getAttributeValue(SVG_RHMARGIN));
+			if (yLast != null && xLast != null) {
+				drawMargin(yLast, xLast, "red");
+				RealArray xArray = currentSVGText.getXArray();
+				drawMargin(yLast, xArray.getLast(), "blue");
+			}
+		}
+	}
+
+	private void drawMargin(Double yLast, Double xLast, String stroke) {
+		Real2 l0 = new Real2(xLast, yLast);
+		Real2 l1 = new Real2(xLast, yLast - currentSVGText.getCurrentFontSize());
+		SVGLine line = new SVGLine(l0, l1);
+		line.setWidth(0.5);
+		line.setStroke(stroke);
+		svgg.appendChild(line);
 	}
 
 	/**
@@ -364,7 +431,6 @@ public class PDF2SVGParser extends PageDrawer    {
 //    		currentSvgPath.setStrokeWidth((double)graphicsState.getLineWidth());
 
     		svgg.appendChild(currentSvgPath);
-//    		LOG.debug("endPath "+currentSvgPath);
     	}
 		currentSvgPath = null;
 		
@@ -378,25 +444,27 @@ public class PDF2SVGParser extends PageDrawer    {
 	}
 	
 	private void addCurrentTextAttributes(SVGText text) {
-		addCurrentPathAttributes(text);
+		setFillAndStrokeFromGraphics2D(text);
 		Real2 scales = textParameters.getScales();
+		// at present I think only the PDFont matters
 		PDTextState textState = getGraphicsState().getTextState();
 		PDFont font = textState.getFont();
 		PDFontDescriptor fontDescriptor = font.getFontDescriptor();
-		
-		float fontSize2 = textState.getFontSize();
-		Double fontSize = new Double(fontSize2) * scales.getY();
-		text.setFontSize(Util.format(fontSize, fontPrecision));
+
+		/** not sure how this works
+		 * sometimes fontSize2 is 1.0, and we need scales
+		 */
+		setFontSize(text, scales, textState);
 
 		String fontName = font.getName();
-		fontName = fontName.replace("^[A-Z]*\\+", "");
+		fontName = removeArbitraryPrefix(fontName);
 		text.setFontFamily(fontName);
 		
 		// these *might* be useful
 		try {
-			font.getDisplacement(65);
+			font.getDisplacement(codepoint);
 			font.getBoundingBox();
-//			font.getPositionVector(65); // pnly vertical
+//			font.getPositionVector(code); // pnly vertical
 		} catch (Exception e) {throw new RuntimeException(e);}
 		
 		// these *might* be useful
@@ -407,12 +475,52 @@ public class PDF2SVGParser extends PageDrawer    {
 		fontDescriptor.isSmallCap();
 	}
 
+	/** get fill and stroke from graphics2D.
+	 * if null defaults to fill = black and stroke = none;
+	 * @param text
+	 */
+	private void setFillAndStrokeFromGraphics2D(SVGText text) {
+		PDGraphicsState graphicsState = getGraphicsState();
+//		LOG.debug("G:L "+graphicsState.getLineWidth());
+		String fillColor = translatePDColorToRGBCSSString(graphicsState.getNonStrokingColor());
+		text.setFill(fillColor);
+		setStrokeIfFillIsNone(text, graphicsState, fillColor);
+		
+	}
+
+	private void setStrokeIfFillIsNone(SVGText text, PDGraphicsState graphicsState, String fillColor) {
+		if (fillColor == null || fillColor.equals("none")) {
+			String strokeColor = translatePDColorToRGBCSSString(graphicsState.getStrokingColor());
+			Double width = getAMIStrokeWidth();
+			text.setStroke(strokeColor);
+			text.setStrokeWidth(width);
+		}
+	}
+
+	private void setFontSize(SVGText text, Real2 scales, PDTextState textState) {
+		Double fontSize = new Double(scales.getY());
+		float fontSize2 = textState.getFontSize();
+		if (fontSize2 > 1.01) {
+			fontSize = Double.valueOf(fontSize2);
+		}
+		text.setFontSize(Util.format(fontSize, fontPrecision));
+	}
+
+	private String removeArbitraryPrefix(String fontName) {
+		fontName = fontName.replace("^[A-Z]*\\+", "");
+		return fontName;
+	}
+
 
     
     @Override
     public void drawImage(PDImage pdImage) throws IOException    {
-    	LOG.debug("drawImage");
     	super.drawImage(pdImage);
+    	int height = pdImage.getHeight();
+    	int width = pdImage.getWidth();
+    	System.out.print("["+width+"*"+height+"]");
+    	BufferedImage bufferedImage = pdImage.getImage();
+    	rawImageList.add(bufferedImage);
     	
 //        Matrix ctm = getGraphicsState().getCurrentTransformationMatrix();
 //        AffineTransform at = ctm.createAffineTransform();
@@ -580,17 +688,16 @@ public class PDF2SVGParser extends PageDrawer    {
 
 	private String getAMIFill() {
 		PDColor nonStrokingColor = getGraphicsState().getNonStrokingColor();
-		String rgb = getRGB(nonStrokingColor);
+		String rgb = translatePDColorToRGBCSSString(nonStrokingColor);
         Color paint = (Color) getGraphics().getPaint();
         rgb = getCSSColor(paint);
-//		LOG.debug("nonStroke "+nonStrokingColor+"/"+rgb+" // "+paint);
 		return rgb;
 	}
 
 	private String getAMIStroke() {
 		PDColor strokingColor = getGraphicsState().getStrokingColor();
         Paint paint = getGraphics().getPaint();
-		String rgb = getRGB(strokingColor);
+		String rgb = translatePDColorToRGBCSSString(strokingColor);
 		return rgb;
 	}
 
@@ -599,7 +706,7 @@ public class PDF2SVGParser extends PageDrawer    {
 		return new Double(width);
 	}
 
-	private String getRGB(PDColor color) {
+	private String translatePDColorToRGBCSSString(PDColor color) {
 		String col = null;
 		if (color != null) {
 			try {
@@ -724,7 +831,8 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-
-
-
+	public List<BufferedImage> getRawImageList() {
+		return rawImageList;
+	}
+	
 }

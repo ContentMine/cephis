@@ -20,13 +20,18 @@
        <json-path.version>2.0.0</json-path.version>
        <jsoup.version>1.9.2</jsoup.version>
        <jtidy.version>4aug2000r7-dev</jtidy.version>
+	   <jbig2-imageio.version>3.0.1</jbig2-imageio.version>
+       <json-path.version>2.0.0</json-path.version>
+       <jsoup.version>1.9.2</jsoup.version>
+       <jtidy.version>4aug2000r7-dev</jtidy.version>
  	   <junit.version>4.8.2</junit.version>
        <log4j.version>1.2.16</log4j.version>
        <pdfbox.version>1.8.8</pdfbox.version>
-       <pdfbox2.version>2.0.9</pdfbox2.version>
+       <pdfbox2.version>2.0.11</pdfbox2.version>
        <tagsoup.version>1.2</tagsoup.version>
 	   <xom.version>1.2.5</xom.version>
 	   <xml-apis.version>1.4.01</xml-apis.version>
+	   
        
        	   <!-- if this is uncommented the tests are all skipped
         <skipTests>true</skipTests>
@@ -209,6 +214,13 @@
             <artifactId>imgscalr-lib</artifactId>
             <version>${imgscalr-lib.version}</version>
         </dependency>
+        
+        <dependency>
+		    <groupId>org.apache.pdfbox</groupId>
+		    <artifactId>jbig2-imageio</artifactId>
+		    <version>${jbig2-imageio.version}</version>
+		</dependency>
+        
 
     </dependencies>
 

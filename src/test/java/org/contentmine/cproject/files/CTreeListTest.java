@@ -18,7 +18,7 @@ public class CTreeListTest {
 	@Test
 	public void testFileOrder() {
 		CProject cProject = new CProject(CMineFixtures.TEST_SAMPLE);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 //		LOG.debug(cTreeList.getCTreeDirectoryList());
 		String SAMPLE_DIR = ""+CHESConstants.SRC_TEST_RESOURCES + "/" + CHESConstants.ORG_CM_CPROJECT + "/download/sample";
 		Assert.assertEquals("ctrees",  "["

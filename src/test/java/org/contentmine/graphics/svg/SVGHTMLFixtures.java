@@ -24,12 +24,13 @@ public class SVGHTMLFixtures {
 
 	public static final File RESOURCES_DIR = new File("src/test/resources/");
 	public static final File TARGET_DIR = new File("target/");
+	public static final File ORG_CONTENTMINE = new File(RESOURCES_DIR, "org/contentmine/");
 	
-	private static final String ORG_CONTENTMINE_GRAPHICS = "org/contentmine/graphics/";
-	public static final File GR_SVG_DIR = new File(RESOURCES_DIR, ORG_CONTENTMINE_GRAPHICS + "svg");
-	public static final File TARGET_SVG_DIR = new File(TARGET_DIR, "svg");
-	public static final File GR_MATHML_DIR = new File(RESOURCES_DIR, ORG_CONTENTMINE_GRAPHICS + "math");
-	public static final File GR_LAYOUT_DIR = new File(RESOURCES_DIR, ORG_CONTENTMINE_GRAPHICS + "layout");
+	public static final File GRAPHICS_DIR = new File(ORG_CONTENTMINE, "graphics/");
+	public static final File GR_SVG_DIR = new File(GRAPHICS_DIR, "svg/");
+	public static final File TARGET_SVG_DIR = new File(TARGET_DIR, "svg/");
+	public static final File GR_MATHML_DIR = new File(GRAPHICS_DIR, "math/");
+	public static final File GR_LAYOUT_DIR = new File(GRAPHICS_DIR, "layout/");
 
 	private static final String ORG_CONTENTMINE_IMAGE = "org/contentmine/image/";
 	public static final File IMAGE_DIR = new File(RESOURCES_DIR, ORG_CONTENTMINE_IMAGE);
@@ -90,6 +91,9 @@ public class SVGHTMLFixtures {
 	public static final File TARGET_PLOT_DIR = new File(TARGET_SVG_DIR, "plot");
 	public static final File G_S_TABLE_DIR = new File(GR_SVG_DIR, "table");
 	public static final File G_S_TEXT_DIR = new File(GR_SVG_DIR, "text");
+	public static final File TARGET_TEXT_DIR = new File(TARGET_SVG_DIR, "text");
+	public static final File G_S_TEXT_BUILD_DIR = new File(G_S_TEXT_DIR, "build");
+	public static final File TARGET_TEXT_BUILD_DIR = new File(TARGET_TEXT_DIR, "build");
 
 	public static final File I_DIAGRAMS_DIR = new File(IMAGE_DIR, "diagrams");
 	public static final File I_DIAGRAMS_TARGET_DIR = new File(TARGET_IMAGE_DIR, "diagrams");
@@ -132,7 +136,11 @@ public class SVGHTMLFixtures {
 	public static final File MOLECULES_DIR = new File(GR_SVG_DIR, "molecules");
 	public static final File IMAGE_2_13_SVG = new File(SVGHTMLFixtures.MOLECULES_DIR, "image.g.2.13.svg");
 	public static final File IMAGE_2_11_NO2_SVG = new File(SVGHTMLFixtures.MOLECULES_DIR, "image.g.2.11.no2.svg");
-	
+
+	public static final File CLOSED_DIR = new File(RESOURCES_DIR, "closed");
+	public static final File CLOSED_GVSU = new File(CLOSED_DIR, "gvsu");
+	public static final File CLOSED_GVSU_TARGET = new File(TARGET_DIR, "closed/gvsu");
+			
 	public static final File TABLE_LINE_DIR = new File(G_S_TABLE_DIR, "line");
 	public static final File TABLE_RECT_DIR = new File(G_S_TABLE_DIR, "rect");
 	public static final File TABLE_PAGE_DIR = new File(G_S_TABLE_DIR, "page");

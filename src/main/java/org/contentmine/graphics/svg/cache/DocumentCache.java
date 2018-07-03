@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.graphics.AbstractCMElement;
@@ -33,13 +34,13 @@ public class DocumentCache extends ComponentCache {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	public static final String DOT_SVG = ".svg";
-	public static final String FULLTEXT_PAGE = "fulltext-page";
 	private static final String BOX = ".box";
+	// we will drop this very shortly, maybe even now
+	private static final String OPTIONAL_SVG_COMPACT = "(\\.svg\\.compact)?";
 	// note we have to have leading .* to match whole name
-	public static final String FULLTEXT_SVG_REGEX = ".*/svg/fulltext\\-page(\\d+)(\\.svg\\.compact)?\\.svg";
+	public static final String FULLTEXT_SVG_REGEX = ".*/svg/" + CTree.FULLTEXT_PAGE_REGEX + "(\\d+)" + OPTIONAL_SVG_COMPACT + "\\.svg";
 
-	private File cTreeDir;
+//	private File cTreeDir;
 	private boolean createSummaryBoxes;
 	private List<File> svgFiles;
 	private List<PageCache> pageCacheList;
@@ -52,39 +53,46 @@ public class DocumentCache extends ComponentCache {
 	private HtmlElement htmlDiv;
 	private SVGPubstyle pubstyle;
 	private PubstyleManager pubstyleManager;
+	private CTree cTree;
 
 	public DocumentCache() {
 		
 	}
 	
 	public DocumentCache(File cTreeDir) {
-		if (cTreeDir == null || !cTreeDir.exists()) {
-			throw new RuntimeException("does not exist "+cTreeDir);
+		if (this.cTree == null) {
+			cTree = (cTreeDir == null) ? null : new CTree(cTreeDir);
+		}
+		if (cTree == null || cTree.getDirectory() == null || !cTree.getDirectory().exists()) {
+			throw new RuntimeException("null or does not exist "+cTree);
 		}
 		if (!cTreeDir.isDirectory()) {
 			throw new RuntimeException("not a directory "+cTreeDir);
 		}
-		this.processSVGInCTreeDirectory(cTreeDir);
 	}
 
-	public AbstractCMElement processSVGInCTreeDirectory(File cTreeDir) {
-		this.setCTreeDir(cTreeDir);
-		File[] files = cTreeDir.listFiles();
-//		LOG.trace("files: "+files.length+" ; "+Arrays.asList(files));
-		FilePathGlobber globber = new FilePathGlobber();
-		globber.setRegex(DocumentCache.FULLTEXT_SVG_REGEX).setUseDirectories(false).setLocation(cTreeDir.toString());
-		try {
-			svgFiles = globber.listFiles();
-		} catch (IOException e) {
-			throw new RuntimeException("Globber failed", e);
-		}
-		if (svgFiles.size() == 0) {
-			LOG.warn("no files found in: "+cTreeDir+" with "+DocumentCache.FULLTEXT_SVG_REGEX);
-		}
-		try {
-			processSVGFiles(svgFiles);
-		} catch (Exception e) {
-			throw new RuntimeException("Failed in: "+this.cTreeDir, e);
+	public DocumentCache(CTree cTree) {
+		this(cTree.getDirectory());
+		this.cTree = cTree;
+	}
+
+	public AbstractCMElement processSVG() {
+		if (cTree != null) {
+			FilePathGlobber globber = new FilePathGlobber();
+			globber.setRegex(DocumentCache.FULLTEXT_SVG_REGEX).setUseDirectories(false).setLocation(cTree.getDirectory().toString());
+			try {
+				svgFiles = globber.listFiles();
+			} catch (IOException e) {
+				throw new RuntimeException("Globber failed", e);
+			}
+			if (svgFiles.size() == 0) {
+				LOG.warn("no files found in: "+cTree+" with "+DocumentCache.FULLTEXT_SVG_REGEX);
+			}
+			try {
+				processSVGFiles(svgFiles);
+			} catch (Exception e) {
+				throw new RuntimeException("Failed in: "+this.cTree.toString(), e);
+			}
 		}
 		return convertedSVGElement;
 	}
@@ -142,7 +150,7 @@ public class DocumentCache extends ComponentCache {
 			LOG.trace("PAGE "+ipage);
 			PageCache pageCache = new PageCache(this);
 			SVGElement boxes = debugPage(pageDir, fileDir, ipage, pageCache);
-			File outFileSVG = new File(targetDir, fileDir+"/fulltext-page" + ipage + DocumentCache.DOT_SVG);
+			File outFileSVG = new File(targetDir, fileDir+"/fulltext-page" + ipage + CTree.DOT+CTree.SVG);
 			LOG.trace("out "+outFileSVG);
 			SVGSVG.wrapAndWriteAsSVG(boxes, outFileSVG);
 		}
@@ -155,7 +163,7 @@ public class DocumentCache extends ComponentCache {
 	private SVGElement debugPage(File pageDir, String fileDir, int ipage, PageCache pageCache) {
 		currentPageLayout = getCurrentPageLayout(ipage);
 		pageCache.setPageLayout(currentPageLayout);
-		File svgFile = new File(pageDir, fileDir + "/svg/" + DocumentCache.FULLTEXT_PAGE + ipage + PageLayout.DOT_SVG);
+		File svgFile = new File(pageDir, fileDir + "/svg/" + CTree.FULLTEXT_PAGE + ipage + CTree.DOT+CTree.SVG);
 		pageCache.readGraphicsComponentsAndMakeCaches(svgFile);
 		pageCache.readPageLayoutAndMakeBBoxesAndMargins(currentPageLayout);
 		AbstractCMElement boxg = pageCache.createSummaryBoxes(svgFile);
@@ -213,12 +221,21 @@ public class DocumentCache extends ComponentCache {
 		}
 	}
 
-	public File getCTreeDir() {
-		return cTreeDir;
+	public CTree getCTree() {
+		return cTree;
 	}
 
-	public void setCTreeDir(File cTreeDir) {
-		this.cTreeDir = cTreeDir;
+	public void setCTree(File cTreeDir) {
+		if (cTree != null) {
+			throw new RuntimeException("Already has a CTree: "+cTreeDir);
+		}
+		if (cTreeDir != null) {
+			cTree = new CTree(cTreeDir);
+		}
+	}
+
+	public void setCTree(CTree cTree) {
+		this.cTree = cTree;
 	}
 
 	public boolean isCreateSummaryBoxes() {
@@ -229,7 +246,7 @@ public class DocumentCache extends ComponentCache {
 	 * draws rects on totalSvgElement
 	 * @param createSummaryBoxes
 	 */
-	public void setCreateSummaryBoxes(boolean createSummaryBoxes) {
+	public void setCreateSummaryDebugBoxes(boolean createSummaryBoxes) {
 		this.createSummaryBoxes = createSummaryBoxes;
 	}
 
@@ -278,7 +295,7 @@ public class DocumentCache extends ComponentCache {
 	}
 
 	public String getTitle() {
-		return cTreeDir == null ? null : cTreeDir.getName();
+		return cTree == null ? null : cTree.getName();
 	}
 	
 	public int getPageCount() {
@@ -288,7 +305,7 @@ public class DocumentCache extends ComponentCache {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("tree: "+cTreeDir+"; pages: "+pageCacheList.size()+"; xml: "+(htmlDiv == null ? "null" : htmlDiv.toXML().length()));
+		sb.append("tree: "+cTree+"; pages: "+pageCacheList.size()+"; xml: "+(htmlDiv == null ? "null" : htmlDiv.toXML().length()));
 		return sb.toString();
 	}
 }

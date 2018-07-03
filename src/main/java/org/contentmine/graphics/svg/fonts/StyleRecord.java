@@ -86,7 +86,10 @@ public class StyleRecord {
 	public String toString() {
 		List<Multiset.Entry<String>> characterEntries = MultisetUtil.createListSortedByValue(characterSet);
 		List<Multiset.Entry<Double>> yCoordinateEntries = MultisetUtil.createListSortedByValue(yCoordinateSet);
-		return "chars: total: "+characterSet.size()+"; unique: "+characterEntries.size()+"; coords: "+yCoordinateEntries.size()+" "+yCoordinateEntries.toString();
+		return "chars: total: "+characterSet.size()+";"
+				+ " unique: "+characterEntries.size()+";"
+				+ " ycoords: "+yCoordinateEntries.size()+" "+yCoordinateEntries.toString()+"\n"
+				+ " css: " + getCSSStyle();
 	}
 
 	public void addNonWhitespaceCharacters(String value) {

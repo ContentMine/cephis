@@ -63,7 +63,7 @@ public class ProjectAnalyzer {
 	 */
 	public List<AbstractMetadata> getOrCreateMetadataList() {
 		if (metadataList == null) {
-			cTreeList = cProject.getResetCTreeList();
+			cTreeList = cProject.getOrCreateCTreeList();
 			metadataList = new ArrayList<AbstractMetadata>();
 			for (CTree cTree : cTreeList) {
 				AbstractMetadata metadata = AbstractMetadata.getCTreeMetadata(cTree, sourceType);

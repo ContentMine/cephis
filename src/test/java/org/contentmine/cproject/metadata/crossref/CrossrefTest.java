@@ -255,7 +255,7 @@ public class CrossrefTest {
 			}
 			CProject cProject = new CProject(cProjectDir);
 			List<String> row = new ArrayList<String>();
-			row.add(String.valueOf(cProject.getResetCTreeList().size()));
+			row.add(String.valueOf(cProject.getOrCreateCTreeList().size()));
 			row.add(String.valueOf(cProject.getAllChildDirectoryList().size()));
 			
 			List<String> doiNames = FileUtils.readLines(new File(projectTop, subPath+".dois.txt"));
@@ -309,7 +309,7 @@ public class CrossrefTest {
 	public void testAggregateCrossrefDOIPrefixes() {
 		CProject cProject = new CProject(CMineFixtures.GETPAPERS_SRC_20160601);
 //		cProject.normalizeDOIBasedDirectoryCTrees();
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		
 		List<String> doiPrefixList = cProject.getDOIPrefixList();
 //		LOG.debug("DOIPREFIX "+doiPrefixList);

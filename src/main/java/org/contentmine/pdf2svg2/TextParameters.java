@@ -1,10 +1,13 @@
 package org.contentmine.pdf2svg2;
 
+import java.io.IOException;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.util.Matrix;
+import org.apache.pdfbox.util.Vector;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.RealSquareMatrix;
@@ -20,6 +23,7 @@ public class TextParameters {
 	private PDFont font;
 	private Transform2 transform2;
 	private Angle angle;
+	private PDFontDescriptor fdescriptor;
 
 	public TextParameters(Matrix matrix, PDFont font) {
 		if (matrix == null) {
@@ -46,19 +50,19 @@ public class TextParameters {
     	
     	 //Font/TrueType/KAJWHP+Helvetica/org.apache.pdfbox.pdmodel.font.PDFontDescriptor@26aa12dd/[0.001,0.0,0.0,0.001,0.0,0.0]
     			 
-    	PDFontDescriptor fdesc = font.getFontDescriptor();
+    	fdescriptor = font.getFontDescriptor();
     	// more later
 		LOG.trace("fw "+font.getAverageFontWidth()+   // 472.5 
     			"/sw "+font.getSpaceWidth()+            // 633.78906
     			"/ty "+font.getType()+                  // Font
     			"/st "+font.getSubType()+               // TrueType
     			"/nm "+font.getName()+                  // KAJWHP+Helvetica
-    			"/"+fdesc+        // object
+    			"/"+fdescriptor+        // object
     			"{"+
-    			    "ff: "+fdesc.getFontFamily()+";"+
-    			    "wt: "+fdesc.getFontWeight()+";"+
-    			    "it: "+fdesc.isItalic()+";"+
-    			    "sy: "+fdesc.isSymbolic()+";"+
+    			    "ff: "+fdescriptor.getFontFamily()+";"+
+    			    "wt: "+fdescriptor.getFontWeight()+";"+
+    			    "it: "+fdescriptor.isItalic()+";"+
+    			    "sy: "+fdescriptor.isSymbolic()+";"+
     			"}"+
     			"/"+font.getFontMatrix()+            // /[0.001,0.0,0.0,0.001,0.0,0.0]  3*2 ??
     			"");
@@ -72,6 +76,60 @@ public class TextParameters {
 		result = prime * result + ((matrix == null) ? 0 : matrix.hashCode());
 		return result;
 	}
+
+	/** I don't understand all these but they may be useful.
+	 * 
+	 * @param code
+	 * @return
+	 */
+	public Real2 getDisplacement(int code) {
+		Vector v = null;
+		try {
+			v = font.getDisplacement(code);
+		} catch (IOException e) {
+			LOG.error("Bad code: "+code);
+		}
+		return v == null ? null : new Real2(v.getX(), v.getY());
+	}
+	
+	public String getFontName() {
+		return fdescriptor.getFontName();
+	}
+	
+	public String getFontFamily() {
+		return fdescriptor.getFontFamily();
+	}
+	public Double getFontWeight() {
+        return (Double) (double) fdescriptor.getFontWeight();
+	}
+	
+	public boolean isAllCap() {
+		return fdescriptor.isAllCap();
+	}
+	
+    public boolean isForceBold() {
+    	return fdescriptor.isForceBold();
+    }
+    
+    public boolean isItalic() {
+    	return fdescriptor.isItalic();
+    }
+    
+	public boolean isSerif() {
+		return fdescriptor.isSerif();
+	}
+	
+	public boolean isScript() {
+		return fdescriptor.isScript();
+	}
+	
+	public boolean isSmallCap() {
+		return fdescriptor.isSmallCap();
+	}
+	
+    public boolean isSymbolic() {
+    	return fdescriptor.isSymbolic();
+    }
 
 	@Override
 	public boolean equals(Object obj) {
@@ -98,7 +156,11 @@ public class TextParameters {
 	public boolean hasEqualFont(TextParameters textParameters) {
 		if (textParameters == null) return false;
 		PDFont tFont = textParameters.font;
-		return this.font.equals(tFont);
+		if (this.font.equals(tFont)) {
+			return true;
+		}
+//		LOG.debug("fontDiff" + this+"===> \n"+textParameters);
+		return false;
 	}
 
 	public Matrix getMatrix() {
@@ -123,6 +185,14 @@ public class TextParameters {
 
 	public Angle getAngle() {
 		return angle;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(""+matrix+"\n");
+		sb.append(""+font+"\n"+font.getFontDescriptor());
+		return sb.toString();
 	}
 
 	

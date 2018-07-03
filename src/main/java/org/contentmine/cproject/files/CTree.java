@@ -17,6 +17,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.args.log.AbstractLogElement;
 import org.contentmine.cproject.args.log.CMineLog;
@@ -26,10 +27,18 @@ import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.cproject.util.XMLUtils;
+import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlFactory;
 import org.contentmine.graphics.html.HtmlHtml;
+import org.contentmine.graphics.svg.SVGG;
+import org.contentmine.graphics.svg.SVGText;
+import org.contentmine.graphics.svg.cache.ComponentCache;
+import org.contentmine.graphics.svg.cache.DocumentCacheIT;
+import org.contentmine.graphics.svg.cache.TextCache;
+import org.contentmine.graphics.svg.cache.TextChunkCache;
+import org.contentmine.pdf2svg2.AMISVGCreator;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -151,6 +160,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public final static Pattern DOI_PREFIX = Pattern.compile("(10\\.[0-9]{3,}([\\.][0-9]+)*).*");
 //	public final static Pattern DOI_PREFIX = Pattern.compile("(10\\.[0-9]{3,}).*");
 	public static final String DOT      = ".";
+	public static final String MINUS    = "-";
+	public static final String ESCAPED_MINUS    = "\\-";
 
 	public static final String CIF      = "cif";
 	public static final String CSV      = "csv";
@@ -168,6 +179,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static final String PPT      = "ppt";
 	public static final String PPTX     = "pptx";
 	public static final String SVG      = "svg";
+//	public static final String DOT_SVG = ".svg";
 	public static final String TEI      = "tei";
 	public static final String TEX      = "tex";
 	public static final String TIF      = "tif";
@@ -185,7 +197,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static final String CROSSREF  = "crossref";
 	public static final String EMPTY     = "empty";
 	public static final String FULLTEXT  = "fulltext";
+	public static final String IMAGE     = "image";
 	public static final String LOG1      = "log";
+	public static final String PAGE      = "page";
+	public static final String PAGES     = "pages";
 	public static final String RESULT    = "result";
 	public static final String RESULTS   = "results";
 	public static final String SCHOLARLY = "scholarly";
@@ -194,6 +209,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static final String EMPTY_XML          = EMPTY+DOT+XML;
 	public static final String FULLTEXT_DOCX      = FULLTEXT+DOT+DOCX;
 	public static final String FULLTEXT_HTML      = FULLTEXT+DOT+HTML;
+	public static final String FULLTEXT_PAGE      = FULLTEXT+MINUS+PAGE;
+	public static final String FULLTEXT_PAGE_REGEX = FULLTEXT+ESCAPED_MINUS+PAGE;
 	public static final String FULLTEXT_PDF       = FULLTEXT+DOT+PDF;
 	public static final String FULLTEXT_PDF_HTML  = FULLTEXT+DOT+PDF+DOT+HTML;
 	public static final String FULLTEXT_PDF_PNG   = FULLTEXT+DOT+PDF+DOT+PNG;
@@ -373,7 +390,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private ContentProcessor contentProcessor;
 	private HtmlElement htmlElement;
 	private List<Element> sectionElementList;
-	private CContainer cProject;
+	private CProject cProject;
 	private XMLSnippets snippets;
 	private SnippetsTree snippetsTree;
 	private CTreeFiles cTreeFiles;
@@ -801,7 +818,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		if (svgDir != null) {
 			List<File> svgFiles0 = Arrays.asList(svgDir.listFiles());
 //			LOG.debug("Svg list "+svgFiles0.size());
-			CMineGlobber globber = new CMineGlobber().setRegex(".*/fulltext-page\\d+.svg").setLocation(svgDir);
+			CMineGlobber globber = new CMineGlobber().setRegex(".*/" + CTree.FULLTEXT_PAGE + "\\d+.svg").setLocation(svgDir);
 			files = globber.listFiles();
 		}
 		return files;
@@ -1257,7 +1274,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return manifest;
 	}
 	
-	public void setProject(CContainer cProject) {
+	public void setProject(CProject cProject) {
 		this.cProject = cProject;
 	}
 	
@@ -1535,5 +1552,49 @@ public class CTree extends CContainer implements Comparable<CTree> {
 				}
 			}
 		}
+	}
+
+	public void convertPDF2SVG() throws IOException {
+		File pdfFile = getExistingFulltextPDF();
+		if (pdfFile != null) {
+		    AMISVGCreator svgCreator = new AMISVGCreator();
+		    SVGG svgg = svgCreator.createSVG(pdfFile);
+			directory.mkdirs();
+			if (cProject.getOrCreateProjectIO().isWriteSVGPages()) {
+				svgCreator.writeSVGPages(directory);
+			}
+			if (cProject.getOrCreateProjectIO().isWriteRawImages()) {
+				svgCreator.writeRawImages(directory);
+			}
+		}
+	}
+
+	public void convertSVG2HTML() {
+		List<File> svgFiles = getExistingSVGFileList();
+		svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(svgFiles);
+		List<SVGText> textList = new ArrayList<SVGText>();
+		LOG.debug("svg "+svgFiles);
+		for (File svgFile : svgFiles) {
+			ComponentCache componentCache = new ComponentCache();
+			componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
+			TextCache textCache = componentCache.getOrCreateTextCache();
+			
+			List<SVGText> textList1 = textCache.getOrCreateCurrentTextList();
+			textList.addAll(textList1);
+		}
+	//this is an interim kludge		
+		HtmlHtml html = new TextChunkCache((ComponentCache)null).createHtmlFromPage(textList);
+		File htmlFile = new File(directory, "fulltext.html");
+		CProject.LOG.debug("HT "+htmlFile);
+		HtmlHtml.wrapAndWriteAsHtml(html, htmlFile);
+	}
+
+	/** creates numbered page basenames.
+	 * Examples "fulltext-page99
+	 * @param page
+	 * @return
+	 */
+	public static String createNumberedFullTextPageBasename(int page) {
+		return CTree.FULLTEXT_PAGE+page;
 	}
 }

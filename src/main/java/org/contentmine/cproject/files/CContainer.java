@@ -46,7 +46,7 @@ public abstract class CContainer {
 		init();
 	}
 	
-	private void init() {
+	protected void init() {
 		includeAllDirectories = true;
 	}
 	private static boolean isAllowedPattern(String name, Pattern[] allowedPatterns) {
@@ -158,6 +158,11 @@ public abstract class CContainer {
 			getOrCreateChildDirectoryAndChildFileList();
 			calculateFileAndCTreeLists();
 			getAllowedAndUnknownFiles();
+			if (this instanceof CProject) {
+				for (CTree cTree : ((CProject)this).getOrCreateCTreeList()) {
+					cTree.setProject((CProject)this);
+				}
+			}
 		}
 	}
 

@@ -76,7 +76,7 @@ public class CProjectTest {
 		Assert.assertEquals("all child dir", 2, allChildDirectoryList.size());
 		List<File> allChildFileList = cProject.getAllChildFileList();
 		Assert.assertEquals("all child file", 1, allChildFileList.size());
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("trees", 2, cTreeList.size());
 	}
 	
@@ -86,7 +86,7 @@ public class CProjectTest {
 		LOG.debug("cp "+cProjectDir);
 		LOG.debug("files " + cProjectDir.listFiles().length);
 		CProject cProject = new CProject(cProjectDir);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("ctrees", 123, cTreeList.size());
 		List<String> doiPrefixes = cProject.getDOIPrefixList();
 		Assert.assertEquals("prefixes", 123, doiPrefixes.size());
@@ -120,7 +120,7 @@ public class CProjectTest {
 		Assert.assertEquals("allowed child dir", 0, allowedChildDirectoryList.size());
 		List<File> unknownChildDirectoryList = cProject.getUnknownChildDirectoryList();
 		Assert.assertEquals("unknown child dir", 0, unknownChildDirectoryList.size());
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("all child dir", 3, cTreeList.size());
 		
 		List<File> allChildFileList = cProject.getAllChildFileList();
@@ -149,7 +149,7 @@ public class CProjectTest {
 		Assert.assertEquals("allowed child dir", 0, allowedChildDirectoryList.size());
 		List<File> unknownChildDirectoryList = cProject.getUnknownChildDirectoryList();
 		Assert.assertEquals("unknown child dir", 1, unknownChildDirectoryList.size());
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("all child dir", 2, cTreeList.size());
 		
 		List<File> allChildFileList = cProject.getAllChildFileList();
@@ -568,12 +568,12 @@ project2
 		CMineTestFixtures.cleanAndCopyDir(project2Dir, target2Dir);
 		CProject project1 = new CProject(target1Dir);
 		CProject project2 = new CProject(target2Dir);
-		Assert.assertEquals("ctree1", 2, project1.getResetCTreeList().size());
-		Assert.assertEquals("ctree2", 3, project2.getResetCTreeList().size());
+		Assert.assertEquals("ctree1", 2, project1.getOrCreateCTreeList().size());
+		Assert.assertEquals("ctree2", 3, project2.getOrCreateCTreeList().size());
 		project1.mergeProject(project2);
 		project2 = new CProject(target2Dir);
-		Assert.assertEquals("ctree1", 5, project1.getResetCTreeList().size());
-		Assert.assertEquals("ctree2", 3, project2.getResetCTreeList().size());
+		Assert.assertEquals("ctree1", 5, project1.getOrCreateCTreeList().size());
+		Assert.assertEquals("ctree2", 3, project2.getOrCreateCTreeList().size());
 	}
 	
 	/** NORMALIZE DOI NAMES
@@ -586,7 +586,7 @@ project2
 		File target1Dir = new File(CMineFixtures.GETPAPERS_TARGET, "doiNames/");
 		CMineTestFixtures.cleanAndCopyDir(project1Dir, target1Dir);
 		CProject project1 = new CProject(target1Dir);
-		CTreeList cTreeList = project1.getResetCTreeList();
+		CTreeList cTreeList = project1.getOrCreateCTreeList();
 		Assert.assertEquals("size", 4, cTreeList.size());
 		Assert.assertTrue("unnormalized", cTreeList.toString().contains(
 				"target/getpapers/doiNames/http_dx.doi.org_10.1103_physrevb.93.075101"));
@@ -594,7 +594,7 @@ project2
 				"target/getpapers/doiNames/http_dx.doi.org_10.1103_physreve.93.022402"));
 		
 		project1.normalizeDOIBasedDirectoryCTrees();
-		cTreeList = project1.getResetCTreeList();
+		cTreeList = project1.getOrCreateCTreeList();
 		LOG.debug(cTreeList.toString());
 		Assert.assertTrue("unnormalized", cTreeList.toString().contains(
 				"target/getpapers/doiNames/10.1103_physrevb.93.075101"));

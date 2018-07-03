@@ -96,6 +96,17 @@ public class StyleBundle implements XMLConstants {
 */
 	
 
+	/**
+			String clipPath,
+			String fill,
+			String fontFamily,
+			double fontSize,
+			String fontStyle,
+			String fontWeight,
+			double opacity,
+			String stroke,
+			double strokeWidth
+	 */
 	public final static StyleBundle DEFAULT_STYLE_BUNDLE = new StyleBundle(
 		null,	
 		"#000000",
@@ -636,7 +647,7 @@ public class StyleBundle implements XMLConstants {
 	 * @return
 	 */
 	public String createNormalizedFontName() {
-		LOG.debug(fontName + "// "+fontStyle+" // "+fontWeight);
+		LOG.trace(fontName + "// "+fontStyle+" // "+fontWeight);
 		String newFontName = normalizeBold(fontName);
 		newFontName = normalizeItalic(newFontName);
 		return newFontName;

@@ -385,7 +385,7 @@ public class CProjectArgProcessor extends DefaultArgProcessor {
 			if (!directory.isDirectory()) {
 				throw new RuntimeException("existing cProject is not a directory: "+directory);
 			}
-			if (cProject.getResetCTreeList().size() > 0) {
+			if (cProject.getOrCreateCTreeList().size() > 0) {
 				LOG.info("creating in non-empty directory");
 			}
 		} else {
@@ -525,7 +525,7 @@ public class CProjectArgProcessor extends DefaultArgProcessor {
 			throw new RuntimeException("Cannot read input URLS", e);
 		}
 		
-		cTreeList = cProject.getResetCTreeList();
+		cTreeList = cProject.getOrCreateCTreeList();
 		Map<String, String> urlByCTreeName = createUrlByCTreeMap();
 		removeUrlsForCtreesWithQuickscrapeMD(urlByCTreeName);
 		inUrls = new ArrayList<String>(urlByCTreeName.values());

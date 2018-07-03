@@ -29,6 +29,7 @@ public class AMIPDFRenderer extends PDFRenderer {
     @Override
     protected PageDrawer createPageDrawer(PageDrawerParameters parameters) throws IOException {
         pdf2svgParser = new PDF2SVGParser(parameters);
+
         return pdf2svgParser;
     }
     

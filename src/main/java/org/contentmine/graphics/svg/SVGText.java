@@ -170,7 +170,7 @@ public class SVGText extends SVGElement {
 
 	public static void setDefaultStyle(SVGElement text) {
 		text.setStroke("none");
-//		text.setFontSize(1.0);
+		text.setStrokeWidth(0.0);
 	}
 	
 	/** constructor
@@ -331,6 +331,7 @@ public class SVGText extends SVGElement {
 	 */
 	public void applyTransform(Transform2 t2, RotateText rotateText) {
 		Real2 xy = getXY();
+		if (xy == null || t2 == null) return;
 		xy.transformBy(t2);
 		this.setXY(xy);
 		transformFontSize(t2);
@@ -374,11 +375,14 @@ public class SVGText extends SVGElement {
      */
     public void format(int places) {
     	super.format(places);
-    	setXY(getXY().format(places));
-    	Double fontSize = this.getFontSize();
-    	if (fontSize != null) {
-    		fontSize = Util.format(fontSize, places);
-    		this.setFontSize(fontSize);
+    	Real2 xy = getXY();
+    	if (xy != null) {
+			setXY(xy.format(places));
+	    	Double fontSize = this.getFontSize();
+	    	if (fontSize != null) {
+	    		fontSize = Util.format(fontSize, places);
+	    		this.setFontSize(fontSize);
+	    	}
     	}
     }
 
@@ -389,11 +393,14 @@ public class SVGText extends SVGElement {
      */
     public void formatTransform(int places) {
     	super.formatTransform(places);
-    	setXY(getXY().format(places));
-    	Double fontSize = this.getFontSize();
-    	if (fontSize != null) {
-    		fontSize = Util.format(fontSize, places);
-    		this.setFontSize(fontSize);
+    	Real2 xy = getXY();
+    	if (xy != null) {
+			setXY(xy.format(places));
+	    	Double fontSize = this.getFontSize();
+	    	if (fontSize != null) {
+	    		fontSize = Util.format(fontSize, places);
+	    		this.setFontSize(fontSize);
+	    	}
     	}
     }
 

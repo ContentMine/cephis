@@ -59,22 +59,22 @@ public class CProjectCommandIT {
 		CMineTestFixtures.cleanAndCopyDir(source2Dir, target2Dir);
 		CProject project1 = new CProject(target1Dir);
 		CProject project2 = new CProject(target2Dir);
-		Assert.assertEquals("project1", 57, project1.getResetCTreeList().size());
-		Assert.assertEquals("project2",278, project2.getResetCTreeList().size());
+		Assert.assertEquals("project1", 57, project1.getOrCreateCTreeList().size());
+		Assert.assertEquals("project2",278, project2.getOrCreateCTreeList().size());
 		File duplicates = new File(CMineFixtures.GETPAPERS_TARGET, "test/duplicates");
 	
 		String cmd = "--project "+target1Dir.toString()+" --mergeProjects "+target2Dir.toString()+" --duplicates "+duplicates.toString();
 		new CProject().run(cmd);
 	
 		CProject project1a = new CProject(target1Dir);
-		Assert.assertEquals("project1", 310, project1a.getResetCTreeList().size());
+		Assert.assertEquals("project1", 310, project1a.getOrCreateCTreeList().size());
 		JsonArray array = new CrossrefMD().readMetadataArrayFromConcatenatedFile(new File(target1Dir, "crossref_results.json"));
 		Assert.assertEquals(310, array.size());
-		Assert.assertEquals("project2", 278, project2.getResetCTreeList().size());
+		Assert.assertEquals("project2", 278, project2.getOrCreateCTreeList().size());
 		Assert.assertTrue("duplicates exists", duplicates.exists());
 		Assert.assertTrue("duplicates is directory ", duplicates.isDirectory());
 		CProject duplicatesProject = new CProject(duplicates);
-		Assert.assertEquals("duplicates trees", 25, duplicatesProject.getResetCTreeList().size());
+		Assert.assertEquals("duplicates trees", 25, duplicatesProject.getOrCreateCTreeList().size());
 	
 	}
 
@@ -96,7 +96,7 @@ public class CProjectCommandIT {
 		List<File> pdfFiles = new ArrayList<File>(FileUtils.listFiles(target1Dir, new String[]{"pdf"}, true));
 		Assert.assertEquals(26,  pdfFiles.size());
 		CProject project1 = new CProject(target1Dir);
-		Assert.assertEquals("project1", 43, project1.getResetCTreeList().size());
+		Assert.assertEquals("project1", 43, project1.getOrCreateCTreeList().size());
 		File pdf = new File(target1Dir, "http_dx.doi.org_10.1103_physrevb.93.075101/fulltext.pdf");
 		Assert.assertTrue("pdf exists", pdf.exists());
 		File pdfHtml = new File(target1Dir, "http_dx.doi.org_10.1103_physrevb.93.075101/fulltext.pdf.html");

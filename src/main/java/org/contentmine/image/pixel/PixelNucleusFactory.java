@@ -542,7 +542,7 @@ public class PixelNucleusFactory {
 		edgeList = new PixelEdgeList();
 		getOrCreateSpikePixelList();
 		if (edgeList.size() > 0) {
-			LOG.debug("EDGELIST "+edgeList.size());
+			LOG.trace("EDGELIST "+edgeList.size());
 		}
 		return edgeList;
 	}

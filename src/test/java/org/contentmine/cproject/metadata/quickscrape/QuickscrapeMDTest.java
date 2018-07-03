@@ -75,7 +75,7 @@ public class QuickscrapeMDTest {
 	@Ignore // LONG
 	public void testLargeCProjectJSON() {
 		CProject cProject = new CProject(CMineFixtures.GETPAPERS_SRC_20160601);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		for (CTree cTree : cTreeList) {
 			AbstractMetadata metadata = AbstractMetadata.getCTreeMetadata(cTree, AbstractMetadata.Type.CROSSREF);
 			String s = metadata.getJsonStringByPath(CrossrefMD.URL_PATH);
@@ -92,7 +92,7 @@ public class QuickscrapeMDTest {
 			LOG.debug(day);
 			File cProjectDir = new File(CMineFixtures.GETPAPERS_NEW, "2016060"+day);
 			CProject cProject = new CProject(cProjectDir);
-			CTreeList cTreeList = cProject.getResetCTreeList();
+			CTreeList cTreeList = cProject.getOrCreateCTreeList();
 			CrossrefMD.createCrossrefSpreadsheet(cTreeList, new File(CMineFixtures.GETPAPERS_TARGET, "2016060"+day+"/crossRef.csv"));
 		}
 	}
@@ -124,7 +124,7 @@ public class QuickscrapeMDTest {
 			int count = 0;
 			File cProjectDir = new File(CMineFixtures.GETPAPERS_NEW, "2016060"+i);
 			CProject cProject = new CProject(cProjectDir);
-			CTreeList cTreeList = cProject.getResetCTreeList();
+			CTreeList cTreeList = cProject.getOrCreateCTreeList();
 			for (CTree cTree : cTreeList) {
 				AbstractMetadata metadata = AbstractMetadata.getCTreeMetadata(cTree, AbstractMetadata.Type.CROSSREF);
 				String publisher = metadata.getJsonStringByPath(CrossrefMD.PUBLISHER_PATH);
@@ -160,7 +160,7 @@ public class QuickscrapeMDTest {
 	@Test
 	public void testGetReservedFileSpreadsheet() throws IOException {
 		CProject cProject = new CProject(CMineFixtures.GETPAPERS_SRC_20160601SCRAPED);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		RectangularTable csvTable = new RectangularTable();
 		csvTable.addRow(HEADERS);
 		for (CTree cTree : cTreeList) {

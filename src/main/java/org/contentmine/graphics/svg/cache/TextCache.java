@@ -11,7 +11,10 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.util.MultisetUtil;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlHtml;
+import org.contentmine.graphics.html.HtmlP;
 import org.contentmine.graphics.html.HtmlSpan;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
@@ -45,6 +48,8 @@ public class TextCache extends AbstractCache {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
+	/** not sure what these are for ... */
+	
 	private static final char BLACK_VERTICAL_RECTANGLE = (char)0x25AE;
 	private static final char WHITE_VERTICAL_RECTANGLE = (char)0x25AF;
 	private static final char WHITE_SQUARE = (char)0x25A1;
@@ -107,6 +112,7 @@ public class TextCache extends AbstractCache {
 	public void extractTexts(AbstractCMElement svgElement) {
 		if (svgElement != null) {
 			originalTextList = SVGText.extractSelfAndDescendantTexts(svgElement);
+			LOG.debug("or "+originalTextList.size());
 			ingestOriginalTextList();
 		}
 	}
@@ -154,8 +160,16 @@ public class TextCache extends AbstractCache {
 		return getOrCreateOriginalTextList();
 	}
 
+	/** 
+	 * NYI
+	 * 
+	 * @param outFilename
+	 * @return
+	 * @deprecated("Not yet implemented")
+	 */
 	public AbstractCMElement debug(String outFilename) {
 		AbstractCMElement g = new SVGG();
+		LOG.debug("TextCache.debug(); NYI");
 //		// derived
 //		appendDebugToG(g, originalTextList,"yellow",  "black", 0.3, 10.0, "Helvetica");
 //		appendDebugToG(g, nonNegativeYTextList, "red", "black", 0.3, 12.0, "serif");
@@ -512,14 +526,14 @@ public class TextCache extends AbstractCache {
 		return currentTextList;
 	}
 
-	/** hold a selection of the textList.
-	 * does not affect originalTextList.
-	 * 
-	 * @return
-	 */
-	public List<SVGText> getCurrentTextList() {
-		return currentTextList;
-	}
+//	/** hold a selection of the textList.
+//	 * does not affect originalTextList.
+//	 * 
+//	 * @return
+//	 */
+//	private List<SVGText> getCurrentTextList() {
+//		return currentTextList;
+//	}
 
 	public void setCurrentTextList(List<SVGText> currentTextList) {
 		this.currentTextList = currentTextList;
@@ -782,5 +796,6 @@ public class TextCache extends AbstractCache {
 		this.suscriptFormatter = suscriptFormatter;
 	}
 
-	
+
+
 }

@@ -100,7 +100,7 @@ public class MetadataLongTest {
 		public void testLargeCProjectJSON() {
 			File cProjectDir = new File(CMineFixtures.GETPAPERS_SRC, "20160601");
 			CProject cProject = new CProject(cProjectDir);
-			CTreeList cTreeList = cProject.getResetCTreeList();
+			CTreeList cTreeList = cProject.getOrCreateCTreeList();
 			for (CTree cTree : cTreeList) {
 				AbstractMetadata metadata = AbstractMetadata.getCTreeMetadata(cTree, AbstractMetadata.Type.CROSSREF);
 				String s = metadata == null ? "?" : metadata.getJsonStringByPath(CrossrefMD.URL_PATH);

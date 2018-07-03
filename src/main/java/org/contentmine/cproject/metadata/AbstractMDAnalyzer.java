@@ -39,7 +39,7 @@ public class AbstractMDAnalyzer {
 	}
 
 	public CTreeList getCTreeList() {
-		return cProject == null ? null : this.cProject.getResetCTreeList();
+		return cProject == null ? null : this.cProject.getOrCreateCTreeList();
 	}
 
 	public Multimap<CTree, File> getOrCreateCTreeFileMap(String reservedName) {
@@ -266,7 +266,7 @@ public class AbstractMDAnalyzer {
 		metadataObjects.setMetadataAnalyzer(this);
 		csvTable = metadataObjects.getOrCreateCSVTable(headers);
 		getOrCreateMetadataMapByCTreeMap(type);
-		CTreeList cTreeList = getCProject().getResetCTreeList();
+		CTreeList cTreeList = getCProject().getOrCreateCTreeList();
 		for (CTree cTree : cTreeList) {
 			addMetadataRowToCSVTable1(cTree, headers);
 		}
@@ -289,7 +289,7 @@ public class AbstractMDAnalyzer {
 	}
 
 	public void createMultisets() {
-		CTreeList cTreeList = getCProject().getResetCTreeList();
+		CTreeList cTreeList = getCProject().getOrCreateCTreeList();
 		for (CTree cTree : cTreeList) {
 			this.currentCTree = cTree;
 			currentMetadata = metadataByCTreeMap.get(currentCTree);

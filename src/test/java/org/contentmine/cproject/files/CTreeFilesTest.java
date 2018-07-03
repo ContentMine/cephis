@@ -70,12 +70,12 @@ public class CTreeFilesTest {
 		File targetDir = new File("target/pdfsvg/");
 		CMineTestFixtures.createCleanedCopiedDirectory(CMineFixtures.TEST_PDF_SVG_DIR, targetDir);
 		CProject cProject = new CProject(targetDir);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("svgDirs ", 3, cTreeList.size());
 		int[] svgCounts = {13, 14, 9};
 		int[] textCounts = {3744, 1456, 7979}; // may be fragile
 		for (int i = 0; i < cTreeList.size(); i++) {
-			CTree cTree = cProject.getResetCTreeList().get(i);
+			CTree cTree = cProject.getOrCreateCTreeList().get(i);
 			File[] files = cTree.getDirectory().listFiles();
 			Assert.assertEquals("files ", 2, files.length); // has fulltext.pdf as well as svg
 			File svgDir = cTree.getExistingSVGDir();
@@ -98,11 +98,11 @@ public class CTreeFilesTest {
 		File targetDir = new File("target/pdfsvg/");
 		CMineTestFixtures.createCleanedCopiedDirectory(CMineFixtures.TEST_PDF_SVG_DIR, targetDir);
 		CProject cProject = new CProject(targetDir);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("CTrees ", 3, cTreeList.size());
 		int[] svgImages = {14, 13, 10};
 		for (int i = 0; i < cTreeList.size(); i++) {
-			CTree cTree = cProject.getResetCTreeList().get(i);
+			CTree cTree = cProject.getOrCreateCTreeList().get(i);
 			File[] files = cTree.getDirectory().listFiles();
 			Assert.assertEquals("files ", 2, files.length); // has fulltext.pdf as well as svg
 			File svgImagesDir = cTree.getExistingSVGImagesDir();
@@ -122,11 +122,11 @@ public class CTreeFilesTest {
 		File targetDir = new File("target/pdfsvg/tables/");
 		CMineTestFixtures.createCleanedCopiedDirectory(CMineFixtures.TEST_TABLES_DIR, targetDir);
 		CProject cProject = new CProject(targetDir);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("CTrees ", 2, cTreeList.size());
 		int[] tables = {5, 3};
 		for (int i = 0; i < cTreeList.size(); i++) {
-			CTree cTree = cProject.getResetCTreeList().get(i);
+			CTree cTree = cProject.getOrCreateCTreeList().get(i);
 			File[] files = cTree.getDirectory().listFiles();
 			File svgTablesDir = cTree.getExistingSVGTablesDir();
 			Assert.assertTrue("exists", svgTablesDir.exists());
@@ -149,7 +149,7 @@ public class CTreeFilesTest {
 		File targetDir = new File("target/pdfsvg/tables/");
 		CMineTestFixtures.createCleanedCopiedDirectory(CMineFixtures.TEST_TABLES_DIR, targetDir);
 		CProject cProject = new CProject(targetDir);
-		CTreeList cTreeList = cProject.getResetCTreeList();
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		
 		String TREE239 = "_10.1038.ijo.2016.239";
 		CTree tree239 = cProject.getCTreeByName(TREE239);
