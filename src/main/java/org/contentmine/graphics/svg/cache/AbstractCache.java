@@ -1,6 +1,7 @@
 package org.contentmine.graphics.svg.cache;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -25,7 +26,7 @@ public abstract class AbstractCache {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
-
+	
 	public static final double MARGIN = 1.0;
 	
 	protected Double axialEps = 0.1;
@@ -41,12 +42,19 @@ public abstract class AbstractCache {
 	protected SVGElement convertedSVGElement;
 	protected HtmlElement convertedHtmlElement;
 
+	protected List<Class<?>> ignoreClassList;
 
 	protected AbstractCache() {
-		
+		setDefaults();
+	}
+	
+	private void setDefaults() {
+		ignoreClassList = new ArrayList<Class<?>>();
+		ignoreClassList.add(TextChunkCache.class); // probably not yet working
 	}
 
 	public AbstractCache(ComponentCache ownerComponentCache) {
+		this();
 		this.ownerComponentCache = ownerComponentCache;
 		this.siblingShapeCache = ownerComponentCache == null ? null : ownerComponentCache.shapeCache;
 		this.siblingTextCache = ownerComponentCache == null ? null : ownerComponentCache.textCache;
@@ -54,6 +62,7 @@ public abstract class AbstractCache {
 	}
 
 	public AbstractCache(AbstractPlotBox svgMediaBox) {
+		this();
 		this.svgMediaBox = svgMediaBox;
 	}
 
@@ -120,7 +129,7 @@ public abstract class AbstractCache {
 			convertedSVGElement = new SVGG();
 			List<? extends SVGElement> elementList = getOrCreateElementList();
 			if (elementList.size() == 0) {
-				LOG.warn("Empty elementList");
+				LOG.trace("Empty elementList");
 			}
 			for (AbstractCMElement component : elementList) {
 				convertedSVGElement.appendChild(component.copy());

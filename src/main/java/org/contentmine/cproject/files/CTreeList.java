@@ -15,6 +15,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.util.CMineUtil;
+import org.contentmine.graphics.svg.cache.GenericAbstractList;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
@@ -26,14 +27,13 @@ import com.google.common.collect.Multiset;
  * @author pm286
  *
  */
-public class CTreeList implements Iterable<CTree> {
+public class CTreeList extends GenericAbstractList<CTree> {
 	
 	private static final Logger LOG = Logger.getLogger(CTreeList.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
 	
-	private List<CTree> cTreeList;
 	private Map<String, CTree> cTreeByName;
 	
 	public CTreeList() {
@@ -49,26 +49,26 @@ public class CTreeList implements Iterable<CTree> {
 	}
 
 	private void ensureCTreeList() {
-		if (cTreeList == null) {
-			cTreeList = new ArrayList<CTree>();
+		if (genericList == null) {
+			genericList = new ArrayList<CTree>();
 			cTreeByName = new HashMap<String, CTree>();
 		}
 	}
 
-	public int size() {
-		ensureCTreeList();
-		return cTreeList.size();
-	}
+//	public int size() {
+//		ensureCTreeList();
+//		return list.size();
+//	}
 
-	public Iterator<CTree> iterator() {
-		ensureCTreeList();
-		return cTreeList.iterator();
-	}
+//	public Iterator<CTree> iterator() {
+//		ensureCTreeList();
+//		return cTreeList.iterator();
+//	}
 	
-	public CTree get(int i) {
-		ensureCTreeList();
-		return cTreeList.get(i);
-	}
+//	public CTree get(int i) {
+//		ensureCTreeList();
+//		return cTreeList.get(i);
+//	}
 	
 	/** gets CTree by directory name
 	 * 
@@ -77,18 +77,28 @@ public class CTreeList implements Iterable<CTree> {
 	 */
 	public CTree get(String name) {
 		ensureCTreeList();
-//		LOG.debug(cTreeByName);
 		return cTreeByName.get(name);
 	}
 	
-	public void add(CTree cTree) {
+	/** adds CTree and also updates cTreeByName.
+	 * 
+	 */
+	public boolean add(CTree cTree) {
 		ensureCTreeList();
-		cTreeList.add(cTree);
+		boolean added = genericList.add(cTree);
+		ensureCTreeByName();
 		cTreeByName.put(cTree.getDirectory().getName(), cTree);
+		return added;
 	}
 	
+	private void ensureCTreeByName() {
+		if (cTreeByName == null) {
+			cTreeByName = new HashMap<String, CTree>();
+		}
+	}
+
 	public Set<CTree> asSet() {
-		return new HashSet<CTree>(cTreeList);
+		return new HashSet<CTree>(genericList);
 	}
 	
 	public CTreeList not(CTreeList cTreeList) {
@@ -115,14 +125,14 @@ public class CTreeList implements Iterable<CTree> {
 		return newCTreeList;
 	}
 
-	/** removes from list.
-	 * 
-	 * @param cTree
-	 * @return
-	 */
-	public boolean remove(CTree cTree) {
-		return cTreeList.remove(cTree);
-	}
+//	/** removes from list.
+//	 * 
+//	 * @param cTree
+//	 * @return
+//	 */
+//	public boolean remove(CTree cTree) {
+//		return cTreeList.remove(cTree);
+//	}
 
 	/** removes from list and deletes directory.
 	 * 
@@ -133,7 +143,7 @@ public class CTreeList implements Iterable<CTree> {
 	 * @throws IOException 
 	 */
 	public boolean delete(CTree cTree) throws IOException {
-		if (cTreeList.remove(cTree)) {
+		if (genericList.remove(cTree)) {
 			FileUtils.deleteDirectory(cTree.getDirectory());
 			return true;
 		}
@@ -141,10 +151,10 @@ public class CTreeList implements Iterable<CTree> {
 	}
 	
 	public List<CTree> getCTreeList() {
-		if (cTreeList != null) {
-			Collections.sort(cTreeList);
+		if (genericList != null) {
+			Collections.sort(genericList);
 		}
-		return cTreeList;
+		return genericList;
 	}
 
 	/** directories in CTrees
@@ -155,9 +165,9 @@ public class CTreeList implements Iterable<CTree> {
 	 */
 	public List<File> getCTreeDirectoryList() {
 		List<File> directoryList = new ArrayList<File>();
-		if (cTreeList != null) {
-			Collections.sort(cTreeList);
-			for (CTree cTree : cTreeList) {
+		if (genericList != null) {
+			Collections.sort(genericList);
+			for (CTree cTree : genericList) {
 				File directory = cTree.getDirectory();
 				directoryList.add(directory);
 			}
@@ -166,8 +176,8 @@ public class CTreeList implements Iterable<CTree> {
 	}
 
 	public CTreeList sort() {
-		if (cTreeList != null) {
-			Collections.sort(cTreeList);
+		if (genericList != null) {
+			Collections.sort(genericList);
 		}
 		return this;
 	}
@@ -188,7 +198,7 @@ public class CTreeList implements Iterable<CTree> {
 	 * @return
 	 */
 	public boolean containsName(String name) {
-		for (CTree cTree : cTreeList) {
+		for (CTree cTree : genericList) {
 			if (cTree.getDirectory().getName().equals(name)) {
 				return true;
 			}
@@ -202,8 +212,8 @@ public class CTreeList implements Iterable<CTree> {
 	 * @return
 	 */
 	public int indexOf(String name) {
-		for (int i = 0; i < cTreeList.size(); i++) {
-			CTree cTree  = cTreeList.get(i);
+		for (int i = 0; i < genericList.size(); i++) {
+			CTree cTree  = genericList.get(i);
 			if (cTree.getDirectory().getName().equals(name)) {
 				return i;
 			}
@@ -221,10 +231,34 @@ public class CTreeList implements Iterable<CTree> {
 		return listList;
 	}
 
-
-	
 	@Override
 	public String toString() {
 		return getCTreeDirectoryList().toString();
+	}
+
+	/** extracts all fulltext.html files.
+	 * 
+	 * @return
+	 */
+	public List<File> getFulltextHtmlFiles() {
+		List<File> htmlFiles = new ArrayList<File>();
+		for (CTree cTree : this) {
+			File fullTextHtml = cTree.getExistingFulltextHTML();
+			if (fullTextHtml != null) htmlFiles.add(fullTextHtml);
+		}
+		return htmlFiles;
+	}
+	
+	/** extracts all fulltext.html files.
+	 * 
+	 * @return
+	 */
+	public List<File> getFulltextPDFFiles() {
+		List<File> pdfFiles = new ArrayList<File>();
+		for (CTree cTree : this) {
+			File fulltextPDF = cTree.getExistingFulltextPDF();
+			if (fulltextPDF != null) pdfFiles.add(fulltextPDF);
+		}
+		return pdfFiles;
 	}
 }

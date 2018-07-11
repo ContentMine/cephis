@@ -1,0 +1,29 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <apply id="whole">
+	<eq/>
+    <apply id="lhs">
+      <diff/>
+      <ci>CI</ci>
+      <ci>t</ci>
+    </apply>
+    <apply id="rhs">
+	  <minus/>
+      <apply id="firstterm">
+        <times/>
+		<ci>CT</ci>
+	    <apply id="expminust">
+		  <exp/>
+		  <apply id="minust">
+		    <minus/>
+			<ci>t</ci>
+		  </apply>
+		</apply>
+	  </apply>
+	  <apply id="term2">
+	    <minus/>
+		<ci>kesp</ci>
+		<ci>CI</ci>
+	  </apply>
+	</apply>
+  </apply>
+</math>

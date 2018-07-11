@@ -7,7 +7,11 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CProject;
+import org.contentmine.cproject.files.CTree;
+import org.contentmine.cproject.files.CTreeList;
 import org.contentmine.eucl.euclid.Real2;
+import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlBody;
 import org.contentmine.graphics.html.HtmlElement;
@@ -31,31 +35,26 @@ public class CorpusCache extends ComponentCache {
 
 	public static String DIR_REGEX = "(.*)/fulltext\\.(pdf|xml)";
 
-	private File cProjectDir;
-	private List<DocumentCache> documentCacheList;
-	private List<File> cTreeFiles;
-
+	private CProject cProject;
+	// documents and cTrees should be in sync
+	private DocumentCacheList documentCacheList;
+	private CTreeList cTreeList;
 	private List<HtmlElement> htmlElementList;
 
 
-	public CorpusCache() {
+	protected CorpusCache() {
 		
 	}
 	
-	public CorpusCache(File cproject) {
-		SVGG g = null;
-		try {
-			g = (SVGG) this.processCProject(cproject);
-		} catch (IOException ioe) {
-			throw new RuntimeException("Glob failed: "+ioe);
-		}
-		SVGSVG.wrapAndWriteAsSVG(g, new File("target/demos/corpus.svg"), 200., 200.);
+	public CorpusCache(CProject cproject) {
+		this.cProject = cproject;
+		cProject.setCorpusCache(this);
 	}
-
-	public AbstractCMElement processCProject(File cProjectDir) throws IOException {
-		List<File> dirFiles = getChildCTrees(cProjectDir);
-		LOG.debug(dirFiles.size()+"; "+dirFiles);
-		this.setCProject(cProjectDir);
+	
+	/** aggreates all HTML in single file
+	 * I think
+	 */
+	public AbstractCMElement createSummaryElement() throws IOException {
 		getOrCreateDocumentCacheList();
 		convertedSVGElement = new SVGG();
 		convertedSVGElement.setFontSize(10.);
@@ -63,39 +62,42 @@ public class CorpusCache extends ComponentCache {
 		double y = 20.0;
 		double deltaY = 10.;
 		int count = 0;
-		for (File cTreeDir : dirFiles) {
-			count++;
-			LOG.debug("*****"+count+"*****making DocumentCache: "+cTreeDir+" ****************");
-			DocumentCache documentCache = new DocumentCache(cTreeDir);
-			documentCacheList.add(documentCache);
+		cProject.getOrCreateCTreeList();
+		LOG.debug(cTreeList.size()+"; "+cTreeList);
+		for (DocumentCache documentCache : documentCacheList) {
 			HtmlElement htmlDiv = documentCache.getHtmlDiv();
-			File file = new File(cTreeDir, "html/html.html");
+			CTree cTree = documentCache.getCTree();
+			File file = cTree.createFile("html/html.html");
 			LOG.debug("WROTE: "+file);
 			HtmlHtml.wrapAndWriteAsHtml(htmlDiv, file);
-			convertedSVGElement.appendChild(new SVGText(new Real2(x, y), cTreeDir.getName()));
+			convertedSVGElement.appendChild(new SVGText(new Real2(x, y),cTree.getName()));
 			y += deltaY;
 		}
 		return convertedSVGElement;
 	}
 
-	private List<File> getChildCTrees(File cProjectDir) throws IOException {
+	private List<File> getChildDirectoryList(File cProjectDir) throws IOException {
 		FilePathGlobber globber = new FilePathGlobber();
 		globber.setRegex(CorpusCache.DIR_REGEX)
 		    .setUseDirectories(true)
 		    .setLocation(cProjectDir.toString());
-		cTreeFiles = globber.listFiles();
+		List<File> cTreeFiles = globber.listFiles();
 		return cTreeFiles;
 	}
 
-	public List<DocumentCache> getOrCreateDocumentCacheList() {
+	public DocumentCacheList ensureDocumentCacheList() {
 		if (documentCacheList == null) {
-			documentCacheList = new ArrayList<DocumentCache>();
+			documentCacheList = new DocumentCacheList();
 		}
 		return documentCacheList;
 	}
 
-	private void setCProject(File cProjectDir) {
-		this.cProjectDir = cProjectDir;
+	/** use with care.
+	 * 
+	 * @param cProject
+	 */
+	public void setCProject(CProject cProject) {
+		this.cProject = cProject;
 	}
 
 	/** concatenates the documents as one huge HTML
@@ -115,7 +117,7 @@ public class CorpusCache extends ComponentCache {
 		return convertedHtmlElement;
 	}
 
-	public List<HtmlElement> getHtmlElementList() {
+	public List<HtmlElement> getOrCreateHtmlElementList() {
 		if (this.htmlElementList == null) {
 			this.htmlElementList = new ArrayList<HtmlElement>();
 			for (DocumentCache documentCache : documentCacheList) {
@@ -132,6 +134,71 @@ public class CorpusCache extends ComponentCache {
 		return htmlElementList;
 	}
 
+	/** creates a new CProject and CorpusCache.
+	 * 
+	 * @param corpusDir // normally the same as a CProject.directory
+	 * requires the directory to exist
+	 * 
+	 * @return null if no directory
+	 */
+	public static CorpusCache createCorpusCache(File corpusDir) {
+		CMFileUtil.assertExistingDirectory(corpusDir);
+		CProject cProject = new CProject(corpusDir);
+		return new CorpusCache(cProject); 
+	}
 
+	public CProject getCProject() {
+		return cProject;
+	}
+
+	public DocumentCacheList getOrCreateDocumentCacheList() {
+		if (documentCacheList == null) {
+			ensureDocumentCacheList();
+			getOrCreateCTreeList();
+			for (CTree cTree : cTreeList) {
+				DocumentCache documentCache = new DocumentCache(cTree);
+				documentCacheList.add(documentCache);
+			}
+		}
+		return documentCacheList;
+	}
+
+	private CTreeList getOrCreateCTreeList() {
+		if (cTreeList == null && cProject != null) {
+			cTreeList = cProject.getOrCreateCTreeList();
+		}
+		return cTreeList;
+	}
+
+	public List<File> getFulltextPDFFiles() {
+		return this.getOrCreateCTreeList().getFulltextPDFFiles();
+	}
+
+	public List<File> getFulltextHTMLFiles() {
+		return this.getOrCreateCTreeList().getFulltextHtmlFiles();
+	}
+
+	public void convertPDF2SVG() {
+		if (cProject != null) {
+			cProject.convertPDF2SVG();
+		}
+	}
+
+	public void convertPDF2HTML() {
+		if (cProject != null) {
+			cProject.convertPDF2HTML();
+		}
+	}
+
+	public DocumentCache getDocumentCache(String name) {
+		if (name != null) {
+			for (DocumentCache documentCache : documentCacheList) {
+				if (!name.equals(documentCache.getName())) {
+					return documentCache;
+				}
+			}
+		}
+		return null;
+	}
 
 }

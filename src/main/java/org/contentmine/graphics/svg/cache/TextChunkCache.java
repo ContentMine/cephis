@@ -34,7 +34,6 @@ public class TextChunkCache extends AbstractCache {
 	private TextCache siblingTextCache;
 	private TextStructurer textStructurer;
 	private boolean omitWhitespace;
-	private double paraSepRatio;
 
 	private TextChunkCache() {
 		init();
@@ -50,11 +49,12 @@ public class TextChunkCache extends AbstractCache {
 	}
 
 	private void setDefaults() {
-		paraSepRatio = 1.7; 
 	}
 
 	public List<? extends SVGElement> getOrCreateElementList() {
+		LOG.debug("goc1");
 		getOrCreateTextChunkList();
+		LOG.debug("goc");
 		List<TextChunk> textChunks = new ArrayList<TextChunk>();
 		return textChunks;
 	}
@@ -72,8 +72,6 @@ public class TextChunkCache extends AbstractCache {
 			getOrCreateRawTextList();
 			getOrCreateTextStructurer();
 			textChunkList = textStructurer.getOrCreateTextChunkListFromWords();
-//			LOG.debug("TC"+textChunkList);
-//			throw new RuntimeException("TextChunks NYI");
 		}
 		return textChunkList;
 	}
@@ -174,56 +172,5 @@ public class TextChunkCache extends AbstractCache {
 		this.omitWhitespace = omitWhitespace;
 	}
 	
-	/** needs integrating with current textList.
-	 * 
-	 * @param textList
-	 * @return
-	 */
-	public HtmlHtml createHtmlFromPage(List<SVGText> textList) {
-	
-		HtmlHtml html = new HtmlHtml();
-		HtmlDiv div = new HtmlDiv();
-		html.getOrCreateBody().appendChild(div);
-		SVGText lastText = null;
-		HtmlP p = null;
-		for (SVGText text : textList) {
-			if (lastText == null) {
-				p = addNewPara(div);
-			} else {
-				double dy = text.getY() - lastText.getY();
-				double fontSize = lastText.getFontSize();
-				if (dy > fontSize * paraSepRatio) {
-					p = addNewPara(div);
-				}
-			}
-			lastText = text;
-			addTextToSpanToP(p, " "); // interword space
-			addTextToSpanToP(p, text.getText());
-		}
-		return html;
-	}
-
-	
-	private static void addTextToSpanToP(HtmlP p, String text2) {
-		HtmlSpan span = new HtmlSpan();
-		span.appendChild(text2);
-		p.appendChild(span);
-	}
-
-	private static HtmlP addNewPara(HtmlDiv div) {
-		HtmlP p = new HtmlP();
-		div.appendChild(p);
-		return p;
-	}
-
-	public double getParaSepRatio() {
-		return paraSepRatio;
-	}
-
-	public void setParaSepRatio(double paraSepRatio) {
-		this.paraSepRatio = paraSepRatio;
-	}
-
-
 
 }

@@ -321,30 +321,29 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	 * 
 	 */
 	@Test
-	public void testReadPageGVSU() {
-		
-		File buildDir = SVGHTMLFixtures.G_S_TEXT_BUILD_DIR;
-		String fileroot = "Devereux1950page.1";
+	public void testReadPagesGVSUDevereux() {
+//		FIXME
+		File buildDir = new File("src/test/resources/closed/gvsu/");
+		String fileroot = "Devereux1950";
 		File targetDir = new File(SVGHTMLFixtures.TARGET_TEXT_BUILD_DIR, fileroot);
-		LOG.debug(targetDir);
-		File svgFile = new File(buildDir, fileroot+".svg");
-		ComponentCache componentCache = new ComponentCache();
-		componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
-		TextCache textCache = componentCache.getOrCreateTextCache();
-		SVGElement svgElement = SVGElement.readAndCreateSVG(svgFile);
-		List<SVGText> textList = SVGText.extractSelfAndDescendantTexts(svgElement);
-		Assert.assertEquals("texts", 37, textList.size());
-		// the styles are confused by somewhat variable font sizes (
-		StyleRecordSet styleRecordSet = textCache.getOrCreateHorizontalStyleRecordSet();
-		LOG.debug("srs "+styleRecordSet);
-		Assert.assertEquals(10,  styleRecordSet.size());
-		for (StyleRecord styleRecord : styleRecordSet) {
-			LOG.debug("> "+styleRecord.toString());
-		}
-		List<SVGText> textList1 = textCache.getOrCreateCurrentTextList();
-// messy - will be found better in PageCache		
-		HtmlHtml html = new TextChunkCache((ComponentCache)null).createHtmlFromPage(textList1);
-		File htmlFile = new File(targetDir, "page1.html");
+		File directory = new File(buildDir, fileroot);
+		DocumentCache documentCache = DocumentCache.createDocumentCache(directory);
+		List<PageCache> pageCacheList = documentCache.getOrCreatePageCacheListByFileNumber();
+		Assert.assertEquals(12,  pageCacheList.size());
+		HtmlElement html = documentCache.getConcatenatedHtml();
+//		for (File svgFile : files) {
+//			if (svgFile.toString().endsWith(".svg")) {
+//				PageCache pageCache = new PageCache();
+//				pageCache.readGraphicsComponentsAndMakeCaches(svgFile);
+//				TextCache textCache = pageCache.getOrCreateTextCache();
+//				
+//				List<SVGText> textList1 = textCache.getOrCreateCurrentTextList();
+//				textList.addAll(textList1);
+//			}
+//		}
+//// this is an interim kludge		
+//		HtmlHtml html = new TextChunkCache((ComponentCache)null).createHtmlFromPage(textList);
+		File htmlFile = new File(targetDir, "fulltext.html");
 		LOG.debug("HT "+htmlFile);
 		HtmlHtml.wrapAndWriteAsHtml(html, htmlFile);
 
@@ -354,31 +353,31 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	 * 
 	 */
 	@Test
-	public void testReadPagesGVSU() {
+	public void testReadAllPagesGVSU() {
 		
-		File buildDir = new File("src/test/resources/closed/gvsu/");
-		String fileroot = "Devereux1950";
-		File targetDir = new File(SVGHTMLFixtures.TARGET_TEXT_BUILD_DIR, fileroot);
-		File svgDir = new File(buildDir, fileroot+"/"+"svg/");
-		List<File> files = Arrays.asList(svgDir.listFiles());
-		Collections.sort(files);
-		List<SVGText> textList = new ArrayList<SVGText>();
-		ComponentCache documentCache = new ComponentCache();
-		for (File svgFile : files) {
-			if (svgFile.toString().endsWith(".svg")) {
-				ComponentCache componentCache = new ComponentCache();
-				componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
-				TextCache textCache = componentCache.getOrCreateTextCache();
-				
-				List<SVGText> textList1 = textCache.getOrCreateCurrentTextList();
-				textList.addAll(textList1);
-			}
-		}
-// this is an interim kludge		
-		HtmlHtml html = new TextChunkCache((ComponentCache)null).createHtmlFromPage(textList);
-		File htmlFile = new File(targetDir, "fulltext.html");
-		LOG.debug("HT "+htmlFile);
-		HtmlHtml.wrapAndWriteAsHtml(html, htmlFile);
+//		File buildDir = new File("src/test/resources/closed/gvsu/");
+//		String fileroot = "Devereux1950";
+//		File targetDir = new File(SVGHTMLFixtures.TARGET_TEXT_BUILD_DIR, fileroot);
+//		File svgDir = new File(buildDir, fileroot+"/"+"svg/");
+//		List<File> files = Arrays.asList(svgDir.listFiles());
+//		Collections.sort(files);
+//		List<SVGText> textList = new ArrayList<SVGText>();
+//		ComponentCache documentCache = new ComponentCache();
+//		for (File svgFile : files) {
+//			if (svgFile.toString().endsWith(".svg")) {
+//				ComponentCache componentCache = new ComponentCache();
+//				componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
+//				TextCache textCache = componentCache.getOrCreateTextCache();
+//				
+//				List<SVGText> textList1 = textCache.getOrCreateCurrentTextList();
+//				textList.addAll(textList1);
+//			}
+//		}
+//// this is an interim kludge		
+//		HtmlHtml html = new TextChunkCache((ComponentCache)null).createHtmlFromPage(textList);
+//		File htmlFile = new File(targetDir, "fulltext.html");
+//		LOG.debug("HT "+htmlFile);
+//		HtmlHtml.wrapAndWriteAsHtml(html, htmlFile);
 
 	}
 

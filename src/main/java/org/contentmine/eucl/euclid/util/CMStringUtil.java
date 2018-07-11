@@ -16,7 +16,8 @@ public class CMStringUtil {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
-	private static Pattern NUMERIC = Pattern.compile("([^\\d]*)(\\d+)(([^\\d].*)?)");
+	/** pattern of type foo1234plugh.bar */
+	public static Pattern EMBEDDED_NUMERIC = Pattern.compile("([^\\d]*)(\\d+)(([^\\d].*)?)");
 
 	/** sorts unique strings by embedded integers.
 	 * the rest of the string is expected to be a constant framework.
@@ -32,8 +33,9 @@ public class CMStringUtil {
 	public static List<String> sortUniqueStringsByEmbeddedIntegers(List<String> strings) {
 		List<String> sortedStrings = new ArrayList<String>();
 		if (strings.size() > 1) {
-			Matcher matcher = NUMERIC.matcher(strings.get(0));
+			Matcher matcher = EMBEDDED_NUMERIC.matcher(strings.get(0));
 			matcher.matches();
+			// why so complicated?
 			if (matcher.matches() && matcher.groupCount() == 4) {
 				String first = matcher.group(1);
 				String last = matcher.group(3);
@@ -60,5 +62,22 @@ public class CMStringUtil {
 			}
 		}
 		return sortedStrings;
+	}
+
+	/** extracts positive number embedded in String.
+	 * Examples foo1234  foo1234pugh.bar 1234bar.plugh
+	 * but not foo12bar34.plugh
+	 * foo-1234-bar gives +1234
+	 * 
+	 * @param string
+	 * @return number or null; 
+	 */
+	public static Integer getEmbeddedInteger(String string) {
+		Matcher matcher = EMBEDDED_NUMERIC.matcher(string);
+		Integer ii = null;
+		if (matcher.matches()) {
+			ii = new Integer(matcher.group(2));
+		}
+		return ii;
 	}
 }

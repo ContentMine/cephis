@@ -16,6 +16,8 @@ import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.html.HtmlDiv;
+import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.svg.RectComparator;
 import org.contentmine.graphics.svg.RectComparator.RectEdge;
 import org.contentmine.graphics.svg.SVGElement;
@@ -353,6 +355,7 @@ public class PageCacheTest {
 	public void testBMCTextWithPubstyle() {
 		PubstyleManager pubstyleManager = new PubstyleManager();
 		SVGPubstyle bmcStyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
+		LOG.debug(bmcStyle.toXML());
 //		Pubstyle pubstyle = pubstyleManager.guessPubstyleFromFirstPage(new File(SVGHTMLFixtures.CORPUS_DIR, 
 //				"mosquitos/12936_2017_Article_1948/svg/fulltext-page2.svg.compact.svg"));
 		Assert.assertEquals("bmc", bmcStyle.getPubstyleName());
@@ -362,6 +365,27 @@ public class PageCacheTest {
 
 	}
 	
+	/** read single PSF/SVG page and translate to HTML
+	 * 
+	 */
+	@Test
+	public void testReadSinglePageGVSU() {
+		
+		File buildDir = SVGHTMLFixtures.G_S_TEXT_BUILD_DIR;
+		String fileroot = "Devereux1950page.1";
+		File targetDir = new File(SVGHTMLFixtures.TARGET_TEXT_BUILD_DIR, fileroot);
+		LOG.debug(targetDir);
+		File svgFile = new File(buildDir, fileroot+".svg");
+		PageCache pageCache = new PageCache();
+		pageCache.readGraphicsComponentsAndMakeCaches(svgFile);
+		HtmlDiv div = pageCache.createHTMLFromTextList();
+		File htmlFile = new File(targetDir, "page1.html");
+		LOG.debug("HT "+htmlFile);
+		HtmlHtml.wrapAndWriteAsHtml(div, htmlFile);
+
+	}
+
+
 	
 	// ============================
 	

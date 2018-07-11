@@ -3,8 +3,11 @@ package org.contentmine.graphics.svg.cache;
 import java.io.File;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CProject;
+import org.contentmine.cproject.files.CTreeList;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
@@ -27,14 +30,15 @@ public class CorpusCacheTest {
 			LOG.info("directory not found: "+corpusDir);
 			return;
 		}
-		CorpusCache corpusCache = new CorpusCache(corpusDir);
+		CProject cProject = new CProject(corpusDir);
+		CorpusCache corpusCache = new CorpusCache(cProject);
 		List<DocumentCache> documentCacheList = corpusCache.getOrCreateDocumentCacheList();
 		// gets this wrong (returns 985??)
 		Assert.assertEquals("doc cache",  10, documentCacheList.size());
 		DocumentCache docCache0 = documentCacheList.get(0);
 		LOG.trace(docCache0);
 		LOG.trace("MADE CORPUS");
-		List<HtmlElement> htmlElementList = corpusCache.getHtmlElementList();
+		List<HtmlElement> htmlElementList = corpusCache.getOrCreateHtmlElementList();
 		Assert.assertEquals("html files ", 4, htmlElementList.size());
 		HtmlHtml.wrapAndWriteAsHtml(htmlElementList, corpusDir);
 	}
@@ -46,15 +50,74 @@ public class CorpusCacheTest {
 			LOG.info("directory not found: "+corpusDir);
 			return;
 		}
-		CorpusCache corpusCache = new CorpusCache(corpusDir);
-		List<DocumentCache> documentCacheList = corpusCache.getOrCreateDocumentCacheList();
+		CorpusCache corpusCache = new CorpusCache(new CProject(corpusDir));
+		List<DocumentCache> documentCacheList = corpusCache.ensureDocumentCacheList();
 		// gets this wrong (returns 985??)
 		Assert.assertEquals("doc cache",  10, documentCacheList.size());
 		DocumentCache docCache0 = documentCacheList.get(0);
 		LOG.trace(docCache0);
 		LOG.trace("MADE CORPUS");
-		List<HtmlElement> htmlElementList = corpusCache.getHtmlElementList();
+		List<HtmlElement> htmlElementList = corpusCache.getOrCreateHtmlElementList();
 		Assert.assertEquals("html files ", 4, htmlElementList.size());
 		HtmlHtml.wrapAndWriteAsHtml(htmlElementList, corpusDir);
 	}
+	
+	@Test
+	/** summarizes GVSU papers without conversion.
+	 * 
+	 * @throws Exception
+	 */
+	public void testALLGVSUPapersIT() throws Exception {
+		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+		CorpusCache corpusCache = CorpusCache.createCorpusCache(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+		Assert.assertNotNull(corpusCache);
+		CProject cProject = corpusCache.getCProject();
+		Assert.assertNotNull(cProject);
+		CTreeList cTreeList = cProject.getOrCreateCTreeList();
+		Assert.assertEquals("ctrees", 49, cTreeList.size());
+		List<DocumentCache> documentCacheList = corpusCache.getOrCreateDocumentCacheList();
+		Assert.assertEquals("documentcaches", 49, documentCacheList.size());
+		List<File> pdfFiles = corpusCache.getFulltextPDFFiles();
+		Assert.assertEquals("fulltextPDF", 49, pdfFiles.size());
+		List<File> htmlFiles = corpusCache.getFulltextHTMLFiles();
+		Assert.assertEquals("fulltextPDF", 1, htmlFiles.size());
+	}
+
+	@Test
+	@Ignore("long")
+	public void testCreatorALLGVSUPapersIT() throws Exception {
+		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+		CorpusCache corpusCache = CorpusCache.createCorpusCache(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+        corpusCache.convertPDF2SVG();
+	}
+
+	@Test
+//	@Ignore("long")
+	public void testConvertPDF2HTMLALLGVSUPapersIT() throws Exception {
+		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+		CorpusCache corpusCache = CorpusCache.createCorpusCache(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+        corpusCache.convertPDF2HTML();
+	}
+
+	@Test
+	public void testALLGVSUPapers2HTMLIT() throws Exception {
+		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+        CProject cProject = new CProject(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
+        CorpusCache corpusCache = new CorpusCache(cProject);
+//        Document
+//        DocumentCache documentcache = new Docu
+        CTreeList cTreeList = cProject.getOrCreateCTreeList();
+        List<File> htmlFiles = cTreeList.getFulltextHtmlFiles();
+//        Assert.assertEquals(49,  htmlFiles.size());
+        for (File htmlFile : htmlFiles) {
+        	LOG.debug("deleted: "+FileUtils.deleteQuietly(htmlFile));
+        }
+        htmlFiles = cTreeList.getFulltextHtmlFiles();
+        Assert.assertEquals(0,  htmlFiles.size());
+        cProject.convertSVG2HTML();
+        htmlFiles = cTreeList.getFulltextHtmlFiles();
+        Assert.assertEquals(49,  htmlFiles.size());
+        
+	}
+
 }

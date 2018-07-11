@@ -45,4 +45,30 @@ public class CMFileUtil {
 		}
 		return sortedFiles;
 	}
+
+	/** asserts that file exists and is a directory.
+	 * 
+	 * @param directory
+	 * @throws RuntimeException if false
+	 */
+	public static void assertExistingDirectory(File directory) {
+		if (directory == null || !directory.exists() || !directory.isDirectory()) {
+			throw new RuntimeException("file does not exist or is not directory: "+directory);
+		}
+	}
+	/** asserts that file exists and is not a directory.
+	 * 
+	 * @param file
+	 * @throws RuntimeException if false
+	 */
+	public static void assertExistingNonDirectory(File file) {
+		if (file == null || !file.exists() || file.isDirectory()) {
+			throw new RuntimeException("file does not exist or is not directory: "+file);
+		}
+	}
+
+	public static Integer getEmbeddedInteger(File svgFile) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="800.0" width="700.0" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect stroke="#b30838" stroke-width="0.25"  x="36.85" y="128.448" height="524.605" width="530.079" id="rect.0" fill="cyan" opacity="0.2" />
+  <path fill="none" stroke="#b30838" stroke-width="0.25"  d="M36.85 128.448 Z" id="path.1" />
+  <rect stroke="#000000" stroke-width="0.5"  x="225.106" y="134.141" height="15.959" width="112.798" id="rect.2" fill="cyan" opacity="0.2" />
+  <line fill="none" stroke-width="0.5"  x1="281.694" y1="150.137" x2="281.694" y2="255.525" id="line.3" stroke="red" />
+  <rect stroke="#000000" stroke-width="0.5"  x="293.239" y="162.209" height="85.606" width="191.798" id="rect.4" fill="cyan" opacity="0.2" />
+  <polygon class="triangle"  points="288.732 207.219 293.049 204.726 288.732 202.233" id="triangle.5" fill="orange" stroke="black" stroke-width="1.0" />
+  <line fill="none" stroke-width="0.5"  x1="281.446" y1="204.74" x2="289.461" y2="204.74" id="line.6" stroke="red" />
+  <polygon class="triangle"  points="279.215 254.796 281.707 259.113 284.201 254.796" id="triangle.7" fill="orange" stroke="black" stroke-width="1.0" />
+  <rect stroke="#000000" stroke-width="0.5"  x="225.106" y="259.252" height="15.959" width="112.798" id="rect.8" fill="cyan" opacity="0.2" />
+</g>
+</svg>

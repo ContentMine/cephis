@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,7 +22,10 @@ import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.svg.cache.CorpusCache;
+import org.contentmine.graphics.svg.cache.DocumentCache;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;
@@ -105,6 +107,7 @@ public class CProject extends CContainer {
 	private DefaultArgProcessor argProcessor;
 
 	private CProjectIO projectIO;
+	private CorpusCache corpusCache;
 	public static void main(String[] args) {
 		CProject cProject = new CProject();
 		cProject.run(args);
@@ -135,6 +138,14 @@ public class CProject extends CContainer {
 		super();
 		this.directory = cProjectDir;
 		init();
+	}
+	
+	public CorpusCache getOrCreateCorpusCache() {
+		if (corpusCache == null) {
+			corpusCache = new CorpusCache(this);
+			corpusCache.setCProject(this);
+		}
+		return corpusCache;
 	}
 	
 	protected void init() {
@@ -234,7 +245,7 @@ public class CProject extends CContainer {
 
 	/** getCTreeList after recalculating from current Files.
 	 * 
-	 * to get Current CTreeList, use getOrCreateCTreeList()
+	 * to get Current CTreeList, use getCTreeList()
 	 * @return
 	 */
 	public CTreeList getOrCreateCTreeList() {
@@ -828,18 +839,40 @@ public class CProject extends CContainer {
 		return treeListsbyPrefix;
 	}
 
-	public void convertPDF2SVG() throws Exception {
+	public void convertPDF2SVG() {
 		getOrCreateCTreeList();
 	    for (CTree cTree : cTreeList) {
-	    	cTree.convertPDF2SVG();
+	    	try {
+	    		LOG.debug(">> "+cTree);
+	    		cTree.convertPDF2SVG();
+	    	} catch (Exception e) {
+	    		throw new RuntimeException("PDF2SVG threw", e);
+	    	}
 	    }
+	}
+
+	public void convertPDF2HTML() {
+	    for (CTree cTree : cTreeList) {
+	    	try {
+	    		LOG.debug(">> "+cTree);
+	    		cTree.convertPDF2HTML();
+	    	} catch (Exception e) {
+	    		throw new RuntimeException("PDF2HTML threw", e);
+	    	}
+	    }
+		
 	}
 	
 	public void convertSVG2HTML() {
 		for (CTree cTree : getOrCreateCTreeList()) {
 			LOG.debug("============="+cTree.getDirectory()+"=============");
-			cTree.convertSVG2HTML();
+			DocumentCache documentCache = cTree.getDocumentCache();
+			HtmlDiv element = documentCache.convertSVGPages2HTML();
 		}
+	}
+
+	public void setCorpusCache(CorpusCache corpusCache) {
+		this.corpusCache = corpusCache;
 	}
 
 }

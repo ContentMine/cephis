@@ -13,7 +13,11 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.util.MultisetUtil;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlHtml;
+import org.contentmine.graphics.html.HtmlP;
+import org.contentmine.graphics.html.HtmlSpan;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLineList;
@@ -46,7 +50,7 @@ public class PageCache extends ComponentCache {
 	public final static Double DEFAULT_YMAX = 800.0;
 
 	private File inputSvgFile;
-	private int serialNumber;
+	private Integer serialNumber;
 	private DocumentCache documentCache;
 	private PageHeaderCache headerCache;
 	private PageFooterCache footerCache;
@@ -56,14 +60,21 @@ public class PageCache extends ComponentCache {
 	private String basename;
 	private List<SVGRect> rectsList;
 	private PageLayout pageLayout;
+	private double paraSepRatio;
 
 	public PageCache() {
+		setDefaults();
 	}
 	
 	public PageCache(DocumentCache documentCache) {
+		this();
 		this.setDocumentCache(documentCache);
 	}
 	
+	private void setDefaults() {
+		paraSepRatio = 1.7; 
+	}
+
 	@Override
 	public void readGraphicsComponentsAndMakeCaches(AbstractCMElement svgElement) {
 		super.readGraphicsComponentsAndMakeCaches(svgElement);
@@ -169,6 +180,9 @@ public class PageCache extends ComponentCache {
 	}
 	
 	public int getSerialNumber() {
+		if (serialNumber == null) {
+			// ?
+		}
 		return serialNumber;
 	}
 	
@@ -195,17 +209,29 @@ public class PageCache extends ComponentCache {
 		return convertedSVGElement;
 	}
 
-	public SuperPixelArray createSuperpixelArray(File outDir, File svgFile) {
-		basename = getBaseName(svgFile);
-		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(svgFile);
-		readGraphicsComponentsAndMakeCaches(svgElement);
-		TextCache textCache = getOrCreateTextCache();
-		textCache.createCompactedTextsAndReplace();
+	/** superPixelArray is the blocks taken up by stuff.
+	 * 
+	 * @param outDir
+	 * @param svgFile
+	 * @return
+	 */
+	public SuperPixelArray createSuperpixelArray() {
+		createTextCache();
 		Real2Range bbox = Real2Range.createTotalBox(getBoundingBoxList());
 		LOG.trace(">> "+bbox+" "+getBoundingBoxList().size());
+		LOG.debug("t0 "+System.currentTimeMillis());
 		SuperPixelArray superPixelArray = new SuperPixelArray(new Int2Range(bbox));
 		superPixelArray.setPixels(1, getBoundingBoxList());
+		LOG.debug("t1 "+System.currentTimeMillis());
 		return superPixelArray;
+	}
+
+	private void createTextCache() {
+		AbstractCMElement svgElement = SVGElement.readAndCreateSVG(inputSvgFile);
+		LOG.trace("t00 "+System.currentTimeMillis()/1000);
+		readGraphicsComponentsAndMakeCaches(svgElement);
+		LOG.trace("t01 "+System.currentTimeMillis()/1000);
+		TextCache textCache = getOrCreateTextCache();
 	}
 
 	private String getBaseName(File svgFile) {
@@ -214,6 +240,7 @@ public class PageCache extends ComponentCache {
 
 	public void setSvgFile(File svgFile) {
 		this.inputSvgFile = svgFile;
+		basename = getBaseName(svgFile);
 	}
 
 	public File getSvgFile() {
@@ -350,5 +377,69 @@ public class PageCache extends ComponentCache {
 		return file;
 	}
 	
+	/** needs integrating with current textList.
+	 * 
+	 * @param textList
+	 * @return
+	 */
+	public HtmlDiv createHtmlFromPage(List<SVGText> textList) {
+	
+//		HtmlHtml html = new HtmlHtml();
+		HtmlDiv div = new HtmlDiv();
+//		html.getOrCreateBody().appendChild(div);
+		SVGText lastText = null;
+		HtmlP p = null;
+		for (SVGText text : textList) {
+			if (lastText == null) {
+				p = addNewPara(div);
+			} else {
+				
+				p = possiblyCreatePara(div, lastText, p, text);
+			}
+			lastText = text;
+			addTextToSpanToP(p, " "); // interword space
+			addTextToSpanToP(p, text.getText());
+		}
+		return div;
+	}
+
+	private HtmlP possiblyCreatePara(HtmlDiv div, SVGText lastText, HtmlP p, SVGText text) {
+		double dy = text.getY() - lastText.getY();
+		double fontSize = lastText.getFontSize();
+		if (dy > fontSize * paraSepRatio) {
+			p = addNewPara(div);
+		}
+		return p;
+	}
+
+	
+	private static void addTextToSpanToP(HtmlP p, String text2) {
+		HtmlSpan span = new HtmlSpan();
+		span.appendChild(text2);
+		p.appendChild(span);
+	}
+
+	private static HtmlP addNewPara(HtmlDiv div) {
+		HtmlP p = new HtmlP();
+		div.appendChild(p);
+		return p;
+	}
+
+	public double getParaSepRatio() {
+		return paraSepRatio;
+	}
+
+	public void setParaSepRatio(double paraSepRatio) {
+		this.paraSepRatio = paraSepRatio;
+	}
+
+	public HtmlDiv createHTMLFromTextList() {
+		TextCache textCache = getOrCreateTextCache();
+		List<SVGText> textList = textCache.getOrCreateCurrentTextList();
+		HtmlDiv div = createHtmlFromPage(textList);
+		return div;
+	}
+
+
 
 }

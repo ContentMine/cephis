@@ -228,23 +228,31 @@ public class ComponentCache extends AbstractCache {
 
 	public void readGraphicsComponentsAndMakeCaches(AbstractCMElement svgElement) {
 		if (svgElement != null) {
+			long time = System.currentTimeMillis();
 			this.inputSVGElement = (SVGElement) svgElement.copy();
+			LOG.trace("after copy "+(System.currentTimeMillis() - time));
 			this.convertedSVGElement = new SVGG();
 			
 			 // is this a good idea? These are clipping boxes. 
 			SVGDefs.removeDefs(this.inputSVGElement);
+			LOG.trace("atts "+(System.currentTimeMillis() - time));
 			StyleAttributeFactory.convertElementAndChildrenFromOldStyleAttributesToCSS(this.inputSVGElement);
+			LOG.trace("after atts "+(System.currentTimeMillis() - time));
 			
 			this.positiveXBox = new Real2Range(new RealRange(-100., 10000), new RealRange(-10., 10000));
 			this.removeEmptyTextElements();
+			LOG.trace("after empty "+(System.currentTimeMillis() - time));
 			this.removeNegativeXorYElements();
+			LOG.trace("casc "+(System.currentTimeMillis() - time));
 			
 			this.getOrCreateCascadingCaches();
+			LOG.trace("lines "+(System.currentTimeMillis() - time));
 			this.lineCache.createSpecializedLines();
+			LOG.trace("end "+(System.currentTimeMillis() - time));
 			LOG.trace("lines: "+lineCache);
 			LOG.trace("text: "+textCache);
 			
-			this.debugComponentsToSVGFiles();
+//			this.debugComponentsToSVGFiles();
 		} else {
 			throw new RuntimeException("Null svgElement");
 		}
@@ -368,15 +376,22 @@ public class ComponentCache extends AbstractCache {
 
 	public TextChunkCache getOrCreateTextChunkCache() {
 		if (textChunkCache == null) {
+//			LOG.debug("t0");
 			this.textChunkCache = new TextChunkCache(this);
+//			LOG.debug("t1");
 			textStructurer = textChunkCache.getOrCreateTextStructurer();
 			TextChunkList textChunkList = textChunkCache.getOrCreateTextChunkList();
 			// should probably move TextStructure to TextChunkCache
+//			LOG.debug("t2");
 			textStructurer = TextStructurer.createTextStructurerWithSortedLines(convertedSVGElement);
+//			LOG.debug("t3");
 			AbstractCMElement inputSVGChunk = textStructurer.getSVGChunk();
+//			LOG.debug("t4");
 			textChunkCache.cleanChunk(inputSVGChunk);
+//			LOG.debug("t5");
 			AbstractCMElement textChunk = textStructurer.getTextChunkList().getLastTextChunk();
 			textStructurer.condenseSuscripts();
+//			LOG.debug("t6");
 		}
 		return textChunkCache;
 	}
@@ -624,7 +639,9 @@ public class ComponentCache extends AbstractCache {
 		if (boundingBox == null) {
 			getOrCreateCascadingCaches();
 			for (AbstractCache cache : cascadingCacheList) {
-				addBoxToTotalBox(cache.getBoundingBox());
+				if (cache != null) {
+					addBoxToTotalBox(cache.getBoundingBox());
+				}
 			}
 			if (boundingBox == null) {
 				LOG.trace("null BBox (maybe no primitives) "+(inputSVGElement == null ? "NULL" : inputSVGElement.toXML()));
@@ -693,23 +710,37 @@ public class ComponentCache extends AbstractCache {
 	public void getOrCreateCascadingCaches() {
 		if (cascadingCacheList == null) {
 			cascadingCacheList = new ArrayList<AbstractCache>();
+			LOG.trace("path");
 			cascadingCacheList.add(getOrCreatePathCache());
+			LOG.trace("text");
 			cascadingCacheList.add(getOrCreateTextCache());
+			LOG.trace("image");
 			cascadingCacheList.add(getOrCreateImageCache());
 			
 			// first pass creates raw caches which may be elaborated later
 			// GEOMETRY
+			LOG.trace("shape");
 			cascadingCacheList.add(getOrCreateShapeCache());
+			LOG.trace("glyph");
 			cascadingCacheList.add(getOrCreateGlyphCache());
+			LOG.trace("line");
 			cascadingCacheList.add(getOrCreateLineCache());
+			LOG.trace("rect");
 			cascadingCacheList.add(getOrCreateRectCache());
+			LOG.trace("polyline");
 			cascadingCacheList.add(getOrCreatePolylineCache());
 			// TEXT
-			// WARNING - FIXME
-			cascadingCacheList.add(getOrCreateTextChunkCache());
+			LOG.trace("text");
+			// this is slow and may not be required
+			if (!ignoreClassList.contains(TextChunkCache.class)) {
+				LOG.debug("ignored "+TextChunkCache.class);
+				cascadingCacheList.add(getOrCreateTextChunkCache());
+			}
 			// COMBINED OBJECTS
+			LOG.trace("contentbox");
 			cascadingCacheList.add(getOrCreateContentBoxCache());
 			// tidying heuristics
+			LOG.trace("border");
 			this.removeBorderingRects();
 		}
 	}

@@ -32,7 +32,7 @@ public class ContentBoxCache extends AbstractCache {
 		super(containingComponentCache);
 		this.rectCache = containingComponentCache.getOrCreateRectCache();
 		// FIXME
-		LOG.error("FIXME TextChunkCache NYI in ContentBoxCache");
+//		LOG.error("FIXME TextChunkCache NYI in ContentBoxCache");
 //		throw new RuntimeException("TextChunkCache NYI");
 //		this.textChunkCache = containingComponentCache.getOrCreateTextChunkCache();
 	}

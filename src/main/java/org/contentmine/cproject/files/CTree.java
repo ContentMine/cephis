@@ -17,7 +17,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.args.log.AbstractLogElement;
 import org.contentmine.cproject.args.log.CMineLog;
@@ -27,15 +26,19 @@ import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.cproject.util.XMLUtils;
+import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlFactory;
 import org.contentmine.graphics.html.HtmlHtml;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.cache.ComponentCache;
-import org.contentmine.graphics.svg.cache.DocumentCacheIT;
+import org.contentmine.graphics.svg.cache.DocumentCache;
+import org.contentmine.graphics.svg.cache.PageCache;
+import org.contentmine.graphics.svg.cache.SuperPixelArrayManager;
 import org.contentmine.graphics.svg.cache.TextCache;
 import org.contentmine.graphics.svg.cache.TextChunkCache;
 import org.contentmine.pdf2svg2.AMISVGCreator;
@@ -400,6 +403,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private File fulltextHtmlFile;
 	private File fulltextXHtmlFile;
 	private boolean writeXHtml = true;
+	private SuperPixelArrayManager spaManager;
+	private DocumentCache documentCache;
 
 	public CTree() {
 		super();
@@ -412,6 +417,14 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	 */
 	public CTree(File directory) {
 		this.directory = directory;
+	}
+
+	public DocumentCache getOrCreateDocumentCache() {
+		if (documentCache == null) {
+			documentCache = new DocumentCache(this);
+			documentCache.setCTree(this);
+		}
+		return documentCache;
 	}
 	
 	/** ensures filestore matches a CTree structure.
@@ -426,6 +439,11 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	
 	public CTree(String filename) {
 		this(new File(filename), false); 
+	}
+
+	public CTree(File directory, DocumentCache documentCache) {
+		this(directory);
+		this.documentCache = documentCache;
 	}
 
 	public void ensureReservedFilenames() {
@@ -516,10 +534,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	}
 	
 	public void createDirectory(File dir, boolean delete) {
-		this.directory = dir;
 		if (dir == null) {
 			throw new RuntimeException("Null directory");
 		}
+		this.directory = dir;
 		if (delete && dir.exists()) {
 			try {
 				FileUtils.forceDelete(dir);
@@ -1527,13 +1545,19 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return thisDir.compareTo(cTreeDir);
 	}
 
-	public void createFile(String filename) {
+	/** actually creates file within CTree
+	 * uses touch()
+	 * 
+	 * @param filename
+	 */
+	public File createFile(String filename) {
 		File file = new File(directory, filename);
 		try {
 			FileUtils.touch(file);
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot touch "+file, e);
 		}
+		return file;
 	}
 
 	/** writes CTree to "directory" using names of contained files.
@@ -1557,37 +1581,39 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public void convertPDF2SVG() throws IOException {
 		File pdfFile = getExistingFulltextPDF();
 		if (pdfFile != null) {
-		    AMISVGCreator svgCreator = new AMISVGCreator();
-		    SVGG svgg = svgCreator.createSVG(pdfFile);
-			directory.mkdirs();
-			if (cProject.getOrCreateProjectIO().isWriteSVGPages()) {
-				svgCreator.writeSVGPages(directory);
-			}
-			if (cProject.getOrCreateProjectIO().isWriteRawImages()) {
-				svgCreator.writeRawImages(directory);
+			List<File> svgFiles = getExistingSVGFileList();
+			AMISVGCreator svgCreator = new AMISVGCreator();
+			if (svgFiles.size() == 0) {
+			    SVGG svgg = svgCreator.createSVG(pdfFile);
+				directory.mkdirs();
+				if (cProject.getOrCreateProjectIO().isWriteSVGPages()) {
+					svgCreator.writeSVGPages(directory);
+				}
+				// this is expensive
+				if (cProject.getOrCreateProjectIO().isWriteRawImages()) {
+					svgCreator.writeRawImages(directory);
+				}
 			}
 		}
 	}
 
-	public void convertSVG2HTML() {
-		List<File> svgFiles = getExistingSVGFileList();
-		svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(svgFiles);
-		List<SVGText> textList = new ArrayList<SVGText>();
-		LOG.debug("svg "+svgFiles);
-		for (File svgFile : svgFiles) {
-			ComponentCache componentCache = new ComponentCache();
-			componentCache.readGraphicsComponentsAndMakeCaches(svgFile);
-			TextCache textCache = componentCache.getOrCreateTextCache();
-			
-			List<SVGText> textList1 = textCache.getOrCreateCurrentTextList();
-			textList.addAll(textList1);
+	/** slightly messy. Use Caches?
+	 * 
+	 * @throws IOException
+	 */
+	public void convertPDF2HTML() throws IOException {
+		File htmlFile = getExistingFulltextHTML();
+		if (htmlFile == null) {
+			documentCache.convertSVG2PageCacheList(); // ensures SVG files
+			HtmlHtml fulltextHtml = documentCache.getConcatenatedHtml();
+			//this is an interim kludge		
+			htmlFile = new File(this.getDirectory(), "fulltext.html");
+			LOG.debug("HT "+htmlFile);
+			HtmlHtml.wrapAndWriteAsHtml(fulltextHtml, htmlFile);
+
 		}
-	//this is an interim kludge		
-		HtmlHtml html = new TextChunkCache((ComponentCache)null).createHtmlFromPage(textList);
-		File htmlFile = new File(directory, "fulltext.html");
-		CProject.LOG.debug("HT "+htmlFile);
-		HtmlHtml.wrapAndWriteAsHtml(html, htmlFile);
 	}
+
 
 	/** creates numbered page basenames.
 	 * Examples "fulltext-page99
@@ -1597,4 +1623,31 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static String createNumberedFullTextPageBasename(int page) {
 		return CTree.FULLTEXT_PAGE+page;
 	}
+	
+	
+	public SuperPixelArrayManager createSuperPixelArrayManager() {
+		spaManager = null;
+		List<File> svgFiles = this.getExistingSVGFileList();
+		if (svgFiles.size() > 0) {
+			SVGElement page0 = SVGElement.readAndCreateSVG(svgFiles.get(0));
+			Int2Range int2Range = new Int2Range(page0.getBoundingBox());
+			spaManager = new SuperPixelArrayManager(int2Range);
+			spaManager.setLeftPage(false);
+			spaManager.setRightPage(true);
+		}
+			
+		for (File svgPage : this.getExistingSVGFileList()) {
+			spaManager.aggregatePixelArrays(svgPage);
+		}
+		return spaManager;
+	}
+
+	public void setDocumentCache(DocumentCache documentCache) {
+		this.documentCache = documentCache;
+	}
+
+	public DocumentCache getDocumentCache() {
+		return documentCache;
+	}
+
 }

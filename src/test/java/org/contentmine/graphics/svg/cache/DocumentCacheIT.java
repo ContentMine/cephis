@@ -2,12 +2,14 @@ package org.contentmine.graphics.svg.cache;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.files.CTree;
+import org.contentmine.cproject.files.CTreeList;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
@@ -16,6 +18,10 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+//import org.openjdk.jmh.annotations.*;
+//import java.util.concurrent.TimeUnit;
+
+
 //@Ignore("This really should be in POM or CL")
 
 public class DocumentCacheIT {
@@ -23,6 +29,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
+
 	
 	@Test
 	/** 9-page article.
@@ -30,7 +37,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	 */
 	public void testDocument() {
 		String fileroot = "varga1";
-		DocumentCache documentCache = new DocumentCache(new File(SVGHTMLFixtures.G_S_PAGE_DIR, fileroot));
+		DocumentCache documentCache = DocumentCache.createDocumentCache(new File(SVGHTMLFixtures.G_S_PAGE_DIR, fileroot));
 		documentCache.setCreateSummaryDebugBoxes(true);
 		documentCache.processSVG();
 		// superimposed pages
@@ -61,7 +68,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 		String fileroot = "varga1";
 		File targetDir = new File("target/document/" + fileroot);
 		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.G_S_PAGE_DIR, fileroot + "/"), targetDir);
-		DocumentCache documentCache = new DocumentCache(targetDir);
+		DocumentCache documentCache = DocumentCache.createDocumentCache(targetDir);
 		documentCache.processSVG();
 		XMLUtil.debug(documentCache.getHtmlDiv(), new File("target/html/pages.html"), 1);
 
@@ -72,25 +79,11 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 		// 295
 		File targetDir = new File("target/document/bmc/12936_2017_Article_1948/");
 		SVGHTMLFixtures.cleanAndCopyDir(new File(SVGHTMLFixtures.G_S_CORPUS_DIR, "mosquitos/12936_2017_Article_1948/"), targetDir);
-		DocumentCache documentCache = new DocumentCache(targetDir);
+		DocumentCache documentCache = DocumentCache.createDocumentCache(targetDir);
 		documentCache.processSVG();
 		XMLUtil.debug(documentCache.getHtmlDiv(), new File(targetDir, "pages.html"), 1);
 	}
 	
-	@Test
-//	@Ignore// LONG!
-	public void testCreatorALLGVSUPapersIT() throws Exception {
-		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
-        CProject cProject = new CProject(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
-        cProject.convertPDF2SVG();
-	}
-
-	@Test
-	public void testALLGVSUPapers2HTMLIT() throws Exception {
-		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
-        CProject cProject = new CProject(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
-        cProject.convertSVG2HTML();
-	}
 
 
 	/** JSTOR article.

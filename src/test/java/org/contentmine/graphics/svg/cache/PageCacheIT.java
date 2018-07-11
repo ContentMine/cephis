@@ -7,6 +7,9 @@ import java.util.List;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CProject;
+import org.contentmine.cproject.files.CTree;
+import org.contentmine.cproject.files.CTreeList;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
@@ -27,13 +30,15 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-@Ignore("This really should be in POM or CL")
+//@Ignore("This really should be in POM or CL")
 public class PageCacheIT {
 	private static final Logger LOG = Logger.getLogger(PageCacheIT.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
 	private static final double PARALLEL_DSPLAY_X = 550.;
+	boolean rightPage;
+	boolean leftPage;
 	/** a page with a page header, two tables and some text
 	 * get spanning rects
 	 * 
@@ -113,39 +118,22 @@ public class PageCacheIT {
 	 */
 	@Test
 	public void testSuperPixelArrayForArticles() {
-		File[] journalDirs = SVGHTMLFixtures.G_S_TABLE_DIR.listFiles();
-		for (File journalDir : journalDirs) {
-			if (!journalDir.isDirectory()) continue;
-			System.out.println(">>"+journalDir);
-			String root = journalDir.getName();
-			File outDir = new File(SVGHTMLFixtures.TARGET_TABLE_CACHE_DIR, root);
-			File svgDir = new File(journalDir, "svg");
-			SuperPixelArray versoPixelArray = null;
-			SuperPixelArray rectoPixelArray = null;
-			boolean verso = true;
-			boolean recto = false;
-			if (svgDir.listFiles() == null) continue;
-			for (File svgFile : svgDir.listFiles()) {
-				recto = !recto;
-				verso = !verso;
-				System.out.print(".");
-				PageCache pageCache = new PageCache();
-				pageCache.setSvgFile(svgFile);
-				SuperPixelArray superPixelArray = pageCache.createSuperpixelArray(outDir, svgFile);
-				SVGG g = new SVGG();
-				superPixelArray.draw(g, new File(outDir, pageCache.getBasename()+".superPixels.svg"));
-				if (verso) {
-					versoPixelArray = superPixelArray.plus(versoPixelArray);
-				}
-				if (recto) {
-					rectoPixelArray = superPixelArray.plus(rectoPixelArray);
-				}
-				
-			}
-			versoPixelArray.draw(new SVGG(), new File(outDir, "versoPixels.svg"), true);
-			rectoPixelArray.draw(new SVGG(), new File(outDir, "rectoPixels.svg"), true);
+		// these are non-compact
+//		File[] journalDirs = SVGHTMLFixtures.G_S_TABLE_DIR.listFiles();
+		CProject project = new CProject(new File("src/test/resources/closed/temp/"));
+		boolean draw = false;
+		File outDir0 = new File("target/closed/temp/");
+		CTreeList cTreeList = project.getOrCreateCTreeList();
+		Assert.assertEquals(3,  cTreeList.size());
+		for (CTree cTree : cTreeList) {
+			SuperPixelArrayManager spaManager = cTree.createSuperPixelArrayManager();
+			File outDir = new File(outDir0, cTree.getName());
+			spaManager.getOrCreateLeftPageSPA().draw(new SVGG(), new File(outDir, "leftPixels.svg"), true);
+			spaManager.getOrCreateRightPageSPA().draw(new SVGG(), new File(outDir, "rightPixels.svg"), true);
+
 		}
 	}
+	
 	@Test
 	@Ignore // too long
 	public void testArticleWhitespace() {
@@ -171,13 +159,13 @@ public class PageCacheIT {
 		File outDir = new File(SVGHTMLFixtures.TARGET_TABLE_CACHE_DIR, root);
 		File journalDir = new File(SVGHTMLFixtures.G_S_TABLE_DIR, root);
 		File svgDir = new File(journalDir, "svg");
-		SuperPixelArray versoPixelArray = null;
-		SuperPixelArray rectoPixelArray = null;
-		boolean verso = true;
-		boolean recto = false;
+		SuperPixelArray leftPixelArray = null;
+		SuperPixelArray rightPixelArray = null;
+		boolean left = true;
+		boolean right = false;
 		for (File svgFile : svgDir.listFiles()) {
-			recto = !recto;
-			verso = !verso;
+			right = !right;
+			left = !left;
 			System.out.print(".");
 			String basename = FilenameUtils.getBaseName(svgFile.toString());
 			AbstractCMElement svgElement = SVGElement.readAndCreateSVG(svgFile);
@@ -191,16 +179,16 @@ public class PageCacheIT {
 			superPixelArray.setPixels(1, componentCache.getBoundingBoxList());
 			SVGG g = new SVGG();
 			superPixelArray.draw(g, new File(outDir, basename+".superPixels.svg"));
-			if (verso) {
-				versoPixelArray = superPixelArray.plus(versoPixelArray);
+			if (left) {
+				leftPixelArray = superPixelArray.plus(leftPixelArray);
 			}
-			if (recto) {
-				rectoPixelArray = superPixelArray.plus(rectoPixelArray);
+			if (right) {
+				rightPixelArray = superPixelArray.plus(rightPixelArray);
 			}
 			
 		}
-		versoPixelArray.draw(new SVGG(), new File(outDir, "versoPixels.svg"), true);
-		rectoPixelArray.draw(new SVGG(), new File(outDir, "rectoPixels.svg"), true);
+		leftPixelArray.draw(new SVGG(), new File(outDir, "leftPixels.svg"), true);
+		rightPixelArray.draw(new SVGG(), new File(outDir, "rightPixels.svg"), true);
 	}
 	/** extraction of equations by text style
 	 * 
