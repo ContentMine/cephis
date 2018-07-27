@@ -248,13 +248,18 @@ public class SVGSVG extends SVGElement {
 	}
 
 	public void writeQuietly(File file) {
-		try {
-			file.getParentFile().mkdirs();
-			FileOutputStream fos = new FileOutputStream(file);
-			SVGUtil.debug(this, fos, 1);
-			fos.close();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
+		if (file == null) {
+			LOG.error("Cannot write null file");
+		} else {
+			try {
+				File parentFile = file.getParentFile();
+				if (parentFile != null) parentFile.mkdirs();
+				FileOutputStream fos = new FileOutputStream(file);
+				SVGUtil.debug(this, fos, 1);
+				fos.close();
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	}
 

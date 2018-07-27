@@ -103,7 +103,7 @@ public class PubstyleTest {
 	public void testGuessPubstyle() {
 		PubstyleManager pubstyleManager = new PubstyleManager();
 		File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, 
-				"mosquitos1/12936_2017_Article_1948/svg/fulltext-page1.svg.compact.svg");
+				"mosquitos1/12936_2017_Article_1948/svg/fulltext-page1.svg");
 		SVGPubstyle pubstyle = pubstyleManager.guessPubstyleFromFirstPage(inputSvgFile);
 		Assert.assertNotNull("bmc", pubstyle);
 		Assert.assertEquals("bmc", pubstyle.getPubstyleName());
@@ -177,7 +177,7 @@ public class PubstyleTest {
 				pubstyleHeader = pubstyle.getHeader(PageType.P2);
 			}
 			File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, 
-					"mosquitos1/12936_2017_Article_1948/svg/fulltext-page"+ipage+".svg.compact.svg");
+					"mosquitos1/12936_2017_Article_1948/svg/fulltext-page"+ipage+".svg");
 			SVGElement inputSVGElement = SVGElement.readAndCreateSVG(inputSvgFile);
 			Map<String, String> keyValues = pubstyleHeader.extractKeyValues(inputSVGElement);
 			LOG.debug("keys "+keyValues.entrySet());
@@ -190,6 +190,7 @@ public class PubstyleTest {
 	}
 
 	@Test
+	// FIXME TEST
 	public void testPubstyleSections() {
 		PubstyleManager pubstyleManager = new PubstyleManager();
 		SVGPubstyle pubstyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
@@ -198,7 +199,7 @@ public class PubstyleTest {
 		
 		DocumentCache documentCache = corpus.getDocumentCache("12936_2017_Article_1948");
 		PageCacheList pageCacheList = documentCache.getOrCreatePageCacheList();
-		Assert.assertEquals("pages",  14 + 1, pageCacheList.size());
+		Assert.assertEquals("pages",  14, pageCacheList.size());
 		// we start at 1
 		PageCache pageCache0 = pageCacheList.get(1);
 		LOG.debug(pageCache0.getSerialNumber());
@@ -244,7 +245,7 @@ public class PubstyleTest {
 			pubstyle.setDirRoot(dirRoot);
 			for (int page = start; page <= end; page++) {
 				pubstyle.setCurrentPage(page);
-				File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, pageRoot+page+".svg.compact.svg");
+				File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, pageRoot+page+".svg");
 				if (!inputSvgFile.exists()) {
 					LOG.debug("====================FINISHED=================");
 					break;

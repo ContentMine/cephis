@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CTree;
@@ -52,8 +50,8 @@ public class DocumentCache extends ComponentCache {
 	private boolean createSummaryBoxes;
 	private List<File> svgFiles;
 	private PageCacheList pageCacheList;
-	// this counts from 1
-//	private PageCacheList pageCacheListByFileNumber;
+	// this counts from 1 (normally the SVG files)
+	private PageCacheList pageCacheListByFileNumber;
 
 	private PageLayout frontPageLayout;
 	private PageLayout middlePageLayout;
@@ -89,12 +87,13 @@ public class DocumentCache extends ComponentCache {
 		return new DocumentCache(cTree);
 	}
 
-	public AbstractCMElement processSVG() {
+	public AbstractCMElement processSVGFilesToSVGElementAndHTMLElement() {
 		if (cTree != null) {
 			FilePathGlobber globber = new FilePathGlobber();
 			globber.setRegex(DocumentCache.FULLTEXT_SVG_REGEX).setUseDirectories(false).setLocation(cTree.getDirectory().toString());
 			try {
 				svgFiles = globber.listFiles();
+				CMFileUtil.sortUniqueFilesByEmbeddedIntegers(svgFiles);
 			} catch (IOException e) {
 				throw new RuntimeException("Globber failed", e);
 			}
@@ -102,7 +101,7 @@ public class DocumentCache extends ComponentCache {
 				LOG.warn("no files found in: "+cTree+" with "+DocumentCache.FULLTEXT_SVG_REGEX);
 			}
 			try {
-				processSVGFiles(svgFiles);
+				processSVGFilesToSVGElementAndHTMLElement(svgFiles);
 			} catch (Exception e) {
 				throw new RuntimeException("Failed in: "+this.cTree.toString(), e);
 			}
@@ -120,14 +119,14 @@ public class DocumentCache extends ComponentCache {
 
 	 * @param svgFiles
 	 */
-	public void processSVGFiles(List<File> svgFiles) {
+	public void processSVGFilesToSVGElementAndHTMLElement(List<File> svgFiles) {
 		this.svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(svgFiles);
 		convertedSVGElement = new SVGG();
 		pageCacheList = getOrCreatePageCacheList();
 		LOG.trace("pageCacheList "+pageCacheList.size());
 		addPagesToConvertedSVGElement();
 		createHtmlElementFromPages();
-		summarizePages();
+		summarizePagesNYI();
 	}
 
 	private HtmlElement createHtmlElementFromPages() {
@@ -186,20 +185,24 @@ public class DocumentCache extends ComponentCache {
 		return boxes;
 	}
 
-	private void summarizePages() {
+	private void summarizePagesNYI() {
 		LOG.trace("SUMMARIZE PAGES NYI");
 	}
 
 	public PageCacheList getOrCreatePageCacheList() {
 		if (pageCacheList == null) {
-			pageCacheList = new PageCacheList();
-			createPageCacheListFromSVGFiles();
-			for (PageCache pageCache : pageCacheList) {
+//			pageCacheList = new PageCacheList();
+//			createPageCacheListFromSVGFiles();
+			convertSVG2PageCacheList();
+			for (int i = 0; i < pageCacheList.size(); i++) {
+				PageCache pageCache = pageCacheList.get(i);
 				if (pageCache == null) {
 					continue;
 				}
 				Integer serialNumber = pageCache.getSerialNumber();
-				pageCacheList.set(serialNumber, pageCache);
+				if (serialNumber != null) {
+					pageCacheList.set(serialNumber, pageCache);
+				}
 			}
 		}
 		return pageCacheList;
@@ -208,8 +211,8 @@ public class DocumentCache extends ComponentCache {
 	public PageCacheList getOrCreatePageCacheListByFileNumber() {
 		if (pageCacheListByFileNumber == null) {
 			pageCacheListByFileNumber = new PageCacheList();
-			createPageCacheListFromSVGFiles();
-			for (PageCache pageCache : pageCacheListByFileNumber) {
+			convertSVG2PageCacheList();
+			for (PageCache pageCache : pageCacheList) {
 				if (pageCache == null) {
 					continue;
 				}
@@ -237,10 +240,14 @@ public class DocumentCache extends ComponentCache {
 		}
 	}
 
-	private void createPageCacheListFromSVGFiles() {
-		svgFiles = cTree.getExistingSVGFileList();
-		svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(svgFiles);
-	}
+//	private void createPageCacheListFromSVGFiles() {
+//		svgFiles = cTree.getExistingSVGFileList();
+//		svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(svgFiles);
+//		pageCacheList = new PageCacheList();
+//		for (File svgFile : svgFiles) {
+//			PageCache pageCache = new PageCache(this);
+//		}
+//	}
 
 	public CTree getCTree() {
 		return cTree;
@@ -334,11 +341,12 @@ public class DocumentCache extends ComponentCache {
 		if(pageCacheList == null) {
 			List<File> svgFiles = cTree.getExistingSVGFileList();
 			svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(svgFiles);
-			LOG.debug("svg "+svgFiles);
 			int page = 0;
 			ensurePageCacheList();
 			for (File svgFile : svgFiles) {
 				PageCache pageCache = new PageCache();
+				Integer serial = CMStringUtil.getEmbeddedInteger(svgFile.getName());
+				pageCache.setSerialNumber(serial);
 				int npages = pageCacheList.size();
 				if (npages == page) {
 					pageCacheList.add(pageCache);
@@ -368,6 +376,7 @@ public class DocumentCache extends ComponentCache {
 		for (int i = 0; i < pageCacheList.size(); i++) {
 			PageCache pageCache = pageCacheList.get(i);
 			HtmlDiv pageHtml = pageCache.createHTMLFromTextList();
+			htmlDiv.appendChild(pageHtml);
 		}
 		return htmlDiv;
 	}

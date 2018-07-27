@@ -1,4 +1,4 @@
-package org.contentmine.graphics.svg.cache;
+package org.contentmine.graphics.layout;
 
 import java.io.File;
 
@@ -6,6 +6,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.graphics.svg.SVGG;
+import org.contentmine.graphics.svg.cache.PageCache;
 import org.contentmine.graphics.svg.util.SuperPixelArray;
 
 /** 

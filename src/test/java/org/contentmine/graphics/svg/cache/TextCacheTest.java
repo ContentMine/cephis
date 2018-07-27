@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.RealArray;
@@ -322,30 +323,19 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	 */
 	@Test
 	public void testReadPagesGVSUDevereux() {
-//		FIXME
 		File buildDir = new File("src/test/resources/closed/gvsu/");
 		String fileroot = "Devereux1950";
 		File targetDir = new File(SVGHTMLFixtures.TARGET_TEXT_BUILD_DIR, fileroot);
 		File directory = new File(buildDir, fileroot);
 		DocumentCache documentCache = DocumentCache.createDocumentCache(directory);
-		List<PageCache> pageCacheList = documentCache.getOrCreatePageCacheListByFileNumber();
+		List<PageCache> pageCacheList = documentCache.getOrCreatePageCacheList();
 		Assert.assertEquals(12,  pageCacheList.size());
-		HtmlElement html = documentCache.getConcatenatedHtml();
-//		for (File svgFile : files) {
-//			if (svgFile.toString().endsWith(".svg")) {
-//				PageCache pageCache = new PageCache();
-//				pageCache.readGraphicsComponentsAndMakeCaches(svgFile);
-//				TextCache textCache = pageCache.getOrCreateTextCache();
-//				
-//				List<SVGText> textList1 = textCache.getOrCreateCurrentTextList();
-//				textList.addAll(textList1);
-//			}
-//		}
-//// this is an interim kludge		
-//		HtmlHtml html = new TextChunkCache((ComponentCache)null).createHtmlFromPage(textList);
+		HtmlElement html = documentCache.convertSVGPages2HTML();
+		Assert.assertNotNull("html not null", html);
 		File htmlFile = new File(targetDir, "fulltext.html");
-		LOG.debug("HT "+htmlFile);
 		HtmlHtml.wrapAndWriteAsHtml(html, htmlFile);
+		long size = FileUtils.sizeOf(htmlFile);
+		Assert.assertTrue("htmlFile "+size, size > 1000);
 
 	}
 

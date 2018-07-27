@@ -94,16 +94,19 @@ public class PageCacheTest {
 		List<StyleRecord> sortedStyleRecords = leftStyleRecordSet.createSortedStyleRecords();
 		Assert.assertEquals("styleRecords", 3, sortedStyleRecords.size());
 		// italics
-		Assert.assertEquals("record 0", "chars: total: 25; unique: 6; coords: 4 [523.7, 534.7, 545.7, 655.6]", sortedStyleRecords.get(0).toString());
-		Assert.assertEquals("record 1", "chars: total: 50; unique: 13; coords: 7 ["
+		Assert.assertEquals("record 0", "chars: total: 25; unique: 6; ycoords: 4 [523.7, 534.7, 545.7, 655.6]\n"
+				+ " css: fill:#000000;font-size:9.0;font-style:italic;font-weight:normal;font-name:StoneSerif-Italic;", sortedStyleRecords.get(0).toString());
+		Assert.assertEquals("record 1", "chars: total: 50; unique: 13; ycoords: 7 ["
 				+ "278.7 x 4, 355.7 x 4, 360.9, 377.7 x 6, 382.9, 388.7 x 2, 421.7 x 4"
-				+ "]", sortedStyleRecords.get(1).toString());
-		Assert.assertEquals("record 2", "chars: total: 2600; unique: 50; coords: 57 [72.7, 83.7, 94.7, 105.7,"
+				+ "]\n"
+				+ " css: fill:#000000;font-size:5.85;font-weight:normal;font-name:StoneSerif;", sortedStyleRecords.get(1).toString());
+		Assert.assertEquals("record 2", "chars: total: 2600; unique: 50; ycoords: 57 [72.7, 83.7, 94.7, 105.7,"
 				+ " 116.7, 127.7, 138.7, 149.7, 160.7, 171.7, 182.7, 193.7, 204.7, 215.7, 226.6, 237.6,"
 				+ " 248.6, 259.6, 270.6, 281.6, 281.7 x 2, 292.7, 303.7, 314.7, 325.7, 336.7, 347.7,"
 				+ " 358.7 x 4, 369.7 x 3, 380.7 x 4, 391.7 x 3, 402.7, 413.7, 424.7 x 3, 435.7, 446.7,"
 				+ " 457.7, 468.7, 479.7, 490.7, 501.7, 512.7, 523.7, 534.7, 545.7 x 2, 556.7, 567.7,"
-				+ " 578.7, 589.6, 600.6, 611.6, 622.6, 633.6, 644.6, 655.6 x 2, 666.6, 677.6]", sortedStyleRecords.get(2).toString());
+				+ " 578.7, 589.6, 600.6, 611.6, 622.6, 633.6, 644.6, 655.6 x 2, 666.6, 677.6]\n"
+				+ " css: fill:#000000;font-size:9.0;font-weight:normal;font-name:StoneSerif;", sortedStyleRecords.get(2).toString());
 		double eps = 0.2;
 		List<RealArray> aps = sortedStyleRecords.get(0).createSortedCompressedYCoordAPList(eps);
 		Assert.assertEquals("[(523.7,534.7,545.7)]",  aps.toString());
@@ -148,16 +151,18 @@ public class PageCacheTest {
 		List<StyleRecord> sortedStyleRecords = textCache.createSortedStyleRecords();
 		Assert.assertEquals("styleRecords", 3, sortedStyleRecords.size());
 		// italics
-		Assert.assertEquals("record 0", "chars: total: 25; unique: 6; coords: 4 [523.7, 534.7, 545.7, 655.6]", sortedStyleRecords.get(0).toString());
-		Assert.assertEquals("record 1", "chars: total: 50; unique: 13; coords: 7 ["
-				+ "278.7 x 4, 355.7 x 4, 360.9, 377.7 x 6, 382.9, 388.7 x 2, 421.7 x 4"
-				+ "]", sortedStyleRecords.get(1).toString());
-		Assert.assertEquals("record 2", "chars: total: 2600; unique: 50; coords: 57 [72.7, 83.7, 94.7, 105.7,"
+		Assert.assertEquals("record 0", "chars: total: 25; unique: 6; ycoords: 4 [523.7, 534.7, 545.7, 655.6]\n"
+				+ " css: fill:#000000;font-size:9.0;font-style:italic;font-weight:normal;font-name:StoneSerif-Italic;", sortedStyleRecords.get(0).toString());
+		Assert.assertEquals("record 1", "chars: total: 50; unique: 13; ycoords: 7 ["
+				+ "278.7 x 4, 355.7 x 4, 360.9, 377.7 x 6, 382.9, 388.7 x 2, 421.7 x 4]\n"
+				+ " css: fill:#000000;font-size:5.9;font-weight:normal;font-name:StoneSerif;", sortedStyleRecords.get(1).toString());
+		Assert.assertEquals("record 2", "chars: total: 2600; unique: 50; ycoords: 57 [72.7, 83.7, 94.7, 105.7,"
 				+ " 116.7, 127.7, 138.7, 149.7, 160.7, 171.7, 182.7, 193.7, 204.7, 215.7, 226.6, 237.6,"
 				+ " 248.6, 259.6, 270.6, 281.6, 281.7 x 2, 292.7, 303.7, 314.7, 325.7, 336.7, 347.7,"
 				+ " 358.7 x 4, 369.7 x 3, 380.7 x 4, 391.7 x 3, 402.7, 413.7, 424.7 x 3, 435.7, 446.7,"
 				+ " 457.7, 468.7, 479.7, 490.7, 501.7, 512.7, 523.7, 534.7, 545.7 x 2, 556.7, 567.7,"
-				+ " 578.7, 589.6, 600.6, 611.6, 622.6, 633.6, 644.6, 655.6 x 2, 666.6, 677.6]", sortedStyleRecords.get(2).toString());
+				+ " 578.7, 589.6, 600.6, 611.6, 622.6, 633.6, 644.6, 655.6 x 2, 666.6, 677.6]\n"
+				+ " css: fill:#000000;font-size:9.0;font-weight:normal;font-name:StoneSerif;", sortedStyleRecords.get(2).toString());
 		double eps = 0.2;
 		List<RealArray> aps = sortedStyleRecords.get(0).createSortedCompressedYCoordAPList(eps);
 		Assert.assertEquals("[(523.7,534.7,545.7)]",  aps.toString());
@@ -357,7 +362,7 @@ public class PageCacheTest {
 		SVGPubstyle bmcStyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
 		LOG.debug(bmcStyle.toXML());
 //		Pubstyle pubstyle = pubstyleManager.guessPubstyleFromFirstPage(new File(SVGHTMLFixtures.CORPUS_DIR, 
-//				"mosquitos/12936_2017_Article_1948/svg/fulltext-page2.svg.compact.svg"));
+//				"mosquitos/12936_2017_Article_1948/svg/fulltext-page2.svg"));
 		Assert.assertEquals("bmc", bmcStyle.getPubstyleName());
 		SVGElement page1 = bmcStyle.getRawPage(PageType.P1);
 		Assert.assertNotNull(page1);

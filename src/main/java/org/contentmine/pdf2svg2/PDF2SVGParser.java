@@ -186,7 +186,8 @@ public class PDF2SVGParser extends PageDrawer    {
     	} else {
     		newText = false;
     	}
-    	if (unicode.equals(" ") && newText) {
+    	if (unicode == null) {
+    	} else if (unicode.equals(" ") && newText) {
     		// skip leading space
     	} else {
 	    	currentSVGText.appendText(unicode);

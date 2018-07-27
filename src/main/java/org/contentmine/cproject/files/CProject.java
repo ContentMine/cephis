@@ -852,6 +852,7 @@ public class CProject extends CContainer {
 	}
 
 	public void convertPDF2HTML() {
+		ensureCTreeList();
 	    for (CTree cTree : cTreeList) {
 	    	try {
 	    		LOG.debug(">> "+cTree);
@@ -863,10 +864,13 @@ public class CProject extends CContainer {
 		
 	}
 	
+	/** NYI
+	 * 
+	 */
 	public void convertSVG2HTML() {
 		for (CTree cTree : getOrCreateCTreeList()) {
 			LOG.debug("============="+cTree.getDirectory()+"=============");
-			DocumentCache documentCache = cTree.getDocumentCache();
+			DocumentCache documentCache = cTree.getOrCreateDocumentCache();			
 			HtmlDiv element = documentCache.convertSVGPages2HTML();
 		}
 	}

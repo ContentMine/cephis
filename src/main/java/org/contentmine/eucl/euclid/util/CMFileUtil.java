@@ -68,6 +68,7 @@ public class CMFileUtil {
 	}
 
 	public static Integer getEmbeddedInteger(File svgFile) {
+		
 		// TODO Auto-generated method stub
 		return null;
 	}

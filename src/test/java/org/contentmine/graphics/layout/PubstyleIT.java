@@ -42,7 +42,7 @@ public class PubstyleIT {
 		for (int page = start; page <= end; page++) {
 			LOG.debug("===================== current "+page+"====================");
 			pubstyle.setCurrentPage(page);
-			File inputSvgFile = new File(cTree, pageRoot+page+".svg.compact.svg");
+			File inputSvgFile = new File(cTree, pageRoot+page+".svg");
 			if (!inputSvgFile.exists()) {
 				LOG.debug("cannot find: "+inputSvgFile);
 				LOG.debug("====================FINISHED=================");

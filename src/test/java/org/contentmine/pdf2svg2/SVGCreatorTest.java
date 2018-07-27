@@ -69,21 +69,21 @@ public class SVGCreatorTest {
 		}
 	}
 
-	@Test
-	public void testCreator3GVSUPapers() throws InvalidPasswordException, IOException {
-        File dir = new File("src/test/resources/closed/");
-        File targetDir = new File("target/gvsu/");
-	    for (String fileroot : new String[]{"Callahan2009", "Devereux1950", /*, "gilbert1980", "Yudkin1978"*/}) {
-		    File file = new File(dir, fileroot+".pdf");
-		    AMISVGCreator svgCreator = new AMISVGCreator();
-		    SVGG svgg = svgCreator.createSVG(file);
-			File parent = new File(targetDir, fileroot);
-			parent.mkdirs();
-//			svgCreator.writePageImages(parent);
-			svgCreator.writeSVGPages(parent);
-//			svgCreator.writeRawImages(parent);
-	    }
-	}
+//	@Test
+//	public void testCreator3GVSUPapers() throws InvalidPasswordException, IOException {
+//        File dir = new File("src/test/resources/closed/");
+//        File targetDir = new File("target/gvsu/");
+//	    for (String fileroot : new String[]{"Callahan2009", "Devereux1950", /*, "gilbert1980", "Yudkin1978"*/}) {
+//		    File file = new File(dir, fileroot+".pdf");
+//		    AMISVGCreator svgCreator = new AMISVGCreator();
+//		    SVGG svgg = svgCreator.createSVG(file);
+//			File parent = new File(targetDir, fileroot);
+//			parent.mkdirs();
+////			svgCreator.writePageImages(parent);
+//			svgCreator.writeSVGPages(parent);
+////			svgCreator.writeRawImages(parent);
+//	    }
+//	}
 
 
 }

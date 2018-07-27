@@ -179,7 +179,7 @@ public class PageCache extends ComponentCache {
 		this.serialNumber = serial;
 	}
 	
-	public int getSerialNumber() {
+	public Integer getSerialNumber() {
 		if (serialNumber == null) {
 			// ?
 		}

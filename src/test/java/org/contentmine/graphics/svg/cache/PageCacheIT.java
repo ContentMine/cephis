@@ -16,6 +16,7 @@ import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.layout.SuperPixelArrayManager;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
@@ -135,7 +136,7 @@ public class PageCacheIT {
 	}
 	
 	@Test
-	@Ignore // too long
+	@Ignore("too long and missing file")
 	public void testArticleWhitespace() {
 		String root = "10.1136_bmjopen-2016-011048";
 		File outDir = new File(SVGHTMLFixtures.TARGET_TABLE_CACHE_DIR, root);
@@ -154,6 +155,7 @@ public class PageCacheIT {
 		
 	}
 	@Test
+	@Ignore("missing file")
 	public void testSuperPixelArray() {
 		String root = "10.1136_bmjopen-2016-011048";
 		File outDir = new File(SVGHTMLFixtures.TARGET_TABLE_CACHE_DIR, root);
@@ -163,7 +165,11 @@ public class PageCacheIT {
 		SuperPixelArray rightPixelArray = null;
 		boolean left = true;
 		boolean right = false;
-		for (File svgFile : svgDir.listFiles()) {
+		File[] listFiles = svgDir.listFiles();
+		if (listFiles == null) {
+			throw new RuntimeException("no files in "+svgDir);
+		}
+		for (File svgFile : listFiles) {
 			right = !right;
 			left = !left;
 			System.out.print(".");
