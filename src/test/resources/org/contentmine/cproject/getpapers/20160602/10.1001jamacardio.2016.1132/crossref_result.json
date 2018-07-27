@@ -1,0 +1,138 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:41:26Z",
+    "timestamp": 1464831686447
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamacardio.2016.1132",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:40Z",
+    "timestamp": 1464827860000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Association of Abnormal Postoperative Left Ventricular Global Longitudinal Strain With Outcomes in Severe Aortic Stenosis Following Aortic Valve Replacement"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Center for Heart Valve Disease, Heart and Vascular Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Kafa",
+      "given": "Rami"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Heart Valve Disease, Heart and Vascular Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Kusunose",
+      "given": "Kenya"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Heart Valve Disease, Heart and Vascular Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Goodman",
+      "given": "Andrew L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Heart Valve Disease, Heart and Vascular Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Svensson",
+      "given": "Lars G."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Heart Valve Disease, Heart and Vascular Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Sabik",
+      "given": "Joseph F."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Heart Valve Disease, Heart and Vascular Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Griffin",
+      "given": "Brian P."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Heart Valve Disease, Heart and Vascular Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Desai",
+      "given": "Milind Y."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Cardiology",
+    "JAMA Cardiol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:46Z",
+    "timestamp": 1464827866000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamacardio.2016.1132",
+  "ISSN": [
+    "2380-6583"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:37:44Z",
+    "timestamp": 1454582264704
+  },
+  "reference-count": 14,
+  "publisher": "Springer Science + Business Media",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "name": "Shenzhen science and technology innovation committee"
+    }
+  ],
+  "DOI": "10.1007/s00276-016-1628-7",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T07:36:39Z",
+    "timestamp": 1454312199000
+  },
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "The posterior groove as a landmark for location of the palatovaginal canal in axial computed tomography"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Meng",
+      "given": "Qingguo"
+    },
+    {
+      "affiliation": [],
+      "family": "Lu",
+      "given": "Yongtian"
+    },
+    {
+      "affiliation": [],
+      "family": "Shi",
+      "given": "Li"
+    },
+    {
+      "affiliation": [],
+      "family": "Lei",
+      "given": "Yi"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Surgical and Radiologic Anatomy",
+    "Surg Radiol Anat"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00276-016-1628-7.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00276-016-1628-7/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T07:36:41Z",
+    "timestamp": 1454312201000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "1628"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00276-016-1628-7",
+  "ISSN": [
+    "0930-1038",
+    "1279-8517"
+  ],
+  "subject": [
+    "Anatomy",
+    "Pathology and Forensic Medicine",
+    "Surgery",
+    "Radiology Nuclear Medicine and imaging"
+  ]
+}

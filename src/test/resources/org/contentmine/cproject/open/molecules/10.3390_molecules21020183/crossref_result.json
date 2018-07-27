@@ -1,0 +1,109 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:51:36Z",
+    "timestamp": 1455623496440
+  },
+  "reference-count": 39,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "DOI": "10.3390/molecules21020183",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T15:26:22Z",
+    "timestamp": 1454599582000
+  },
+  "page": "183",
+  "source": "CrossRef",
+  "title": [
+    "Alisol F 24 Acetate Enhances Chemosensitivity and Apoptosis of MCF-7/DOX Cells by Inhibiting P-Glycoprotein-Mediated Drug Efflux"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Pan",
+      "given": "Guixiang"
+    },
+    {
+      "affiliation": [],
+      "family": "Li",
+      "given": "Tingting"
+    },
+    {
+      "affiliation": [],
+      "family": "Zeng",
+      "given": "Qingqing"
+    },
+    {
+      "affiliation": [],
+      "family": "Wang",
+      "given": "Xiaoming"
+    },
+    {
+      "affiliation": [],
+      "family": "Zhu",
+      "given": "Yan",
+      "ORCID": "http://orcid.org/0000-0002-3197-7936"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:52:44Z",
+    "timestamp": 1455396764000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020183"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020183",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

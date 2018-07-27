@@ -1,0 +1,93 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:44:58Z",
+    "timestamp": 1464911098414
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaoncol.2016.0877",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:25Z",
+    "timestamp": 1464906925000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Accelerated Aging in Bone Marrow Transplant Survivors"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Paediatric and Adolescent Haematology/Oncology, Great North Children’s Hospital, Newcastle Upon Tyne Hospitals NHS Foundation Trust, Newcastle Upon Tyne, United Kingdom2Children’s Haemopoietic Stem Cell Transplant Unit, Great North Children’"
+        }
+      ],
+      "family": "Skinner",
+      "given": "Roderick"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Newcastle University Institute for Ageing, Newcastle University, Newcastle Upon Tyne, United Kingdom5Institute for Cell and Molecular Biosciences, Newcastle University, Newcastle Upon Tyne, United Kingdom"
+        }
+      ],
+      "family": "von Zglinicki",
+      "given": "Thomas"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Oncology",
+    "JAMA Oncol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:25Z",
+    "timestamp": 1464906925000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaoncol.2016.0877",
+  "ISSN": [
+    "2374-2437"
+  ]
+}

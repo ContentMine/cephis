@@ -1,0 +1,177 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        9
+      ]
+    ],
+    "date-time": "2016-02-09T10:08:27Z",
+    "timestamp": 1455012507702
+  },
+  "reference-count": 28,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 3,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            4
+          ]
+        ],
+        "date-time": "2016-02-04T00:00:00Z",
+        "timestamp": 1454544000000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 3,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            4
+          ]
+        ],
+        "date-time": "2016-02-04T00:00:00Z",
+        "timestamp": 1454544000000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1748-9326/11/2/021001",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T09:13:29Z",
+    "timestamp": 1454663609000
+  },
+  "page": "021001",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    "Is international conservation aid enough?"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "11",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Law",
+      "given": "Elizabeth A"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ]
+  },
+  "container-title": [
+    "Environ. Res. Lett.",
+    "Environmental Research Letters"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=021001/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=021001?key=crossref.0521f3bd80d50fb03860b1c70183e618"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        6
+      ]
+    ],
+    "date-time": "2016-02-06T07:07:20Z",
+    "timestamp": 1454742440000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1748-9326/11/2/021001",
+  "ISSN": [
+    "1748-9326"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Environmental Research Letters"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "comm"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Is international conservation aid enough?"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-04"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:41:55Z",
+    "timestamp": 1454582515829
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "issue": "1",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/essd-8-15-2016",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T12:54:56Z",
+    "timestamp": 1454331296000
+  },
+  "page": "15-40",
+  "source": "CrossRef",
+  "title": [
+    "A gridded data set of upper-ocean hydrographic properties in the Weddell Gyre obtained by objective mapping of Argo float measurements"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "volume": "8",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Reeve",
+      "given": "K. A."
+    },
+    {
+      "affiliation": [],
+      "family": "Boebel",
+      "given": "O."
+    },
+    {
+      "affiliation": [],
+      "family": "Kanzow",
+      "given": "T."
+    },
+    {
+      "affiliation": [],
+      "family": "Strass",
+      "given": "V."
+    },
+    {
+      "affiliation": [],
+      "family": "Rohardt",
+      "given": "G."
+    },
+    {
+      "affiliation": [],
+      "family": "Fahrbach",
+      "given": "E."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Earth Syst. Sci. Data",
+    "Earth System Science Data"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T12:54:56Z",
+    "timestamp": 1454331296000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/essd-8-15-2016",
+  "ISSN": [
+    "1866-3516"
+  ]
+}

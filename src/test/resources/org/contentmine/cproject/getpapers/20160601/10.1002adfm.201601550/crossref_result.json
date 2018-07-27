@@ -1,0 +1,190 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:41:41Z",
+    "timestamp": 1464784901749
+  },
+  "reference-count": 34,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adfm.201601550",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:36:01Z",
+    "timestamp": 1464780961000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Fluidic Processing of High-Performance ZIF-8 Membranes on Polymeric Hollow Fibers: Mechanistic Insights and Microstructure Control"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "School of Chemical and Biomolecular Engineering; Georgia Institute of Technology; Atlanta GA 30332-0100 USA"
+        }
+      ],
+      "family": "Eum",
+      "given": "Kiwon"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Chemical and Biomolecular Engineering; Georgia Institute of Technology; Atlanta GA 30332-0100 USA"
+        },
+        {
+          "name": "Department of Chemical and Biochemical Engineering; Missouri University of Science and Technology; Rolla MO 65409-1230 USA"
+        }
+      ],
+      "family": "Rownaghi",
+      "given": "Ali"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Chemical and Biomolecular Engineering; Georgia Institute of Technology; Atlanta GA 30332-0100 USA"
+        }
+      ],
+      "family": "Choi",
+      "given": "Dalsu"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Materials Science and Technology Division; Oak Ridge National Laboratory; Oak Ridge TN 37831 USA"
+        }
+      ],
+      "family": "Bhave",
+      "given": "Ramesh R."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Chemical and Biomolecular Engineering; Georgia Institute of Technology; Atlanta GA 30332-0100 USA"
+        }
+      ],
+      "family": "Jones",
+      "given": "Christopher W."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Chemical and Biomolecular Engineering; Georgia Institute of Technology; Atlanta GA 30332-0100 USA"
+        }
+      ],
+      "family": "Nair",
+      "given": "Sankar"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Adv. Funct. Mater.",
+    "Advanced Functional Materials"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadfm.201601550"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:36:01Z",
+    "timestamp": 1464780961000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adfm.201601550",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "1616-301X"
+  ],
+  "subject": [
+    "Electrochemistry",
+    "Electronic, Optical and Magnetic Materials",
+    "Condensed Matter Physics",
+    "Biomaterials"
+  ]
+}

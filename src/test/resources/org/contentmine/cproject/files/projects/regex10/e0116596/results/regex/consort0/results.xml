@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results title="consort0">
+ <result pre=", nasopharynx and oropharynx) were " name0="exclude" value0="excluded" post="from the analyses to focus on the biological role " xpath="/*[local-name()='html'][1]/*[local-name()='body'][1]/*[local-name()='div'][1]/*[local-name()='div'][5]/*[local-name()='div'][1]/*[local-name()='p'][1]"/>
+ <result pre="-up for &amp;gt;60 months; the average " name0="followup" value0="follow-up" post="period was 51.7 months (range: 2 to 151). Their av" xpath="/*[local-name()='html'][1]/*[local-name()='body'][1]/*[local-name()='div'][1]/*[local-name()='div'][5]/*[local-name()='div'][1]/*[local-name()='p'][2]"/>
+</results>

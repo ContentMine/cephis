@@ -1,0 +1,3231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v2.3 20070202//EN" "journalpublishing.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" article-type="research-article" dtd-version="2.3">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">molecules</journal-id>
+      <journal-title>Molecules</journal-title>
+      <abbrev-journal-title abbrev-type="publisher">Molecules</abbrev-journal-title>
+      <abbrev-journal-title abbrev-type="pubmed">Molecules</abbrev-journal-title>
+      <issn pub-type="epub">1420-3049</issn>
+      <publisher>
+        <publisher-name>MDPI</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3390/molecules21020185</article-id>
+      <article-id pub-id-type="publisher-id">molecules-21-00185</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Theoretical Study of Molecular Structure and Physicochemical Properties of Novel Factor Xa Inhibitors and Dual Factor Xa and Factor IIa Inhibitors</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Remko</surname>
+            <given-names>Milan</given-names>
+          </name>
+          <xref rid="af1-molecules-21-00185" ref-type="aff">1</xref>
+          <xref rid="c1-molecules-21-00185" ref-type="corresp">*</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Remkov&#xE1;</surname>
+            <given-names>Anna</given-names>
+          </name>
+          <xref rid="af2-molecules-21-00185" ref-type="aff">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Broer</surname>
+            <given-names>Ria</given-names>
+          </name>
+          <xref rid="af3-molecules-21-00185" ref-type="aff">3</xref>
+        </contrib>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Gauld</surname>
+            <given-names>James W.</given-names>
+          </name>
+          <role>Academic Editor</role>
+        </contrib>
+      </contrib-group>
+      <aff id="af1-molecules-21-00185"><label>1</label>Department of Pharmaceutical Chemistry, Faculty of Pharmacy, Comenius University in Bratislava, Odboj&#xE1;rov 10, SK-832 32 Bratislava, Slovakia</aff>
+      <aff id="af2-molecules-21-00185"><label>2</label>Department of Internal Medicine, Faculty of Medicine, Slovak Medical University, Limbov&#xE1; 12, SK-833 03 Bratislava, Slovakia; <email>aremkova@szu.sk</email></aff>
+      <aff id="af3-molecules-21-00185"><label>3</label>Department of Theoretical Chemistry, Zernike Institute for Advanced Materials, University of Groningen, Nijenborgh 4, 9747 AG Groningen, The Netherlands; <email>R.Broer@rug.nl</email></aff>
+      <author-notes>
+        <corresp id="c1-molecules-21-00185"><label>*</label> Correspondence: <email>remko@fpharm.uniba.sk</email> or <email>milan.remko@gmail.com</email>; Tel.: +421-2-5011-7291</corresp>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>04</day>
+        <month>02</month>
+        <year>2016</year>
+      </pub-date>
+      <pub-date pub-type="collection"><month>02</month>
+        <year>2016</year>
+      </pub-date>
+      <volume>21</volume>
+      <issue>2</issue>
+      <elocation-id>185</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>11</day>
+          <month>01</month>
+          <year>2016</year>
+        </date>
+        <date date-type="accepted">
+          <day>27</day>
+          <month>01</month>
+          <year>2016</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>&#xA9; 2016 by the authors; licensee MDPI, Basel, Switzerland.</copyright-statement>
+        <copyright-year>2016</copyright-year>
+        <license>
+          <p>This article is an open access article distributed under the terms and conditions of the Creative Commons by Attribution (CC-BY) license (http://creativecommons.org/licenses/by/4.0/).</p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>The geometries and energies of factor Xa inhibitors edoxaban, eribaxaban, fidexaban, darexaban, letaxaban, and the dual factor Xa and thrombin inhibitors tanogitran and SAR107375 in both the gas-phase and aqueous solution were studied using the Becke3LYP/6-31++G(d,p) or Grimme&#x2019;s B97D/6-31++G(d,p) method. The fully optimized conformers of these anticoagulants show a characteristic <sc>l</sc>-shape structure, and the water had a remarkable effect on the equilibrium geometry. According to the calculated p<italic>K</italic>a values eribaxaban and letaxaban are in neutral undissociated form at pH 7.4, while fidexaban and tanogitran exist as zwitterionic structures. The lipophilicity of the inhibitors studied lies within a large range of log <italic>P</italic> between 1 and 4. The dual inhibitor SAR107375 represents an improvement in structural, physicochemical and pharmacokinetic characteristics over tanogitran. At blood pH, SAR107375 predominantly exists in neutral form. In contrast with tanogitran, it is better absorbed and more lipophilic and active after oral application.</p>
+      </abstract>
+      <kwd-group>
+        <kwd>density functional theory (DFT)</kwd>
+        <kwd>anticoagulants</kwd>
+        <kwd>conformation</kwd>
+        <kwd>solvent effect</kwd>
+        <kwd>acidity</kwd>
+        <kwd>lipophilicity</kwd>
+        <kwd>absorption</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec1-molecules-21-00185" sec-type="intro">
+      <title>1. Introduction</title>
+      <p>During the last 65 years or so compounds from the vitamin K antagonists group (warfarin and its derivatives) have been the only available oral anticoagulants [<xref ref-type="bibr" rid="B1-molecules-21-00185">1</xref>], but their use is complicated owing to wide inter-individual variability in dose requirements and their narrow therapeutic index [<xref ref-type="bibr" rid="B2-molecules-21-00185">2</xref>,<xref ref-type="bibr" rid="B3-molecules-21-00185">3</xref>]. Extensive pharmaceutical research in this field for the last 20&#x2013;30 years has resulted in several new orally active anticoagulants with significant advantages compared to current drugs such as warfarin and low molecular weight heparin for the treatment and prevention of thrombotic diseases. The new anticoagulants studied for venous thromboembolism treatment inhibit factor Xa (FXa) or thrombin (FIIa). Numerous direct, selective fXa and/or thrombin inhibitors are at various stages of development [<xref ref-type="bibr" rid="B4-molecules-21-00185">4</xref>,<xref ref-type="bibr" rid="B5-molecules-21-00185">5</xref>,<xref ref-type="bibr" rid="B6-molecules-21-00185">6</xref>]. Synthetic inhibitors such as betrixaban, razaxaban, eribaxaban, fidexaban, darexaban (YM150), letaxaban (TAK-442) are members of a new class of orally available fXa inhibitors. In addition to the abovementioned direct fXa inhibitors, dual thrombin/fXa inhibitors such as tanogitran, RWJ-445167, and SAR107375 have also been developed [<xref ref-type="bibr" rid="B7-molecules-21-00185">7</xref>,<xref ref-type="bibr" rid="B8-molecules-21-00185">8</xref>,<xref ref-type="bibr" rid="B9-molecules-21-00185">9</xref>]. Despite a number of experimental structural information about binding models of novel anticoagulants targeting thrombin, fXa or both, experimental studies concerned with the systematic comparative studies of their physicochemical and pharmacokinetic parameters are scarce, and most of novel drug were discovered serendipitously [<xref ref-type="bibr" rid="B10-molecules-21-00185">10</xref>]. In our previous work, direct fXa inhibitors (apixaban, rivaroxaban, otamixaban, betrixaban, razaxaban, and DX-9065a) and direct inhibitors of thrombin (ximelagatran and dabigatran etexilate) were studied theoretically [<xref ref-type="bibr" rid="B11-molecules-21-00185">11</xref>,<xref ref-type="bibr" rid="B12-molecules-21-00185">12</xref>].</p>
+      <p>In the work presented here we used density functional calculations for the detailed investigation of the molecular structure of direct fXa inhibitors edoxaban, eribaxaban, fidexaban, darexaban (YM150), letaxaban (TAK-442) and the dual factor Xa and thrombin inhibitors tanogitran and SAR107375. The effect of the solvent on the molecular structure of these drugs was evaluated using the polarizable continuum method. Our interest was also focused on the evaluation of basic physicochemical and pharmacokinetic properties (such as p<italic>K</italic>a, lipophilicity, solubility, absorption, and polar surface area) of these species. Attention has also been given to comparison of theoretical results with published experimental properties of these drugs in the light of present theories of their action. These and previously studied anticoagulant drugs [<xref ref-type="bibr" rid="B11-molecules-21-00185">11</xref>,<xref ref-type="bibr" rid="B12-molecules-21-00185">12</xref>] have entered early and advanced stages of clinical development. Thus, the investigation of their molecular structures and physicochemical properties may contribute to understand the relationships between structure and activity and biological properties of novel anticoagulants.</p>
+    </sec>
+    <sec id="sec2-molecules-21-00185" sec-type="results">
+      <title>2. Results and Discussion</title>
+      <sec id="sec2dot1-molecules-21-00185">
+        <title>2.1. DFT Calculations of Molecular Structures</title>
+        <p>The accurate determination of the geometry of chemical drugs is nowadays accessible through the application of sophisticated quantum chemistry methods [<xref ref-type="bibr" rid="B13-molecules-21-00185">13</xref>]. Theoretical chemistry methods are now used in medicinal chemistry and drug design to accurately determine structure and properties of molecules for use in a wide variety of CADD investigations [<xref ref-type="bibr" rid="B14-molecules-21-00185">14</xref>,<xref ref-type="bibr" rid="B15-molecules-21-00185">15</xref>]. The starting conformations to use in the DFT calculations for these drugs were constructed using the Gauss View program. The spatial orientation of important functional groups of these molecules was defined by selected dihedral angles (&#x3B1;, &#x3B2;, &#x3B3;, &#x3B4;, &#x3B5;, &#x3B6;, &#x3B7;, &#x3BD;, &#x3B8;, &#x3BC;, &#x3BE; and &#x3C1;, <xref ref-type="fig" rid="molecules-21-00185-f001">Figure 1</xref>, <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). The important structural parameters (dihedral angles) describing the relative molecular orientation of the studied drugs are presented in the <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>. The Cartesian coordinates of all inhibitors studied, optimized at the B3LYP level of the density functional theory, are given in <xref ref-type="app" rid="app1-molecules-21-00185">Table S1</xref>. Subsequent frequency computations of the harmonic vibrational frequencies of the optimized molecules revealed that all the structures obtained were minima (no imaginary frequencies). The equilibrium geometries of the studied drugs computed at the B3LYP and B97D levels of theory are presented in <xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>. With respect to the nature of drugs studied, their conformational behavior was, in addition to the B3LYP method, also computed using the B97D functional, which includes dispersion. The B97D functional uses the empirical dispersion energy correction specifically designed for an accurate evaluation of van der Waals interactions [<xref ref-type="bibr" rid="B16-molecules-21-00185">16</xref>]. <xref ref-type="table" rid="molecules-21-00185-t002">Table 2</xref> shows the solvation energies obtained from calculations performed in a vacuum and calculations based on the solvation method. The energy difference between the gas phase and solvated phase was significant for both DFT functionals, B3LYP and B97D, applied in combination with the CPCM solvation model. The largest difference (55.5 kJ/mol) in solvation energies computed with these functionals was found for fidexaban. The different minimum energy conformations computed at the B3LYP and B97D levels of theory for this drug are apparently responsible for this difference (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref> and <xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>).</p>
+        <fig id="molecules-21-00185-f001" position="float">
+          <label>Figure 1</label>
+          <caption>
+            <p>Structure and atom labeling in the anticoagulant drugs studied.</p>
+          </caption>
+          <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00185-g001.tif"/>
+        </fig>
+        <table-wrap id="molecules-21-00185-t001" position="float">
+          <object-id pub-id-type="pii">molecules-21-00185-t001_Table 1</object-id>
+          <label>Table 1</label>
+          <caption>
+            <p>Optimized dihedral angles (degrees) of the drugs studied.</p>
+          </caption>
+          <table>
+            <thead>
+              <tr>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Dihedral Angle <sup>a</sup></th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">X-ray <sup>b</sup></th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">B3LYP/6-31++g(p,d)</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">B97D/6-31++g(p,d)</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">B3LYP&#x2013;CPCM</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">B97D&#x2013;CPCM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin"><bold>(<italic>S</italic>,<italic>R</italic>,<italic>S</italic>)-Edoxaban</bold></td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B1;[S(1)-C(2)-C(3)-O(4)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;2.59</td>
+                <td align="center" valign="middle">&#x2212;2.77</td>
+                <td align="center" valign="middle">&#x2212;0.44</td>
+                <td align="center" valign="middle">&#x2212;0.38</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B2;[S(1)-C(2)-C(3)-N(5)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">176.73</td>
+                <td align="center" valign="middle">176.50</td>
+                <td align="center" valign="middle">179.30</td>
+                <td align="center" valign="middle">179.13</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B3;[C(2)-C(3)-N(5)-C(6)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">173.81</td>
+                <td align="center" valign="middle">173.90</td>
+                <td align="center" valign="middle">175.62</td>
+                <td align="center" valign="middle">175.40</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B4;[C(3)-N(5)-C(6)-C(7)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">134.17</td>
+                <td align="center" valign="middle">132.08</td>
+                <td align="center" valign="middle">122.43</td>
+                <td align="center" valign="middle">132.05</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B5;[C(6)-C(7)-N(8)-C(9)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;147.47</td>
+                <td align="center" valign="middle">&#x2212;154.20</td>
+                <td align="center" valign="middle">&#x2212;120.05</td>
+                <td align="center" valign="middle">&#x2212;144.15</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B6;[C(7)-N(8)-C(9)-O(10)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">1.30</td>
+                <td align="center" valign="middle">2.45</td>
+                <td align="center" valign="middle">&#x2212;0.50</td>
+                <td align="center" valign="middle">3.10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B7;[C(7)-N(8)-C(9)-C(11)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;178.53</td>
+                <td align="center" valign="middle">&#x2212;177.58</td>
+                <td align="center" valign="middle">179.45</td>
+                <td align="center" valign="middle">&#x2212;177.16</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B8;[N(8)-C(9)-C(11)]-O(12)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">1.90</td>
+                <td align="center" valign="middle">2.83</td>
+                <td align="center" valign="middle">&#x2212;0.10</td>
+                <td align="center" valign="middle">1.20</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BC;[N(8)-C(9)-C(11)]-N(13)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;178.53</td>
+                <td align="center" valign="middle">&#x2212;177.57</td>
+                <td align="center" valign="middle">179.92</td>
+                <td align="center" valign="middle">&#x2212;179.06</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BD;[C(9)-C(11)]-N(13)-C(14)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;179.38</td>
+                <td align="center" valign="middle">&#x2212;179.90</td>
+                <td align="center" valign="middle">179.69</td>
+                <td align="center" valign="middle">&#x2212;179.71</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x3BE;[C(11)]-N(13)-C(14)-N(15)]</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">179.16</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">179.45</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;179.78</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;179.34</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin"><bold>(<italic>R</italic>,<italic>R</italic>)-Eribaxaban</bold></td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2PHB</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B1;[C(1)-N(2)-C(3)-C(4)]</td>
+                <td align="center" valign="middle">&#x2212;82.79</td>
+                <td align="center" valign="middle">&#x2212;58.39</td>
+                <td align="center" valign="middle">&#x2212;56.15</td>
+                <td align="center" valign="middle">&#x2212;96.18</td>
+                <td align="center" valign="middle">&#x2212;66.62</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B2;[C(5)-C(6)-N(7)-C(8)]</td>
+                <td align="center" valign="middle">65.14</td>
+                <td align="center" valign="middle">4.19</td>
+                <td align="center" valign="middle">&#x2212;12.63</td>
+                <td align="center" valign="middle">5.85</td>
+                <td align="center" valign="middle">&#x2212;17.44</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B3;[C(6)-N(7)-C(8)-O(9)]</td>
+                <td align="center" valign="middle">&#x2212;0.09</td>
+                <td align="center" valign="middle">&#x2212;4.81</td>
+                <td align="center" valign="middle">1.63</td>
+                <td align="center" valign="middle">&#x2212;2.73</td>
+                <td align="center" valign="middle">0.77</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B4;[C(6)-N(7)-C(8)-C(10)]</td>
+                <td align="center" valign="middle">179.50</td>
+                <td align="center" valign="middle">176.37</td>
+                <td align="center" valign="middle">&#x2212;175.78</td>
+                <td align="center" valign="middle">178.01</td>
+                <td align="center" valign="middle">&#x2212;176.90</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B5;[N(7)-C(8)-C(10)-N(11)]</td>
+                <td align="center" valign="middle">1.67</td>
+                <td align="center" valign="middle">7.42</td>
+                <td align="center" valign="middle">65.65</td>
+                <td align="center" valign="middle">4.84</td>
+                <td align="center" valign="middle">63.15</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B6;[C(10)-N(11)-C(12)-O(13)]</td>
+                <td align="center" valign="middle">&#x2212;0.39</td>
+                <td align="center" valign="middle">155.21</td>
+                <td align="center" valign="middle">164.51</td>
+                <td align="center" valign="middle">161.65</td>
+                <td align="center" valign="middle">169.76</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B7;[C(10)-N(11)-C(12)-N(14)]</td>
+                <td align="center" valign="middle">179.24</td>
+                <td align="center" valign="middle">&#x2212;26.05</td>
+                <td align="center" valign="middle">&#x2212;16.00</td>
+                <td align="center" valign="middle">&#x2212;19.78</td>
+                <td align="center" valign="middle">&#x2212;10.78</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B8;[N(11)-C(12)-N(14)]-C(15)]</td>
+                <td align="center" valign="middle">168.30</td>
+                <td align="center" valign="middle">179.48</td>
+                <td align="center" valign="middle">&#x2212;178.64</td>
+                <td align="center" valign="middle">&#x2212;179.29</td>
+                <td align="center" valign="middle">&#x2212;177.55</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BC;[C(12)-N(14)]-C(15)-C(16)]</td>
+                <td align="center" valign="middle">&#x2212;155.47</td>
+                <td align="center" valign="middle">176.92</td>
+                <td align="center" valign="middle">174.63</td>
+                <td align="center" valign="middle">175.98</td>
+                <td align="center" valign="middle">170.63</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">H-bond MeO&#xB7;&#xB7;&#xB7;H-N, &#xC5;</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2.9338</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.8796</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">3.0505</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.8373</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin"><bold>Fidexaban</bold></td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1FJS</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B1;[N(1)-C(2)-C(3)-C(4)]</td>
+                <td align="center" valign="middle">&#x2212;87.79</td>
+                <td align="center" valign="middle">&#x2212;41.41</td>
+                <td align="center" valign="middle">&#x2212;39.50</td>
+                <td align="center" valign="middle">&#x2212;46.24</td>
+                <td align="center" valign="middle">&#x2212;43.11</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B2;[C(4)-C(5)-O(6)-C(7)]</td>
+                <td align="center" valign="middle">147.64</td>
+                <td align="center" valign="middle">154.48</td>
+                <td align="center" valign="middle">161.22</td>
+                <td align="center" valign="middle">162.20</td>
+                <td align="center" valign="middle">161.65</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B3;[C(5)-O(6)-C(7)-N(8)]</td>
+                <td align="center" valign="middle">115.45</td>
+                <td align="center" valign="middle">115.13</td>
+                <td align="center" valign="middle">121.46</td>
+                <td align="center" valign="middle">115.40</td>
+                <td align="center" valign="middle">121.26</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B4;[N(8)-C(9)-O(10)-C(11)]</td>
+                <td align="center" valign="middle">32.16</td>
+                <td align="center" valign="middle">&#x2212;19.64</td>
+                <td align="center" valign="middle">&#x2212;106.05</td>
+                <td align="center" valign="middle">&#x2212;12.40</td>
+                <td align="center" valign="middle">&#x2212;20.05</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B5;[C(9)-O(10)-C(11)-C(12)]</td>
+                <td align="center" valign="middle">&#x2212;120.44</td>
+                <td align="center" valign="middle">&#x2212;57.75</td>
+                <td align="center" valign="middle">9.65</td>
+                <td align="center" valign="middle">&#x2212;69.17</td>
+                <td align="center" valign="middle">&#x2212;69.45</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B6;[C(12)-C(13)-C(14)-N(15)]</td>
+                <td align="center" valign="middle">&#x2212;4.70</td>
+                <td align="center" valign="middle">&#x2212;21.84</td>
+                <td align="center" valign="middle">&#x2212;28.47</td>
+                <td align="center" valign="middle">&#x2212;25.67</td>
+                <td align="center" valign="middle">&#x2212;25.18</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B7;[C(16)-C(17)-N(18)-C(19)]</td>
+                <td align="center" valign="middle">&#x2212;83.09</td>
+                <td align="center" valign="middle">&#x2212;132.13</td>
+                <td align="center" valign="middle">57.97</td>
+                <td align="center" valign="middle">&#x2212;133.91</td>
+                <td align="center" valign="middle">54.12</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B8;[C(17)-N(18)-C(19)-C(20)]</td>
+                <td align="center" valign="middle">54.20</td>
+                <td align="center" valign="middle">85.14</td>
+                <td align="center" valign="middle">59.75</td>
+                <td align="center" valign="middle">85.54</td>
+                <td align="center" valign="middle">80.03</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BC;[N(18)-C(19)-C(20)-O(21)]</td>
+                <td align="center" valign="middle">92.47</td>
+                <td align="center" valign="middle">157.26</td>
+                <td align="center" valign="middle">&#x2212;170.74</td>
+                <td align="center" valign="middle">164.70</td>
+                <td align="center" valign="middle">162.60</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">H-bond OH&#xB7;&#xB7;&#xB7;O, &#xC5;</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">2.1810</td>
+                <td align="center" valign="middle">2.1949</td>
+                <td align="center" valign="middle">2.2247</td>
+                <td align="center" valign="middle">2.2777</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">H-bond C(=O)OH&#xB7;&#xB7;&#xB7;N, &#xC5;</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">No interaction</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.5433</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">No interaction</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">No interaction</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin"><bold>Darexaban</bold></td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B1;[C(1)-C(2)-N(3)-C(4)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">42.45</td>
+                <td align="center" valign="middle">&#x2212;27.23</td>
+                <td align="center" valign="middle">44.41</td>
+                <td align="center" valign="middle">&#x2212;33.72</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B2;[C(2)-N(3)-C(4)-O(5)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;3.16</td>
+                <td align="center" valign="middle">15.93</td>
+                <td align="center" valign="middle">&#x2212;5.24</td>
+                <td align="center" valign="middle">15.21</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B3;[C(2)-N(3)-C(4)-C(6)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">176.75</td>
+                <td align="center" valign="middle">&#x2212;165.63</td>
+                <td align="center" valign="middle">174.85</td>
+                <td align="center" valign="middle">&#x2212;165.63</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B4;[ N(3)-C(4)-C(6)-C(7)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">0.40</td>
+                <td align="center" valign="middle">38.24</td>
+                <td align="center" valign="middle">&#x2212;1.49</td>
+                <td align="center" valign="middle">36.32</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B5;[C(8)-C(9)-N(10)-C(11)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;15.09</td>
+                <td align="center" valign="middle">&#x2212;19.65</td>
+                <td align="center" valign="middle">&#x2212;11.84</td>
+                <td align="center" valign="middle">&#x2212;15.62</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B6;[C(2)-C(12)-N(13)-C(14)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;55.13</td>
+                <td align="center" valign="middle">&#x2212;69.03</td>
+                <td align="center" valign="middle">&#x2212;55.92</td>
+                <td align="center" valign="middle">&#x2212;67.97</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B7;[C(12)-N(13)-C(14)-O(15)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">6.59</td>
+                <td align="center" valign="middle">&#x2212;6.97</td>
+                <td align="center" valign="middle">5.36</td>
+                <td align="center" valign="middle">&#x2212;8.64</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B8;[C(12)-N(13)-C(14)-C(16)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;173.43</td>
+                <td align="center" valign="middle">167.34</td>
+                <td align="center" valign="middle">&#x2212;175.12</td>
+                <td align="center" valign="middle">166.62</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BC;[N(13)-C(14)-C(16)-C(17)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">156.76</td>
+                <td align="center" valign="middle">167.28</td>
+                <td align="center" valign="middle">157.74</td>
+                <td align="center" valign="middle">164.95</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">H-bond OH&#xB7;&#xB7;&#xB7;O, &#xC5;</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">1.6197</td>
+                <td align="center" valign="middle">1.5871</td>
+                <td align="center" valign="middle">1.6089</td>
+                <td align="center" valign="middle">1.5627</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">H-bond NH&#xB7;&#xB7;&#xB7;O, &#xC5;</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.8333</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2.9243</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.8388</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">3.0555</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin"><bold>(<italic>S</italic>)-Letaxaban</bold></td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">3KL6</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B1;[C(1)-C(2)-S(3)-C(4)]</td>
+                <td align="center" valign="middle">106.69</td>
+                <td align="center" valign="middle">95.99</td>
+                <td align="center" valign="middle">99.47</td>
+                <td align="center" valign="middle">96.34</td>
+                <td align="center" valign="middle">93.17</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B2;[C(2)-S(3)-C(4)-C(5)]</td>
+                <td align="center" valign="middle">&#x2212;76.01</td>
+                <td align="center" valign="middle">&#x2212;84.63</td>
+                <td align="center" valign="middle">&#x2212;76.11</td>
+                <td align="center" valign="middle">&#x2212;77.49</td>
+                <td align="center" valign="middle">&#x2212;55.63</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B3;[S(3)-C(4)-C(5)-O(6)]</td>
+                <td align="center" valign="middle">71.15</td>
+                <td align="center" valign="middle">73.11</td>
+                <td align="center" valign="middle">74.21</td>
+                <td align="center" valign="middle">72.76</td>
+                <td align="center" valign="middle">85.44</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B4;[S(3)-C(4)-C(5)-C(7)]</td>
+                <td align="center" valign="middle">&#x2212;170.80</td>
+                <td align="center" valign="middle">&#x2212;167.10</td>
+                <td align="center" valign="middle">&#x2212;166.10</td>
+                <td align="center" valign="middle">&#x2212;168.99</td>
+                <td align="center" valign="middle">&#x2212;156.90</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B5;[C(4)-C(5)-C(7)-N(8)]</td>
+                <td align="center" valign="middle">177.43</td>
+                <td align="center" valign="middle">165.01</td>
+                <td align="center" valign="middle">163.51</td>
+                <td align="center" valign="middle">144.15</td>
+                <td align="center" valign="middle">168.58</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B6; [C(5)-C(7)-N(8)]-C(9)]</td>
+                <td align="center" valign="middle">178.57</td>
+                <td align="center" valign="middle">176.96</td>
+                <td align="center" valign="middle">171.50</td>
+                <td align="center" valign="middle">179.43</td>
+                <td align="center" valign="middle">171.71</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x3B7;[C(10)-C(11)-N(12)-C(13)]</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">103.92</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">124.08</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">130.11</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">113.62</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">110.42</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin"><bold>(<italic>R</italic>)-Tanogitran</bold></td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B1;[N(1)-C(2)-C(3)-C(4)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;20.46</td>
+                <td align="center" valign="middle">&#x2212;18.73</td>
+                <td align="center" valign="middle">&#x2212;24.41</td>
+                <td align="center" valign="middle">&#x2212;23.77</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B2;[C(5)-C(6)-N(7)-C(8)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">165.54</td>
+                <td align="center" valign="middle">&#x2212;157.23</td>
+                <td align="center" valign="middle">166.83</td>
+                <td align="center" valign="middle">&#x2212;158.63</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B3;[C(6)-N(7)-C(8)-C(9)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">79.48</td>
+                <td align="center" valign="middle">49.24</td>
+                <td align="center" valign="middle">80.05</td>
+                <td align="center" valign="middle">49.22</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B4;[N(7)-C(8)-C(9)-N(10)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;125.14</td>
+                <td align="center" valign="middle">&#x2212;115.94</td>
+                <td align="center" valign="middle">&#x2212;123.21</td>
+                <td align="center" valign="middle">&#x2212;118.50</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B5;[C(11)-C(12)-C(13)-C(14)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">31.69</td>
+                <td align="center" valign="middle">38.45</td>
+                <td align="center" valign="middle">34.23</td>
+                <td align="center" valign="middle">38.52</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B6;[C(11)-C(12)-C(13)-N(17)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;87.36</td>
+                <td align="center" valign="middle">&#x2212;80.82</td>
+                <td align="center" valign="middle">&#x2212;83.75</td>
+                <td align="center" valign="middle">&#x2212;80.04</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B7;[C(12)-C(13)-N(17)-C(18)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;177.45</td>
+                <td align="center" valign="middle">&#x2212;177.20</td>
+                <td align="center" valign="middle">&#x2212;174.71</td>
+                <td align="center" valign="middle">&#x2212;174.96</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BD;[C(13)-N(17)-C(18)-C(19)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;164.74</td>
+                <td align="center" valign="middle">&#x2212;163.43</td>
+                <td align="center" valign="middle">&#x2212;164.14</td>
+                <td align="center" valign="middle">&#x2212;164.20</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B8;[N(17)-C(18)-C(19)-O(20)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">16.24</td>
+                <td align="center" valign="middle">17.08</td>
+                <td align="center" valign="middle">15.28</td>
+                <td align="center" valign="middle">16.42</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BC;[C(12)-C(13)-C(14)-N(15)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">70.94</td>
+                <td align="center" valign="middle">64.97</td>
+                <td align="center" valign="middle">72.13</td>
+                <td align="center" valign="middle">66.74</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x3BE;[C(13)-C(14)-N(15)-C(16)]</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;177.86</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;171.37</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;178.37</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;174.10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin"><bold>(<italic>S</italic>)-SAR107375</bold></td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B1;[S(1)-C(2)-C(3)-O(4)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;4.12</td>
+                <td align="center" valign="middle">&#x2212;5.85</td>
+                <td align="center" valign="middle">&#x2212;2.08</td>
+                <td align="center" valign="middle">&#x2212;0.81</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B2;[S(1)-C(2)-C(3)-N(5)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">176.91</td>
+                <td align="center" valign="middle">175.47</td>
+                <td align="center" valign="middle">178.21</td>
+                <td align="center" valign="middle">&#x2212;179.81</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B3;[C(2)-C(3)-N(5)-C(6)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;178.37</td>
+                <td align="center" valign="middle">&#x2212;169.31</td>
+                <td align="center" valign="middle">179.46</td>
+                <td align="center" valign="middle">&#x2212;172.09</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B4;[C(3)-N(5)-C(6)-C(7)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">101.01</td>
+                <td align="center" valign="middle">90.58</td>
+                <td align="center" valign="middle">115.31</td>
+                <td align="center" valign="middle">92.59</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B5;[N(5)-C(6)-C(7)-C(8)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;60.05</td>
+                <td align="center" valign="middle">&#x2212;57.45</td>
+                <td align="center" valign="middle">&#x2212;62.20</td>
+                <td align="center" valign="middle">&#x2212;59.89</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B6;[C(6)-C(7)-C(8)-N(9)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;71.35</td>
+                <td align="center" valign="middle">&#x2212;78.07</td>
+                <td align="center" valign="middle">&#x2212;73.08</td>
+                <td align="center" valign="middle">&#x2212;82.25</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B7;[C(7)-C(8)-N(9)-C(10)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">169.79</td>
+                <td align="center" valign="middle">172.87</td>
+                <td align="center" valign="middle">173.19</td>
+                <td align="center" valign="middle">177.96</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BD;[N(5)-C(6)-C(7)-N(11)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">58.89</td>
+                <td align="center" valign="middle">63.57</td>
+                <td align="center" valign="middle">56.60</td>
+                <td align="center" valign="middle">61.56</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3B8;[C(6)-C(7)-N(11)-S(12)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">106.96</td>
+                <td align="center" valign="middle">129.39</td>
+                <td align="center" valign="middle">105.71</td>
+                <td align="center" valign="middle">135.19</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BC;[C(7)-N(11)-S(12)-C(13)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">65.20</td>
+                <td align="center" valign="middle">52.66</td>
+                <td align="center" valign="middle">62.55</td>
+                <td align="center" valign="middle">53.58</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3BE;[N(11)-S(12)-C(13)-C(14)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">62.25</td>
+                <td align="center" valign="middle">61.92</td>
+                <td align="center" valign="middle">63.94</td>
+                <td align="center" valign="middle">66.16</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3C1;[C(14)-C(15)-N(16)-C(17)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">117.02</td>
+                <td align="center" valign="middle">141.33</td>
+                <td align="center" valign="middle">98.19</td>
+                <td align="center" valign="middle">113.44</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&#x3C3;[N(9)-C(8)-C(7)-N(11)]</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">168.87</td>
+                <td align="center" valign="middle">160.95</td>
+                <td align="center" valign="middle">166.80</td>
+                <td align="center" valign="middle">156.52</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">d[O(4)&#x2026;S(1)], &#xC5;</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2.9491</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2.9876</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2.9378</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2.9795</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p><sup>a</sup> For definition of dihedral angles see <xref ref-type="fig" rid="molecules-21-00185-f001">Figure 1</xref>; <sup>b</sup> Protein Data Bank. <uri>http://www.rscb.org/pdb/</uri>.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <table-wrap id="molecules-21-00185-t002" position="float">
+          <object-id pub-id-type="pii">molecules-21-00185-t002_Table 2</object-id>
+          <label>Table 2</label>
+          <caption>
+            <p>The solvent stability (water) of the drugs studied.</p>
+          </caption>
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Drug</th>
+                <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">&#x394;E<sup>CPCM</sup>, kJ/mol</th>
+                <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Gas-phase Dipole Moment, Debye (D)</th>
+              </tr>
+              <tr>
+                <th align="center" valign="middle" style="border-bottom:solid thin">B3LYP&#x2013;CPCM</th>
+                <th align="center" valign="middle" style="border-bottom:solid thin">B97D&#x2013;CPCM</th>
+                <th align="center" valign="middle" style="border-bottom:solid thin">B3LYP/6-31++g(p,d)</th>
+                <th align="center" valign="middle" style="border-bottom:solid thin">B97D/6-31++g(p,d)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">Edoxaban</td>
+                <td align="center" valign="middle">&#x2212;77.48</td>
+                <td align="center" valign="middle">&#x2212;73.67</td>
+                <td align="center" valign="middle">9.54</td>
+                <td align="center" valign="middle">9.16</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Eribaxaban</td>
+                <td align="center" valign="middle">&#x2212;75.99</td>
+                <td align="center" valign="middle">&#x2212;68.57</td>
+                <td align="center" valign="middle">1.86</td>
+                <td align="center" valign="middle">6.61</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Fidexaban</td>
+                <td align="center" valign="middle">&#x2212;90.60</td>
+                <td align="center" valign="middle">&#x2212;37.07</td>
+                <td align="center" valign="middle">3.33</td>
+                <td align="center" valign="middle">5.93</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Darexaban</td>
+                <td align="center" valign="middle">&#x2212;65.66</td>
+                <td align="center" valign="middle">&#x2212;72.67</td>
+                <td align="center" valign="middle">9.89</td>
+                <td align="center" valign="middle">11.87</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Letaxaban</td>
+                <td align="center" valign="middle">&#x2212;95.09</td>
+                <td align="center" valign="middle">&#x2212;93.43</td>
+                <td align="center" valign="middle">8.45</td>
+                <td align="center" valign="middle">7.39</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Tanogitran</td>
+                <td align="center" valign="middle">&#x2212;101.56</td>
+                <td align="center" valign="middle">&#x2212;100.15</td>
+                <td align="center" valign="middle">5.75</td>
+                <td align="center" valign="middle">5.31</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">SAR107375</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;89.02</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;79.57</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">6.74</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">4.62</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+        <sec id="sec2dot1dot1-molecules-21-00185">
+          <title>2.1.1. Edoxaban</title>
+          <p>Edoxaban (<italic>N</italic>-(5-chloropyridin-2-yl)-<italic>N</italic>&#x2032;-[(1<italic>S</italic>,2<italic>R</italic>,4<italic>S</italic>)-4-[(dimethylamino)carbonyl]-2-[[(5-methyl-4,5,6,7-tetrahydrothiazolo[5,4-c]pyridin-2-yl)carbonyl]amino]cyclohexyl]ethanediamide) is the third fXa inhibitor which was approved by the FDA in 2015 [<xref ref-type="bibr" rid="B17-molecules-21-00185">17</xref>]. Edoxaban is a flexible molecule, and its overall space arrangement is defined by 11 dihedral angles (<xref ref-type="fig" rid="molecules-21-00185-f001">Figure 1</xref>). The overall shape of its equilibrium geometry is shown on <xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>. The calculated molecular conformation of edoxaban is directed by the stereochemistry of the substituents on the central cyclohexane ring. Cyclohexane is present in the more stable chair-shaped conformation [<xref ref-type="bibr" rid="B18-molecules-21-00185">18</xref>]. Biologically active edoxaban exists as a pure diastereomer. Substituents at the chiral C-1 and C-4 carbon atoms of cyclohexane adopt the (<italic>S</italic>)<italic>-</italic>configuration and the C-2 substituents of this drug are in the (<italic>R</italic>)-conformation. In this diastereomer, the 3D structure of edoxaban, like other direct fXa inhibitors, is characterized by a unique <sc>l</sc>-shaped arrangement of the molecule. The chloropyridinyl, amide and <italic>N</italic>,<italic>N</italic>-dimethylcarbamoyl moieties are positioned linearly at the C-1 and C-4 atoms of cyclohexane. The thiazole skeleton is oriented perpendicularly to the plane of the cyclohexane ring to ensure <sc>l</sc>-shaped 3D structure of this drug (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). The 3D structure computed with B3LYP and B97D DFT functionals was almost the same with slight differences in the dihedral angles of about 2&#x2013;4&#xB0; (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). Upon solvation, the greatest changes by about 10&#xB0; were observed in the torsion angle &#x3B5;[C(6)-C(7)-N(8)-C(9)] of the chloropyridinyl moiety. (<xref ref-type="fig" rid="molecules-21-00185-f002">Figure 2</xref>).</p>
+          <fig id="molecules-21-00185-f002" position="float">
+            <label>Figure 2</label>
+            <caption>
+              <p>Molecular superimposition of the Becke3LYP optimized molecular structure of edoxaban (<inline-formula>
+        <mml:math id="mm4" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='#006600' mathvariant="bold">green</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>) and hydrated edoxaban (<inline-formula>
+        <mml:math id="mm5" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='red' mathvariant="bold">red</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>). For simplicity the hydrogen atoms are omitted.</p>
+            </caption>
+            <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00185-g002.tif"/>
+          </fig>
+        </sec>
+        <sec id="sec2dot1dot2-molecules-21-00185">
+          <title>2.1.2. Eribaxaban</title>
+          <p>(<italic>R,R</italic>)-Eribaxaban ((2R,4R)-N-(4-chlorophenyl)-N-(2-fluoro-4-(2-oxopyridin-1(2H)-yl)phenyl)-4-methoxypyrrolidine-1,2-dicarboxamide] is a proline-based fXa inhibitor discovered by Kohrt <italic>et al.</italic> [<xref ref-type="bibr" rid="B19-molecules-21-00185">19</xref>]; it entered phase II clinical trials, although its development was later disrupted in favor of apixaban [<xref ref-type="bibr" rid="B20-molecules-21-00185">20</xref>]. The pharmacologically active diastereomer of eribaxaban represents a conformation in which both substituents at the C-2 and C-4 asymmetric carbon atoms of the proline moiety are in in the form of (<italic>R</italic>)-stereoisomers. The full B3LYP optimization of this diastereomer gave the typical <sc>l</sc>-shaped 3D conformer. A rather different overall shape of this molecule resulted from the B97D calculations. The final energy minimum is fixed via two intramolecular hydrogen bonds formed by the amide moiety of the C-2 proline substituent and the neighboring methoxy and proline amide moieties (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). Thus, by intramolecular hydrogen bonds, the stabilized conformer is also retained in hydrated eribaxaban (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). The conformation of eribaxaban bound to fXa (PDB file 2PHB) differs from the gas-phase conformation and/or hydrated molecule at two points. The phenylpyridone ring is in the cavity of receptor rotated out of the amide plane by about 65&#xB0;; the B3LYP calculation predicted coplanarity of this fragment (dihedral angle &#x3B2;[C(5)-C(6)-N(7)-C(8)] = 4.2&#xB0;). The almost planar arrangement observed for the scaffold containing the chlorophenyl moiety and the proline group in bound eribaxaban is, in the isolated molecule, more relaxed to the periplanar conformation (dihedral angle &#x3B7;[C(10)-N(11)-C(12)-N(14)] = &#x2212;26&#xB0;). The structures of the isolated molecule and eribaxaban when bound to fXa (pdb code 2BJ5) are quite different (<xref ref-type="fig" rid="molecules-21-00185-f003">Figure 3</xref>). The large difference in molecular conformations of bound and unbound eribaxaban are also manifested by large energy difference, and the biologically active conformation has a substantially higher energy (640 kJ/mol, B3LYP method) in comparison with the energy of the fully optimized structure. The solvent does not appreciably change the 3D structure of unbound molecule.</p>
+          <fig id="molecules-21-00185-f003" position="float">
+            <label>Figure 3</label>
+            <caption>
+              <p>Molecular superimposition of the Becke3LYP optimized molecular structure of (<italic>R,R</italic>)-eribaxaban (<inline-formula>
+        <mml:math id="mm6" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='#006600' mathvariant="bold">green</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>), in solution optimized (<italic>R,R</italic>)-eribaxaban (<inline-formula>
+        <mml:math id="mm7" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='red' mathvariant="bold">red</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>) and (<italic>R,R</italic>)-eribaxaban from the co-crystal with coagulation factor Xa, PDB.2PHB (<inline-formula>
+        <mml:math id="mm8" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='blue' mathvariant="bold">blue</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>). For simplicity the hydrogen atoms are omitted.</p>
+            </caption>
+            <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00185-g003.tif"/>
+          </fig>
+        </sec>
+        <sec id="sec2dot1dot3-molecules-21-00185">
+          <title>2.1.3. Fidexaban</title>
+          <p>Fidexaban (<italic>N</italic>-{2-(5-carbamimidoyl-2-hydroxyphenoxy)-3,5-difluoro-6-[3-(1-methyl-4,5-dihydro-1<italic>H</italic>-imidazol-2-yl)phenoxy]-4-pyridinyl}-<italic>N</italic>-methylglycine) is a parenteral agent that was advanced to human clinical trials [<xref ref-type="bibr" rid="B21-molecules-21-00185">21</xref>,<xref ref-type="bibr" rid="B22-molecules-21-00185">22</xref>]. The enoxypyridine and phenyoxyimidazoline scaffolds are considered to be in the favored <italic>syn</italic> conformation [<xref ref-type="bibr" rid="B21-molecules-21-00185">21</xref>]. The sarcosine at C-4 of the central pyridine ring is maximally extended. The two DFT methods applied describe the molecular structure of fidexaban quite differently (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). While the skeleton containing the phenoxyimidazoline and pyridine groups was computed by the two methods to have the same general shape (the dihedral angles &#x3B1;[N(1)-C(2)-C(3)-C(4)], &#x3B2;[C(4)-C(5)-O(6)-C(7)] and &#x3B3;[C(5)-O(6)-C(7)-N(8)] were within 2&#x2013;6&#xB0;), the mutual orientation of the phenoxyamidine and sarcosine moieties was completely different. The B3LYP method predicted the most stable conformation in which these moieties are in the maximal extended position, while for the B97D structure, a bent molecule was found (the distance C(=O)O-H&#xB7;&#xB7;&#xB7;N = 1.54 &#xC5;), stabilized by means of intramolecular hydrogen bonds formed by the acidic hydrogen of the sarcosine carboxyl and the basic nitrogen atom of the phenoxyamidine group. The amidine and phenyl groups of the phenoxyamidine moiety form a dihedral angle &#x3B6;[C(12)-C(13)-C(14)-N(15)] of about 21&#xB0; (B3LYP) and 28&#xB0; (B97D). The structural arrangement around the ether bond connecting the phenoxyamidine and pyridine groups was described completely differently by the B3LYP and B97D methods (the dihedral angle &#x3B4;[N(8)-C(9)-O(10)-C(11)] of &#x2212;19.4&#xB0; (B3LYP) and &#x2212;106&#xB0; (B97D); <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). These large differences in dihedral angles obtained by two DFT methods could be partially explained by significant overestimation the dispersion in this system. The molecular geometry of hydrated fidexaban treated with the B3LYP functional changed only slightly (<xref ref-type="fig" rid="molecules-21-00185-f004">Figure 4</xref>). However, the dramatic structural rearrangement of fidexaban upon hydration occurred with the B97D functional. The B97D optimized solvated fidexaban resembled the solvated structure of this molecule computed with B3LYP (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). Accordingly, the environmental effect partially compensated overestimated dispersion interaction also manifested in the absence of the intramolecular C(=O)O-H&#xB7;&#xB7;&#xB7;N interaction in the optimized structure (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>, <xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). An analysis of crystal structure of the fidexaban-fXa complex (pdf file 1FJS) shows that the phenoxyamidine group accommodates the polar S1 pocket and the hydrophobic part of the drug&#x2019;s phenoxyimidazoline moiety is located at the hydrophobic S4 site. The final biologically active conformation of fidexaban is governed by a strong salt bridge of amidine group with Asp189 in the S1 pocket [<xref ref-type="bibr" rid="B22-molecules-21-00185">22</xref>], which results in a large conformational change to the phenylamidine scaffold of this drug upon complexation with fXa (<xref ref-type="fig" rid="molecules-21-00185-f004">Figure 4</xref>). The corresponding dihedral angles &#x3B4;[N(8)-C(9)-O(10)-C(11)] and &#x3B5;[C(9)-O(10)-C(11)-C(12)] are &#x2212;19.6&#xB0; and &#x2212;56.8&#xB0; for the complexed species and &#x2212;106&#xB0; and 9.6&#xB0; for the isolated molecule, respectively (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). The large conformational differences between conformations of unbound and bound fidexaban could be explained by the intermolecular interactions between fidexaban and receptor. The central pyridine ring represents a rigid scaffold which orients the phenoxyimidazoline moiety towards Trp215 in the S4 pocket, stabilized by an aromatic ring stacking interaction between the fidexaban and the corresponding aromatic amino acid of receptor. The biologically active conformation of fidexaban is less stable by 319 kJ/mol.</p>
+          <fig id="molecules-21-00185-f004" position="float">
+            <label>Figure 4</label>
+            <caption>
+              <p>Molecular superimposition of the Becke3LYP optimized molecular structure of fidexaban (<inline-formula>
+        <mml:math id="mm9" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='#006600' mathvariant="bold">green</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>), in solution optimized fidexaban (<inline-formula>
+        <mml:math id="mm10" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='red' mathvariant="bold">red</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>) and fidexaban from the co-crystal with coagulation factor Xa, pdb.1FJS (<inline-formula>
+        <mml:math id="mm11" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='blue' mathvariant="bold">blue</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>). For simplicity the hydrogen atoms are omitted.</p>
+            </caption>
+            <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00185-g004.tif"/>
+          </fig>
+        </sec>
+        <sec id="sec2dot1dot4-molecules-21-00185">
+          <title>2.1.4. Darexaban</title>
+          <p>Darexaban (<italic>N</italic>-(3-hydroxy-2-{[4-(4-methyl-1,4-diazepan-1-yl)benzoyl]amino}phenyl)-4-methoxybenzamide) is a novel fXa inhibitor without an amidine moiety incorporated into previous fXa inhibitors like fidexaban, otamixaban and betrixaban [<xref ref-type="bibr" rid="B23-molecules-21-00185">23</xref>]. Upon oral administration in humans, darexaban is well-absorbed from the gastrointestinal tract, with most of the absorbed drug rapidly metabolized to darexaban glucuronide (M1), the pharmacological activity of which is equipotent to unchanged darexaban [<xref ref-type="bibr" rid="B23-molecules-21-00185">23</xref>]. Its development was discontinued in September 2011 [<xref ref-type="bibr" rid="B20-molecules-21-00185">20</xref>]. Darexaban contains a central 1,2-phenylenediamide scaffold; the amide groups are for stereochemical reasons twisted out of the phenyl ring plane by about 42&#xB0; and &#x2212;55&#xB0; (B3LYP, dihedral angles &#x3B1;[C(1)-C(2)-N(3)-C(4)] and &#x3B6;[C(2)-C(12)-N(13)-C(14)], <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>), respectively. The 1,4-benzodiazepane moiety is perpendicularly oriented to the phenyl substituent, and together with 4-methoxybenzamide forms a typical U-shaped structure stabilized by means of OH&#xB7;&#xB7;&#xB7;O=C and NH&#xB7;&#xB7;&#xB7;O=C intramolecular hydrogen bonds among polar substituents on the central phenyl ring (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>, <xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). A different 3D structure resulted from the B97D calculations. The terminal 1,4-benzodiazepane and 4-methoxybenzamide groups were more twisted and closer to each other and stabilized via a OH&#xB7;&#xB7;&#xB7;O=C hydrogen bond (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). The solvent effect treated within the conductor-like polarizable continuum model (CPCM) did not significantly change the 3D structure of the isolated molecule (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>).</p>
+        </sec>
+        <sec id="sec2dot1dot5-molecules-21-00185">
+          <title>2.1.5. Letaxaban</title>
+          <p>Letaxaban (1-(1-{(2<italic>S</italic>)-3-[(6-chloro-2-naphthyl)sulfonyl]-2-hydroxypropanoyl}-4-piperidinyl)tetrahydro-2(1<italic>H</italic>)-pyrimidinone), also known as TAK-442, is a potent, selective, and orally active factor Xa inhibitor, and is a tetrahydropyrimidin-2(1<italic>H</italic>)-one derivative [<xref ref-type="bibr" rid="B24-molecules-21-00185">24</xref>]. Letaxaban was discontinued in May 2011 following disappointing phase II results [<xref ref-type="bibr" rid="B20-molecules-21-00185">20</xref>]. The 3D molecular structure computed at the B3LYP level of theory of its biologically active (<italic>S</italic>) enantiomer is shown in <xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>. Both the B3LYP and G97D functionals predicted almost the same mutual structural arrangement of basic functional groups (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). Letaxaban belongs to the relatively rigid fXa inhibitors, and its minimum energy conformer possesses the typical L-shape required for proper orientation of its terminal functional groups towards the receptor site. Regarding the isolated molecule, the hydrophobic 6-chloronaphthyl group and sulfonyl moiety are in a mutual <italic>anti</italic> arrangement (dihedral angle &#x3B1;[C(1)-C(2)-S(3)-C(4)] is about 96&#x2013;99&#xB0;, <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>), a stable conformation also found in structurally related aromatic sulfonamides [<xref ref-type="bibr" rid="B25-molecules-21-00185">25</xref>,<xref ref-type="bibr" rid="B26-molecules-21-00185">26</xref>], which orients this part of the drug perpendicularly to the rest of the molecule. The 6-chloronaphthyl group interacts by means of a hydrophobic interaction with the aromatic ring of Tyr228 in the S1 binding site. The 2-hydroxypropanoyl moiety exists in a stable periplanar conformation (the dihedral angles &#x3B4;[S(3)-C(4)-C(5)-C(7)] and &#x3B5;[C(4)-C(5)-C(7)-N(8)] are about &#x2212;167&#xB0; and 165&#xB0;, respectively).</p>
+          <p>The synclinal orientation of the hydroxyl group towards sulfonyl group (the dihedral angle &#x3B3;[S(3)-C(4)-C(5)-O(6)] is about 73&#xB0;) ensures additional hydrogen-bonded interactions of letaxaban with the nitrogen atom of the main chain Gly216 of the fXa receptor. The tetrahydropyrimidinone group is in an anticlinal position with respect to the piperidinyl ring (dihedral angle &#x3B7;[C(10)-C(11)-N(12)-C(13)]; <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>) and is involved in hydrophobic interaction with the aromatic rings of Tyr99, Phe174, and Trp215 located in the S4 site of the receptor [<xref ref-type="bibr" rid="B24-molecules-21-00185">24</xref>]. The 3D geometry of letaxaban in water, computed with the polarizable continuum method using the CPCM model, did not appreciably differ from the geometries computed for isolated molecules (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). The stable conformation letaxaban when bound at the fXa receptor (PDB file 3KL6) is close to the 3D structure of isolated drug and/or solvated conformer and only small changes in geometry upon complexation were observed (<xref ref-type="fig" rid="molecules-21-00185-f005">Figure 5</xref>), and the biologically active conformer is 96 kJ/mol less stable than the unbound structure.</p>
+          <fig id="molecules-21-00185-f005" position="float">
+            <label>Figure 5</label>
+            <caption>
+              <p>Molecular superimposition of the Becke3LYP optimized molecular structure of letaxaban (<inline-formula>
+        <mml:math id="mm1" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='#006600' mathvariant="bold">green</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>), in solution optimized letaxaban (<inline-formula>
+        <mml:math id="mm2" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='red' mathvariant="bold">red</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>) and letaxaban from the co-crystal with coagulation factor Xa, PDB.3KL6 (<inline-formula>
+        <mml:math id="mm3" display="block">
+          <mml:semantics>
+            <mml:mrow>
+              <mml:mtext mathcolor='blue' mathvariant="bold">blue</mml:mtext>
+            </mml:mrow>
+          </mml:semantics>
+        </mml:math>
+      </inline-formula>). For simplicity the hydrogen atoms are omitted.</p>
+            </caption>
+            <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00185-g005.tif"/>
+          </fig>
+        </sec>
+        <sec id="sec2dot1dot6-molecules-21-00185">
+          <title>2.1.6. Tanogitran (Dual)</title>
+          <p>Tanogitran (<italic>N</italic>-[(2<italic>R</italic>)-2-(2-{[(4-carbamimidoylphenyl)amino]methyl}-1-methyl-1<italic>H</italic>-benzimidazol-5-yl)-1-oxo-1-(1-pyrrolidinyl)-2-propanyl]glycine) is a dual inhibitor of thrombin and factor Xa. Tanogitran (FXa <italic>K</italic><sub>i</sub> = 26 nM, thrombin <italic>K</italic><sub>i</sub> = 2.7 nM [<xref ref-type="bibr" rid="B4-molecules-21-00185">4</xref>,<xref ref-type="bibr" rid="B27-molecules-21-00185">27</xref>] is a reversible dual inhibitor evaluated in phase II clinical trial studies in human model of endotoxin-induced coagulation [<xref ref-type="bibr" rid="B27-molecules-21-00185">27</xref>]. Its discovery is closely related to the development of dabigatran, a single direct oral thrombin inhibitor [<xref ref-type="bibr" rid="B7-molecules-21-00185">7</xref>]. Tanogitran, like dabigatran, contains a central substituted benzimidazole skeleton, an amino group of the linker between phenylamidine and benzimidazole rings and, at the opposite end of a molecule, a 5-propyl linker carrying aliphatic substituent glycine and pyrolidinne groups. In the absence of experimental structural data, the initial geometry of tanogitran was constructed on the basis of our previous studies of its predecessor, dabigatran [<xref ref-type="bibr" rid="B12-molecules-21-00185">12</xref>]. In the thermodynamically stable structure of the isolated molecule, the phenylamidine and pyrrolidinyl end groups are perpendicularly arranged to the plane of the central benzimidazole scaffold and oriented <italic>synperiplanar</italic>. The polar glycine part is also almost perpendicular to the benzimidazole scaffold and oppositely oriented to the pyrrolidinyl substituent (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). The amidine group of the phenylamidine substituent is twisted out of the benzene ring by about &#x2212;20&#xB0; (dihedral angle &#x3B1;[N(1)-C(2)-C(3)-C(4)], <xref ref-type="fig" rid="molecules-21-00185-f001">Figure 1</xref>). The methylamino group of the linker between phenylamidine and benzimidazole is antiperiplanar to the aromatic ring (dihedral angle &#x3B2;[ C(5)-C(6)-N(7)-C(8)] = 165.5&#xB0;, B3LYP calculation). However, the conformational structure of the molecular fragment connected by this spacer was described differently by the two DFT methods (dihedral angle &#x3B3;[C(6)-N(7)-C(8)-C(9)] is about 79&#xB0; (B3LYP) and 49&#xB0; (B97D)). Thus, in the B97D optimized geometry, the phenylamidine and pyrrolidinyl substituents were more closely oriented to each other (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). The solvent effect did not appreciably change the general shape of the molecule (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>).</p>
+        </sec>
+        <sec id="sec2dot1dot7-molecules-21-00185">
+          <title>2.1.7. SAR107375 (Dual)</title>
+          <p>SAR107375 (5-chlorothiophene-2-carboxylic acid [(S)-2-[2-methyl-3-(2-oxopyrrolidin-1-yl)benzenesulfonylamino]-3-(4-methylpiperazin-1-yl)-3-oxopropyl]amide) is a novel dual inhibitor discovered by Meneyrol <italic>et al.</italic> [<xref ref-type="bibr" rid="B28-molecules-21-00185">28</xref>]. The 3D molecular structure optimized at the B3LYP level of theory represents a sandwich arrangement of the basic 4-methylpiperazine and benzenesulfonyl amino moieties connected via an oxopropyl amide linker (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). A third substituent, chlorothiophene carboxamide, is oriented away from the molecular scaffold and forms a strong interaction in the S1 pocket of the receptor. The sulfonamide linker is in a <italic>gauche</italic> arrangement between the aromatic ring and an S-N bond (dihedral angle &#x3BE;[N(11)-S(12)-C(13)-C(14)] is about 60&#xB0;). The N-H and S=O groups are also in a mutual <italic>gauche</italic> conformation (dihedral angle &#x3BC;[C(7)-N(11)-S(12)-C(13)], <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). The unique conformation of the oxopropylamide and sulfonamide moieties (dihedral angle &#x3C3;[N(9)-C(8)-C(7)-N(11)]) is stabilized via hydrogen bond interactions of the N-H&#xB7;&#xB7;&#xB7;O=C type in an <italic>antiperiplanar</italic> arrangement (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>, <xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). The oxopyrrolidine end group and aromatic ring are in a mutual <italic>anticlinal</italic> position (dihedral angle &#x3C1;[C(14)-C(15)-N(16)-C(17)]; <xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). Almost the same equilibrium conformation of SAR107375 resulted from the geometry optimization by means of the B97D functional (<xref ref-type="table" rid="molecules-21-00185-t001">Table 1</xref>). The equilibrium structure of the thiophene amide moiety is stabilized by means of non-bonded interaction between thiophene sulfur and neighboring oxygen of 2-amide group (<xref ref-type="app" rid="app1-molecules-21-00185">Figure S1</xref>). In this molecule, the computed distance (about 2.95 &#xC5;) between non-bonded S&#xB7;&#xB7;&#xB7;O atoms of the carbonyl amido group and the thiophene ring is clearly shorter than the sum of the corresponding van der Waals radii for oxygen and sulfur atoms (3.32 &#xC5;) [<xref ref-type="bibr" rid="B29-molecules-21-00185">29</xref>]. This effect has been observed in a large number of organosulfur compounds controlling the conformation of small and large molecules [<xref ref-type="bibr" rid="B30-molecules-21-00185">30</xref>,<xref ref-type="bibr" rid="B31-molecules-21-00185">31</xref>].</p>
+        </sec>
+      </sec>
+      <sec id="sec2dot2-molecules-21-00185">
+        <title>2.2. Dissociation Constants</title>
+        <p>Several potent fXa inhibitors entered into clinical trials contain an acidic or a basic center, which may be ionized and/or protonated at physiological pH. Dissociation of a drug plays important part in both the partition and the binding of such drugs with their target enzyme. <xref ref-type="table" rid="molecules-21-00185-t003">Table 3</xref> contains the macroscopic p<italic>K</italic>a values of the studied anticoagulants. The p<italic>K</italic>a values in the condensed phase (water) were calculated using program SPARC [<xref ref-type="bibr" rid="B32-molecules-21-00185">32</xref>,<xref ref-type="bibr" rid="B33-molecules-21-00185">33</xref>]. Eribaxaban, and letaxaban are present in neutral undissociated form at pH 7.4. Edoxaban contains a basic N-5 nitrogen atom of 5-methylthiazolopyridine moiety and is partly protonated at pH 7.4. The structurally related 1,4-benzodiazepane moiety of darexaban possesses highly-basic N-4 nitrogen atom (p<italic>K</italic>a = 8.11), which is highly protonated at physiological pH. The dual inhibitor SAR107375 contains a basic methylpiperazine moiety with the N-4 nitrogen primary protonation site. The N-H group of the sulfonamide moiety is a weak acid (p<italic>K</italic>a = 8.35) slightly ionized at physiological p<italic>H</italic>. The direct fXa inhibitor fidexaban and dual fXa and thrombin inhibitor tanogitran possess both acidic (carboxyl) and basic (amidine) functionality. Both moieties are completely ionised at physiological pH and may exist, like the direct thrombin inhibitor dabigatran [<xref ref-type="bibr" rid="B12-molecules-21-00185">12</xref>], as zwitterionic structures. Clinically approved direct fXa inhibitor edoxaban exists as partially dissociated molecules at blood pH. Lipid solubility is the rate limiting factor for drugs that are neutral or mainly undissociated at pH 7.4, thus the investigation into the lipophilicity and water-solubility of fXa and fIIa inhibitors is of primary importance to facilitate the partitioning of the drug in the lipid biomembrane and into the systemic circulation [<xref ref-type="bibr" rid="B34-molecules-21-00185">34</xref>].</p>
+        <table-wrap id="molecules-21-00185-t003" position="float">
+          <object-id pub-id-type="pii">molecules-21-00185-t003_Table 3</object-id>
+          <label>Table 3</label>
+          <caption>
+            <p>The p<italic>K</italic>a values (at 25&#xB0; C) of the anticoagulants investigated (SPARC/p<italic>K</italic>a).</p>
+          </caption>
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Drug</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">p<italic>K</italic>a</th>
+                <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">p<italic>K</italic>a</th>
+                <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">% Ionized Form</th>
+              </tr>
+              <tr>
+                <th align="center" valign="middle" style="border-bottom:solid thin">Exp.</th>
+                <th align="center" valign="middle" style="border-bottom:solid thin">Acid Function <sup>a</sup></th>
+                <th align="center" valign="middle" style="border-bottom:solid thin">Basic Function <sup>b</sup></th>
+                <th align="center" valign="middle" style="border-bottom:solid thin">Acid Function</th>
+                <th align="center" valign="middle" style="border-bottom:solid thin">Basic Function</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">Edoxaban</td>
+                <td align="center" valign="middle">6.7 (FDA label) <sup>c</sup></td>
+                <td align="center" valign="middle">11.08</td>
+                <td align="center" valign="middle">7.23</td>
+                <td align="center" valign="middle">0</td>
+                <td align="center" valign="middle">40</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Eribaxaban</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">9.04</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">2</td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Fidexaban</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">3.54</td>
+                <td align="center" valign="middle">12.28</td>
+                <td align="center" valign="middle">100</td>
+                <td align="center" valign="middle">100</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Darexaban</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">8.76</td>
+                <td align="center" valign="middle">8.11</td>
+                <td align="center" valign="middle">4</td>
+                <td align="center" valign="middle">83</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Letaxaban</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">12.93</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">0</td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Tanogitran</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">1.98</td>
+                <td align="center" valign="middle">11.53</td>
+                <td align="center" valign="middle">100</td>
+                <td align="center" valign="middle">100</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">SAR107375</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">8.35</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">6.52</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">10</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">11</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p><sup>a</sup> most acidic; <sup>b</sup> most basic; <sup>c</sup> more details are in Drug Bank [<xref ref-type="bibr" rid="B35-molecules-21-00185">35</xref>].</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+      </sec>
+      <sec id="sec2dot3-molecules-21-00185">
+        <title>2.3. Lipophilicity and Solubility</title>
+        <p>The direct fXa and fIIa inhibitors, as well as their dual derivatives, were designed on the basis of knowing the basic molecular features of the target proteins. The two most important binding sites (S1 and S4) are hydrophobic in nature (S1 is a deep cleft and S4 is a strongly hydrophobic pocket), thus it is important to know the lipophilicity of designed inhibitors. The calculated log <italic>P</italic> and log <italic>S</italic> values using the ALOGPS 2.1 program are shown in <xref ref-type="table" rid="molecules-21-00185-t004">Table 4</xref>. The lipophilicity predictions within this program are based on the use of E-state indicies and on the associative neural network approach [<xref ref-type="bibr" rid="B36-molecules-21-00185">36</xref>]. As it is shown previously [<xref ref-type="bibr" rid="B11-molecules-21-00185">11</xref>,<xref ref-type="bibr" rid="B12-molecules-21-00185">12</xref>], this method performs quite well by predictions of experimentally known log <italic>P</italic> values of anticoagulants. A trend in calculated compound lipophilicity was observed: it was lowest for the dual inhibitors tanogitran and SAR107375 and increased for the clinically approved fXa inhibitor edoxaban. The experimental direct fXa inhibitors eribaxaban, fidexaban, and darexaban possess greater lipophilicity. However, their development was later disrupted. Fidexaban, darexaban, and tanogitran are almost completely ionized at pH 7.4 (<xref ref-type="table" rid="molecules-21-00185-t003">Table 3</xref>). For drugs with ionizable functional groups, the effective lipophilicity is depends on pH, and the distribution coefficient log <italic>D</italic> will be different from log <italic>P</italic>. The log <italic>D</italic> values, calculated from the predicted log <italic>P</italic> (ALOGP method) and p<italic>K</italic>a (Sparc) using the equation log <italic>D</italic> = log <italic>P</italic> &#x2212; log (1 + 10<sup>pH&#x2212;p<italic>K</italic>a</sup>) for acids and log <italic>D</italic> = log <italic>P</italic> &#x2212; log (1 + 10<sup>p<italic>K</italic>a&#x2212;pH</sup>) for bases [<xref ref-type="bibr" rid="B37-molecules-21-00185">37</xref>], are also presented in <xref ref-type="table" rid="molecules-21-00185-t004">Table 4</xref>. The calculated log<italic>D</italic><sub>7.4</sub> values for the ionizable drugs were substantially lower. Aqueous solubility <italic>S</italic> is one of tne most important facors, which has impact on pharmacokinetic properties of oral drugs. The computed log <italic>S</italic> (the intrinsic solubility in the neutral state), is a measure of a drug&#x2019;s solubility (<italic>S</italic>). The studied anticoagulants were slightly soluble in water; nevertheless their computed solubility, between 7 and 200 mg/L, is enough for fast absorption (<xref ref-type="table" rid="molecules-21-00185-t004">Table 4</xref> and <xref ref-type="table" rid="molecules-21-00185-t005">Table 5</xref>). Fidexaban and tanogitran contain polar benzamidine and a carboxylate groups and in aqueous solution exhibit amphoteric properties. Because of their zwitterionic character, and log <italic>D</italic><sub>7.4</sub> = &#x2212;0.79 and &#x2212;3.84, they have no appreciable bioavailability after oral application.</p>
+        <table-wrap id="molecules-21-00185-t004" position="float">
+          <object-id pub-id-type="pii">molecules-21-00185-t004_Table 4</object-id>
+          <label>Table 4</label>
+          <caption>
+            <p>Calculated lipophilicity (log <italic>P</italic>) and solubility (log <italic>S</italic>) of the anticoagulants studied.</p>
+          </caption>
+          <table>
+            <thead>
+              <tr>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Drug</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">ALOGPS</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Log <italic>D</italic>, (pH = 7.4)</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">ALOGPS, Solubility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">Edoxaban</td>
+                <td align="center" valign="middle">1.61</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;4.68 (11.4 mg/L)</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Eribaxaban</td>
+                <td align="center" valign="middle">3.35</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;4.83 (7.2 mg/L)</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Fidexaban</td>
+                <td align="center" valign="middle">3.07</td>
+                <td align="center" valign="middle">&#x2212;0.79</td>
+                <td align="center" valign="middle">&#x2212;4.34 (24.2 mg/L)</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Darexaban</td>
+                <td align="center" valign="middle">4.03</td>
+                <td align="center" valign="middle">3.24</td>
+                <td align="center" valign="middle">&#x2212;4.21 (29.1 mg/L)</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Letaxaban</td>
+                <td align="center" valign="middle">1.55</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle">&#x2212;3.34 (0.2 g/L)</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Tanogitran</td>
+                <td align="center" valign="middle">1.58</td>
+                <td align="center" valign="middle">&#x2212;3.84</td>
+                <td align="center" valign="middle">&#x2212;3.54 (0.14 g/L)</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">SAR107375</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.15</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin"> </td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;4.42 (21.4 mg/L)</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+        <table-wrap id="molecules-21-00185-t005" position="float">
+          <object-id pub-id-type="pii">molecules-21-00185-t005_Table 5</object-id>
+          <label>Table 5</label>
+          <caption>
+            <p>Calculated absorption (%ABS), polar surface area (PSA) and Lipinski parameters of the anticoagulants studied.</p>
+          </caption>
+          <table>
+            <thead>
+              <tr>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Drug</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">%ABS</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Volume</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">PSA</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">NROTB</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin"><italic>n</italic> ON Acceptors</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin"><italic>n</italic> OHNH Donors</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Formula Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">Edoxaban</td>
+                <td align="center" valign="middle">61.9</td>
+                <td align="center" valign="middle">469.39</td>
+                <td align="center" valign="middle">136.62</td>
+                <td align="center" valign="middle">6</td>
+                <td align="center" valign="middle">11 <sup>a</sup></td>
+                <td align="center" valign="middle">3</td>
+                <td align="center" valign="middle">548.07 <sup>a</sup></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Eribaxaban</td>
+                <td align="center" valign="middle">77.0</td>
+                <td align="center" valign="middle">407.20</td>
+                <td align="center" valign="middle">92.67</td>
+                <td align="center" valign="middle">5</td>
+                <td align="center" valign="middle">8</td>
+                <td align="center" valign="middle">2</td>
+                <td align="center" valign="middle">484.91</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Fidexaban</td>
+                <td align="center" valign="middle">54.6</td>
+                <td align="center" valign="middle">440.66</td>
+                <td align="center" valign="middle">157.60</td>
+                <td align="center" valign="middle">9</td>
+                <td align="center" valign="middle">11 <sup>a</sup></td>
+                <td align="center" valign="middle">5</td>
+                <td align="center" valign="middle">526.55 <sup>a</sup></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Darexaban</td>
+                <td align="center" valign="middle">76.5</td>
+                <td align="center" valign="middle">438.49</td>
+                <td align="center" valign="middle">94.13</td>
+                <td align="center" valign="middle">6</td>
+                <td align="center" valign="middle">8</td>
+                <td align="center" valign="middle">3</td>
+                <td align="center" valign="middle">474.61</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Letaxaban</td>
+                <td align="center" valign="middle">72.1</td>
+                <td align="center" valign="middle">403.34</td>
+                <td align="center" valign="middle">107.02</td>
+                <td align="center" valign="middle">5</td>
+                <td align="center" valign="middle">8</td>
+                <td align="center" valign="middle">2</td>
+                <td align="center" valign="middle">479.99</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Tanogitran</td>
+                <td align="center" valign="middle">57.5</td>
+                <td align="center" valign="middle">437.41</td>
+                <td align="center" valign="middle">149.36</td>
+                <td align="center" valign="middle">9</td>
+                <td align="center" valign="middle">10</td>
+                <td align="center" valign="middle">6 <sup>a</sup></td>
+                <td align="center" valign="middle">477.57</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">SAR107375</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">67.9</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">473.92</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">119.12</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">8</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">10</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">2</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">568.18 <sup>a</sup></td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p><sup>a</sup> Violation of the Rule of Five (Mw <italic>&gt;</italic> 500).</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+      </sec>
+      <sec id="sec2dot4-molecules-21-00185">
+        <title>2.4. Absorption, Polar Surface Area, and &#x201C;Rule of Five&#x201D; Properties</title>
+        <p>The studied anticoagulants were developed for oral administration, which is associated with high patient compliance. However, low intestinal absorption of designed anticoagulants may limit their clinical application [<xref ref-type="bibr" rid="B38-molecules-21-00185">38</xref>]. Properties of drugs, such as membrane permeability or bioavailability, have often been related to molecular parameters such as molecular weight (<italic>MW</italic>), lipophilicity (log <italic>P</italic>), or counts of hydrogen bond acceptors and donors in a molecule. Orally absorbed novel anticoagulants tend to obey &#x201C;Rule of Five&#x201D; properties designed by Lipinski <italic>et al.</italic> [<xref ref-type="bibr" rid="B39-molecules-21-00185">39</xref>]. This guideline is frequently used as a filter for drug-like properties. The calculated molecular descriptors (percentages of absorption (%ABS), molecular polar surface areas (PSA) and Lipinski parameters) are shown in <xref ref-type="table" rid="molecules-21-00185-t005">Table 5</xref>. The magnitude of absorption is expressed by the percentage of absorption, which was evaluated according to the expression: %ABS = 109 &#x2212; 0.345 PSA [<xref ref-type="bibr" rid="B40-molecules-21-00185">40</xref>]. The PSA was calculated by the fragment-based method of Ertl and coworkers [<xref ref-type="bibr" rid="B41-molecules-21-00185">41</xref>]. Edoxaban, fidexaban, and SAR107375 violated the &#x201C;rule of five&#x201D; (the molecular weight is too high), tanogitran, edoxaban and fidexaban also exhibited hydrogen bonding capacity over the limit, which is closely related to their highly polar character expressed by the large polar surface area of the studied drugs (<xref ref-type="table" rid="molecules-21-00185-t005">Table 5</xref>). Fidexaban and tanogitran contain the highly basic arginine mimetic amidine group as the P1 moiety, which contributes to their poor oral bioavailability (<xref ref-type="table" rid="molecules-21-00185-t005">Table 5</xref>). For the dual inhibitors tanogitran and SAR107375, the higher number of rotatable bonds in comparison with the clinically useful fXa inhibitors apixaban and rivaroxaban [<xref ref-type="bibr" rid="B11-molecules-21-00185">11</xref>] impart higher conformational flexibility, enabling their interaction at the fXa and thrombin interaction sites in different conformations. Edoxaban, with a large polar surface area (136.62), may have worse absorption in comparison with rivaroxaban and apixaban [<xref ref-type="bibr" rid="B11-molecules-21-00185">11</xref>]. Despite tremendous efforts connected with their discovery, the clinical development of eribaxaban, fidexaban, darexaban, and letaxaban has recently been halted [<xref ref-type="bibr" rid="B20-molecules-21-00185">20</xref>,<xref ref-type="bibr" rid="B42-molecules-21-00185">42</xref>]. The direct thrombin and fXa inhibitor tanogitran is a very flexible molecule with high total number of proton acceptor and proton donor groups (16), high PSA (149) and low absorption (<xref ref-type="table" rid="molecules-21-00185-t005">Table 5</xref>). It contains, like the direct thrombin inhibitor dabigatran [<xref ref-type="bibr" rid="B12-molecules-21-00185">12</xref>], ionizable acidic and basic functional groups, and under physiological conditions is present in the form of a charged species. Ionization of acidic or basic groups and the high PSA of tanogitran are not compatible with its oral application and tanogitran is not orally bioavailable. The dual inhibitor SAR107375 represents an improvement in structural, physicochemical and pharmacokinetic characteristics over tanogitran. At blood p<italic>H</italic>, SAR107375 predominantly exists in neutral form (<xref ref-type="table" rid="molecules-21-00185-t003">Table 3</xref>). In contrast to tanogitran, it is better absorbed and more lipophilic and active after oral application (<xref ref-type="table" rid="molecules-21-00185-t005">Table 5</xref>).</p>
+      </sec>
+      <sec id="sec2dot5-molecules-21-00185">
+        <title>2.5. Selection Criteria for Drug-Like Properties of fXa Inhibitors</title>
+        <p>Extensive screening programs in medicinal chemistry offered large number of structurally different and novel direct fXa inhibitors with biochemical activity in nano molar range. However, the discovery of a clinically useful fXa inhibitor is a very difficult task because different physicochemical properties are needed for either the interaction of an inhibitor to the active site of fXa or its absorption from the gastrointestinal tract. <xref ref-type="table" rid="molecules-21-00185-t006">Table 6</xref> includes important molecular descriptors and measured binding affinities of 11 fXa inhibitors entered various stages of clinical trials. This Table includes two parenteral agents DX9065a and otamixaban, as well as, several orally active direct FXa inhibitors. </p>
+        <table-wrap id="molecules-21-00185-t006" position="float">
+          <object-id pub-id-type="pii">molecules-21-00185-t006_Table 6</object-id>
+          <label>Table 6</label>
+          <caption>
+            <p>Calculated molecular descriptors and experimental biochemical activity (<italic>K</italic>i) of the novel anticoagulants.</p>
+          </caption>
+          <table>
+            <thead>
+              <tr>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Drug</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">%ABS</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Volume &#xC5;<sup>3</sup></th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">PSA &#xC5;<sup>2</sup></th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Clog <italic>S</italic></th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Clog <italic>P</italic></th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Formula Weight, Da</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin"><italic>K</italic>i <sup>b</sup>, nmol/L</th>
+                <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Bioavailability <sup>c</sup> %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">Rivaroxaban <sup>a</sup></td>
+                <td align="center" valign="middle">77.8</td>
+                <td align="center" valign="middle">351.74</td>
+                <td align="center" valign="middle">88.18</td>
+                <td align="center" valign="middle">&#x2212;4.64</td>
+                <td align="center" valign="middle">1.74</td>
+                <td align="center" valign="middle">435.89</td>
+                <td align="center" valign="middle">0.4</td>
+                <td align="center" valign="middle">80</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Apixaban <sup>a</sup></td>
+                <td align="center" valign="middle">69.8</td>
+                <td align="center" valign="middle">406.55</td>
+                <td align="center" valign="middle">110.77</td>
+                <td align="center" valign="middle">&#x2212;3.83</td>
+                <td align="center" valign="middle">2.23</td>
+                <td align="center" valign="middle">459.51</td>
+                <td align="center" valign="middle">0.08</td>
+                <td align="center" valign="middle">50</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Otamixaban <sup>a</sup></td>
+                <td align="center" valign="middle">62.7</td>
+                <td align="center" valign="middle">407.73</td>
+                <td align="center" valign="middle">130.73</td>
+                <td align="center" valign="middle">&#x2212;5.35</td>
+                <td align="center" valign="middle">2.12</td>
+                <td align="center" valign="middle">446.51</td>
+                <td align="center" valign="middle">0.4</td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Betrixaban <bold><sup>a</sup></bold></td>
+                <td align="center" valign="middle">70.1</td>
+                <td align="center" valign="middle">392.76</td>
+                <td align="center" valign="middle">107.41</td>
+                <td align="center" valign="middle">&#x2212;4.44</td>
+                <td align="center" valign="middle">2.86</td>
+                <td align="center" valign="middle">451.91</td>
+                <td align="center" valign="middle">0.117</td>
+                <td align="center" valign="middle">47</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Razaxaban <sup>a</sup></td>
+                <td align="center" valign="middle">66.5</td>
+                <td align="center" valign="middle">423.70</td>
+                <td align="center" valign="middle">120.04</td>
+                <td align="center" valign="middle">&#x2212;4.07</td>
+                <td align="center" valign="middle">3.90</td>
+                <td align="center" valign="middle">528.47 (viol.)</td>
+                <td align="center" valign="middle">0.19</td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">DX-9065a <sup>a</sup></td>
+                <td align="center" valign="middle">65.3</td>
+                <td align="center" valign="middle">410.68</td>
+                <td align="center" valign="middle">123.50</td>
+                <td align="center" valign="middle">&#x2212;4.49</td>
+                <td align="center" valign="middle">2.61</td>
+                <td align="center" valign="middle">444.53</td>
+                <td align="center" valign="middle">41</td>
+                <td align="center" valign="middle">3</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Edoxaban</td>
+                <td align="center" valign="middle">61.9</td>
+                <td align="center" valign="middle">469.39</td>
+                <td align="center" valign="middle">136.62</td>
+                <td align="center" valign="middle">&#x2212;4.68</td>
+                <td align="center" valign="middle">1.61</td>
+                <td align="center" valign="middle">548.07 (viol.)</td>
+                <td align="center" valign="middle">0.56</td>
+                <td align="center" valign="middle">62</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Eribaxaban</td>
+                <td align="center" valign="middle">77.0</td>
+                <td align="center" valign="middle">407.20</td>
+                <td align="center" valign="middle">92.67</td>
+                <td align="center" valign="middle">&#x2212;4.83</td>
+                <td align="center" valign="middle">3.35</td>
+                <td align="center" valign="middle">484.91</td>
+                <td align="center" valign="middle">0.32</td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Fidexaban</td>
+                <td align="center" valign="middle">54.6</td>
+                <td align="center" valign="middle">440.66</td>
+                <td align="center" valign="middle">157.60</td>
+                <td align="center" valign="middle">&#x2212;4.34</td>
+                <td align="center" valign="middle">3.07</td>
+                <td align="center" valign="middle">526.55 (viol)</td>
+                <td align="center" valign="middle">0.11</td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Darexaban</td>
+                <td align="center" valign="middle">76.5</td>
+                <td align="center" valign="middle">438.49</td>
+                <td align="center" valign="middle">94.13</td>
+                <td align="center" valign="middle">&#x2212;4.21</td>
+                <td align="center" valign="middle">4.03</td>
+                <td align="center" valign="middle">474.61</td>
+                <td align="center" valign="middle">31</td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" style="border-bottom:solid thin">Letaxaban</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">72.1</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">403.34</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">107.02</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">&#x2212;3.34</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.55</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">479.99</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">1.8</td>
+                <td align="center" valign="middle" style="border-bottom:solid thin">50</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p><sup>a</sup> Reference [<xref ref-type="bibr" rid="B11-molecules-21-00185">11</xref>]; <sup>b</sup> BindingDB database [<xref ref-type="bibr" rid="B43-molecules-21-00185">43</xref>] and PDBbind-CN Database [<xref ref-type="bibr" rid="B44-molecules-21-00185">44</xref>]; <sup>c</sup> Experimental bioavailability, references [<xref ref-type="bibr" rid="B45-molecules-21-00185">45</xref>,<xref ref-type="bibr" rid="B46-molecules-21-00185">46</xref>,<xref ref-type="bibr" rid="B47-molecules-21-00185">47</xref>].</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>Three inhibitors approved for clinical use (apixaban, rivaroxaban and edoxaban) exhibit different physicochemical characteristics and also different absorption. The experimental bioavailability for oral drugs is different, but very high [<xref ref-type="bibr" rid="B45-molecules-21-00185">45</xref>,<xref ref-type="bibr" rid="B46-molecules-21-00185">46</xref>,<xref ref-type="bibr" rid="B47-molecules-21-00185">47</xref>]. Within the limits of the examined property space, and with the exception of edoxaban, the percentage of experimental bioavailability seems to somehow correlate with calculated absorption (%ABS, <xref ref-type="table" rid="molecules-21-00185-t006">Table 6</xref>). Computed molecular descriptors of these drugs were also used to determine selection criteria for drug-likeness of compounds (<xref ref-type="table" rid="molecules-21-00185-t007">Table 7</xref>). Molecular weight, lipophilicity and solubility, together with the conformational structure discussed in the <xref ref-type="sec" rid="sec2dot1-molecules-21-00185">Section 2.1</xref>, represent important physicochemical properties of drug-like fXa inhibitors. The inflated size of molecules results in molecular weight frequently violating the &#x201C;rule of five&#x201D;. The lipophilicity within a range of log <italic>P</italic> between 1 and 4, and solubility log <italic>S</italic> between &#x2212;3 and &#x2212;5, to ensure optimal physicochemical properties [<xref ref-type="bibr" rid="B48-molecules-21-00185">48</xref>,<xref ref-type="bibr" rid="B49-molecules-21-00185">49</xref>], and correspond well to the absence of importance of the hydrophobic effect determined from QSAR studies [<xref ref-type="bibr" rid="B49-molecules-21-00185">49</xref>]. Polar surface area, owing to a structurally heterogeneous character of inhibitors, is from relatively large interval of values (<xref ref-type="table" rid="molecules-21-00185-t007">Table 7</xref>). Drugs like rivaroxaban, apixaban, darexaban, eribaxan, letaxaban and betrixaban with lowest PSA values exhibit largest absorption.</p>
+        <table-wrap id="molecules-21-00185-t007" position="float">
+          <object-id pub-id-type="pii">molecules-21-00185-t007_Table 7</object-id>
+          <label>Table 7</label>
+          <caption>
+            <p>Drug-like properties of the novel direct fxa inhibitors.</p>
+          </caption>
+          <table>
+            <tbody>
+              <tr>
+                <td align="left" valign="middle" style="border-top:solid thin">Molecular Weight</td>
+                <td align="left" valign="middle" style="border-top:solid thin">430&#x2013;550</td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle">Octanol/water partition coefficient (clog <italic>P</italic>)</td>
+                <td align="left" valign="middle">1&#x2013;4</td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle">Aqueous solubility (clog <italic>S</italic>)</td>
+                <td align="left" valign="middle">(&#x2212;3.3)&#x2013;(&#x2212;5.3)</td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle">Polar surface area (PSA, &#xC5;<sup>2</sup>)</td>
+                <td align="left" valign="middle">90&#x2013;160</td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle">Volume (Vol, &#xC5;<sup>3</sup>)</td>
+                <td align="left" valign="middle">350&#x2013;470</td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle" style="border-bottom:solid thin">Percent of oral absorption (%ABS)</td>
+                <td align="left" valign="middle" style="border-bottom:solid thin">55&#x2013;76</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+      </sec>
+    </sec>
+    <sec id="sec3-molecules-21-00185">
+      <title>3. Computational Details</title>
+      <p>Density functional theory (DFT) [<xref ref-type="bibr" rid="B50-molecules-21-00185">50</xref>] calculations of edoxaban, eribaxaban, fidexaban, darexaban (YM150), letaxaban (TAK-442), tanogitran and SAR107375, (<xref ref-type="fig" rid="molecules-21-00185-f001">Figure 1</xref>) were carried out with the Gaussian 09 computer code [<xref ref-type="bibr" rid="B51-molecules-21-00185">51</xref>] employing the Becke3LYP [<xref ref-type="bibr" rid="B52-molecules-21-00185">52</xref>,<xref ref-type="bibr" rid="B53-molecules-21-00185">53</xref>,<xref ref-type="bibr" rid="B54-molecules-21-00185">54</xref>], Grimme&#x2019;s B97D [<xref ref-type="bibr" rid="B16-molecules-21-00185">16</xref>] functionals and using 6-31++G(d,p) basis set [<xref ref-type="bibr" rid="B55-molecules-21-00185">55</xref>]. The geometry optimization calculations of these drugs were also investigated in aqueous solution. The hydration free energy was computed using the polarizable continuum method within conductor-like polarizable continuum model (CPCM) [<xref ref-type="bibr" rid="B56-molecules-21-00185">56</xref>]. Lipophilicity and water solubility calculations were carried out using web-based VCCLAB [<xref ref-type="bibr" rid="B36-molecules-21-00185">36</xref>]. Calculations of macroscopic p<italic>K</italic>a were carried out by means of the program SPARC [<xref ref-type="bibr" rid="B33-molecules-21-00185">33</xref>] developed by Carreira <italic>et al.</italic> [<xref ref-type="bibr" rid="B32-molecules-21-00185">32</xref>]. For calculations of molecular volume and polar surface area, the fragment-based method of Ertl and coworkers [<xref ref-type="bibr" rid="B41-molecules-21-00185">41</xref>] was used.</p>
+    </sec>
+    <sec id="sec4-molecules-21-00185" sec-type="conclusions">
+      <title>4. Conclusions</title>
+      <p>In conclusion, the data presented in this theoretical study were able to determine the stable conformations, solvent effect, acidity, lipophilicity, solubility, absorption, and polar surface area of seven direct fXa inhibitors and two dual fXa and thrombin inhibitors for which a relatively small amount of experimental physicochemical data exist, considering their pharmacological importance. Using theoretical methods, the following conclusions can be drawn.
+	  <list list-type="roman-lower">
+      <list-item><label>i)</label><p>The fully optimized most stable conformers of these drugs possess a characteristic <sc>l</sc>-shaped structure. Examination of the spatial models of the B3LYP and B97D optimized structures indicated that the equilibrium geometries computed using the B3LYP and B97D functionals are in some cases different.</p></list-item>
+      <list-item><label>ii)</label><p>Water had a remarkable effect on the geometry of the studied anticoagulants. The anticoagulant drugs exhibit considerable stability in this solvent, as expected.</p></list-item>
+      <list-item><label>iii)</label><p>Eribaxaban, and letaxaban are present in neutral undissociated form at pH 7.4. Fidexaban and tanogitran exist as zwitterionic structures.</p></list-item>
+      <list-item><label>iv)</label><p>A trend in the compound lipophilicity was also observed. It is lowest for the dual inhibitors tanogitran and SAR107375 and increase for the clinically approved fXa inhibitor edoxaban.</p></list-item>
+      <list-item><label>v)</label><p>The studied anticoagulants were only slightly soluble in water, but their computed solubility between 7 and 200 mg/L is sufficient for fast absorption.</p></list-item>
+      <list-item><label>vi)</label><p>The dual inhibitor SAR107375 represents an improvement in structural, physicochemical and pharmacokinetic characteristics over tanogitran. At blood p<italic>H</italic>, SAR107375 predominantly exists in neutral form. In contrast to tanogitran, it is better absorbed and more lipophilic and active after oral application.</p></list-item></list></p>
+    </sec>
+  </body>
+  <back>
+  <app-group>
+    <app id="app1-molecules-21-00185">
+      <title>Supplementary Materials</title>
+	  <supplementary-material id="molecules-21-00185-s001" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00185-s001.pdf">
+    </supplementary-material>
+      <p>The following are available online at: <uri>http://www.mdpi.com/1420-3049/21/2/185/s1</uri>. Figure S1: The geometries of the drugs studied. Molecule figures were generated using Mercury software., Table S1: Cartesian coordinates (&#xC5;) of the anticoagulants investigated, optimized at the B3LYP/6-31++G(d,p) level of the density functional theory.</p>
+    </app>
+    </app-group>
+    <ack>
+      <title>Acknowledgments</title>
+      <p>This work was supported by Medical Research Grant sponsored by Pfizer Slovakia (M.R. and A.R.).</p>
+    </ack>
+    <notes>
+      <title>Author Contributions</title>
+      <p>M.R. carried out the computational study and wrote this paper, A.R. and R.B. revised this paper. All authors have read and approved the final manuscript.</p>
+    </notes>
+    <notes>
+      <title>Conflicts of Interest</title>
+      <p>The authors declare no conflict of interest.</p>
+    </notes>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1-molecules-21-00185">
+        <label>1.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Vermeer</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Schurgers</surname>
+              <given-names>L.J.</given-names>
+            </name>
+          </person-group>
+          <article-title>A comprehensive review of vitamin K and vitamin K antagonists</article-title>
+          <source>Hematol. Oncol. Clin. N. Am.</source>
+          <year>2000</year>
+          <volume>14</volume>
+          <fpage>339</fpage>
+          <lpage>353</lpage>
+        </citation>
+      </ref>
+      <ref id="B2-molecules-21-00185">
+        <label>2.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Becattini</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Vedovati</surname>
+              <given-names>M.C.</given-names>
+            </name>
+            <name>
+              <surname>Agnelli</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Old and new oral anticoagulants for venous thromboembolism and atrial fibrillation: A review of the literature</article-title>
+          <source>Thromb. Res.</source>
+          <year>2012</year>
+          <volume>129</volume>
+          <fpage>392</fpage>
+          <lpage>400</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.thromres.2011.12.014</pub-id>
+          <pub-id pub-id-type="pmid">22264937</pub-id>
+        </citation>
+      </ref>
+      <ref id="B3-molecules-21-00185">
+        <label>3.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Scaglione</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <article-title>New oral anticoagulants: Comparative pharmacology with vitamin K antagonists</article-title>
+          <source>Clin. Pharmacokinet.</source>
+          <year>2013</year>
+          <volume>52</volume>
+          <fpage>69</fpage>
+          <lpage>82</lpage>
+          <pub-id pub-id-type="doi">10.1007/s40262-012-0030-9</pub-id>
+          <pub-id pub-id-type="pmid">23292752</pub-id>
+        </citation>
+      </ref>
+      <ref id="B4-molecules-21-00185">
+        <label>4.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pinto</surname>
+              <given-names>D.J.P.</given-names>
+            </name>
+            <name>
+              <surname>Smallheer</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Cheney</surname>
+              <given-names>D.L.</given-names>
+            </name>
+            <name>
+              <surname>Knabb</surname>
+              <given-names>R.M.</given-names>
+            </name>
+            <name>
+              <surname>Wexler</surname>
+              <given-names>R.R.</given-names>
+            </name>
+          </person-group>
+          <article-title>Factor Xa inhibitors: Next-generation antithrombotic agents</article-title>
+          <source>J. Med. Chem.</source>
+          <year>2010</year>
+          <volume>53</volume>
+          <fpage>6243</fpage>
+          <lpage>6274</lpage>
+          <pub-id pub-id-type="pmid">20503967</pub-id>
+        </citation>
+      </ref>
+      <ref id="B5-molecules-21-00185">
+        <label>5.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Levy</surname>
+              <given-names>J.H.</given-names>
+            </name>
+            <name>
+              <surname>Spyropoulos</surname>
+              <given-names>A.C.</given-names>
+            </name>
+            <name>
+              <surname>Samama</surname>
+              <given-names>C.M.</given-names>
+            </name>
+            <name>
+              <surname>Douketis</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Direct oral anticoagulants: New drugs and new concepts</article-title>
+          <source>JACC Cardiovasc. Interv.</source>
+          <year>2014</year>
+          <volume>7</volume>
+          <fpage>1333</fpage>
+          <lpage>1351</lpage>
+          <pub-id pub-id-type="pmid">25523529</pub-id>
+        </citation>
+      </ref>
+      <ref id="B6-molecules-21-00185">
+        <label>6.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schwienhorst</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Direct thrombin inhibitors&#x2014;A survey of recent developments</article-title>
+          <source>Cell. Mol. Life Sci.</source>
+          <year>2006</year>
+          <volume>63</volume>
+          <fpage>2773</fpage>
+          <lpage>2791</lpage>
+          <pub-id pub-id-type="pmid">17103113</pub-id>
+        </citation>
+      </ref>
+      <ref id="B7-molecules-21-00185">
+        <label>7.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Graefe-Mody</surname>
+              <given-names>E.U.</given-names>
+            </name>
+            <name>
+              <surname>Sch&#xFC;hly</surname>
+              <given-names>U.</given-names>
+            </name>
+            <name>
+              <surname>Rathgen</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>St&#xE4;hle</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Leitner</surname>
+              <given-names>M.J.</given-names>
+            </name>
+            <name>
+              <surname>Jilma</surname>
+              <given-names>B.</given-names>
+            </name>
+          </person-group>
+          <article-title>Pharmacokinetics and pharmacodynamics of BIBT 986, a novel small molecule dual inhibitor of thrombin and factor Xa</article-title>
+          <source>J. Thromb. Haemost.</source>
+          <year>2006</year>
+          <volume>4</volume>
+          <fpage>1502</fpage>
+          <lpage>1509</lpage>
+          <pub-id pub-id-type="doi">10.1111/j.1538-7836.2006.02020.x</pub-id>
+          <pub-id pub-id-type="pmid">16839346</pub-id>
+        </citation>
+      </ref>
+      <ref id="B8-molecules-21-00185">
+        <label>8.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>He</surname>
+              <given-names>L.W.</given-names>
+            </name>
+            <name>
+              <surname>Dai</surname>
+              <given-names>W.Ch.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>N.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Development of orally active thrombin inhibitors for the treatment of thrombotic disorder diseases</article-title>
+          <source>Molecules</source>
+          <year>2015</year>
+          <volume>20</volume>
+          <fpage>11046</fpage>
+          <lpage>11062</lpage>
+          <pub-id pub-id-type="doi">10.3390/molecules200611046</pub-id>
+          <pub-id pub-id-type="pmid">26083038</pub-id>
+        </citation>
+      </ref>
+      <ref id="B9-molecules-21-00185">
+        <label>9.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Giardino</surname>
+              <given-names>E.C.</given-names>
+            </name>
+            <name>
+              <surname>Haertlein</surname>
+              <given-names>B.J.</given-names>
+            </name>
+            <name>
+              <surname>de Garavilla</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Costanzo</surname>
+              <given-names>M.J.</given-names>
+            </name>
+            <name>
+              <surname>Damiano</surname>
+              <given-names>B.P.</given-names>
+            </name>
+            <name>
+              <surname>Andrade-Gordon</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Maryanoff</surname>
+              <given-names>B.E.</given-names>
+            </name>
+          </person-group>
+          <article-title>Cooperative antithrombotic effect from the simultaneous inhibition of thrombin and factor Xa</article-title>
+          <source>Blood Coagul. Fibrinol.</source>
+          <year>2010</year>
+          <volume>21</volume>
+          <fpage>128</fpage>
+          <lpage>134</lpage>
+        </citation>
+      </ref>
+      <ref id="B10-molecules-21-00185">
+        <label>10.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nar</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <article-title>The role of structural information in the discovery of direct thrombin and factor Xa inhibitors</article-title>
+          <source>Trends Pharmacol. Sci.</source>
+          <year>2012</year>
+          <volume>33</volume>
+          <fpage>279</fpage>
+          <lpage>288</lpage>
+          <pub-id pub-id-type="pmid">22503439</pub-id>
+        </citation>
+      </ref>
+      <ref id="B11-molecules-21-00185">
+        <label>11.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Remko</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Molecular structure, lipophilicity, solubility, absorption, and polar surface area of novel anticoagulant agents</article-title>
+          <source>J. Mol. Struct.</source>
+          <year>2009</year>
+          <volume>916</volume>
+          <fpage>76</fpage>
+          <lpage>85</lpage>
+        </citation>
+      </ref>
+      <ref id="B12-molecules-21-00185">
+        <label>12.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Remko</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Broer</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Remkov&#xE1;</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>A comparative study of the molecular structure, lipophilicity, solubility, acidity, absorption and polar surface area of coumarinic anticoagulants and direct thrombin inhibitors</article-title>
+          <source>RSC Adv.</source>
+          <year>2014</year>
+          <volume>4</volume>
+          <fpage>8072</fpage>
+          <lpage>8084</lpage>
+        </citation>
+      </ref>
+      <ref id="B13-molecules-21-00185">
+        <label>13.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sebastiani</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>R&#xF6;thlisberger</surname>
+              <given-names>U.</given-names>
+            </name>
+            <name>
+              <surname>Cavalli</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Folkers</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Recanatini</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Scapozza</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Rovira</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Raber</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Llano</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Eriksson</surname>
+              <given-names>L.A.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <source>Quantum Medicinal Chemistry</source>
+		  <person-group person-group-type="editor">
+            <name>
+              <surname>Carloni</surname>
+              <given-names>P.</given-names>
+            </name>
+			<name>
+              <surname>Alber</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <publisher-name>Wiley-VCH</publisher-name>
+          <publisher-loc>Weinheim, Germany</publisher-loc>
+          <year>2003</year>
+        </citation>
+      </ref>
+      <ref id="B14-molecules-21-00185">
+        <label>14.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ooms</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <article-title>Molecular modeling and computer aided drug design. Examples of their applications in medicinal chemistry</article-title>
+          <source>Curr. Med. Chem.</source>
+          <year>2000</year>
+          <volume>7</volume>
+          <fpage>141</fpage>
+          <lpage>158</lpage>
+          <pub-id pub-id-type="doi">10.2174/0929867003375317</pub-id>
+          <pub-id pub-id-type="pmid">10637360</pub-id>
+        </citation>
+      </ref>
+      <ref id="B15-molecules-21-00185">
+        <label>15.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sliwoski</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Kothiwale</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Meiler</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Lowe</surname>
+              <given-names>E.W.</given-names>
+              <suffix>Jr.</suffix>
+            </name>
+          </person-group>
+          <article-title>Computational methods in drug discovery</article-title>
+          <source>Pharmacol. Rev.</source>
+          <year>2014</year>
+          <volume>66</volume>
+          <fpage>334</fpage>
+          <lpage>395</lpage>
+          <pub-id pub-id-type="pmid">24381236</pub-id>
+        </citation>
+      </ref>
+      <ref id="B16-molecules-21-00185">
+        <label>16.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Grimme</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <article-title>Semiempirical GGA-type density functional constructed with a long-range dispersion correction</article-title>
+          <source>J. Comput. Chem.</source>
+          <year>2006</year>
+          <volume>27</volume>
+          <fpage>1787</fpage>
+          <lpage>1799</lpage>
+          <pub-id pub-id-type="pmid">16955487</pub-id>
+        </citation>
+      </ref>
+      <ref id="B17-molecules-21-00185">
+        <label>17.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Minor</surname>
+              <given-names>Ch.</given-names>
+            </name>
+            <name>
+              <surname>Tellor</surname>
+              <given-names>K.B.</given-names>
+            </name>
+            <name>
+              <surname>Armbruster</surname>
+              <given-names>A.L.</given-names>
+            </name>
+          </person-group>
+          <article-title>Edoxaban, a novel oral factor Xa inhibitor</article-title>
+          <source>Ann. Pharmacother.</source>
+          <year>2015</year>
+          <volume>49</volume>
+          <fpage>843</fpage>
+          <lpage>850</lpage>
+          <pub-id pub-id-type="doi">10.1177/1060028015579426</pub-id>
+          <pub-id pub-id-type="pmid">25855704</pub-id>
+        </citation>
+      </ref>
+      <ref id="B18-molecules-21-00185">
+        <label>18.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kahn</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Fourme</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Andr&#xE9;</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Renaud</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Crystal structure of cyclohexane I and II</article-title>
+          <source>Acta Crystallogr. B</source>
+          <year>1973</year>
+          <volume>29</volume>
+          <fpage>131</fpage>
+          <lpage>138</lpage>
+          <pub-id pub-id-type="doi">10.1107/S0567740873002074</pub-id>
+        </citation>
+      </ref>
+      <ref id="B19-molecules-21-00185">
+        <label>19.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kohrt</surname>
+              <given-names>J.T.</given-names>
+            </name>
+            <name>
+              <surname>Bigge</surname>
+              <given-names>C.F.</given-names>
+            </name>
+            <name>
+              <surname>Bryant</surname>
+              <given-names>J.W.</given-names>
+            </name>
+            <name>
+              <surname>Casimiro-Garcia</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Chi</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Cody</surname>
+              <given-names>WL.</given-names>
+            </name>
+            <name>
+              <surname>Dahring</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Dudley</surname>
+              <given-names>D.A.</given-names>
+            </name>
+            <name>
+              <surname>Filipski</surname>
+              <given-names>K.J.</given-names>
+            </name>
+            <name>
+              <surname>Haarer</surname>
+              <given-names>S.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>The Discovery of (2<italic>R</italic>,4<italic>R</italic>)-<italic>N</italic>-(4-chlorophenyl)-<italic>N</italic>-(2-fluoro-4-(2-oxopyridin-1(2<italic>H</italic>)-yl)phenyl)-4-methoxypyrrolidine-1,2-dicarboxamide (PD 0348292), an orally efficacious factor Xa inhibitor</article-title>
+          <source>Chem. Biol. Drug Des.</source>
+          <year>2007</year>
+          <volume>70</volume>
+          <fpage>100</fpage>
+          <lpage>112</lpage>
+          <pub-id pub-id-type="pmid">17683371</pub-id>
+        </citation>
+      </ref>
+      <ref id="B20-molecules-21-00185">
+        <label>20.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ahrens</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Peter</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Lip</surname>
+              <given-names>G.Y.</given-names>
+            </name>
+            <name>
+              <surname>Bode</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <article-title>Development and clinical applications of novel oral anticoagulants. Part II. Drugs under clinical investigation</article-title>
+          <source>Discov. Med.</source>
+          <year>2012</year>
+          <volume>13</volume>
+          <fpage>445</fpage>
+          <lpage>450</lpage>
+          <pub-id pub-id-type="pmid">22742650</pub-id>
+        </citation>
+      </ref>
+      <ref id="B21-molecules-21-00185">
+        <label>21.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Phillips</surname>
+              <given-names>G.B.</given-names>
+            </name>
+            <name>
+              <surname>Buckman</surname>
+              <given-names>B.O.</given-names>
+            </name>
+            <name>
+              <surname>Davey</surname>
+              <given-names>D.D.</given-names>
+            </name>
+            <name>
+              <surname>Eagen</surname>
+              <given-names>K.A.</given-names>
+            </name>
+            <name>
+              <surname>Guilford</surname>
+              <given-names>W.J.</given-names>
+            </name>
+            <name>
+              <surname>Hinchman</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Ho</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Koovakkat</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Liang</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Light</surname>
+              <given-names>D.R.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Discovery of <italic>N</italic>-[2-[5-[Amino(imino)methyl]-2-hydroxyphenoxy]-3,5-difluoro-6-[3-(4,5-dihydro-1-methyl-1<italic>H</italic>-imidazol-2-yl)phenoxy]pyridin-4-yl]-<italic>N</italic>-methylglycine (ZK-807834): A potent, selective, and orally active inhibitor of the blood coagulation enzyme factor Xa</article-title>
+          <source>J. Med. Chem.</source>
+          <year>1998</year>
+          <volume>41</volume>
+          <fpage>3557</fpage>
+          <lpage>3562</lpage>
+          <pub-id pub-id-type="pmid">9733480</pub-id>
+        </citation>
+      </ref>
+      <ref id="B22-molecules-21-00185">
+        <label>22.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Adler</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Davey</surname>
+              <given-names>D.D.</given-names>
+            </name>
+            <name>
+              <surname>Phillips</surname>
+              <given-names>G.B.</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>S.H.</given-names>
+            </name>
+            <name>
+              <surname>Jancarik</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Rumennik</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Light</surname>
+              <given-names>D.R.</given-names>
+            </name>
+            <name>
+              <surname>Whitlow</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Preparation, characterization, and the crystal structure of the inhibitor ZK-807834 (CI-1031) complexed with factor Xa</article-title>
+          <source>Biochemistry</source>
+          <year>2000</year>
+          <volume>39</volume>
+          <fpage>12534</fpage>
+          <lpage>12542</lpage>
+          <pub-id pub-id-type="pmid">11027132</pub-id>
+        </citation>
+      </ref>
+      <ref id="B23-molecules-21-00185">
+        <label>23.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hirayama</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Koshio</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Ishihara</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Hachiya</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Sugasawa</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Koga</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Seki</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Shiraki</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Shigenaga</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Iwatsuki</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Discovery of <italic>N</italic>-[2-Hydroxy-6-(4-methoxybenzamido)phenyl]-4-(4-methyl-1,4-diazepan-1-yl)benzamide (Darexaban, YM150) as a potent and orally available factor Xa inhibitor</article-title>
+          <source>J. Med. Chem.</source>
+          <year>2011</year>
+          <volume>54</volume>
+          <fpage>8051</fpage>
+          <lpage>8065</lpage>
+          <pub-id pub-id-type="pmid">21995444</pub-id>
+        </citation>
+      </ref>
+      <ref id="B24-molecules-21-00185">
+        <label>24.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fujimoto</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Imaeda</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Konishi</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Hiroe</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Kawamura</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Textor</surname>
+              <given-names>G.P.</given-names>
+            </name>
+            <name>
+              <surname>Aertgeerts</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Kubo</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <article-title>Discovery of a tetrahydropyrimidin-2(1<italic>H</italic>)-one derivative (TAK-442) as a potent, selective, and orally active factor Xa inhibitor</article-title>
+          <source>J. Med. Chem.</source>
+          <year>2010</year>
+          <volume>53</volume>
+          <fpage>3517</fpage>
+          <lpage>3531</lpage>
+          <pub-id pub-id-type="pmid">20355714</pub-id>
+        </citation>
+      </ref>
+      <ref id="B25-molecules-21-00185">
+        <label>25.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Remko</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Herich</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Greg&#xE1;&#x148;</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Ko&#x17E;&#xED;&#x161;ek</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Structure, acidity and basicity of a benzene disulfonamide inhibitor of carbonic anhydrase</article-title>
+          <source>J. Mol. Struct.</source>
+          <year>2014</year>
+          <volume>1059</volume>
+          <fpage>124</fpage>
+          <lpage>131</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.molstruc.2013.11.047</pub-id>
+        </citation>
+      </ref>
+      <ref id="B26-molecules-21-00185">
+        <label>26.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Remko</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Ko&#x17E;&#xED;&#x161;ek</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Semanov&#xE1;</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Greg&#xE1;&#x148;</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <article-title>Synthesis, crystal and molecular structure of two biologically active aromatic sulfonamides and their hydrochloride salts</article-title>
+          <source>J. Mol. Struct.</source>
+          <year>2010</year>
+          <volume>973</volume>
+          <fpage>18</fpage>
+          <lpage>26</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.molstruc.2010.03.013</pub-id>
+        </citation>
+      </ref>
+      <ref id="B27-molecules-21-00185">
+        <label>27.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Leitner</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Jilma</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Mayr</surname>
+              <given-names>F.B.</given-names>
+            </name>
+            <name>
+              <surname>Cardona</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Spiel</surname>
+              <given-names>A.O.</given-names>
+            </name>
+            <name>
+              <surname>Firbas</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Rathgen</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>St&#xE4;hl</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Sch&#xFC;hly</surname>
+              <given-names>U.</given-names>
+            </name>
+            <name>
+              <surname>Graefe-Mody</surname>
+              <given-names>E.U.</given-names>
+            </name>
+          </person-group>
+          <article-title>Pharmacokinetics and pharmacodynamics of the dual FII/FX inhibitor BIBT 986 in endotoxin-induced coagulation</article-title>
+          <source>Clin. Pharmacol. Ther.</source>
+          <year>2007</year>
+          <volume>81</volume>
+          <fpage>858</fpage>
+          <lpage>866</lpage>
+          <pub-id pub-id-type="doi">10.1038/sj.clpt.6100153</pub-id>
+          <pub-id pub-id-type="pmid">17410124</pub-id>
+        </citation>
+      </ref>
+      <ref id="B28-molecules-21-00185">
+        <label>28.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Meneyrol</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Follmann</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Lassalle</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Wehner</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Barre</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Rousseaux</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Altenburger</surname>
+              <given-names>J.-M.</given-names>
+            </name>
+            <name>
+              <surname>Petit</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Bocskei</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Schreuder</surname>
+              <given-names>H.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>5-Chlorothiophene-2-carboxylic acid [(<italic>S</italic>)-2-[2-methyl-3-(2-oxopyrrolidin-1-yl)benzenesulfonylamino]-3-(4-methylpiperazin-1-yl)-3-oxopropyl]amide (SAR107375), a selective and potent orally active dual thrombin and factor Xa inhibitor</article-title>
+          <source>J. Med. Chem.</source>
+          <year>2013</year>
+          <volume>56</volume>
+          <fpage>9441</fpage>
+          <lpage>9456</lpage>
+          <pub-id pub-id-type="pmid">24175584</pub-id>
+        </citation>
+      </ref>
+      <ref id="B29-molecules-21-00185">
+        <label>29.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bondi</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Van der Waals volumes and radii</article-title>
+          <source>J. Phys. Chem.</source>
+          <year>1964</year>
+          <volume>68</volume>
+          <fpage>441</fpage>
+          <lpage>451</lpage>
+          <pub-id pub-id-type="doi">10.1021/j100785a001</pub-id>
+        </citation>
+      </ref>
+      <ref id="B30-molecules-21-00185">
+        <label>30.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Remko</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Molecular structure, p<italic>K</italic>a, lipophilicity, solubility and absorption of biologically active aromatic and heterocyclic sulfonamides</article-title>
+          <source>J. Mol. Struct.</source>
+          <year>2010</year>
+          <volume>944</volume>
+          <fpage>34</fpage>
+          <lpage>42</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.theochem.2009.12.017</pub-id>
+        </citation>
+      </ref>
+      <ref id="B31-molecules-21-00185">
+        <label>31.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zhou</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <article-title>On the properties of S&#xB7;&#xB7;&#xB7;O and S&#xB7;&#xB7;&#xB7;&#x3C0; noncovalent interactions: The analysis of geometry, interaction energy and electron density</article-title>
+          <source>New J. Chem.</source>
+          <year>2015</year>
+          <volume>39</volume>
+          <fpage>1611</fpage>
+          <lpage>1618</lpage>
+        </citation>
+      </ref>
+      <ref id="B32-molecules-21-00185">
+        <label>32.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hilal</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Karickhoff</surname>
+              <given-names>S.W.</given-names>
+            </name>
+            <name>
+              <surname>Carreira</surname>
+              <given-names>L.A.</given-names>
+            </name>
+          </person-group>
+          <article-title>A Rigorous test for SPARC&#x2019;s chemical reactivity models: Estimation of more than 4300 ionization p<italic>K</italic>as</article-title>
+          <source>Quant. Struc. Act. Real.</source>
+          <year>1995</year>
+          <volume>14</volume>
+          <fpage>348</fpage>
+          <lpage>355</lpage>
+        </citation>
+      </ref>
+      <ref id="B33-molecules-21-00185">
+        <label>33.</label>
+        <citation citation-type="web">
+          <article-title>SPARC</article-title>
+          <comment>Available online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://archemcalc.com/sparc/" ext-link-type="uri">http://archemcalc.com/sparc/</ext-link></comment>
+          <access-date>(accessed on 15 September 2015)</access-date>
+        </citation>
+      </ref>
+      <ref id="B34-molecules-21-00185">
+        <label>34.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Malkia</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Murtomaki</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Urtti</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Kontturi</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <article-title>Drug permeation in biomembranes: <italic>In vitro</italic> and <italic>in silico</italic> prediction and influence of physicochemical properties</article-title>
+          <source>Eur. J. Pharm. Sci.</source>
+          <year>2004</year>
+          <volume>23</volume>
+          <fpage>13</fpage>
+          <lpage>47</lpage>
+          <pub-id pub-id-type="pmid">15324921</pub-id>
+        </citation>
+      </ref>
+      <ref id="B35-molecules-21-00185">
+        <label>35.</label>
+        <citation citation-type="web">
+          <article-title>Drug Bank</article-title>
+          <comment>Available online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.drugbank.ca/drugs/DB09075" ext-link-type="uri">http://www.drugbank.ca/drugs/DB09075</ext-link></comment>
+          <access-date>(accessed on 10 January 2016)</access-date>
+        </citation>
+      </ref>
+      <ref id="B36-molecules-21-00185">
+        <label>36.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tetko</surname>
+              <given-names>I.V.</given-names>
+            </name>
+			<name>
+              <surname>Gasteiger</surname>
+              <given-names>J.</given-names>
+            </name>
+			<name>
+              <surname>Todeschini</surname>
+              <given-names>R.</given-names>
+            </name>
+			<name>
+              <surname>Mauri</surname>
+              <given-names>A.</given-names>
+            </name>
+			<name>
+              <surname>Livingstone</surname>
+              <given-names>D.</given-names>
+            </name>
+			<name>
+              <surname>Ertl</surname>
+              <given-names>P.</given-names>
+            </name>
+			<name>
+              <surname>Palyulin</surname>
+              <given-names>V.A.</given-names>
+            </name>
+			<name>
+              <surname>Radchenko</surname>
+              <given-names>E.V.</given-names>
+            </name>
+			<name>
+              <surname>Zefirov</surname>
+              <given-names>N.S.</given-names>
+            </name>
+			<name>
+              <surname>Makarenko</surname>
+              <given-names>A.S.</given-names>
+            </name>
+			<etal/>
+          </person-group>
+          <article-title>Virtual computational chemistry laboratory&#x2014;Design and description</article-title>
+          <source>J. Comput. Aided Mol. Des.</source>
+          <year>2005</year>
+          <volume>19</volume>
+          <fpage>453</fpage>
+          <lpage>463</lpage>
+          <pub-id pub-id-type="pmid">16231203</pub-id>
+        </citation>
+      </ref>
+      <ref id="B37-molecules-21-00185">
+        <label>37.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Xing</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Glen</surname>
+              <given-names>R.C.</given-names>
+            </name>
+          </person-group>
+          <article-title>Novel Methods for the Prediction of logP, p<italic>K</italic>a, and logD</article-title>
+          <source>J. Chem. Inf. Comput. Sci.</source>
+          <year>2002</year>
+          <volume>42</volume>
+          <fpage>796</fpage>
+          <lpage>805</lpage>
+          <pub-id pub-id-type="pmid">12132880</pub-id>
+        </citation>
+      </ref>
+      <ref id="B38-molecules-21-00185">
+        <label>38.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Veber</surname>
+              <given-names>D.F.</given-names>
+            </name>
+            <name>
+              <surname>Johnson</surname>
+              <given-names>R.S.</given-names>
+            </name>
+            <name>
+              <surname>Cheng</surname>
+              <given-names>H.Y.</given-names>
+            </name>
+            <name>
+              <surname>Smith</surname>
+              <given-names>B.R.</given-names>
+            </name>
+            <name>
+              <surname>Ward</surname>
+              <given-names>K.W.</given-names>
+            </name>
+            <name>
+              <surname>Kapple</surname>
+              <given-names>K.D.</given-names>
+            </name>
+          </person-group>
+          <article-title>Molecular properties that influence the oral bioavailability of drug candidates</article-title>
+          <source>J. Med. Chem.</source>
+          <year>2002</year>
+          <volume>45</volume>
+          <fpage>2615</fpage>
+          <lpage>2623</lpage>
+          <pub-id pub-id-type="pmid">12036371</pub-id>
+        </citation>
+      </ref>
+      <ref id="B39-molecules-21-00185">
+        <label>39.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lipinski</surname>
+              <given-names>C.A.</given-names>
+            </name>
+            <name>
+              <surname>Lombardo</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Dominy</surname>
+              <given-names>B.W.</given-names>
+            </name>
+            <name>
+              <surname>Feeney</surname>
+              <given-names>P.J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings</article-title>
+          <source>Adv. Drug Deliv. Rev.</source>
+          <year>1997</year>
+          <volume>23</volume>
+          <fpage>3</fpage>
+          <lpage>25</lpage>
+        </citation>
+      </ref>
+      <ref id="B40-molecules-21-00185">
+        <label>40.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zhao</surname>
+              <given-names>Y.H.</given-names>
+            </name>
+            <name>
+              <surname>Abraham</surname>
+              <given-names>M.H.</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Hersey</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Luscombe</surname>
+              <given-names>C.N.</given-names>
+            </name>
+            <name>
+              <surname>Beck</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Sherborne</surname>
+              <given-names>B.</given-names>
+            </name>
+          </person-group>
+          <article-title>Cooper, Rate-limited steps of human oral absorption and QSAR studies</article-title>
+          <source>Pharm. Res.</source>
+          <year>2002</year>
+          <volume>19</volume>
+          <fpage>1446</fpage>
+          <lpage>1457</lpage>
+          <pub-id pub-id-type="pmid">12425461</pub-id>
+        </citation>
+      </ref>
+      <ref id="B41-molecules-21-00185">
+        <label>41.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ertl</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Rohde</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Selzer</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Fast calculation of molecular polar surface area as a sum of fragment-based contributions and its application to the prediction of drug transport properties</article-title>
+          <source>J. Med. Chem.</source>
+          <year>2000</year>
+          <volume>43</volume>
+          <fpage>3714</fpage>
+          <lpage>3717</lpage>
+          <pub-id pub-id-type="pmid">11020286</pub-id>
+        </citation>
+      </ref>
+      <ref id="B42-molecules-21-00185">
+        <label>42.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>G&#xF3;mez-Outes</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Su&#xE1;rez-Gea</surname>
+              <given-names>M.L.</given-names>
+            </name>
+            <name>
+              <surname>Lecumberri</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Terleira-Fern&#xE1;ndez</surname>
+              <given-names>A.I.</given-names>
+            </name>
+            <name>
+              <surname>Vargas-Castrill&#xF3;n</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Rocha</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <article-title>Potential role of new anticoagulants for prevention and treatment of venous thromboembolism in cancer patients</article-title>
+          <source>Vasc. Health Risk Manag.</source>
+          <year>2013</year>
+          <volume>9</volume>
+          <fpage>207</fpage>
+          <lpage>228</lpage>
+          <pub-id pub-id-type="doi">10.2147/VHRM.S35843</pub-id>
+          <pub-id pub-id-type="pmid">23674896</pub-id>
+        </citation>
+      </ref>
+      <ref id="B43-molecules-21-00185">
+        <label>43.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Liu</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Lin</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Wen</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Jorrisen</surname>
+              <given-names>R.N.</given-names>
+            </name>
+            <name>
+              <surname>Gilson</surname>
+              <given-names>M.K.</given-names>
+            </name>
+          </person-group>
+          <article-title><italic>BindingDB</italic>: A web-accessible database of experimentally determined protein-ligand binding affinities</article-title>
+          <source>Nucleic Acids Res.</source>
+          <year>2007</year>
+          <volume>35</volume>
+          <fpage>D198</fpage>
+          <lpage>D201</lpage>
+          <pub-id pub-id-type="doi">10.1093/nar/gkl999</pub-id>
+          <pub-id pub-id-type="pmid">17145705</pub-id>
+        </citation>
+      </ref>
+      <ref id="B44-molecules-21-00185">
+        <label>44.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Liu</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Han</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Zhao</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Nie</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <article-title>PDB-wide collection of binding data: Current status of the PDBbind database</article-title>
+          <source>Bioinformatics</source>
+          <year>2015</year>
+          <volume>31</volume>
+          <fpage>405</fpage>
+          <lpage>412</lpage>
+          <pub-id pub-id-type="pmid">25301850</pub-id>
+        </citation>
+      </ref>
+      <ref id="B45-molecules-21-00185">
+        <label>45.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Toschi</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Lettino</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Inhibitors of propagation of coagulation: Factors V and X</article-title>
+          <source>Br. J. Clin. Pharmacol.</source>
+          <year>2011</year>
+          <volume>72</volume>
+          <fpage>563</fpage>
+          <lpage>580</lpage>
+          <pub-id pub-id-type="pmid">21545479</pub-id>
+        </citation>
+      </ref>
+      <ref id="B46-molecules-21-00185">
+        <label>46.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Masotti</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Campanini</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Pharmacology of new oral anticoagulants: Mechanism of action, pharmacokinetics, pharmacodynamics</article-title>
+          <source>Italian J. Med.</source>
+          <year>2013</year>
+          <volume>7</volume>
+          <fpage>1</fpage>
+          <lpage>7</lpage>
+        </citation>
+      </ref>
+      <ref id="B47-molecules-21-00185">
+        <label>47.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Weitz</surname>
+              <given-names>J.I.</given-names>
+            </name>
+            <name>
+              <surname>Eikelboom</surname>
+              <given-names>J.W.</given-names>
+            </name>
+            <name>
+              <surname>Samama</surname>
+              <given-names>M.M.</given-names>
+            </name>
+          </person-group>
+          <article-title>New antithrombotic drugs, antithrombotic therapy and prevention of thrombosis: American college of chest physicians, evidence-based clinical practice guidelines</article-title>
+          <source>Chest</source>
+          <year>2012</year>
+          <volume>141</volume>
+          <supplement>(Suppl. S2)</supplement>
+          <fpage>e120S</fpage>
+          <lpage>e151S</lpage>
+          <pub-id pub-id-type="pmid">22315258</pub-id>
+        </citation>
+      </ref>
+      <ref id="B48-molecules-21-00185">
+        <label>48.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Arnott</surname>
+              <given-names>J.A.</given-names>
+            </name>
+            <name>
+              <surname>Planey</surname>
+              <given-names>S.L.</given-names>
+            </name>
+          </person-group>
+          <article-title>The influence of lipophilicity in drug discovery and design</article-title>
+          <source>Expert Opin. Drug Discov.</source>
+          <year>2012</year>
+          <volume>7</volume>
+          <fpage>863</fpage>
+          <lpage>875</lpage>
+          <pub-id pub-id-type="pmid">22992175</pub-id>
+        </citation>
+      </ref>
+      <ref id="B49-molecules-21-00185">
+        <label>49.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kontogiorgis</surname>
+              <given-names>C.A.</given-names>
+            </name>
+            <name>
+              <surname>Hadjipavlou-Litina</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <article-title>Current trends in quantitative structure activity relationships on fxa inhibitors: Evaluation and comparative analysis</article-title>
+          <source>Med. Res. Rev.</source>
+          <year>2004</year>
+          <volume>24</volume>
+          <fpage>687</fpage>
+          <lpage>747</lpage>
+          <pub-id pub-id-type="pmid">15250038</pub-id>
+        </citation>
+      </ref>
+      <ref id="B50-molecules-21-00185">
+        <label>50.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bickelhaupt</surname>
+              <given-names>F.M.</given-names>
+            </name>
+            <name>
+              <surname>Baerends</surname>
+              <given-names>E.J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Kohn-sham density functional theory: Predicting and understanding chemistry</article-title>
+          <source>Reviews in Computational Chemistry</source>
+		  <person-group person-group-type="editor">
+            <name>
+              <surname>Lipkowitz</surname>
+              <given-names>K.B.</given-names>
+            </name>
+            <name>
+              <surname>Boyd</surname>
+              <given-names>D.B.</given-names>
+            </name>
+          </person-group>
+          <publisher-name>Wiley-VCH</publisher-name>
+          <publisher-loc>New York, NY, USA</publisher-loc>
+          <year>2000</year>
+          <volume>Volume 15</volume>
+          <fpage>1</fpage>
+          <lpage>86</lpage>
+        </citation>
+      </ref>
+      <ref id="B51-molecules-21-00185">
+        <label>51.</label>
+        <citation citation-type="book">
+          <source>Gaussian 09</source>
+		  <comment>version 9.0</comment>
+          <publisher-name>Gaussian, Inc.</publisher-name>
+          <publisher-loc>Wallingford, CT, USA</publisher-loc>
+          <year>2011</year>
+        </citation>
+      </ref>
+      <ref id="B52-molecules-21-00185">
+        <label>52.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Becke</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <article-title>Density-functional thermochemistry. III. The role of exact exchange</article-title>
+          <source>J. Chem. Phys.</source>
+          <year>1993</year>
+          <volume>98</volume>
+          <fpage>5648</fpage>
+          <lpage>5652</lpage>
+        </citation>
+      </ref>
+      <ref id="B53-molecules-21-00185">
+        <label>53.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lee</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Yang</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Parr</surname>
+              <given-names>R.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Development of the Colle-Salvetti correlation-energy formula into a functional of the electron density</article-title>
+          <source>Phys. Rev. B</source>
+          <year>1988</year>
+          <volume>37</volume>
+          <fpage>785</fpage>
+          <lpage>789</lpage>
+        </citation>
+      </ref>
+      <ref id="B54-molecules-21-00185">
+        <label>54.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kohn</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Sham</surname>
+              <given-names>L.J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Self-consistent equations including exchange and correlation effects</article-title>
+          <source>Phys. Rev. A</source>
+          <year>1965</year>
+          <volume>140</volume>
+          <fpage>1133</fpage>
+          <lpage>1138</lpage>
+        </citation>
+      </ref>
+      <ref id="B55-molecules-21-00185">
+        <label>55.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hehre</surname>
+              <given-names>W.J.</given-names>
+            </name>
+            <name>
+              <surname>Radom</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Schleyer</surname>
+              <given-names>P.V.R.</given-names>
+            </name>
+            <name>
+              <surname>Pople</surname>
+              <given-names>J.A.</given-names>
+            </name>
+          </person-group>
+          <source>Ab Initio Molecular Orbital Theory</source>
+          <publisher-name>Wiley</publisher-name>
+          <publisher-loc>New York, NY, USA</publisher-loc>
+          <year>1986</year>
+        </citation>
+      </ref>
+      <ref id="B56-molecules-21-00185">
+        <label>56.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cossi</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Rega</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Scalman</surname>
+              <given-names>I.G.</given-names>
+            </name>
+            <name>
+              <surname>Barone</surname>
+              <given-names>V.</given-names>
+            </name>
+          </person-group>
+          <article-title>Energies, structures, and electronic properties of molecules in solution with the C-PCM solvation model</article-title>
+          <source>J. Comp. Chem.</source>
+          <year>2003</year>
+          <volume>24</volume>
+          <fpage>669</fpage>
+          <lpage>681</lpage>
+          <pub-id pub-id-type="doi">10.1002/jcc.10189</pub-id>
+          <pub-id pub-id-type="pmid">12666158</pub-id>
+        </citation>
+      </ref>
+    </ref-list>
+	<fn-group>
+  <fn>
+<p><bold>Sample Availability:</bold> Samples of the compounds are not available.</p>
+</fn>
+</fn-group>
+  </back>
+</article>

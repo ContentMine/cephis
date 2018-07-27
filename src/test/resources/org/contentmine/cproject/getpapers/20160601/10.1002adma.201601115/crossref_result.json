@@ -1,0 +1,201 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:41:21Z",
+    "timestamp": 1464784881197
+  },
+  "reference-count": 56,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1002/adma.201601115",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:36:00Z",
+    "timestamp": 1464780960000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Gelatin-Graphene Nanocomposites with Ultralow Electrical Percolation Threshold"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "ETH Zurich; Department of Health Sciences and Technology; Food and Soft Materials Science; IFNH; Schmelzbergstrasse 9 8092 Zürich Switzerland"
+        },
+        {
+          "name": "Polymer Division; School of Chemistry; College of Science; University of Tehran; P.O. Box 14155-6455 Tehran Iran"
+        }
+      ],
+      "family": "Nassira",
+      "given": "Hoda"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "ETH Zurich; Department of Health Sciences and Technology; Food and Soft Materials Science; IFNH; Schmelzbergstrasse 9 8092 Zürich Switzerland"
+        }
+      ],
+      "family": "Sánchez-Ferrer",
+      "given": "Antoni"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "ETH Zurich; Department of Health Sciences and Technology; Food and Soft Materials Science; IFNH; Schmelzbergstrasse 9 8092 Zürich Switzerland"
+        }
+      ],
+      "family": "Adamcik",
+      "given": "Jozef"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "ETH Zurich; Department of Health Sciences and Technology; Food and Soft Materials Science; IFNH; Schmelzbergstrasse 9 8092 Zürich Switzerland"
+        }
+      ],
+      "family": "Handschin",
+      "given": "Stephan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Polymer Division; School of Chemistry; College of Science; University of Tehran; P.O. Box 14155-6455 Tehran Iran"
+        }
+      ],
+      "family": "Mahdavi",
+      "given": "Hossein"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Polymer Division; School of Chemistry; College of Science; University of Tehran; P.O. Box 14155-6455 Tehran Iran"
+        },
+        {
+          "name": "Institute for Molecular Engineering; University of Chicago; Chicago IL 60637 USA"
+        }
+      ],
+      "family": "Taheri Qazvini",
+      "given": "Nader"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "ETH Zurich; Department of Health Sciences and Technology; Food and Soft Materials Science; IFNH; Schmelzbergstrasse 9 8092 Zürich Switzerland"
+        }
+      ],
+      "family": "Mezzenga",
+      "given": "Raffaele"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Adv. Mater.",
+    "Advanced Materials"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadma.201601115"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:36:00Z",
+    "timestamp": 1464780960000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adma.201601115",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "0935-9648"
+  ],
+  "subject": [
+    "Mechanical Engineering",
+    "Materials Science(all)",
+    "Mechanics of Materials"
+  ]
+}

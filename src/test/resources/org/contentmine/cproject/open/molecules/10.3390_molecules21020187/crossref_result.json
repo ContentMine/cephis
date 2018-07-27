@@ -1,0 +1,98 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:51:36Z",
+    "timestamp": 1455623496618
+  },
+  "reference-count": 21,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "DOI": "10.3390/molecules21020187",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T15:26:22Z",
+    "timestamp": 1454599582000
+  },
+  "page": "187",
+  "source": "CrossRef",
+  "title": [
+    "1,3-Dipolar Cycloaddition in the Preparation of New Fused Heterocyclic Compounds via Thermal Initiation"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Porubský",
+      "given": "Martin"
+    },
+    {
+      "affiliation": [],
+      "family": "Tenora",
+      "given": "Lukáš"
+    },
+    {
+      "affiliation": [],
+      "family": "Potáček",
+      "given": "Milan"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:52:55Z",
+    "timestamp": 1455396775000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020187"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020187",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

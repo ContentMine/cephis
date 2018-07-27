@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+       <html.version>2.0.7</html.version>
+       <!--  upstream -->
+       <svg.version>1.0.7</svg.version>
+    </properties>
+
+    <groupId>org.contentmine</groupId>
+    <artifactId>html</artifactId>
+    <version>${html.version}</version>
+    <packaging>jar</packaging>
+    <name>html</name>
+    <description>A Java library for processing HTML</description>
+
+    <developers>
+        <developer>
+            <id>pm286</id>
+            <name>Peter Murray-Rust</name>
+        </developer>
+    </developers>
+
+
+    <!-- remove <repositories> for release to maven central -->
+    <dependencies>
+        <dependency>
+            <groupId>org.contentmine</groupId>
+            <artifactId>svg</artifactId>
+            <version>${svg.version}</version>
+        </dependency>
+        <!--  to avoid Xerces Hell?
+        http://stackoverflow.com/questions/17777821/maven-dependency-conflict-org-w3c-dom-elementtraversal
+         -->
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jtidy</groupId>
+            <artifactId>jtidy</artifactId>
+            <version>4aug2000r7-dev</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ccil.cowan.tagsoup</groupId>
+            <artifactId>tagsoup</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.15</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

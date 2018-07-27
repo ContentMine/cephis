@@ -1,0 +1,215 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:40:39Z",
+    "timestamp": 1464784839842
+  },
+  "reference-count": 72,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "310892"
+      ],
+      "doi-asserted-by": "crossref",
+      "name": "European Research Council",
+      "DOI": "10.13039/501100000781"
+    },
+    {
+      "award": [
+        "281300",
+        "252215"
+      ],
+      "name": "Academy of Finland"
+    },
+    {
+      "award": [],
+      "name": "University of Helsinki Research Funds"
+    },
+    {
+      "award": [],
+      "name": "Biocentrum Helsinki"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adhm.201600160",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:36:06Z",
+    "timestamp": 1464780966000
+  },
+  "source": "CrossRef",
+  "title": [
+    "pH-Switch Nanoprecipitation of Polymeric Nanoparticles for Multimodal Cancer Targeting and Intracellular Triggered Delivery of Doxorubicin"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Division of Pharmaceutical Chemistry and Technology; Faculty of Pharmacy; University of Helsinki; Viikinkaari 5 E (P. O. Box 56) 00014 Helsinki Finland"
+        }
+      ],
+      "family": "Herranz-Blanco",
+      "given": "Bárbara"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Pharmaceutical Chemistry and Technology; Faculty of Pharmacy; University of Helsinki; Viikinkaari 5 E (P. O. Box 56) 00014 Helsinki Finland"
+        }
+      ],
+      "family": "Shahbazi",
+      "given": "Mohammad-Ali"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Pharmaceutical Chemistry and Technology; Faculty of Pharmacy; University of Helsinki; Viikinkaari 5 E (P. O. Box 56) 00014 Helsinki Finland"
+        }
+      ],
+      "family": "Correia",
+      "given": "Alexandra R."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Pharmaceutical Chemistry and Technology; Faculty of Pharmacy; University of Helsinki; Viikinkaari 5 E (P. O. Box 56) 00014 Helsinki Finland"
+        }
+      ],
+      "family": "Balasubramanian",
+      "given": "Vimalkumar"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Physics; University of Helsinki; Gustaf Hällströmin katu 2a (P. O. Box 64) 00560 Helsinki Finland"
+        }
+      ],
+      "family": "Kohout",
+      "given": "Tomáš"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Pharmaceutical Chemistry and Technology; Faculty of Pharmacy; University of Helsinki; Viikinkaari 5 E (P. O. Box 56) 00014 Helsinki Finland"
+        }
+      ],
+      "family": "Hirvonen",
+      "given": "Jouni"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Pharmaceutical Chemistry and Technology; Faculty of Pharmacy; University of Helsinki; Viikinkaari 5 E (P. O. Box 56) 00014 Helsinki Finland"
+        }
+      ],
+      "family": "Santos",
+      "given": "Hélder A."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Advanced Healthcare Materials",
+    "Adv. Healthcare Mater."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadhm.201600160"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:36:12Z",
+    "timestamp": 1464780972000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adhm.201600160",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2192-2640"
+  ]
+}

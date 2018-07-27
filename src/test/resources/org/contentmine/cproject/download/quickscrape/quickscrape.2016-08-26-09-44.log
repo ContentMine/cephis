@@ -1,0 +1,1362 @@
+info: quickscrape 0.4.7 launched with...
+info: - URLs from file: undefined
+info: - Scraperdir: /home/pm286/journal-scrapers/scrapers
+info: - Rate limit: 17 per minute
+info: - Log level: info
+info: urls to scrape: 6234
+info: processing URL: http://dx.doi.org/10.12820/rbafs.v.21n2p181-189
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s1365100515001066
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12820/rbafs.v.21n2p133-143
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.14710/jitaa.41.1.21-27
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.17212/2075-0862-2016-1.1-23-38
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0026749x15000426
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.14710/jitaa.41.1.
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.14710/jitaa.41.1.37-44
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160005
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160002
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160003
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160004
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0003581516000056
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0004972715001823
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0004972715001835
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0003581516000093
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s000358151600007x
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.17850/njg96-1-04
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.1831
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.04eg03
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2903
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2919
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12820/rbafs.v.21n2p190-197
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.05fc01
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.4088/jcp.15m09893
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2832
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2812
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0953820816000030
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.1731
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/ice.2016.42
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.3110
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.3169
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.18805/ar.v37i1.9270
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.05fk01
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.7753/ijcatr0503.1003
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s1366728916000055
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.7306/gq.1282
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.7306/gq.1283
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0031182015001985
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0031182015001973
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/ipm.2016.10
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.14710/jitaa.41.1.1-6
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.3257
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.3298
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.05fj02
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1177/0973408215625568a
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.1926
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s1366728916000195
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0031182015001882
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0031182015001870
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s0031182015001894
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.9744/jak.17.2.97-107
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0961203316636470
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.3766/jaaa.15060
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1017/s0022377816000192
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1386/macp.12.1.115_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3766/jaaa.15051
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1017/s175173111600029x
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s1751731116000252
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s1751731116000264
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1177/2277978716631704
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.20448/journal.509/2016.3.1/509.1.9.16
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1017/s1751731116000239
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1093/jts/flv174
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/jts/flv174, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/jts/flv174, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://jts.oxfordjournals.org/lookup/doi/10.1093/jts/flv174, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://jts.oxfordjournals.org/content/early/2016/02/29/jts.flv174, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://jts.oxfordjournals.org/content/early/2016/02/29/jts.flv174"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://jts.oxfordjournals.org/resource/htmlfiles/advert.html?p=Top&u=jts.oxfordjournals.org/content/early/2016/02/29/jts.flv174, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://jts.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=jts.oxfordjournals.org/content/early/2016/02/29/jts.flv174, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://jts.oxfordjournals.org/resource/htmlfiles/advert.html?p=Bottom&u=jts.oxfordjournals.org/content/early/2016/02/29/jts.flv174, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://jts.oxfordjournals.org&url=http://jts.oxfordjournals.org/content/early/2016/02/29/jts.flv174&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472201468688&parent=http://jts.oxfordjournals.org&pfname=&rpctoken=18600887, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://jts.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=1308920752&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://jts.oxfordjournals.org/content/early/2016/02/29/jts.flv174 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 7932ms.
+[36m[info][0m [phantom] Done 3 steps in 7938ms
+info: URL processed: captured 7/8 elements (1 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/en9030145
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/en9030144
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/en9030143
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/jcal.12134
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0261927x16634370
+info: URL processed: captured 5/11 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.5
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5812/ircmj.22615
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.4
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/jicms.4.2.167_7
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.3
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14481/jkges.2016.17.3.5
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.2
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.11591/ijeecs.v1.i3.pp419-430
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00034-016-0283-x
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.9
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/000389216x14610487055677
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.8
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.7
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18374/ijbr-16-1.6
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14800/rd.1130
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1107/s2059798316003375
+info: URL processed: captured 9/13 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s13538-016-0410-y
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/jicms.4.2.323_7
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ1118
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ1118, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ1118, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ1118, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.4, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/6/NP.4"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.4.full.pdf#page=1&view=FitH, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.4.full.pdf+html?frame=sidebar, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/6/NP.4.full.pdf+html, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/6/NP.4&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472201577257&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=10500584, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=1156132964&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/6/NP.4 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 6877ms.
+[36m[info][0m [phantom] Done 3 steps in 6890ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/fspc.3.2.209_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0022146515628015
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3817/0316174093
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s12879-016-1389-2
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.15537/smj.2016.3.13539
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.14800/rd.1123
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1745691616637875
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00128-016-1762-2
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.11591/eei.v5i1.332
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.18358/np-26-1-i4753
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1932296816639697
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00362-016-0759-6
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0735275116643309
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1932296816639698
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1542305016633990
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1559827616636616
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.3928/1081597x-20160113-01
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/ijcm.9.1.77_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00401-016-1551-3
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114386
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/jgvw.8.1.21_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114388
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114389
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.4140/tcp.n.2016.131
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s40814-016-0054-2
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114384
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114385
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.19173/irrodl.v17i2.2448
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.14409/pampa.v0i11/12.5200
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.14409/pampa.v0i11/12.5201
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.4017/gt.2016.14.3.008.00
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.14409/pampa.v0i11/12.5202
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.7
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.4140/tcp.n.2016.139
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.15415/mjis.2016.42009
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.8
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.9
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.17932/iau.iaud.m.13091352.2016.8/29.79-99
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4833
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/anie.201509882
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.14409/pampa.v0i11/12.5203
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.14409/pampa.v0i11/12.5204
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.14409/pampa.v0i11/12.5205
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4837
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160807
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1078390316637077
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14800/macrophage.1082
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160808
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ1166
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ1166, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ1166, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ1166, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.6, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/6/NP.6"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.6.full.pdf#page=1&view=FitH, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.6.full.pdf+html?frame=sidebar, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/6/NP.6.full.pdf+html, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/6/NP.6&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472201890067&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=83015897, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=308454017&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/6/NP.6 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 5946ms.
+[36m[info][0m [phantom] Done 3 steps in 5957ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160809
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160803
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160804
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.14800/macrophage.1083
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160805
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s12899-016-0021-4
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160806
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.6
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.5
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.4
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.3
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160802
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.2
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20428/ajqahe.9.2.1
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.4140/tcp.n.2016.121
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5585/remark.v15i1.3042
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.15415/mjis.2016.42015
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.15415/mjis.2016.42016
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1077800416641752
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s11243-016-0034-7
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/ajb.2016.127.134
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.15415/mjis.2016.42010
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18358/np-26-1-i5861
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5604/04641086.1212207
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3747/pdi.2015.00188
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.15415/mjis.2016.42014
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/iet-rsn.2015.0238
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.15415/mjis.2016.42011
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.15415/mjis.2016.42012
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jama.2015.14137
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0073275315617769
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jama.2015.14136
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160814
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jama.2015.14138
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.15356/0373-2444-2016-1-67-73
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/fiin.14.1.157_5
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/26
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/25
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/24
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/23
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160812
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1370/afm.1898
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ891
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ891, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ891, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ891, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/suppl_1/S56, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/suppl_1/S56"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Top&u=cid.oxfordjournals.org/content/62/suppl_1/S56, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/suppl_1/S56, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Bottom&u=cid.oxfordjournals.org/content/62/suppl_1/S56, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/suppl_1/S56&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472202096938&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=14635520, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=581791555&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/suppl_1/S56 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 8184ms.
+[36m[info][0m [phantom] Done 3 steps in 8188ms
+info: URL processed: captured 7/8 elements (1 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160813
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/000389216x14610487055631
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/29
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ892
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ892, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ892, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ892, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/suppl_1/S69, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/suppl_1/S69"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Top&u=cid.oxfordjournals.org/content/62/suppl_1/S69, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/suppl_1/S69, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Bottom&u=cid.oxfordjournals.org/content/62/suppl_1/S69, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/suppl_1/S69&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472202124634&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=16884765, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=408677259&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/suppl_1/S69 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 8053ms.
+[36m[info][0m [phantom] Done 3 steps in 8059ms
+info: URL processed: captured 7/8 elements (1 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ893
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ893, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ893, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ893, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/suppl_1/S23, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/suppl_1/S23"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Top&u=cid.oxfordjournals.org/content/62/suppl_1/S23, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/suppl_1/S23, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Bottom&u=cid.oxfordjournals.org/content/62/suppl_1/S23, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/suppl_1/S23&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472202139208&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=28189372, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=441260016&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/suppl_1/S23 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 9707ms.
+[36m[info][0m [phantom] Done 3 steps in 9712ms
+info: URL processed: captured 7/8 elements (1 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160810
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/28
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s10798-016-9361-4
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.3233/ida-160811
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/27
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4854
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/lubricants4010006
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/32
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.3904/kjim.2015.112
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/33
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/30
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/31
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1136/bmj.i721
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4857
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/531127a
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1159/000440670
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/13
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/12
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/15
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ1142
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ1142, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ1142, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ1142, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.5, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/6/NP.5"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.5.full.pdf#page=1&view=FitH, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.5.full.pdf+html?frame=sidebar, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/6/NP.5.full.pdf+html, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/6/NP.5&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472202240083&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=26458071, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=776567376&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/6/NP.5 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 14921ms.
+[36m[info][0m [phantom] Done 3 steps in 14934ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/14
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/17
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/16
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/19
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/18
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00259-016-3342-4
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4840
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4843
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1475725716638010
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamainternmed.2015.4865
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/20
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1077695815605744
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/21
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/22
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/iet-rsn.2015.0215
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/jse.2016.297.301
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/iet-rsn.2015.0219
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00170-016-8523-6
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4846
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.4140/tcp.n.2016.176
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2043820615609512
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.5993/ajhb.40.2.11
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5993/ajhb.40.2.10
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2043820615609511
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.5993/ajhb.40.2.13
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5993/ajhb.40.2.12
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/jicms.4.2.283_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4878
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3904/kjim.2015.134
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/1541-4337.12191
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/11
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4872
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/18137083/54/10
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.19173/irrodl.v17i2.2492
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3904/kjim.2015.131
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4875
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3904/kjim.2015.137
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.16969/teb.27606
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/1541-4337.12197
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2043820615609506
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1370/afm.1886
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.4140/tcp.n.2016.168
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s13187-016-1011-8
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.4140/tcp.n.2016.161
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4866
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/ett.3032
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4869
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/hep.28452
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1370/afm.1892
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4860
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3899/jrheum.151030
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4863
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/cphc.201501155
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1370/afm.1893
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3928/00904481-20160129-01
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18488/journal.1/2016.6.3/1.3.203.211
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/anie.201511883
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1475472x16643461
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ1191
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ1191, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ1191, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ1191, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/807, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/6/807"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Top&u=cid.oxfordjournals.org/content/62/6/807, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/6/807, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Bottom&u=cid.oxfordjournals.org/content/62/6/807, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/6/807&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472202526202&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=42109117, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=455801142&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/6/807 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 6677ms.
+[36m[info][0m [phantom] Done 3 steps in 6682ms
+info: URL processed: captured 7/8 elements (1 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ1192
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ1192, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ1192, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ1192, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/777, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/6/777"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Top&u=cid.oxfordjournals.org/content/62/6/777, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/6/777, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Bottom&u=cid.oxfordjournals.org/content/62/6/777, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/6/777&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472202535573&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=92200563, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.icNfHUuJHCg.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCMYCreoSvnYj6JqijbBTuCAJrSZPQ#rpctoken=911515929&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/6/777 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 6064ms.
+[36m[info][0m [phantom] Done 3 steps in 6070ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.16969/teb.48209
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.4140/tcp.n.2016.151
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3368/m.108.1.42
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1113/ep085148
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114396
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114395
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114394
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1370/afm.1869
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114393
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.046601
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.3368/m.108.1.23
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/jbs.2016.72.76
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00701-016-2756-x
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114392
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114391
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.2144/000114390
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/nmo.12794
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s11120-016-0236-z
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/hep.28476
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/lary.25375
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3899/jrheum.151057
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/ecin.12325
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaophthalmol.2015.5103
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2150135116634315
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.2174/1381612822666151210122954
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/17
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/poc.3547
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1128/microbe.11.119.1
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/16
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s13638-016-0560-1
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/15
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/14
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1188/16.onf.136-140
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/19
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1136/practneurol-2015-001337
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/18
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/rjmp.2016.246.253
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00229-016-0830-6
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.619
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.18677/treedimensional_2016_001
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.618
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1063/1.4943012
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.621
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.622
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.623
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s11553-016-0531-8
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.624
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1063/1.4943011
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.625
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.7326/m15-2979
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.626
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/ehf2.12086
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/12
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/13
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/10
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17223/22220836/21/11
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/jwcp.9.1-2.67_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3904/kjim.2015.178
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.3184/174751916x14558218716443
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/magnetochemistry2010013
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/ajoc.201600013
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s12984-016-0124-y
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.4013/htu.2016.201.10
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1130/gsatg270a.1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/cmmi.1688
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.5849/jof.15-700
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.010
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.011
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17214/aot.85670
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s40064-016-1842-0
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3844/ajassp.2016.321.325
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s40299-016-0285-2
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1104/pp.15.01669
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s11200-015-1206-1
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3368/m.108.1.69
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1101/gad.276477.115
+info: URL processed: captured 10/11 elements (1 captures failed)
+info: processing URL: http://dx.doi.org/10.1017/s0007114516000453
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.007
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.14800/macrophage.1143
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.006
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.009
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.008
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.003
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.002
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.005
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.004
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.17265/2159-5836/2016.03.001
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00438-016-1182-3
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3368/m.108.1.85
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0731121416628553
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0731121416628552
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0731121416628551
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1475725716642116
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0731121416628550
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.5564/pmas.v54i4.627
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1136/bcr-2015-209359corr1
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.18740/s4bw2p
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/ajb.2016.162.167
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/ijcm.9.1.99_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1757913915622869
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1757913915626641
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.3184/003685016x14495646283298
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2150135115623960
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2150135115623961
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2150135115623962
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/219222716x14636431038306
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1055/s-0035-1561397
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1541204016636436
+info: URL processed: captured 5/11 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.5585/remark.v15i1.3000
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/plants5010012
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s10863-016-9655-y
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3945/jn.115.228361
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.17212/2075-0862-2016-1.1-39-52
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/fi8010006
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.15211/soveurope120160508
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.14800/macrophage.1166
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s11240-016-0967-8
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s12889-016-2861-z
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1055/s-0035-1561391
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1055/s-0035-1561389
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1591019916633244
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1055/s-0035-1561384
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.18488/journal.aefr/2016.6.3/102.3.127.134
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/tra.12384
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20448/journal.501/2016.3.1/501.1.11.16
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1159/000443519
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s10653-016-9808-2
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.21202/1993-047x.10.2016.1.48-61
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.19173/irrodl.v17i2.2402
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/ijis.29.1.21_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamainternmed.2015.4864
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.19173/irrodl.v17i2.2401
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1159/000443516
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00170-016-8538-z
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.3368/m.108.1.99
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1971400916628170
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5117/soc2016.1.reek
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1386/ajms.5.1.79_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/rjet.2016.135.143
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1200/jop.2016.011239
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.2118/180910-pa
+info: URL processed: captured 5/11 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.5799/ahinjs.02.2016.01.0214
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5799/ahinjs.02.2016.01.0211
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5799/ahinjs.02.2016.01.0210
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5799/ahinjs.02.2016.01.0213
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5799/ahinjs.02.2016.01.0212
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.11591/ijeecs.v1.i3.pp456-463
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/jcmm.12798
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/ajpa.22968
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s10854-016-4592-4
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fnsys.2016.00017
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fnsys.2016.00017, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fnsys.2016.00017, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fnsys.2016.00017, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fnsys.2016.00017/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fnsys.2016.00017/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472203348523&tmr=load=1472203347698&core=1472203347764&main=1472203348517&ifr=1472203348527&cb=0&cdn=0&md=0&kw=Striatum,Subthalamic Nucleus,motor control,Cognition,Basal Ganglia&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fnsys.2016.00017/full&href=http://journal.frontiersin.org/article/10.3389/fnsys.2016.00017/full&dt=The Striatum and Subthalamic Nucleus as Independent and Collaborative Structures in Motor Control&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57c00a53cc919645&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=The%20Striatum%20and%20Subthalamic%20Nucleus%20as%20Independent%20and%20Collaborative%20Structures%20in%20Motor%20Control&description=The%20striatum%20and%20the%20subthalamic%20nucleus%20(STN)%20are%20two%20separate%20input%20structures%20into%20the%20basal%20ganglia.%20Accordingly%2C%20research%20to%20date%20has%20primarily%20focused%20on%20the%20distinct%20roles%20of%20these%20structures%20in%20motor%20control%20and%20cognition%2C%20often%20through%20investigation%20of%20Parkinson%E2%80%99s%20disease.%20Both%20structures%20are%20divided%20into%20sensorimotor%2C%20associative%2C%20and%20limbic%20subdivisions%20based%20on%20cortical%20connectivity.%20The%20more%20recent%20discovery%20of%20the%20STN%20as%20an%20input%20structure%20into%20the%20basal%20ganglia%20drives%20comparison%20of%20these%20two%20structures%20and%20their%20respective%20roles%20in%20cognition%20and%20motor%20control.%20This%20review%20compares%20the%20role%20of%20the%20striatum%20and%20STN%20in%20motor%20response%20inhibition%20and%20execution%2C%20competing%20motor%20programs%2C%20feedback%20based%20learning%2C%20and%20response%20planning.%20Through%20comparison%2C%20it%20is%20found%20that%20the%20striatum%20and%20STN%20have%20highly%20independent%20roles%20in%20motor%20control%20but%20also%20collaborate%20in%20order%20to%20execute%20desired%20actions.%20There%20is%20also%20the%20possibility%20that%20inhibition%20or%20activation%20of%20one%20of%20these%20structures%20indirectly%20contributes%20to%20the%20function%20of%20other%20connected%20anatomical%20structures.%20Both%20structures%20contribute%20to%20selective%20motor%20response%20inhibition%2C%20which%20forms%20the%20basis%20of%20many%20tasks%2C%20but%20the%20STN%20additionally%20contributes%20to%20global%20inhibition%20through%20the%20hyperdirect%20pathway.%20Research%20is%20warranted%20on%20the%20functional%20connectivity%20of%20the%20network%20for%20inhibition%20involving%20the%20rIFG%2C%20preSMA%2C%20striatum%2C%20and%20STN.&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffnsys.2016.00017%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F158471%252F158471_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fnsys.2016.00017/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 3307ms.
+[36m[info][0m [phantom] Done 3 steps in 3315ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3102/0013189x16638325
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3899/jrheum.151101
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1192/bjp.bp.115.168906
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0559
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0558
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0557
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0556
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0555
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0554
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0553
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/njgpa/2016/0552
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.20448/journal.500/2016.3.2/500.2.145.149
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/buildings6010009
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00464-016-4802-4
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1111/1541-4337.12201
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/jgvw.8.1.43_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00114-016-1346-3
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.15211/soveurope120161625
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/ajpsaj.2016.117.125
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1063/1.4943002
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100223
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100214
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.369
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.20858/tp.2016.11.1.10
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100215
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.20858/tp.2016.11.1.11
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100212
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.20858/tp.2016.11.1.12
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100213
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.20858/tp.2016.11.1.13
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamadermatol.2015.2938
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100218
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.20858/tp.2016.11.1.14
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100219
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.9
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100216
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100217
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22498
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.362
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.12681/icodl2015.51
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.5849/jof.15-797
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1741143216633659
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.11591/ijpeds.v7.i1.pp124-133
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/219222716x14636431038342
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2165079915616647
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/josc.7.1.99_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.5
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.6
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5588/ijtld.15.0672
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.7
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.8
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100222
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100221
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.2
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.3
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100220
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14485/hbpr.3.2.4
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100201
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22480
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s13046-016-0314-2
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100202
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100203
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100204
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100205
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100206
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100207
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100208
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.374
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100209
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.5117/tvgesch2016.1.pete
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00428-016-1917-x
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.372
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22486
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22487
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22485
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.376
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.12681/icodl2015.64
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.380
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.381
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.12820/rbafs.v.21n2p162-171
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.3844/ajassp.2016.281.289
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.15537/smj.2016.3.11388
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100211
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/003335491613100210
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jama.2015.18368
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22470
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1159/000442835
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.387
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1159/000442836
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.388
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s11104-016-2839-8
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22475
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.382
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.12681/icodl2015.71
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1159/000442834
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0840470416637331
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.18542/amazrecm.v12i23.2015
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/eme.15.1.3_2
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2150135115627651
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2150135115627652
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/biotech.2016.96.100
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5588/ijtld.15.0654
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5752/p.2358-3428.2015v19n37p81
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.21202/1993-047x.10.2016.1.26-34
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1140/epjds/s13688-016-0066-4
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1127/zfg/2015/00174
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/ajaps.2016.106.112
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5588/ijtld.15.0637
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1473779515625022
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22463
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22466
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.396
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/ijia.5.1.5_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.045501
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.395
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.14807/ijmp.v7i1.393
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22465
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/531009a
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.17694/bajece.74217
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaneurol.2016.0406
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.5752/p.2358-3428.2015v19n37p97
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.5117/soc2016.1.reda
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5117/tvgesch2016.1.bosj
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/ijcis.10.1-2.13_7
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1128/microbe.11.94.1
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/ijcis.10.1-2.89_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s11671-016-1339-3
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1757913915622871
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1757913915622872
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/ma9030146
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/ma9030144
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s12884-016-0828-9
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1461452916634519
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/ma9030145
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s13148-016-0183-8
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.15537/smj.2016.3.13476
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/ma9030142
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.21202/1993-047x.10.2016.1.89-96
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/219222716x14636431038388
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s10853-016-9847-1
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22448
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22449
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22445
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22444
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22443
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.2118/2014-1921039-pa
+info: URL processed: captured 5/11 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1371/journal.pone.0151003
+info: URL processed: captured 16/33 elements (17 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1473779515625009
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22442
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.3817/0316174009
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22440
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/anie.201600658
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s12864-016-2510-z
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s10955-016-1485-0
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3817/0316174003
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.18488/journal.87/2016.3.1/87.1.1.20
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.5588/ijtld.15.0620
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.11152/mu.2013.2066.181.ngy
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.12681/icodl2015.25
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1107/s2059798315022482
+info: URL processed: captured 9/13 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22439
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22437
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.1177/2051415815625794
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22438
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.14800/macrophage.1101
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1757913915626671
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.14800/scti.1134
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22434
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.2174/1389450117666160301101425
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00414-016-1342-3
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22424
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1038/srep22426
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/elps.201500491

@@ -1,0 +1,15 @@
+<semanticDocument xmlns="http://www.xml-cml.org/schema/ami2">
+  <documentIterator filename="src/test/resources/org/xmlcml/svg2xml/action/pdf/policies.pdf">
+    <pageIterator>
+      <variable name="p.root" value="${d.outputDir}/whitespace_${p.page}" type="file"/>
+      <whitespaceChunker depth="3" />
+      <pageWriter filename="${p.root}_start.svg" />
+      <chunkAnalyzer/>
+      <boxDrawer xpath="//svg:g[@LEAF='3']" stroke="red" strokeWidth="1" fill="#ffffcc" opacity="0.2" />
+      <pageWriter filename="${p.root}_end.svg" />
+    </pageIterator>
+  </documentIterator>
+</semanticDocument>
+
+
+

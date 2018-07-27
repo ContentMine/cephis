@@ -1,0 +1,156 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:41:18Z",
+    "timestamp": 1464831678738
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamadermatol.2016.1428",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:46Z",
+    "timestamp": 1464827866000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Recurrence and Survival in Patients With Merkel Cell Carcinoma Undergoing Surgery Without Adjuvant Radiation Therapy to the Primary Site"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology, University of Michigan Health System, Ann Arbor2Dermatology, Sanford Health, Sioux Falls, South Dakota"
+        }
+      ],
+      "family": "Frohm",
+      "given": "Marcus L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Cancer Biostatistics, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Griffith",
+      "given": "Kent A."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Harms",
+      "given": "Kelly L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiation Oncology, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Hayman",
+      "given": "James A."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Pathology, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Fullen",
+      "given": "Douglas R."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Ophthalmology and Visual Science, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Nelson",
+      "given": "Christine C."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Surgery, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Wong",
+      "given": "Sandra L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Schwartz",
+      "given": "Jennifer L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology, University of Michigan Health System, Ann Arbor"
+        }
+      ],
+      "family": "Bichakjian",
+      "given": "Christopher K."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Dermatol",
+    "JAMA Dermatology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:46Z",
+    "timestamp": 1464827866000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamadermatol.2016.1428",
+  "ISSN": [
+    "2168-6068"
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:40:30Z",
+    "timestamp": 1454582430631
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "issue": "1",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "41271005"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    }
+  ],
+  "DOI": "10.5194/hess-20-529-2016",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:41:07Z",
+    "timestamp": 1454323267000
+  },
+  "page": "529-553",
+  "source": "CrossRef",
+  "title": [
+    "Integrated water system simulation by considering hydrological and biogeochemical processes: model development, with parameter sensitivity and autocalibration"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "volume": "20",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Zhang",
+      "given": "Y. Y."
+    },
+    {
+      "affiliation": [],
+      "family": "Shao",
+      "given": "Q. X."
+    },
+    {
+      "affiliation": [],
+      "family": "Ye",
+      "given": "A. Z."
+    },
+    {
+      "affiliation": [],
+      "family": "Xing",
+      "given": "H. T."
+    },
+    {
+      "affiliation": [],
+      "family": "Xia",
+      "given": "J."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Hydrol. Earth Syst. Sci.",
+    "Hydrology and Earth System Sciences"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:41:08Z",
+    "timestamp": 1454323268000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/hess-20-529-2016",
+  "ISSN": [
+    "1607-7938"
+  ]
+}

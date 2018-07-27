@@ -1,0 +1,102 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:41:25Z",
+    "timestamp": 1464831685241
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamadermatol.2016.1532",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:48Z",
+    "timestamp": 1464827868000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Large Annular Plaque on the Arm of a Patient With Recurrent Headaches"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Faculty of Medicine, University of Concepción, Chile"
+        }
+      ],
+      "family": "Partarrieu-Mejías",
+      "given": "Felipe"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Faculty of Medicine, University of Concepción, Chile"
+        }
+      ],
+      "family": "Pérez-Velásquez",
+      "given": "Fernanda"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Dermatology Department, Guillermo Grant Benavente Regional Hospital, Concepción, Chile"
+        }
+      ],
+      "family": "Alarcón-Cabrera",
+      "given": "Rosario"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Dermatol",
+    "JAMA Dermatology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:48Z",
+    "timestamp": 1464827868000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamadermatol.2016.1532",
+  "ISSN": [
+    "2168-6068"
+  ]
+}

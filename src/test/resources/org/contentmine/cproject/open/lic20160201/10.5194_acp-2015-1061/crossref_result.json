@@ -1,0 +1,136 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        24
+      ]
+    ],
+    "date-time": "2016-03-24T09:11:33Z",
+    "timestamp": 1458810693256
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/acp-2015-1061",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:21:05Z",
+    "timestamp": 1454322065000
+  },
+  "page": "1-27",
+  "source": "CrossRef",
+  "title": [
+    "Similarity analysis of turbulent transport and dissipation for momentum, temperature, moisture, and CO<sub>2</sub> during BLLAST"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Hackerott",
+      "given": "João A."
+    },
+    {
+      "affiliation": [],
+      "family": "Paskyabi",
+      "given": "Mostafa Bakhday"
+    },
+    {
+      "affiliation": [],
+      "family": "Kral",
+      "given": "Stephan T.",
+      "ORCID": "http://orcid.org/0000-0002-7966-8585"
+    },
+    {
+      "affiliation": [],
+      "family": "Reuder",
+      "given": "Joachim"
+    },
+    {
+      "affiliation": [],
+      "family": "de Oliveira",
+      "given": "Amauri P."
+    },
+    {
+      "affiliation": [],
+      "family": "Marques Filho",
+      "given": "Edson P."
+    },
+    {
+      "affiliation": [],
+      "family": "Mesquita",
+      "given": "Michel d. S.",
+      "ORCID": "http://orcid.org/0000-0002-4556-5414"
+    },
+    {
+      "affiliation": [],
+      "family": "de Camargo",
+      "given": "Ricardo"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        21
+      ]
+    ],
+    "date-time": "2016-03-21T12:09:59Z",
+    "timestamp": 1458562199000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2015-1061",
+  "ISSN": [
+    "1680-7375"
+  ]
+}

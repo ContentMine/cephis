@@ -1,0 +1,115 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:47:32Z",
+    "timestamp": 1454582852187
+  },
+  "reference-count": 79,
+  "publisher": "American Physical Society (APS)",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.1103/physreve.93.022402",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T23:55:29Z",
+    "timestamp": 1454370929000
+  },
+  "source": "CrossRef",
+  "title": [
+    "From individual spiking neurons to population behavior: Systematic elimination of short-wavelength spatial modes"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1103",
+  "volume": "93",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Steyn-Ross",
+      "given": "Moira L."
+    },
+    {
+      "affiliation": [],
+      "family": "Steyn-Ross",
+      "given": "D. A."
+    }
+  ],
+  "member": "http://id.crossref.org/member/16",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Physical Review E",
+    "Phys. Rev. E"
+  ],
+  "link": [
+    {
+      "intended-application": "syndication",
+      "content-version": "vor",
+      "content-type": "unspecified",
+      "URL": "http://link.aps.org/article/10.1103/PhysRevE.93.022402"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T23:57:43Z",
+    "timestamp": 1454371063000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1103/physreve.93.022402",
+  "ISSN": [
+    "2470-0045",
+    "2470-0053"
+  ],
+  "article-number": "022402"
+}

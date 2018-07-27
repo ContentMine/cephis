@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v2.3 20070202//EN" "journalpublishing.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" article-type="research-article" dtd-version="2.3">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">molecules</journal-id>
+      <journal-title>Molecules</journal-title>
+      <abbrev-journal-title abbrev-type="publisher">Molecules</abbrev-journal-title>
+      <abbrev-journal-title abbrev-type="pubmed">Molecules</abbrev-journal-title>
+      <issn pub-type="epub">1420-3049</issn>
+      <publisher>
+        <publisher-name>MDPI</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3390/molecules21020186</article-id>
+      <article-id pub-id-type="publisher-id">molecules-21-00186</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Peltomexicanin, a Peltogynoid Quinone Methide from <italic>Peltogyne Mexicana</italic> Mart&#xED;nez Purple Heartwood</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Guti&#xE9;rrez-Mac&#xED;as</surname>
+            <given-names>Paulina</given-names>
+          </name>
+          <xref rid="af1-molecules-21-00186" ref-type="aff">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Peralta-Cruz</surname>
+            <given-names>Javier</given-names>
+          </name>
+          <xref rid="af2-molecules-21-00186" ref-type="aff">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Borja-de-la-Rosa</surname>
+            <given-names>Amparo</given-names>
+          </name>
+          <xref rid="af3-molecules-21-00186" ref-type="aff">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Barrag&#xE1;n-Huerta</surname>
+            <given-names>Blanca E.</given-names>
+          </name>
+          <xref rid="af1-molecules-21-00186" ref-type="aff">1</xref>
+          <xref rid="c1-molecules-21-00186" ref-type="corresp">*</xref>
+        </contrib>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Iriti</surname>
+            <given-names>Marcello</given-names>
+          </name>
+          <role>Academic Editor</role>
+        </contrib>
+      </contrib-group>
+      <aff id="af1-molecules-21-00186"><label>1</label>Department of Environmental Systems Engineering, Escuela Nacional de Ciencias Biol&#xF3;gicas, Instituto Polit&#xE9;cnico Nacional, Av. Wilfrido Massieu S/N, Unidad Profesional Adolfo L&#xF3;pez Mateos, Gustavo A. Madero, M&#xE9;xico City CP 07738, Mexico; <email>pau_21_gm@hotmail.com</email></aff>
+      <aff id="af2-molecules-21-00186"><label>2</label>Department of Organic Chemistry, Escuela Nacional de Ciencias Biol&#xF3;gicas, Instituto Polit&#xE9;cnico Nacional, Prolongaci&#xF3;n de Carpio y Plan de Ayala, S/N. Miguel Hidalgo, M&#xE9;xico City CP 11340, Mexico; <email>javierperaltacruz@yahoo.com</email></aff>
+      <aff id="af3-molecules-21-00186"><label>3</label>Division of Science Forestry, Universidad Aut&#xF3;noma Chapingo, Carr. Mexico-Texcoco Km 38.5, Texcoco, M&#xE9;xico State CP 56230, Mexico; <email>aborja@correo.chapingo.mx</email></aff>
+      <author-notes>
+        <corresp id="c1-molecules-21-00186"><label>*</label> Correspondence: <email>bbarraganh@ipn.mx</email> or <email>bbarraga59@yahoo.com</email>; Tel.: +52-55-57296300 (ext. 52310)</corresp>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>04</day>
+        <month>02</month>
+        <year>2016</year>
+      </pub-date>
+      <pub-date pub-type="collection"><month>02</month>
+        <year>2016</year>
+      </pub-date>
+      <volume>21</volume>
+      <issue>2</issue>
+      <elocation-id>186</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>17</day>
+          <month>11</month>
+          <year>2015</year>
+        </date>
+        <date date-type="accepted">
+          <day>28</day>
+          <month>01</month>
+          <year>2016</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>&#xA9; 2016 by the authors; licensee MDPI, Basel, Switzerland.</copyright-statement>
+        <copyright-year>2016</copyright-year>
+        <license>
+          <p>This article is an open access article distributed under the terms and conditions of the Creative Commons by Attribution (CC-BY) license (http://creativecommons.org/licenses/by/4.0/).</p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>Peltomexicanin (7,10-dihydroxy-6,12-dioxa-5<italic>H</italic>-tetraphen-3-one) is a new peltogynoid quinone methide isolated from Palo Morado (<italic>Peltogyne mexicana</italic> Mart&#xED;nez) heartwood by column chromatography. Its chemical structure was elucidated by IR, NMR (<sup>1</sup>H, <sup>13</sup>C), 2D NMR experiments (COSY, NOESY, HMQC, and HSQC), ESI-MS, and UV-Vis spectroscopic analysis. According to HPLC quantification, this compound is the main pigment and accounts for 1.21% of Palo Morado heartwood material. The antioxidant activity of peltomexicanin and dried methanolic extract (DEx) of purple heartwood was evaluated using the radical of 2,2&#x2019;-azinobis-(3-ethylbenzothiazoline-6-sulphonic acid) (ABTS) assay, and the corresponding values expressed as Trolox equivalents (&#xB5;mol TE/mg sample) were 4.25 and 4.57, respectively.</p>
+      </abstract>
+      <kwd-group>
+        <kwd><italic>Peltogyne mexicana</italic> Mart&#xED;nez</kwd>
+        <kwd>peltogynoids</kwd>
+        <kwd>quinone methide</kwd>
+        <kwd>purple heartwood</kwd>
+        <kwd>peltomexicanin</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec1-molecules-21-00186" sec-type="intro">
+      <title>1. Introduction</title>
+      <p><italic>Peltogyne mexicana</italic> Mart&#xED;nez<italic>,</italic> commonly known as Palo Morado, is one of the twenty-three species belonging to <italic>Caesalpiniaceae</italic> family, and it is an endemic tree from Guerrero State, Mexico. The principal characteristic of its heartwood is a particular purple color; native people exploit this attribute and the wood&#x2019;s hardness to elaborate wooden crafts, furniture and souvenirs [<xref ref-type="bibr" rid="B1-molecules-21-00186">1</xref>]. Previous studies in other species have shown that the compounds responsible for the color are related to peltogynoids. These compounds are derivatives of flavonoids, with which they share a similar chemical structure; they can found in fruits, barks, roots, and aerial parts from species of the genus <italic>Peltogyne</italic>, <italic>Acacia</italic>, <italic>Caesalpinia</italic> and <italic>Cassine</italic>, among others [<xref ref-type="bibr" rid="B2-molecules-21-00186">2</xref>,<xref ref-type="bibr" rid="B3-molecules-21-00186">3</xref>,<xref ref-type="bibr" rid="B4-molecules-21-00186">4</xref>,<xref ref-type="bibr" rid="B5-molecules-21-00186">5</xref>,<xref ref-type="bibr" rid="B6-molecules-21-00186">6</xref>,<xref ref-type="bibr" rid="B7-molecules-21-00186">7</xref>,<xref ref-type="bibr" rid="B8-molecules-21-00186">8</xref>]. The first peltogynol isolated was (+)-peltogynol from <italic>P. porphyrocardia</italic> Griseb. ex Benth by Robinson and Robinson [<xref ref-type="bibr" rid="B9-molecules-21-00186">9</xref>] and its chemical structure was elucidated by Hassall and Weatherston [<xref ref-type="bibr" rid="B10-molecules-21-00186">10</xref>]. Peltogynin and mopanin the respective oxidation products of (+)-peltogynol and its isomer, mopanol, were reported by Brandt and Roux [<xref ref-type="bibr" rid="B4-molecules-21-00186">4</xref>] and Drewes and Roux [<xref ref-type="bibr" rid="B11-molecules-21-00186">11</xref>]. The compounds described in these studies have a chromophoric group in their structure that confers color. In this study, we present the isolation, structural analysis, and quantification of peltomexicanin, a peltogynoid quinone methide from the heartwood of <italic>P. mexicana</italic>.</p>
+      <p>Quinone methides are analogous compounds to quinones, wherein a carbonyl oxygen has been replaced by a methylene group. There are three isomers of quinone methides: <italic>ortho-</italic>, <italic>para-</italic> and <italic>meta-,</italic> but the <italic>ortho-</italic> and <italic>para-</italic> types are the most common. Also, quinone methides are polar and more reactive than quinone and simple enones (like &#x3B1;,&#x3B2;-unsaturated ketones). The importance of their study lies in which they are intermediates in chemical and biochemical synthesis reactions [<xref ref-type="bibr" rid="B12-molecules-21-00186">12</xref>]. Besides, it has been reported that the <italic>ortho</italic>-quinone methide moieties confer important biological activities. For example, they have antioxidant properties and they are responsible for the cytotoxic and/or cytoprotective effects of many drugs, natural products, and endogenous compounds [<xref ref-type="bibr" rid="B13-molecules-21-00186">13</xref>]. Therefore, the interest on the development of methods for quinone methides synthesis has been increased in the recent years [<xref ref-type="bibr" rid="B14-molecules-21-00186">14</xref>], although simple quinone methides, such as, those without substituents at the exocyclic methylene group, are unstable compounds. Because of that, many efforts have been focused on their stabilization, mainly form quinone methide coordination complexes with transition metals [<xref ref-type="bibr" rid="B15-molecules-21-00186">15</xref>,<xref ref-type="bibr" rid="B16-molecules-21-00186">16</xref>,<xref ref-type="bibr" rid="B17-molecules-21-00186">17</xref>]. To the best of our knowledge, however, none of the peltogynoid quinone methides have yet been characterized.</p>
+    </sec>
+    <sec id="sec2-molecules-21-00186" sec-type="results">
+      <title>2. Results and Discussion</title>
+      <sec id="sec2dot1-molecules-21-00186">
+        <title>2.1. Structural Elucidation of the Isolated Compound</title>
+        <p>A purple amorphous powder was obtained, with UV-Vis (MeOH) &#x3BB;<sub>max</sub> nm (log &#x3B5;) 286 nm (3.64), 398 nm (3.42), 530 nm (3.44) and 566 nm (3.37); &#x3BB;<sub>max</sub> (+NaOMe) 288 nm (3.58), 344 nm (3.38), 432 nm (3.46), 616 nm (3.68); &#x3BB;<sub>max</sub> (+HCl) 282 (3.43), 396 nm (3.05), 536 nm (3.56). Bands typical of phenolic compounds were observed in the IR spectrum of the pure pigment; these were similar to those observed in compounds related to peltogynoids [<xref ref-type="bibr" rid="B18-molecules-21-00186">18</xref>]. We observed a stretch band at 3352 cm<sup>&#x2212;1</sup> characteristic of the O-H bond, two bands of stretching 2970 and 2923 cm<sup>&#x2212;1</sup> for the C-H bond, a signal of a carbonyl group at 1611 cm<sup>&#x2212;1</sup>, a band at 1283 cm<sup>&#x2212;1</sup> characteristic of the -C-O-C= group. Aromaticity (Ar-H) of the compound was represented by an intense band at 883 cm<sup>&#x2212;1</sup>. Pigment analysis by ESI-MS in positive mode generated a [M + H]<sup>+</sup> ion at <italic>m</italic>/<italic>z</italic> 283.0589, (<italic>m</italic>/<italic>z</italic> expected 283.0601) in agreement with the molecular formula C<sub>16</sub>H<sub>11</sub>O<sub>5</sub>. </p>
+        <p>Proton NMR exhibited a set of six protons in the aromatic region corresponding to aromatic protons of two independent systems A and B. A COSY experiment revealed a three coupled proton system attributed to H-8 (doublet, 7.94 ppm), H-9 (double doublet 6.25 ppm, <italic>J</italic> = 1, 10 Hz) and H-11 (doublet 6.33 ppm, <italic>J</italic> = 1 Hz) in ring A. The three protons for ring B were observed as broad singlets at 7.27 ppm (H-4), 7.16 ppm (H-2) and 6.66 ppm (H-1), respectively. Methylene protons for C-5 were observed as a broad singlet at 5.06 ppm. Correspondent protonated carbons were attributed based on results from an HSQC experiment (<xref ref-type="table" rid="molecules-21-00186-t001">Table 1</xref>); carbon shifted at 158.43 ppm (C-10) was attributed to the <italic>ipso</italic>-hydroxy group as well as C-11a shifted at 152.58 ppm.</p>
+        <p>Fusion between rings ABCD was evidenced by long range <sup>1</sup>H-<sup>13</sup>C HMBC correlation, in ring A the proton shifted at 6.33 ppm (H-11) has a three bond correlation with (C-9), proton H-9 (&#x3B4; 6.25 ppm) in the same ring correlated with C-11 (&#x3B4; 107.52 ppm). H-8 was correlated with the carbon located at 152 ppm (C-11a) which is the fused enol ether group of the system. The second hydroxyl group was found in ring C and shifted the corresponding <italic>ipso</italic> carbon C-7 to 146.06 ppm due its enol character.</p>
+        <p>Methylene carbon C-5 (&#x3B4; 66.64) was evidenced by <sup>13</sup>C attached proton test (APT) analysis, methylene protons correlated with alpha carbon C-4 (&#x3B4; 112.58) in ring B. In ring D we observed long range correlations <sup>1</sup>H-<sup>13</sup>C between the methylene protons (&#x3B4; 5.06 ppm) with the carbon C-7 (W) and C-12b belonging to the quinone methide structure conformed by ring B and ring D (<xref ref-type="fig" rid="molecules-21-00186-f001">Figure 1</xref>). Two bond <sup>1</sup>H-<sup>13</sup>C correlation was observed from protons H-2 and H-4 shifted to 7&#x2013;16 and 7.27 ppm respectively with the carbonyl group of quinone moiety located at 179.36 ppm in <sup>13</sup>C-NMR.</p>
+        <table-wrap id="molecules-21-00186-t001" position="float">
+          <object-id pub-id-type="pii">molecules-21-00186-t001_Table 1</object-id>
+          <label>Table 1</label>
+          <caption>
+            <p><sup>1</sup>H- (500 MHz) and <sup>13</sup>C-NMR (125 MHz) (296 K in methanol-<italic>d</italic><sub>4</sub>) spectroscopic assignments for peltomexicanin.</p>
+          </caption>
+          <table>
+            <thead>
+              <tr>
+                <th align="center" valign="middle">Carbon Number</th>
+                <th align="center" valign="middle"><sup>13</sup>C &#x3B4;</th>
+                <th align="center" valign="middle"><sup>1</sup>H <italic>&#x3B4;</italic>, Multiplicity, <italic>J</italic> (<italic>Hz)</italic></th>
+                <th align="center" valign="middle">HMBC <sup>1</sup>H-<sup>13</sup>C Correlations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">1</td>
+                <td align="center" valign="middle">110.94</td>
+                <td align="center" valign="middle">6.66, <italic>br s</italic></td>
+                <td align="center" valign="middle">C-12b</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">2</td>
+                <td align="center" valign="middle">108.76</td>
+                <td align="center" valign="middle">7.16, <italic>br s</italic></td>
+                <td align="center" valign="middle">C-1, C-3, C-12a</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">3</td>
+                <td align="center" valign="middle">179.36</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">4</td>
+                <td align="center" valign="middle">112.58</td>
+                <td align="center" valign="middle">7.27, <italic>s</italic></td>
+                <td align="center" valign="middle">C-3</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">4a</td>
+                <td align="center" valign="middle">159.54</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">5</td>
+                <td align="center" valign="middle">66.64</td>
+                <td align="center" valign="middle">5.06 <italic>s</italic></td>
+                <td align="center" valign="middle">C-4, C-7 (W) C-12a C-12b</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">6a</td>
+                <td align="center" valign="middle">113.16</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">7</td>
+                <td align="center" valign="middle">147.0</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">7a</td>
+                <td align="center" valign="middle">133.47</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">8</td>
+                <td align="center" valign="middle">131.74</td>
+                <td align="center" valign="middle">7.94, <italic>d</italic> (10)</td>
+                <td align="center" valign="middle">C-11a, C-10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">9</td>
+                <td align="center" valign="middle">107.52</td>
+                <td align="center" valign="middle">6.26, <italic>dd</italic> (1, 10)</td>
+                <td align="center" valign="middle">C-11</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">10</td>
+                <td align="center" valign="middle">158.13</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">11</td>
+                <td align="center" valign="middle">102.50</td>
+                <td align="center" valign="middle">6.33, <italic>d</italic> (1)</td>
+                <td align="center" valign="middle">C-9, C-10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">11a</td>
+                <td align="center" valign="middle">152.58</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">12a</td>
+                <td align="center" valign="middle">146.06</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">12b</td>
+                <td align="center" valign="middle">121.81</td>
+                <td align="center" valign="middle"> </td>
+                <td align="center" valign="middle"> </td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+        <p>Thus, the structure was established as 7,10-dihydroxy-6,12-dioxa-5<italic>H</italic>-tetraphen-3-one, due the observed IR, MS and <sup>1</sup>H- and <sup>13</sup>C-NMR data. We named the pigment as &#x201C;peltomexicanin&#x201D;. The proposed structure suggests that peltomexicanin represents a rare peltogynoid quinone methide compound. </p>
+        <fig id="molecules-21-00186-f001" position="float">
+          <label>Figure 1</label>
+          <caption>
+            <p>Peltomexicanin, multiple long range correlations observed by HMBC.</p>
+          </caption>
+          <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00186-g001.tif"/>
+        </fig>
+        <p>Results obtained for pigment analysis by UV-Vis, IR, ESI-MS, and 1D/2D nuclear magnetic resonance techniques confirm that we have isolated a flavonoid not previously reported, which in its enolized form, it has a similar structure to that of peltogynin and mopanin. The molecular weights reported for those compounds are 298.05 g/mol, whereas the molecular weight determined for peltomexicanin was 282.05 g/mol, indicating that the pigment from <italic>P. mexicana</italic> has one less hydroxy group than peltogynin or mopanin.</p>
+      </sec>
+      <sec id="sec2dot2-molecules-21-00186">
+        <title>2.2. Quantification by HPLC-DAD</title>
+        <p>The HPLC chromatogram showed a well-defined peak at 530 nm for the purified pigment with a retention time of 11.08 min. The peltomexicanin concentration calculated in the semipolar fraction was 11.85%. This represents 9.12% of the dried extract and 1.21% of the heartwood of <italic>P. mexicana</italic>.</p>
+      </sec>
+      <sec id="sec2dot3-molecules-21-00186">
+        <title>2.3. Antioxidant Activity</title>
+        <p>The antioxidant activity of peltomexicanin expressed as Trolox equivalent antioxidant capacity (TEAC) was calculated as 1.20 &#xB1; 0.04 mM, which is lower compared to that reported for other flavonoids such as quercetin (TEAC = 3.68 &#xB1; 0.12) and myricetin (3.07 &#xB1; 0.23 mM) [<xref ref-type="bibr" rid="B19-molecules-21-00186">19</xref>]. This may be since peltomexicanin differs from those flavonoids in that it contains a fourth ring that blocks the reactive groups, which are usually free in flavonoids. Thus, this structural configuration could result in a reduced ability of the molecule to neutralize radicals.</p>
+        <p>The specific radical scavenging estimated for peltomexicanin was 4.28 &#xB1; 0.10 &#xB5;mol TE/mg; this value was slightly lower than 4.57 &#xB1; 0.10 &#xB5;mol TE/mg obtained with the dried extract (DEx). This may be attributable to the presence of other compounds in the extract that could increase the antiradical activity alone or synergistically.</p>
+        <p>In conclusion, we have isolated a new purple pigment from <italic>P. mexicana</italic> Martinez and identified it as a quinone methide peltogynoid. This compound, named peltomexicanin, showed an important antioxidant activity. This feature lays the groundwork for additional studies of its biological activity.</p>
+      </sec>
+    </sec>
+    <sec id="sec3-molecules-21-00186" sec-type="methods">
+      <title>3. Experimental</title>
+      <sec id="sec3dot1-molecules-21-00186" sec-type="methods">
+        <title>3.1. General Procedures</title>
+        <p>UV-Vis spectra were obtained using a DR 5000 spectrophotometer (Hach, Loveland, CO, USA) in a range from 230 to 700 nm. The IR spectrum was recorded on a Jasco FT-IR instrument equipped with ATR (Jasco, Easton, MD, USA). The exact molecular mass was obtained by (ESI) analysis on a Bruker micrOTOF-Q II instrument (Bruker Daltonics, Bremen, Germany). Samples were dissolved in methanol and were injected directly to the spectrometer. The capillary potential was &#x2212;4.5 kV, the dry gas temperature 200 &#xB0;C and the drying gas flow 4 L/min. Total ion chromatograms from <italic>m</italic>/<italic>z</italic> 50 to 3000 were obtained. MS data were processed using Data analysis 1.0 (Bruker Daltonics). NMR experiments (<sup>1</sup>H at 500 MHz) and <sup>13</sup>C at 125 MHz) were performed with Varian 500 equipment (Varian, Palo Alto, CA, USA) using methanol-<italic>d<sub>4</sub></italic> as a solvent and TMS as internal reference.</p>
+      </sec>
+      <sec id="sec3dot2-molecules-21-00186">
+        <title>3.2. Plant Material</title>
+        <p><italic>P. mexicana</italic> Martinez (Palo Morado) was collected in Guerrero State (17&#xB0;09&#x2032;32&#x2032;&#x2032; N latitude and 99&#xB0;30&#x2032;51&#x2032;&#x2032; W longitude). Plant was identified by Post-graduate College of Chapingo, Mexico and a voucher specimen (Registration number 51,392) was deposited at the Herbarium CHAP.</p>
+      </sec>
+      <sec id="sec3dot3-molecules-21-00186">
+        <title>3.3. Extraction and Isolation</title>
+        <p>The heartwood of <italic>P. mexicana</italic> was crushed into a fine powder and then sieved through US standard testing sieve #45 to #100. Particles retained in mesh #100 (355 &#xB5;m &lt; particle size &gt; 150 &#xB5;m), were extracted in the dark with MeOH (1% HCl) in a solvent: solid ratio of 95:5 (<italic>v</italic>/<italic>w</italic>) at 20 &#xB1; 2 &#xB0;C for 24 h in a 250 mL flask with magnetic stirring. The solution was then filtered and concentrated on a rotatory evaporator (R-200, B&#xFC;chi, Flawil, Switzerland) at 40 &#xB0;C. This yielded an amorphous purple powder, which was named &#x201C;dried extract&#x201D; (DEx). Prior to purification, DEx was added to a partition liquid-liquid in a system of water-ethyl acetate (EtOAc) in order to remove compounds that were either highly polar or water- and EtOAc-insoluble. One gram of DEx was dissolved in 100 mL of EtOAc and 30 mL of distilled water to neutral pH was added. This solution was mixed vigorously and then organic phase was recovered; the operation was repeated by adding an additional two volumes of water. The organic fraction (corresponding to the semipolar fraction of DEx) was concentrated with a rotatory evaporator at 40 &#xB0;C. This fraction represented 76.93% &#xB1; 1.73% of DEx.</p>
+        <p>Subsequently, 600 mg of the semipolar fraction were dissolved in 2.0 mL of MeOH and loaded onto a column packed with Sephadex LH-20 (1.5 &#xD7; 35 cm, LH20 Sigma, St. Louis, MO, USA). As eluent, a gradient of MeOH:H<sub>2</sub>O was used in proportions of 0:10, 1:9, 2:8, 3:7, 4:6, 5:5, 6:4, 7:3, 8:2, 9:1 and 10:0. The pigment fraction of interest was concentrated and dried with a rotary evaporator at 40 &#xB0;C.</p>
+      </sec>
+      <sec id="sec3dot4-molecules-21-00186">
+        <title>3.4. Quantification by HPLC-DAD</title>
+        <p>Quantification of peltomexicanin pigment in the heartwood was performed by HPLC analysis, using the pure pigment as standard of reference. One milligram of peltomexicanin was diluted in 1 mL of MeOH at 1, 0.8, 0.6, 0.4, and 0.2 mg/mL, and filtered with 0.2-&#xB5;m pore nylon acrodisc. Sample (20 &#xB5;L) was injected onto the HPLC-DAD instrument (Infinity 1260 Series, Agilent Technologies, Palo Alto, CA, USA) equipped with a quaternary pump and analyzed by a ZORBAX Eclipse Plus C18 column (Agilent Technologies) 4.6 i.d. &#xD7; 150 mm, 5 &#xB5;m; with a gradient elution of distilled water (phase A) and acetonitrile (phase B) at a flow of 1 mL/min, starting at 100% of phase A for 5 min, reaching 50% of phase B in 12 min, and 100% of phase B in 4 min, maintaining for 3 min gradient, returning to phase A 100% in 3 min and then held for a further 3 min. The oven temperature was set at 25 &#xB0;C. Chromatographic analysis was monitored at 280 nm and 530 nm in DAD channels. A calibration curve was constructed using the area data obtained for each pigment dilution. In parallel, a sample of the semipolar fraction of DEx at 5 mg/mL was analyzed by HPLC in the same conditions as above, and the corresponding area for peltomexicanin was recorded. Using the external standard method, the peltomexicanin concentration in the extract and in the heartwood was calculated.</p>
+      </sec>
+      <sec id="sec3dot5-molecules-21-00186">
+        <title>3.5. Antioxidant Activity</title>
+        <p>The antioxidant activity of the DEx and the pure peltomexicanin were determined by measuring their capacity to scavenge the pre-formed radical of 2,2&#x2019;-azinobis-(3-ethylbenzothiazoline-6-sulphonic acid) (ABTS) according to the method described by Rufino <italic>et al.</italic> [<xref ref-type="bibr" rid="B20-molecules-21-00186">20</xref>]. ABTS<sup>+</sup> radical was produced by reacting 50 mL of 7 mM ABTS (A1888 Sigma) stock solution with 880 &#xB5;L of 140 mM potassium persulfate (379824 Sigma) and allowing the mixture to stand in a dark room at room temperature for 16 h before use. The ABTS<sup>+</sup> solution was diluted with methanol to obtain an absorbance of 0.70 &#xB1; 0.04 at 734 nm. Then, 1.5 mL of ABTS<sup>+</sup> radical and 30 &#xB5;L of sample or standard were mixed for 6 min and final absorbance was measured at 734 nm on a Hach DR5000UV-Vis spectrophotometer. Calibration was performed with a Trolox (238813 Sigma) stock solution as described above and the results were presented as TEAC.</p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+  <app-group>
+	<app id="app1-molecules-21-00186">
+      <title>Supplementary Materials</title>
+	  <supplementary-material id="molecules-21-00186-s001" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00186-s001.pdf">
+    </supplementary-material>
+      <p>The following are available online at <uri>http://www.mdpi.com/1420-3049/21/2/186/s1</uri>.</p>
+    </app>
+	</app-group>
+    <ack>
+      <title>Acknowledgments</title>
+      <p>This work was carried out with the financial support of National Council for Science and Technology (CONACYT) Project C.B. 2011-01-169779 and Instituto Polit&#xE9;cnico Nacional (Project SIP 2015-1298 and 2015-0134). PGM thanks CONACYT for their award of a scholarship.</p>
+    </ack>
+    <notes>
+      <title>Author Contributions</title>
+      <p>Guti&#xE9;rrez-Mac&#xED;as performed the isolation and quantification of the compound, also carried out the antioxidant activity assay. Peralta-Cruz performed spectroscopic analysis (<sup>1</sup>H-NMR, <sup>13</sup>C-NMR, 2D-NMR, IR, MS). Borja-de-la-Rosa provided a sample of identified plant material. Barrag&#xE1;n-Huerta and Peralta-Cruz carried out data analysis and structural elucidation of peltomexicanin. Guti&#xE9;rrez-Mac&#xED;as, Peralta-Cruz and Barrag&#xE1;n-Huerta were involved in the preparation of the manuscript. This study was performed based on the planning of Barrag&#xE1;n-Huerta and done under her guidance.</p>
+    </notes>
+    <notes>
+      <title>Conflicts of Interest</title>
+      <p>The authors declare no conflict of interest.</p>
+    </notes>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1-molecules-21-00186">
+        <label>1.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Navarro</surname>
+              <given-names>M.J.</given-names>
+            </name>
+            <name>
+              <surname>de la Borja</surname>
+              <given-names>R.A.</given-names>
+            </name>
+            <name>
+              <surname>Machuca</surname>
+              <given-names>V.R.</given-names>
+            </name>
+          </person-group>
+          <article-title>Caracter&#xED;sticas tecnol&#xF3;gicas de la madera de Palo Morado (<italic>Peltogyne mexicana</italic> Mart&#xED;nez) de Tierra Colorada, Guerrero, M&#xE9;xico</article-title>
+          <source>Rev. Chapingo Ser. Cienc.</source>
+          <year>2005</year>
+          <volume>11</volume>
+          <fpage>73</fpage>
+          <lpage>82</lpage>
+        </citation>
+      </ref>
+      <ref id="B2-molecules-21-00186">
+        <label>2.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Drewes</surname>
+              <given-names>S.E.</given-names>
+            </name>
+            <name>
+              <surname>Mashimbye</surname>
+              <given-names>M.J.</given-names>
+            </name>
+            <name>
+              <surname>Field</surname>
+              <given-names>J.S.</given-names>
+            </name>
+            <name>
+              <surname>Ramesar</surname>
+              <given-names>N.</given-names>
+            </name>
+          </person-group>
+          <article-title>11,11-Dimethyl-1,3,8,10-tetrahydroxi-9-methoxypeltogynan and three pentacyclic triterpenes from <italic>Cassine transvaalensis</italic></article-title>
+          <source>Phytochemistry</source>
+          <year>1991</year>
+          <volume>30</volume>
+          <fpage>3490</fpage>
+          <lpage>3493</lpage>
+          <pub-id pub-id-type="doi">10.1016/0031-9422(91)83243-E</pub-id>
+        </citation>
+      </ref>
+      <ref id="B3-molecules-21-00186">
+        <label>3.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ahmadu</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Abdulkarim</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Grougnet</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Myrianthopoulos</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Tillequin</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Magiatis</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Skaltsounis</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Two new peltogynoids from <italic>Acacia nilotica</italic> Delile with kinase inhibitory activity</article-title>
+          <source>Planta Med.</source>
+          <year>2010</year>
+          <volume>76</volume>
+          <fpage>458</fpage>
+          <lpage>460</lpage>
+          <pub-id pub-id-type="doi">10.1055/s-0029-1186226</pub-id>
+          <pub-id pub-id-type="pmid">19844867</pub-id>
+        </citation>
+      </ref>
+      <ref id="B4-molecules-21-00186">
+        <label>4.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Brandt</surname>
+              <given-names>E.V.</given-names>
+            </name>
+            <name>
+              <surname>Roux</surname>
+              <given-names>D.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Metabolites from the purple heartwood of <italic>Mimosoideae</italic> I, <italic>Acacia peuce</italic> F. Muell: The first natural 2,3-<italic>cis</italic>-peltogynoid</article-title>
+          <source>J. Chem. Soc. Perkin Trans. 1</source>
+          <year>1979</year>
+          <volume>777</volume>
+          <fpage>777</fpage>
+          <lpage>780</lpage>
+          <pub-id pub-id-type="doi">10.1039/p19790000777</pub-id>
+        </citation>
+      </ref>
+      <ref id="B5-molecules-21-00186">
+        <label>5.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Brandt</surname>
+              <given-names>E.V.</given-names>
+            </name>
+            <name>
+              <surname>Ferreira</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Roux</surname>
+              <given-names>D.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Metabolites from purple heartwood of <italic>Mimosoideae</italic>. Part 2. <italic>Acacia carnei</italic> maiden: Isolation, synthesis, and reactions of crombeone</article-title>
+          <source>J. Chem. Soc. Perkin Trans. 1</source>
+          <year>1981</year>
+          <volume>2</volume>
+          <fpage>514</fpage>
+          <lpage>521</lpage>
+          <pub-id pub-id-type="doi">10.1039/p19810000514</pub-id>
+        </citation>
+      </ref>
+      <ref id="B6-molecules-21-00186">
+        <label>6.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Brandt</surname>
+              <given-names>E.V.</given-names>
+            </name>
+            <name>
+              <surname>Ferreira</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Roux</surname>
+              <given-names>D.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Metabolites from purple heartwood of <italic>Mimosoideae</italic>. Part 3. <italic>Acacia crombei</italic> C.T. White: Structure and Partial Synthesis of Crombein, a Natural Spiropeltogynoid</article-title>
+          <source>J. Chem. Soc. Perkin Trans. 1</source>
+          <year>1981</year>
+          <volume>7</volume>
+          <fpage>1879</fpage>
+          <lpage>1883</lpage>
+          <pub-id pub-id-type="doi">10.1039/p19810001879</pub-id>
+        </citation>
+      </ref>
+      <ref id="B7-molecules-21-00186">
+        <label>7.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Van Heerden</surname>
+              <given-names>F.R.</given-names>
+            </name>
+            <name>
+              <surname>Brandt</surname>
+              <given-names>E.V.</given-names>
+            </name>
+            <name>
+              <surname>Ferreira</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Roux</surname>
+              <given-names>D.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Metabolites from purple heartwoods of the <italic>Mimosoideae</italic>. Part 4. <italic>Acacia fasciculifera</italic> F. Muell ex. Benth: Fasciculiferin, Fasciculiferol, and the Synthesis of 7-Aryl and 7-Flavanyl-Peltogynoids</article-title>
+          <source>J. Chem. Soc. Perkin Trans. 1</source>
+          <publisher-name>Mimosoideae</publisher-name>
+          <year>1981</year>
+          <fpage>2483</fpage>
+          <lpage>2490</lpage>
+          <pub-id pub-id-type="doi">10.1039/p19810002483</pub-id>
+        </citation>
+      </ref>
+      <ref id="B8-molecules-21-00186">
+        <label>8.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>McPherson</surname>
+              <given-names>D.D.</given-names>
+            </name>
+            <name>
+              <surname>Cordell</surname>
+              <given-names>G.A.</given-names>
+            </name>
+            <name>
+              <surname>Soejarto</surname>
+              <given-names>D.D.</given-names>
+            </name>
+            <name>
+              <surname>Pezzuto</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Fong</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Havsteen</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <article-title>Peltogynoids and homoisoflavonoids from <italic>Caesalpinia pulcherrima</italic></article-title>
+          <source>Phytochemistry</source>
+          <year>1983</year>
+          <volume>22</volume>
+          <fpage>2835</fpage>
+          <lpage>2838</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0031-9422(00)97708-2</pub-id>
+        </citation>
+      </ref>
+      <ref id="B9-molecules-21-00186">
+        <label>9.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Robinson</surname>
+              <given-names>G.M.</given-names>
+            </name>
+            <name>
+              <surname>Robinson</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <article-title>Leuco-anthocyanins and Leucoanthocyanidins. Part I. The isolation of peltogynol and its molecular structure</article-title>
+          <source>J. Chem. Soc.</source>
+          <year>1935</year>
+          <volume>744</volume>
+          <fpage>744</fpage>
+          <lpage>752</lpage>
+          <pub-id pub-id-type="doi">10.1039/jr9350000744</pub-id>
+        </citation>
+      </ref>
+      <ref id="B10-molecules-21-00186">
+        <label>10.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hassall</surname>
+              <given-names>C.H.</given-names>
+            </name>
+            <name>
+              <surname>Weatherston</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>The absolute configuration of the leucoanthocyanidin, peltogynol</article-title>
+          <source>J. Chem. Soc.</source>
+          <year>1965</year>
+          <volume>2844</volume>
+          <fpage>2844</fpage>
+          <lpage>2849,</lpage>
+          <pub-id pub-id-type="doi">10.1039/jr9650002844</pub-id>
+        </citation>
+      </ref>
+      <ref id="B11-molecules-21-00186">
+        <label>11.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Drewes</surname>
+              <given-names>S.E.</given-names>
+            </name>
+            <name>
+              <surname>Roux</surname>
+              <given-names>D.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Isolation of mopanine from <italic>Colophospermum mopane</italic> and interrelation of flavonoid components of <italic>Peltogyne</italic> spp.</article-title>
+          <source>J. Chem. Soc. C Org.</source>
+          <year>1967</year>
+          <volume>1407</volume>
+          <fpage>1407</fpage>
+          <lpage>1410</lpage>
+          <pub-id pub-id-type="doi">10.1039/j39670001407</pub-id>
+        </citation>
+      </ref>
+      <ref id="B12-molecules-21-00186">
+        <label>12.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lukeman</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Photochemical generation and characterization of quinone methides</article-title>
+          <source>Quinone Methides</source>
+          <edition>1st ed.</edition>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Rokita</surname>
+              <given-names>S.E.</given-names>
+            </name>
+          </person-group>
+          <publisher-name>Wiley</publisher-name>
+          <publisher-loc>Hoboken, NJ, USA</publisher-loc>
+          <year>2009</year>
+          <fpage>1</fpage>
+          <lpage>26</lpage>
+        </citation>
+      </ref>
+      <ref id="B13-molecules-21-00186">
+        <label>13.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bolton</surname>
+              <given-names>J.L.</given-names>
+            </name>
+          </person-group>
+          <article-title>Quinone methide bioactivation pathway: Contribution to Toxicity and/or Cytoprotection?</article-title>
+          <source>Curr. Org. Chem.</source>
+          <year>2014</year>
+          <volume>18</volume>
+          <fpage>61</fpage>
+          <lpage>69</lpage>
+          <pub-id pub-id-type="doi">10.2174/138527281801140121123046</pub-id>
+          <pub-id pub-id-type="pmid">25346613</pub-id>
+        </citation>
+      </ref>
+      <ref id="B14-molecules-21-00186">
+        <label>14.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Toteva</surname>
+              <given-names>M.M.</given-names>
+            </name>
+            <name>
+              <surname>Richard</surname>
+              <given-names>J.P.</given-names>
+            </name>
+          </person-group>
+          <article-title>The generation and reactions of quinone methides</article-title>
+          <source>Adv. Phys. Org. Chem.</source>
+          <year>2011</year>
+          <volume>45</volume>
+          <fpage>39</fpage>
+          <lpage>91</lpage>
+          <pub-id pub-id-type="pmid">24511169</pub-id>
+        </citation>
+      </ref>
+      <ref id="B15-molecules-21-00186">
+        <label>15.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Amouri</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <article-title>Metal-stabilized <italic>o</italic>-quinone methides, thioquinones, and selenoquinones: Trapping important reactive intermediates and beyond</article-title>
+          <source>Synlett</source>
+          <year>2011</year>
+          <volume>1357</volume>
+          <fpage>1357</fpage>
+          <lpage>1369</lpage>
+          <pub-id pub-id-type="doi">10.1055/s-0030-1260582</pub-id>
+        </citation>
+      </ref>
+      <ref id="B16-molecules-21-00186">
+        <label>16.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Amouri</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>le Bras</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Taming reactive phenol tautomers and <italic>o</italic>-quinone methides with transition metals: A structure-reactivity relationship</article-title>
+          <source>Acc. Chem. Res.</source>
+          <year>2002</year>
+          <volume>35</volume>
+          <fpage>501</fpage>
+          <lpage>510</lpage>
+          <pub-id pub-id-type="doi">10.1021/ar010105m</pub-id>
+          <pub-id pub-id-type="pmid">12118989</pub-id>
+        </citation>
+      </ref>
+      <ref id="B17-molecules-21-00186">
+        <label>17.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Amouri</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Besace</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Bras</surname>
+              <given-names>J.L.</given-names>
+            </name>
+            <name>
+              <surname>Vaissermann</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>General synthesis, first crystal structure, and reactivity of stable <italic>o</italic>-quinone methide complexes of Cp* Ir</article-title>
+          <source>J. Am. Chem. Soc.</source>
+          <year>1998</year>
+          <volume>120</volume>
+          <fpage>6171</fpage>
+          <lpage>6172</lpage>
+          <pub-id pub-id-type="doi">10.1021/ja9802145</pub-id>
+        </citation>
+      </ref>
+      <ref id="B18-molecules-21-00186">
+        <label>18.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Choudhary</surname>
+              <given-names>M.I.</given-names>
+            </name>
+            <name>
+              <surname>Nur-E-Alam</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Akhtar</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Ahmad</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Baig</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Ondognii</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Gombosurengyn</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Rahman</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Five new peltogynoids from underground parts of <italic>Iris bungei</italic>: A mongolian medicinal plant</article-title>
+          <source>Chem. Pharm. Bull.</source>
+          <year>2001</year>
+          <volume>49</volume>
+          <fpage>1295</fpage>
+          <lpage>1298</lpage>
+          <pub-id pub-id-type="doi">10.1248/cpb.49.1295</pub-id>
+          <pub-id pub-id-type="pmid">11605657</pub-id>
+        </citation>
+      </ref>
+      <ref id="B19-molecules-21-00186">
+        <label>19.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Soobrattee</surname>
+              <given-names>M.A.</given-names>
+            </name>
+            <name>
+              <surname>Neergheen</surname>
+              <given-names>V.S.</given-names>
+            </name>
+            <name>
+              <surname>Luximon-Ramma</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Aruoma</surname>
+              <given-names>O.I.</given-names>
+            </name>
+            <name>
+              <surname>Bahorun</surname>
+              <given-names>T.</given-names>
+            </name>
+          </person-group>
+          <article-title>Phenolics as potential antioxidant therapeutic agents: Mechanism and actions</article-title>
+          <source>Mut. Res.</source>
+          <year>2005</year>
+          <volume>579</volume>
+          <fpage>200</fpage>
+          <lpage>213</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.mrfmmm.2005.03.023</pub-id>
+          <pub-id pub-id-type="pmid">16126236</pub-id>
+        </citation>
+      </ref>
+      <ref id="B20-molecules-21-00186">
+        <label>20.</label>
+        <citation citation-type="web">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rufino</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Alves</surname>
+              <given-names>R.E.</given-names>
+            </name>
+            <name>
+              <surname>de Brito</surname>
+              <given-names>E.S.</given-names>
+            </name>
+            <name>
+              <surname>de Morais</surname>
+              <given-names>S.M.</given-names>
+            </name>
+            <name>
+              <surname>Sampaio</surname>
+              <given-names>C.D.G.</given-names>
+            </name>
+            <name>
+              <surname>P&#xE9;rez-Jimenez</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Saura-Calixto</surname>
+              <given-names>F.D.</given-names>
+            </name>
+          </person-group>
+          <article-title>Metodologia Cient&#xED;fica: Determina&#xE7;&#xE3;o da Atividade Antioxidante Total en Frutas Pela Captura do Radical Livre ABTS<sup>+</sup></article-title>
+          <source>Embrapa Agroind. Trop. Comun. T&#xE9;cn.</source>
+          <year>2007</year>
+          <comment>Avaliable online: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ainfo.cnptia.embrapa.br/digital/bitstream/CNPAT/10225/1/Cot_128.pdf" ext-link-type="uri">http://ainfo.cnptia.embrapa.br/digital/bitstream/CNPAT/10225/1/Cot_128.pdf</ext-link>
+          </comment>
+          <access-date>(accessed on 3 February 2016)</access-date>
+        </citation>
+      </ref>
+    </ref-list>
+    <fn-group>
+      <fn>
+        <p><bold>Sample Availability:</bold> Samples of peltomexicanin are available from the authors.</p>
+      </fn>
+    </fn-group>
+  </back>
+</article>

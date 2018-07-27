@@ -1,0 +1,1162 @@
+[
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:50:52Z",
+      "timestamp": 1455623452142
+    },
+    "reference-count": 16,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020178",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          1
+        ]
+      ],
+      "date-time": "2016-02-01T15:03:26Z",
+      "timestamp": 1454339006000
+    },
+    "page": "178",
+    "source": "CrossRef",
+    "title": [
+      "Unusual Nitrogenous Phenalenone Derivatives from the Marine-Derived Fungus Coniothyrium cereale"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Elsebai",
+        "given": "Mahmoud"
+      },
+      {
+        "affiliation": [],
+        "family": "Ghabbour",
+        "given": "Hazem"
+      },
+      {
+        "affiliation": [],
+        "family": "Mehiri",
+        "given": "Mohamed"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:27Z",
+      "timestamp": 1455396747000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          1
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020178"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020178",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:50:52Z",
+      "timestamp": 1455623452190
+    },
+    "reference-count": 45,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020181",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          1
+        ]
+      ],
+      "date-time": "2016-02-01T15:03:26Z",
+      "timestamp": 1454339006000
+    },
+    "page": "181",
+    "source": "CrossRef",
+    "title": [
+      "Thiourea-Modified TiO2 Nanorods with Enhanced Photocatalytic Activity"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Wu",
+        "given": "Xiaofeng"
+      },
+      {
+        "affiliation": [],
+        "family": "Fang",
+        "given": "Shun"
+      },
+      {
+        "affiliation": [],
+        "family": "Zheng",
+        "given": "Yang"
+      },
+      {
+        "affiliation": [],
+        "family": "Sun",
+        "given": "Jie"
+      },
+      {
+        "affiliation": [],
+        "family": "Lv",
+        "given": "Kangle",
+        "ORCID": "http://orcid.org/0000-0001-8764-0892"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          1
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:30Z",
+      "timestamp": 1455396750000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          1
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020181"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020181",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:11Z",
+      "timestamp": 1455623471817
+    },
+    "reference-count": 146,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020180",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          3
+        ]
+      ],
+      "date-time": "2016-02-03T06:48:18Z",
+      "timestamp": 1454482098000
+    },
+    "page": "180",
+    "source": "CrossRef",
+    "title": [
+      "Recent Development of Plasmonic Resonance-Based Photocatalysis and Photovoltaics for Solar Utilization"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Fan",
+        "given": "Wenguang"
+      },
+      {
+        "affiliation": [],
+        "family": "Leung",
+        "given": "Michael"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          2
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:29Z",
+      "timestamp": 1455396749000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          2
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020180"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020180",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:19Z",
+      "timestamp": 1455623479485
+    },
+    "reference-count": 190,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020182",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          3
+        ]
+      ],
+      "date-time": "2016-02-03T15:06:26Z",
+      "timestamp": 1454511986000
+    },
+    "page": "182",
+    "source": "CrossRef",
+    "title": [
+      "Elicitation, an Effective Strategy for the Biotechnological Production of Bioactive High-Added Value Compounds in Plant Cell Factories"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Ramirez-Estrada",
+        "given": "Karla"
+      },
+      {
+        "affiliation": [],
+        "family": "Vidal-Limon",
+        "given": "Heriberto"
+      },
+      {
+        "affiliation": [],
+        "family": "Hidalgo",
+        "given": "Diego"
+      },
+      {
+        "affiliation": [],
+        "family": "Moyano",
+        "given": "Elisabeth",
+        "ORCID": "http://orcid.org/0000-0002-0820-7220"
+      },
+      {
+        "affiliation": [],
+        "family": "Golenioswki",
+        "given": "Marta"
+      },
+      {
+        "affiliation": [],
+        "family": "Cusidó",
+        "given": "Rosa"
+      },
+      {
+        "affiliation": [],
+        "family": "Palazon",
+        "given": "Javier"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          3
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:42Z",
+      "timestamp": 1455396762000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          3
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020182"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020182",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:36Z",
+      "timestamp": 1455623496386
+    },
+    "reference-count": 51,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020174",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ],
+      "date-time": "2016-02-04T15:26:22Z",
+      "timestamp": 1454599582000
+    },
+    "page": "174",
+    "source": "CrossRef",
+    "title": [
+      "Antioxidant and DNA Damage Protecting Activity of Exopolysaccharides from the Endophytic Bacterium Bacillus cereus SZ1"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Zheng",
+        "given": "Li"
+      },
+      {
+        "affiliation": [],
+        "family": "Zou",
+        "given": "Tin"
+      },
+      {
+        "affiliation": [],
+        "family": "Ma",
+        "given": "Yan"
+      },
+      {
+        "affiliation": [],
+        "family": "Wang",
+        "given": "Jian"
+      },
+      {
+        "affiliation": [],
+        "family": "Zhang",
+        "given": "Yu"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:26Z",
+      "timestamp": 1455396746000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020174"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020174",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:36Z",
+      "timestamp": 1455623496440
+    },
+    "reference-count": 39,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020183",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ],
+      "date-time": "2016-02-04T15:26:22Z",
+      "timestamp": 1454599582000
+    },
+    "page": "183",
+    "source": "CrossRef",
+    "title": [
+      "Alisol F 24 Acetate Enhances Chemosensitivity and Apoptosis of MCF-7/DOX Cells by Inhibiting P-Glycoprotein-Mediated Drug Efflux"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Pan",
+        "given": "Guixiang"
+      },
+      {
+        "affiliation": [],
+        "family": "Li",
+        "given": "Tingting"
+      },
+      {
+        "affiliation": [],
+        "family": "Zeng",
+        "given": "Qingqing"
+      },
+      {
+        "affiliation": [],
+        "family": "Wang",
+        "given": "Xiaoming"
+      },
+      {
+        "affiliation": [],
+        "family": "Zhu",
+        "given": "Yan",
+        "ORCID": "http://orcid.org/0000-0002-3197-7936"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:44Z",
+      "timestamp": 1455396764000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020183"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020183",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:36Z",
+      "timestamp": 1455623496534
+    },
+    "reference-count": 56,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020185",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ],
+      "date-time": "2016-02-04T15:26:22Z",
+      "timestamp": 1454599582000
+    },
+    "page": "185",
+    "source": "CrossRef",
+    "title": [
+      "Theoretical Study of Molecular Structure and Physicochemical Properties of Novel Factor Xa Inhibitors and Dual Factor Xa and Factor IIa Inhibitors"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Remko",
+        "given": "Milan"
+      },
+      {
+        "affiliation": [],
+        "family": "Remková",
+        "given": "Anna"
+      },
+      {
+        "affiliation": [],
+        "family": "Broer",
+        "given": "Ria",
+        "ORCID": "http://orcid.org/0000-0002-5437-9509"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:50Z",
+      "timestamp": 1455396770000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020185"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020185",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:36Z",
+      "timestamp": 1455623496571
+    },
+    "reference-count": 20,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020186",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ],
+      "date-time": "2016-02-04T15:26:22Z",
+      "timestamp": 1454599582000
+    },
+    "page": "186",
+    "source": "CrossRef",
+    "title": [
+      "Peltomexicanin, a Peltogynoid Quinone Methide from Peltogyne Mexicana Martínez Purple Heartwood"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Gutiérrez-Macías",
+        "given": "Paulina"
+      },
+      {
+        "affiliation": [],
+        "family": "Peralta-Cruz",
+        "given": "Javier"
+      },
+      {
+        "affiliation": [],
+        "family": "Borja-de-la-Rosa",
+        "given": "Amparo"
+      },
+      {
+        "affiliation": [],
+        "family": "Barragán-Huerta",
+        "given": "Blanca"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:51Z",
+      "timestamp": 1455396771000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020186"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020186",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:36Z",
+      "timestamp": 1455623496618
+    },
+    "reference-count": 21,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020187",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ],
+      "date-time": "2016-02-04T15:26:22Z",
+      "timestamp": 1454599582000
+    },
+    "page": "187",
+    "source": "CrossRef",
+    "title": [
+      "1,3-Dipolar Cycloaddition in the Preparation of New Fused Heterocyclic Compounds via Thermal Initiation"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Porubský",
+        "given": "Martin"
+      },
+      {
+        "affiliation": [],
+        "family": "Tenora",
+        "given": "Lukáš"
+      },
+      {
+        "affiliation": [],
+        "family": "Potáček",
+        "given": "Milan"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:55Z",
+      "timestamp": 1455396775000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020187"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020187",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:36Z",
+      "timestamp": 1455623496661
+    },
+    "reference-count": 16,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "DOI": "10.3390/molecules21020188",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ],
+      "date-time": "2016-02-04T15:26:22Z",
+      "timestamp": 1454599582000
+    },
+    "page": "188",
+    "source": "CrossRef",
+    "title": [
+      "Two New Oleanane-Type Saponins with Anti-Proliferative Activity from Camellia oleifera Abel. Seed Cake"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Zong",
+        "given": "Jian-Fa"
+      },
+      {
+        "affiliation": [],
+        "family": "Peng",
+        "given": "Yun-Ru"
+      },
+      {
+        "affiliation": [],
+        "family": "Bao",
+        "given": "Guan-Hu"
+      },
+      {
+        "affiliation": [],
+        "family": "Hou",
+        "given": "Ru-Yan"
+      },
+      {
+        "affiliation": [],
+        "family": "Wan",
+        "given": "Xiao-Chun"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:52:56Z",
+      "timestamp": 1455396776000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020188"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020188",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ],
+      "date-time": "2016-02-16T11:51:36Z",
+      "timestamp": 1455623496756
+    },
+    "reference-count": 46,
+    "publisher": "MDPI AG",
+    "issue": "2",
+    "funder": [
+      {
+        "award": [],
+        "doi-asserted-by": "publisher",
+        "name": "King Abdulaziz City for Science and Technology",
+        "DOI": "10.13039/501100004919"
+      }
+    ],
+    "DOI": "10.3390/molecules21020189",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ],
+      "date-time": "2016-02-04T15:26:22Z",
+      "timestamp": 1454599582000
+    },
+    "page": "189",
+    "source": "CrossRef",
+    "title": [
+      "Design, Synthesis and Anticancer Evaluation of Novel Quinazoline-Sulfonamide Hybrids"
+    ],
+    "prefix": "http://id.crossref.org/prefix/10.3390",
+    "volume": "21",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Ghorab",
+        "given": "Mostafa"
+      },
+      {
+        "affiliation": [],
+        "family": "Alsaid",
+        "given": "Mansour"
+      },
+      {
+        "affiliation": [],
+        "family": "Al-Dosari",
+        "given": "Mohammed"
+      },
+      {
+        "affiliation": [],
+        "family": "El-Gazzar",
+        "given": "Marwa"
+      },
+      {
+        "affiliation": [],
+        "family": "Parvez",
+        "given": "Mohammad"
+      }
+    ],
+    "member": "http://id.crossref.org/member/1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "container-title": [
+      "Molecules"
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T20:53:04Z",
+      "timestamp": 1455396784000
+    },
+    "score": 1,
+    "subtitle": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          4
+        ]
+      ]
+    },
+    "alternative-id": [
+      "molecules21020189"
+    ],
+    "URL": "http://dx.doi.org/10.3390/molecules21020189",
+    "ISSN": [
+      "1420-3049"
+    ],
+    "subject": [
+      "Organic Chemistry"
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        10
+      ]
+    ],
+    "date-time": "2016-05-10T11:40:53Z",
+    "timestamp": 1462880453966
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/acp-2016-76",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:34:00Z",
+    "timestamp": 1454322840000
+  },
+  "page": "1-38",
+  "source": "CrossRef",
+  "title": [
+    "Representation of the Tropical Stratospheric Zonal Wind in Global Atmospheric Reanalyses"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Kawatani",
+      "given": "Y."
+    },
+    {
+      "affiliation": [],
+      "family": "Hamilton",
+      "given": "K."
+    },
+    {
+      "affiliation": [],
+      "family": "Miyazaki",
+      "given": "K."
+    },
+    {
+      "affiliation": [],
+      "family": "Fujiwara",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Anstey",
+      "given": "J."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        10
+      ]
+    ],
+    "date-time": "2016-05-10T10:05:09Z",
+    "timestamp": 1462874709000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2016-76",
+  "ISSN": [
+    "1680-7375"
+  ]
+}

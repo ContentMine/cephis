@@ -1,0 +1,155 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        3
+      ]
+    ],
+    "date-time": "2016-05-03T09:40:10Z",
+    "timestamp": 1462268410086
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/acp-2015-926",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:43:08Z",
+    "timestamp": 1454323388000
+  },
+  "page": "1-28",
+  "source": "CrossRef",
+  "title": [
+    "Bi-directional air-sea exchange and accumulation of POPs (PAHs, PCBs, OCPs and PBDEs) in the nocturnal marine boundary layer"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Lammel",
+      "given": "Gerhard"
+    },
+    {
+      "affiliation": [],
+      "family": "Meixner",
+      "given": "Franz X.",
+      "ORCID": "http://orcid.org/0000-0002-1605-587X"
+    },
+    {
+      "affiliation": [],
+      "family": "Vrana",
+      "given": "Branislav"
+    },
+    {
+      "affiliation": [],
+      "family": "Efstathiou",
+      "given": "Christos"
+    },
+    {
+      "affiliation": [],
+      "family": "Kohoutek",
+      "given": "Jiři"
+    },
+    {
+      "affiliation": [],
+      "family": "Kukučka",
+      "given": "Petr"
+    },
+    {
+      "affiliation": [],
+      "family": "Mulder",
+      "given": "Marie D."
+    },
+    {
+      "affiliation": [],
+      "family": "Přibylová",
+      "given": "Petra"
+    },
+    {
+      "affiliation": [],
+      "family": "Prokeš",
+      "given": "Roman"
+    },
+    {
+      "affiliation": [],
+      "family": "Rusina",
+      "given": "Tatsiana P."
+    },
+    {
+      "affiliation": [],
+      "family": "Song",
+      "given": "Guo-Zheng"
+    },
+    {
+      "affiliation": [],
+      "family": "Tsapakis",
+      "given": "Manolis"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        3
+      ]
+    ],
+    "date-time": "2016-05-03T08:37:05Z",
+    "timestamp": 1462264625000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2015-926",
+  "ISSN": [
+    "1680-7375"
+  ]
+}

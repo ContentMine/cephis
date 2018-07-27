@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>HoughLine.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(128,128,128); font-weight: bold; font-style: italic; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+HoughLine.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="s0">package </span><span class="s1">ac.essex.ooechs.imaging.commons.edge.hough; 
+<a name="l2"> 
+<a name="l3"></span><span class="s0">import </span><span class="s1">java.awt.image.BufferedImage; 
+<a name="l4"> 
+<a name="l5"></span><span class="s2">/** 
+<a name="l6"> * Represents a linear line as detected by the hough transform. 
+<a name="l7"> * This line is represented by an angle theta and a radius from the centre. 
+<a name="l8"> * 
+<a name="l9"> * </span><span class="s3">@author </span><span class="s2">Olly Oechsle, University of Essex, Date: 13-Mar-2008 
+<a name="l10"> * </span><span class="s3">@version </span><span class="s2">1.0 
+<a name="l11"> */</span><span class="s1"> 
+<a name="l12"></span><span class="s0">public class </span><span class="s1">HoughLine { 
+<a name="l13"> 
+<a name="l14">    </span><span class="s0">protected double </span><span class="s1">theta; 
+<a name="l15">    </span><span class="s0">protected double </span><span class="s1">r; 
+<a name="l16"> 
+<a name="l17">    </span><span class="s2">/** 
+<a name="l18">     * Initialises the hough line 
+<a name="l19">     */</span><span class="s1"> 
+<a name="l20">    </span><span class="s0">public </span><span class="s1">HoughLine(</span><span class="s0">double </span><span class="s1">theta, </span><span class="s0">double </span><span class="s1">r) { 
+<a name="l21">        </span><span class="s0">this</span><span class="s1">.theta = theta; 
+<a name="l22">        </span><span class="s0">this</span><span class="s1">.r = r; 
+<a name="l23">    } 
+<a name="l24"> 
+<a name="l25">    </span><span class="s2">/** 
+<a name="l26">     * Draws the line on the image of your choice with the RGB colour of your choice. 
+<a name="l27">     */</span><span class="s1"> 
+<a name="l28">    </span><span class="s0">public void </span><span class="s1">draw(BufferedImage image, </span><span class="s0">int </span><span class="s1">color) { 
+<a name="l29"> 
+<a name="l30">        </span><span class="s0">int </span><span class="s1">height = image.getHeight(); 
+<a name="l31">        </span><span class="s0">int </span><span class="s1">width = image.getWidth(); 
+<a name="l32"> 
+<a name="l33">        </span><span class="s2">// During processing h_h is doubled so that -ve r values</span><span class="s1"> 
+<a name="l34">        </span><span class="s0">int </span><span class="s1">houghHeight = (</span><span class="s0">int</span><span class="s1">) (Math.sqrt(</span><span class="s4">2</span><span class="s1">) * Math.max(height, width)) / </span><span class="s4">2</span><span class="s1">; 
+<a name="l35"> 
+<a name="l36">        </span><span class="s2">// Find edge points and vote in array</span><span class="s1"> 
+<a name="l37">        </span><span class="s0">float </span><span class="s1">centerX = width / </span><span class="s4">2</span><span class="s1">; 
+<a name="l38">        </span><span class="s0">float </span><span class="s1">centerY = height / </span><span class="s4">2</span><span class="s1">; 
+<a name="l39"> 
+<a name="l40">        </span><span class="s2">// Draw edges in output array</span><span class="s1"> 
+<a name="l41">        </span><span class="s0">double </span><span class="s1">tsin = Math.sin(theta); 
+<a name="l42">        </span><span class="s0">double </span><span class="s1">tcos = Math.cos(theta); 
+<a name="l43"> 
+<a name="l44">        </span><span class="s0">if </span><span class="s1">(theta &lt; Math.PI * </span><span class="s4">0.25 </span><span class="s1">|| theta &gt; Math.PI * </span><span class="s4">0.75</span><span class="s1">) { 
+<a name="l45">            </span><span class="s2">// Draw vertical-ish lines</span><span class="s1"> 
+<a name="l46">            </span><span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">y = </span><span class="s4">0</span><span class="s1">; y &lt; height; y++) { 
+<a name="l47">                </span><span class="s0">int </span><span class="s1">x = (</span><span class="s0">int</span><span class="s1">) ((((r - houghHeight) - ((y - centerY) * tsin)) / tcos) + centerX); 
+<a name="l48">                </span><span class="s0">if </span><span class="s1">(x &lt; width &amp;&amp; x &gt;= </span><span class="s4">0</span><span class="s1">) { 
+<a name="l49">                    image.setRGB(x, y, color); 
+<a name="l50">                } 
+<a name="l51">            } 
+<a name="l52">        } </span><span class="s0">else </span><span class="s1">{ 
+<a name="l53">            </span><span class="s2">// Draw horizontal-sh lines</span><span class="s1"> 
+<a name="l54">            </span><span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">x = </span><span class="s4">0</span><span class="s1">; x &lt; width; x++) { 
+<a name="l55">                </span><span class="s0">int </span><span class="s1">y = (</span><span class="s0">int</span><span class="s1">) ((((r - houghHeight) - ((x - centerX) * tcos)) / tsin) + centerY); 
+<a name="l56">                </span><span class="s0">if </span><span class="s1">(y &lt; height &amp;&amp; y &gt;= </span><span class="s4">0</span><span class="s1">) { 
+<a name="l57">                    image.setRGB(x, y, color); 
+<a name="l58">                } 
+<a name="l59">            } 
+<a name="l60">        } 
+<a name="l61">    } 
+<a name="l62">} 
+<a name="l63"></span></pre>
+</body>
+</html>

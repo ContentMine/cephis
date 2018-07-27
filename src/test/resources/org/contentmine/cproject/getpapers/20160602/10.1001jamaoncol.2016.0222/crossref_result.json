@@ -1,0 +1,84 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:46Z",
+    "timestamp": 1464911026970
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaoncol.2016.0222",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:22Z",
+    "timestamp": 1464906922000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Treatment of Regional Lymph Nodes in Breast Cancer—Not Recommended for All Patients with 1 to 3 Positive Auxiliary Nodes"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiation Oncology, Dana-Farber Cancer Institute, Brigham and Women's Hospital, Harvard Medical School, Boston, Massachusetts"
+        }
+      ],
+      "family": "Harris",
+      "given": "Jay R."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Oncology",
+    "JAMA Oncol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:22Z",
+    "timestamp": 1464906922000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaoncol.2016.0222",
+  "ISSN": [
+    "2374-2437"
+  ]
+}

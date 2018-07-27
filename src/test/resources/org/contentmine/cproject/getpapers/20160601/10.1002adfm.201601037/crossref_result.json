@@ -1,0 +1,234 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:40:45Z",
+    "timestamp": 1464784845225
+  },
+  "reference-count": 54,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "61222401",
+        "61176054"
+      ],
+      "doi-asserted-by": "crossref",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1002/adfm.201601037",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:30Z",
+    "timestamp": 1464781170000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Improved All-Polymer Solar Cell Performance by Using Matched Polymer Acceptor"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Shi",
+      "given": "Shaohua"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Yuan",
+      "given": "Jianyu"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Ding",
+      "given": "Guanqun"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Center for Polymers and Organic Solids; University of California; Santa Barbara CA 93106-5090 USA"
+        }
+      ],
+      "family": "Ford",
+      "given": "Michael"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Lu",
+      "given": "Kunyuan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Shi",
+      "given": "Guozheng"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Sun",
+      "given": "Jianxia"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Ling",
+      "given": "Xufeng"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Li",
+      "given": "Yong"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Functional Nano & Soft Materials (FUNSOM); Jiangsu Key Laboratory for Carbon-Based Functional Materials & Devices; Soochow University; 199 Ren'ai Road Suzhou 215123 Jiangsu P. R. China"
+        }
+      ],
+      "family": "Ma",
+      "given": "Wanli"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Adv. Funct. Mater.",
+    "Advanced Functional Materials"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadfm.201601037"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:33Z",
+    "timestamp": 1464781173000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adfm.201601037",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "1616-301X"
+  ],
+  "subject": [
+    "Electrochemistry",
+    "Electronic, Optical and Magnetic Materials",
+    "Condensed Matter Physics",
+    "Biomaterials"
+  ]
+}

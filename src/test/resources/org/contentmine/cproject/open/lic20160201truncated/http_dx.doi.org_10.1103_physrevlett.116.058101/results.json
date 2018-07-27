@@ -1,0 +1,53 @@
+{
+  "fulltext_pdf": {
+    "value": [
+      "http://link.aps.org/pdf/10.1103/PhysRevLett.116.058101"
+    ]
+  },
+  "fulltext_html": {
+    "value": []
+  },
+  "title": {
+    "value": [
+      "Constraints on Fluctuations in Sparsely Characterized Biological Systems"
+    ]
+  },
+  "author": {
+    "value": [
+      "Andreas Hilfinger",
+      "Thomas M. Norman",
+      "Glenn Vinnicombe",
+      "Johan Paulsson"
+    ]
+  },
+  "date": {
+    "value": [
+      "2016/02/01"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.1103/PhysRevLett.116.058101"
+    ]
+  },
+  "volume": {
+    "value": [
+      "116"
+    ]
+  },
+  "issue": {
+    "value": [
+      "5"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "058101"
+    ]
+  },
+  "description": {
+    "value": [
+      "Biochemical networks are often poorly characterized, but researchers can still derive limits on the level of the random variations or noise in different network components."
+    ]
+  }
+}

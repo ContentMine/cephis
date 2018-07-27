@@ -1,0 +1,169 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        8
+      ]
+    ],
+    "date-time": "2016-06-08T14:00:51Z",
+    "timestamp": 1465394451931
+  },
+  "reference-count": 33,
+  "publisher": "Springer Nature",
+  "issue": "6",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "crossref",
+      "name": "Natural Science Foundation of Anhui Province",
+      "DOI": "10.13039/501100003995"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00264-016-3124-4",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T01:23:58Z",
+    "timestamp": 1454289838000
+  },
+  "page": "1211-1218",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Comparing the early efficacies of autologous bone grafting and interbody fusion cages for treating degenerative lumbar instability in patients of different ages"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "40",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Zhong",
+      "given": "Hua-zhang"
+    },
+    {
+      "affiliation": [],
+      "family": "Tian",
+      "given": "Da-sheng"
+    },
+    {
+      "affiliation": [],
+      "family": "Zhou",
+      "given": "Yun"
+    },
+    {
+      "affiliation": [],
+      "family": "Jing",
+      "given": "Jue-hua"
+    },
+    {
+      "affiliation": [],
+      "family": "Qian",
+      "given": "Jun"
+    },
+    {
+      "affiliation": [],
+      "family": "Chen",
+      "given": "Lei"
+    },
+    {
+      "affiliation": [],
+      "family": "Zhu",
+      "given": "Bin"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "International Orthopaedics (SICOT)",
+    "International Orthopaedics"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00264-016-3124-4.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00264-016-3124-4/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        8
+      ]
+    ],
+    "date-time": "2016-06-08T06:07:22Z",
+    "timestamp": 1465366042000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "3124"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00264-016-3124-4",
+  "ISSN": [
+    "0341-2695",
+    "1432-5195"
+  ],
+  "subject": [
+    "Orthopedics and Sports Medicine"
+  ]
+}

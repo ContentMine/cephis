@@ -1,0 +1,229 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:41:04Z",
+    "timestamp": 1454668864384
+  },
+  "reference-count": 0,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 1,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            2
+          ]
+        ],
+        "date-time": "2016-02-02T00:00:00Z",
+        "timestamp": 1454371200000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 1,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            2
+          ]
+        ],
+        "date-time": "2016-02-02T00:00:00Z",
+        "timestamp": 1454371200000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+      "content-version": "am",
+      "delay-in-days": 1,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            2
+          ]
+        ],
+        "date-time": "2016-02-02T00:00:00Z",
+        "timestamp": 1454371200000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "Division of Chemical, Bioengineering, Environmental, and Transport Systems",
+      "DOI": "10.13039/100000146"
+    },
+    {
+      "award": [],
+      "name": "Rose Hills Foundation and USC Provost s Office"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1748-9326/11/2/024003",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T17:17:53Z",
+    "timestamp": 1454433473000
+  },
+  "page": "024003",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    "Micrometeorological simulations to predict the impacts of heat mitigation strategies on pedestrian thermal comfort in a Los Angeles neighborhood"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "11",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Taleghani",
+      "given": "Mohammad",
+      "ORCID": "http://orcid.org/0000-0002-1342-4932"
+    },
+    {
+      "affiliation": [],
+      "family": "Sailor",
+      "given": "David"
+    },
+    {
+      "affiliation": [],
+      "family": "Ban-Weiss",
+      "given": "George A",
+      "ORCID": "http://orcid.org/0000-0001-8211-2628"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "Environ. Res. Lett.",
+    "Environmental Research Letters"
+  ],
+  "link": [
+    {
+      "intended-application": "syndication",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=024003/pdf"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T17:17:55Z",
+    "timestamp": 1454433475000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1748-9326/11/2/024003",
+  "ISSN": [
+    "1748-9326"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Environmental Research Letters"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "lett"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Micrometeorological simulations to predict the impacts of heat mitigation strategies on pedestrian thermal comfort in a Los Angeles neighborhood"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-10-16"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2015-12-11"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-02"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:06Z",
+    "timestamp": 1464910986745
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaoncol.2016.0855",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:21Z",
+    "timestamp": 1464906921000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Physiologic Frailty in Nonelderly Hematopoietic Cell Transplantation Patients"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Division of Hematology, Oncology, and Transplantation, University of Minnesota, Minneapolis"
+        }
+      ],
+      "family": "Arora",
+      "given": "Mukta"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Population Sciences, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Sun",
+      "given": "Can-Lan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Epidemiology and Cancer Control, St Jude Children's Research Hospital, Memphis, Tennessee"
+        }
+      ],
+      "family": "Ness",
+      "given": "Kirsten K."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Population Sciences, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Teh",
+      "given": "Jennifer Berano"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Comprehensive Cancer Center, Department of Pediatrics, University of Alabama at Birmingham, Birmingham"
+        }
+      ],
+      "family": "Wu",
+      "given": "Jessica"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Comprehensive Cancer Center, Department of Pediatrics, University of Alabama at Birmingham, Birmingham"
+        }
+      ],
+      "family": "Francisco",
+      "given": "Liton"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Population Sciences, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Armenian",
+      "given": "Saro H."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Population Sciences, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Schad",
+      "given": "Amy"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Population Sciences, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Namdar",
+      "given": "Golnaz"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Population Sciences, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Bosworth",
+      "given": "Alysia"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Population Sciences, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Kuo",
+      "given": "Linus"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Hematology, Oncology, and Transplantation, University of Minnesota, Minneapolis"
+        }
+      ],
+      "family": "Weisdorf",
+      "given": "Daniel J."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Hematology/Hematopoietic Cell Transplantation, City of Hope, Duarte, California"
+        }
+      ],
+      "family": "Forman",
+      "given": "Stephen J."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Comprehensive Cancer Center, Department of Pediatrics, University of Alabama at Birmingham, Birmingham"
+        }
+      ],
+      "family": "Bhatia",
+      "given": "Smita"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Oncology",
+    "JAMA Oncol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:21Z",
+    "timestamp": 1464906921000
+  },
+  "score": 1,
+  "subtitle": [
+    "Results From the Bone Marrow Transplant Survivor Study"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaoncol.2016.0855",
+  "ISSN": [
+    "2374-2437"
+  ]
+}

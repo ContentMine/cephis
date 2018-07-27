@@ -1,0 +1,150 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:20Z",
+    "timestamp": 1454668460056
+  },
+  "reference-count": 9,
+  "publisher": "IOP Publishing",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1757-899x/106/1/012030",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:14:22Z",
+    "timestamp": 1454343262000
+  },
+  "page": "012030",
+  "source": "CrossRef",
+  "title": [
+    "Compensator configurations for load currents' symmetrization"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "106",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Rusinaru",
+      "given": "D"
+    },
+    {
+      "affiliation": [],
+      "family": "Manescu",
+      "given": "L G"
+    },
+    {
+      "affiliation": [],
+      "family": "Dinu",
+      "given": "R C"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "IOP Conf. Ser.: Mater. Sci. Eng.",
+    "IOP Conference Series: Materials Science and Engineering"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012030/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012030?key=crossref.07356a5688f14af435bcf5817b0d2aa2"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:24:38Z",
+    "timestamp": 1454397878000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1757-899x/106/1/012030",
+  "ISSN": [
+    "1757-8981",
+    "1757-899X"
+  ]
+}

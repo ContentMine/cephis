@@ -1,0 +1,13 @@
+<semanticDocument xmlns="http://www.xml-cml.org/schema/ami2">
+  <documentIterator>
+    <pageIterator timeout="15000" maxMbyte="5.0">
+      <variable name="p.root" value="${d.outputDir}/page_${p.page}"/>
+<!--       <debug/> -->
+      <deleteNodes xpath="//svg:text/svg:title | 
+          //@*[local-name()='clip-path' or local-name()='width' or local-name()='fontName'] " />
+      <pageWriter filename="${p.root}.svg"/>
+      <pageWriter filename="${p.root}XXX.svg"/>
+    </pageIterator>
+  </documentIterator>
+</semanticDocument>
+

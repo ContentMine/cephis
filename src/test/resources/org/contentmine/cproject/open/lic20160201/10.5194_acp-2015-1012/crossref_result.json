@@ -1,0 +1,141 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        15
+      ]
+    ],
+    "date-time": "2016-04-15T15:40:36Z",
+    "timestamp": 1460734836855
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "P24223"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Austrian Science Fund",
+      "DOI": "10.13039/501100002428"
+    }
+  ],
+  "DOI": "10.5194/acp-2015-1012",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:33:58Z",
+    "timestamp": 1454322838000
+  },
+  "page": "1-32",
+  "source": "CrossRef",
+  "title": [
+    "Precipitation regime and stable isotopes at Dome Fuji, East Antarctica"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Dittmann",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Schlosser",
+      "given": "E."
+    },
+    {
+      "affiliation": [],
+      "family": "Masson-Delmotte",
+      "given": "V.",
+      "ORCID": "http://orcid.org/0000-0001-8296-381X"
+    },
+    {
+      "affiliation": [],
+      "family": "Powers",
+      "given": "J. G."
+    },
+    {
+      "affiliation": [],
+      "family": "Manning",
+      "given": "K. W."
+    },
+    {
+      "affiliation": [],
+      "family": "Werner",
+      "given": "M.",
+      "ORCID": "http://orcid.org/0000-0002-6473-0243"
+    },
+    {
+      "affiliation": [],
+      "family": "Fujita",
+      "given": "K."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        15
+      ]
+    ],
+    "date-time": "2016-04-15T14:14:16Z",
+    "timestamp": 1460729656000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2015-1012",
+  "ISSN": [
+    "1680-7375"
+  ]
+}

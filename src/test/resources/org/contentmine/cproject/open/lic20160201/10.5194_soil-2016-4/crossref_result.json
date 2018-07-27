@@ -1,0 +1,109 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        3
+      ]
+    ],
+    "date-time": "2016-05-03T20:41:20Z",
+    "timestamp": 1462308080746
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/soil-2016-4",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:35:36Z",
+    "timestamp": 1454322936000
+  },
+  "page": "1-39",
+  "source": "CrossRef",
+  "title": [
+    "Responses of soil physico-chemical properties to combustion: a space for time substitution study to infer how changes in climate are likely to affect response of topsoil to fires"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Araya",
+      "given": "Samuel N."
+    },
+    {
+      "affiliation": [],
+      "family": "Meding",
+      "given": "S. Mercer"
+    },
+    {
+      "affiliation": [],
+      "family": "Berhe",
+      "given": "Asmeret Asefaw"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "SOIL Discussions",
+    "SOIL Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        3
+      ]
+    ],
+    "date-time": "2016-05-03T19:24:36Z",
+    "timestamp": 1462303476000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/soil-2016-4",
+  "ISSN": [
+    "2199-3998"
+  ]
+}

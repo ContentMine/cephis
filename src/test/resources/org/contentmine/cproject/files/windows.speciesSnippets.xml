@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippetsTree>
+ <snippets file="malaria\PMC2572679\results\species\genus\results.xml">
+  <result pre="Genetic alteration of insects to decrease transmission of human pathogens such as dengue virus and " exact="Plasmodium" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Plasmodium" post=" is an appealing concept ( Curtis 1968; Gould &amp;amp;amp; Schliekelm" name="genus"/>
+  <result pre="enes that decrease transmission of one serotype of dengue virus and one species of malaria-causing " exact="Plasmodium" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Plasmodium" post=" have been developed in the laboratory ( Ito et al. 2002 ; " name="genus"/>
+  <result pre="f=&quot;#bib22&quot;&gt;Sethuraman et al. 2007 ), but recent success with building an artificial selfish " exact="Medea" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Medea" post=" element in Drosophila has provided hope that a similar artificial element could be incorpor" name="genus"/>
+  <result pre="&gt;et al. 2007 ), but recent success with building an artificial selfish Medea element in " exact="Drosophila" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Drosophila" post=" has provided hope that a similar artificial element could be incorporated into mosquitoes ( &lt;a hre" name="genus"/>
+  <result pre="hetti 2008). Based on population-genetic theory and laboratory experiments, natural and artificial " exact="Medea" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Medea" post=" elements are expected to spread within and among wild populations from relatively low initial freq" name="genus"/>
+  <result pre="If a synthetic " exact="Medea" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Medea" post=" element can be developed to function in the mosquito species Aedes aegypti or Anopheles " name="genus"/>
+  <result pre="t would seem to be an ideal candidate for spreading anti-pathogen genes. However, one problem with " exact="Medea" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Medea" post=" is that it might spread too fast, and too far geographically, before all of the potentially affect" name="genus"/>
+  <result pre=" many laboratory and field experiments to conduct before the release of an organism with an active " exact="Medea" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Medea" post=" element, or any other genetic element that was expected to spread widely. Some researchers (e.g. &lt;" name="genus"/>
+  <result pre="se of genetically engineered mosquitoes, must be considered. Although strong anti-dengue and anti- " exact="Plasmodium" xpath="/html[1]/body[1]/div[2]/div[4]/p[3]" match="Plasmodium" post=" transgenes, as well as strong gene drivers, may be engineered into mosquitoes within the next 5–10" name="genus"/>
+  <result pre="h a non-driven refractory gene and the release of a strain with a strong drive mechanism such as a " exact="Medea" match="Medea" post=" or meiotic drive construct, there will be a need to test a strain with a refractory gene and some " name="genus"/>
+ </snippets>
+</snippetsTree>

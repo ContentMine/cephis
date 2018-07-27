@@ -1,0 +1,51 @@
+{
+  "fulltext_pdf": {
+    "value": [
+      "http://link.aps.org/pdf/10.1103/PhysRevE.93.022402"
+    ]
+  },
+  "fulltext_html": {
+    "value": []
+  },
+  "title": {
+    "value": [
+      "From individual spiking neurons to population behavior: Systematic elimination of short-wavelength spatial modes"
+    ]
+  },
+  "author": {
+    "value": [
+      "Moira L. Steyn-Ross",
+      "D. A. Steyn-Ross"
+    ]
+  },
+  "date": {
+    "value": [
+      "2016/02/01"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.1103/PhysRevE.93.022402"
+    ]
+  },
+  "volume": {
+    "value": [
+      "93"
+    ]
+  },
+  "issue": {
+    "value": [
+      "2"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "022402"
+    ]
+  },
+  "description": {
+    "value": [
+      "Mean-field models of the brain approximate spiking dynamics by assuming that each neuron responds to its neighbors via a naive spatial average that neglects local fluctuations and correlations in firing activity. In this paper we address this issue by introducing a rigorous formalism to enable spatial coarse-graining of spiking dynamics, scaling from the microscopic level of a single type 1 (integrator) neuron to a macroscopic assembly of spiking neurons that are interconnected by chemical synapses and nearest-neighbor gap junctions. Spiking behavior at the single-neuron scale $\\ensuremath{\\ell}\\ensuremath{\\approx}10\\phantom{\\rule{0.28em}{0ex}}\\ensuremath{\\mu}\\mathrm{m}$ is described by Wilson's two-variable conductance-based equations [H. R. Wilson, J. Theor. Biol. 200, 375 (1999)], driven by fields of incoming neural activity from neighboring neurons. We map these equations to a coarser spatial resolution of grid length $B\\ensuremath{\\ell}$, with $B\\ensuremath{\\gg}1$ being the blocking ratio linking micro and macro scales. Our method systematically eliminates high-frequency (short-wavelength) spatial modes $\\stackrel{P\\vec}{q}$ in favor of low-frequency spatial modes $\\stackrel{P\\vec}{Q}$ using an adiabatic elimination procedure that has been shown to be equivalent to the path-integral coarse graining applied to renormalization group theory of critical phenomena. This bottom-up neural regridding allows us to track the percolation of synaptic and ion-channel noise from the single neuron up to the scale of macroscopic population-average variables. Anticipated applications of neural regridding include extraction of the current-to-firing-rate transfer function, investigation of fluctuation criticality near phase-transition tipping points, determination of spatial scaling laws for avalanche events, and prediction of the spatial extent of self-organized macrocolumnar structures. As a first-order exemplar of the method, we recover nonlinear corrections for a coarse-grained Wilson spiking neuron embedded in a network of identical diffusively coupled neurons whose chemical synapses have been disabled. Intriguingly, we find that reblocking transforms the original type 1 Wilson integrator into a type 2 resonator whose spike-rate transfer function exhibits abrupt spiking onset with near-vertical takeoff and chaotic dynamics just above threshold."
+    ]
+  }
+}

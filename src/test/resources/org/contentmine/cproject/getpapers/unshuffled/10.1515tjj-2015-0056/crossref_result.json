@@ -1,0 +1,90 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:42:49Z",
+    "timestamp": 1454582569937
+  },
+  "reference-count": 0,
+  "publisher": "Walter de Gruyter GmbH",
+  "issue": "0",
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        1,
+        30
+      ]
+    ]
+  },
+  "DOI": "10.1515/tjj-2015-0056",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:49:27Z",
+    "timestamp": 1454338167000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Numerical Investigation of a Model Scramjet Combustor Using DDES"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1515",
+  "volume": "0",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Shin",
+      "given": "Junsu"
+    },
+    {
+      "affiliation": [],
+      "family": "Sung",
+      "given": "Hong-Gye"
+    }
+  ],
+  "member": "http://id.crossref.org/member/374",
+  "container-title": [
+    "International Journal of Turbo & Jet-Engines"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:49:43Z",
+    "timestamp": 1454338183000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        1,
+        30
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1515/tjj-2015-0056",
+  "ISSN": [
+    "0334-0082",
+    "2191-0332"
+  ],
+  "subject": [
+    "Aerospace Engineering"
+  ]
+}

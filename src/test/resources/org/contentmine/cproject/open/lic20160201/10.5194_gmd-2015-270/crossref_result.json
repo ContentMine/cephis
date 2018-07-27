@@ -1,0 +1,114 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        4
+      ]
+    ],
+    "date-time": "2016-05-04T11:40:55Z",
+    "timestamp": 1462362055990
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "308378"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Seventh Framework Programme",
+      "DOI": "10.13039/501100004963"
+    }
+  ],
+  "DOI": "10.5194/gmd-2015-270",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T09:32:19Z",
+    "timestamp": 1454319139000
+  },
+  "page": "1-35",
+  "source": "CrossRef",
+  "title": [
+    "Randomly correcting model errors in the ARPEGE-Climate v6.1 component of CNRM-CM: applications for seasonal forecasts"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Batté",
+      "given": "Lauriane"
+    },
+    {
+      "affiliation": [],
+      "family": "Déqué",
+      "given": "Michel"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Geoscientific Model Development Discussions",
+    "Geosci. Model Dev. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        4
+      ]
+    ],
+    "date-time": "2016-05-04T10:20:15Z",
+    "timestamp": 1462357215000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/gmd-2015-270",
+  "ISSN": [
+    "1991-962X"
+  ]
+}

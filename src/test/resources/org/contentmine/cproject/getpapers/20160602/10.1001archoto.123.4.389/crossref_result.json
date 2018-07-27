@@ -1,0 +1,109 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:10Z",
+    "timestamp": 1464910990673
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "issue": "4",
+  "published-print": {
+    "date-parts": [
+      [
+        1997,
+        4,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1001/archoto.123.4.389",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:34:57Z",
+    "timestamp": 1464906897000
+  },
+  "page": "389",
+  "source": "CrossRef",
+  "title": [
+    "The Management of Hyperfunctional Facial Lines With Botulinum Toxin"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "volume": "123",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Blitzer",
+      "given": "Andrew"
+    },
+    {
+      "affiliation": [],
+      "family": "Binder",
+      "given": "William J."
+    },
+    {
+      "affiliation": [],
+      "family": "Aviv",
+      "given": "Jonathan E."
+    },
+    {
+      "affiliation": [],
+      "family": "Keen",
+      "given": "Monte S."
+    },
+    {
+      "affiliation": [],
+      "family": "Brin",
+      "given": "Mitchell F."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "container-title": [
+    "Arch Otolaryngol Head Neck Surg",
+    "Archives of Otolaryngology–Head & Neck Surgery"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:34:57Z",
+    "timestamp": 1464906897000
+  },
+  "score": 1,
+  "subtitle": [
+    "A Collaborative Study of 210 Injection Sites in 162 Patients"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1997,
+        4,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/archoto.123.4.389",
+  "ISSN": [
+    "0886-4470"
+  ],
+  "subject": [
+    "Surgery",
+    "Otorhinolaryngology"
+  ]
+}

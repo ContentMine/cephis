@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Copyright (C) 2012 pm286 <peter.murray.rust@googlemail.com> Licensed
+        under the Apache License, Version 2.0 (the "License"); you may not use this
+        file except in compliance with the License. You may obtain a copy of the
+        License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+        applicable law or agreed to in writing, software distributed under the License
+        is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+        KIND, either express or implied. See the License for the specific language
+        governing permissions and limitations under the License. -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <pdf2svg.version>2.0.6</pdf2svg.version>
+        <!-- upstream -->
+        <html.version>2.0.7</html.version>
+        <pdfbox.version>1.8.8</pdfbox.version>
+    </properties>
+    
+    <groupId>org.contentmine</groupId>
+    <artifactId>pdf2svg</artifactId>
+    <version>${pdf2svg.version}</version>
+    <name>pdf2svg</name>
+    <description>Converts PDF to SVG</description>
+
+    <!-- remove <repositories> for releases to maven central -->
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdfbox.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.contentmine</groupId>
+            <artifactId>html</artifactId>
+            <version>${html.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk16</artifactId>
+            <version>1.46</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>1.8.1</version>
+                <configuration>
+                    <programs>
+                        <program>
+                            <mainClass>org.xmlcml.svg2xml.PDFAnalyzer</mainClass>
+                            <id>pdf2xml</id>
+                        </program>
+
+                    </programs>
+
+                    <!-- Prevent long directories -->
+                    <repositoryLayout>flat</repositoryLayout>
+
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+<!--
+            <plugin>
+                <!- - Tool for building a Debian package (.deb) http://tech.ebuddy.com/2013/10/02/automating-debian-package-creation-and-management-with-mavenant/
+                    https://github.com/brndkfr/xmppbot/blob/master/xmppbot/pom.xml - ->
+                <artifactId>jdeb</artifactId>
+                <groupId>org.vafer</groupId>
+                <version>1.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jdeb</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dataSet>
+                        <data>
+                            <src>${project.build.directory}/appassembler/</src>
+                            <type>directory</type>
+                            <mapper>
+                                <type>perm</type>
+                                <filemode>555</filemode>
+                                <prefix>/usr/share/pdf2xml-repo</prefix>
+                            </mapper>
+                        </data>
+
+
+                        <data>
+                            <type>link</type>
+                            <symlink>true</symlink>
+                            <linkName>/usr/bin/pdf2xml</linkName>
+                            <linkTarget>/usr/share/pdf2xml-repo/bin/pdf2xml</linkTarget>
+                        </data>
+
+                    </dataSet>
+                </configuration>
+            </plugin>
+-->
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>cm-pom</id>
+            <url>https://raw.github.com/ContentMine/cm-pom/mvn-repo/</url>
+            <snapshots>
+                    <enabled>true</enabled>
+                    <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    
+</project>

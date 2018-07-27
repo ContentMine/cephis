@@ -1,0 +1,10 @@
+<A1Result xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+    <![CDATA[
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <ABCD_XML_DATA>
+        <Header>
+            <MessageId>AGDMY1323292534488</MessageId>
+        </Header>
+    </ABCD_XML_DATA>
+    ]]>
+</A1Result>

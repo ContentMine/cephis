@@ -1,0 +1,14 @@
+<semanticDocument xmlns="http://www.xml-cml.org/schema/ami2">
+  <!--  this reads its own filename (for testing -->
+	<documentIterator filename="src/test/resources/org/xmlcml/svg2xml/command/policies.pdf">
+		<pageIterator timeout="15000" maxMbyte="5.0">
+			<variable name="p.root" value="${d.outputDir}/whitespace_${p.page}" />
+			<whitespaceChunker depth="3" />
+			<assert xpath="//svg:rect[@title='editMe']" />
+			<pageWriter filename="${p.root}_end.svg" />
+		</pageIterator>
+	</documentIterator>
+</semanticDocument>
+
+
+

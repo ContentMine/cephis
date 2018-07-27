@@ -1,0 +1,157 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        6
+      ]
+    ],
+    "date-time": "2016-05-06T09:40:46Z",
+    "timestamp": 1462527646498
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/acp-2015-1062",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:38:02Z",
+    "timestamp": 1454323082000
+  },
+  "page": "1-23",
+  "source": "CrossRef",
+  "title": [
+    "Characteristics of an aged organic \"brown\" aerosol in the urban Po Valley atmosphere"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Costabile",
+      "given": "F."
+    },
+    {
+      "affiliation": [],
+      "family": "Gilardoni",
+      "given": "S."
+    },
+    {
+      "affiliation": [],
+      "family": "Barnaba",
+      "given": "F.",
+      "ORCID": "http://orcid.org/0000-0002-1927-6926"
+    },
+    {
+      "affiliation": [],
+      "family": "Di Ianni",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Di Liberto",
+      "given": "L."
+    },
+    {
+      "affiliation": [],
+      "family": "Dionisi",
+      "given": "D."
+    },
+    {
+      "affiliation": [],
+      "family": "Manigrasso",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Paglione",
+      "given": "M.",
+      "ORCID": "http://orcid.org/0000-0002-4423-2570"
+    },
+    {
+      "affiliation": [],
+      "family": "Poluzzi",
+      "given": "V."
+    },
+    {
+      "affiliation": [],
+      "family": "Rinaldi",
+      "given": "M.",
+      "ORCID": "http://orcid.org/0000-0001-6543-4000"
+    },
+    {
+      "affiliation": [],
+      "family": "Facchini",
+      "given": "M. C."
+    },
+    {
+      "affiliation": [],
+      "family": "Gobbi",
+      "given": "G. P."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        6
+      ]
+    ],
+    "date-time": "2016-05-06T08:28:52Z",
+    "timestamp": 1462523332000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2015-1062",
+  "ISSN": [
+    "1680-7375"
+  ]
+}

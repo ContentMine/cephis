@@ -1,0 +1,178 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:41:10Z",
+    "timestamp": 1464828070922
+  },
+  "reference-count": 46,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "name": "Novartis-MIT Center for Continuous Manufacturing"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adhm.201600266",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T23:53:16Z",
+    "timestamp": 1464825196000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Core-Shell Composite Hydrogels for Controlled Nanocrystal Formation and Release of Hydrophobic Active Pharmaceutical Ingredients"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemical Engineering; Massachusetts Institute of Technology; 77 Massachusetts Avenue Cambridge MA 02139 USA"
+        }
+      ],
+      "family": "Badruddoza",
+      "given": "Abu Zayed Md"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemical Engineering; Massachusetts Institute of Technology; 77 Massachusetts Avenue Cambridge MA 02139 USA"
+        }
+      ],
+      "family": "Godfrin",
+      "given": "P. Douglas"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemical Engineering; Massachusetts Institute of Technology; 77 Massachusetts Avenue Cambridge MA 02139 USA"
+        }
+      ],
+      "family": "Myerson",
+      "given": "Allan S."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemical Engineering; Massachusetts Institute of Technology; 77 Massachusetts Avenue Cambridge MA 02139 USA"
+        }
+      ],
+      "family": "Trout",
+      "given": "Bernhardt L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemical Engineering; Massachusetts Institute of Technology; 77 Massachusetts Avenue Cambridge MA 02139 USA"
+        }
+      ],
+      "family": "Doyle",
+      "given": "Patrick S."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Advanced Healthcare Materials",
+    "Adv. Healthcare Mater."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadhm.201600266"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T23:53:22Z",
+    "timestamp": 1464825202000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adhm.201600266",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2192-2640"
+  ]
+}

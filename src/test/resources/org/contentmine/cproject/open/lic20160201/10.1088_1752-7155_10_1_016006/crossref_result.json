@@ -1,0 +1,214 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:13Z",
+    "timestamp": 1454668453295
+  },
+  "reference-count": 26,
+  "publisher": "IOP Publishing",
+  "issue": "1",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 1,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            2
+          ]
+        ],
+        "date-time": "2016-02-02T00:00:00Z",
+        "timestamp": 1454371200000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 1,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            2
+          ]
+        ],
+        "date-time": "2016-02-02T00:00:00Z",
+        "timestamp": 1454371200000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.1088/1752-7155/10/1/016006",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:13:36Z",
+    "timestamp": 1454332416000
+  },
+  "page": "016006",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    " Volatile organic compounds discriminate between eosinophilic and neutrophilic inflammation in vitro "
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "10",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Schleich",
+      "given": "Florence N"
+    },
+    {
+      "affiliation": [],
+      "family": "Dallinga",
+      "given": "Jan W"
+    },
+    {
+      "affiliation": [],
+      "family": "Henket",
+      "given": "Monique"
+    },
+    {
+      "affiliation": [],
+      "family": "Wouters",
+      "given": "Emiel F M"
+    },
+    {
+      "affiliation": [],
+      "family": "Louis",
+      "given": "Renaud"
+    },
+    {
+      "affiliation": [],
+      "family": "Van Schooten",
+      "given": "Frederik J"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "J. Breath Res.",
+    "Journal of Breath Research"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1752-7163/10/i=1/a=016006/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1752-7163/10/i=1/a=016006?key=crossref.7ed70a10df9c59d895011dce824035e5"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:10:15Z",
+    "timestamp": 1454397015000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1752-7155/10/1/016006",
+  "ISSN": [
+    "1752-7163"
+  ],
+  "subject": [
+    "Pulmonary and Respiratory Medicine"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Journal of Breath Research"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "paper"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Volatile organic compounds discriminate between eosinophilic and neutrophilic inflammation in vitro"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-11-05"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2015-12-29"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-02"
+    }
+  ]
+}

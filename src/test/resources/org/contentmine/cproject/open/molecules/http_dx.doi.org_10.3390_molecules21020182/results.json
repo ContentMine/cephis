@@ -1,0 +1,85 @@
+{
+  "publisher": {
+    "value": [
+      "Multidisciplinary Digital Publishing Institute"
+    ]
+  },
+  "journal": {
+    "value": [
+      "Molecules"
+    ]
+  },
+  "title": {
+    "value": [
+      "Elicitation, an Effective Strategy for the Biotechnological Production of Bioactive High-Added Value Compounds in Plant Cell Factories"
+    ]
+  },
+  "authors": {
+    "value": []
+  },
+  "date": {
+    "value": [
+      "2016-02-03"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.3390/molecules21020182"
+    ]
+  },
+  "volume": {
+    "value": [
+      "21"
+    ]
+  },
+  "issue": {
+    "value": [
+      "2"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "182"
+    ]
+  },
+  "description": {
+    "value": [
+      "Plant in vitro cultures represent an attractive and cost-effective alternative to classical approaches to plant secondary metabolite (PSM) production (the “Plant Cell Factory” concept). Among other advantages, they constitute the only sustainable and eco-friendly system to obtain complex chemical structures biosynthesized by rare or endangered plant species that resist domestication. For successful results, the biotechnological production of PSM requires an optimized system, for which elicitation has proved one of the most effective strategies. In plant cell cultures, an elicitor can be defined as a compound introduced in small concentrations to a living system to promote the biosynthesis of the target metabolite. Traditionally, elicitors have been classified in two types, abiotic or biotic, according to their chemical nature and exogenous or endogenous origin, and notably include yeast extract, methyl jasmonate, salicylic acid, vanadyl sulphate and chitosan. In this review, we summarize the enhancing effects of elicitors on the production of high-added value plant compounds such as taxanes, ginsenosides, aryltetralin lignans and other types of polyphenols, focusing particularly on the use of a new generation of elicitors such as coronatine and cyclodextrins."
+    ]
+  },
+  "abstract": {
+    "value": [
+      "Plant in vitro cultures represent an attractive and cost-effective alternative to classical approaches to plant secondary metabolite (PSM) production (the “Plant Cell Factory” concept). Among other advantages, they constitute the only sustainable and eco-friendly system to obtain complex chemical structures biosynthesized by rare or endangered plant species that resist domestication. For successful results, the biotechnological production of PSM requires an optimized system, for which elicitation has proved one of the most effective strategies. In plant cell cultures, an elicitor can be defined as a compound introduced in small concentrations to a living system to promote the biosynthesis of the target metabolite. Traditionally, elicitors have been classified in two types, abiotic or biotic, according to their chemical nature and exogenous or endogenous origin, and notably include yeast extract, methyl jasmonate, salicylic acid, vanadyl sulphate and chitosan. In this review, we summarize the enhancing effects of elicitors on the production of high-added value plant compounds such as taxanes, ginsenosides, aryltetralin lignans and other types of polyphenols, focusing particularly on the use of a new generation of elicitors such as coronatine and cyclodextrins."
+    ]
+  },
+  "fulltext_html": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/182/htm"
+    ]
+  },
+  "fulltext_pdf": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/182/pdf"
+    ]
+  },
+  "fulltext_xml": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/182/xml"
+    ]
+  },
+  "supplementary_material": {
+    "value": []
+  },
+  "figure": {
+    "value": []
+  },
+  "figure_caption": {
+    "value": []
+  },
+  "license": {
+    "value": []
+  },
+  "copyright": {
+    "value": []
+  }
+}

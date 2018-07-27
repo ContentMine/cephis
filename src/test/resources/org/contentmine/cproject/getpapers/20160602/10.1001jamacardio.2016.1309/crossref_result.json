@@ -1,0 +1,201 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:41:10Z",
+    "timestamp": 1464831670256
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamacardio.2016.1309",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:41Z",
+    "timestamp": 1464827861000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Evaluation of High-Sensitivity Cardiac Troponin I Levels in Patients With Suspected Acute Coronary Syndrome"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Emergency Department, Southmead Hospital, North Bristol National Health Service Trust, Bristol, England"
+        }
+      ],
+      "family": "Carlton",
+      "given": "Edward"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Emergency Medicine, Royal Brisbane and Women’s Hospital, Brisbane, Australia3School of Medicine, The University of Queensland, Brisbane, Australia4School of Public Health, Queensland University of Technology, Brisbane, Australia"
+        }
+      ],
+      "family": "Greenslade",
+      "given": "Jaimi"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Emergency Medicine, Royal Brisbane and Women’s Hospital, Brisbane, Australia3School of Medicine, The University of Queensland, Brisbane, Australia4School of Public Health, Queensland University of Technology, Brisbane, Australia"
+        }
+      ],
+      "family": "Cullen",
+      "given": "Louise"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Central Manchester University Hospitals, National Health Service Foundation Trust, Manchester, England"
+        }
+      ],
+      "family": "Body",
+      "given": "Richard"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Emergency Medicine, Christchurch Hospital, Christchurch, New Zealand"
+        }
+      ],
+      "family": "Than",
+      "given": "Martin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Emergency Medicine, Christchurch Hospital, Christchurch, New Zealand7Department of Medicine, University of Otago, Christchurch, New Zealand"
+        }
+      ],
+      "family": "Pickering",
+      "given": "John W."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Emergency Medicine, Christchurch Hospital, Christchurch, New Zealand"
+        }
+      ],
+      "family": "Aldous",
+      "given": "Sally"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Central Manchester University Hospitals, National Health Service Foundation Trust, Manchester, England"
+        }
+      ],
+      "family": "Carley",
+      "given": "Simon"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Emergency Medicine, Royal Brisbane and Women’s Hospital, Brisbane, Australia"
+        }
+      ],
+      "family": "Hammett",
+      "given": "Christopher"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Emergency Department, Southmead Hospital, North Bristol National Health Service Trust, Bristol, England"
+        }
+      ],
+      "family": "Kendall",
+      "given": "Jason"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Central Manchester University Hospitals, National Health Service Foundation Trust, Manchester, England"
+        }
+      ],
+      "family": "Keevil",
+      "given": "Brian"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Medicine, The University of Notre Dame, Sydney, Australia"
+        }
+      ],
+      "family": "Lord",
+      "given": "Sarah"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Emergency Medicine, Royal Brisbane and Women’s Hospital, Brisbane, Australia"
+        }
+      ],
+      "family": "Parsonage",
+      "given": "William"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Sunshine Coast Hospital and Health Services, University of the Sunshine Coast, Nambour, Australia"
+        }
+      ],
+      "family": "Greaves",
+      "given": "Kim"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Cardiology",
+    "JAMA Cardiol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:46Z",
+    "timestamp": 1464827866000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamacardio.2016.1309",
+  "ISSN": [
+    "2380-6583"
+  ]
+}

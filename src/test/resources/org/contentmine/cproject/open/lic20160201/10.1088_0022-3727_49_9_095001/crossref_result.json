@@ -1,0 +1,225 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:14Z",
+    "timestamp": 1454668454429
+  },
+  "reference-count": 52,
+  "publisher": "IOP Publishing",
+  "issue": "9",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "crossref",
+      "name": "The World Academy of Sciences",
+      "DOI": "10.13039/501100002222"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        9
+      ]
+    ]
+  },
+  "DOI": "10.1088/0022-3727/49/9/095001",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T15:13:30Z",
+    "timestamp": 1454339610000
+  },
+  "page": "095001",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    " Anomalous coercivity enhancement with temperature and tunable exchange bias in Gd and Ti co-doped BiFeO 3 multiferroics "
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "49",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Ahmmad",
+      "given": "Bashir"
+    },
+    {
+      "affiliation": [],
+      "family": "Islam",
+      "given": "M Z"
+    },
+    {
+      "affiliation": [],
+      "family": "Billah",
+      "given": "Areef"
+    },
+    {
+      "affiliation": [],
+      "family": "Basith",
+      "given": "M A"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Journal of Physics D: Applied Physics",
+    "J. Phys. D: Appl. Phys."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/0022-3727/49/i=9/a=095001/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/0022-3727/49/i=9/a=095001?key=crossref.103f96fcd810cb8e3fbd89938f81dcfa"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:12:56Z",
+    "timestamp": 1454397176000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/0022-3727/49/9/095001",
+  "ISSN": [
+    "0022-3727",
+    "1361-6463"
+  ],
+  "subject": [
+    "Acoustics and Ultrasonics",
+    "Electronic, Optical and Magnetic Materials",
+    "Surfaces, Coatings and Films",
+    "Condensed Matter Physics"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Journal of Physics D: Applied Physics"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "paper"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Anomalous coercivity enhancement with temperature and tunable exchange bias in Gd and Ti co-doped BiFeO 3 multiferroics"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-12-02"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2015-12-08"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-01"
+    }
+  ]
+}

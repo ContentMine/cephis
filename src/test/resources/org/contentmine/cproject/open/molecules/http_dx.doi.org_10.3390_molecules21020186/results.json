@@ -1,0 +1,85 @@
+{
+  "publisher": {
+    "value": [
+      "Multidisciplinary Digital Publishing Institute"
+    ]
+  },
+  "journal": {
+    "value": [
+      "Molecules"
+    ]
+  },
+  "title": {
+    "value": [
+      "Peltomexicanin, a Peltogynoid Quinone Methide from Peltogyne Mexicana Martínez Purple Heartwood"
+    ]
+  },
+  "authors": {
+    "value": []
+  },
+  "date": {
+    "value": [
+      "2016-02-04"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.3390/molecules21020186"
+    ]
+  },
+  "volume": {
+    "value": [
+      "21"
+    ]
+  },
+  "issue": {
+    "value": [
+      "2"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "186"
+    ]
+  },
+  "description": {
+    "value": [
+      "Peltomexicanin (7,10-dihydroxy-6,12-dioxa-5H-tetraphen-3-one) is a new peltogynoid quinone methide isolated from Palo Morado (Peltogyne mexicana Martínez) heartwood by column chromatography. Its chemical structure was elucidated by IR, NMR (1H, 13C), 2D NMR experiments (COSY, NOESY, HMQC, and HSQC), ESI-MS, and UV-Vis spectroscopic analysis. According to HPLC quantification, this compound is the main pigment and accounts for 1.21% of Palo Morado heartwood material. The antioxidant activity of peltomexicanin and dried methanolic extract (DEx) of purple heartwood was evaluated using the radical of 2,2’-azinobis-(3-ethylbenzothiazoline-6-sulphonic acid) (ABTS) assay, and the corresponding values expressed as Trolox equivalents (µmol TE/mg sample) were 4.25 and 4.57, respectively."
+    ]
+  },
+  "abstract": {
+    "value": [
+      "Peltomexicanin (7,10-dihydroxy-6,12-dioxa-5H-tetraphen-3-one) is a new peltogynoid quinone methide isolated from Palo Morado (Peltogyne mexicana Martínez) heartwood by column chromatography. Its chemical structure was elucidated by IR, NMR (1H, 13C), 2D NMR experiments (COSY, NOESY, HMQC, and HSQC), ESI-MS, and UV-Vis spectroscopic analysis. According to HPLC quantification, this compound is the main pigment and accounts for 1.21% of Palo Morado heartwood material. The antioxidant activity of peltomexicanin and dried methanolic extract (DEx) of purple heartwood was evaluated using the radical of 2,2’-azinobis-(3-ethylbenzothiazoline-6-sulphonic acid) (ABTS) assay, and the corresponding values expressed as Trolox equivalents (µmol TE/mg sample) were 4.25 and 4.57, respectively."
+    ]
+  },
+  "fulltext_html": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/186/htm"
+    ]
+  },
+  "fulltext_pdf": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/186/pdf"
+    ]
+  },
+  "fulltext_xml": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/186/xml"
+    ]
+  },
+  "supplementary_material": {
+    "value": []
+  },
+  "figure": {
+    "value": []
+  },
+  "figure_caption": {
+    "value": []
+  },
+  "license": {
+    "value": []
+  },
+  "copyright": {
+    "value": []
+  }
+}

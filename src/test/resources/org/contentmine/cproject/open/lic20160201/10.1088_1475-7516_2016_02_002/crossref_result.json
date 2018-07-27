@@ -1,0 +1,154 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:18Z",
+    "timestamp": 1454668458889
+  },
+  "reference-count": 72,
+  "publisher": "IOP Publishing",
+  "issue": "02",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.1088/1475-7516/2016/02/002",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:13:43Z",
+    "timestamp": 1454343223000
+  },
+  "page": "002-002",
+  "source": "CrossRef",
+  "title": [
+    "Signatures from scalar dark matter with a vector-like quark mediator"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "2016",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Giacchino",
+      "given": "Federica"
+    },
+    {
+      "affiliation": [],
+      "family": "Ibarra",
+      "given": "Alejandro"
+    },
+    {
+      "affiliation": [],
+      "family": "Honorez",
+      "given": "Laura Lopez"
+    },
+    {
+      "affiliation": [],
+      "family": "Tytgat",
+      "given": "Michel H.G."
+    },
+    {
+      "affiliation": [],
+      "family": "Wild",
+      "given": "Sebastian"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "J. Cosmol. Astropart. Phys.",
+    "Journal of Cosmology and Astroparticle Physics"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1475-7516/2016/i=02/a=002/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1475-7516/2016/i=02/a=002?key=crossref.3fb54fa85ba70f3781ac1675fc75144f"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:20:00Z",
+    "timestamp": 1454397600000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1475-7516/2016/02/002",
+  "ISSN": [
+    "1475-7516"
+  ],
+  "subject": [
+    "Astronomy and Astrophysics"
+  ]
+}

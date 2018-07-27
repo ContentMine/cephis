@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+       <imageanalysis.version>1.0.4</imageanalysis.version>
+       <!--  upstream -->
+       <html.version>2.0.7</html.version>
+    </properties>
+
+    <groupId>org.contentmine</groupId>
+    <artifactId>imageanalysis</artifactId>
+    <version>${imageanalysis.version}</version>
+    <packaging>jar</packaging>
+    <name>ImageAnalysis</name>
+    <description> Image analysis and IO routines </description>
+	<url>http://github.com/contentMine/imageanalysis</url>
+
+	<developers>
+		<developer>
+			<id>pm286</id>
+			<name>Peter Murray-Rust</name>
+		</developer>
+	</developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.contentmine</groupId>
+            <artifactId>html</artifactId>
+            <version>${html.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.boofcv</groupId>
+            <artifactId>io</artifactId>
+            <version>0.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.boofcv</groupId>
+            <artifactId>feature</artifactId>
+            <version>0.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.boofcv</groupId>
+            <artifactId>visualize</artifactId>
+            <version>0.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.imgscalr</groupId>
+            <artifactId>imgscalr-lib</artifactId>
+            <version>4.2</version>
+        </dependency>
+        
+    </dependencies>
+
+</project>

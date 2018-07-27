@@ -1,0 +1,94 @@
+{
+  "publisher": {
+    "value": [
+      "BioMed Central Ltd"
+    ]
+  },
+  "journal": {
+    "value": [
+      "Trials"
+    ]
+  },
+  "title": {
+    "value": [
+      "The I N CA trial (Impact of \nN  OD2 genotype-guided antibiotic prevention on survival in patients with liver Cirrhosis and Ascites): study protocol for a randomized controlled trial"
+    ]
+  },
+  "authors": {
+    "value": [
+      "Markus Casper",
+      "Martin Mengel",
+      "Christine Fuhrmann",
+      "Eva Herrmann",
+      "Beate Appenrodt",
+      "Peter Schiedermaier",
+      "Matthias Reichert",
+      "Tony Bruns",
+      "Cornelius Engelmann",
+      "Frank Grünhage",
+      "Frank Lammert",
+      "$author.firstName $author.lastName"
+    ]
+  },
+  "date": {
+    "value": [
+      "2015-03-08"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.1186/s13063-015-0594-4"
+    ]
+  },
+  "volume": {
+    "value": [
+      "16"
+    ]
+  },
+  "issue": {
+    "value": [
+      "1"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "83"
+    ]
+  },
+  "description": {
+    "value": [
+      "Patients with liver cirrhosis have a highly elevated risk of developing bacterial infections that significantly decrease survival rates. One of the most relevant infections is spontaneous bacterial peritonitis (SBP). Recently, NOD2 germline variants were found to be potential predictors of the development of infectious complications and mortality in patients with cirrhosis. The aim of the INCA (Impact of NOD2 genotype-guided antibiotic prevention on survival in patients with liver Cirrhosis and Ascites) trial is to investigate whether survival of this genetically defined high-risk group of patients with cirrhosis defined by the presence of NOD2 variants is improved by primary antibiotic prophylaxis of SBP."
+    ]
+  },
+  "abstract": {
+    "value": [
+      "Patients with liver cirrhosis have a highly elevated risk of developing bacterial infections that significantly decrease survival rates. One of the most relevant infections is spontaneous bacterial peritonitis (SBP). Recently, NOD2 germline variants were found to be potential predictors of the development of infectious complications and mortality in patients with cirrhosis. The aim of the INCA (Impact of NOD2 genotype-guided antibiotic prevention on survival in patients with liver Cirrhosis and Ascites) trial is to investigate whether survival of this genetically defined high-risk group of patients with cirrhosis defined by the presence of NOD2 variants is improved by primary antibiotic prophylaxis of SBP."
+    ]
+  },
+  "fulltext_html": {
+    "value": []
+  },
+  "fulltext_pdf": {
+    "value": [
+      "http://www.trialsjournal.com/content/pdf/s13063-015-0594-4.pdf"
+    ]
+  },
+  "fulltext_xml": {
+    "value": []
+  },
+  "supplementary_material": {
+    "value": []
+  },
+  "figure": {
+    "value": []
+  },
+  "figure_caption": {
+    "value": []
+  },
+  "license": {
+    "value": []
+  },
+  "copyright": {
+    "value": []
+  }
+}

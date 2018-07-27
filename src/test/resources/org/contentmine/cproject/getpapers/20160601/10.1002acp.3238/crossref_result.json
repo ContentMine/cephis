@@ -1,0 +1,149 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T09:41:19Z",
+    "timestamp": 1464774079531
+  },
+  "reference-count": 52,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2016-01-01T00:00:00Z",
+        "timestamp": 1451606400000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 152,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016
+      ]
+    ]
+  },
+  "DOI": "10.1002/acp.3238",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T08:12:49Z",
+    "timestamp": 1464768769000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Die Hard in Notting Hill: Gender Differences in Recalling Contents from Action and Romantic Movies"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Institut für Psychologie; Technische Universität Dortmund; Dortmund Germany"
+        }
+      ],
+      "family": "Wühr",
+      "given": "Peter",
+      "ORCID": "http://orcid.org/0000-0003-3131-999X"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institut für Psychologie; Bergische Universität Wuppertal; Wuppertal Germany"
+        }
+      ],
+      "family": "Schwarz",
+      "given": "Sascha"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Applied Cognitive Psychology",
+    "Appl. Cognit. Psychol."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Facp.3238"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T08:12:49Z",
+    "timestamp": 1464768769000
+  },
+  "score": 1,
+  "subtitle": [
+    "Gender and memory for movies"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/acp.3238",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "0888-4080"
+  ],
+  "subject": [
+    "Experimental and Cognitive Psychology"
+  ]
+}

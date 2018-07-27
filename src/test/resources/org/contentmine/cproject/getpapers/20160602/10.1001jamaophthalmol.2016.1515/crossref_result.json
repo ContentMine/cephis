@@ -1,0 +1,111 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:44:31Z",
+    "timestamp": 1464911071808
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaophthalmol.2016.1515",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:16Z",
+    "timestamp": 1464906916000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Intraocular Teratoid Medulloepithelioma Presenting With a Completely Rhabdomyosarcomatous Distant Metastasis"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Ophthalmology, Harvard Medical School, Boston, Massachusetts2David G. Cogan Laboratory of Ophthalmic Pathology, Massachusetts Eye and Ear Infirmary, Boston"
+        }
+      ],
+      "family": "Jakobiec",
+      "given": "Frederick A."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Ophthalmology, Harvard Medical School, Boston, Massachusetts"
+        }
+      ],
+      "family": "Borkar",
+      "given": "Durga S."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Ophthalmology, Harvard Medical School, Boston, Massachusetts2David G. Cogan Laboratory of Ophthalmic Pathology, Massachusetts Eye and Ear Infirmary, Boston"
+        }
+      ],
+      "family": "Stagner",
+      "given": "Anna M."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Ophthalmology, Harvard Medical School, Boston, Massachusetts3Ophthalmic Plastic Surgery, Massachusetts Eye and Ear Infirmary, Boston"
+        }
+      ],
+      "family": "Lee",
+      "given": "Nahyoung Grace"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Ophthalmol",
+    "JAMA Ophthalmology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:16Z",
+    "timestamp": 1464906916000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaophthalmol.2016.1515",
+  "ISSN": [
+    "2168-6165"
+  ]
+}

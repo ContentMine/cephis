@@ -1,0 +1,139 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:43:28Z",
+    "timestamp": 1454582608309
+  },
+  "reference-count": 0,
+  "publisher": "IOP Publishing",
+  "issue": "02",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.1088/1475-7516/2016/02/003",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:13:43Z",
+    "timestamp": 1454343223000
+  },
+  "page": "003-003",
+  "source": "CrossRef",
+  "title": [
+    "Thermalization process after inflation and effective potential of scalar field"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "2016",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Mukaida",
+      "given": "Kyohei"
+    },
+    {
+      "affiliation": [],
+      "family": "Yamada",
+      "given": "Masaki"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "J. Cosmol. Astropart. Phys.",
+    "Journal of Cosmology and Astroparticle Physics"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1475-7516/2016/i=02/a=003/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1475-7516/2016/i=02/a=003?key=crossref.46a1efd0e8e476a5334affa8528baf9a"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:13:43Z",
+    "timestamp": 1454343223000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1475-7516/2016/02/003",
+  "ISSN": [
+    "1475-7516"
+  ],
+  "subject": [
+    "Astronomy and Astrophysics"
+  ]
+}

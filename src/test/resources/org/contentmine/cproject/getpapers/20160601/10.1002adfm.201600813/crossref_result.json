@@ -1,0 +1,199 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:41:15Z",
+    "timestamp": 1464784875273
+  },
+  "reference-count": 64,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adfm.201600813",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:47:34Z",
+    "timestamp": 1464781654000
+  },
+  "source": "CrossRef",
+  "title": [
+    "“Nano-Fishnet” Structure Making Silk Fibers Tougher"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Research Institute for Biomimetic and Soft Matter; Fujian Provincial Key Lab for Soft Functional Research; Xiamen University; Xiamen 361005 P. R. China"
+        },
+        {
+          "name": "Department of Physics; National University of Singapore; 2 Science Drive 3 Singapore 117551 Singapore"
+        },
+        {
+          "name": "School of Physics; Chongqing University; Chongqing 401331 P. R. China"
+        }
+      ],
+      "family": "Liu",
+      "given": "Ruchuan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "NUS Graduate School for Integrative Sciences and Engineering; National University of Singapore; 28 Medical Drive Singapore 117456 Singapore"
+        }
+      ],
+      "family": "Deng",
+      "given": "Qinqiu"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Research Institute for Biomimetic and Soft Matter; Fujian Provincial Key Lab for Soft Functional Research; Xiamen University; Xiamen 361005 P. R. China"
+        }
+      ],
+      "family": "Yang",
+      "given": "Zhen"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Biological Sciences; National University of Singapore; 14 Science Drive 4 Singapore 117543 Singapore"
+        }
+      ],
+      "family": "Yang",
+      "given": "Daiwen"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Materials Research and Engineering; 2 Fusionopolis Way Singapore 138634 Singapore"
+        }
+      ],
+      "family": "Han",
+      "given": "Ming-Yong"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Research Institute for Biomimetic and Soft Matter; Fujian Provincial Key Lab for Soft Functional Research; Xiamen University; Xiamen 361005 P. R. China"
+        },
+        {
+          "name": "Department of Physics; National University of Singapore; 2 Science Drive 3 Singapore 117551 Singapore"
+        },
+        {
+          "name": "NUS Graduate School for Integrative Sciences and Engineering; National University of Singapore; 28 Medical Drive Singapore 117456 Singapore"
+        }
+      ],
+      "family": "Liu",
+      "given": "Xiang Yang"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Adv. Funct. Mater.",
+    "Advanced Functional Materials"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadfm.201600813"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:47:34Z",
+    "timestamp": 1464781654000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adfm.201600813",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "1616-301X"
+  ],
+  "subject": [
+    "Electrochemistry",
+    "Electronic, Optical and Magnetic Materials",
+    "Condensed Matter Physics",
+    "Biomaterials"
+  ]
+}

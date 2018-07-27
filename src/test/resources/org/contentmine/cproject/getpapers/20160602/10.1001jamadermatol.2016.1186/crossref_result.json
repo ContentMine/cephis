@@ -1,0 +1,183 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:41:16Z",
+    "timestamp": 1464831676966
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamadermatol.2016.1186",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:47Z",
+    "timestamp": 1464827867000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Patient Preference in Dermatologist Attire in the Medical, Surgical, and Wound Care Settings"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Fox",
+      "given": "Joshua D."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Herbert Wertheim College of Medicine, Florida International University, Miami"
+        }
+      ],
+      "family": "Prado",
+      "given": "Giselle"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Baquerizo Nole",
+      "given": "Katherine L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Macquahe",
+      "given": "Flor"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Herskovitz",
+      "given": "Ingrid"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Rosa",
+      "given": "Ashley"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "University of Miami, Miami, Florida"
+        }
+      ],
+      "family": "Akhtar",
+      "given": "Shifa"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Aldahan",
+      "given": "Adam"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Shah",
+      "given": "Vidhi"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Mlacker",
+      "given": "Stephanie"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Biostatistics, Department of Health Services and Research, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Cardenas",
+      "given": "Gabriel"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine, Miami, Florida"
+        }
+      ],
+      "family": "Kirsner",
+      "given": "Robert S."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Dermatol",
+    "JAMA Dermatology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:47Z",
+    "timestamp": 1464827867000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamadermatol.2016.1186",
+  "ISSN": [
+    "2168-6068"
+  ]
+}

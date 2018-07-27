@@ -1,0 +1,154 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:47:31Z",
+    "timestamp": 1454582851868
+  },
+  "reference-count": 41,
+  "publisher": "American Physical Society (APS)",
+  "issue": "7",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "TYC-101"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Thomas Young Centre",
+      "DOI": "10.13039/501100004402"
+    },
+    {
+      "award": [
+        "EP/I501045",
+        "EP/G036888/1"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Engineering and Physical Sciences Research Council",
+      "DOI": "10.13039/501100000266"
+    }
+  ],
+  "DOI": "10.1103/physrevb.93.075101",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T23:55:37Z",
+    "timestamp": 1454370937000
+  },
+  "source": "CrossRef",
+  "title": [
+    " Hubbard-like Hamiltonians for interacting electrons in  s , p  , and  d  orbitals "
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1103",
+  "volume": "93",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Coury",
+      "given": "M. E. A."
+    },
+    {
+      "affiliation": [],
+      "family": "Dudarev",
+      "given": "S. L."
+    },
+    {
+      "affiliation": [],
+      "family": "Foulkes",
+      "given": "W. M. C."
+    },
+    {
+      "affiliation": [],
+      "family": "Horsfield",
+      "given": "A. P."
+    },
+    {
+      "affiliation": [],
+      "family": "Ma",
+      "given": "Pui-Wai"
+    },
+    {
+      "affiliation": [],
+      "family": "Spencer",
+      "given": "J. S."
+    }
+  ],
+  "member": "http://id.crossref.org/member/16",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Phys. Rev. B",
+    "Physical Review B"
+  ],
+  "link": [
+    {
+      "intended-application": "syndication",
+      "content-version": "vor",
+      "content-type": "unspecified",
+      "URL": "http://link.aps.org/article/10.1103/PhysRevB.93.075101"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T23:57:34Z",
+    "timestamp": 1454371054000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1103/physrevb.93.075101",
+  "ISSN": [
+    "2469-9950",
+    "2469-9969"
+  ],
+  "article-number": "075101"
+}

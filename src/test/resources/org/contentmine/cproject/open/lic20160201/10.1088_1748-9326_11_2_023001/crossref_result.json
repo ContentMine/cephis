@@ -1,0 +1,220 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:52:46Z",
+    "timestamp": 1455623566077
+  },
+  "reference-count": 79,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 11,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            12
+          ]
+        ],
+        "date-time": "2016-02-12T00:00:00Z",
+        "timestamp": 1455235200000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 11,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            12
+          ]
+        ],
+        "date-time": "2016-02-12T00:00:00Z",
+        "timestamp": 1455235200000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1748-9326/11/2/023001",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        12
+      ]
+    ],
+    "date-time": "2016-02-12T15:21:39Z",
+    "timestamp": 1455290499000
+  },
+  "page": "023001",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    " Direct nitrous oxide (N 2 O) fluxes from soils under different land use in Brazil—a critical review "
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "11",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Meurer",
+      "given": "Katharina H E"
+    },
+    {
+      "affiliation": [],
+      "family": "Franko",
+      "given": "Uwe"
+    },
+    {
+      "affiliation": [],
+      "family": "Stange",
+      "given": "Claus F"
+    },
+    {
+      "affiliation": [],
+      "family": "Rosa",
+      "given": "Jaqueline Dalla"
+    },
+    {
+      "affiliation": [],
+      "family": "Madari",
+      "given": "Beata E"
+    },
+    {
+      "affiliation": [],
+      "family": "Jungkunst",
+      "given": "Hermann F"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        12
+      ]
+    ]
+  },
+  "container-title": [
+    "Environ. Res. Lett.",
+    "Environmental Research Letters"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=023001/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=023001?key=crossref.8368fef46ccbb826bb457fb5e070b99b"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T07:41:03Z",
+    "timestamp": 1455349263000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1748-9326/11/2/023001",
+  "ISSN": [
+    "1748-9326"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Environmental Research Letters"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "rev"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Direct nitrous oxide (N 2 O) fluxes from soils under different land use in Brazil—a critical review"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-02-06"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2016-01-12"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-12"
+    }
+  ]
+}

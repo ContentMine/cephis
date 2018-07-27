@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v2.3 20070202//EN" "journalpublishing.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" article-type="research-article" dtd-version="2.3">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">molecules</journal-id>
+      <journal-title>Molecules</journal-title>
+      <abbrev-journal-title abbrev-type="publisher">Molecules</abbrev-journal-title>
+      <abbrev-journal-title abbrev-type="pubmed">Molecules</abbrev-journal-title>
+      <issn pub-type="epub">1420-3049</issn>
+      <publisher>
+        <publisher-name>MDPI</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3390/molecules21020187</article-id>
+      <article-id pub-id-type="publisher-id">molecules-21-00187</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>1,3-Dipolar Cycloaddition in the Preparation of New Fused Heterocyclic Compounds via Thermal Initiation</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Porubsk&#xFD;</surname>
+            <given-names>Martin</given-names>
+          </name>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Tenora</surname>
+            <given-names>Luk&#xE1;&#x161;</given-names>
+          </name>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Pot&#xE1;&#x10D;ek</surname>
+            <given-names>Milan</given-names>
+          </name>
+          <xref rid="c1-molecules-21-00187" ref-type="corresp">*</xref>
+        </contrib>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Rizzacasa</surname>
+            <given-names>Mark</given-names>
+          </name>
+          <role>Academic Editor</role>
+        </contrib>
+      </contrib-group>
+      <aff id="af1-molecules-21-00187">Department of Chemistry, Masaryk University, Kotl&#xE1;&#x159;sk&#xE1; 2, Brno 611-37, Czech Republic; <email>380165@mail.muni.cz</email> (M.P.); <email>175258@mail.muni.cz</email> (L.T.)</aff>
+      <author-notes>
+        <corresp id="c1-molecules-21-00187"><label>*</label> Correspondence: <email>potacek@chemi.muni.cz</email>; Tel.: +420-549-496-615; Fax: +420-549-492-688</corresp>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>04</day>
+        <month>02</month>
+        <year>2016</year>
+      </pub-date>
+      <pub-date pub-type="collection"><month>02</month>
+        <year>2016</year>
+      </pub-date>
+      <volume>21</volume>
+      <issue>2</issue>
+      <elocation-id>187</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>03</day>
+          <month>12</month>
+          <year>2015</year>
+        </date>
+        <date date-type="accepted">
+          <day>29</day>
+          <month>01</month>
+          <year>2016</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>&#xA9; 2016 by the authors; licensee MDPI, Basel, Switzerland.</copyright-statement>
+        <copyright-year>2016</copyright-year>
+        <license>
+          <p>This article is an open access article distributed under the terms and conditions of the Creative Commons by Attribution (CC-BY) license (http://creativecommons.org/licenses/by/4.0/).</p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>This paper describes the synthesis of precursors with a benzo[<italic>b</italic>]furan skeleton for the intramolecular 1,3-dipolar cycloaddition of azomethine ylides prepared from <italic>N</italic>-substituted 3-allyl-aminobenzo[<italic>b</italic>]furan-2-aldehydes and secondary amines derived from &#x3B1;-amino acid esters. Reactions were initiated by heating. The products consisted of four fused rings with three stereogenic centers. Their structure and stereochemistry were determined by NMR spectra and X-ray measurements.</p>
+      </abstract>
+      <kwd-group>
+        <kwd>1,3-dipolar cycloaddition</kwd>
+        <kwd>fused heterocycles</kwd>
+        <kwd>thermal initiation</kwd>
+        <kwd>3-amino-benzo[<italic>b</italic>]furan-2-carbaldehyde</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec1-molecules-21-00187" sec-type="intro">
+      <title>1. Introduction</title>
+      <p>The 1,3-dipolar cycloaddition reaction (1,3-DC) is a powerful tool for the synthesis of five-membered heterocyclic compounds. The reactions are characterized by high regio- and stereoselectivity. For the reaction, a dipole and a dipolarophile are required. There are several types of dipoles which can participate in cyclization reactions. In the case of a molecule containing both assemblies of atoms, one representing a dipole and the other a dipolarophile, it is possible to achieve intramolecular 1,3-DC and, in this way, the formation of a new ring [<xref ref-type="bibr" rid="B1-molecules-21-00187">1</xref>,<xref ref-type="bibr" rid="B2-molecules-21-00187">2</xref>,<xref ref-type="bibr" rid="B3-molecules-21-00187">3</xref>]. One frequently used method for preparing azomethine ylides applies an aldehyde and an amino-substituted ester. Such a method was used in our laboratory and, under microwave irradiation, led to hexahydrochromeno[4,3-<italic>b</italic>]pyrroles [<xref ref-type="bibr" rid="B4-molecules-21-00187">4</xref>,<xref ref-type="bibr" rid="B5-molecules-21-00187">5</xref>,<xref ref-type="bibr" rid="B6-molecules-21-00187">6</xref>] and hexahydropyrrolo[3,2-<italic>c</italic>]quinolines [<xref ref-type="bibr" rid="B7-molecules-21-00187">7</xref>]. The procedure is shown in <xref ref-type="scheme" rid="molecules-21-00187-f003">Scheme 1</xref>.</p>
+      <fig id="molecules-21-00187-f003" position="float">
+        <object-id pub-id-type="pii">molecules-21-00187-f003_Scheme 1</object-id>
+        <label>Scheme 1</label>
+        <caption>
+          <p>Microwave-initiated 1,3-dipolar cycloadditions leading to hexahydrochromeno[4,3-<italic>b</italic>] pyrroles and hexahydropyrrolo[3,2-<italic>c</italic>]quinolines.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-g003.tif"/>
+      </fig>
+      <p>In a recent paper, Coss&#xED;o [<xref ref-type="bibr" rid="B8-molecules-21-00187">8</xref>] presented a large experimental study of the formation of chromeno-[4,3-<italic>b</italic>]pyrrolidines, which also included a computational assessment of origin of the 1,3-DC stereocontrol. The authors prepared starting aldehydes by means of the <italic>O</italic>-alkylation of salicylaldehyde with cinamyl bromide according to a standard procedure. The partners in the 1,3-DC reactions were &#x3B1;-aminocarboxylic acid ester hydrochlorides (<xref ref-type="scheme" rid="molecules-21-00187-f004">Scheme 2</xref>) and the cyclizations were carried out using both microwave irradiation (neat, 185 &#xB0;C) and conventional heating in polyethylene glycol (170 &#xB0;C). Three diastereomers of the expected cycloaddition products were found, as determined by GC-MS and <sup>1</sup>H-NMR of the crude products. A significant part of the paper was devoted to computational analysis of the intramolecular cycloaddition.</p>
+      <fig id="molecules-21-00187-f004" position="float">
+        <object-id pub-id-type="pii">molecules-21-00187-f004_Scheme 2</object-id>
+        <label>Scheme 2</label>
+        <caption>
+          <p>Overview of 1,3-DC products prepared in [<xref ref-type="bibr" rid="B8-molecules-21-00187">8</xref>] and their configuration.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-g004.tif"/>
+      </fig>
+      <p>All the fused heterocyclic compounds mentioned above demonstrated important physiological properties. The pyrrolidino[3,2-<italic>c</italic>]tetrahydroquinoline skeleton is found in the natural alkaloid martinelline and martinellic acid, isolated from tropical plant roots, both of which exhibit biological activity as antagonists of the bradykinine B<sub>1</sub> and B<sub>2</sub> receptors and antibiotic activity [<xref ref-type="bibr" rid="B9-molecules-21-00187">9</xref>]. Similarly, the tetrahydrochromeno[4,3-<italic>b</italic>]pyrrolidine structure is found to be a constituent of many compounds exibiting activity as non-competitive antagonists of the muscular nicotinic acetylcholine receptor and the muscarinic acetylcholine receptor [<xref ref-type="bibr" rid="B10-molecules-21-00187">10</xref>]. It is also present in various natural compounds such as sceletium alkaloid [<xref ref-type="bibr" rid="B11-molecules-21-00187">11</xref>], and in synthetically prepared forms, displays activity against several bacterial pathogens [<xref ref-type="bibr" rid="B12-molecules-21-00187">12</xref>].</p>
+      <p>Moreover, many experiments carried out on biological material have shown that the benzo[<italic>b</italic>]furan skeleton present in both synthesized compounds as well as products isolated from natural sources also demonstrates various biological activities. Thus, the insecticidal, fungicidal, cytotoxic and antioxidative properties of naturally occurring benzo[<italic>b</italic>]furan derivatives isolated from plants of the <italic>Styracaceae</italic> [<xref ref-type="bibr" rid="B13-molecules-21-00187">13</xref>] and <italic>Moraceae</italic> [<xref ref-type="bibr" rid="B14-molecules-21-00187">14</xref>] families have been examined. Similar activity has also been found in synthetic materials [<xref ref-type="bibr" rid="B15-molecules-21-00187">15</xref>,<xref ref-type="bibr" rid="B16-molecules-21-00187">16</xref>,<xref ref-type="bibr" rid="B17-molecules-21-00187">17</xref>]. Benzo[<italic>b</italic>]furan systems in combination with a chromone or cumarine structure displayed also antimicrobial, antiviral, anticancer, anti-inflammatory, and antioxidant properties [<xref ref-type="bibr" rid="B18-molecules-21-00187">18</xref>]. With that knowledge and our experience with the application of intramolecular 1,3-dipolar cycloaddition, we decided to extend our synthesis to more complex systems containing benzo[<italic>b</italic>]furan skeletons.</p>
+    </sec>
+    <sec id="sec2-molecules-21-00187" sec-type="results">
+      <title>2. Results and Discussion</title>
+      <p>Here, for the task to build new systems we had to prepare starting molecules. The necessary key starting molecule was <italic>N</italic>-substituted, <italic>N</italic>-allyl-3-aminobenzo[<italic>b</italic>]furan-2-carbaldehyde (<bold>7</bold>). The procedure applied in its preparation is depicted in <xref ref-type="scheme" rid="molecules-21-00187-f005">Scheme 3</xref>.</p>
+	    <p>The synthesis began with commercially available 2-hydroxybenzonitrile (<bold>1</bold>), which was used as a nucleophile for the substitution of bromine in the alkyl bromoacetate molecule and for the preparation of alkyl-(2-cyanophenoxy) acetate <bold>2</bold>. Optimal conditions for the formation of the carbanion from <bold>2</bold> and its nucleophilic attack leading to cyclic compound <bold>3</bold> were sought by varying the solvent, base, and temperature. The application of <italic>t</italic>-butoxide in diethyl ether at room temperature for 25 min was identified as the optimal procedure. In the following step, it was necessary to introduce an allyl group to the already present free amino group. However, before doing so, it was necessary to protect the amino group from diallylation. Therefore, we introduced both tosyl or mesyl groups by the application of the corresponding sulfonylchloride in an excess of pyridine in dichloromethane at room temperature overnight. The following treatment with allyl bromide in the presence of potassium carbonate in DMF at room temperature for about 20 min led from compound <bold>4</bold> to amine <bold>5</bold> via the introduction of the allyl group.</p>
+      <fig id="molecules-21-00187-f005" position="float">
+        <object-id pub-id-type="pii">molecules-21-00187-f005_Scheme 3</object-id>
+        <label>Scheme 3</label>
+        <caption>
+          <p>Reaction path leading to the synthesis of the key starting molecule <italic>N</italic>-allyl-<italic>N</italic>-(2-formyl-benzo[<italic>b</italic>]furan-3-yl)-4-methylbenzene sulfonamide (<bold>7</bold>) used for the generation of azomethine ylides.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-g005.tif"/>
+      </fig>
+      <p>The procedure leading to key molecule <bold>7</bold> for 1,3-dipolar cycloadditions containing an aldehyde group included one intermediate product, <bold>6</bold>. Instead of the direct transformation of ester <bold>5</bold> to aldehyde <bold>7</bold>, for instance by DIBAL, which appeared to have limited success, we achieved the transformation in two steps. The first reductive step was carried out by means of the ester <bold>5</bold> reaction with LiAlH<sub>4</sub>. Our best results were characterized by yields of alcohol <bold>6</bold> approaching 55%. For the following oxidation step, we tested pyridinium chlorochromate in dichloromethane and found it to be successful.</p>
+      <p>Intramolecular 1,3-dipolar cycloaddition is based upon the formation of a 1,3-dipole <italic>in situ</italic> in a molecule that contains a double bond in a position which is capable of interacting with the dipole [<xref ref-type="bibr" rid="B4-molecules-21-00187">4</xref>]. In our case, we generated azomethine ylides from compound <bold>7</bold> by its reaction with ethyl-<italic>N</italic>-alkyl-2-amino acetates (<bold>8</bold>). The probable mechanism of the reaction is presented in <xref ref-type="scheme" rid="molecules-21-00187-f006">Scheme 4</xref>.</p>
+      <fig id="molecules-21-00187-f006" position="float">
+        <object-id pub-id-type="pii">molecules-21-00187-f006_Scheme 4</object-id>
+        <label>Scheme 4</label>
+        <caption>
+          <p>Plausible mechanism of azomethine ylide formation from compound <bold>7</bold> and ethyl-<italic>N</italic>-substituted 2-amino acetate (<bold>8</bold>), and its immediate intramolecular 1,3-dipolar cycloaddition to the already present double bond to form fused heterocycle <bold>9</bold>.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-g006.tif"/>
+      </fig>
+      <p>In the reaction, the nucleophilic secondary amine attacks the electrophilic carbon atom of the aldehyde; after water splits off, the 1,3-dipole&#x2014;azomethine ylide&#x2014;is formed <italic>in situ</italic>. This participates in an intramolecular 1,3-DC and a new heterocyclic system is formed. During the addition, three stereogenic centres are created in the new molecule (<xref ref-type="scheme" rid="molecules-21-00187-f006">Scheme 4</xref>) at positions <italic>2</italic>, <italic>3a</italic> and <italic>10b</italic>. Thus, the existence of four possible diastereoisomers should be expected. However, even when the temperature of the reaction was varied and the reaction mixtures were analyzed by LC/MS, LC/UV and NMR spectra, only one major diastereoisomer was found. </p>
+      <p>In all cases, reactions were carried out without any solvent in a bath preheated to 130&#x2013;140 &#xB0; C. Aldehyde <bold>7</bold> dissolved immediately after being put into the corresponding ester <bold>8</bold>. It was found that doubling the amount of ester <bold>8</bold> increased the product yield. The reaction time required for consumption of the whole amount of compound <bold>7</bold> ranged from 20 to 35 min depending upon the temperature and the steric requirements of the <italic>N</italic>-alkyl substitution. The reaction products were isolated by HPFC, with the EtOAc/PE mobile phase ratio equal to 1:3.</p>
+      <p>The NOESY spectrum indicated that the hydrogen atoms at <italic>10b</italic> and <italic>3a</italic> were oriented towards one side and to the side opposite to the hydrogen atom at <italic>2</italic>. This finding was supported by observation of the hydrogen atoms at <italic>3</italic> and <italic>3</italic>&#x2032;. NOESY interactions were observed only between the hydrogen atoms at <italic>2</italic> and <italic>3</italic>&#x2032; and between those at <italic>3</italic>&#x2032;&#x2032; and <italic>3a</italic>, which indicates the opposite orientation of the hydrogen atoms at the <italic>2</italic> and <italic>3a</italic> positions (<xref ref-type="app" rid="app1-molecules-21-00187">Supplementary Materials</xref>). All these conclusions were confirmed by X-ray structure analysis (<xref ref-type="fig" rid="molecules-21-00187-f001">Figure 1</xref>).</p>
+      <fig id="molecules-21-00187-f001" position="float">
+        <label>Figure 1</label>
+        <caption>
+          <p>ORTEP diagram of molecule <bold>9Ac</bold>.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-g001.tif"/>
+      </fig>
+      <p><xref ref-type="fig" rid="molecules-21-00187-f002">Figure 2</xref> attempts to depict, in perspective view, the conformation of the <italic>in situ</italic>-formed ylide entering 1,3-dipolar cycloaddition with the configuration of the products observed.</p>
+      <fig id="molecules-21-00187-f002" position="float">
+        <label>Figure 2</label>
+        <caption>
+          <p>Perspective view of the ylide fragment conformation affording diastereomer <bold>9</bold> with the configuration (2<italic>R</italic>*, 3a<italic>R</italic>*, 10b*) and a schematic view of the product. In the scheme we neglect the plus/minus sign of the wave function; the interactions have a stabilizing effect.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-g002.tif"/>
+      </fig>
+    </sec>
+    <sec id="sec3-molecules-21-00187">
+      <title>3. Experimental Section</title>
+      <sec id="sec3dot1-molecules-21-00187">
+        <title>3.1. General Information</title>
+        <p>All chemicals were used as purchased. If necessary, solvents were dried according to literature procedures [<xref ref-type="bibr" rid="B19-molecules-21-00187">19</xref>]. DCM was distilled from anhydrous CaCl<sub>2</sub>, then from P<sub>2</sub>O<sub>5</sub>, and stored over MS (3 &#xC5;). Et<sub>2</sub>O was dried over Na and freshly distilled before use. Pyridine was distilled from KOH and stored over MS (3 &#xC5;). 2-Hydroxybenzonitrile (<bold>1</bold>) was purchased from Sigma Aldrich (St. Louis, MO, USA).</p>
+        <p>Most reactions were carried out under a dry argon atmosphere and all reactions were monitored by TLC (F254 silica gel, Merck, Darmstadt, Germany). Column chromatography was performed on a Horizon HPFC system (Biotage, Uppsala, Sweden) equipped with a FLASH Si 25 + M cartridge. Melting points were measured on an MPM HV2 instrument (Kleinfeld Labortechnik GmbH, Gehrden, Germany). FT-IR spectra were recorded on a Genesis ATI (Unicam, Cambridge, UK) apparatus. <sup>1</sup>H- and <sup>13</sup>C-NMR spectra were recorded using an Avance 300 spectrometer (Bruker, Karlsruhe, Germany) operating at frequencies of 300.13 MHz (<sup>1</sup>H) and 75.47 MHz (<sup>13</sup>C) with CDCl<sub>3</sub> as the solvent. Tetramethylsilane (&#x3B4; = 0.00 ppm) or CHCl<sub>3</sub> (&#x3B4; = 7.27 ppm) served as internal standards for <sup>1</sup>H-NMR spectra, and CDCl<sub>3</sub> (&#x3B4; = 77.23 ppm) for <sup>13</sup>C-NMR spectra. GC-MS data were obtained on a GCMS-QP2010 (Shimadzu, Kyoto, Japan) in EI mode at 30 eV. MS data were obtained on a TRIO 1000 spectrometer (Fisons Instruments, Hazlet, NJ, USA) at 30 eV in electron impact mode and by thermal desorption. High Resolution Mass Spectra (HRMS) were recorded on a 6224 Accurate-Mass TOF LC-MS (Agilent, DE, Wilmington, WI, USA) in APCI and ESI modes. X-ray diffraction data were collected on a KM-4 four-circle CCD diffractometer (Kuma, Wroclaw, Poland) and corrected for Lorentz and polarization effects. The structures were resolved by direct methods and refined by full-matrix least-squares methods using the SHELXTL program package [<xref ref-type="bibr" rid="B20-molecules-21-00187">20</xref>]. Hydrogen atoms were placed in calculated idealized positions and refined as riding. The crystal structure was deposited at CCDC [<xref ref-type="bibr" rid="B21-molecules-21-00187">21</xref>].</p>
+      </sec>
+      <sec id="sec3dot2-molecules-21-00187">
+        <title>3.2. Chemistry</title>
+        <p><italic>Methyl-(2-cyanophenoxy)acetate</italic> (<bold>2</bold>). Potassium carbonate (2.78 g, 20.2 mmol, 1.20 eq.) and methyl bromoacetate (3.08 g, 20.2 mmol, 1.20 eq.) were added to a solution of 2-hydroxybenzonitrile (<bold>1</bold>, 2.00 g, 16.8 mmol, 1.00 eq.) dissolved in dried acetone (85 mL). The reaction mixture was refluxed for 7 h. After cooling down to room temperature, the mixture was filtered and the acetone solution evaporated. The reaction afforded light yellow crystals with a yield of 94%; mp 69 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 7.59 (dd, <italic>J</italic> = 7.7, 1.6, 1H, H1), 7.52 (td, <italic>J</italic> = 9.2, 7.7, 1.7, 1H, H4), 7.07 (td, <italic>J</italic> = 7.6, 0.7, 1H, H2), 6.86 (d, <italic>J</italic> = 8.5, 1H, H3), 4.78 (s, 2H, CH<sub>2</sub>), 3.81 (s, 3H, COOC<underline>H</underline><sub>3</sub>). <sup>13</sup>C-NMR: &#x3B4; = 168.6 (<underline>C</underline>OOCH<sub>3</sub>), 159.8 (C6), 134.3 and 134.5 (C2 and C3), 122.2 (C1), 116.3 (C5), 112.7 (C4), 103.0 (CN), 66.0 (CH<sub>2</sub>), 52.7 (COO<underline>C</underline>H<sub>3</sub>). MS (EI, 70 eV) Found: 191 (M calculated for: C<sub>10</sub>H<sub>9</sub>NO<sub>3</sub> 191.19); <italic>m</italic>/<italic>z</italic> (%) = 191 (M<sup>+</sup>, 50), 162 (50), 146 (10), 132 (70), 117 (15), 102 (70), 85 (60), 83 (100), 75 (35), 45 (60).</p>
+        <p><italic>Methyl-3-aminobenzo[b]furan-2-carboxylate</italic> (<bold>3</bold>). Compound <bold>2</bold> (2.62 g, 13.9 mmol, 1.00 eq.) was dissolved in dried diethyl ether and poured into a flask in which an argon atmosphere was maintained. Then, potassium <italic>t</italic>-butoxide (0.78 g, 6.9 mmol, 0.50 eq.) was carefully added and the mixture stirred at room temperature. After 25 min, several drops of water were added and the solvent evaporated. The remainder was mixed with water (30 mL) and the mixture extracted three times with 30 mL of diethyl ether. After drying by sodium sulfate, filtration, and the evaporation of ether, light yellow crystals were obtained with a yield of 65%; mp 94 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 7.55 (d, <italic>J</italic> = 7.9, 1H, H4), 7.48&#x2013;7.41 (m, 2H, H7 and H6), 7.19&#x2013;7.30 (m, 1H, H5), 5.00 (bs, 2H, NH<sub>2</sub>), 3.96 (s, 3H, COOC<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 162.1 (<underline>C</underline>OOCH<sub>3</sub>), 154.3 (C7a), 138.9 (C3), 129.1 (C4), 125.6 (C3a), 122.5 (C5), 121.8 (C2), 119.8 (C6), 112.8 (C7), 51.7 (COO<underline>C</underline>H<sub>3</sub>). MS (EI, 70 eV) Found: 191 (calculated for C<sub>10</sub>H<sub>9</sub>NO<sub>3</sub>: 191.19); <italic>m</italic>/<italic>z</italic> (%) = 191 (M<sup>+</sup>, 100), 159 (50), 133 (25), 103 (90), 83 (20), 77 (50), 51 (25).</p>
+        <p><italic>General procedure for the preparation of compounds</italic> <bold>4A</bold> <italic>and</italic> <bold>4B</bold>. Either tosyl chloride (1.29 g, 6.78 mmol, 1.20 eq.) or methane sulfonylchloride (1.29 g, 11.3 mmol, 2.00 eq.) were added to a stirred solution of <bold>3</bold> (1.16 g, 5.65 mmol, 1.00 eq.) and pyridine (1.35 g, 16.9 mmol, 3.00 eq.) in dichloromethane (12 mL), and the mixture was stirred under an argon atmosphere at room temperature overnight. The progress of the reaction was monitored by TLC. After removal of the solvent, the crude product was dissolved in ethyl acetate (40 mL) and subsequently extracted by 3 &#xD7; 20 mL water, 1 &#xD7; 15 mL HCl, and 1 &#xD7; 15 mL brine. The extract was dried by sodium sulfate, filtered, and then thickened to crystallization. It was then subsequently recrystallized either from ethyl acetate or acetone.</p>
+        <p><italic>Methyl-3-tosylaminobenzo[b]furan-2-carboxylate</italic> (<bold>4A</bold>), colourless crystals, yield 88%, mp 116 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 8.36 (bs, 1H, NH), 8.31 (d, 1H, <italic>J</italic> = 8.1, H4), 7.60 (d, <italic>J</italic> = 8.2, 2H, H<sub>Ts</sub>), 7.41&#x2013;7.54 (m, 2H, H7 and H6), 7.37 (t, <italic>J</italic> = 7.4, 1H, H5), 7.17 (d, <italic>J</italic> = 8.2, 2H, H<sub>Ts</sub>), 3.86 (s, 3H, COOC<underline>H<sub>3</sub></underline>), 2.35 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 161.0 (<underline>C</underline>OOCH<sub>3</sub>), 154.3 (C7a), 144.5 (C3), 135.3 (C tosyl), 132.7 (C tosyl), 130.4 (C2), 129.8 (2C tosyl), 129.4 (C6), 127.6 (2C tosyl), 124.4 (C4), 124.3 (C5), 122.4 (C3a), 112.5 (C7), 52.5 (COO<underline>C</underline>H<sub>3</sub>), 21.7 (NHSO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>). MS (EI, 70 eV) Found: 345 (calculated for C<sub>17</sub>H<sub>15</sub>NO<sub>5</sub>S: 345.37); <italic>m</italic>/<italic>z</italic> (%) = 345 (M<sup>+</sup>, 50), 222 (10), 190 (45), 162 (40), 134 (55), 119 (20), 103 (20), 91 (100), 76 (30), 65 (45).</p>
+        <p><italic>Methyl-3-mesylaminobenzo[b]furan-2-carboxylate</italic> (<bold>4B</bold>) ochre crystals, yield 94%, mp 173 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 8.24 (bs, 1H, NH), 8.19 (d, <italic>J</italic> = 8.2, 1H, H4), 7.53 (d, <italic>J</italic> = 3.6, 2H, H7 and H6), 7.34&#x2013;7.41 (m, 1H, H5), 4.03 (s, 3H, COOC<underline>H<sub>3</sub></underline>), 3.09 (s, 3H, SO<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 161.5 (<underline>C</underline>OOCH<sub>3</sub>), 154.5 (C7a), 132.2 (C3), 129.6 (C6), 124.4 (C4), 124.1 (C5), 122.5 (C2), 122.0 (C3a), 112.6 (C7), 52.8 (COO<underline>C</underline>H<sub>3</sub>), 40.3 (NHSO<sub>2</sub><underline>C</underline>H<sub>3</sub>). MS (EI, 70 eV) found: 269 (calculated for C<sub>11</sub>H<sub>11</sub>NO<sub>5</sub>S: 269.27); <italic>m</italic>/<italic>z</italic> (%) = 269 (M<sup>+</sup>, 70), 237 (15), 190 (85), 162 (50), 148 (15), 134 (100), 119 (30), 103 (50), 91 (35), 76 (70), 59 (20), 50 (25).</p>
+        <p><italic>General procedure for the preparation of compounds</italic> <bold>5A</bold> <italic>and</italic> <bold>5B</bold>. A solution of compound <bold>4A</bold> or <bold>4B</bold> (3.24 mmol, 1.00 eq.) in DMF (10 mL) was mixed with anhydrous potassium carbonate (672 mg, 4.86 mmol, 1.50 eq.). While the mixture was stirred, allyl bromide (590 mg, 4.86 mmol, 1.50 eq.) was added dropwise. The stirring continued for 20 h (for compound <bold>5A</bold>) and 6 h (for <bold>5B</bold>). The progress of the reaction was monitored by TLC (EtOAc/PE = 1:2). The process was finished by removing the solvent and the remainder was mixed with water (20 mL); the final product was extracted by dichloromethane and the extract washed with brine (15 mL). After drying by Na<sub>2</sub>SO<sub>4</sub>, filtration, and removal of the solvent by distillation, the product was crystallized from methanol.</p>
+        <p><italic>Methyl-3-(N-allyl-N-tosylamino)benzo[b]furan-2-carboxylate</italic> (<bold>5A</bold>) white crystals, yield 94%, mp 86 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 7.64 (d, <italic>J</italic> = 8.2, 2H, H<sub>Ts</sub>), 7.53 (d, 1H, <italic>J</italic> = 8.3, H4), 7.43&#x2013;7.50 (m, 2H, H7 and H6), 7.27&#x2013;7.36 (m, 1H, H5), 7.27 (d, <italic>J</italic> = 8.2, 2H, H<sub>Ts</sub>), 5.75&#x2013;5.92 (m, 1H, CH<sub>2</sub>C<underline>H</underline>=CH<sub>2</sub>), 5.05 (dd, <italic>J</italic> = 17.1, 1.2, 1H, CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 4.99 (dd, <italic>J</italic> = 10.1, 0.9, 1H, CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 4.10&#x2013;4.56 (bs, 2H, C<underline>H<sub>2</sub></underline>CH=CH<sub>2</sub>), 3.67 (s, 3H, COOC<underline>H<sub>3</sub></underline>), 2.43 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 158.8 (<underline>C</underline>OOCH<sub>3</sub>), 154.0 (C7a), 144.0 (C3), 141.3 (C tosyl), 136.7 (C tosyl), 133.3 (CH<sub>2</sub><underline>C</underline>H=CH<sub>2</sub>), 129.8 (2C tosyl), 128.7 (C6), 128.0 (2C tosyl), 127.7 (C2), 127.4 (C3a), 124.6 (C4), 122.6 (C5), 119.5 (CH<sub>2</sub>CH=<underline>C</underline>H<sub>2</sub>), 112.7 (C7), 54.3 (<underline>C</underline>H<sub>2</sub>CH=CH<sub>2</sub>), 52.5 (COO<underline>C</underline>H<sub>3</sub>), 21.9 (SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>). MS (EI, 70 eV) Found: 230 [M &#x2212; Ts] (calculated for C<sub>20</sub>H<sub>19</sub>NO<sub>5</sub>S: 385.434); <italic>m</italic>/<italic>z</italic> (%) = 230 (100), 198 (85), 170 (45), 115 (25), 91 (45), 65 (20), 45 (30).</p>
+        <p><italic>Methyl-3-(N-allyl-N-mesylamino)benzo[b]furan-2-carboxylate</italic> (<bold>5B</bold>) orange crystals, yield 82%, mp 91 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 7.80 (d, <italic>J</italic> = 7.8, 1H, H4), 7.44&#x2013;7.56 (m, 2H, H7 and H6), 7.33&#x2013;7.40 (m, 1H, H5), 5.72&#x2013;5.90 (m, 1H, CH<sub>2</sub>C<underline>H</underline>=CH<sub>2</sub>), 5.11 (dd, <italic>J</italic> = 17.1, 1.3, 1H, CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 5.02 (dd, <italic>J</italic> = 10.1, 1.2, 1H, CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 4.40 (bs, 2H, C<underline>H<sub>2</sub></underline>CH=CH<sub>2</sub>), 4.02 (s, 3H, COOC<underline>H<sub>3</sub></underline>), 3.06 (s, 3H, SO<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 159.5 (<underline>C</underline>OOCH<sub>3</sub>), 154.0 (C7a), 140.4 (C3), 133.2 (CH<sub>2</sub><underline>C</underline>H=CH<sub>2</sub>), 129.1 (C6), 128.9 (C2), 127.7 (C3a), 124.9 (C4), 122.6 (C5), 119.7 (CH<sub>2</sub>CH=<underline>C</underline>H<sub>2</sub>), 112.7 (C7), 54.1 (<underline>C</underline>H<sub>2</sub>CH=CH<sub>2</sub>), 52.9 (COO<underline>C</underline>H<sub>3</sub>), 40.1 (SO<sub>2</sub><underline>C</underline>H<sub>3</sub>). MS (EI 70 eV) Found: 230 [M &#x2212; Ms] (calculated for C<sub>14</sub>H<sub>15</sub>NO<sub>5</sub>S: 309.338); <italic>m</italic>/<italic>z</italic> (%) = 230 (80), 198 (100), 170 (70), 156 (15), 115 (30), 102 (15), 83 (70), 59 (15), 45 (45).</p>
+        <p><italic>Ester group reduction&#x2014;transformation of compound</italic> <bold>5</bold> <italic>to compound</italic> <bold>6</bold>. A solution of compound <bold>5A</bold> or <bold>5B</bold> (1.27 mmol, 1.00 eq.) in dry diethyl ether (13 mL) was slowly added to an intensively stirred suspension of LiAlH<sub>4</sub> (58 mg, 1.5 mmol, 1.2 eq.) in dry diethyl ether (2 mL) cooled down to 0 &#xB0;C under an argon atmosphere. After addition, the temperature was raised to room temperature and the reaction mixture was kept at this temperature for a further 30 min. Then, the reaction was stopped by the addition of diethyl ether containing several drops of water. Subsequently, the reaction mixture was extracted by diethyl ether (3 &#xD7; 10 mL). The collected extracts were dried by Na<sub>2</sub>SO<sub>4</sub> and filtered, and the solvent was further evaporated. The liquid product was purified by column chromatography (EtOAc/PE = 1:3).</p>
+        <p><italic>N-(2-Hydroxymethylbenzo[b]furan-3-yl)-N-allyl-4-methylbenzenesulfonamide</italic> (<bold>6A</bold>) light yellow oil, yield 59%. <sup>1</sup>H-NMR: &#x3B4; = 7.54 (d, <italic>J</italic> = 8.2, 2H, H<sub>Ts</sub>), 7.42 (d, <italic>J</italic> = 8.3, 1H, H4), 7.12&#x2013;7.24 (m, 3H, H6 and 2H<sub>Ts</sub>), 6.87&#x2013;6.98 (m, 1H, H5), 6.41 (d, <italic>J</italic> = 7.8, 1H, H7), 5.72&#x2013;5.91 (m, 1H, CH<sub>2</sub>C<underline>H</underline>=CH<sub>2</sub>), 5.03 (dd, <italic>J</italic> = 16.9, 1.2, 1H in CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 5.05 (dd, <italic>J</italic> = 1.0, <italic>J</italic> = 10.1, 1H in CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 4.19&#x2013;4.88 (bs, 4H, 2H in C<underline>H<sub>2</sub></underline>CH=CH<sub>2</sub> and 2H in C<underline>H<sub>2</sub></underline>OH), 2.41 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 157.1 (C7a), 153.7 (C2), 144.4 (C3), 135.9 (C tosyl), 132.6 (CH<sub>2</sub><underline>C</underline>H=CH<sub>2</sub>), 130.0 (2C tosyl), 127.8 (2C tosyl), 125.1 (C6), 124.2 (C tosyl), 122.9 (C5), 119.9 (C4), 119.1 (CH<sub>2</sub>CH=<underline>C</underline>H<sub>2</sub>), 117.4 (C3a), 112.5 (C7), 55.3 (<underline>C</underline>H<sub>2</sub>OH), 52.9 (<underline>C</underline>H<sub>2</sub>CH=CH<sub>2</sub>), 21.8 (SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>). HRMS (ESI) (<italic>m</italic>/<italic>z</italic>): [M + H]<sup>+</sup> calculated for C<sub>19</sub>H<sub>20</sub>NO<sub>4</sub>S<sup>+</sup>: 358.1108. Found: 385.1112.</p>
+        <p><italic>N-(2-Hydroxymethylbenzo[b]furan-3-yl)-N-allyl-methanesulfonamide</italic> (<bold>6B</bold>) light yellow oil, yield 55%. <sup>1</sup>H-NMR: &#x3B4; = 7.54 (d, <italic>J</italic> = 7.9, 1H, H4), 7.44&#x2013;7.49 (m, 1H, H7), 7.33&#x2013;7.41 (m, 1H, H5), 7.31 (dd, <italic>J</italic> = 1.2, 7.4, 1H, H6), 5.78&#x2013;5.96 (m, 1H, CH<sub>2</sub>C<underline>H</underline>=CH<sub>2</sub>), 5.06&#x2013;5.18 (m, 2H, CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 4.70 (s, 2H, C<underline>H<sub>2</sub></underline>OH), 4.37 (bs, 2H, C<underline>H<sub>2</sub></underline>CH=CH<sub>2</sub>), 2.99 (s, 3H, NHSO<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 157.3 (C7a), 154.0 (C2), 132.6 (CH<sub>2</sub><underline>C</underline>H=CH<sub>2</sub>), 125.7 (C6), 124.5 (C3), 123.9 (C5), 120.3 (C4), 118.6 (CH<sub>2</sub>CH=<underline>C</underline>H<sub>2</sub>), 116.9 (C3a), 113.1 (C7), 55.3 (<underline>C</underline>H<sub>2</sub>OH), 53.2 (<underline>C</underline>H<sub>2</sub>CH=CH<sub>2</sub>), 39.5 (NHSO<sub>2</sub><underline>C</underline>H<sub>3</sub>). HRMS (ESI) (<italic>m</italic>/<italic>z</italic>): [M + H]<sup>+</sup> calculated for C<sub>13</sub>H<sub>16</sub>NO<sub>4</sub>S<sup>+</sup>: 282.0795. Found: 282.0795.</p>
+        <p><italic>Procedure for the preparation of compound</italic> <bold>7</bold>. Pyridinium chlorochromate (400 mg, 1.86 mmol, 2.50 eq.) was added to a solution of alcohol <bold>6</bold> (0.74 mmol, 1.00 eq.) in dry dichloromethane (5 mL). The resulting black suspension was stirred under argon at room temperature for 26 h. Subsequently, diethyl ether (15 mL) was added and the suspension stirred again for 10 min. Then, the upper layer was decanted and filtered through a short column (5 cm) of Florisil. The obtained light yellow solution was concentrated to crystallization and the product recrystallized from ethanol.</p>
+        <p><italic>N-Allyl-N-(2-formylbenzo[b]furan-3-yl)-4-toluenesulfonamide</italic> (<bold>7A</bold>) yellow crystals, yield 55%, mp 107 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 9.72 (s, 1H, C<underline>H</underline>=O), 7.58 (d, <italic>J</italic> = 8.2, 2H, H<sub>Ts</sub>), 7.56 (d, <italic>J</italic> = 7.6, 1H, H4), 7.43&#x2013;7.51 (m, 1H, H6), 7.20&#x2013;7.29 (m, 2H, H<sub>Ts</sub>), 7.18 (t, <italic>J</italic> = 7.5, 1H, H5), 7.08 (d, <italic>J</italic> = 7.8, 1H, H7), 5.73&#x2013;5.89 (m, 1H, CH<sub>2</sub>C<underline>H</underline>=CH<sub>2</sub>), 5.06 (dd, <italic>J</italic> = 9.4, 0.9, 1H in CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 5.04 (dd, <italic>J</italic> = 17.0, 0.9, 1H in CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 4.35 (bs, 2H, C<underline>H<sub>2</sub></underline>CH=CH<sub>2</sub>), 2.43 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: 179.0 (<underline>C</underline>H=O), 161.1 (C7a), 155.0 (C3), 149.4 (C-tosyl), 144.8 (C2), 135.2 (C-tosyl), 132.0 (CH<sub>2</sub><underline>C</underline>H=CH<sub>2</sub>), 130.1 (2C tosyl), 129.6 (C6), 127.9 (2C tosyl), 124.7 (C3a), 124.8 (C5), 122.0 (C4), 120.6 (CH<sub>2</sub>CH=<underline>C</underline>H<sub>2</sub>), 113.5 (C7), 53.8 (<underline>C</underline>H<sub>2</sub>CH=CH<sub>2</sub>), 21.8 (SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>). MS (EI 70 eV): Found: 200 [M &#x2212; Ts] (calculated for C<sub>19</sub>H<sub>17</sub>NO<sub>4</sub>S: 355.408); <italic>m</italic>/<italic>z</italic> (%) = 200 (100), 172 (60), 158 (30), 144 (25), 115 (20), 103 (15), 91 (95), 77 (15), 65 (50).</p>
+        <p><italic>N-Allyl-N-(2-formylbenzo[b]furan-3-yl)-methanesulfonamide</italic> (<bold>7B</bold>) yellow oil, yield 33%. <sup>1</sup>H-NMR: &#x3B4; = 10.02 (s, 1H, C<underline>H</underline>=O), 7.80 (d, <italic>J</italic> = 8.0, 1H, H4), 7.52&#x2013;7.62 (m, 2H, H7 and H6), 7.37&#x2013;7.44 (m, 1H, H5), 5.72&#x2013;5.89 (m, 1H, CH<sub>2</sub>C<underline>H</underline>=CH<sub>2</sub>), 5.11 (dd, <italic>J</italic> = 17.1, 1.2, 1H, CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 5.08 (dd, <italic>J</italic> = 10.1, 0.9, 1H, CH<sub>2</sub>CH=C<underline>H<sub>2</sub></underline>), 4.43 (d, <italic>J</italic> = 0.7, 2H, C<underline>H<sub>2</sub></underline>CH=CH<sub>2</sub>), 3.02 (s, 3H, NSO<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: 180.5 (<underline>C</underline>H=O), 155.0 (C7a), 148.1 (C3), 133.7 (C2), 132.3 (CH<sub>2</sub><underline>C</underline>H=CH<sub>2</sub>), 130.0 (C6), 125.1 (C5), 122.4 (C4), 120.4 (CH<sub>2</sub>CH=<underline>C</underline>H<sub>2</sub>), 118.1 (C3a), 113.4 (C7), 53.6 (<underline>C</underline>H<sub>2</sub>CH=CH<sub>2</sub>), 39.4 (NSO<sub>2</sub><underline>C</underline>H<sub>3</sub>). HRMS (APCI): <italic>m</italic>/<italic>z</italic> [M + H]<sup>+</sup> calculated for C<sub>13</sub>H<sub>13</sub>NO<sub>4</sub>S<sup>+</sup>: 280.0638. Found: 280.0638.</p>
+        <p><italic>General procedure for the formation of azomethine ylide and its following intramolecular 1,3-dipolar cycloaddition&#x2014;preparation of compound</italic> <bold>9</bold>. Compound <bold>7</bold> (0.14 mmol, 1.00 eq.) and a two-fold excess of secondary amine <bold>8</bold> (0.28 mmol, 2.00 eq.) were mixed in a test tube filled with an argon atmosphere and stopped with a balloon. Then, the tube was immersed in a preheated oil bath (130&#x2013;140 &#xB0;C) and stirred for about 30 min until the mixture became darker in color. After cooling down, the mixture was separated by HPFC (AcOEt/PE = 1:3). The products were crystallized from methanol.</p>
+		<p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-i001.tif"/></p>
+        <p><italic>(2R,3aR,10bR) and (2S,3aS,10bS)-Ethyl-1-methyl-5-tosyl-2,3,3a,4,5,10b-hexahydro-1H-benzo[b] furo[3,2-b]pyrrolo[2,3-d]pyridine-2-carboxylate</italic> (<bold>9Aa</bold>). Yellow crystals, yield 80%, mp 64 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 8.12&#x2013;8.14 (m, 1H, H6), 7.49 (d, <italic>J</italic> = 8.3, 2H, H<sub>Ts</sub>), 7.44 (dd, <italic>J</italic> = 1.7, 7.1, 1H, H9), 7.28&#x2013;7.35 (m, 2H, H8 and H7), 7.19 (d, <italic>J</italic> = 8.0, 2H, H<sub>Ts</sub>), 4.10&#x2013;4.18 (m, 2H, COOC<underline>H<sub>2</sub></underline>CH<sub>3</sub>), 4.07 (dd, <italic>J</italic> = 14.1, 4.8, 1H, H4), 3.73 (d, <italic>J</italic> = 6.7, 1H, H10b), 3.64 (dd, <italic>J</italic> = 2.1, 8.6, 1H, H2), 3.17 (dd, <italic>J</italic> = 14.0, 12.0, 1H, H4), 2.63 (s, 3H, NCH<sub>3</sub>), 2.39 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>), 2.03&#x2013;2.09 (m, 1H, H3), 1.95&#x2013;2.02 (m, 1H, H3a), 1.62&#x2013;1.68 (m, 1H, H3), 1.25 (t, <italic>J</italic> = 7.1, 3H, COOCH<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 173.3 (<underline>C</underline>OOCH<sub>2</sub>CH<sub>3</sub>), 153.9 (C9a), 148.1 (C10a), 144.1 (C5a), 135.3 (C-SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 129.8 (2CH SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 127.4 (2CH-SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 124.9 (C8), 123.2 (C SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 123.1 (C6), 122.8 (C7), 119.1 (C5b), 111.3 (C9), 65.0 (C2), 60.3 (COO<underline>C</underline>H<sub>2</sub>CH<sub>3</sub>), 56.0 (C10b), 51.0 (C4), 36.4 (N<underline>C</underline>H<sub>3</sub>), 33.5 (C3a), 31.7 (C3), 21.6 (SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>), 14.3 (COOCH<sub>2</sub><underline>C</underline>H<sub>3</sub>). MS (EI, 70 eV) found 454 (calculated for C<sub>24</sub>H<sub>26</sub>N<sub>2</sub>O<sub>5</sub>S: 454.54); <italic>m</italic>/<italic>z</italic> (%) = 454 (M<sup>+</sup>, &lt;5), 381 (65), 299 (20), 225 (100), 211 (15), 196 (10), 184 (10), 170 (30), 155 (10), 91 (55), 65 (20), 57 (45). HRMS (ESI) <italic>m</italic>/<italic>z</italic> [M + H]<sup>+</sup> calculated for C<sub>24</sub>H<sub>27</sub>N<sub>2</sub>O<sub>5</sub>S<sup>+</sup>: 455.1635). Found: 455.1636.</p>
+		<p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-i002.tif"/></p>
+        <p><italic>(2R,3aR,10bR) and (2S,3aS,10bS)-Ethyl-1-ethyl-5-tosyl-2,3,3a,4,5,10b-hexahydro-1H-benzo[b] furo[3,2-b]pyrrolo[2,3-d]pyridine-2-carboxylate</italic> (<bold>9Ab</bold>). Light yellow crystals, yield 94%, mp 105 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 8.13&#x2013;8.16 (m, 1H, H6), 7.48 (d, <italic>J</italic> = 8.3, 2H, H<sub>Ts</sub>), 7.44 (dd, <italic>J</italic> = 1.7, 7.1, 1H, H9), 7.28&#x2013;7.34 (m, 2H, H8 and H7), 7.19 (d, <italic>J</italic> = 8.1, 2H, H<sub>Ts</sub>), 4.10&#x2013;4.17 (m, 2H, COOC<underline>H<sub>2</sub></underline>CH<sub>3</sub>), 4.05 (dd, <italic>J</italic> = 14.1, 4.7, 1H, H4), 3.86 (d, <italic>J</italic> = 6.7, 1H, H10b), 3.81 (dd, <italic>J</italic> = 1.9, 8.7, 1H, H2), 3.30&#x2013;3.38 (m, 1H, NC<underline>H<sub>2</sub></underline>CH<sub>3</sub>), 3.21 (dd, <italic>J</italic> = 14.0, 11.8, 1H, H4), 2.64&#x2013;2.72 (m, 1H, NC<underline>H<sub>2</sub></underline>CH<sub>3</sub>), 2.38 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>), 2.03&#x2013;2.08 (m, 1H, H3), 1.92&#x2013;2.00 (m, 1H, H3a), 1.61&#x2013;1.67 (m, 1H, H3), 1.25 (t, <italic>J</italic> = 7.1, 3H, COOCH<sub>2</sub>C<underline>H<sub>3</sub></underline>), 1.04 (t, <italic>J</italic> = 7.3, 3H, NCH<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 173.6 (<underline>C</underline>OOCH<sub>2</sub>CH<sub>3</sub>), 153.9 (C9a), 148.2 (C10a), 144.1 (C5a), 135.4 (C in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 129.8 (2CH in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 127.4 (2CH in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 124.8 (C8), 123.2 (C in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 123.1 (C6), 122.8 (C7), 119.1 (C5b), 112.3 (C9), 60.7 (C2), 60.2 (COO<underline>C</underline>H<sub>2</sub>CH<sub>3</sub>), 55.4 (C4), 51.0 (N<underline>C</underline>H<sub>2</sub>CH<sub>3</sub>), 43.3 (C10b), 32.9 (C3a), 31.5 (C3), 21.6 (SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>), 14.3 (COOCH<sub>2</sub><underline>C</underline>H<sub>3</sub>), 13.6 (NCH<sub>2</sub><underline>C</underline>H<sub>3</sub>). MS (EI, 70 eV) Found: 395 [M &#x2212; COOEt] (calculated for C<sub>25</sub>H<sub>28</sub>N<sub>2</sub>O<sub>5</sub>S: 468.57); <italic>m/z</italic> (%) = 395 (80), 313 (20), 239 (100), 211 (25), 184 (15), 170 (20), 91 (40), 71 (25), 56 (30). HRMS (ESI) <italic>m/z</italic> [M + H]<sup>+</sup> calculated for C<sub>25</sub>H<sub>29</sub>N<sub>2</sub>O<sub>5</sub>S<sup>+</sup>: 469.1792). Found: 469.1791.</p>
+		<p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-i003.tif"/></p>
+        <p><italic>(2R,3aR,10bR) and (2S,3aS,10bS</italic>)-<italic>Ethyl-1-benzyl-5-tosyl-2,3,3a,4,5,10b-hexahydro-1H-benzo[b] furo[3,2-b]pyrrolo[2,3-d]pyridine-2-carboxylate</italic> (<bold>9Ac</bold>). Yellow crystals, yield 96%, mp 130 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 8.17&#x2013;8.21 (m, 1H, H6), 7.50 (d, <italic>J</italic> = 8.3, 2H, H<sub>Ts</sub>), 7.37&#x2013;7.42 (m, 1H, H9), 7.30&#x2013;7.33 (m, 2H, H8 and H7), 7.20 (d, <italic>J</italic> = 8.6, 2H, H<sub>Ts</sub>), 7.15&#x2013;7.18 (m, 5H, CH<sub>2</sub>C<sub>6</sub><underline>H<sub>5</sub></underline>), 4.58 (d, <italic>J</italic> = 13.7, 1H, H4), 4.06&#x2013;4.14 (m, 3H, 2H in COOC<underline>H<sub>2</sub></underline>CH<sub>3</sub> and 1H in C<underline>H<sub>2</sub></underline>C<sub>6</sub>H<sub>5</sub>), 4.05 (d, <italic>J</italic> = 3.6, 1H, H10b), 3.48&#x2013;3.51 (m, 1H, H2), 3.82 (d, <italic>J</italic> = 13.7, 1H, H4), 3.30 (dd, <italic>J</italic> = 14.0, 11.6, 1H, C<underline>H<sub>2</sub></underline>C<sub>6</sub>H<sub>5</sub>), 2.40 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>), 1.98&#x2013;2.03 (m, 1H, H3), 1.92&#x2013;1.97 (m, 1H, H3a), 1.60&#x2013;1.67 (m, 1H, H3), 1.20 (t, <italic>J</italic> = 7.1, 3H, COOCH<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 173.8 (<underline>C</underline>OOCH<sub>2</sub>CH<sub>3</sub>), 153.9 (C9a), 148.0 (C10a), 144.1 (C5a), 138.8 (C in CH<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>5</sub>), 135.3 (C in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 129.8 (2CH in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 128.4 (2CH in CH<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>5</sub>), 128.1 (2CH in CH<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>5</sub>), 127.4 (2CH in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 127.0 (CH in CH<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>5</sub>), 123.1 (C7), 124.9 (C8), 123.1 (C in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 122.9 (C6), 119.2 (C5b), 111.3 (C9), 60.5 (C2), 60.2 (COO<underline>C</underline>H<sub>2</sub>CH<sub>3</sub>), 55.1 (C10b), 52.8 (<underline>C</underline>H<sub>2</sub>C<sub>6</sub>H<sub>5</sub>), 51.0 (C3), 32.9 (C3a), 31.6 (C4), 21.6 (SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>), 14.3 (COOCH<sub>2</sub><underline>C</underline>H<sub>3</sub>). HRMS (APCI) <italic>m/z</italic> [M + H]<sup>+</sup> calculated for C<sub>30</sub>H<sub>31</sub>N<sub>2</sub>O<sub>5</sub>S<sup>+</sup>: 531.1948). Found: 531.1947.</p>
+		<p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-i004.tif"/></p>
+        <p><italic>(2R,3aR,10bR) and (2S,3aS,10bS)-Ethyl-1-isopropyl-5-tosyl-2,3,3a,4,5,10b-hexahydro-1H-benzo [b]furo[3,2-b]pyrrolo[2,3-d]pyridine-2-carboxylate</italic> (<bold>9Ad</bold>). Colourless crystals, yield 44%, mp 102 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 8.13&#x2013;8.17 (m, 1H, H8), 7.43 (dd, <italic>J</italic> = 7.3, 1.4, 1H, H9), 7.27&#x2013;7.34 (m, 2H, H8 and H7), 7.20 (d, <italic>J</italic> = 8.0, 2H, H<sub>Ts</sub>), 4.24 (d, <italic>J</italic> = 6.6, 1H, H10b), 4.05&#x2013;4.13 (m, 2H, COOC<underline>H<sub>2</sub></underline>CH<sub>3</sub>), 3.98 (dd, <italic>J</italic> = 14.0, 4.4, 1H, H4), 3.74 (dd, <italic>J</italic> = 8.5, 2.0, 1H, H2), 3.49&#x2013;3.56 (m, 1H, C<underline>H</underline>(CH<sub>3</sub>)<sub>2</sub>), 3.27 (dd, <italic>J</italic> = 14.0, 11.1, 1H, H4), 2.39 (s, 3H, SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub>C<underline>H<sub>3</sub></underline>), 1.97&#x2013;2.08 (m, 1H, H3a), 1.89&#x2013;1.96 (m, 1H, H3), 1.56&#x2013;1.64 (m, 1H, H3), 1.25 (t, <italic>J</italic> = 7.2, 3H, COOCH<sub>2</sub>C<underline>H<sub>3</sub></underline>), 1.12 (d, <italic>J</italic> = 6.8, 3H, CH(C<underline>H<sub>3</sub></underline>)<sub>2</sub>), 1.06 (d, <italic>J</italic> = 6.6, 3H, CH(C<underline>H<sub>3</sub></underline>)<sub>2</sub>). <sup>13</sup>C-NMR: &#x3B4; = 176.6 (<underline>C</underline>OOCH<sub>2</sub>CH<sub>3</sub>), 153.8 (C9a), 147.6 (C10a), 144.0 (C5a), 135.6 (C in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 129.8 (2CH in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 127.4 (2CH in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 124.8 (C8), 123.1 (C in SO<sub>2</sub><underline>C<sub>6</sub></underline>H<sub>4</sub>CH<sub>3</sub>), 123.0 (C6), 122.9 (C7), 119.3 (C5b), 111.3 (C9), 60.5 (COO<underline>C</underline>H<sub>2</sub>CH<sub>3</sub>), 58.0 (C2), 51.9 (C10b), 50.9 (C4), 47.8 (<underline>C</underline>H(CH<sub>3</sub>)<sub>2</sub>), 33.0 (C3a), 31.8 (C3), 21.6 (SO<sub>2</sub>C<sub>6</sub>H<sub>4</sub><underline>C</underline>H<sub>3</sub>), 21.1 (CH(<underline>C</underline>H<sub>3</sub>)<sub>2</sub>), 17.8 (CH(<underline>C</underline>H<sub>3</sub>)<sub>2</sub>), 14.3 (COOCH<sub>2</sub><underline>C</underline>H<sub>3</sub>). MS (EI 70 eV) found 482 (calculated for C<sub>26</sub>H<sub>30</sub>N<sub>2</sub>O<sub>5</sub>S: 482.59); <italic>m/z</italic> (%) = 482 (M<sup>+</sup>, &lt;5), 409 (95), 327 (15), 253 (100), 211 (75), 184 (25), 170 (25), 155 (15), 91 (65), 84 (25), 70 (55), 65 (20), 43 (30). HRMS (ESI) <italic>m/z</italic> [M + H]<sup>+</sup> calculated for C<sub>26</sub>H<sub>31</sub>N<sub>2</sub>O<sub>5</sub>S<sup>+</sup>: 483.1948). Found: 483.1948.</p>
+		<p><inline-graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-i005.tif"/></p>
+        <p><italic>(2R,3aR,10bR) and (2S,3aS,10bS)</italic>-<italic>Ethyl-1-benzyl-5-mesyl-2,3,3a,4,5,10b-hexahydro-1H-benzo[b] furo[3,2-b]pyrrolo[2,3-d]pyridine-2-carboxylate</italic> (<bold>9Bc</bold>). Light yellow crystals, yield 29%, mp 106 &#xB0;C. <sup>1</sup>H-NMR: &#x3B4; = 8.02 (d, <italic>J</italic> = 7.5, 1H, H6), 7.41 (d, <italic>J</italic> = 7.8, 1H, H9), 7.17&#x2013;7.33 (m, 7H, 5H in C<sub>6</sub><underline>H<sub>5,</sub></underline> H8 and H7), 4.63 (d, <italic>J</italic> = 13.7, 1H, C<underline>H<sub>2</sub></underline>C<sub>6</sub>H<sub>5</sub>), 4.58 (d, <italic>J</italic> = 6.8, 1H, H10b), 4.11&#x2013;4.21 (m, 2H, COOC<underline>H<sub>2</sub></underline>CH<sub>3</sub>), 4.07 (dd, <italic>J</italic> = 13.6, 4.6, 1H, H4), 3.96 (d, <italic>J</italic> = 13.7, 1H, C<underline>H<sub>2</sub></underline>C<sub>6</sub>H<sub>5</sub>), 3.61 (dd, <italic>J</italic> = 8.9, 1H, H2), 3.41 (dd, <italic>J</italic> = 13.4, 11.2, 1H, H4), 2.98 (s, 3H, NSO<sub>2</sub>C<underline>H<sub>3</sub></underline>), 2.79&#x2013;2.88 (m, 1H, H3a), 2.21&#x2013;2.29 (m, 1H, H3), 1.84&#x2013;1.92 (m, 1H, H3), 1.27 (t, <italic>J</italic> = 7.1, 3H, COOCH<sub>2</sub>C<underline>H<sub>3</sub></underline>). <sup>13</sup>C-NMR: &#x3B4; = 173.7 (<underline>C</underline>OOCH<sub>2</sub>CH<sub>3</sub>), 154.0 (C9a), 147.0 (C10a), 145.1 (C5a), 138.7 (C <underline>C</underline><sub>6</sub>H<sub>5</sub>), 128.5 (2CH <underline>C</underline><sub>6</sub>H<sub>5</sub>), 128.2 (2CH <underline>C</underline><sub>6</sub>H<sub>5</sub>), 127.1 (CH <underline>C</underline><sub>6</sub>H<sub>5</sub>), 125.0 (C8), 123.2 (C7), 122.2 (C6), 119.1 (C5b), 111.5 (C9), 60.8 (C2), 60.4 (CO<underline>C</underline>H<sub>2</sub>CH<sub>3</sub>), 55.4 (C10b), 53.0 (<underline>C</underline>H<sub>2</sub>C<sub>6</sub>H<sub>5</sub>), 50.8 (C4), 39.3 (SO<sub>2</sub><underline>C</underline>H<sub>3</sub>), 34.9 (C3a), 31.7 (C3), 14.3 (COO<underline>C</underline>H<sub>2</sub>CH<sub>3</sub>). MS (EI 70 eV) Found 381[M <italic>&#x2212;</italic> COOEt] (calculated for C<sub>24</sub>H<sub>26</sub>N<sub>2</sub>O<sub>5</sub>S: 454.539); <italic>m/z</italic> (%) = 381 (40), 301 (15), 211 (20), 91 (100). HRMS (ESI) <italic>m/z</italic> [M + H]<sup>+</sup> calculated for C<sub>24</sub>H<sub>27</sub>N<sub>2</sub>O<sub>5</sub>S<sup>+</sup>: 455.1641). Found: 455.1642.</p>
+      </sec>
+    </sec>
+    <sec id="sec4-molecules-21-00187" sec-type="conclusions">
+      <title>4. Conclusions</title>
+      <p>We have prepared two <italic>N</italic>-substituted 3-allylaminobenzo[<italic>b</italic>]furan-2-aldehydes with <italic>N</italic>-tosyl and <italic>N</italic>-mesyl groups. These compounds served as precursors for the formation of azomethine ylides by means of their reaction with four types of secondary amines derived from ethyl&#x2014;&#x3B1;-amino acid esters. Methyl, ethyl, benzyl and <italic>iso</italic>propyl groups were used as <italic>N</italic>-substituents. The ylides participated in subsequent 1,3-dipolar cycloadditions. The azomethine ylides were generated by heating a neat mixture of components to 130&#x2013;140 &#xB0;C. Then, they reacted intramolecularly with the already present double bond of the build in the allyl group. We found that reaction time and temperature have an influence upon the yield of cyclization rather than the size of the group bound at the amino group of the &#x3B1;-amino acid ester. The tosyl-protected compounds <bold>7A</bold> afforded products in a good yield.</p>
+      <p>Dipolar cycloaddition led to systems with four fused rings, and, during the reaction, three stereogenic centers were formed. On the basis of NOESY and 2D COSY experiments, we found compounds with (<italic>S,S,S</italic>) or (<italic>R,R,R</italic>) configurations at all centers, which was confirmed by X-ray structure analysis. These experiments proved the theory that azomethine ylide participates in cycloadditions in a more stable conformation and, therefore, that only the corresponding conformer is then found in the products.</p>
+    </sec>
+  </body>
+  <back>
+    <app-group>
+     <app id="app1-molecules-21-00187">
+	  <title>Supplementary Materials</title>
+	  <supplementary-material id="molecules-21-00187-s001" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="molecules-21-00187-s001.pdf">
+    </supplementary-material>
+       <p>The following are available online at <uri>http://www.mdpi.com/1420-3049/21/2/187/s1</uri>. Table S1: Chemical shifts of hydrogen atoms at stereogenic centres in [ppm], Table S2. Reaction conditions and product yields in 1,3-DC, Figure S1: NOESY spectrum of compound <bold>9Ad</bold>. <sup>1</sup>H-NMR and APT spectra of final compounds <bold>9Aa</bold>&#x2013;<bold>d</bold> and <bold>9Bc</bold> in CDCl<sub>3</sub>.</p>
+	 </app>
+    </app-group>
+    <ack>
+      <title>Acknowledgments</title>
+      <p>We are grateful to Masaryk University for its institutional support of our research. Our thanks also go to Michal Babiak for help with X-ray analysis of the new compound.</p>
+    </ack>
+    <notes>
+      <title>Author Contributions</title>
+      <p>The listed authors contributed to this work in the following ways. Milan Pot&#xE1;&#x10D;ek conceived the work, interpreted the results, and prepared the manuscript; Martin Porubsk&#xFD; carried out the main synthetic work and also interpreted the results together with Luk&#xE1;&#x161; Tenora. All authors read and approved the final manuscript.</p>
+    </notes>
+    <notes>
+      <title>Conflicts of Interest</title>
+      <p>The authors declare no conflicts of interest.</p>
+    </notes>
+    <ref-list>
+      <title>References and Notes</title>
+      <ref id="B1-molecules-21-00187">
+        <label>1.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Huisgen</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <source>1,3-Dipolar Cycloaddition Chemistry</source>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Padwa</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <publisher-name>Wiley</publisher-name>
+          <publisher-loc>New York, NY, USA</publisher-loc>
+          <year>1984</year>
+		  <volume>Volume 1</volume>
+        </citation>
+      </ref>
+      <ref id="B2-molecules-21-00187">
+        <label>2.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Padwa</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Intramolecular 1,3-Dipolar Cycloaddition Reactions</article-title>
+          <source>Angew. Chem. Int. Ed.</source>
+          <year>1976</year>
+          <volume>15</volume>
+          <fpage>123</fpage>
+          <lpage>136</lpage>
+          <pub-id pub-id-type="doi">10.1002/anie.197601231</pub-id>
+        </citation>
+      </ref>
+      <ref id="B3-molecules-21-00187">
+        <label>3.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Harwood</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Vickers</surname>
+              <given-names>R.J.</given-names>
+            </name>
+          </person-group>
+          <source>Synthetic Applications of 1,3-Dipolar Cycloaddition Chemistry Towards Heterocycles and Natural Products</source>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Padwa</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Pearson</surname>
+              <given-names>W.H.</given-names>
+            </name>
+          </person-group>
+          <publisher-name>Wiley</publisher-name>
+          <publisher-loc>New York, NY, USA</publisher-loc>
+          <year>2003</year>
+        </citation>
+      </ref>
+      <ref id="B4-molecules-21-00187">
+        <label>4.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Posp&#xED;&#x161;il</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Pot&#xE1;&#x10D;ek</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Microwave-assisted solvent-free synthesis of hexahydro-chromeno[4,3-<italic>b</italic>]pyrroles</article-title>
+          <source>Eur. J. Org. Chem.</source>
+          <year>2004</year>
+          <volume>3</volume>
+          <fpage>710</fpage>
+          <lpage>716</lpage>
+        </citation>
+      </ref>
+      <ref id="B5-molecules-21-00187">
+        <label>5.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Posp&#xED;&#x161;il</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Pot&#xE1;&#x10D;ek</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Microwave-assisted Solvent-free Intramolecular 1,3-Dipolar Cycloaddition Reactions Leading to Hexahydrochromeno[4,3-<italic>b</italic>] pyrroles: Scope and Limitations</article-title>
+          <source>Tetrahedron</source>
+          <year>2007</year>
+          <volume>63</volume>
+          <fpage>337</fpage>
+          <lpage>346</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.tet.2006.10.074</pub-id>
+        </citation>
+      </ref>
+      <ref id="B6-molecules-21-00187">
+        <label>6.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pot&#xE1;&#x10D;ek</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Posp&#xED;&#x161;il</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>A Solvent-free Method for Substituted Imidazolidin-4-ones Synthesis</article-title>
+          <source>Heterocycles</source>
+          <year>2004</year>
+          <volume>63</volume>
+          <fpage>1165</fpage>
+          <lpage>1174</lpage>
+        </citation>
+      </ref>
+      <ref id="B7-molecules-21-00187">
+        <label>7.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Neuschl</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Bogdal</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Pot&#xE1;&#x10D;ek</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Microwave-Assisted Synthesis of Substituted Hexahydropyrrolo[3,2-<italic>c</italic>]quinolones</article-title>
+          <source>Molecules</source>
+          <year>2007</year>
+          <volume>12</volume>
+          <fpage>49</fpage>
+          <lpage>59</lpage>
+          <pub-id pub-id-type="pmid">17693952</pub-id>
+        </citation>
+      </ref>
+      <ref id="B8-molecules-21-00187">
+        <label>8.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Costa</surname>
+              <given-names>P.R.R.</given-names>
+            </name>
+            <name>
+              <surname>Sansano</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Coss&#xED;o</surname>
+              <given-names>U.</given-names>
+            </name>
+            <name>
+              <surname>Barcellos</surname>
+              <given-names>J.C.F.</given-names>
+            </name>
+            <name>
+              <surname>Dias</surname>
+              <given-names>A.G.</given-names>
+            </name>
+            <name>
+              <surname>N&#xE1;jera</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Arrieta</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>C&#xF3;zar</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Coss&#xED;o</surname>
+              <given-names>F.P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Synthesis of Chromen[4,3-<italic>b</italic>]pyrrolidines by Intramolecular 1,3-Dipolar Cycloaddition of Azomethine Ylides: An Experimental and Computational Assessment of the Origin of Sterecontrol</article-title>
+          <source>Eur. J. Chem.</source>
+          <year>2015</year>
+          <fpage>4689</fpage>
+          <lpage>4698</lpage>
+        </citation>
+      </ref>
+      <ref id="B9-molecules-21-00187">
+        <label>9.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nyerges</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Fejes</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Toke</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <article-title>An intermolecular 1,3-dipolar cycloaddition approach to the tricyclic core of martinelline and martinellic acid</article-title>
+          <source>Tetrahedron Lett.</source>
+          <year>2000</year>
+          <volume>41</volume>
+          <fpage>7951</fpage>
+          <lpage>7954</lpage>
+        </citation>
+      </ref>
+      <ref id="B10-molecules-21-00187">
+        <label>10.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rosini</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Budriesi</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Bixel</surname>
+              <given-names>M.G.</given-names>
+            </name>
+            <name>
+              <surname>Bolognesi</surname>
+              <given-names>M.L.</given-names>
+            </name>
+            <name>
+              <surname>Chiarini</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Hucho</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Krogsgaard-Larsen</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Mellor</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Minarini</surname>
+              <given-names>I.R.</given-names>
+            </name>
+            <name>
+              <surname>Tumiatti</surname>
+              <given-names>V.</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Design, synthesis, and biological evaluation of symmetrically and unsymmetrically substituted methoctramine-related polyamines as muscular nicotinic receptor noncompetitive antagonists</article-title>
+          <source>J. Med. Chem.</source>
+          <year>1999</year>
+          <volume>42</volume>
+          <fpage>5212</fpage>
+          <lpage>5223</lpage>
+          <pub-id pub-id-type="pmid">10602706</pub-id>
+        </citation>
+      </ref>
+      <ref id="B11-molecules-21-00187">
+        <label>11.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Confalone</surname>
+              <given-names>P.N.</given-names>
+            </name>
+            <name>
+              <surname>Huie</surname>
+              <given-names>E.M.</given-names>
+            </name>
+          </person-group>
+          <article-title>The Stabilized Iminium Ylide-Olefin [3+2]Cycloaddition Reaction. Total Synthesis of Sceletium Alkaloid A<sub>4</sub></article-title>
+          <source>J. Am. Chem. Soc.</source>
+          <year>1984</year>
+          <volume>106</volume>
+          <fpage>7175</fpage>
+          <lpage>7178</lpage>
+        </citation>
+      </ref>
+      <ref id="B12-molecules-21-00187">
+        <label>12.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Arumugam</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Raghunathan</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Almansour</surname>
+              <given-names>A.I.</given-names>
+            </name>
+            <name>
+              <surname>Karama</surname>
+              <given-names>U.</given-names>
+            </name>
+          </person-group>
+          <article-title>An efficient synthesis of highly functionalized novel chromeno[4,3-<italic>b</italic>]pyrroles and indolizino[6,7-<italic>b</italic>]indoles as potent antimicrobial and antioxidant agents</article-title>
+          <source>J. Med. Chem. Lett.</source>
+          <year>2012</year>
+          <volume>22</volume>
+          <fpage>1375</fpage>
+          <lpage>1379</lpage>
+        </citation>
+      </ref>
+      <ref id="B13-molecules-21-00187">
+        <label>13.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Choi</surname>
+              <given-names>D.H.</given-names>
+            </name>
+            <name>
+              <surname>Hwang</surname>
+              <given-names>J.W.</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>H.S.</given-names>
+            </name>
+            <name>
+              <surname>Yang</surname>
+              <given-names>D.M.</given-names>
+            </name>
+            <name>
+              <surname>Jun</surname>
+              <given-names>J.G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Highly effective total synthesis of benzofuran natural product egonol</article-title>
+          <source>Bull. Korean Chem. Soc.</source>
+          <year>2008</year>
+          <volume>29</volume>
+          <fpage>1594</fpage>
+          <lpage>1596</lpage>
+        </citation>
+      </ref>
+      <ref id="B14-molecules-21-00187">
+        <label>14.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Naik</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Harmalkar</surname>
+              <given-names>D.S.</given-names>
+            </name>
+            <name>
+              <surname>Xu</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Jang</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <article-title>Bioactive benzofuran derivatives: Moracins A&#x2013;Z in medicinal chemistry</article-title>
+          <source>Eur. J. Med. Chem.</source>
+          <year>2015</year>
+          <volume>90</volume>
+          <fpage>379</fpage>
+          <lpage>393</lpage>
+          <pub-id pub-id-type="pmid">25461329</pub-id>
+        </citation>
+      </ref>
+      <ref id="B15-molecules-21-00187">
+        <label>15.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Basawaraj</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Goled</surname>
+              <given-names>S.N.</given-names>
+            </name>
+            <name>
+              <surname>Khandre</surname>
+              <given-names>O.</given-names>
+            </name>
+          </person-group>
+          <article-title>Synthesis and biological activities of pyrazolino-benzofuro[3,2-<italic>d</italic>]pyrimidines</article-title>
+          <source>Indian J. Heterocycl. Chem.</source>
+          <year>2011</year>
+          <volume>21</volume>
+          <fpage>57</fpage>
+          <lpage>60</lpage>
+        </citation>
+      </ref>
+      <ref id="B16-molecules-21-00187">
+        <label>16.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Krawiecka</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Kuran</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Kossakowski</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Cieslak</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Kazmierczak-Baranska</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Krolewska</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Nawrot</surname>
+              <given-names>B.</given-names>
+            </name>
+          </person-group>
+          <article-title>Synthesis and Cytotoxic Properties of Halogen and Aryl-/Heteroarylpiperazinyl Derivatives of Benzofurans</article-title>
+          <source>Anti-cancer Agents Med. Chem.</source>
+          <year>2015</year>
+          <volume>15</volume>
+          <fpage>115</fpage>
+          <lpage>121</lpage>
+          <pub-id pub-id-type="doi">10.2174/187152061501141204124709</pub-id>
+        </citation>
+      </ref>
+      <ref id="B17-molecules-21-00187">
+        <label>17.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Santana</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Teijera</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Uriarte</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Teran</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Linares</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Villar</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Laguna</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Cano</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <article-title>AM1 theoretical study, synthesis and biological evaluation of some benzofuran analogues of anti-inflammatory arylalkanoic acids</article-title>
+          <source>Eur. J. Pharm. Sci.</source>
+          <year>1999</year>
+          <volume>7</volume>
+          <fpage>161</fpage>
+          <lpage>166</lpage>
+          <pub-id pub-id-type="pmid">9845801</pub-id>
+        </citation>
+      </ref>
+      <ref id="B18-molecules-21-00187">
+        <label>18.</label>
+        <citation citation-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zwergel</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Valente</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Salvato</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Xu</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Talhi</surname>
+              <given-names>O.</given-names>
+            </name>
+            <name>
+              <surname>Mai</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Silva</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Altucci</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Kirsch</surname>
+              <given-names>G.</given-names>
+            </name>			
+          </person-group>
+          <article-title>Novel benzofuran-chromone and -coumarine derivatives: Synthesis and biological activity in K562 human leukemia cells</article-title>
+          <source>Med. Chem. Commun.</source>
+          <year>2013</year>
+          <volume>4</volume>
+          <fpage>1571</fpage>
+          <lpage>1579</lpage>
+        </citation>
+      </ref>
+      <ref id="B19-molecules-21-00187">
+        <label>19.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Armarego</surname>
+              <given-names>W.L.F.</given-names>
+            </name>
+            <name>
+              <surname>Perin</surname>
+              <given-names>D.D.</given-names>
+            </name>
+          </person-group>
+          <source>Purification of Laboratory Chemicals</source>
+          <edition>4th ed.</edition>
+          <publisher-name>Butterworth-Heinemann</publisher-name>
+          <publisher-loc>Oxford, UK</publisher-loc>
+          <year>2000</year>
+        </citation>
+      </ref>
+      <ref id="B20-molecules-21-00187">
+        <label>20.</label>
+        <citation citation-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sheldrick</surname>
+              <given-names>G.M.</given-names>
+            </name>
+          </person-group>
+          <source>SHELXTL, Version 5.10</source>
+          <publisher-name>Bruker AXS Inc.</publisher-name>
+          <publisher-loc>Madison, WI, USA</publisher-loc>
+          <year>1997</year>
+        </citation>
+      </ref>
+      <ref id="B21-molecules-21-00187">
+        <label>21.</label>
+          <note><p>CCDC 1437267 contains the supplementary crystallographic data on compound <bold>9Ac</bold> for this paper. Data can be obtained free of charge via <uri>http://www.ccdc.cam.ac.uk/conts/retrieving.html</uri> (or from the CCDC, 12 Union Road, Cambridge CB2 1EZ, UK; Fax: +44 1223 336033; E-mail: <email>deposit@ccdc.cam.ac.uk</email>).</p></note> 
+      </ref>
+    </ref-list>
+    <fn-group>
+      <fn>
+        <p><bold>Sample Availability:</bold> Samples of the compounds <bold>9Aa</bold>&#x2013;<bold>d</bold> are available from the authors.</p>
+      </fn>
+    </fn-group>
+  </back>
+</article>

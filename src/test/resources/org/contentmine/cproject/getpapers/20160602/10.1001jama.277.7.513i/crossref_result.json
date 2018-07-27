@@ -1,0 +1,85 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T02:42:00Z",
+    "timestamp": 1464835320239
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "issue": "7",
+  "published-print": {
+    "date-parts": [
+      [
+        1997,
+        2,
+        19
+      ]
+    ]
+  },
+  "DOI": "10.1001/jama.277.7.513i",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:06Z",
+    "timestamp": 1464830586000
+  },
+  "page": "513i",
+  "source": "CrossRef",
+  "title": [
+    "To a Friend in the Ward"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "volume": "277",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Hadduck",
+      "given": "Kevin"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "container-title": [
+    "JAMA"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:06Z",
+    "timestamp": 1464830586000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        1997,
+        2,
+        19
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jama.277.7.513i",
+  "ISSN": [
+    "0098-7484"
+  ],
+  "subject": [
+    "Medicine(all)"
+  ]
+}

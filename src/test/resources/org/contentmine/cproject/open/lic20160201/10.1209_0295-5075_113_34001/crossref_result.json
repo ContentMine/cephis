@@ -1,0 +1,194 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        26
+      ]
+    ],
+    "date-time": "2016-02-26T08:40:48Z",
+    "timestamp": 1456476048305
+  },
+  "reference-count": 28,
+  "publisher": "IOP Publishing",
+  "issue": "3",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 24,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            25
+          ]
+        ],
+        "date-time": "2016-02-25T00:00:00Z",
+        "timestamp": 1456358400000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 24,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            25
+          ]
+        ],
+        "date-time": "2016-02-25T00:00:00Z",
+        "timestamp": 1456358400000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1209/0295-5075/113/34001",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        25
+      ]
+    ],
+    "date-time": "2016-02-25T16:13:30Z",
+    "timestamp": 1456416810000
+  },
+  "page": "34001",
+  "source": "CrossRef",
+  "title": [
+    "First implementation of transversely split proton beams in the CERN Proton Synchrotron for the fixed-target physics programme"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1209",
+  "volume": "113",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Borburgh",
+      "given": "J."
+    },
+    {
+      "affiliation": [],
+      "family": "Damjanovic",
+      "given": "S."
+    },
+    {
+      "affiliation": [],
+      "family": "Gilardoni",
+      "given": "S."
+    },
+    {
+      "affiliation": [],
+      "family": "Giovannozzi",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Hernalsteens",
+      "given": "C."
+    },
+    {
+      "affiliation": [],
+      "family": "Hourican",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Huschauer",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Kahle",
+      "given": "K."
+    },
+    {
+      "affiliation": [],
+      "family": "Le Godec",
+      "given": "G."
+    },
+    {
+      "affiliation": [],
+      "family": "Michels",
+      "given": "O."
+    },
+    {
+      "affiliation": [],
+      "family": "Sterbini",
+      "given": "G."
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        25
+      ]
+    ]
+  },
+  "container-title": [
+    "EPL",
+    "EPL (Europhysics Letters)"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/0295-5075/113/i=3/a=34001/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/0295-5075/113/i=3/a=34001?key=crossref.1b9b78dca9dc13cb1fc5085c0798102f"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        26
+      ]
+    ],
+    "date-time": "2016-02-26T07:14:07Z",
+    "timestamp": 1456470847000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1209/0295-5075/113/34001",
+  "ISSN": [
+    "0295-5075",
+    "1286-4854"
+  ],
+  "subject": [
+    "Physics and Astronomy(all)"
+  ]
+}

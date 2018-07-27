@@ -1,0 +1,55 @@
+{
+  "fulltext_pdf": {
+    "value": [
+      "http://link.aps.org/pdf/10.1103/PhysRevB.93.075101"
+    ]
+  },
+  "fulltext_html": {
+    "value": []
+  },
+  "title": {
+    "value": [
+      "Hubbard-like Hamiltonians for interacting electrons in <span class=\"aps-inline-formula\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>s</mi><mo>,</mo><mi>p</mi></math></span>, and <span class=\"aps-inline-formula\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>d</mi></math></span> orbitals"
+    ]
+  },
+  "author": {
+    "value": [
+      "M. E. A. Coury",
+      "S. L. Dudarev",
+      "W. M. C. Foulkes",
+      "A. P. Horsfield",
+      "Pui-Wai Ma",
+      "J. S. Spencer"
+    ]
+  },
+  "date": {
+    "value": [
+      "2016/02/01"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.1103/PhysRevB.93.075101"
+    ]
+  },
+  "volume": {
+    "value": [
+      "93"
+    ]
+  },
+  "issue": {
+    "value": [
+      "7"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "075101"
+    ]
+  },
+  "description": {
+    "value": [
+      "The multiorbital Hubbard model Hamiltonian is relevant to a host of strongly correlated materials, but there is no consistently accepted form for it. This manuscript derives the most general model Hamiltonian with $s$, $p$, and $d$-shell electrons and also identifies new terms describing pair hopping and quadrupole effects that were missed previously."
+    ]
+  }
+}

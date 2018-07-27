@@ -1,0 +1,1696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="800.0" stroke="none" stroke-width="0.0" xmlns="http://www.w3.org/2000/svg" xmlns:svgx="http://www.xml-cml.org/schema/svgx">
+ <text stroke="#000000" font-family="Calibri" x="306.77" y="783.136" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Calibri" x="310.49" y="783.136" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Calibri" x="313.25" y="783.136" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Calibri" x="319.37" y="783.136" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Calibri" x="322.01" y="783.136" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Calibri" x="325.61" y="783.136" font-size="11.04"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="82.0" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="93.624" y="113.7" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Arial" x="100.332" y="113.7" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Arial" x="103.668" y="113.7" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Arial" x="110.4" y="113.7" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Arial" x="113.64" y="113.7" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Arial" x="120.26" y="113.7" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="129.62" y="113.7" font-size="12.0">P</text>
+ <text stroke="#000000" font-family="Arial" x="137.648" y="113.7" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="141.644" y="113.7" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="148.316" y="113.7" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Arial" x="155.036" y="113.7" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Arial" x="161.744" y="113.7" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="165.74" y="113.7" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Arial" x="172.412" y="113.7" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="175.748" y="113.7" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Arial" x="178.304" y="113.7" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="185.012" y="113.7" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="191.72" y="113.7" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="194.96" y="113.7" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="201.56" y="113.7" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Arial" x="205.028" y="113.7" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="208.364" y="113.7" font-size="12.0">[</text>
+ <text stroke="#000000" font-family="Arial" x="211.736" y="113.7" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="215.732" y="113.7" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Arial,talic" x="222.41" y="113.7" font-size="12.0" font-style="italic">E</text>
+ <text stroke="#000000" font-family="Arial" x="230.45" y="113.7" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="233.81" y="113.7" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Arial,talic" x="240.53" y="113.7" font-size="12.0" font-style="italic">S</text>
+ <text stroke="#000000" font-family="Arial,talic" x="248.45" y="113.7" font-size="12.0" font-style="italic">R</text>
+ <text stroke="#000000" font-family="Arial" x="257.09" y="113.7" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="260.45" y="113.7" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Arial,talic" x="267.17" y="113.7" font-size="12.0" font-style="italic">S</text>
+ <text stroke="#000000" font-family="Arial,talic" x="275.21" y="113.7" font-size="12.0" font-style="italic">R</text>
+ <text stroke="#000000" font-family="Arial" x="283.85" y="113.7" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="287.81" y="113.7" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="291.77" y="113.7" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Arial" x="298.49" y="113.7" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="302.45" y="113.7" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="306.446" y="113.7" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Arial" x="312.446" y="113.7" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Arial" x="319.118" y="113.7" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="323.114" y="113.7" font-size="12.0">b</text>
+ <text stroke="#000000" font-family="Arial" x="329.786" y="113.7" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="336.518" y="113.7" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="343.226" y="113.7" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="349.106" y="113.7" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="351.77" y="113.7" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="358.442" y="113.7" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="364.442" y="113.7" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="370.51" y="113.7" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Symbol" x="374.47" y="113.7" font-size="12.0"></text>
+ <text stroke="#000000" font-family="Arial,talic" x="380.95" y="113.7" font-size="12.0" font-style="italic">C</text>
+ <text stroke="#000000" font-family="Arial" x="389.71" y="113.7" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="393.67" y="113.7" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="397.63" y="113.7" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Arial" x="404.35" y="113.7" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="408.31" y="113.7" font-size="12.0">[</text>
+ <text stroke="#000000" font-family="Arial" x="411.646" y="113.7" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="415.642" y="113.7" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Arial" x="422.314" y="113.7" font-size="12.0">’</text>
+ <text stroke="#000000" font-family="Arial" x="424.99" y="113.7" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="428.95" y="113.7" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Arial" x="439.018" y="113.7" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="445.726" y="113.7" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="449.062" y="113.7" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="455.794" y="113.7" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="462.502" y="113.7" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="468.382" y="113.7" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="474.262" y="113.7" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="480.97" y="113.7" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="484.306" y="113.7" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="491.038" y="113.7" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="497.746" y="113.7" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="503.746" y="113.7" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="509.626" y="113.7" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="513.7" y="113.7" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="517.78" y="113.7" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="129.62" y="135.78" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Arial" x="139.688" y="135.78" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="146.396" y="135.78" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="149.636" y="135.78" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="156.344" y="135.78" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="162.224" y="135.78" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="164.888" y="135.78" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="171.56" y="135.78" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="177.56" y="135.78" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="183.464" y="135.78" font-size="12.0">]</text>
+ <text stroke="#000000" font-family="Arial" x="186.86" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="190.94" y="135.78" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="194.936" y="135.78" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Arial" x="201.608" y="135.78" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="204.944" y="135.78" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Arial" x="211.688" y="135.78" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="215.024" y="135.78" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Arial" x="221.81" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Symbol" x="225.77" y="135.78" font-size="12.0"></text>
+ <text stroke="#000000" font-family="Arial" x="232.97" y="135.78" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="236.93" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="240.89" y="135.78" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="247.61" y="135.78" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="254.33" y="135.78" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="260.21" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="264.17" y="135.78" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Arial" x="270.89" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="274.85" y="135.78" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="281.57" y="135.78" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="288.29" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="292.25" y="135.78" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Arial" x="298.97" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="302.93" y="135.78" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="308.93" y="135.78" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="311.594" y="135.78" font-size="12.0">]</text>
+ <text stroke="#000000" font-family="Arial" x="314.93" y="135.78" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="318.266" y="135.78" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="322.262" y="135.78" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Arial" x="324.89" y="135.78" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Arial" x="330.89" y="135.78" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Arial" x="337.598" y="135.78" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="341.594" y="135.78" font-size="12.0">b</text>
+ <text stroke="#000000" font-family="Arial" x="348.266" y="135.78" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="354.986" y="135.78" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="361.694" y="135.78" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="367.574" y="135.78" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="370.322" y="135.78" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Arial" x="372.986" y="135.78" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="376.922" y="135.78" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="383.63" y="135.78" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="390.338" y="135.78" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="393.674" y="135.78" font-size="12.0">(</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="397.75" y="135.78" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="404.47" y="135.78" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="411.19" y="135.78" font-size="12.0" font-style="bold">5</text>
+ <text stroke="#000000" font-family="Arial" x="417.91" y="135.78" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="421.906" y="135.78" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="425.11" y="135.78" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Arial" x="431.818" y="135.78" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="438.526" y="135.78" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Arial" x="445.126" y="135.78" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="448.462" y="135.78" font-size="12.0">[</text>
+ <text stroke="#000000" font-family="Arial" x="451.834" y="135.78" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="455.83" y="135.78" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Arial,talic" x="462.55" y="135.78" font-size="12.0" font-style="italic">E</text>
+ <text stroke="#000000" font-family="Arial" x="470.62" y="135.78" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="473.86" y="135.78" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Arial,talic" x="480.58" y="135.78" font-size="12.0" font-style="italic">S</text>
+ <text stroke="#000000" font-family="Arial,talic" x="488.5" y="135.78" font-size="12.0" font-style="italic">R</text>
+ <text stroke="#000000" font-family="Arial" x="497.14" y="135.78" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="500.5" y="135.78" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Arial,talic" x="507.22" y="135.78" font-size="12.0" font-style="italic">R</text>
+ <text stroke="#000000" font-family="Arial,talic" x="515.86" y="135.78" font-size="12.0" font-style="italic">S</text>
+ <text stroke="#000000" font-family="Arial" x="523.9" y="135.78" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="527.86" y="135.78" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="129.62" y="157.86" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Arial" x="136.34" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="140.3" y="157.86" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="144.296" y="157.86" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Arial" x="150.296" y="157.86" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Arial" x="156.968" y="157.86" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="160.964" y="157.86" font-size="12.0">b</text>
+ <text stroke="#000000" font-family="Arial" x="167.636" y="157.86" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="174.368" y="157.86" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="181.076" y="157.86" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="186.956" y="157.86" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="189.62" y="157.86" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="196.292" y="157.86" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="202.292" y="157.86" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="208.25" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Symbol" x="212.33" y="157.86" font-size="12.0"></text>
+ <text stroke="#000000" font-family="Arial,talic" x="218.81" y="157.86" font-size="12.0" font-style="italic">C</text>
+ <text stroke="#000000" font-family="Arial" x="227.57" y="157.86" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="231.53" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="235.49" y="157.86" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Arial" x="242.21" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="246.17" y="157.86" font-size="12.0">[</text>
+ <text stroke="#000000" font-family="Arial" x="249.638" y="157.86" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="253.634" y="157.86" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Arial" x="260.306" y="157.86" font-size="12.0">’</text>
+ <text stroke="#000000" font-family="Arial" x="262.97" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="266.93" y="157.86" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Arial" x="276.998" y="157.86" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="283.706" y="157.86" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="287.042" y="157.86" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="293.666" y="157.86" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="300.374" y="157.86" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="306.254" y="157.86" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="312.134" y="157.86" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="318.842" y="157.86" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="322.178" y="157.86" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="328.91" y="157.86" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="335.618" y="157.86" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="341.618" y="157.86" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="347.498" y="157.86" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="351.494" y="157.86" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Arial" x="361.526" y="157.86" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="368.234" y="157.86" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="371.57" y="157.86" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="378.302" y="157.86" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="384.182" y="157.86" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="386.846" y="157.86" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="393.518" y="157.86" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="399.518" y="157.86" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="405.422" y="157.86" font-size="12.0">]</text>
+ <text stroke="#000000" font-family="Arial" x="409.03" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="412.99" y="157.86" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Arial" x="416.986" y="157.86" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Arial" x="423.658" y="157.86" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="426.994" y="157.86" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Arial" x="433.738" y="157.86" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Arial" x="437.074" y="157.86" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Arial" x="443.83" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Symbol" x="447.79" y="157.86" font-size="12.0"></text>
+ <text stroke="#000000" font-family="Arial" x="454.99" y="157.86" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="458.95" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="462.91" y="157.86" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Arial" x="469.63" y="157.86" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="476.35" y="157.86" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Arial" x="482.26" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="486.22" y="157.86" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Arial" x="493.06" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="497.02" y="157.86" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Arial" x="503.74" y="157.86" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="510.46" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="514.42" y="157.86" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Arial" x="521.14" y="157.86" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Arial" x="129.62" y="179.22" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="135.5" y="179.22" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="138.164" y="179.22" font-size="12.0">]</text>
+ <text stroke="#000000" font-family="Arial" x="141.5" y="179.22" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Arial" x="144.836" y="179.22" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="148.832" y="179.22" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Arial" x="151.46" y="179.22" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Arial" x="157.46" y="179.22" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Arial" x="164.168" y="179.22" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="168.164" y="179.22" font-size="12.0">b</text>
+ <text stroke="#000000" font-family="Arial" x="174.836" y="179.22" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="181.556" y="179.22" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="188.264" y="179.22" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Arial" x="194.144" y="179.22" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Arial" x="196.892" y="179.22" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Arial" x="199.556" y="179.22" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Arial" x="203.492" y="179.22" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Arial" x="210.2" y="179.22" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Arial" x="216.908" y="179.22" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Arial" x="220.244" y="179.22" font-size="12.0">(</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="224.33" y="179.22" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="231.05" y="179.22" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="237.77" y="179.22" font-size="12.0" font-style="bold">6</text>
+ <text stroke="#000000" font-family="Arial" x="244.49" y="179.22" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Arial" x="248.33" y="179.22" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="210.78" font-size="12.0"> </text>
+ <path stroke="black" stroke-width="0.5" fill="#000000" d="M311.55 258.266 L303.014 260.446 L304.088 258.266 L303.014 255.993 L311.55 258.266 Z"/>
+ <path fill="none" stroke="#000000" stroke-width="0.14000000059604645" d="M304.231 258.637 L242.084 258.637 "/>
+ <path stroke="black" fill="#000000" stroke-width="0.14000000059604645" d="M241.476 258.752 L304.089 258.752 L304.089 257.918 L241.476 257.918 L241.476 258.752 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M139.753 255.275 L150.349 249.131 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M150.349 249.131 L160.921 255.275 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M160.921 255.275 L171.493 249.131 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M171.493 249.131 L182.088 255.275 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M172.708 247.09 L182.088 252.493 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M182.088 255.275 L192.66 249.131 "/>
+ <text stroke="#000000" font-family="Arial" x="200.098" y="258.382" font-size="7.964">O</text>
+ <text stroke="#000000" font-family="Arial" x="206.366" y="258.382" font-size="7.964">M</text>
+ <text stroke="#000000" font-family="Arial" x="212.962" y="258.382" font-size="7.964">E</text>
+ <text stroke="#000000" font-family="Arial" x="218.388" y="258.382" font-size="7.964">M</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M192.66 249.131 L199.747 253.211 "/>
+ <text stroke="#000000" font-family="Arial" x="157.786" y="246.256" font-size="7.964">O</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M150.349 249.131 L157.201 245.166 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M160.921 255.275 L160.921 247.577 "/>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="170.066" y="274.751" font-size="8.942" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="175.094" y="274.751" font-size="8.942" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="180.03" y="274.751" font-size="8.942" font-style="bold">4</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="247.949" y="254.301" font-size="6.404" font-style="bold">F</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="251.808" y="254.301" font-size="6.404" font-style="bold">e</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="255.411" y="255.739" font-size="3.982" font-style="bold">2</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="257.569" y="254.301" font-size="6.404" font-style="bold">(</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="259.745" y="254.301" font-size="6.404" font-style="bold">C</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="264.299" y="254.301" font-size="6.404" font-style="bold">O</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="269.355" y="254.301" font-size="6.404" font-style="bold">)</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="271.504" y="255.739" font-size="3.982" font-style="bold">9</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="273.794" y="254.301" font-size="6.404" font-style="bold">,</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="275.601" y="254.301" font-size="6.404" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="277.397" y="254.301" font-size="6.404" font-style="bold">T</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="281.256" y="254.301" font-size="6.404" font-style="bold">H</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="285.819" y="254.301" font-size="6.404" font-style="bold">F</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="253.966" y="266.335" font-size="6.404" font-style="bold">r</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="256.371" y="266.335" font-size="6.404" font-style="bold">t</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="258.529" y="266.335" font-size="6.404" font-style="bold">,</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="260.325" y="266.335" font-size="6.404" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="262.15" y="266.335" font-size="6.404" font-style="bold">2</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="265.753" y="266.335" font-size="6.404" font-style="bold">.</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="267.549" y="266.335" font-size="6.404" font-style="bold">5</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="271.152" y="266.335" font-size="6.404" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="272.958" y="266.335" font-size="6.404" font-style="bold">h</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M329.088 265.245 L337.747 256.596 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M348.812 256.596 L349.905 256.596 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M337.747 256.596 L345.437 256.596 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M342.918 259.124 L344.734 259.124 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M338.726 259.124 L340.532 259.124 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M349.905 256.596 L358.564 265.245 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M355.542 265.732 L356.882 267.053 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M353.393 263.576 L354.582 264.757 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M351.103 261.279 L352.414 262.602 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M349.182 259.355 L350.143 260.305 "/>
+ <text stroke="#000000" font-family="Arial" x="320.932" y="256.457" font-size="7.964">O</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M329.088 265.245 L325.723 257.315 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M326.702 250.568 L333.071 244.193 "/>
+ <text stroke="#000000" font-family="Arial" x="342.681" y="247.439" font-size="7.964">F</text>
+ <text stroke="#000000" font-family="Arial" x="347.614" y="247.439" font-size="7.964">e</text>
+ <text stroke="#000000" font-family="Arial" x="352.063" y="247.439" font-size="7.964">(</text>
+ <text stroke="#000000" font-family="Arial" x="354.705" y="247.439" font-size="7.964">C</text>
+ <text stroke="#000000" font-family="Arial" x="360.599" y="247.439" font-size="7.964">O</text>
+ <text stroke="#000000" font-family="Arial" x="366.72" y="247.439" font-size="7.964">)</text>
+ <text stroke="#000000" font-family="Arial" x="369.363" y="249.131" font-size="6.031">3</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M333.071 244.193 L342.072 244.193 "/>
+ <text stroke="#000000" font-family="Arial" x="323.803" y="236.866" font-size="7.964">O</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M332.225 245.166 L328.128 238.072 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M334.516 244.193 L330.191 236.866 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M345.694 247.322 L348.222 263.436 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M358.564 265.245 L370.817 265.245 "/>
+ <text stroke="#000000" font-family="Arial" x="376.34" y="259.843" font-size="7.964">O</text>
+ <text stroke="#000000" font-family="Arial" x="382.461" y="259.843" font-size="7.964">M</text>
+ <text stroke="#000000" font-family="Arial" x="389.201" y="259.843" font-size="7.964">E</text>
+ <text stroke="#000000" font-family="Arial" x="394.486" y="259.843" font-size="7.964">M</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M370.817 265.245 L376.34 259.726 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M329.088 265.245 L339.801 271.505 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M482.734 265.848 L474.085 257.2 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M463.02 257.2 L461.822 257.2 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M474.085 257.2 L466.385 257.2 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M468.799 259.587 L467.108 259.587 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M473.124 259.587 L471.318 259.587 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M461.822 257.2 L453.172 265.848 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M456.167 266.335 L454.969 267.54 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M458.458 264.039 L457.127 265.245 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M460.606 261.767 L459.418 263.089 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M462.526 259.959 L461.566 260.793 "/>
+ <text stroke="#000000" font-family="Arial" x="484.541" y="256.944" font-size="7.964">O</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M482.734 265.848 L485.985 257.918 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M484.892 250.939 L478.647 244.795 "/>
+ <text stroke="#000000" font-family="Arial" x="438.743" y="247.925" font-size="7.964">(</text>
+ <text stroke="#000000" font-family="Arial" x="441.386" y="247.925" font-size="7.964">O</text>
+ <text stroke="#000000" font-family="Arial" x="447.631" y="247.925" font-size="7.964">C</text>
+ <text stroke="#000000" font-family="Arial" x="453.41" y="247.925" font-size="7.964">)</text>
+ <text stroke="#000000" font-family="Arial" x="456.053" y="249.618" font-size="6.031">3</text>
+ <text stroke="#000000" font-family="Arial" x="459.418" y="247.925" font-size="7.964">F</text>
+ <text stroke="#000000" font-family="Arial" x="464.351" y="247.925" font-size="7.964">e</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M478.647 244.795 L469.636 244.795 "/>
+ <text stroke="#000000" font-family="Arial" x="481.66" y="237.353" font-size="7.964">O</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M477.335 244.795 L481.546 237.469 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M479.598 245.653 L483.581 238.674 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M465.777 249.247 L463.514 263.924 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M453.172 265.848 L441.005 265.848 "/>
+ <text stroke="#000000" font-family="Arial" x="410.607" y="260.306" font-size="7.964">M</text>
+ <text stroke="#000000" font-family="Arial" x="417.223" y="260.306" font-size="7.964">E</text>
+ <text stroke="#000000" font-family="Arial" x="422.622" y="260.306" font-size="7.964">M</text>
+ <text stroke="#000000" font-family="Arial" x="429.247" y="260.306" font-size="7.964">O</text>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M441.005 265.848 L435.369 260.074 "/>
+ <path fill="none" stroke="#000000" stroke-width="0.8858299851417542" d="M482.734 265.848 L493.428 271.992 "/>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="347.728" y="284.373" font-size="8.942" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="352.785" y="284.373" font-size="8.942" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="357.718" y="284.373" font-size="8.942" font-style="bold">5</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="454.969" y="284.373" font-size="8.942" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="459.883" y="284.373" font-size="8.942" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,old" x="464.94" y="284.373" font-size="8.942" font-style="bold">6</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,oldtalic" x="348.08" y="291.839" font-size="6.404" font-style="bold">e</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,oldtalic" x="351.711" y="291.839" font-size="6.404" font-style="bold">n</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,oldtalic" x="355.542" y="291.839" font-size="6.404" font-style="bold">d</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,oldtalic" x="359.524" y="291.839" font-size="6.404" font-style="bold">o</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,oldtalic" x="455.815" y="292.905" font-size="6.404" font-style="bold">e</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,oldtalic" x="459.303" y="292.905" font-size="6.404" font-style="bold">x</text>
+ <text font-weight="bold" stroke="#000000" font-family="Arial,oldtalic" x="462.906" y="292.905" font-size="6.404" font-style="bold">o</text>
+ <text stroke="#000000" font-family="Verdana" x="493.78" y="294.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="323.61" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="355.53" font-size="12.0">I</text>
+ <text stroke="#000000" font-family="Verdana" x="98.676" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="103.8" y="355.53" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="111.132" y="355.53" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="118.692" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="129.24" y="355.53" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="135.492" y="355.53" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="142.776" y="355.53" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="154.452" y="355.53" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="161.88" y="355.53" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="165.12" y="355.53" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="172.308" y="355.53" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="179.412" y="355.53" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="186.564" y="355.53" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="192.816" y="355.53" font-size="12.0"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="203.45" y="355.53" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="211.85" y="355.53" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="220.382" y="355.53" font-size="12.0" font-style="bold">5</text>
+ <text stroke="#000000" font-family="Verdana" x="228.89" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="239.45" y="355.53" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="246.662" y="355.53" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="254.21" y="355.53" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="261.65" y="355.53" font-size="12.0"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="272.21" y="355.53" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="280.73" y="355.53" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="289.25" y="355.53" font-size="12.0" font-style="bold">6</text>
+ <text stroke="#000000" font-family="Verdana" x="297.77" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="308.33" y="355.53" font-size="12.0">w</text>
+ <text stroke="#000000" font-family="Verdana" x="318.146" y="355.53" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="325.358" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="330.398" y="355.53" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="337.586" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="348.134" y="355.53" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="355.574" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="360.698" y="355.53" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="367.922" y="355.53" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="375.362" y="355.53" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="382.574" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="387.602" y="355.53" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="394.79" y="355.53" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="402.23" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="412.778" y="355.53" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="419.99" y="355.53" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="426.242" y="355.53" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="432.458" y="355.53" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="439.766" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="444.89" y="355.53" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="452.246" y="355.53" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="455.486" y="355.53" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="463.046" y="355.53" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="470.486" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="481.034" y="355.53" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="485.714" y="355.53" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="493.022" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="503.74" y="355.53" font-size="12.0">E</text>
+ <text stroke="#000000" font-family="Verdana" x="511.324" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="516.448" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="521.608" y="355.53" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="528.916" y="355.53" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="534.04" y="355.53" font-size="12.0">!</text>
+ <text stroke="#000000" font-family="Verdana" x="538.768" y="355.53" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="377.37" font-size="12.0">R</text>
+ <text stroke="#000000" font-family="Verdana" x="102.012" y="377.37" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="109.2" y="377.37" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="113.424" y="377.37" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="120.576" y="377.37" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="125.64" y="377.37" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="132.828" y="377.37" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="140.388" y="377.37" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="146.64" y="377.37" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="153.792" y="377.37" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="161.616" y="377.37" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="167.868" y="377.37" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="175.152" y="377.37" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="182.748" y="377.37" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="187.872" y="377.37" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="194.124" y="377.37" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="201.324" y="377.37" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="208.992" y="377.37" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="216.552" y="377.37" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="223.86" y="377.37" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="228.54" y="377.37" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="236.328" y="377.37" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="240.552" y="377.37" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="247.836" y="377.37" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="255.432" y="377.37" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="262.968" y="377.37" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="270.516" y="377.37" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="274.97" y="377.37" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="282.89" y="377.37" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="288.29" y="377.37" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="295.73" y="377.37" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="302.942" y="377.37" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="310.37" y="377.37" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="317.558" y="377.37" font-size="12.0"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="325.49" y="377.37" font-size="12.0" font-style="bold">E</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="333.65" y="377.37" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="339.614" y="377.37" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="345.638" y="377.37" font-size="12.0" font-style="bold">o</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="353.906" y="377.37" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="359.87" y="377.37" font-size="12.0" font-style="bold">!</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="364.694" y="377.37" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="372.374" y="377.37" font-size="12.0" font-style="bold">B</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="381.518" y="377.37" font-size="12.0" font-style="bold">o</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="389.762" y="377.37" font-size="12.0" font-style="bold">o</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="398.042" y="377.37" font-size="12.0" font-style="bold">k</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="406.094" y="377.37" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="418.79" y="377.37" font-size="12.0" font-style="bold">a</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="426.83" y="377.37" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="432.794" y="377.37" font-size="12.0" font-style="bold">k</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="440.75" y="377.37" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="448.418" y="377.37" font-size="12.0" font-style="bold">n</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="456.962" y="377.37" font-size="12.0" font-style="bold">o</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="465.206" y="377.37" font-size="12.0" font-style="bold">t</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="470.726" y="377.37" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="478.394" y="377.37" font-size="12.0" font-style="bold">d</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="486.782" y="377.37" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="494.75" y="377.37" font-size="12.0" font-style="bold">f</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="499.754" y="377.37" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="503.858" y="377.37" font-size="12.0" font-style="bold">n</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="512.462" y="377.37" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="520.382" y="377.37" font-size="12.0" font-style="bold">d</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="528.77" y="377.37" font-size="12.0" font-style="bold">.</text>
+ <text stroke="#000000" font-family="Verdana" x="533.26" y="377.37" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="538.78" y="377.37" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="399.21" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="97.848" y="399.21" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="102.972" y="399.21" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="110.292" y="399.21" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="121.968" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="128.76" y="399.21" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="136.2" y="399.21" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="141.324" y="399.21" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="148.548" y="399.21" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="154.8" y="399.21" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="162.348" y="399.21" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="167.472" y="399.21" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="173.724" y="399.21" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="181.056" y="399.21" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="186.096" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="192.924" y="399.21" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="200.112" y="399.21" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="207.552" y="399.21" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="214.752" y="399.21" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="221.856" y="399.21" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="225.072" y="399.21" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="232.512" y="399.21" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="239.7" y="399.21" font-size="12.0"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="246.65" y="399.21" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="255.17" y="399.21" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="263.69" y="399.21" font-size="12.0" font-style="bold">4</text>
+ <text stroke="#000000" font-family="Verdana" x="272.21" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="279.05" y="399.21" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="284.45" y="399.21" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="292.118" y="399.21" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="299.786" y="399.21" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="307.454" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="314.282" y="399.21" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="325.958" y="399.21" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="333.362" y="399.21" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="337.682" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="344.51" y="399.21" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="352.178" y="399.21" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="356.498" y="399.21" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="364.166" y="399.21" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="371.834" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="378.662" y="399.21" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="390.338" y="399.21" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="401.942" y="399.21" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="409.25" y="399.21" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="412.49" y="399.21" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="417.89" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="424.718" y="399.21" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="431.93" y="399.21" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="439.478" y="399.21" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="446.918" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="453.746" y="399.21" font-size="12.0">F</text>
+ <text stroke="#000000" font-family="Verdana" x="460.586" y="399.21" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="467.98" y="400.77" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="473.14" y="399.21" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="478.54" y="399.21" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="486.916" y="399.21" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="496.408" y="399.21" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="501.82" y="400.77" font-size="8.04">9</text>
+ <text stroke="#000000" font-family="Verdana" x="506.98" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="513.82" y="399.21" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="519.22" y="399.21" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="526.888" y="399.21" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="531.208" y="399.21" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="538.768" y="399.21" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="421.17" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="100.812" y="421.17" font-size="12.0">q</text>
+ <text stroke="#000000" font-family="Verdana" x="108.252" y="421.17" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="112.572" y="421.17" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="116.892" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="122.4" y="421.17" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="130.068" y="421.17" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="134.388" y="421.17" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="142.056" y="421.17" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="149.724" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="155.232" y="421.17" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="166.908" y="421.17" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="178.512" y="421.17" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="185.82" y="421.17" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="189.06" y="421.17" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="193.38" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="198.888" y="421.17" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="206.556" y="421.17" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="210.876" y="421.17" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="218.544" y="421.17" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="226.212" y="421.17" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="233.88" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="239.388" y="421.17" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="246.828" y="421.17" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="252.228" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="257.736" y="421.17" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="260.976" y="421.17" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="268.536" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="274.044" y="421.17" font-size="12.0">T</text>
+ <text stroke="#000000" font-family="Verdana" x="281.472" y="421.17" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="290.484" y="421.17" font-size="12.0">F</text>
+ <text stroke="#000000" font-family="Verdana" x="297.312" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="302.82" y="421.17" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="308.22" y="421.17" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="315.888" y="421.17" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="323.556" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="328.944" y="421.17" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="340.62" y="421.17" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="343.824" y="421.17" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="349.332" y="421.17" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="353.652" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="359.16" y="421.17" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="367.536" y="421.17" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="372.708" y="421.17" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="380.268" y="421.17" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="387.708" y="421.17" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="394.896" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="400.404" y="421.17" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="407.844" y="421.17" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="412.968" y="421.17" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="420.312" y="421.17" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="427.752" y="421.17" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="435.312" y="421.17" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="441.564" y="421.17" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="446.34" y="421.17" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="452.592" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="458.088" y="421.17" font-size="12.0">w</text>
+ <text stroke="#000000" font-family="Verdana" x="467.904" y="421.17" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="475.116" y="421.17" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="480.24" y="421.17" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="487.356" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="492.864" y="421.17" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="500.304" y="421.17" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="507.864" y="421.17" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="512.988" y="421.17" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="516.276" y="421.17" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="520.464" y="421.17" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="523.704" y="421.17" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="530.892" y="421.17" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="538.332" y="421.17" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="443.01" font-size="12.0">b</text>
+ <text stroke="#000000" font-family="Verdana" x="101.064" y="443.01" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Verdana" x="108.168" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="114.012" y="443.01" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="118.236" y="443.01" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="121.452" y="443.01" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="128.76" y="443.01" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="135.012" y="443.01" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Verdana" x="142.56" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="148.428" y="443.01" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="154.68" y="443.01" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Verdana" x="162.228" y="443.01" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="167.352" y="443.01" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="174.696" y="443.01" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="186.372" y="443.01" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="193.644" y="443.01" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="198.324" y="443.01" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="205.632" y="443.01" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="213.18" y="443.01" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="218.304" y="443.01" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="225.516" y="443.01" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="232.992" y="443.01" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Verdana" x="240.54" y="443.01" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Verdana" x="247.644" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="253.488" y="443.01" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="258.888" y="443.01" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="266.076" y="443.01" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="269.424" y="443.01" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="276.984" y="443.01" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="284.172" y="443.01" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="291.732" y="443.01" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="296.412" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="302.28" y="443.01" font-size="12.0">P</text>
+ <text stroke="#000000" font-family="Verdana" x="309.588" y="443.01" font-size="12.0">E</text>
+ <text stroke="#000000" font-family="Verdana" x="317.172" y="443.01" font-size="12.0">:</text>
+ <text stroke="#000000" font-family="Verdana" x="322.548" y="443.01" font-size="12.0">E</text>
+ <text stroke="#000000" font-family="Verdana" x="330.216" y="443.01" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="335.23" y="444.57" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="340.39" y="443.01" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="349.834" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="355.738" y="443.01" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="363.406" y="443.01" font-size="12.0">:</text>
+ <text stroke="#000000" font-family="Verdana" x="368.806" y="443.01" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="376.474" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="382.342" y="443.01" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="387.022" y="443.01" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="394.33" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="400.198" y="443.01" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="407.866" y="443.01" font-size="12.0">:</text>
+ <text stroke="#000000" font-family="Verdana" x="413.266" y="443.01" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="420.934" y="443.01" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="425.254" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="431.122" y="443.01" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="438.562" y="443.01" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="443.686" y="443.01" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="450.898" y="443.01" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="458.374" y="443.01" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="461.602" y="443.01" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="468.79" y="443.01" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="476.35" y="443.01" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="481.03" y="443.01" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="486.538" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="492.58" y="443.01" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="497.26" y="443.01" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="504.568" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="510.436" y="443.01" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Verdana" x="517.624" y="443.01" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="520.864" y="443.01" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="528.052" y="443.01" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="531.292" y="443.01" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="538.732" y="443.01" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="464.85" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="99.024" y="464.85" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="102.264" y="464.85" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="109.824" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="114.972" y="464.85" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="122.28" y="464.85" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="127.404" y="464.85" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="134.88" y="464.85" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="142.068" y="464.85" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="147.192" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="152.376" y="464.85" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="159.684" y="464.85" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="163.908" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="169.032" y="464.85" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="176.22" y="464.85" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="179.46" y="464.85" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="187.02" y="464.85" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="191.7" y="464.85" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="194.94" y="464.85" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="202.248" y="464.85" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="209.808" y="464.85" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="215.316" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="220.61" y="464.85" font-size="12.0" font-style="italic">e</text>
+ <text stroke="#000000" font-family="Verdana,talic" x="227.798" y="464.85" font-size="12.0" font-style="italic">n</text>
+ <text stroke="#000000" font-family="Verdana,talic" x="235.358" y="464.85" font-size="12.0" font-style="italic">d</text>
+ <text stroke="#000000" font-family="Verdana,talic" x="242.798" y="464.85" font-size="12.0" font-style="italic">o</text>
+ <text stroke="#000000" font-family="Verdana" x="250.13" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="255.29" y="464.85" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="258.53" y="464.85" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="263.654" y="464.85" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="270.998" y="464.85" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="278.558" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="283.706" y="464.85" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="289.958" y="464.85" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="297.242" y="464.85" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="308.918" y="464.85" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="316.346" y="464.85" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="319.586" y="464.85" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="326.774" y="464.85" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="333.878" y="464.85" font-size="12.0"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="339.07" y="464.85" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="347.59" y="464.85" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="356.11" y="464.85" font-size="12.0" font-style="bold">5</text>
+ <text stroke="#000000" font-family="Verdana" x="364.63" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="369.79" y="464.85" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="375.19" y="464.85" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="382.858" y="464.85" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="390.526" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="395.674" y="464.85" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="407.35" y="464.85" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="414.754" y="464.85" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="419.074" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="424.222" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="429.37" y="464.85" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="437.038" y="464.85" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="441.358" y="464.85" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="449.026" y="464.85" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="456.586" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="461.734" y="464.85" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="473.41" y="464.85" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="485.014" y="464.85" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="492.322" y="464.85" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="495.562" y="464.85" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="499.882" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="505.03" y="464.85" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="512.698" y="464.85" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="520.366" y="464.85" font-size="12.0">%</text>
+ <text stroke="#000000" font-family="Verdana" x="533.314" y="464.85" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="538.594" y="464.85" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="486.83" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="100.836" y="486.83" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="107.088" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="112.212" y="486.83" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="119.424" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="124.56" y="486.83" font-size="12.0">w</text>
+ <text stroke="#000000" font-family="Verdana" x="134.376" y="486.83" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Verdana" x="141.972" y="486.83" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="145.2" y="486.83" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="149.88" y="486.83" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="157.068" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="162.216" y="486.83" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="168.468" y="486.83" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="173.592" y="486.83" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Verdana" x="180.696" y="486.83" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="186.948" y="486.83" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="191.616" y="486.83" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="198.828" y="486.83" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="202.056" y="486.83" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="205.404" y="486.83" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="208.644" y="486.83" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="216.312" y="486.83" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="223.5" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="228.648" y="486.83" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="234.9" y="486.83" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="242.184" y="486.83" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="245.472" y="486.83" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="248.688" y="486.83" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="256.128" y="486.83" font-size="12.0">;</text>
+ <text stroke="#000000" font-family="Verdana" x="261.528" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Symbol" x="266.81" y="486.83" font-size="12.0"></text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="273.17" y="488.39" font-size="8.04" font-style="bold">m</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="281.676" y="488.39" font-size="8.04" font-style="bold">a</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="286.967" y="488.39" font-size="8.04" font-style="bold">x</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="292.37" y="486.83" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="297.41" y="486.83" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="303.926" y="486.83" font-size="12.0" font-style="bold">f</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="308.93" y="486.83" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="313.034" y="486.83" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="317.09" y="486.83" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="329.786" y="486.83" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="336.302" y="486.83" font-size="12.0" font-style="bold">/</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="344.57" y="486.83" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="351.626" y="486.83" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="364.39" y="481.31" font-size="8.04" font-style="bold">-</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="368.23" y="481.31" font-size="8.04" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="373.99" y="486.83" font-size="12.0" font-style="bold">:</text>
+ <text stroke="#000000" font-family="Verdana" x="378.79" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="383.95" y="486.83" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="391.51" y="486.83" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="399.178" y="486.83" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="406.738" y="486.83" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="414.406" y="486.83" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="418.726" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="423.874" y="486.83" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="431.542" y="486.83" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="439.102" y="486.83" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="446.77" y="486.83" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="454.438" y="486.83" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="458.638" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="463.786" y="486.83" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="471.454" y="486.83" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="479.014" y="486.83" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="486.682" y="486.83" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="494.35" y="486.83" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="498.67" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="503.818" y="486.83" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="511.378" y="486.83" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="519.046" y="486.83" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="526.606" y="486.83" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="534.274" y="486.83" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="538.594" y="486.83" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="101.292" y="508.79" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="108.96" y="508.79" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="116.52" y="508.79" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="124.188" y="508.79" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="128.508" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="133.656" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="141.324" y="508.79" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="148.884" y="508.79" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="156.552" y="508.79" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="164.22" y="508.79" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="168.54" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="173.688" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="181.248" y="508.79" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="188.916" y="508.79" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="196.476" y="508.79" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="204.144" y="508.79" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="208.464" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="213.612" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="221.28" y="508.79" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="228.948" y="508.79" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="236.508" y="508.79" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="244.176" y="508.79" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="248.496" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="253.644" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="261.312" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="268.872" y="508.79" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="276.54" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="284.208" y="508.79" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="288.528" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="293.676" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="301.236" y="508.79" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="308.904" y="508.79" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="316.464" y="508.79" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="324.132" y="508.79" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="328.452" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="333.6" y="508.79" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="341.268" y="508.79" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="348.936" y="508.79" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="356.604" y="508.79" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="360.924" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="366.072" y="508.79" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="373.632" y="508.79" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="381.3" y="508.79" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="388.968" y="508.79" font-size="12.0">;</text>
+ <text stroke="#000000" font-family="Symbol" x="394.63" y="508.79" font-size="12.0"></text>
+ <text stroke="#000000" font-family="Symbol" x="397.75" y="508.79" font-size="12.0"></text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="403.63" y="510.35" font-size="8.04" font-style="bold">H</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="410.35" y="508.79" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="415.39" y="508.79" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="421.906" y="508.79" font-size="12.0" font-style="bold">4</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="430.39" y="508.79" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="438.922" y="508.79" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="447.454" y="508.79" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="452.458" y="508.79" font-size="12.0" font-style="bold">M</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="463.834" y="508.79" font-size="12.0" font-style="bold">H</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="473.926" y="508.79" font-size="12.0" font-style="bold">z</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="481.09" y="508.79" font-size="12.0" font-style="bold">,</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="485.422" y="508.79" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="490.474" y="508.79" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="499.114" y="508.79" font-size="12.0" font-style="bold">D</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="509.074" y="508.79" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="517.714" y="508.79" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="521.86" y="510.35" font-size="8.04" font-style="bold">3</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="527.62" y="508.79" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="534.1" y="508.79" font-size="12.0" font-style="bold">:</text>
+ <text stroke="#000000" font-family="Verdana" x="538.78" y="508.79" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="530.87" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="101.292" y="530.87" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="105.612" y="530.87" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="113.28" y="530.87" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="120.948" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="127.536" y="530.87" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="132.936" y="530.87" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="140.604" y="530.87" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="149.616" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="153.924" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="160.512" y="530.87" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="167.952" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="172.272" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="178.94" y="530.87" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="184.34" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="190.94" y="530.87" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="198.608" y="530.87" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="202.928" y="530.87" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="210.596" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="214.916" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="221.504" y="530.87" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="229.25" y="530.87" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="234.65" y="530.87" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="243.662" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="250.238" y="530.87" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="257.342" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="263.906" y="530.87" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="271.574" y="530.87" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="276.974" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="281.294" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="287.882" y="530.87" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="295.55" y="530.87" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="299.87" y="530.87" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="307.538" y="530.87" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="315.206" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="321.794" y="530.87" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="327.194" y="530.87" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="334.754" y="530.87" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="343.766" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="348.074" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="354.662" y="530.87" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="360.914" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="365.222" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="371.81" y="530.87" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="381.254" y="530.87" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="389.678" y="530.87" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="398.83" y="532.43" font-size="8.04">3</text>
+ <text stroke="#000000" font-family="Verdana" x="403.99" y="530.87" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="409.39" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="413.71" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="420.298" y="530.87" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="427.966" y="530.87" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="432.286" y="530.87" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="439.954" y="530.87" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="447.622" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="454.09" y="530.87" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="459.49" y="530.87" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="467.158" y="530.87" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="476.17" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="480.478" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="487.066" y="530.87" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="491.746" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="496.066" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="502.78" y="530.87" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="508.18" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="514.78" y="530.87" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="522.448" y="530.87" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="526.768" y="530.87" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="534.436" y="530.87" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="538.756" y="530.87" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="552.71" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="103.068" y="552.71" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="111.492" y="552.71" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="120.5" y="554.27" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="125.66" y="552.71" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana,talic" x="134.06" y="552.71" font-size="12.0" font-style="italic">H</text>
+ <text stroke="#000000" font-family="Verdana" x="142.94" y="554.27" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="148.1" y="552.71" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="157.544" y="552.71" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="162.992" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="167.3" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="171.848" y="552.71" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="179.516" y="552.71" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="183.836" y="552.71" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="191.504" y="552.71" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="199.172" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="203.72" y="552.71" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="209.12" y="552.71" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="216.788" y="552.71" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="225.8" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="230.108" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="234.656" y="552.71" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="239.336" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="243.656" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="248.45" y="552.71" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="253.85" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="258.41" y="552.71" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="266.078" y="552.71" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="270.398" y="552.71" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="278.066" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="282.386" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="286.934" y="552.71" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="296.378" y="552.71" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana,talic" x="304.85" y="552.71" font-size="12.0" font-style="italic">H</text>
+ <text stroke="#000000" font-family="Verdana" x="313.85" y="554.27" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="319.01" y="552.71" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="327.41" y="552.71" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="336.43" y="554.27" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="341.59" y="552.71" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="351.034" y="552.71" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="356.482" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="360.79" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="365.338" y="552.71" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="373.006" y="552.71" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="377.326" y="552.71" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="384.994" y="552.71" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="392.662" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="397.21" y="552.71" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="402.61" y="552.71" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="410.278" y="552.71" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="419.29" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="423.598" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="428.146" y="552.71" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="435.586" y="552.71" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="440.374" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="444.694" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="449.47" y="552.71" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="454.87" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="459.43" y="552.71" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="467.098" y="552.71" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="471.418" y="552.71" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="479.086" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="483.406" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="487.954" y="552.71" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="495.622" y="552.71" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="499.942" y="552.71" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="507.61" y="552.71" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="511.93" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="516.478" y="552.71" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="524.26" y="552.71" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="529.66" y="552.71" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="538.78" y="552.71" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="574.67" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="100.728" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="105.972" y="574.67" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="113.64" y="574.67" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="119.04" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="123.38" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="128.66" y="574.67" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="136.328" y="574.67" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="140.648" y="574.67" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="148.316" y="574.67" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="155.984" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="161.252" y="574.67" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="166.652" y="574.67" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="174.32" y="574.67" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="183.332" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="187.64" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="192.908" y="574.67" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="200.348" y="574.67" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="207.788" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="212.108" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="217.49" y="574.67" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="222.89" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="228.17" y="574.67" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="235.838" y="574.67" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="240.158" y="574.67" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="247.826" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="252.146" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="257.414" y="574.67" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="265.082" y="574.67" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="269.402" y="574.67" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="277.07" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="281.39" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="286.538" y="574.67" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="294.29" y="574.67" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="299.69" y="574.67" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="308.702" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="313.958" y="574.67" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="321.062" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="326.306" y="574.67" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="333.866" y="574.67" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="339.266" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="343.586" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="348.854" y="574.67" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="356.522" y="574.67" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="360.842" y="574.67" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="368.51" y="574.67" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="376.178" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="381.446" y="574.67" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="386.846" y="574.67" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="394.514" y="574.67" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="403.526" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="407.834" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="413.102" y="574.67" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="420.542" y="574.67" font-size="12.0">q</text>
+ <text stroke="#000000" font-family="Verdana" x="427.982" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="432.302" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="437.57" y="574.67" font-size="12.0">J</text>
+ <text stroke="#000000" font-family="Verdana" x="442.97" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="448.238" y="574.67" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="455.906" y="574.67" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="460.226" y="574.67" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="467.894" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="472.214" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="477.482" y="574.67" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="485.15" y="574.67" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="489.47" y="574.67" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="497.138" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="501.458" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="506.726" y="574.67" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="514.66" y="574.67" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="520.06" y="574.67" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="529.072" y="574.67" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="534.46" y="574.67" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="538.78" y="574.67" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="596.51" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="101.292" y="596.51" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="105.612" y="596.51" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="113.28" y="596.51" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="120.948" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="125.736" y="596.51" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="131.136" y="596.51" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="138.804" y="596.51" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="147.816" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="152.124" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="156.912" y="596.51" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="164.352" y="596.51" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="171.792" y="596.51" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="179.232" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="183.552" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="188.42" y="596.51" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="193.82" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="198.62" y="596.51" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="206.288" y="596.51" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="213.956" y="596.51" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="218.276" y="596.51" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="225.944" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="230.264" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="235.052" y="596.51" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="242.72" y="596.51" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="250.388" y="596.51" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="254.708" y="596.51" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="262.376" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="266.696" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="271.484" y="596.51" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="279.152" y="596.51" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="283.472" y="596.51" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="291.14" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="295.46" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="300.248" y="596.51" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="308.09" y="596.51" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="313.49" y="596.51" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="322.502" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="327.278" y="596.51" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="334.382" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="339.146" y="596.51" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="346.814" y="596.51" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="352.214" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="356.534" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="361.322" y="596.51" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="368.99" y="596.51" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="373.31" y="596.51" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="380.978" y="596.51" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="388.646" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="393.434" y="596.51" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="398.834" y="596.51" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="406.502" y="596.51" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="415.514" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="419.822" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="424.61" y="596.51" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="432.05" y="596.51" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="439.49" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="443.81" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="448.75" y="596.51" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="454.27" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="459.07" y="596.51" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="466.738" y="596.51" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="471.058" y="596.51" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="478.726" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="483.046" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="487.834" y="596.51" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="495.502" y="596.51" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="499.822" y="596.51" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="507.49" y="596.51" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="511.81" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="516.598" y="596.51" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="524.38" y="596.51" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="529.78" y="596.51" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="538.78" y="596.51" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="618.35" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="100.728" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="105.612" y="618.35" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="113.28" y="618.35" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="118.68" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="123.0" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="127.908" y="618.35" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="135.576" y="618.35" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="139.896" y="618.35" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="147.564" y="618.35" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="155.232" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="160.14" y="618.35" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="165.54" y="618.35" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="173.208" y="618.35" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="182.22" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="186.636" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="191.544" y="618.35" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="197.796" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="202.212" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="207.24" y="618.35" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="216.684" y="618.35" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="225.108" y="618.35" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="234.29" y="619.91" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="239.45" y="618.35" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="248.894" y="618.35" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="254.342" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="258.65" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="263.558" y="618.35" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="271.226" y="618.35" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="275.546" y="618.35" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="283.214" y="618.35" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="290.882" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="295.79" y="618.35" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="301.19" y="618.35" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="308.858" y="618.35" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="317.87" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="322.178" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="327.086" y="618.35" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="334.526" y="618.35" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="341.966" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="346.286" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="351.43" y="618.35" font-size="12.0" font-style="italic">J</text>
+ <text stroke="#000000" font-family="Verdana" x="356.83" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="361.75" y="618.35" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="369.418" y="618.35" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="377.086" y="618.35" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="381.406" y="618.35" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="389.074" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="393.394" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="398.302" y="618.35" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="405.97" y="618.35" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="410.29" y="618.35" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="417.958" y="618.35" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="422.278" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="427.186" y="618.35" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="434.95" y="618.35" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="440.47" y="618.35" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="449.578" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="454.486" y="618.35" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="461.59" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="466.474" y="618.35" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="474.142" y="618.35" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="479.542" y="618.35" font-size="12.0">;</text>
+ <text stroke="#000000" font-family="Verdana" x="485.05" y="618.35" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Symbol" x="490.06" y="618.35" font-size="12.0"></text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="495.94" y="619.91" font-size="8.04" font-style="bold">C</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="501.82" y="618.35" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="506.62" y="618.35" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="513.136" y="618.35" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="521.62" y="618.35" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="530.248" y="618.35" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="538.78" y="618.35" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="93.624" y="640.43" font-size="12.0" font-style="bold">M</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="105.0" y="640.43" font-size="12.0" font-style="bold">H</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="115.092" y="640.43" font-size="12.0" font-style="bold">z</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="122.256" y="640.43" font-size="12.0" font-style="bold">,</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="126.588" y="640.43" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="132.96" y="640.43" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="141.6" y="640.43" font-size="12.0" font-style="bold">D</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="151.56" y="640.43" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="160.2" y="640.43" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="164.3" y="641.99" font-size="8.04" font-style="bold">3</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="170.06" y="640.43" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="176.54" y="640.43" font-size="12.0" font-style="bold">:</text>
+ <text stroke="#000000" font-family="Verdana" x="181.34" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="187.82" y="640.43" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="195.488" y="640.43" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="203.156" y="640.43" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="210.824" y="640.43" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="215.024" y="640.43" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="222.692" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="229.16" y="640.43" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="234.56" y="640.43" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="242.936" y="640.43" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="252.428" y="640.43" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="257.828" y="640.43" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="262.148" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="268.616" y="640.43" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="276.284" y="640.43" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="283.952" y="640.43" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="291.62" y="640.43" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="295.94" y="640.43" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="303.608" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="310.076" y="640.43" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="315.476" y="640.43" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="323.852" y="640.43" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="333.236" y="640.43" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="338.636" y="640.43" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="342.956" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="349.424" y="640.43" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="357.092" y="640.43" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="364.76" y="640.43" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="372.428" y="640.43" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="376.99" y="640.43" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="384.658" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="391.126" y="640.43" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="396.526" y="640.43" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="404.902" y="640.43" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="414.394" y="640.43" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="419.794" y="640.43" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="424.114" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="430.582" y="640.43" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="438.25" y="640.43" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="445.918" y="640.43" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="453.478" y="640.43" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="457.798" y="640.43" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="465.466" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="471.934" y="640.43" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="477.334" y="640.43" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="485.71" y="640.43" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="495.202" y="640.43" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="500.602" y="640.43" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="504.922" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="511.39" y="640.43" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="519.058" y="640.43" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="526.726" y="640.43" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="531.046" y="640.43" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="538.606" y="640.43" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="662.3" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="99.024" y="662.3" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="108.468" y="662.3" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="116.892" y="662.3" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="125.9" y="663.86" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="131.06" y="662.3" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="140.504" y="662.3" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="145.952" y="662.3" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="150.26" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="157.088" y="662.3" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="164.756" y="662.3" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="172.424" y="662.3" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="176.744" y="662.3" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="184.412" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="191.24" y="662.3" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="196.64" y="662.3" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="204.41" y="662.3" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="209.69" y="662.3" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="218.066" y="662.3" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="223.514" y="662.3" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="227.81" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="234.638" y="662.3" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="242.306" y="662.3" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="249.974" y="662.3" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="254.294" y="662.3" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="261.962" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="268.79" y="662.3" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="274.19" y="662.3" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="281.93" y="662.3" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="287.33" y="662.3" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="295.706" y="662.3" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="301.154" y="662.3" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="305.45" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="312.278" y="662.3" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="319.946" y="662.3" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="327.614" y="662.3" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="331.934" y="662.3" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="339.602" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="346.43" y="662.3" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="351.83" y="662.3" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="359.59" y="662.3" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="364.99" y="662.3" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="373.366" y="662.3" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="378.814" y="662.3" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="383.11" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="389.938" y="662.3" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="397.606" y="662.3" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="405.274" y="662.3" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="409.594" y="662.3" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="417.262" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="424.09" y="662.3" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="429.49" y="662.3" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="437.23" y="662.3" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="442.63" y="662.3" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="450.91" y="662.3" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="456.31" y="662.3" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="460.63" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="467.458" y="662.3" font-size="12.0">[</text>
+ <text stroke="#000000" font-family="Verdana" x="472.858" y="662.3" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="480.526" y="662.3" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="488.194" y="662.3" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="492.514" y="662.3" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="500.182" y="662.3" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="504.502" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="511.33" y="662.3" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="518.998" y="662.3" font-size="12.0">7</text>
+ <text stroke="#000000" font-family="Verdana" x="526.666" y="662.3" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="530.986" y="662.3" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="538.654" y="662.3" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="684.26" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="99.024" y="684.26" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="108.468" y="684.26" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="116.892" y="684.26" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="125.9" y="685.82" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="131.06" y="684.26" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="139.46" y="684.26" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="148.46" y="685.82" font-size="8.04">2</text>
+ <text stroke="#000000" font-family="Verdana" x="153.62" y="684.26" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="163.064" y="684.26" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="168.512" y="684.26" font-size="12.0">]</text>
+ <text stroke="#000000" font-family="Verdana" x="173.9" y="684.26" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="178.22" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="183.008" y="684.26" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="190.676" y="684.26" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="198.344" y="684.26" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="202.664" y="684.26" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="210.332" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="215.12" y="684.26" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="220.52" y="684.26" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="229.964" y="684.26" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="238.388" y="684.26" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="247.49" y="685.82" font-size="8.04">3</text>
+ <text stroke="#000000" font-family="Verdana" x="252.65" y="684.26" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="258.05" y="684.26" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="262.37" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="267.158" y="684.26" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="274.826" y="684.26" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="282.494" y="684.26" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="286.814" y="684.26" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="294.482" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="299.27" y="684.26" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="304.67" y="684.26" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="312.41" y="684.26" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="317.81" y="684.26" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="326.186" y="684.26" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="331.634" y="684.26" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="336.038" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="340.826" y="684.26" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="348.494" y="684.26" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="356.162" y="684.26" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="360.482" y="684.26" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="368.15" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="372.938" y="684.26" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="378.338" y="684.26" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="386.11" y="684.26" font-size="12.0">-</text>
+ <text stroke="#000000" font-family="Verdana" x="391.51" y="684.26" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="399.886" y="684.26" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="405.334" y="684.26" font-size="12.0">;</text>
+ <text stroke="#000000" font-family="Verdana" x="410.818" y="684.26" font-size="12.0"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,oldtalic" x="415.63" y="684.26" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,oldtalic" x="428.326" y="684.26" font-size="12.0" font-style="bold">/</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,oldtalic" x="436.618" y="684.26" font-size="12.0" font-style="bold">z</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="443.83" y="684.26" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="448.51" y="684.26" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="455.098" y="684.26" font-size="12.0" font-style="bold">+</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="465.502" y="684.26" font-size="12.0" font-style="bold">E</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="473.698" y="684.26" font-size="12.0" font-style="bold">I</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="480.286" y="684.26" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="486.802" y="684.26" font-size="12.0" font-style="bold">:</text>
+ <text stroke="#000000" font-family="Verdana" x="491.62" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="496.42" y="684.26" font-size="12.0">F</text>
+ <text stroke="#000000" font-family="Verdana" x="503.26" y="684.26" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="510.568" y="684.26" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="518.128" y="684.26" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="525.796" y="684.26" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="533.236" y="684.26" font-size="12.0">:</text>
+ <text stroke="#000000" font-family="Verdana" x="538.744" y="684.26" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="706.1" font-size="12.0">[</text>
+ <text stroke="#000000" font-family="Verdana" x="99.024" y="706.1" font-size="12.0">M</text>
+ <text stroke="#000000" font-family="Verdana" x="109.104" y="706.1" font-size="12.0">N</text>
+ <text stroke="#000000" font-family="Verdana" x="118.08" y="706.1" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="125.292" y="706.1" font-size="12.0">]</text>
+ <text stroke="#000000" font-family="Verdana" x="130.7" y="700.58" font-size="8.04">+</text>
+ <text stroke="#000000" font-family="Verdana" x="137.3" y="706.1" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="141.62" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="149.528" y="706.1" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="157.196" y="706.1" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="164.864" y="706.1" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="172.532" y="706.1" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="176.852" y="706.1" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="184.52" y="706.1" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="192.188" y="706.1" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="199.748" y="706.1" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="207.416" y="706.1" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="211.736" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="219.644" y="706.1" font-size="12.0">[</text>
+ <text stroke="#000000" font-family="Verdana" x="225.044" y="706.1" font-size="12.0">C</text>
+ <text stroke="#000000" font-family="Verdana" x="233.57" y="707.66" font-size="8.04">1</text>
+ <text stroke="#000000" font-family="Verdana" x="238.73" y="707.66" font-size="8.04">4</text>
+ <text stroke="#000000" font-family="Verdana" x="243.89" y="706.1" font-size="12.0">H</text>
+ <text stroke="#000000" font-family="Verdana" x="252.89" y="707.66" font-size="8.04">1</text>
+ <text stroke="#000000" font-family="Verdana" x="257.93" y="707.66" font-size="8.04">8</text>
+ <text stroke="#000000" font-family="Verdana" x="263.09" y="706.1" font-size="12.0">O</text>
+ <text stroke="#000000" font-family="Verdana" x="272.45" y="707.66" font-size="8.04">8</text>
+ <text stroke="#000000" font-family="Verdana" x="277.61" y="706.1" font-size="12.0">F</text>
+ <text stroke="#000000" font-family="Verdana" x="284.45" y="706.1" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="291.638" y="706.1" font-size="12.0">N</text>
+ <text stroke="#000000" font-family="Verdana" x="300.614" y="706.1" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="307.826" y="706.1" font-size="12.0">]</text>
+ <text stroke="#000000" font-family="Verdana" x="313.25" y="700.58" font-size="8.04">+</text>
+ <text stroke="#000000" font-family="Verdana" x="319.85" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="327.77" y="706.1" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="332.81" y="706.1" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="339.998" y="706.1" font-size="12.0">q</text>
+ <text stroke="#000000" font-family="Verdana" x="347.438" y="706.1" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="354.998" y="706.1" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="358.238" y="706.1" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="363.362" y="706.1" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="370.586" y="706.1" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="376.838" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="384.734" y="706.1" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="392.402" y="706.1" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="400.07" y="706.1" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="407.738" y="706.1" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="412.058" y="706.1" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="419.618" y="706.1" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="427.286" y="706.1" font-size="12.0">4</text>
+ <text stroke="#000000" font-family="Verdana" x="434.846" y="706.1" font-size="12.0">9</text>
+ <text stroke="#000000" font-family="Verdana" x="442.514" y="706.1" font-size="12.0">;</text>
+ <text stroke="#000000" font-family="Verdana" x="447.914" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="455.822" y="706.1" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="463.034" y="706.1" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="470.582" y="706.1" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="478.022" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana,talic" x="486.1" y="706.1" font-size="12.0" font-style="italic">e</text>
+ <text stroke="#000000" font-family="Verdana,talic" x="493.288" y="706.1" font-size="12.0" font-style="italic">x</text>
+ <text stroke="#000000" font-family="Verdana,talic" x="500.392" y="706.1" font-size="12.0" font-style="italic">o</text>
+ <text stroke="#000000" font-family="Verdana" x="507.7" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="515.62" y="706.1" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="518.86" y="706.1" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="523.984" y="706.1" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="531.328" y="706.1" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="538.768" y="706.1" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="727.94" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="99.876" y="727.94" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="107.16" y="727.94" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="118.836" y="727.94" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="126.264" y="727.94" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="129.504" y="727.94" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="136.692" y="727.94" font-size="12.0">x</text>
+ <text stroke="#000000" font-family="Verdana" x="143.796" y="727.94" font-size="12.0"> </text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="148.58" y="727.94" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="157.1" y="727.94" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold" stroke="#000000" font-family="Verdana,old" x="165.62" y="727.94" font-size="12.0" font-style="bold">6</text>
+ <text stroke="#000000" font-family="Verdana" x="174.14" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="178.94" y="727.94" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="186.152" y="727.94" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="192.404" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="197.168" y="727.94" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="204.476" y="727.94" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="207.716" y="727.94" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="210.956" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="215.864" y="727.94" font-size="12.0">(</text>
+ <text stroke="#000000" font-family="Verdana" x="221.264" y="727.94" font-size="12.0">2</text>
+ <text stroke="#000000" font-family="Verdana" x="228.932" y="727.94" font-size="12.0">1</text>
+ <text stroke="#000000" font-family="Verdana" x="236.6" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="241.388" y="727.94" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="253.064" y="727.94" font-size="12.0">g</text>
+ <text stroke="#000000" font-family="Verdana" x="260.468" y="727.94" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="264.788" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="269.576" y="727.94" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="277.37" y="727.94" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="281.69" y="727.94" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="289.358" y="727.94" font-size="12.0">5</text>
+ <text stroke="#000000" font-family="Verdana" x="297.026" y="727.94" font-size="12.0">6</text>
+ <text stroke="#000000" font-family="Verdana" x="304.694" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="309.482" y="727.94" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="321.158" y="727.94" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="332.642" y="727.94" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="339.95" y="727.94" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="343.19" y="727.94" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="347.51" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="352.298" y="727.94" font-size="12.0">8</text>
+ <text stroke="#000000" font-family="Verdana" x="359.966" y="727.94" font-size="12.0">%</text>
+ <text stroke="#000000" font-family="Verdana" x="372.914" y="727.94" font-size="12.0">,</text>
+ <text stroke="#000000" font-family="Verdana" x="377.234" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="382.022" y="727.94" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="389.582" y="727.94" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="396.89" y="727.94" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="401.57" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="406.358" y="727.94" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="410.582" y="727.94" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="418.118" y="727.94" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="421.358" y="727.94" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="424.598" y="727.94" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Verdana" x="431.702" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="436.466" y="727.94" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="442.814" y="727.94" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Verdana" x="450.482" y="727.94" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="457.694" y="727.94" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="462.818" y="727.94" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="470.03" y="727.94" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="476.282" y="727.94" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="480.962" y="727.94" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="488.15" y="727.94" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="493.274" y="727.94" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="496.562" y="727.94" font-size="12.0">z</text>
+ <text stroke="#000000" font-family="Verdana" x="502.898" y="727.94" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="510.086" y="727.94" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="517.526" y="727.94" font-size="12.0">)</text>
+ <text stroke="#000000" font-family="Verdana" x="522.926" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="527.714" y="727.94" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="530.954" y="727.94" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="538.514" y="727.94" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="93.624" y="749.896" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="100.836" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="105.972" y="749.896" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="112.224" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="119.508" y="749.896" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="131.184" y="749.896" font-size="12.0">b</text>
+ <text stroke="#000000" font-family="Verdana" x="138.612" y="749.896" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="141.852" y="749.896" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="149.412" y="749.896" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="156.6" y="749.896" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="164.04" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="169.308" y="749.896" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="176.868" y="749.896" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="184.428" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="191.736" y="749.896" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="199.176" y="749.896" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="203.964" y="749.896" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="207.312" y="749.896" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="218.988" y="749.896" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="222.192" y="749.896" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="228.444" y="749.896" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="235.596" y="749.896" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="243.072" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="248.22" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="255.528" y="749.896" font-size="12.0">v</text>
+ <text stroke="#000000" font-family="Verdana" x="262.632" y="749.896" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="269.784" y="749.896" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="274.956" y="749.896" font-size="12.0">a</text>
+ <text stroke="#000000" font-family="Verdana" x="282.168" y="749.896" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="285.396" y="749.896" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="288.636" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="293.784" y="749.896" font-size="12.0">y</text>
+ <text stroke="#000000" font-family="Verdana" x="300.972" y="749.896" font-size="12.0">i</text>
+ <text stroke="#000000" font-family="Verdana" x="304.212" y="749.896" font-size="12.0">e</text>
+ <text stroke="#000000" font-family="Verdana" x="311.4" y="749.896" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="314.64" y="749.896" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="322.08" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="327.348" y="749.896" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="331.572" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="338.856" y="749.896" font-size="12.0">r</text>
+ <text stroke="#000000" font-family="Verdana" x="344.016" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="349.164" y="749.896" font-size="12.0">b</text>
+ <text stroke="#000000" font-family="Verdana" x="356.604" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="363.912" y="749.896" font-size="12.0">t</text>
+ <text stroke="#000000" font-family="Verdana" x="368.592" y="749.896" font-size="12.0">h</text>
+ <text stroke="#000000" font-family="Verdana" x="376.152" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="381.3" y="749.896" font-size="12.0">c</text>
+ <text stroke="#000000" font-family="Verdana" x="387.552" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="394.836" y="749.896" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="406.512" y="749.896" font-size="12.0">p</text>
+ <text stroke="#000000" font-family="Verdana" x="413.94" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="421.248" y="749.896" font-size="12.0">u</text>
+ <text stroke="#000000" font-family="Verdana" x="428.808" y="749.896" font-size="12.0">n</text>
+ <text stroke="#000000" font-family="Verdana" x="436.476" y="749.896" font-size="12.0">d</text>
+ <text stroke="#000000" font-family="Verdana" x="444.024" y="749.896" font-size="12.0">s</text>
+ <text stroke="#000000" font-family="Verdana" x="450.276" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="455.412" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="462.72" y="749.896" font-size="12.0">f</text>
+ <text stroke="#000000" font-family="Verdana" x="466.944" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="472.068" y="749.896" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="479.736" y="749.896" font-size="12.0">.</text>
+ <text stroke="#000000" font-family="Verdana" x="484.056" y="749.896" font-size="12.0">3</text>
+ <text stroke="#000000" font-family="Verdana" x="491.724" y="749.896" font-size="12.0">0</text>
+ <text stroke="#000000" font-family="Verdana" x="499.392" y="749.896" font-size="12.0"> </text>
+ <text stroke="#000000" font-family="Verdana" x="504.54" y="749.896" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="516.216" y="749.896" font-size="12.0">m</text>
+ <text stroke="#000000" font-family="Verdana" x="527.82" y="749.896" font-size="12.0">o</text>
+ <text stroke="#000000" font-family="Verdana" x="535.128" y="749.896" font-size="12.0">l</text>
+ <text stroke="#000000" font-family="Verdana" x="538.368" y="749.896" font-size="12.0"> </text>
+ <defs id="defs1">
+  <clipPath id="clipPath1">
+   <path stroke="black" stroke-width="0.5" fill="none" d="M0.0 0.0 L595.0 0.0 L595.0 841.0 L0.0 841.0 L0.0 0.0 Z"/>
+  </clipPath>
+ </defs>
+</svg>

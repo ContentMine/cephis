@@ -1,0 +1,128 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        16
+      ]
+    ],
+    "date-time": "2016-04-16T12:40:05Z",
+    "timestamp": 1460810405000
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "41571009; 41330751; 51179089"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    }
+  ],
+  "DOI": "10.5194/hess-2015-526",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:27:42Z",
+    "timestamp": 1454322462000
+  },
+  "page": "1-39",
+  "source": "CrossRef",
+  "title": [
+    "Vegetative impacts upon bedload transport capacity and channel stability for differing alluvial planforms in the Yellow River Source Zone"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Li",
+      "given": "Z. W."
+    },
+    {
+      "affiliation": [],
+      "family": "Yu",
+      "given": "G. A."
+    },
+    {
+      "affiliation": [],
+      "family": "Brierley",
+      "given": "G."
+    },
+    {
+      "affiliation": [],
+      "family": "Wang",
+      "given": "Z. W."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Hydrology and Earth System Sciences Discussions",
+    "Hydrol. Earth Syst. Sci. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        16
+      ]
+    ],
+    "date-time": "2016-04-16T11:46:42Z",
+    "timestamp": 1460807202000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/hess-2015-526",
+  "ISSN": [
+    "1812-2116"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Earth and Planetary Sciences (miscellaneous)"
+  ]
+}

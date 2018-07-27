@@ -1,0 +1,165 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:20Z",
+    "timestamp": 1454668460269
+  },
+  "reference-count": 13,
+  "publisher": "IOP Publishing",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1757-899x/106/1/012036",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:14:28Z",
+    "timestamp": 1454343268000
+  },
+  "page": "012036",
+  "source": "CrossRef",
+  "title": [
+    "PLCs used in smart home control"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "106",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Barz",
+      "given": "C"
+    },
+    {
+      "affiliation": [],
+      "family": "Deaconu",
+      "given": "S I"
+    },
+    {
+      "affiliation": [],
+      "family": "Latinovic",
+      "given": "T"
+    },
+    {
+      "affiliation": [],
+      "family": "Berdie",
+      "given": "A"
+    },
+    {
+      "affiliation": [],
+      "family": "Pop-Vadean",
+      "given": "A"
+    },
+    {
+      "affiliation": [],
+      "family": "Horgos",
+      "given": "M"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "IOP Conf. Ser.: Mater. Sci. Eng.",
+    "IOP Conference Series: Materials Science and Engineering"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012036/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012036?key=crossref.802761c0db2720addf7f7e8959d1504c"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:23:47Z",
+    "timestamp": 1454397827000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1757-899x/106/1/012036",
+  "ISSN": [
+    "1757-8981",
+    "1757-899X"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:43:28Z",
+    "timestamp": 1454582608395
+  },
+  "reference-count": 0,
+  "publisher": "IOP Publishing",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1757-899x/106/1/011001",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:13:53Z",
+    "timestamp": 1454343233000
+  },
+  "page": "011001",
+  "source": "CrossRef",
+  "title": [
+    "International Conference on Applied Sciences 2015 (ICAS2015)"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "106",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Lemle",
+      "given": "L D"
+    },
+    {
+      "affiliation": [],
+      "family": "Jiang",
+      "given": "Y"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "IOP Conf. Ser.: Mater. Sci. Eng.",
+    "IOP Conference Series: Materials Science and Engineering"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=011001/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=011001?key=crossref.1e64d1ad92a1f356b5846b9b307192bb"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:13:53Z",
+    "timestamp": 1454343233000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1757-899x/106/1/011001",
+  "ISSN": [
+    "1757-8981",
+    "1757-899X"
+  ]
+}

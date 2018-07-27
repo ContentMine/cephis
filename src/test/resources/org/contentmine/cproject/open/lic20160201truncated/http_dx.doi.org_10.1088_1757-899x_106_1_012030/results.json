@@ -1,0 +1,50 @@
+{
+  "fulltext_pdf": {
+    "value": [
+      "http://iopscience.iop.org/article/10.1088/1757-899X/106/1/012030/pdf"
+    ]
+  },
+  "fulltext_html": {
+    "value": [
+      "http://iopscience.iop.org/article/10.1088/1757-899X/106/1/012030"
+    ]
+  },
+  "title": {
+    "value": [
+      "Compensator configurations for load currents' symmetrization"
+    ]
+  },
+  "author": {
+    "value": [
+      "D Rusinaru",
+      "L G Manescu",
+      "R C Dinu"
+    ]
+  },
+  "date": {
+    "value": []
+  },
+  "doi": {
+    "value": [
+      "10.1088/1757-899X/106/1/012030"
+    ]
+  },
+  "volume": {
+    "value": [
+      "106"
+    ]
+  },
+  "issue": {
+    "value": [
+      "1"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "012030"
+    ]
+  },
+  "description": {
+    "value": []
+  }
+}

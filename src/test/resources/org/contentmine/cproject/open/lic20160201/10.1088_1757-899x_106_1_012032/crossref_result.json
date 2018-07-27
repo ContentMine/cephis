@@ -1,0 +1,170 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:20Z",
+    "timestamp": 1454668460195
+  },
+  "reference-count": 13,
+  "publisher": "IOP Publishing",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1757-899x/106/1/012032",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:14:23Z",
+    "timestamp": 1454343263000
+  },
+  "page": "012032",
+  "source": "CrossRef",
+  "title": [
+    "Researches upon cavitation erosion behavior of some duplex steels"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "106",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Bordeasu",
+      "given": "I"
+    },
+    {
+      "affiliation": [],
+      "family": "Popoviciu",
+      "given": "M O"
+    },
+    {
+      "affiliation": [],
+      "family": "Mitelea",
+      "given": "I"
+    },
+    {
+      "affiliation": [],
+      "family": "Micu",
+      "given": "L M"
+    },
+    {
+      "affiliation": [],
+      "family": "Bordeasu",
+      "given": "C"
+    },
+    {
+      "affiliation": [],
+      "family": "Ghera",
+      "given": "C"
+    },
+    {
+      "affiliation": [],
+      "family": "Iosif",
+      "given": "A"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "IOP Conf. Ser.: Mater. Sci. Eng.",
+    "IOP Conference Series: Materials Science and Engineering"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012032/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012032?key=crossref.0d55b0deb89a21b44a71e4f1d6dc4894"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:16:45Z",
+    "timestamp": 1454397405000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1757-899x/106/1/012032",
+  "ISSN": [
+    "1757-8981",
+    "1757-899X"
+  ]
+}

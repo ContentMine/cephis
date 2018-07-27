@@ -1,0 +1,242 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:13Z",
+    "timestamp": 1454668453244
+  },
+  "reference-count": 33,
+  "publisher": "IOP Publishing",
+  "issue": "1",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 1,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            2
+          ]
+        ],
+        "date-time": "2016-02-02T00:00:00Z",
+        "timestamp": 1454371200000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 1,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            2
+          ]
+        ],
+        "date-time": "2016-02-02T00:00:00Z",
+        "timestamp": 1454371200000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "Austrian Science Fund",
+      "DOI": "10.13039/501100002428"
+    }
+  ],
+  "DOI": "10.1088/1752-7155/10/1/017105",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:13:35Z",
+    "timestamp": 1454332415000
+  },
+  "page": "017105",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    "Modeling of breath methane concentration profiles during exercise on an ergometer"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "10",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Szabó",
+      "given": "Anna"
+    },
+    {
+      "affiliation": [],
+      "family": "Unterkofler",
+      "given": "Karl"
+    },
+    {
+      "affiliation": [],
+      "family": "Mochalski",
+      "given": "Pawel"
+    },
+    {
+      "affiliation": [],
+      "family": "Jandacka",
+      "given": "Martin"
+    },
+    {
+      "affiliation": [],
+      "family": "Ruzsanyi",
+      "given": "Vera"
+    },
+    {
+      "affiliation": [],
+      "family": "Szabó",
+      "given": "Gábor"
+    },
+    {
+      "affiliation": [],
+      "family": "Mohácsi",
+      "given": "Árpád"
+    },
+    {
+      "affiliation": [],
+      "family": "Teschl",
+      "given": "Susanne"
+    },
+    {
+      "affiliation": [],
+      "family": "Teschl",
+      "given": "Gerald"
+    },
+    {
+      "affiliation": [],
+      "family": "King",
+      "given": "Julian"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "J. Breath Res.",
+    "Journal of Breath Research"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1752-7163/10/i=1/a=017105/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1752-7163/10/i=1/a=017105?key=crossref.82f39d4a5f2568f76ff6ac2264d9e92f"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:10:28Z",
+    "timestamp": 1454397028000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1752-7155/10/1/017105",
+  "ISSN": [
+    "1752-7163"
+  ],
+  "subject": [
+    "Pulmonary and Respiratory Medicine"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Journal of Breath Research"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "paper"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Modeling of breath methane concentration profiles during exercise on an ergometer"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-09-20"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2015-12-01"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-02"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:50Z",
+    "timestamp": 1464911030045
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaoncol.2016.1197",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:19Z",
+    "timestamp": 1464906919000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Safety and Efficacy of Pazopanib Therapy Prior to Planned Nephrectomy in Metastatic Clear Cell Renal Cancer"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England2Department of Medical Oncology, Royal Free NHS Foundation Trust, London, England"
+        }
+      ],
+      "family": "Powles",
+      "given": "Thomas"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Oncology, Imperial College, London, England"
+        }
+      ],
+      "family": "Sarwar",
+      "given": "Naveed"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Arden Cancer Centre, University Hospital Coventry, University Hospitals Coventry and Warwickshire NHS Trust, Coventry, England"
+        }
+      ],
+      "family": "Stockdale",
+      "given": "Andrew"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Sarker",
+      "given": "Shah-Jalal"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Medical Oncology, Royal Free NHS Foundation Trust, London, England"
+        }
+      ],
+      "family": "Boleti",
+      "given": "Ekaterini"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Medical Oncology, John Radcliffe Hospital, Oxford University Hospitals NHS Trust, Oxford, England"
+        }
+      ],
+      "family": "Protheroe",
+      "given": "Andrew"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Beatson West of Scotland Cancer Centre, Glasgow, Scotland"
+        }
+      ],
+      "family": "Jones",
+      "given": "Robert"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Medical Oncology, Guy’s and St Thomas’ NHS Foundation Trust, London, England"
+        }
+      ],
+      "family": "Chowdhury",
+      "given": "Simon"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Peters",
+      "given": "John"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Beatson West of Scotland Cancer Centre, Glasgow, Scotland"
+        }
+      ],
+      "family": "Oades",
+      "given": "Grenville"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Medical Oncology, Guy’s and St Thomas’ NHS Foundation Trust, London, England"
+        }
+      ],
+      "family": "O’Brien",
+      "given": "Tim"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Medical Oncology, John Radcliffe Hospital, Oxford University Hospitals NHS Trust, Oxford, England"
+        }
+      ],
+      "family": "Sullivan",
+      "given": "Mark"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Medical Oncology, Royal Free NHS Foundation Trust, London, England"
+        }
+      ],
+      "family": "Aitchison",
+      "given": "Michael"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Beltran",
+      "given": "Luis"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Worth",
+      "given": "Daniel"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Smith",
+      "given": "Kate"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Michel",
+      "given": "Constance"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Trevisan",
+      "given": "Giorgia"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Harvey-Jones",
+      "given": "Elizabeth"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Wimalasingham",
+      "given": "Akhila"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Sahdev",
+      "given": "Anju"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Barts Cancer Institute, Queen Mary University of London, Barts Health NHS Trust, London, England"
+        }
+      ],
+      "family": "Ackerman",
+      "given": "Charlotte"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Cancer Sciences Unit, University of Southampton, Southampton, England"
+        }
+      ],
+      "family": "Crabb",
+      "given": "Simon"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Oncology",
+    "JAMA Oncol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:19Z",
+    "timestamp": 1464906919000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaoncol.2016.1197",
+  "ISSN": [
+    "2374-2437"
+  ]
+}

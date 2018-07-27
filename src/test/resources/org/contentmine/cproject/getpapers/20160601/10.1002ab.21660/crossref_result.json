@@ -1,0 +1,150 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T05:41:09Z",
+    "timestamp": 1464759669924
+  },
+  "reference-count": 34,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 30,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            31
+          ]
+        ],
+        "date-time": "2016-05-31T00:00:00Z",
+        "timestamp": 1464652800000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/ab.21660",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T04:27:39Z",
+    "timestamp": 1464755259000
+  },
+  "source": "CrossRef",
+  "title": [
+    "The relationship between physical aggression, foreign policy and moral choices: Phenotypic and genetic findings"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Brown University; Providence Rhode Island"
+        }
+      ],
+      "family": "McDermott",
+      "given": "Rose"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Pennsylvania State University; State College Pennsylvania"
+        }
+      ],
+      "family": "Hatemi",
+      "given": "Peter K."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        31
+      ]
+    ]
+  },
+  "container-title": [
+    "Aggr. Behav.",
+    "Aggressive Behavior"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fab.21660"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T04:27:40Z",
+    "timestamp": 1464755260000
+  },
+  "score": 1,
+  "subtitle": [
+    "Physical Aggression, Foreign Policy, and Moral Choices"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/ab.21660",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "0096-140X"
+  ],
+  "subject": [
+    "Psychology(all)"
+  ]
+}

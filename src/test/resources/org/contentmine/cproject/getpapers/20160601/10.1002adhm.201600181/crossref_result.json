@@ -1,0 +1,173 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:41:09Z",
+    "timestamp": 1464784869498
+  },
+  "reference-count": 79,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "0965918"
+      ],
+      "doi-asserted-by": "crossref",
+      "name": "National Science Foundation",
+      "DOI": "10.13039/100000001"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1002/adhm.201600181",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:35:47Z",
+    "timestamp": 1464780947000
+  },
+  "source": "CrossRef",
+  "title": [
+    "The Effect of Gradations in Mineral Content, Matrix Alignment, and Applied Strain on Human Mesenchymal Stem Cell Morphology within Collagen Biomaterials"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "University of Illinois; Chemical and Biomolecular Engineering; 600 S. Mathews St Urbana IL 61801 USA"
+        }
+      ],
+      "family": "Mozdzen",
+      "given": "Laura C."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Engineering and Materials Science; Queen Mary University of London; Mile End Road E1 4NS London UK"
+        }
+      ],
+      "family": "Thorpe",
+      "given": "Stephen D."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Engineering and Materials Science; Queen Mary University of London; Mile End Road E1 4NS London UK"
+        }
+      ],
+      "family": "Screen",
+      "given": "Hazel R. C."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "University of Illinois; Chemical and Biomolecular Engineering; 600 S. Mathews St Urbana IL 61801 USA"
+        }
+      ],
+      "family": "Harley",
+      "given": "Brendan A. C."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Advanced Healthcare Materials",
+    "Adv. Healthcare Mater."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadhm.201600181"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:35:49Z",
+    "timestamp": 1464780949000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adhm.201600181",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2192-2640"
+  ]
+}

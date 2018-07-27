@@ -1,0 +1,149 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:09Z",
+    "timestamp": 1464910989408
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaoncol.2016.0525",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:25Z",
+    "timestamp": 1464906925000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Management of Ductal Carcinoma in Situ of the Breast"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiation Oncology, Taussig Cancer Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Shah",
+      "given": "Chirag"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiation Oncology, Ohio State University, Columbus"
+        }
+      ],
+      "family": "Wobb",
+      "given": "Jessica"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiation Oncology, Taussig Cancer Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Manyam",
+      "given": "Bindu"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Plastic Surgery, Dermatology and Plastic Surgery Institute, Cleveland Clinic, Cleveland, Ohio"
+        }
+      ],
+      "family": "Kundu",
+      "given": "Neilendu"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Virgina Commonwealth University, Massey Cancer Center, Department of Radiation Oncology, Richmond"
+        }
+      ],
+      "family": "Arthur",
+      "given": "Douglas"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiation Oncology, Tufts University School of Medicine, Boston, Massachusetts6Department of Radiation Oncology, Brown University, Providence, Rhode Island"
+        }
+      ],
+      "family": "Wazer",
+      "given": "David"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "21st Century Oncology, Department of Radiation Oncology, Pembroke Pines, Florida"
+        }
+      ],
+      "family": "Fernandez",
+      "given": "Eduardo"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "21st Century Oncology, Michigan Healthcare Professionals, Farmington Hills"
+        }
+      ],
+      "family": "Vicini",
+      "given": "Frank"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Oncology",
+    "JAMA Oncol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:26Z",
+    "timestamp": 1464906926000
+  },
+  "score": 1,
+  "subtitle": [
+    "A Review"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaoncol.2016.0525",
+  "ISSN": [
+    "2374-2437"
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:40:48Z",
+    "timestamp": 1464784848310
+  },
+  "reference-count": 78,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "crossref",
+      "name": "University of Bath",
+      "DOI": "10.13039/501100000835"
+    },
+    {
+      "award": [],
+      "name": "Science & Technologies Facilities Council"
+    },
+    {
+      "award": [
+        "EP/G03768X/1"
+      ],
+      "name": "EPSRC Centre for Doctoral Training Center for Sustainable Chemical Technologies"
+    },
+    {
+      "award": [],
+      "name": "ERC"
+    },
+    {
+      "award": [
+        "654148"
+      ],
+      "name": "LASERLAB-EUROPE"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1002/adfm.201601123",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:26Z",
+    "timestamp": 1464781166000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Thermally Reduced Graphene Oxide Nanohybrids of Chiral Functional Naphthalenediimides for Prostate Cancer Cells Bioimaging"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemistry; University of Bath; Claverton Down Bath BA2 7AY UK"
+        }
+      ],
+      "family": "Tyson",
+      "given": "James A."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemistry; University of Bath; Claverton Down Bath BA2 7AY UK"
+        }
+      ],
+      "family": "Mirabello",
+      "given": "Vincenzo"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemistry; University of Bath; Claverton Down Bath BA2 7AY UK"
+        }
+      ],
+      "family": "Calatayud",
+      "given": "David G."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemistry; University of Bath; Claverton Down Bath BA2 7AY UK"
+        }
+      ],
+      "family": "Ge",
+      "given": "Haobo"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Chemical Characterisation and Analysis Facility (CCAF); University of Bath; Claverton Down Bath BA2 7AY UK"
+        }
+      ],
+      "family": "Kociok-Köhn",
+      "given": "Gabriele"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Central Laser Facility; Rutherford Appleton Laboratory; Research Complex at Harwell; STFC; Didcot OX11 0QX UK"
+        }
+      ],
+      "family": "Botchway",
+      "given": "Stanley W."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemistry; University of Bath; Claverton Down Bath BA2 7AY UK"
+        }
+      ],
+      "family": "Dan Pantoş",
+      "given": "G."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Chemistry; University of Bath; Claverton Down Bath BA2 7AY UK"
+        }
+      ],
+      "family": "Pascu",
+      "given": "Sofia I."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Adv. Funct. Mater.",
+    "Advanced Functional Materials"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadfm.201601123"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:33Z",
+    "timestamp": 1464781173000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adfm.201601123",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "1616-301X"
+  ],
+  "subject": [
+    "Electrochemistry",
+    "Electronic, Optical and Magnetic Materials",
+    "Condensed Matter Physics",
+    "Biomaterials"
+  ]
+}

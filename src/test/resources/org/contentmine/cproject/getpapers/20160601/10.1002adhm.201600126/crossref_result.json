@@ -1,0 +1,181 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:41:16Z",
+    "timestamp": 1464784876232
+  },
+  "reference-count": 27,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adhm.201600126",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:26Z",
+    "timestamp": 1464781166000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Phospholipid End-Capped Acid-Degradable Polyurethane Micelles for Intracellular Delivery of Cancer Therapeutics"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "BK21 PLUS Center for Advanced Chemical Technology; Department of Polymer Science and Engineering; Pusan National University; Busan 609-735 Republic of Korea"
+        }
+      ],
+      "family": "John",
+      "given": "Johnson V."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiology; Hwasun Hospital; Chonnam National University; Hwasun 519-763 Republic of Korea"
+        }
+      ],
+      "family": "Thomas",
+      "given": "Reju George"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "BK21 PLUS Center for Advanced Chemical Technology; Department of Polymer Science and Engineering; Pusan National University; Busan 609-735 Republic of Korea"
+        }
+      ],
+      "family": "Lee",
+      "given": "Hye Ri"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Chemistry and Biological Chemistry; Nanyang Technological University; 21 Nanyang Link 63737 Singapore"
+        }
+      ],
+      "family": "Chen",
+      "given": "Hongyu"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiology; Hwasun Hospital; Chonnam National University; Hwasun 519-763 Republic of Korea"
+        }
+      ],
+      "family": "Jeong",
+      "given": "Yong Yeon"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "BK21 PLUS Center for Advanced Chemical Technology; Department of Polymer Science and Engineering; Pusan National University; Busan 609-735 Republic of Korea"
+        }
+      ],
+      "family": "Kim",
+      "given": "Il"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Advanced Healthcare Materials",
+    "Adv. Healthcare Mater."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadhm.201600126"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:26Z",
+    "timestamp": 1464781166000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adhm.201600126",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2192-2640"
+  ]
+}

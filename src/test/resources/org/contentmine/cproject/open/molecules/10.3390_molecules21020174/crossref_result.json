@@ -1,0 +1,108 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:51:36Z",
+    "timestamp": 1455623496386
+  },
+  "reference-count": 51,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "DOI": "10.3390/molecules21020174",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T15:26:22Z",
+    "timestamp": 1454599582000
+  },
+  "page": "174",
+  "source": "CrossRef",
+  "title": [
+    "Antioxidant and DNA Damage Protecting Activity of Exopolysaccharides from the Endophytic Bacterium Bacillus cereus SZ1"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Zheng",
+      "given": "Li"
+    },
+    {
+      "affiliation": [],
+      "family": "Zou",
+      "given": "Tin"
+    },
+    {
+      "affiliation": [],
+      "family": "Ma",
+      "given": "Yan"
+    },
+    {
+      "affiliation": [],
+      "family": "Wang",
+      "given": "Jian"
+    },
+    {
+      "affiliation": [],
+      "family": "Zhang",
+      "given": "Yu"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:52:26Z",
+    "timestamp": 1455396746000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020174"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020174",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

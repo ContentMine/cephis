@@ -1,0 +1,84 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:41:08Z",
+    "timestamp": 1464831668191
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamacardio.2016.1205",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:33Z",
+    "timestamp": 1464827853000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Evidence-Based Algorithms Using High-Sensitivity Cardiac Troponin in the Emergency Department"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "TIMI Study Group, Cardiovascular Division, Brigham and Women’s Hospital, Harvard Medical School, Boston, Massachusetts"
+        }
+      ],
+      "family": "Morrow",
+      "given": "David A."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Cardiology",
+    "JAMA Cardiol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:33Z",
+    "timestamp": 1464827853000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamacardio.2016.1205",
+  "ISSN": [
+    "2380-6583"
+  ]
+}

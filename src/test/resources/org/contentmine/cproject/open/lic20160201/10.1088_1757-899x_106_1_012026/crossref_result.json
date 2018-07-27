@@ -1,0 +1,150 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:19Z",
+    "timestamp": 1454668459858
+  },
+  "reference-count": 8,
+  "publisher": "IOP Publishing",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1757-899x/106/1/012026",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:14:16Z",
+    "timestamp": 1454343256000
+  },
+  "page": "012026",
+  "source": "CrossRef",
+  "title": [
+    "Evaluating solar radiation on a tilted surfaces - a study case in Timis (Romania)"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "106",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Vasar",
+      "given": "C"
+    },
+    {
+      "affiliation": [],
+      "family": "Prostean",
+      "given": "O"
+    },
+    {
+      "affiliation": [],
+      "family": "Prostean",
+      "given": "G"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "IOP Conf. Ser.: Mater. Sci. Eng.",
+    "IOP Conference Series: Materials Science and Engineering"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012026/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1757-899X/106/i=1/a=012026?key=crossref.0f2a79d26c84d9386a1174e7af2b7693"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:21:12Z",
+    "timestamp": 1454397672000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1757-899x/106/1/012026",
+  "ISSN": [
+    "1757-8981",
+    "1757-899X"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "publisher": {
+    "value": [
+      "Multidisciplinary Digital Publishing Institute"
+    ]
+  },
+  "journal": {
+    "value": [
+      "Molecules"
+    ]
+  },
+  "title": {
+    "value": [
+      "Theoretical Study of Molecular Structure and Physicochemical Properties of Novel Factor Xa Inhibitors and Dual Factor Xa and Factor IIa Inhibitors"
+    ]
+  },
+  "authors": {
+    "value": []
+  },
+  "date": {
+    "value": [
+      "2016-02-04"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.3390/molecules21020185"
+    ]
+  },
+  "volume": {
+    "value": [
+      "21"
+    ]
+  },
+  "issue": {
+    "value": [
+      "2"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "185"
+    ]
+  },
+  "description": {
+    "value": [
+      "The geometries and energies of factor Xa inhibitors edoxaban, eribaxaban, fidexaban, darexaban, letaxaban, and the dual factor Xa and thrombin inhibitors tanogitran and SAR107375 in both the gas-phase and aqueous solution were studied using the Becke3LYP/6-31++G(d,p) or Grimme’s B97D/6-31++G(d,p) method. The fully optimized conformers of these anticoagulants show a characteristic l-shape structure, and the water had a remarkable effect on the equilibrium geometry. According to the calculated pKa values eribaxaban and letaxaban are in neutral undissociated form at pH 7.4, while fidexaban and tanogitran exist as zwitterionic structures. The lipophilicity of the inhibitors studied lies within a large range of log P between 1 and 4. The dual inhibitor SAR107375 represents an improvement in structural, physicochemical and pharmacokinetic characteristics over tanogitran. At blood pH, SAR107375 predominantly exists in neutral form. In contrast with tanogitran, it is better absorbed and more lipophilic and active after oral application."
+    ]
+  },
+  "abstract": {
+    "value": [
+      "The geometries and energies of factor Xa inhibitors edoxaban, eribaxaban, fidexaban, darexaban, letaxaban, and the dual factor Xa and thrombin inhibitors tanogitran and SAR107375 in both the gas-phase and aqueous solution were studied using the Becke3LYP/6-31++G(d,p) or Grimme’s B97D/6-31++G(d,p) method. The fully optimized conformers of these anticoagulants show a characteristic l-shape structure, and the water had a remarkable effect on the equilibrium geometry. According to the calculated pKa values eribaxaban and letaxaban are in neutral undissociated form at pH 7.4, while fidexaban and tanogitran exist as zwitterionic structures. The lipophilicity of the inhibitors studied lies within a large range of log P between 1 and 4. The dual inhibitor SAR107375 represents an improvement in structural, physicochemical and pharmacokinetic characteristics over tanogitran. At blood pH, SAR107375 predominantly exists in neutral form. In contrast with tanogitran, it is better absorbed and more lipophilic and active after oral application."
+    ]
+  },
+  "fulltext_html": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/185/htm"
+    ]
+  },
+  "fulltext_pdf": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/185/pdf"
+    ]
+  },
+  "fulltext_xml": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/185/xml"
+    ]
+  },
+  "supplementary_material": {
+    "value": []
+  },
+  "figure": {
+    "value": []
+  },
+  "figure_caption": {
+    "value": []
+  },
+  "license": {
+    "value": []
+  },
+  "copyright": {
+    "value": []
+  }
+}

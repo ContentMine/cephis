@@ -1,0 +1,106 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:44Z",
+    "timestamp": 1464911024108
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jama.2016.7916",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:34:59Z",
+    "timestamp": 1464906899000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Priorities for Improving Hearing Health Care for Adults"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Departments of Otolaryngology, Medicine (Geriatrics), Mental Health, and Epidemiology, Johns Hopkins University, Baltimore, Maryland"
+        }
+      ],
+      "family": "Lin",
+      "given": "Frank R."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Gerontology and Geriatric Medicine, Sticht Center on Aging, School of Medicine, Wake Forest University, Winston-Salem, North Carolina"
+        }
+      ],
+      "family": "Hazzard",
+      "given": "William R."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Psychiatry and Behavioral Sciences, Duke University Medical Center, Durham, North Carolina"
+        }
+      ],
+      "family": "Blazer",
+      "given": "Dan G."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:34:59Z",
+    "timestamp": 1464906899000
+  },
+  "score": 1,
+  "subtitle": [
+    "A Report From the National Academies of Sciences, Engineering, and Medicine"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jama.2016.7916",
+  "ISSN": [
+    "0098-7484"
+  ],
+  "subject": [
+    "Medicine(all)"
+  ]
+}

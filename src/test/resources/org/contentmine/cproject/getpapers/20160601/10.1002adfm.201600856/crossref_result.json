@@ -1,0 +1,223 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T07:41:16Z",
+    "timestamp": 1464766876637
+  },
+  "reference-count": 40,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adfm.201600856",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T06:02:53Z",
+    "timestamp": 1464760973000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Stretchable Twisted-Pair Transmission Lines for Microwave Frequency Wearable Electronics"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Jung",
+      "given": "Yei Hwan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Lee",
+      "given": "Juhwan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Electronic Engineering; University of Electronic Science and Technology of China; Chengdu 611731 P.R. China"
+        }
+      ],
+      "family": "Qiu",
+      "given": "Yijie"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Cho",
+      "given": "Namki"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Cho",
+      "given": "Sang June"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Zhang",
+      "given": "Huilong"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Lee",
+      "given": "Subin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Kim",
+      "given": "Tong June"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Biomedical Engineering and Wisconsin Institute for Discovery; University of Wisconsin-Madison; Madison WI 53715 USA"
+        }
+      ],
+      "family": "Gong",
+      "given": "Shaoqin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Electrical and Computer Engineering; University of Wisconsin-Madison; Madison WI 53706 USA"
+        }
+      ],
+      "family": "Ma",
+      "given": "Zhenqiang"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Adv. Funct. Mater.",
+    "Advanced Functional Materials"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadfm.201600856"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T06:02:53Z",
+    "timestamp": 1464760973000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adfm.201600856",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "1616-301X"
+  ],
+  "subject": [
+    "Electrochemistry",
+    "Electronic, Optical and Magnetic Materials",
+    "Condensed Matter Physics",
+    "Biomaterials"
+  ]
+}

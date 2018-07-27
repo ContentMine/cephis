@@ -1,0 +1,104 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        15
+      ]
+    ],
+    "date-time": "2016-05-15T18:40:10Z",
+    "timestamp": 1463337610841
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/npg-2016-11",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:36:37Z",
+    "timestamp": 1454322997000
+  },
+  "page": "1-16",
+  "source": "CrossRef",
+  "title": [
+    "Linear and Non-linear Stability Analysis of the Rate and State Friction Model with Three State Variables"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Sinha",
+      "given": "Nitish"
+    },
+    {
+      "affiliation": [],
+      "family": "Singh",
+      "given": "Arun K."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Nonlin. Processes Geophys. Discuss.",
+    "Nonlinear Processes in Geophysics Discussions"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        15
+      ]
+    ],
+    "date-time": "2016-05-15T17:46:42Z",
+    "timestamp": 1463334402000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/npg-2016-11",
+  "ISSN": [
+    "2198-5634"
+  ]
+}

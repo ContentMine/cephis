@@ -1,0 +1,85 @@
+{
+  "publisher": {
+    "value": [
+      "Multidisciplinary Digital Publishing Institute"
+    ]
+  },
+  "journal": {
+    "value": [
+      "Molecules"
+    ]
+  },
+  "title": {
+    "value": [
+      "1,3-Dipolar Cycloaddition in the Preparation of New Fused Heterocyclic Compounds via Thermal Initiation"
+    ]
+  },
+  "authors": {
+    "value": []
+  },
+  "date": {
+    "value": [
+      "2016-02-04"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.3390/molecules21020187"
+    ]
+  },
+  "volume": {
+    "value": [
+      "21"
+    ]
+  },
+  "issue": {
+    "value": [
+      "2"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "187"
+    ]
+  },
+  "description": {
+    "value": [
+      "This paper describes the synthesis of precursors with a benzo[b]furan skeleton for the intramolecular 1,3-dipolar cycloaddition of azomethine ylides prepared from N-substituted 3-allyl-aminobenzo[b]furan-2-aldehydes and secondary amines derived from α-amino acid esters. Reactions were initiated by heating. The products consisted of four fused rings with three stereogenic centers. Their structure and stereochemistry were determined by NMR spectra and X-ray measurements."
+    ]
+  },
+  "abstract": {
+    "value": [
+      "This paper describes the synthesis of precursors with a benzo[b]furan skeleton for the intramolecular 1,3-dipolar cycloaddition of azomethine ylides prepared from N-substituted 3-allyl-aminobenzo[b]furan-2-aldehydes and secondary amines derived from α-amino acid esters. Reactions were initiated by heating. The products consisted of four fused rings with three stereogenic centers. Their structure and stereochemistry were determined by NMR spectra and X-ray measurements."
+    ]
+  },
+  "fulltext_html": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/187/htm"
+    ]
+  },
+  "fulltext_pdf": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/187/pdf"
+    ]
+  },
+  "fulltext_xml": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/187/xml"
+    ]
+  },
+  "supplementary_material": {
+    "value": []
+  },
+  "figure": {
+    "value": []
+  },
+  "figure_caption": {
+    "value": []
+  },
+  "license": {
+    "value": []
+  },
+  "copyright": {
+    "value": []
+  }
+}

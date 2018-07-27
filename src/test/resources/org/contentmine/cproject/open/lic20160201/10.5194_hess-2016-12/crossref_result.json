@@ -1,0 +1,123 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        10
+      ]
+    ],
+    "date-time": "2016-05-10T10:40:09Z",
+    "timestamp": 1462876809365
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "NE/K008781/1 ‘Susceptibility of catchments to INTense RAinfall and flooding (SINATRA)'"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Natural Environment Research Council",
+      "DOI": "10.13039/501100000270"
+    }
+  ],
+  "DOI": "10.5194/hess-2016-12",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:52:33Z",
+    "timestamp": 1454334753000
+  },
+  "page": "1-18",
+  "source": "CrossRef",
+  "title": [
+    "Technical Note: Advances in flash flood monitoring using UAVs"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Perks",
+      "given": "M. T"
+    },
+    {
+      "affiliation": [],
+      "family": "Russell",
+      "given": "A. J"
+    },
+    {
+      "affiliation": [],
+      "family": "Large",
+      "given": "A. R. G"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Hydrology and Earth System Sciences Discussions",
+    "Hydrol. Earth Syst. Sci. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        10
+      ]
+    ],
+    "date-time": "2016-05-10T09:37:26Z",
+    "timestamp": 1462873046000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/hess-2016-12",
+  "ISSN": [
+    "1812-2116"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Earth and Planetary Sciences (miscellaneous)"
+  ]
+}

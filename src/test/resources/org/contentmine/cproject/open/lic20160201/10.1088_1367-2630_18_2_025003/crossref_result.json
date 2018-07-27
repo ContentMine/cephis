@@ -1,0 +1,217 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:20Z",
+    "timestamp": 1454668460951
+  },
+  "reference-count": 27,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "Australian Research Council",
+      "DOI": "10.13039/501100000923"
+    }
+  ],
+  "DOI": "10.1088/1367-2630/18/2/025003",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T17:13:36Z",
+    "timestamp": 1454346816000
+  },
+  "page": "025003",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    "Phase-locking in cascaded stimulated Brillouin scattering"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "18",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Büttner",
+      "given": "Thomas F S"
+    },
+    {
+      "affiliation": [],
+      "family": "Poulton",
+      "given": "Christopher G"
+    },
+    {
+      "affiliation": [],
+      "family": "Steel",
+      "given": "M J"
+    },
+    {
+      "affiliation": [],
+      "family": "Hudson",
+      "given": "Darren D"
+    },
+    {
+      "affiliation": [],
+      "family": "Eggleton",
+      "given": "Benjamin J"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "New Journal of Physics",
+    "New J. Phys."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1367-2630/18/i=2/a=025003/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1367-2630/18/i=2/a=025003?key=crossref.4c9ef47d37f8162f511c47e32667bc56"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:26:45Z",
+    "timestamp": 1454398005000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1367-2630/18/2/025003",
+  "ISSN": [
+    "1367-2630"
+  ],
+  "subject": [
+    "Physics and Astronomy(all)"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "New Journal of Physics"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "paper"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Phase-locking in cascaded stimulated Brillouin scattering"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd and Deutsche Physikalische Gesellschaft"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-09-29"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2016-01-07"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-01"
+    }
+  ]
+}

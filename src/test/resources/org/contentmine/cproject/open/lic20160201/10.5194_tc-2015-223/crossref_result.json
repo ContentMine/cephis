@@ -1,0 +1,113 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        6
+      ]
+    ],
+    "date-time": "2016-05-06T21:40:15Z",
+    "timestamp": 1462570815869
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/tc-2015-223",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:57:59Z",
+    "timestamp": 1454335079000
+  },
+  "page": "1-31",
+  "source": "CrossRef",
+  "title": [
+    "Effects of bryophyte and lichen cover on permafrost soil temperature at large scale"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Porada",
+      "given": "P."
+    },
+    {
+      "affiliation": [],
+      "family": "Ekici",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Beer",
+      "given": "C."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "The Cryosphere Discuss.",
+    "The Cryosphere Discussions"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        6
+      ]
+    ],
+    "date-time": "2016-05-06T20:34:19Z",
+    "timestamp": 1462566859000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/tc-2015-223",
+  "ISSN": [
+    "1994-0440"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Water Science and Technology"
+  ]
+}

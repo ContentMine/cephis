@@ -1,0 +1,120 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        11
+      ]
+    ],
+    "date-time": "2016-04-11T20:40:44Z",
+    "timestamp": 1460407244269
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/esurf-2016-4",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:22:52Z",
+    "timestamp": 1454322172000
+  },
+  "page": "1-25",
+  "source": "CrossRef",
+  "title": [
+    "Soilscape evolution of aeolian-dominated hillslopes during the Holocene: investigation of sediment transport mechanisms and climatic-anthropogenic drivers"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Cohen",
+      "given": "Sagy"
+    },
+    {
+      "affiliation": [],
+      "family": "Svoray",
+      "given": "Tal"
+    },
+    {
+      "affiliation": [],
+      "family": "Sela",
+      "given": "Shai"
+    },
+    {
+      "affiliation": [],
+      "family": "Hancock",
+      "given": "Greg"
+    },
+    {
+      "affiliation": [],
+      "family": "Willgoose",
+      "given": "Garry",
+      "ORCID": "http://orcid.org/0000-0001-5175-4935"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Earth Surface Dynamics Discussions",
+    "Earth Surf. Dynam. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        11
+      ]
+    ],
+    "date-time": "2016-04-11T19:01:53Z",
+    "timestamp": 1460401313000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/esurf-2016-4",
+  "ISSN": [
+    "2196-6338"
+  ]
+}

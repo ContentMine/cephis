@@ -1,0 +1,145 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        22
+      ]
+    ],
+    "date-time": "2016-06-22T21:40:49Z",
+    "timestamp": 1466631649904
+  },
+  "reference-count": 38,
+  "publisher": "Springer Nature",
+  "issue": "8",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "name": "The Thailand Research Fund/Prince of Songkla University for financial support"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        8
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00289-016-1609-3",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:20:33Z",
+    "timestamp": 1454336433000
+  },
+  "page": "2303-2320",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Green robust pH–temperature-sensitive maleated poly(vinyl alcohol)-g-gelatin for encapsulated capsaicin"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "73",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Sukhlaaied",
+      "given": "Wattana"
+    },
+    {
+      "affiliation": [],
+      "family": "Riyajan",
+      "given": "Sa-Ad"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Polymer Bulletin",
+    "Polym. Bull."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00289-016-1609-3.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00289-016-1609-3/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        22
+      ]
+    ],
+    "date-time": "2016-06-22T20:26:43Z",
+    "timestamp": 1466627203000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "1609"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00289-016-1609-3",
+  "ISSN": [
+    "0170-0839",
+    "1436-2449"
+  ],
+  "subject": [
+    "Materials Chemistry",
+    "Chemistry(all)",
+    "Polymers and Plastics",
+    "Condensed Matter Physics"
+  ]
+}

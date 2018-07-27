@@ -1,0 +1,99 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:51:36Z",
+    "timestamp": 1455623496534
+  },
+  "reference-count": 56,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "DOI": "10.3390/molecules21020185",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T15:26:22Z",
+    "timestamp": 1454599582000
+  },
+  "page": "185",
+  "source": "CrossRef",
+  "title": [
+    "Theoretical Study of Molecular Structure and Physicochemical Properties of Novel Factor Xa Inhibitors and Dual Factor Xa and Factor IIa Inhibitors"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Remko",
+      "given": "Milan"
+    },
+    {
+      "affiliation": [],
+      "family": "Remková",
+      "given": "Anna"
+    },
+    {
+      "affiliation": [],
+      "family": "Broer",
+      "given": "Ria",
+      "ORCID": "http://orcid.org/0000-0002-5437-9509"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:52:50Z",
+    "timestamp": 1455396770000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020185"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020185",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

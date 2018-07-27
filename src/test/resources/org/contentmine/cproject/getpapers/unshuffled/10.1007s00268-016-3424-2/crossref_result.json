@@ -1,0 +1,156 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        16
+      ]
+    ],
+    "date-time": "2016-05-16T15:45:52Z",
+    "timestamp": 1463413552383
+  },
+  "reference-count": 17,
+  "publisher": "Springer Nature",
+  "issue": "6",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00268-016-3424-2",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T21:08:49Z",
+    "timestamp": 1454360929000
+  },
+  "page": "1318-1323",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Video-Assisted Thoracoscopic Pulmonary Metastasectomy in Patients with Colorectal Cancer: A Recent 10-Year Single-Institution Experience"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "40",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Maeda",
+      "given": "Ryo"
+    },
+    {
+      "affiliation": [],
+      "family": "Suda",
+      "given": "Takashi"
+    },
+    {
+      "affiliation": [],
+      "family": "Hachimaru",
+      "given": "Ayumi"
+    },
+    {
+      "affiliation": [],
+      "family": "Tochii",
+      "given": "Daisuke"
+    },
+    {
+      "affiliation": [],
+      "family": "Tochii",
+      "given": "Sachiko"
+    },
+    {
+      "affiliation": [],
+      "family": "Takagi",
+      "given": "Yasushi"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "World J Surg",
+    "World Journal of Surgery"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00268-016-3424-2.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00268-016-3424-2/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        16
+      ]
+    ],
+    "date-time": "2016-05-16T14:07:00Z",
+    "timestamp": 1463407620000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "3424"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00268-016-3424-2",
+  "ISSN": [
+    "0364-2313",
+    "1432-2323"
+  ],
+  "subject": [
+    "Surgery"
+  ]
+}

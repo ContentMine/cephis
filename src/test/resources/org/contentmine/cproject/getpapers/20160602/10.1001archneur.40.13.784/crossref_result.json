@@ -1,0 +1,79 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T02:41:37Z",
+    "timestamp": 1464835297866
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "issue": "13",
+  "published-print": {
+    "date-parts": [
+      [
+        1983,
+        12,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1001/archneur.40.13.784",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:03Z",
+    "timestamp": 1464830583000
+  },
+  "page": "784",
+  "source": "CrossRef",
+  "title": [
+    "Incorrect Table Entries and Word"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "volume": "40",
+  "member": "http://id.crossref.org/member/10",
+  "container-title": [
+    "Arch Neurol",
+    "Archives of Neurology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:04Z",
+    "timestamp": 1464830584000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        1983,
+        12,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/archneur.40.13.784",
+  "ISSN": [
+    "0003-9942"
+  ],
+  "subject": [
+    "Clinical Neurology"
+  ]
+}

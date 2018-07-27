@@ -1,0 +1,102 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:27Z",
+    "timestamp": 1464911007779
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaoncol.2016.0183",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:23Z",
+    "timestamp": 1464906923000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Treatment of Regional Lymph Nodes in Breast Cancer—Evidence in Favor of Radiation Therapy"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radiation Oncology, Radboud University Medical Center, Nijmegen, the Netherlands"
+        }
+      ],
+      "family": "Poortmans",
+      "given": "Philip M. P."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Oncology Centre, Cambridge University Hospitals NHS Foundation Trust, Cambridge, United Kingdom"
+        }
+      ],
+      "family": "Coles",
+      "given": "Charlotte"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Radio—Oncology, Genolier Clinic, Genolier, Switzerland"
+        }
+      ],
+      "family": "Bernier",
+      "given": "Jacques"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Oncology",
+    "JAMA Oncol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:23Z",
+    "timestamp": 1464906923000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaoncol.2016.0183",
+  "ISSN": [
+    "2374-2437"
+  ]
+}

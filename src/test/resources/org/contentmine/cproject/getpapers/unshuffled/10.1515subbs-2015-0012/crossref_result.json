@@ -1,0 +1,81 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:42:49Z",
+    "timestamp": 1454582569638
+  },
+  "reference-count": 14,
+  "publisher": "Walter de Gruyter GmbH",
+  "issue": "2",
+  "published-print": {
+    "date-parts": [
+      [
+        2015,
+        1,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1515/subbs-2015-0012",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:49:27Z",
+    "timestamp": 1454338167000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Book Review: Dependency and Development. The Political Economy of Romanian Capitalism"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1515",
+  "volume": "6",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Petrovici",
+      "given": "Norbert"
+    }
+  ],
+  "member": "http://id.crossref.org/member/374",
+  "container-title": [
+    "Studia Universitatis Babes-Bolyai Sociologia"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T19:41:08Z",
+    "timestamp": 1454355668000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2015,
+        1,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1515/subbs-2015-0012",
+  "ISSN": [
+    "2066-0464"
+  ]
+}

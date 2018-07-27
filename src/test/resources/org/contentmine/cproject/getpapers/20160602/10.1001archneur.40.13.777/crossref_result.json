@@ -1,0 +1,103 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T02:42:09Z",
+    "timestamp": 1464835329349
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "issue": "13",
+  "published-print": {
+    "date-parts": [
+      [
+        1983,
+        12,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1001/archneur.40.13.777",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:02Z",
+    "timestamp": 1464830582000
+  },
+  "page": "777",
+  "source": "CrossRef",
+  "title": [
+    "Downbeating Nystagmus"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "volume": "40",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Halmagyi",
+      "given": "G. Michael"
+    },
+    {
+      "affiliation": [],
+      "family": "Rudge",
+      "given": "Peter"
+    },
+    {
+      "affiliation": [],
+      "family": "Gresty",
+      "given": "Michael A."
+    },
+    {
+      "affiliation": [],
+      "family": "Sanders",
+      "given": "Michael D."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "container-title": [
+    "Arch Neurol",
+    "Archives of Neurology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:03Z",
+    "timestamp": 1464830583000
+  },
+  "score": 1,
+  "subtitle": [
+    "A Review of 62 Cases"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1983,
+        12,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/archneur.40.13.777",
+  "ISSN": [
+    "0003-9942"
+  ],
+  "subject": [
+    "Clinical Neurology"
+  ]
+}

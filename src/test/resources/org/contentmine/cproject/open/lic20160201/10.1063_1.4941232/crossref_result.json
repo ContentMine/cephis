@@ -1,0 +1,208 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:44:41Z",
+    "timestamp": 1454582681398
+  },
+  "reference-count": 43,
+  "publisher": "AIP Publishing",
+  "issue": "5",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "51001038"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    },
+    {
+      "award": [
+        "2011RFQXG001"
+      ],
+      "name": "Ministry of Science and Technology Bureau of Harbin"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1063/1.4941232",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T18:00:20Z",
+    "timestamp": 1454349620000
+  },
+  "page": "052401",
+  "update-policy": "http://dx.doi.org/10.1063/aip-crossmark-policy-page",
+  "source": "CrossRef",
+  "title": [
+    "Magnetostructural coupling and magnetocaloric effect in Ni-Mn-Ga-Cu microwires"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1063",
+  "volume": "108",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "School of Materials Science and Engineering, Harbin Institute of Technology, Harbin 150001, China"
+        }
+      ],
+      "family": "Zhang",
+      "given": "Xuexi",
+      "ORCID": "http://orcid.org/0000-0002-7939-7025"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Materials Science and Engineering, Harbin Institute of Technology, Harbin 150001, China"
+        }
+      ],
+      "family": "Qian",
+      "given": "Mingfang"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Materials Science and Engineering, Harbin Institute of Technology, Harbin 150001, China"
+        }
+      ],
+      "family": "Zhang",
+      "given": "Zhe"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Materials Science and Engineering, Harbin Institute of Technology, Harbin 150001, China"
+        }
+      ],
+      "family": "Wei",
+      "given": "Longsha"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Materials Science and Engineering, Harbin Institute of Technology, Harbin 150001, China"
+        }
+      ],
+      "family": "Geng",
+      "given": "Lin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "School of Materials Science and Engineering, Harbin Institute of Technology, Harbin 150001, China"
+        }
+      ],
+      "family": "Sun",
+      "given": "Jianfei"
+    }
+  ],
+  "member": "http://id.crossref.org/member/317",
+  "container-title": [
+    "Appl. Phys. Lett.",
+    "Applied Physics Letters"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T18:14:08Z",
+    "timestamp": 1454350448000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1063/1.4941232",
+  "archive": [
+    "CLOCKSS",
+    "Portico"
+  ],
+  "ISSN": [
+    "0003-6951",
+    "1077-3118"
+  ],
+  "subject": [
+    "Physics and Astronomy (miscellaneous)"
+  ],
+  "assertion": [
+    {
+      "group": {
+        "label": "Publication History",
+        "name": "publication_history"
+      },
+      "label": "received",
+      "name": "received",
+      "order": 0,
+      "value": "2015-10-09"
+    },
+    {
+      "group": {
+        "label": "Publication History",
+        "name": "publication_history"
+      },
+      "label": "accepted",
+      "name": "accepted",
+      "order": 2,
+      "value": "2016-01-21"
+    },
+    {
+      "group": {
+        "label": "Publication History",
+        "name": "publication_history"
+      },
+      "label": "published",
+      "name": "published",
+      "order": 6,
+      "value": "2016-02-01"
+    }
+  ]
+}

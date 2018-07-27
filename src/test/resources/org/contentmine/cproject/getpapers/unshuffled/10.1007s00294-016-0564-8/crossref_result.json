@@ -1,0 +1,169 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        30
+      ]
+    ],
+    "date-time": "2016-06-30T13:40:44Z",
+    "timestamp": 1467294044397
+  },
+  "reference-count": 27,
+  "publisher": "Springer Nature",
+  "issue": "3",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "crossref",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        8
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00294-016-0564-8",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T06:26:09Z",
+    "timestamp": 1454307969000
+  },
+  "page": "585-593",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Phenotypic diversity and correlation between white–opaque switching and the CAI microsatellite locus in Candida albicans"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "62",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Hu",
+      "given": "Jian"
+    },
+    {
+      "affiliation": [],
+      "family": "Guan",
+      "given": "Guobo"
+    },
+    {
+      "affiliation": [],
+      "family": "Dai",
+      "given": "Yu"
+    },
+    {
+      "affiliation": [],
+      "family": "Tao",
+      "given": "Li"
+    },
+    {
+      "affiliation": [],
+      "family": "Zhang",
+      "given": "Jianzhong"
+    },
+    {
+      "affiliation": [],
+      "family": "Li",
+      "given": "Houmin"
+    },
+    {
+      "affiliation": [],
+      "family": "Huang",
+      "given": "Guanghua"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Curr Genet",
+    "Current Genetics"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00294-016-0564-8.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00294-016-0564-8/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        30
+      ]
+    ],
+    "date-time": "2016-06-30T11:56:26Z",
+    "timestamp": 1467287786000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "564"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00294-016-0564-8",
+  "ISSN": [
+    "0172-8083",
+    "1432-0983"
+  ],
+  "subject": [
+    "Genetics"
+  ]
+}

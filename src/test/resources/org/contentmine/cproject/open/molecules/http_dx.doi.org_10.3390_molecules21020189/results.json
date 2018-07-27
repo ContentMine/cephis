@@ -1,0 +1,85 @@
+{
+  "publisher": {
+    "value": [
+      "Multidisciplinary Digital Publishing Institute"
+    ]
+  },
+  "journal": {
+    "value": [
+      "Molecules"
+    ]
+  },
+  "title": {
+    "value": [
+      "Design, Synthesis and Anticancer Evaluation of Novel Quinazoline-Sulfonamide Hybrids"
+    ]
+  },
+  "authors": {
+    "value": []
+  },
+  "date": {
+    "value": [
+      "2016-02-04"
+    ]
+  },
+  "doi": {
+    "value": [
+      "10.3390/molecules21020189"
+    ]
+  },
+  "volume": {
+    "value": [
+      "21"
+    ]
+  },
+  "issue": {
+    "value": [
+      "2"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "189"
+    ]
+  },
+  "description": {
+    "value": [
+      "By combining the structural features of quinazoline and sulfonamides, novel hybrid compounds 2–21 were synthesized using a simple and convenient method. Evaluation of these compounds against different cell lines identified compounds 7 and 17 as most active anticancer agents as they showed effectiveness on the four tested cell lines. The anticancer screening results of the tested compounds provides an encouraging framework that could lead to the development of potent new anticancer agents."
+    ]
+  },
+  "abstract": {
+    "value": [
+      "By combining the structural features of quinazoline and sulfonamides, novel hybrid compounds 2–21 were synthesized using a simple and convenient method. Evaluation of these compounds against different cell lines identified compounds 7 and 17 as most active anticancer agents as they showed effectiveness on the four tested cell lines. The anticancer screening results of the tested compounds provides an encouraging framework that could lead to the development of potent new anticancer agents."
+    ]
+  },
+  "fulltext_html": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/189/htm"
+    ]
+  },
+  "fulltext_pdf": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/189/pdf"
+    ]
+  },
+  "fulltext_xml": {
+    "value": [
+      "http://www.mdpi.com/1420-3049/21/2/189/xml"
+    ]
+  },
+  "supplementary_material": {
+    "value": []
+  },
+  "figure": {
+    "value": []
+  },
+  "figure_caption": {
+    "value": []
+  },
+  "license": {
+    "value": []
+  },
+  "copyright": {
+    "value": []
+  }
+}

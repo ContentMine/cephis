@@ -1,0 +1,102 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:03Z",
+    "timestamp": 1464910983036
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaoncol.2016.1198",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:25Z",
+    "timestamp": 1464906925000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Up-front Targeted Therapy Prior to Cytoreductive Nephrectomy in Treatment-Naïve Patients With Metastatic Renal Cell Carcinoma"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Internal Medicine, Huntsman Cancer Institute, University of Utah, Salt Lake City"
+        }
+      ],
+      "family": "Agarwal",
+      "given": "Neeraj"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Urology and Radiology, Yale University School of Medicine, New Haven, Connecticut"
+        }
+      ],
+      "family": "Shuch",
+      "given": "Brian"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Medical Oncology and Experimental Therapeutics, City of Hope Comprehensive Cancer Center, Duarte, California"
+        }
+      ],
+      "family": "Pal",
+      "given": "Sumanta K."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Oncology",
+    "JAMA Oncol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:25Z",
+    "timestamp": 1464906925000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaoncol.2016.1198",
+  "ISSN": [
+    "2374-2437"
+  ]
+}

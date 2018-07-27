@@ -1,0 +1,175 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        30
+      ]
+    ],
+    "date-time": "2016-06-30T13:40:47Z",
+    "timestamp": 1467294047974
+  },
+  "reference-count": 73,
+  "publisher": "Springer Nature",
+  "issue": "3",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "14-24-00169"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Russian Science Foundation",
+      "DOI": "10.13039/501100006769"
+    },
+    {
+      "award": [
+        "mol_a 14-04-31089"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Russian Foundation for Basic Research",
+      "DOI": "10.13039/501100002261"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        8
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00294-016-0568-4",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T08:01:14Z",
+    "timestamp": 1454313674000
+  },
+  "page": "643-656",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Genome-wide bioinformatics analysis of steroid metabolism-associated genes in Nocardioides simplex VKM Ac-2033D"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "62",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Shtratnikova",
+      "given": "Victoria Y.",
+      "ORCID": "http://orcid.org/0000-0002-3118-7977"
+    },
+    {
+      "affiliation": [],
+      "family": "Schelkunov",
+      "given": "Mikhail I."
+    },
+    {
+      "affiliation": [],
+      "family": "Fokina",
+      "given": "Victoria V."
+    },
+    {
+      "affiliation": [],
+      "family": "Pekov",
+      "given": "Yury A."
+    },
+    {
+      "affiliation": [],
+      "family": "Ivashina",
+      "given": "Tanya"
+    },
+    {
+      "affiliation": [],
+      "family": "Donova",
+      "given": "Marina V."
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Curr Genet",
+    "Current Genetics"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00294-016-0568-4.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00294-016-0568-4/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        30
+      ]
+    ],
+    "date-time": "2016-06-30T11:57:21Z",
+    "timestamp": 1467287841000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "568"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00294-016-0568-4",
+  "ISSN": [
+    "0172-8083",
+    "1432-0983"
+  ],
+  "subject": [
+    "Genetics"
+  ]
+}

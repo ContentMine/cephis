@@ -1,0 +1,208 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:42:07Z",
+    "timestamp": 1454582527768
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "228335"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "European Commission",
+      "DOI": "10.13039/501100000780"
+    }
+  ],
+  "DOI": "10.5194/acp-16-1105-2016",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:20:14Z",
+    "timestamp": 1454332814000
+  },
+  "page": "1105-1121",
+  "source": "CrossRef",
+  "title": [
+    "Cloud condensation nuclei activity, droplet growth kinetics, and hygroscopicity of biogenic and anthropogenic secondary organic aerosol (SOA)"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "volume": "16",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Zhao",
+      "given": "D. F."
+    },
+    {
+      "affiliation": [],
+      "family": "Buchholz",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Kortner",
+      "given": "B."
+    },
+    {
+      "affiliation": [],
+      "family": "Schlag",
+      "given": "P.",
+      "ORCID": "http://orcid.org/0000-0002-0206-8987"
+    },
+    {
+      "affiliation": [],
+      "family": "Rubach",
+      "given": "F.",
+      "ORCID": "http://orcid.org/0000-0002-6144-2799"
+    },
+    {
+      "affiliation": [],
+      "family": "Fuchs",
+      "given": "H.",
+      "ORCID": "http://orcid.org/0000-0003-1263-0061"
+    },
+    {
+      "affiliation": [],
+      "family": "Kiendler-Scharr",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Tillmann",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Wahner",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Watne",
+      "given": "Å. K."
+    },
+    {
+      "affiliation": [],
+      "family": "Hallquist",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Flores",
+      "given": "J. M."
+    },
+    {
+      "affiliation": [],
+      "family": "Rudich",
+      "given": "Y."
+    },
+    {
+      "affiliation": [],
+      "family": "Kristensen",
+      "given": "K."
+    },
+    {
+      "affiliation": [],
+      "family": "Hansen",
+      "given": "A. M. K."
+    },
+    {
+      "affiliation": [],
+      "family": "Glasius",
+      "given": "M.",
+      "ORCID": "http://orcid.org/0000-0002-4404-6989"
+    },
+    {
+      "affiliation": [],
+      "family": "Kourtchev",
+      "given": "I."
+    },
+    {
+      "affiliation": [],
+      "family": "Kalberer",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Mentel",
+      "given": "Th. F."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics",
+    "Atmos. Chem. Phys."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:20:15Z",
+    "timestamp": 1454332815000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-16-1105-2016",
+  "ISSN": [
+    "1680-7324"
+  ],
+  "subject": [
+    "Atmospheric Science"
+  ]
+}

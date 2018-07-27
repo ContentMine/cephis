@@ -1,0 +1,128 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        29
+      ]
+    ],
+    "date-time": "2016-04-29T16:40:09Z",
+    "timestamp": 1461948009609
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "415508"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Natural Sciences and Engineering Research Council of Canada",
+      "DOI": "10.13039/501100000038"
+    }
+  ],
+  "DOI": "10.5194/tc-2016-9",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:34:01Z",
+    "timestamp": 1454322841000
+  },
+  "page": "1-22",
+  "source": "CrossRef",
+  "title": [
+    "ACCURACY OF SNOW DEPTH ESTIMATION IN MOUNTAIN AND PRAIRIE ENVIRONMENTS BY AN UNMANNED AERIAL VEHICLE"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Harder",
+      "given": "Phillip"
+    },
+    {
+      "affiliation": [],
+      "family": "Schirmer",
+      "given": "Michael"
+    },
+    {
+      "affiliation": [],
+      "family": "Pomeroy",
+      "given": "John"
+    },
+    {
+      "affiliation": [],
+      "family": "Helgason",
+      "given": "Warren"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "The Cryosphere Discuss.",
+    "The Cryosphere Discussions"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        29
+      ]
+    ],
+    "date-time": "2016-04-29T15:03:09Z",
+    "timestamp": 1461942189000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/tc-2016-9",
+  "ISSN": [
+    "1994-0440"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Water Science and Technology"
+  ]
+}

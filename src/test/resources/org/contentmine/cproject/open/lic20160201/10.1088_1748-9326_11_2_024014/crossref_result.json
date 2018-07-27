@@ -1,0 +1,244 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        23
+      ]
+    ],
+    "date-time": "2016-02-23T10:44:01Z",
+    "timestamp": 1456224241081
+  },
+  "reference-count": 69,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 18,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            19
+          ]
+        ],
+        "date-time": "2016-02-19T00:00:00Z",
+        "timestamp": 1455840000000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 18,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            19
+          ]
+        ],
+        "date-time": "2016-02-19T00:00:00Z",
+        "timestamp": 1455840000000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "name": "Netherlands Organisation for Scientific Research (NWO)"
+    },
+    {
+      "award": [],
+      "name": "Wageningen Institute for Environment"
+    },
+    {
+      "award": [],
+      "name": "Climate Research (WIMEK), Wageningen University"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1748-9326/11/2/024014",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        19
+      ]
+    ],
+    "date-time": "2016-02-19T14:14:01Z",
+    "timestamp": 1455891241000
+  },
+  "page": "024014",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    "Alarming nutrient pollution of Chinese rivers as a result of agricultural transitions"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "11",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Strokal",
+      "given": "Maryna"
+    },
+    {
+      "affiliation": [],
+      "family": "Ma",
+      "given": "Lin"
+    },
+    {
+      "affiliation": [],
+      "family": "Bai",
+      "given": "Zhaohai"
+    },
+    {
+      "affiliation": [],
+      "family": "Luan",
+      "given": "Shengji"
+    },
+    {
+      "affiliation": [],
+      "family": "Kroeze",
+      "given": "Carolien"
+    },
+    {
+      "affiliation": [],
+      "family": "Oenema",
+      "given": "Oene"
+    },
+    {
+      "affiliation": [],
+      "family": "Velthof",
+      "given": "Gerard"
+    },
+    {
+      "affiliation": [],
+      "family": "Zhang",
+      "given": "Fusuo"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        19
+      ]
+    ]
+  },
+  "container-title": [
+    "Environ. Res. Lett.",
+    "Environmental Research Letters"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=024014/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=024014?key=crossref.14a3953571bd508b221300e74e5785c1"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        20
+      ]
+    ],
+    "date-time": "2016-02-20T07:20:28Z",
+    "timestamp": 1455952828000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1748-9326/11/2/024014",
+  "ISSN": [
+    "1748-9326"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Environmental Research Letters"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "lett"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Alarming nutrient pollution of Chinese rivers as a result of agricultural transitions"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-09-27"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2016-01-18"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-19"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:40Z",
+    "timestamp": 1464911020833
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "issue": "22",
+  "published-print": {
+    "date-parts": [
+      [
+        1996,
+        6,
+        12
+      ]
+    ]
+  },
+  "DOI": "10.1001/jama.275.22.1708i",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:03Z",
+    "timestamp": 1464906903000
+  },
+  "page": "1708I",
+  "source": "CrossRef",
+  "title": [
+    "A Bellevue Story"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "volume": "275",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Bronson",
+      "given": "Richard"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "container-title": [
+    "JAMA"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:03Z",
+    "timestamp": 1464906903000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        1996,
+        6,
+        12
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jama.275.22.1708i",
+  "ISSN": [
+    "0098-7484"
+  ],
+  "subject": [
+    "Medicine(all)"
+  ]
+}

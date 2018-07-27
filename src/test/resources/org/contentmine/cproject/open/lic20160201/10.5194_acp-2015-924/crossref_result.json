@@ -1,0 +1,175 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        30
+      ]
+    ],
+    "date-time": "2016-06-30T18:40:27Z",
+    "timestamp": 1467312027904
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/acp-2015-924",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:25:32Z",
+    "timestamp": 1454322332000
+  },
+  "page": "1-53",
+  "source": "CrossRef",
+  "title": [
+    "Impact of Spaceborne Carbon Monoxide Observations from the S-5P platform on Tropospheric Composition Analyses and Forecasts"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Abida",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Attié",
+      "given": "J.-L."
+    },
+    {
+      "affiliation": [],
+      "family": "El Amraoui",
+      "given": "L."
+    },
+    {
+      "affiliation": [],
+      "family": "Ricaud",
+      "given": "P."
+    },
+    {
+      "affiliation": [],
+      "family": "Lahoz",
+      "given": "W."
+    },
+    {
+      "affiliation": [],
+      "family": "Eskes",
+      "given": "H.",
+      "ORCID": "http://orcid.org/0000-0002-8743-4455"
+    },
+    {
+      "affiliation": [],
+      "family": "Segers",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Curier",
+      "given": "L."
+    },
+    {
+      "affiliation": [],
+      "family": "de Haan",
+      "given": "J."
+    },
+    {
+      "affiliation": [],
+      "family": "Kujanpää",
+      "given": "J."
+    },
+    {
+      "affiliation": [],
+      "family": "Nijhuis",
+      "given": "A. O."
+    },
+    {
+      "affiliation": [],
+      "family": "Schuettemeyer",
+      "given": "D."
+    },
+    {
+      "affiliation": [],
+      "family": "Tamminen",
+      "given": "J."
+    },
+    {
+      "affiliation": [],
+      "family": "Timmermans",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Veefkind",
+      "given": "P."
+    },
+    {
+      "affiliation": [],
+      "family": "Veihelmann",
+      "given": "B."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        30
+      ]
+    ],
+    "date-time": "2016-06-30T17:14:48Z",
+    "timestamp": 1467306888000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2015-924",
+  "ISSN": [
+    "1680-7375"
+  ]
+}

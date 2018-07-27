@@ -1,0 +1,134 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:42:42Z",
+    "timestamp": 1454582562065
+  },
+  "reference-count": 177,
+  "publisher": "Springer Science + Business Media",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "DOI": "10.1007/s00291-015-0429-4",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:40:04Z",
+    "timestamp": 1454337604000
+  },
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Simultaneous lotsizing and scheduling problems: a classification and review of models"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Copil",
+      "given": "Karina"
+    },
+    {
+      "affiliation": [],
+      "family": "Wörbelauer",
+      "given": "Martin"
+    },
+    {
+      "affiliation": [],
+      "family": "Meyr",
+      "given": "Herbert"
+    },
+    {
+      "affiliation": [],
+      "family": "Tempelmeier",
+      "given": "Horst"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "OR Spectrum"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00291-015-0429-4.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00291-015-0429-4/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:40:04Z",
+    "timestamp": 1454337604000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "429"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00291-015-0429-4",
+  "ISSN": [
+    "0171-6468",
+    "1436-6304"
+  ],
+  "subject": [
+    "Management Science and Operations Research"
+  ]
+}

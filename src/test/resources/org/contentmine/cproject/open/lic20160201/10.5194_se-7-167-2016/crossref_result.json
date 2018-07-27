@@ -1,0 +1,139 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:42:38Z",
+    "timestamp": 1454582558195
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "issue": "1",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/se-7-167-2016",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:24:59Z",
+    "timestamp": 1454336699000
+  },
+  "page": "167-175",
+  "source": "CrossRef",
+  "title": [
+    "Integrating a mini catchment with mulching for soil water management in a sloping jujube orchard on the semiarid Loess Plateau of China"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "volume": "7",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Li",
+      "given": "H. C."
+    },
+    {
+      "affiliation": [],
+      "family": "Gao",
+      "given": "X. D."
+    },
+    {
+      "affiliation": [],
+      "family": "Zhao",
+      "given": "X. N."
+    },
+    {
+      "affiliation": [],
+      "family": "Wu",
+      "given": "P. T."
+    },
+    {
+      "affiliation": [],
+      "family": "Li",
+      "given": "L. S."
+    },
+    {
+      "affiliation": [],
+      "family": "Ling",
+      "given": "Q."
+    },
+    {
+      "affiliation": [],
+      "family": "Sun",
+      "given": "W. H."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Solid Earth"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T14:24:59Z",
+    "timestamp": 1454336699000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/se-7-167-2016",
+  "ISSN": [
+    "1869-9529"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Stratigraphy",
+    "Palaeontology",
+    "Soil Science",
+    "Geology",
+    "Geochemistry and Petrology",
+    "Geophysics"
+  ]
+}

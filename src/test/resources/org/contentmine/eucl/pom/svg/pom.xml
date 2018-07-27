@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+       <svg.version>1.0.7</svg.version>
+       <!--  upstream -->
+       <euclid.version>2.0.5</euclid.version>
+    </properties>
+
+    <groupId>org.contentmine</groupId>
+    <artifactId>svg</artifactId>
+    <version>${svg.version}</version>
+    <packaging>jar</packaging>
+    <name>svg</name>
+    <description>A Java library for processing SVG</description>
+
+    <developers>
+        <developer>
+            <id>pm286</id>
+            <name>Peter Murray-Rust</name>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19</version>
+                <configuration>
+                    <parallel>classes</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.contentmine</groupId>
+            <artifactId>euclid</artifactId>
+            <version>${euclid.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.imgscalr</groupId>
+            <artifactId>imgscalr-lib</artifactId>
+            <version>4.2</version>
+        </dependency>
+    </dependencies>
+    <reporting>
+        <plugins>
+        </plugins>
+    </reporting>
+
+    <repositories>
+    <repository>
+        <id>cm-pom</id>
+        <url>https://raw.github.com/ContentMine/cm-pom/mvn-repo/</url>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+    </repositories>
+</project>

@@ -1,0 +1,234 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        19
+      ]
+    ],
+    "date-time": "2016-02-19T11:05:38Z",
+    "timestamp": 1455879938196
+  },
+  "reference-count": 95,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 15,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            16
+          ]
+        ],
+        "date-time": "2016-02-16T00:00:00Z",
+        "timestamp": 1455580800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 15,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            16
+          ]
+        ],
+        "date-time": "2016-02-16T00:00:00Z",
+        "timestamp": 1455580800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "SAW-2013-PIK-5"
+      ],
+      "name": "Framework of the Leibniz Competition"
+    },
+    {
+      "award": [
+        "031A103B"
+      ],
+      "name": "FACCE MACSUR"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1748-9326/11/2/025002",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        15
+      ]
+    ],
+    "date-time": "2016-02-15T18:14:17Z",
+    "timestamp": 1455560057000
+  },
+  "page": "025002",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    "Integrated crop water management might sustainably halve the global food gap"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "11",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Jägermeyr",
+      "given": "J"
+    },
+    {
+      "affiliation": [],
+      "family": "Gerten",
+      "given": "D"
+    },
+    {
+      "affiliation": [],
+      "family": "Schaphoff",
+      "given": "S"
+    },
+    {
+      "affiliation": [],
+      "family": "Heinke",
+      "given": "J"
+    },
+    {
+      "affiliation": [],
+      "family": "Lucht",
+      "given": "W"
+    },
+    {
+      "affiliation": [],
+      "family": "Rockström",
+      "given": "J"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        15
+      ]
+    ]
+  },
+  "container-title": [
+    "Environ. Res. Lett.",
+    "Environmental Research Letters"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=025002/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=025002?key=crossref.bc805e58c0fb73d1402f4ae22c75639a"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T07:22:18Z",
+    "timestamp": 1455607338000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1748-9326/11/2/025002",
+  "ISSN": [
+    "1748-9326"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Environmental Research Letters"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "paper"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Integrated crop water management might sustainably halve the global food gap"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-10-30"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2016-01-25"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-16"
+    }
+  ]
+}

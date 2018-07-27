@@ -1,0 +1,113 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        1
+      ]
+    ],
+    "date-time": "2016-04-01T10:59:52Z",
+    "timestamp": 1459508392180
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/hess-2015-544",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:29:58Z",
+    "timestamp": 1454322598000
+  },
+  "page": "1-38",
+  "source": "CrossRef",
+  "title": [
+    "A Bayesian Consistent Dual Ensemble Kalman Filter for State-Parameter Estimation in Subsurface Hydrology"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Ait-El-Fquih",
+      "given": "B."
+    },
+    {
+      "affiliation": [],
+      "family": "Gharamti",
+      "given": "M. E."
+    },
+    {
+      "affiliation": [],
+      "family": "Hoteit",
+      "given": "I."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Hydrology and Earth System Sciences Discussions",
+    "Hydrol. Earth Syst. Sci. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        30
+      ]
+    ],
+    "date-time": "2016-03-30T20:41:37Z",
+    "timestamp": 1459370497000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/hess-2015-544",
+  "ISSN": [
+    "1812-2116"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Earth and Planetary Sciences (miscellaneous)"
+  ]
+}

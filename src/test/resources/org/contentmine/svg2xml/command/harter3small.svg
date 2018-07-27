@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600.0" height="800.0" stroke="none" stroke-width="0.0" xmlns="http://www.w3.org/2000/svg" xmlns:svgx="http://www.xml-cml.org/schema/svgx">
+ <text  stroke="#000000" svgx:width="306.0" x="306.77" y="742.136" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="226.0" x="310.49" y="742.136" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="507.0" x="313.25" y="742.136" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="226.0" x="319.37" y="742.136" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="306.0" x="322.01" y="742.136" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="226.0" x="325.61" y="742.136" font-size="11.04"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="93.624" y="41.0" font-size="12.0"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="93.624" y="71.98" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="100.332" y="71.98" font-size="12.0" font-style="bold">.</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="103.668" y="71.98" font-size="12.0" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="110.3" y="71.98" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="667.0" x="122.42" y="71.98" font-size="12.0" font-style="bold">S</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="130.448" y="71.98" font-size="12.0" font-style="bold">p</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="137.78" y="71.98" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="144.5" y="71.98" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="151.208" y="71.98" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="154.544" y="71.98" font-size="12.0" font-style="bold">f</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="158.54" y="71.98" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="161.876" y="71.98" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="168.488" y="71.98" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="171.824" y="71.98" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="178.556" y="71.98" font-size="12.0" font-style="bold">x</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="185.264" y="71.98" font-size="12.0" font-style="bold">p</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="192.464" y="71.98" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="199.172" y="71.98" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="203.84" y="71.98" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="889.0" x="207.176" y="71.98" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="217.88" y="71.98" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="224.588" y="71.98" font-size="12.0" font-style="bold">n</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="231.92" y="71.98" font-size="12.0" font-style="bold">t</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="235.868" y="71.98" font-size="12.0" font-style="bold">a</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="242.468" y="71.98" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="245.804" y="71.98" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="249.176" y="71.98" font-size="12.0" font-style="bold">p</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="256.508" y="71.98" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="261.176" y="71.98" font-size="12.0" font-style="bold">o</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="268.508" y="71.98" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="275.204" y="71.98" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="281.912" y="71.98" font-size="12.0" font-style="bold">d</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="289.244" y="71.98" font-size="12.0" font-style="bold">u</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="296.576" y="71.98" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="301.244" y="71.98" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="307.832" y="71.98" font-size="12.0" font-style="bold">s</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="314.57" y="71.98" font-size="12.0" font-style="bold"> </text>
+ <path stroke="black" stroke-width="0.5"  fill="#000000" d="M122.42 74.5 L314.56 74.5 L314.56 73.3 L122.42 73.3 L122.42 74.5 "/>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="93.624" y="102.7" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="100.332" y="102.7" font-size="12.0" font-style="bold">.</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="103.668" y="102.7" font-size="12.0" font-style="bold">3</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="110.3" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="667.0" x="122.42" y="102.7" font-size="12.0" font-style="bold">E</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="130.448" y="102.7" font-size="12.0" font-style="bold">x</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="137.156" y="102.7" font-size="12.0" font-style="bold">p</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="144.488" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="151.16" y="102.7" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="155.864" y="102.7" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="889.0" x="159.2" y="102.7" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="169.784" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="176.492" y="102.7" font-size="12.0" font-style="bold">n</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="183.824" y="102.7" font-size="12.0" font-style="bold">t</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="187.772" y="102.7" font-size="12.0" font-style="bold">a</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="194.48" y="102.7" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="197.816" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="201.188" y="102.7" font-size="12.0" font-style="bold">p</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="208.52" y="102.7" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="213.188" y="102.7" font-size="12.0" font-style="bold">o</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="220.52" y="102.7" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="227.108" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="233.816" y="102.7" font-size="12.0" font-style="bold">d</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="241.016" y="102.7" font-size="12.0" font-style="bold">u</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="248.348" y="102.7" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="253.016" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="259.724" y="102.7" font-size="12.0" font-style="bold">s</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="266.432" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="269.768" y="102.7" font-size="12.0" font-style="bold">f</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="273.764" y="102.7" font-size="12.0" font-style="bold">o</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="281.096" y="102.7" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="285.764" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="289.1" y="102.7" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="295.82" y="102.7" font-size="12.0" font-style="bold">h</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="303.02" y="102.7" font-size="12.0" font-style="bold">a</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="309.728" y="102.7" font-size="12.0" font-style="bold">p</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="317.06" y="102.7" font-size="12.0" font-style="bold">t</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="321.008" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="327.716" y="102.7" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="332.384" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="335.72" y="102.7" font-size="12.0" font-style="bold">3</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="342.356" y="102.7" font-size="12.0" font-style="bold">:</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="346.424" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="349.76" y="102.7" font-size="12.0" font-style="bold">d</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="357.092" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="363.704" y="102.7" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="370.412" y="102.7" font-size="12.0" font-style="bold">a</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="377.12" y="102.7" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="381.788" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="388.4" y="102.7" font-size="12.0" font-style="bold">s</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="395.108" y="102.7" font-size="12.0" font-style="bold">t</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="389.0" x="399.104" y="102.7" font-size="12.0" font-style="bold">r</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="403.772" y="102.7" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="407.108" y="102.7" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="413.816" y="102.7" font-size="12.0" font-style="bold">t</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="417.812" y="102.7" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="421.148" y="102.7" font-size="12.0" font-style="bold">n</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="428.48" y="102.7" font-size="12.0" font-style="bold">e</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="435.152" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="438.524" y="102.7" font-size="12.0" font-style="bold">D</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="447.31" y="102.7" font-size="12.0" font-style="bold"> </text>
+ <path stroke="black" stroke-width="0.5"  fill="#000000" d="M122.42 105.22 L447.31 105.22 L447.31 104.02 L122.42 104.02 L122.42 105.22 "/>
+ <text  stroke="#000000" svgx:width="352.0" x="93.624" y="134.26" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="556.0" x="93.624" y="165.22" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="278.0" x="100.332" y="165.22" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="556.0" x="103.668" y="165.22" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="278.0" x="110.4" y="165.22" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="556.0" x="113.64" y="165.22" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="278.0" x="120.26" y="165.22" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="667.0" x="129.62" y="165.22" font-size="12.0">P</text>
+ <text  stroke="#000000" svgx:width="333.0" x="137.648" y="165.22" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="556.0" x="141.644" y="165.22" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="556.0" x="148.316" y="165.22" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="556.0" x="155.036" y="165.22" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="333.0" x="161.744" y="165.22" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="556.0" x="165.74" y="165.22" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="278.0" x="172.412" y="165.22" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="222.0" x="175.748" y="165.22" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="556.0" x="178.304" y="165.22" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="556.0" x="185.012" y="165.22" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="278.0" x="191.72" y="165.22" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="556.0" x="194.96" y="165.22" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="278.0" x="201.56" y="165.22" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="278.0" x="205.028" y="165.22" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="333.0" x="208.364" y="165.22" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="556.0" x="212.36" y="165.22" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="667.0" x="219.17" y="165.22" font-size="12.0" font-style="italic">E</text>
+ <text  stroke="#000000" svgx:width="278.0" x="227.09" y="165.22" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="556.0" x="230.45" y="165.22" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="722.0" x="237.17" y="165.22" font-size="12.0" font-style="italic">R</text>
+ <text  stroke="#000000" svgx:width="389.0" x="245.81" y="165.22" font-size="12.0">*</text>
+ <text  stroke="#000000" svgx:width="278.0" x="250.37" y="165.22" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="556.0" x="253.706" y="165.22" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="722.0" x="260.45" y="165.22" font-size="12.0" font-style="italic">R</text>
+ <text  stroke="#000000" svgx:width="389.0" x="269.09" y="165.22" font-size="12.0">*</text>
+ <text  stroke="#000000" svgx:width="333.0" x="273.77" y="165.22" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="333.0" x="277.73" y="165.22" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="556.0" x="281.69" y="165.22" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="278.0" x="288.398" y="165.22" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="556.0" x="291.734" y="165.22" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="500.0" x="298.466" y="165.22" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="222.0" x="304.346" y="165.22" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="333.0" x="307.01" y="165.22" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="556.0" x="310.97" y="165.22" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="278.0" x="317.678" y="165.22" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="556.0" x="321.014" y="165.22" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="333.0" x="327.77" y="165.22" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="556.0" x="331.75" y="165.22" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="556.0" x="338.458" y="165.22" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="556.0" x="345.166" y="165.22" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="500.0" x="351.874" y="165.22" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="500.0" x="357.754" y="165.22" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="333.0" x="363.67" y="165.22" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="556.0" x="367.75" y="165.22" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="556.0" x="374.47" y="165.22" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="500.0" x="381.19" y="165.22" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="333.0" x="387.07" y="165.22" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="556.0" x="391.03" y="165.22" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="333.0" x="397.75" y="165.22" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="556.0" x="401.71" y="165.22" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="556.0" x="408.418" y="165.22" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="556.0" x="415.126" y="165.22" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="556.0" x="421.834" y="165.22" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="278.0" x="428.542" y="165.22" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="556.0" x="431.782" y="165.22" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="278.0" x="438.49" y="165.22" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="333.0" x="441.826" y="165.22" font-size="12.0">(</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="445.87" y="165.22" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="452.578" y="165.22" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="459.178" y="165.22" font-size="12.0" font-style="bold">2</text>
+ <text  stroke="#000000" svgx:width="333.0" x="465.94" y="165.22" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="278.0" x="469.9" y="165.22" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="93.624" y="196.9" font-size="12.0"> </text>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M190.002 243.927 L200.611 237.84 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M200.611 237.84 L211.198 243.927 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M201.803 235.81 L211.198 241.183 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M211.198 243.927 L221.784 237.84 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M221.784 237.84 L232.371 243.927 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M222.976 235.81 L232.371 241.183 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M232.371 243.927 L242.957 237.84 "/>
+ <text  stroke="#000000" svgx:width="778.0" x="239.826" y="228.892" font-size="7.916">O</text>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M241.765 238.554 L241.765 230.207 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M244.172 238.554 L244.172 230.207 "/>
+ <text  stroke="#000000" svgx:width="778.0" x="250.436" y="247.017" font-size="7.916">O</text>
+ <text  stroke="#000000" svgx:width="667.0" x="256.559" y="247.017" font-size="7.916">E</text>
+ <text  stroke="#000000" svgx:width="278.0" x="261.98" y="247.017" font-size="7.916">t</text>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M242.957 237.84 L250.061 241.897 "/>
+ <path stroke="black"  fill="#000000" stroke-width="0.8858299851417542" d="M354.406 238.923 L345.849 241.068 L346.951 238.923 L345.849 236.779 L354.406 238.923 Z"/>
+ <path fill="none"  stroke="#000000" stroke-width="0.14000000059604645" d="M347.065 239.292 L279.32 239.292 "/>
+ <path stroke="black"  fill="#000000" stroke-width="0.14000000059604645" d="M278.712 239.384 L346.951 239.384 L346.951 238.554 L278.712 238.554 L278.712 239.384 "/>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="288.228" y="246.417" font-size="6.361" font-style="bold">D</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="292.901" y="246.417" font-size="6.361" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="833.0" x="297.479" y="246.417" font-size="6.361" font-style="bold">M</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="302.902" y="246.417" font-size="6.361" font-style="bold">,</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="304.697" y="246.417" font-size="6.361" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="306.501" y="246.417" font-size="6.361" font-style="bold">0</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="400.0" x="310.006" y="246.417" font-size="6.361" font-style="bold">°</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="312.532" y="246.417" font-size="6.361" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="317.224" y="246.417" font-size="6.361" font-style="bold">,</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="319.028" y="246.417" font-size="6.361" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="320.823" y="246.417" font-size="6.361" font-style="bold">0</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="278.0" x="324.309" y="246.417" font-size="6.361" font-style="bold">.</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="326.132" y="246.417" font-size="6.361" font-style="bold">5</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="329.732" y="246.417" font-size="6.361" font-style="bold">h</text>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M369.925 244.873 L380.514 238.923 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M380.514 238.923 L391.237 244.873 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M391.237 244.873 L401.826 238.923 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M401.826 238.923 L412.407 244.873 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M403.014 236.779 L412.407 242.128 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M412.407 244.873 L422.996 238.923 "/>
+ <text  stroke="#000000" svgx:width="778.0" x="419.862" y="229.861" font-size="7.916">O</text>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M421.685 239.523 L421.685 231.175 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M424.212 239.523 L424.212 231.175 "/>
+ <text  stroke="#000000" svgx:width="778.0" x="430.452" y="248.1" font-size="7.916">O</text>
+ <text  stroke="#000000" svgx:width="667.0" x="436.596" y="248.1" font-size="7.916">E</text>
+ <text  stroke="#000000" svgx:width="278.0" x="442.019" y="248.1" font-size="7.916">t</text>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M422.996 238.923 L430.1 242.981 "/>
+ <text  stroke="#000000" svgx:width="778.0" x="387.989" y="235.925" font-size="7.916">O</text>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M380.514 238.923 L387.495 234.98 "/>
+ <path fill="none"  stroke="#000000" stroke-width="0.8858299851417542" d="M391.237 244.873 L391.237 237.24 "/>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="401.703" y="260.368" font-size="8.891" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="406.756" y="260.368" font-size="8.891" font-style="bold">7</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="411.685" y="260.368" font-size="8.891" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="217.578" y="258.938" font-size="8.891" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="222.625" y="258.938" font-size="8.891" font-style="bold">7</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="227.556" y="258.938" font-size="8.891" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="291.818" y="229.031" font-size="6.361" font-style="bold">H</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="296.52" y="230.461" font-size="3.97" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="298.695" y="229.031" font-size="6.361" font-style="bold">N</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="303.253" y="229.031" font-size="6.361" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="778.0" x="307.945" y="229.031" font-size="6.361" font-style="bold">O</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="312.874" y="229.031" font-size="6.361" font-style="bold">N</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="317.575" y="229.031" font-size="6.361" font-style="bold">H</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="322.153" y="230.461" font-size="3.97" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="1000.0" x="324.309" y="229.031" font-size="6.361" font-style="bold">&#8226;</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="326.598" y="229.031" font-size="6.361" font-style="bold">H</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="331.29" y="230.461" font-size="3.97" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="778.0" x="333.464" y="229.031" font-size="6.361" font-style="bold">O</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="338.517" y="230.461" font-size="3.97" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="295.067" y="221.628" font-size="6.361" font-style="bold">(</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="297.241" y="221.628" font-size="6.361" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="611.0" x="301.829" y="221.628" font-size="6.361" font-style="bold">F</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="305.77" y="223.058" font-size="3.97" font-style="bold">3</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="307.945" y="221.628" font-size="6.361" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="778.0" x="312.532" y="221.628" font-size="6.361" font-style="bold">O</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="333.0" x="317.575" y="221.628" font-size="6.361" font-style="bold">)</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="319.75" y="223.058" font-size="3.97" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="778.0" x="321.897" y="221.628" font-size="6.361" font-style="bold">O</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="298.922" y="236.064" font-size="6.361" font-style="bold">N</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="303.51" y="236.064" font-size="6.361" font-style="bold">a</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="306.986" y="237.494" font-size="3.97" font-style="bold">2</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="722.0" x="309.284" y="236.064" font-size="6.361" font-style="bold">H</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="667.0" x="313.833" y="236.064" font-size="6.361" font-style="bold">P</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="778.0" x="318.183" y="236.064" font-size="6.361" font-style="bold">O</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="556.0" x="323.112" y="237.494" font-size="3.97" font-style="bold">4</text>
+ <text  stroke="#000000" svgx:width="352.0" x="443.47" y="262.69" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="93.624" y="291.97" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="616.0" x="93.624" y="323.89" font-size="12.0">T</text>
+ <text  stroke="#000000" svgx:width="427.0" x="101.052" y="323.89" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="274.0" x="106.176" y="323.89" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="352.0" x="109.464" y="323.89" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="274.0" x="113.652" y="323.89" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="633.0" x="116.892" y="323.89" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="607.0" x="124.452" y="323.89" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="427.0" x="131.76" y="323.89" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="136.884" y="323.89" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="601.0" x="144.228" y="323.89" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="151.44" y="323.89" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="596.0" x="157.692" y="323.89" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="394.0" x="164.844" y="323.89" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="169.572" y="323.89" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="521.0" x="172.788" y="323.89" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="352.0" x="179.04" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="185.856" y="323.89" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="193.068" y="323.89" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="633.0" x="200.724" y="323.89" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="592.0" x="208.284" y="323.89" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="623.0" x="215.472" y="323.89" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="427.0" x="222.912" y="323.89" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="274.0" x="228.036" y="323.89" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="623.0" x="231.324" y="323.89" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="596.0" x="238.752" y="323.89" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="245.94" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="252.768" y="323.89" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="258.168" y="323.89" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="265.836" y="323.89" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="364.0" x="273.504" y="323.89" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="277.824" y="323.89" font-size="12.0">8</text>
+ <text  stroke="#000000" svgx:width="352.0" x="285.492" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="292.32" y="323.89" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="274.0" x="303.996" y="323.89" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="364.0" x="307.308" y="323.89" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="311.628" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="318.456" y="323.89" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="326.124" y="323.89" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="333.792" y="323.89" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="352.0" x="341.46" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="348.288" y="323.89" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="973.0" x="359.964" y="323.89" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="607.0" x="371.568" y="323.89" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="378.876" y="323.89" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="382.116" y="323.89" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="387.624" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="818.0" x="394.452" y="323.89" font-size="12.0">w</text>
+ <text  stroke="#000000" svgx:width="601.0" x="404.268" y="323.89" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="411.48" y="323.89" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="352.0" x="417.732" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="424.56" y="323.89" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="623.0" x="431.772" y="323.89" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="623.0" x="439.308" y="323.89" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="596.0" x="446.748" y="323.89" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="453.936" y="323.89" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="461.376" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="468.204" y="323.89" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="274.0" x="474.456" y="323.89" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="607.0" x="477.684" y="323.89" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="818.0" x="484.992" y="323.89" font-size="12.0">w</text>
+ <text  stroke="#000000" svgx:width="274.0" x="494.808" y="323.89" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="592.0" x="498.096" y="323.89" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="352.0" x="505.26" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="512.088" y="323.89" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="607.0" x="516.768" y="323.89" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="352.0" x="524.076" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="531.024" y="323.89" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.332" y="323.89" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="93.624" y="345.73" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="633.0" x="99.876" y="345.73" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="521.0" x="107.424" y="345.73" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="623.0" x="113.676" y="345.73" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="596.0" x="121.104" y="345.73" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="128.292" y="345.73" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="521.0" x="135.852" y="345.73" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="274.0" x="142.104" y="345.73" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="145.332" y="345.73" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="152.64" y="345.73" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="160.2" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="607.0" x="164.508" y="345.73" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="352.0" x="171.816" y="345.73" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="352.0" x="176.04" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="180.324" y="345.73" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="185.724" y="345.73" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="632.0" x="193.46" y="345.73" font-size="12.0" font-style="italic">E</text>
+ <text  stroke="#000000" svgx:width="364.0" x="201.05" y="345.73" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="636.0" x="205.37" y="345.73" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="632.0" x="213.17" y="345.73" font-size="12.0" font-style="italic">E</text>
+ <text  stroke="#000000" svgx:width="454.0" x="220.73" y="345.73" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="226.13" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="596.0" x="230.438" y="345.73" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="394.0" x="237.626" y="345.73" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="242.306" y="345.73" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="592.0" x="249.866" y="345.73" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="274.0" x="256.97" y="345.73" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="352.0" x="260.186" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="633.0" x="264.494" y="345.73" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="272.054" y="345.73" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="592.0" x="279.242" y="345.73" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="601.0" x="286.346" y="345.73" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="454.0" x="293.69" y="345.73" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="636.0" x="299.09" y="345.73" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="306.758" y="345.73" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="636.0" x="311.078" y="345.73" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="454.0" x="318.77" y="345.73" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="623.0" x="324.17" y="345.73" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="274.0" x="331.61" y="345.73" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="596.0" x="334.958" y="345.73" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="342.146" y="345.73" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="607.0" x="349.706" y="345.73" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="601.0" x="357.014" y="345.73" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="364.226" y="345.73" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="596.0" x="368.894" y="345.73" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="376.082" y="345.73" font-size="12.0"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="380.47" y="345.73" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="388.99" y="345.73" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="397.51" y="345.73" font-size="12.0" font-style="bold">1</text>
+ <text  stroke="#000000" svgx:width="352.0" x="406.03" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="410.35" y="345.73" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="415.75" y="345.73" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="423.418" y="345.73" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="427.738" y="345.73" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="636.0" x="435.406" y="345.73" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="352.0" x="443.074" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="447.382" y="345.73" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="364.0" x="454.702" y="345.73" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="459.022" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="463.33" y="345.73" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="470.998" y="345.73" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="478.666" y="345.73" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="482.986" y="345.73" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="352.0" x="490.654" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="494.962" y="345.73" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="973.0" x="506.638" y="345.73" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="607.0" x="518.242" y="345.73" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="525.55" y="345.73" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="528.79" y="345.73" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="534.19" y="345.73" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.618" y="345.73" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="633.0" x="93.624" y="367.57" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="427.0" x="101.184" y="367.57" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="106.308" y="367.57" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="601.0" x="113.532" y="367.57" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="352.0" x="120.744" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="633.0" x="129.24" y="367.57" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="592.0" x="136.8" y="367.57" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="623.0" x="143.904" y="367.57" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="427.0" x="151.32" y="367.57" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="156.444" y="367.57" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="623.0" x="163.788" y="367.57" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="596.0" x="171.228" y="367.57" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="178.416" y="367.57" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="185.976" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="194.484" y="367.57" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="596.0" x="201.924" y="367.57" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="427.0" x="209.112" y="367.57" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="214.152" y="367.57" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="592.0" x="221.46" y="367.57" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="274.0" x="228.564" y="367.57" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="623.0" x="231.78" y="367.57" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="596.0" x="239.22" y="367.57" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="246.408" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="254.916" y="367.57" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="623.0" x="262.128" y="367.57" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="623.0" x="269.556" y="367.57" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="274.0" x="276.996" y="367.57" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="394.0" x="280.236" y="367.57" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="285.024" y="367.57" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="288.264" y="367.57" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="295.572" y="367.57" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="303.132" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="311.64" y="367.57" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="607.0" x="317.892" y="367.57" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="973.0" x="325.176" y="367.57" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="623.0" x="336.852" y="367.57" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="607.0" x="344.28" y="367.57" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="351.588" y="367.57" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="633.0" x="359.148" y="367.57" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="366.708" y="367.57" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="374.148" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="382.656" y="367.57" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="388.056" y="367.57" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="395.724" y="367.57" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="403.392" y="367.57" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="407.712" y="367.57" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="352.0" x="415.38" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="423.888" y="367.57" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="364.0" x="431.328" y="367.57" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="435.648" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="444.276" y="367.57" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="451.944" y="367.57" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="456.264" y="367.57" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="463.932" y="367.57" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="352.0" x="471.6" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="480.108" y="367.57" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="607.0" x="491.784" y="367.57" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="499.068" y="367.57" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="502.308" y="367.57" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="507.708" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="516.216" y="367.57" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="523.428" y="367.57" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="530.976" y="367.57" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.416" y="367.57" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="93.624" y="389.53" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="274.0" x="101.064" y="389.53" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="521.0" x="104.304" y="389.53" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="607.0" x="110.556" y="389.53" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="623.0" x="117.84" y="389.53" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="274.0" x="125.316" y="389.53" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="633.0" x="128.652" y="389.53" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="973.0" x="136.212" y="389.53" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="352.0" x="147.888" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="633.0" x="154.32" y="389.53" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="592.0" x="161.988" y="389.53" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="623.0" x="169.092" y="389.53" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="427.0" x="176.508" y="389.53" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="181.632" y="389.53" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="623.0" x="188.976" y="389.53" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="596.0" x="196.416" y="389.53" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="203.604" y="389.53" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="211.164" y="389.53" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="633.0" x="218.604" y="389.53" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="607.0" x="226.164" y="389.53" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="521.0" x="233.472" y="389.53" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="623.0" x="239.724" y="389.53" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="633.0" x="247.152" y="389.53" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="601.0" x="254.712" y="389.53" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="261.924" y="389.53" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="596.0" x="266.592" y="389.53" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="273.78" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="280.368" y="389.53" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="285.768" y="389.53" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="636.0" x="293.436" y="389.53" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="301.104" y="389.53" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="305.424" y="389.53" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="352.0" x="313.092" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="319.56" y="389.53" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="364.0" x="327.0" y="389.53" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="331.428" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="337.896" y="389.53" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="345.564" y="389.53" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="636.0" x="353.232" y="389.53" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="352.0" x="360.9" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="367.368" y="389.53" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="973.0" x="379.044" y="389.53" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="607.0" x="390.648" y="389.53" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="397.956" y="389.53" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="401.196" y="389.53" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="406.596" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="274.0" x="413.064" y="389.53" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="633.0" x="416.304" y="389.53" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="423.864" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="771.0" x="430.332" y="389.53" font-size="12.0">D</text>
+ <text  stroke="#000000" svgx:width="698.0" x="439.584" y="389.53" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="843.0" x="448.08" y="389.53" font-size="12.0">M</text>
+ <text  stroke="#000000" svgx:width="352.0" x="458.16" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="464.628" y="389.53" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="470.028" y="389.53" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="636.0" x="477.696" y="389.53" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="636.0" x="485.364" y="389.53" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="352.0" x="493.032" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="499.5" y="389.53" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="274.0" x="511.176" y="389.53" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="514.38" y="389.53" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="519.78" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="526.248" y="389.53" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="533.556" y="389.53" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.344" y="389.53" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="93.624" y="411.37" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="542.0" x="101.292" y="411.37" font-size="12.0">°</text>
+ <text  stroke="#000000" svgx:width="698.0" x="107.796" y="411.37" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="364.0" x="116.172" y="411.37" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="352.0" x="120.492" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="684.0" x="125.88" y="411.37" font-size="12.0">A</text>
+ <text  stroke="#000000" svgx:width="352.0" x="134.04" y="411.37" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="394.0" x="138.264" y="411.37" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="596.0" x="142.92" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="427.0" x="150.108" y="411.37" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="352.0" x="155.232" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="427.0" x="160.656" y="411.37" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="165.78" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="973.0" x="173.004" y="411.37" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="607.0" x="184.68" y="411.37" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="592.0" x="191.964" y="411.37" font-size="12.0">v</text>
+ <text  stroke="#000000" svgx:width="274.0" x="199.068" y="411.37" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="633.0" x="202.284" y="411.37" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="209.844" y="411.37" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="352.0" x="217.284" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="222.672" y="411.37" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="427.0" x="226.896" y="411.37" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="232.02" y="411.37" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="973.0" x="239.34" y="411.37" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="352.0" x="251.016" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="256.368" y="411.37" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="261.048" y="411.37" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="268.608" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="275.796" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="274.0" x="281.184" y="411.37" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="521.0" x="284.424" y="411.37" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="596.0" x="290.676" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="297.828" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="303.252" y="411.37" font-size="12.0">b</text>
+ <text  stroke="#000000" svgx:width="601.0" x="310.692" y="411.37" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="317.904" y="411.37" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="322.572" y="411.37" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="364.0" x="330.24" y="411.37" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="334.56" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="339.948" y="411.37" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="344.628" y="411.37" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="352.188" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="359.376" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="427.0" x="364.764" y="411.37" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="369.888" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="601.0" x="377.112" y="411.37" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="384.324" y="411.37" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="394.0" x="390.576" y="411.37" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="395.232" y="411.37" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="398.472" y="411.37" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="405.78" y="411.37" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="413.34" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="418.728" y="411.37" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="274.0" x="430.404" y="411.37" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="592.0" x="433.608" y="411.37" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="394.0" x="440.712" y="411.37" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="445.75" y="411.37" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="427.0" x="453.31" y="411.37" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="458.434" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="465.658" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="818.0" x="471.046" y="411.37" font-size="12.0">w</text>
+ <text  stroke="#000000" svgx:width="601.0" x="480.862" y="411.37" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="488.074" y="411.37" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="352.0" x="494.326" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="499.714" y="411.37" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="394.0" x="505.966" y="411.37" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="510.634" y="411.37" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="427.0" x="513.874" y="411.37" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="427.0" x="518.998" y="411.37" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="524.182" y="411.37" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="531.37" y="411.37" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.69" y="411.37" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="93.624" y="433.23" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="100.836" y="433.23" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="352.0" x="105.504" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="427.0" x="110.412" y="433.23" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="394.0" x="115.536" y="433.23" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="352.0" x="120.264" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="125.16" y="433.23" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="607.0" x="129.384" y="433.23" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="427.0" x="136.668" y="433.23" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="352.0" x="141.828" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="146.736" y="433.23" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="154.296" y="433.23" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="352.0" x="161.964" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="166.872" y="433.23" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="274.0" x="178.548" y="433.23" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="633.0" x="181.752" y="433.23" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="189.312" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="194.22" y="433.23" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="201.432" y="433.23" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="208.98" y="433.23" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="216.42" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="221.328" y="433.23" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="226.008" y="433.23" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="233.568" y="433.23" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="240.756" y="433.23" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="248.316" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="253.224" y="433.23" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="601.0" x="259.476" y="433.23" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="266.688" y="433.23" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="394.0" x="274.224" y="433.23" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="279.012" y="433.23" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="282.252" y="433.23" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="289.56" y="433.23" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="521.0" x="297.12" y="433.23" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="274.0" x="303.372" y="433.23" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="592.0" x="306.6" y="433.23" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="352.0" x="313.704" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="318.588" y="433.23" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="607.0" x="326.136" y="433.23" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="333.444" y="433.23" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="427.0" x="341.004" y="433.23" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="346.128" y="433.23" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="353.352" y="433.23" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="360.792" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="274.0" x="365.7" y="433.23" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="633.0" x="368.94" y="433.23" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="394.0" x="376.5" y="433.23" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="607.0" x="381.18" y="433.23" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="352.0" x="388.488" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="393.396" y="433.23" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="352.0" x="400.608" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="592.0" x="405.504" y="433.23" font-size="12.0">v</text>
+ <text  stroke="#000000" svgx:width="274.0" x="412.608" y="433.23" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="623.0" x="415.824" y="433.23" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="607.0" x="423.264" y="433.23" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="427.0" x="430.572" y="433.23" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="435.696" y="433.23" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="443.04" y="433.23" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="521.0" x="450.6" y="433.23" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="274.0" x="456.852" y="433.23" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="592.0" x="460.08" y="433.23" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="352.0" x="467.184" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="472.068" y="433.23" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="394.0" x="478.32" y="433.23" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="483.096" y="433.23" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="427.0" x="486.336" y="433.23" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="427.0" x="491.46" y="433.23" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="496.644" y="433.23" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="503.832" y="433.23" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="511.272" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="516.18" y="433.23" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="523.392" y="433.23" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="530.94" y="433.23" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.38" y="433.23" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="93.624" y="455.19" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="427.0" x="101.064" y="455.19" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="106.188" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="521.0" x="113.412" y="455.19" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="607.0" x="119.664" y="455.19" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="607.0" x="126.948" y="455.19" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="134.28" y="455.19" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="596.0" x="137.52" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="144.708" y="455.19" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="152.148" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="158.616" y="455.19" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="164.016" y="455.19" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="542.0" x="171.684" y="455.19" font-size="12.0">°</text>
+ <text  stroke="#000000" svgx:width="698.0" x="178.188" y="455.19" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="454.0" x="186.564" y="455.19" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="191.964" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="198.432" y="455.19" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="607.0" x="204.684" y="455.19" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="211.968" y="455.19" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="633.0" x="215.34" y="455.19" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="394.0" x="222.9" y="455.19" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="227.58" y="455.19" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="230.82" y="455.19" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="238.128" y="455.19" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="245.688" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="607.0" x="252.156" y="455.19" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="352.0" x="259.464" y="455.19" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="352.0" x="263.772" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="748.0" x="270.24" y="455.19" font-size="12.0">N</text>
+ <text  stroke="#000000" svgx:width="601.0" x="279.216" y="455.19" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="751.0" x="286.428" y="455.19" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="698.0" x="295.44" y="455.19" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="787.0" x="303.816" y="455.19" font-size="12.0">O</text>
+ <text  stroke="#000000" svgx:width="636.0" x="313.49" y="456.75" font-size="8.04">3</text>
+ <text  stroke="#000000" svgx:width="352.0" x="318.65" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="325.13" y="455.19" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="330.53" y="455.19" font-size="12.0">8</text>
+ <text  stroke="#000000" svgx:width="636.0" x="338.198" y="455.19" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="345.866" y="455.19" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="352.0" x="353.534" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="360.002" y="455.19" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="274.0" x="371.678" y="455.19" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="374.882" y="455.19" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="380.282" y="455.19" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="352.0" x="384.602" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="684.0" x="391.19" y="455.19" font-size="12.0">A</text>
+ <text  stroke="#000000" svgx:width="352.0" x="399.35" y="455.19" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="394.0" x="403.574" y="455.19" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="596.0" x="408.23" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="427.0" x="415.418" y="455.19" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="352.0" x="420.542" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="596.0" x="427.046" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="434.234" y="455.19" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="352.0" x="438.458" y="455.19" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="596.0" x="442.634" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="427.0" x="449.822" y="455.19" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="592.0" x="454.946" y="455.19" font-size="12.0">v</text>
+ <text  stroke="#000000" svgx:width="596.0" x="462.05" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="521.0" x="469.25" y="455.19" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="521.0" x="475.502" y="455.19" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="596.0" x="481.754" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="488.906" y="455.19" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="521.0" x="496.502" y="455.19" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="596.0" x="502.754" y="455.19" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="509.906" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="633.0" x="516.398" y="455.19" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="601.0" x="523.958" y="455.19" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="623.0" x="531.17" y="455.19" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.598" y="455.19" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="93.624" y="477.03" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="596.0" x="99.876" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="601.0" x="107.028" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="114.24" y="477.03" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="596.0" x="120.492" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="127.692" y="477.03" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="364.0" x="135.132" y="477.03" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="139.452" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="148.56" y="477.03" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="153.24" y="477.03" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="160.8" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="167.988" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="177.096" y="477.03" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="633.0" x="184.536" y="477.03" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="601.0" x="192.096" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="199.308" y="477.03" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="596.0" x="205.56" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="521.0" x="212.712" y="477.03" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="352.0" x="218.964" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="818.0" x="228.084" y="477.03" font-size="12.0">w</text>
+ <text  stroke="#000000" svgx:width="596.0" x="237.9" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="427.0" x="245.112" y="477.03" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="250.152" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="257.34" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="266.448" y="477.03" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="596.0" x="272.7" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="279.852" y="477.03" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="601.0" x="287.328" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="427.0" x="294.54" y="477.03" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="601.0" x="299.664" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="306.876" y="477.03" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="596.0" x="311.568" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="318.756" y="477.03" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="326.196" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="335.184" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="342.396" y="477.03" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="349.944" y="477.03" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="357.384" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="366.492" y="477.03" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="371.172" y="477.03" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="378.732" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="385.92" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="607.0" x="395.028" y="477.03" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="427.0" x="402.336" y="477.03" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="623.0" x="407.46" y="477.03" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="601.0" x="414.936" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="422.148" y="477.03" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="274.0" x="429.696" y="477.03" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="521.0" x="432.936" y="477.03" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="352.0" x="439.188" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="448.284" y="477.03" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="633.0" x="455.832" y="477.03" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="601.0" x="463.392" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="470.604" y="477.03" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="596.0" x="476.856" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="484.008" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="818.0" x="493.14" y="477.03" font-size="12.0">w</text>
+ <text  stroke="#000000" svgx:width="601.0" x="502.956" y="477.03" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="510.168" y="477.03" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="633.0" x="516.42" y="477.03" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="523.98" y="477.03" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="531.168" y="477.03" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.488" y="477.03" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="93.624" y="498.87" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="596.0" x="99.876" y="498.87" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="107.028" y="498.87" font-size="12.0">q</text>
+ <text  stroke="#000000" svgx:width="633.0" x="114.504" y="498.87" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="596.0" x="122.064" y="498.87" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="129.252" y="498.87" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="394.0" x="136.812" y="498.87" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="141.492" y="498.87" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="601.0" x="144.732" y="498.87" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="274.0" x="151.944" y="498.87" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="274.0" x="155.28" y="498.87" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="592.0" x="158.52" y="498.87" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="352.0" x="165.624" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="818.0" x="171.348" y="498.87" font-size="12.0">w</text>
+ <text  stroke="#000000" svgx:width="274.0" x="181.164" y="498.87" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="394.0" x="184.452" y="498.87" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="189.216" y="498.87" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="352.0" x="196.776" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="748.0" x="202.524" y="498.87" font-size="12.0">N</text>
+ <text  stroke="#000000" svgx:width="601.0" x="211.5" y="498.87" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="751.0" x="218.712" y="498.87" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="698.0" x="227.724" y="498.87" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="787.0" x="236.1" y="498.87" font-size="12.0">O</text>
+ <text  stroke="#000000" svgx:width="636.0" x="245.69" y="500.43" font-size="8.04">3</text>
+ <text  stroke="#000000" svgx:width="352.0" x="250.85" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="256.61" y="498.87" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="607.0" x="262.862" y="498.87" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="270.146" y="498.87" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="633.0" x="273.434" y="498.87" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="394.0" x="280.97" y="498.87" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="285.65" y="498.87" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="288.89" y="498.87" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="296.198" y="498.87" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="303.758" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="309.53" y="498.87" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="314.93" y="498.87" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="352.0" x="322.598" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="592.0" x="328.226" y="498.87" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="352.0" x="335.33" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="341.054" y="498.87" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="348.722" y="498.87" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="356.282" y="498.87" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="352.0" x="363.95" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="369.698" y="498.87" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="274.0" x="381.374" y="498.87" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="384.578" y="498.87" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="389.978" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="395.726" y="498.87" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="402.938" y="498.87" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="410.486" y="498.87" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="417.926" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="748.0" x="423.674" y="498.87" font-size="12.0">N</text>
+ <text  stroke="#000000" svgx:width="601.0" x="432.65" y="498.87" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="698.0" x="439.862" y="498.87" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="274.0" x="448.262" y="498.87" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="352.0" x="451.502" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="457.25" y="498.87" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="607.0" x="463.502" y="498.87" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="470.786" y="498.87" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="633.0" x="474.074" y="498.87" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="394.0" x="481.61" y="498.87" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="486.29" y="498.87" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="489.53" y="498.87" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="496.838" y="498.87" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="504.398" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="510.146" y="498.87" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="515.546" y="498.87" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="523.214" y="498.87" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="530.882" y="498.87" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.55" y="498.87" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="93.624" y="520.83" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="274.0" x="105.3" y="520.83" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="108.504" y="520.83" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="114.012" y="520.83" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="118.332" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="122.88" y="520.83" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="427.0" x="130.32" y="520.83" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="274.0" x="135.444" y="520.83" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="596.0" x="138.732" y="520.83" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="145.908" y="520.83" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="153.348" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="158.016" y="520.83" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="843.0" x="163.416" y="520.83" font-size="12.0">M</text>
+ <text  stroke="#000000" svgx:width="623.0" x="173.496" y="520.83" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="684.0" x="181.044" y="520.83" font-size="12.0">S</text>
+ <text  stroke="#000000" svgx:width="787.0" x="189.204" y="520.83" font-size="12.0">O</text>
+ <text  stroke="#000000" svgx:width="636.0" x="198.74" y="522.39" font-size="8.04">4</text>
+ <text  stroke="#000000" svgx:width="454.0" x="203.93" y="520.83" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="209.33" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="213.998" y="520.83" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="633.0" x="221.21" y="520.83" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="623.0" x="228.758" y="520.83" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="236.198" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="240.746" y="520.83" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="274.0" x="245.054" y="520.83" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="274.0" x="248.294" y="520.83" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="394.0" x="251.534" y="520.83" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="596.0" x="256.214" y="520.83" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="427.0" x="263.402" y="520.83" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="596.0" x="268.526" y="520.83" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="275.75" y="520.83" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="364.0" x="283.19" y="520.83" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="352.0" x="287.51" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="698.0" x="292.058" y="520.83" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="607.0" x="300.434" y="520.83" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="307.766" y="520.83" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="521.0" x="315.326" y="520.83" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="596.0" x="321.578" y="520.83" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="328.73" y="520.83" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="394.0" x="336.434" y="520.83" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="427.0" x="341.114" y="520.83" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="601.0" x="346.238" y="520.83" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="353.45" y="520.83" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="274.0" x="358.178" y="520.83" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="607.0" x="361.394" y="520.83" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="368.702" y="520.83" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="376.262" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="274.0" x="381.07" y="520.83" font-size="12.0" font-style="italic">i</text>
+ <text  stroke="#000000" svgx:width="633.0" x="384.31" y="520.83" font-size="12.0" font-style="italic">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="391.87" y="520.83" font-size="12.0" font-style="italic"> </text>
+ <text  stroke="#000000" svgx:width="591.0" x="396.418" y="520.83" font-size="12.0" font-style="italic">v</text>
+ <text  stroke="#000000" svgx:width="601.0" x="403.606" y="520.83" font-size="12.0" font-style="italic">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="410.818" y="520.83" font-size="12.0" font-style="italic">c</text>
+ <text  stroke="#000000" svgx:width="633.0" x="417.07" y="520.83" font-size="12.0" font-style="italic">u</text>
+ <text  stroke="#000000" svgx:width="607.0" x="424.606" y="520.83" font-size="12.0" font-style="italic">o</text>
+ <text  stroke="#000000" svgx:width="352.0" x="431.95" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="436.51" y="520.83" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="607.0" x="440.734" y="520.83" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="448.018" y="520.83" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="274.0" x="451.378" y="520.83" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="607.0" x="454.726" y="520.83" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="818.0" x="462.034" y="520.83" font-size="12.0">w</text>
+ <text  stroke="#000000" svgx:width="596.0" x="471.85" y="520.83" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="479.062" y="520.83" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="486.502" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="491.05" y="520.83" font-size="12.0">b</text>
+ <text  stroke="#000000" svgx:width="592.0" x="498.49" y="520.83" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="352.0" x="505.594" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="510.118" y="520.83" font-size="12.0">f</text>
+ <text  stroke="#000000" svgx:width="274.0" x="514.342" y="520.83" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="601.0" x="517.558" y="520.83" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="524.77" y="520.83" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="633.0" x="531.106" y="520.83" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.666" y="520.83" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="93.624" y="542.67" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="607.0" x="99.876" y="542.67" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="107.16" y="542.67" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="633.0" x="110.448" y="542.67" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="973.0" x="117.984" y="542.67" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="633.0" x="129.66" y="542.67" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="352.0" x="137.184" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="142.452" y="542.67" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="633.0" x="148.704" y="542.67" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="427.0" x="156.252" y="542.67" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="161.376" y="542.67" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="973.0" x="168.72" y="542.67" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="601.0" x="180.396" y="542.67" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="394.0" x="187.56" y="542.67" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="607.0" x="192.24" y="542.67" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="623.0" x="199.548" y="542.67" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="427.0" x="206.988" y="542.67" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="601.0" x="212.256" y="542.67" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="623.0" x="219.468" y="542.67" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="633.0" x="226.896" y="542.67" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="592.0" x="234.456" y="542.67" font-size="12.0">y</text>
+ <text  stroke="#000000" svgx:width="352.0" x="241.56" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="246.804" y="542.67" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="596.0" x="252.204" y="542.67" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="274.0" x="259.392" y="542.67" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="633.0" x="262.632" y="542.67" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="596.0" x="270.192" y="542.67" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="633.0" x="277.38" y="542.67" font-size="12.0">n</text>
+ <text  stroke="#000000" svgx:width="394.0" x="284.94" y="542.67" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="352.0" x="289.728" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="603.0" x="294.876" y="542.67" font-size="12.0">P</text>
+ <text  stroke="#000000" svgx:width="632.0" x="302.076" y="542.67" font-size="12.0">E</text>
+ <text  stroke="#000000" svgx:width="454.0" x="309.744" y="542.67" font-size="12.0">:</text>
+ <text  stroke="#000000" svgx:width="632.0" x="315.144" y="542.67" font-size="12.0">E</text>
+ <text  stroke="#000000" svgx:width="394.0" x="322.728" y="542.67" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="636.0" x="327.53" y="544.23" font-size="8.04">2</text>
+ <text  stroke="#000000" svgx:width="787.0" x="332.83" y="542.67" font-size="12.0">O</text>
+ <text  stroke="#000000" svgx:width="352.0" x="342.274" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="347.458" y="542.67" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="454.0" x="355.126" y="542.67" font-size="12.0">:</text>
+ <text  stroke="#000000" svgx:width="636.0" x="360.526" y="542.67" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="454.0" x="368.194" y="542.67" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="373.594" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="378.742" y="542.67" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="427.0" x="386.182" y="542.67" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="607.0" x="391.306" y="542.67" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="592.0" x="398.65" y="542.67" font-size="12.0">v</text>
+ <text  stroke="#000000" svgx:width="274.0" x="405.754" y="542.67" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="623.0" x="408.97" y="542.67" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="596.0" x="416.41" y="542.67" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="423.598" y="542.67" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="352.0" x="431.038" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="436.306" y="542.67" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="633.0" x="440.986" y="542.67" font-size="12.0">h</text>
+ <text  stroke="#000000" svgx:width="596.0" x="448.654" y="542.67" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="455.842" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="596.0" x="460.99" y="542.67" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="623.0" x="468.178" y="542.67" font-size="12.0">p</text>
+ <text  stroke="#000000" svgx:width="607.0" x="475.618" y="542.67" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="592.0" x="482.926" y="542.67" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="274.0" x="490.03" y="542.67" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="623.0" x="493.246" y="542.67" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="596.0" x="500.686" y="542.67" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="352.0" x="507.874" y="542.67" font-size="12.0"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="513.22" y="542.67" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="521.74" y="542.67" font-size="12.0" font-style="bold">7</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="530.26" y="542.67" font-size="12.0" font-style="bold">2</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.78" y="542.67" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="93.624" y="564.51" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="99.024" y="564.51" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="106.692" y="564.51" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="111.012" y="564.51" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="118.68" y="564.51" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="352.0" x="126.348" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="133.536" y="564.51" font-size="12.0">g</text>
+ <text  stroke="#000000" svgx:width="364.0" x="140.976" y="564.51" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="145.296" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="152.484" y="564.51" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="352.0" x="160.152" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="973.0" x="167.34" y="564.51" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="973.0" x="179.016" y="564.51" font-size="12.0">m</text>
+ <text  stroke="#000000" svgx:width="607.0" x="190.62" y="564.51" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="197.928" y="564.51" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="364.0" x="201.276" y="564.51" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="205.596" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="212.904" y="564.51" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="636.0" x="220.572" y="564.51" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="1076.0" x="228.24" y="564.51" font-size="12.0">%</text>
+ <text  stroke="#000000" svgx:width="454.0" x="241.188" y="564.51" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="352.0" x="246.588" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="253.776" y="564.51" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="521.0" x="260.988" y="564.51" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="352.0" x="267.24" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="601.0" x="274.404" y="564.51" font-size="12.0">a</text>
+ <text  stroke="#000000" svgx:width="352.0" x="281.616" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="521.0" x="288.792" y="564.51" font-size="12.0">c</text>
+ <text  stroke="#000000" svgx:width="607.0" x="295.044" y="564.51" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="302.328" y="564.51" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="607.0" x="305.616" y="564.51" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="633.0" x="312.9" y="564.51" font-size="12.0">u</text>
+ <text  stroke="#000000" svgx:width="427.0" x="320.496" y="564.51" font-size="12.0">r</text>
+ <text  stroke="#000000" svgx:width="274.0" x="325.62" y="564.51" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="596.0" x="328.98" y="564.51" font-size="12.0">e</text>
+ <text  stroke="#000000" svgx:width="521.0" x="336.168" y="564.51" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="521.0" x="342.42" y="564.51" font-size="12.0">s</text>
+ <text  stroke="#000000" svgx:width="352.0" x="348.672" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="607.0" x="355.836" y="564.51" font-size="12.0">o</text>
+ <text  stroke="#000000" svgx:width="274.0" x="363.144" y="564.51" font-size="12.0">i</text>
+ <text  stroke="#000000" svgx:width="274.0" x="366.384" y="564.51" font-size="12.0">l</text>
+ <text  stroke="#000000" svgx:width="454.0" x="369.624" y="564.51" font-size="12.0">;</text>
+ <text  stroke="#000000" svgx:width="352.0" x="375.024" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" font-family="Symbol" svgx:fontName="ymbol" svgx:width="1000.0" x="382.51" y="564.51" font-size="12.0">&#61550;</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="1058.0" x="388.99" y="566.07" font-size="8.04" font-style="bold">m</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="668.0" x="397.496" y="566.07" font-size="8.04" font-style="bold">a</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="669.0" x="402.787" y="566.07" font-size="8.04" font-style="bold">x</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="408.19" y="564.51" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="415.27" y="564.51" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="422.0" x="421.786" y="564.51" font-size="12.0" font-style="bold">f</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="426.79" y="564.51" font-size="12.0" font-style="bold">i</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="430.894" y="564.51" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="1058.0" x="434.95" y="564.51" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="447.646" y="564.51" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="689.0" x="454.162" y="564.51" font-size="12.0" font-style="bold">/</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="588.0" x="462.43" y="564.51" font-size="12.0" font-style="bold">c</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="1058.0" x="469.486" y="564.51" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="480.0" x="482.26" y="558.99" font-size="8.04" font-style="bold">-</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="486.1" y="558.99" font-size="8.04" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="402.0" x="491.86" y="564.51" font-size="12.0" font-style="bold">:</text>
+ <text  stroke="#000000" svgx:width="352.0" x="496.66" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="503.86" y="564.51" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="636.0" x="511.528" y="564.51" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="636.0" x="519.196" y="564.51" font-size="12.0">8</text>
+ <text  stroke="#000000" svgx:width="636.0" x="526.756" y="564.51" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="534.424" y="564.51" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.744" y="564.51" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="93.624" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="101.292" y="586.59" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="636.0" x="108.96" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="116.52" y="586.59" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="352.0" x="124.188" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="129.696" y="586.59" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="698.0" x="135.096" y="586.59" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="818.0" x="143.472" y="586.59" font-size="12.0">=</text>
+ <text  stroke="#000000" svgx:width="787.0" x="153.324" y="586.59" font-size="12.0">O</text>
+ <text  stroke="#000000" svgx:width="454.0" x="162.768" y="586.59" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="168.216" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="172.58" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="178.1" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="185.768" y="586.59" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="636.0" x="193.328" y="586.59" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="636.0" x="200.996" y="586.59" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="352.0" x="208.664" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="214.052" y="586.59" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="698.0" x="219.452" y="586.59" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="818.0" x="227.828" y="586.59" font-size="12.0">=</text>
+ <text  stroke="#000000" svgx:width="698.0" x="237.68" y="586.59" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="454.0" x="246.056" y="586.59" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="251.504" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="255.8" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="261.308" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="268.976" y="586.59" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="636.0" x="276.644" y="586.59" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="636.0" x="284.312" y="586.59" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="364.0" x="291.98" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="296.3" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="301.808" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="309.368" y="586.59" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="317.036" y="586.59" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="636.0" x="324.704" y="586.59" font-size="12.0">8</text>
+ <text  stroke="#000000" svgx:width="364.0" x="332.372" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="336.572" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="342.08" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="349.748" y="586.59" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="357.416" y="586.59" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="636.0" x="364.976" y="586.59" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="372.644" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="376.964" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="382.472" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="390.14" y="586.59" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="397.7" y="586.59" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="636.0" x="405.368" y="586.59" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="413.036" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="417.356" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="422.864" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="430.424" y="586.59" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="438.092" y="586.59" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="445.652" y="586.59" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="453.32" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="457.64" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="463.148" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="470.816" y="586.59" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="636.0" x="478.484" y="586.59" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="636.0" x="486.044" y="586.59" font-size="12.0">8</text>
+ <text  stroke="#000000" svgx:width="364.0" x="493.712" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="498.032" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="503.54" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="511.208" y="586.59" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="518.768" y="586.59" font-size="12.0">8</text>
+ <text  stroke="#000000" svgx:width="636.0" x="526.436" y="586.59" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="534.104" y="586.59" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.304" y="586.59" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="93.624" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="101.292" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="108.96" y="608.43" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="636.0" x="116.52" y="608.43" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="124.188" y="608.43" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="128.508" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="133.056" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="140.724" y="608.43" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="148.284" y="608.43" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="636.0" x="155.952" y="608.43" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="364.0" x="163.62" y="608.43" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="167.94" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="172.488" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="180.048" y="608.43" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="187.716" y="608.43" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="636.0" x="195.384" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="203.052" y="608.43" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="207.372" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="211.8" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="219.468" y="608.43" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="227.136" y="608.43" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="234.696" y="608.43" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="242.364" y="608.43" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="246.684" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="251.232" y="608.43" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="636.0" x="258.9" y="608.43" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="636.0" x="266.46" y="608.43" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="454.0" x="274.128" y="608.43" font-size="12.0">;</text>
+ <text  stroke="#000000" svgx:width="352.0" x="279.528" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" font-family="Symbol" svgx:fontName="ymbol" svgx:width="1000.0" x="284.33" y="608.43" font-size="12.0">&#61540;</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="837.0" x="290.21" y="609.99" font-size="8.04" font-style="bold">H</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="296.93" y="608.43" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="301.37" y="608.43" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="307.886" y="608.43" font-size="12.0" font-style="bold">4</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="316.37" y="608.43" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="324.902" y="608.43" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="333.518" y="608.43" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="948.0" x="337.946" y="608.43" font-size="12.0" font-style="bold">M</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="837.0" x="349.322" y="608.43" font-size="12.0" font-style="bold">H</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="597.0" x="359.414" y="608.43" font-size="12.0" font-style="bold">z</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="361.0" x="366.578" y="608.43" font-size="12.0" font-style="bold">,</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="370.91" y="608.43" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="724.0" x="375.362" y="608.43" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="830.0" x="384.002" y="608.43" font-size="12.0" font-style="bold">D</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="724.0" x="393.962" y="608.43" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="402.602" y="608.43" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="406.75" y="609.99" font-size="8.04" font-style="bold">3</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="412.51" y="608.43" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="402.0" x="418.99" y="608.43" font-size="12.0" font-style="bold">:</text>
+ <text  stroke="#000000" svgx:width="352.0" x="423.79" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="428.35" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="436.018" y="608.43" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="440.338" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="448.006" y="608.43" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="352.0" x="455.566" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="460.114" y="608.43" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="465.514" y="608.43" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="751.0" x="473.182" y="608.43" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="364.0" x="482.194" y="608.43" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="486.502" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="394.0" x="491.05" y="608.43" font-size="12.0">t</text>
+ <text  stroke="#000000" svgx:width="364.0" x="495.73" y="608.43" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="500.05" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="455.0" x="504.82" y="608.43" font-size="12.0" font-style="italic">J</text>
+ <text  stroke="#000000" svgx:width="352.0" x="510.22" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="514.78" y="608.43" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="522.448" y="608.43" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="526.768" y="608.43" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="534.436" y="608.43" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.756" y="608.43" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="787.0" x="93.624" y="630.54" font-size="12.0">O</text>
+ <text  stroke="#000000" svgx:width="698.0" x="103.068" y="630.54" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="751.0" x="111.492" y="630.54" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="636.0" x="120.5" y="632.1" font-size="8.04">2</text>
+ <text  stroke="#000000" svgx:width="698.0" x="125.66" y="630.54" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="751.0" x="134.06" y="630.54" font-size="12.0" font-style="italic">H</text>
+ <text  stroke="#000000" svgx:width="636.0" x="142.94" y="632.1" font-size="8.04">3</text>
+ <text  stroke="#000000" svgx:width="454.0" x="148.1" y="630.54" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="153.5" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="157.82" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="163.208" y="630.54" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="170.876" y="630.54" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="175.196" y="630.54" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="636.0" x="182.864" y="630.54" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="352.0" x="190.532" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="195.92" y="630.54" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="201.32" y="630.54" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="751.0" x="208.88" y="630.54" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="364.0" x="217.892" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="222.2" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="227.588" y="630.54" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="364.0" x="235.028" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="239.348" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="455.0" x="244.85" y="630.54" font-size="12.0" font-style="italic">J</text>
+ <text  stroke="#000000" svgx:width="352.0" x="250.25" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="255.65" y="630.54" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="263.318" y="630.54" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="267.638" y="630.54" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="275.306" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="279.626" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="285.014" y="630.54" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="454.0" x="292.73" y="630.54" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="751.0" x="298.13" y="630.54" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="352.0" x="307.142" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="592.0" x="312.518" y="630.54" font-size="12.0">x</text>
+ <text  stroke="#000000" svgx:width="352.0" x="319.622" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="325.106" y="630.54" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="454.0" x="332.774" y="630.54" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="338.174" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="342.494" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="347.882" y="630.54" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="355.55" y="630.54" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="359.87" y="630.54" font-size="12.0">8</text>
+ <text  stroke="#000000" svgx:width="636.0" x="367.538" y="630.54" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="352.0" x="375.206" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="380.594" y="630.54" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="385.994" y="630.54" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="751.0" x="393.662" y="630.54" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="364.0" x="402.674" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="406.982" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="412.37" y="630.54" font-size="12.0">q</text>
+ <text  stroke="#000000" svgx:width="623.0" x="419.81" y="630.54" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="364.0" x="427.25" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="431.57" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="455.0" x="437.11" y="630.54" font-size="12.0" font-style="italic">J</text>
+ <text  stroke="#000000" svgx:width="352.0" x="442.63" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="448.03" y="630.54" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="455.698" y="630.54" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="460.018" y="630.54" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="467.686" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="472.006" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="477.394" y="630.54" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="485.062" y="630.54" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="489.382" y="630.54" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="497.05" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="501.37" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="506.758" y="630.54" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="454.0" x="514.54" y="630.54" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="751.0" x="519.94" y="630.54" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="454.0" x="528.952" y="630.54" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="534.34" y="630.54" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.768" y="630.54" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="93.624" y="652.38" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="364.0" x="101.292" y="652.38" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="105.612" y="652.38" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="113.28" y="652.38" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="352.0" x="120.948" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="126.216" y="652.38" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="131.616" y="652.38" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="751.0" x="139.284" y="652.38" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="364.0" x="148.296" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="152.604" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="157.872" y="652.38" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="623.0" x="165.312" y="652.38" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="364.0" x="172.752" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="177.072" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="455.0" x="182.42" y="652.38" font-size="12.0" font-style="italic">J</text>
+ <text  stroke="#000000" svgx:width="352.0" x="187.82" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="193.1" y="652.38" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="200.768" y="652.38" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="205.088" y="652.38" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="212.756" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="217.076" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="222.344" y="652.38" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="364.0" x="230.012" y="652.38" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="234.332" y="652.38" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="242.0" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="246.32" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="251.588" y="652.38" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="454.0" x="259.37" y="652.38" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="751.0" x="264.77" y="652.38" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="454.0" x="273.782" y="652.38" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="279.17" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="283.49" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="288.758" y="652.38" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="364.0" x="296.426" y="652.38" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="300.746" y="652.38" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="636.0" x="308.414" y="652.38" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="352.0" x="316.082" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="321.35" y="652.38" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="326.75" y="652.38" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="751.0" x="334.418" y="652.38" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="364.0" x="343.43" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="347.738" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="353.006" y="652.38" font-size="12.0">q</text>
+ <text  stroke="#000000" svgx:width="364.0" x="360.446" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="364.766" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="455.0" x="370.15" y="652.38" font-size="12.0" font-style="italic">J</text>
+ <text  stroke="#000000" svgx:width="352.0" x="375.55" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="380.83" y="652.38" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="388.498" y="652.38" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="392.818" y="652.38" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="400.486" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="404.806" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="787.0" x="410.074" y="652.38" font-size="12.0">O</text>
+ <text  stroke="#000000" svgx:width="698.0" x="419.518" y="652.38" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="751.0" x="427.99" y="652.38" font-size="12.0" font-style="italic">H</text>
+ <text  stroke="#000000" svgx:width="636.0" x="436.99" y="653.94" font-size="8.04">2</text>
+ <text  stroke="#000000" svgx:width="698.0" x="442.15" y="652.38" font-size="12.0">C</text>
+ <text  stroke="#000000" svgx:width="751.0" x="450.55" y="652.38" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="636.0" x="459.55" y="653.94" font-size="8.04">3</text>
+ <text  stroke="#000000" svgx:width="454.0" x="464.74" y="652.38" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="470.14" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="474.46" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="479.728" y="652.38" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="487.396" y="652.38" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="491.716" y="652.38" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="636.0" x="499.384" y="652.38" font-size="12.0">9</text>
+ <text  stroke="#000000" svgx:width="352.0" x="507.052" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="512.32" y="652.38" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="517.72" y="652.38" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="751.0" x="525.388" y="652.38" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="364.0" x="534.4" y="652.38" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.708" y="652.38" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="93.624" y="674.34" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="623.0" x="101.064" y="674.34" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="364.0" x="108.504" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="112.824" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="455.0" x="119.3" y="674.34" font-size="12.0" font-style="italic">J</text>
+ <text  stroke="#000000" svgx:width="352.0" x="124.7" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="131.06" y="674.34" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="138.728" y="674.34" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="146.396" y="674.34" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="150.716" y="674.34" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="158.384" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="162.704" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="169.052" y="674.34" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="176.72" y="674.34" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="181.04" y="674.34" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="364.0" x="188.708" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="193.028" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="199.376" y="674.34" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="454.0" x="207.17" y="674.34" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="751.0" x="212.57" y="674.34" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="454.0" x="221.582" y="674.34" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="364.0" x="226.97" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="231.29" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="237.638" y="674.34" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="364.0" x="245.306" y="674.34" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="249.626" y="674.34" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="636.0" x="257.294" y="674.34" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="352.0" x="264.962" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="454.0" x="271.31" y="674.34" font-size="12.0">(</text>
+ <text  stroke="#000000" svgx:width="636.0" x="276.71" y="674.34" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="751.0" x="284.378" y="674.34" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="364.0" x="293.39" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="297.698" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="623.0" x="304.046" y="674.34" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="623.0" x="311.486" y="674.34" font-size="12.0">d</text>
+ <text  stroke="#000000" svgx:width="364.0" x="319.034" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="323.354" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="455.0" x="329.81" y="674.34" font-size="12.0" font-style="italic">J</text>
+ <text  stroke="#000000" svgx:width="352.0" x="335.35" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="341.71" y="674.34" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="349.378" y="674.34" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="357.046" y="674.34" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="361.366" y="674.34" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="369.034" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="373.354" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="379.702" y="674.34" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="387.37" y="674.34" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="391.69" y="674.34" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="399.358" y="674.34" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="403.678" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="410.026" y="674.34" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="454.0" x="417.79" y="674.34" font-size="12.0">-</text>
+ <text  stroke="#000000" svgx:width="751.0" x="423.19" y="674.34" font-size="12.0">H</text>
+ <text  stroke="#000000" svgx:width="454.0" x="432.202" y="674.34" font-size="12.0">)</text>
+ <text  stroke="#000000" svgx:width="454.0" x="437.59" y="674.34" font-size="12.0">;</text>
+ <text  stroke="#000000" svgx:width="352.0" x="442.99" y="674.34" font-size="12.0"> </text>
+ <text  stroke="#000000" font-family="Symbol" svgx:fontName="ymbol" svgx:width="1000.0" x="449.35" y="674.34" font-size="12.0">&#61540;</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="724.0" x="455.35" y="675.9" font-size="8.04" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="461.11" y="674.34" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="467.38" y="674.34" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="473.896" y="674.34" font-size="12.0" font-style="bold">1</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="482.38" y="674.34" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="490.912" y="674.34" font-size="12.0" font-style="bold">0</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="499.444" y="674.34" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="948.0" x="505.648" y="674.34" font-size="12.0" font-style="bold">M</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="837.0" x="517.024" y="674.34" font-size="12.0" font-style="bold">H</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="597.0" x="527.116" y="674.34" font-size="12.0" font-style="bold">z</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="361.0" x="534.28" y="674.34" font-size="12.0" font-style="bold">,</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="538.744" y="674.34" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="724.0" x="93.624" y="696.3" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="830.0" x="102.264" y="696.3" font-size="12.0" font-style="bold">D</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="724.0" x="112.224" y="696.3" font-size="12.0" font-style="bold">C</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="120.864" y="696.3" font-size="12.0" font-style="bold">l</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="711.0" x="124.94" y="697.86" font-size="8.04" font-style="bold">3</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="130.7" y="696.3" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="402.0" x="137.18" y="696.3" font-size="12.0" font-style="bold">:</text>
+ <text  stroke="#000000" svgx:width="352.0" x="141.98" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="146.9" y="696.3" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="154.568" y="696.3" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="636.0" x="162.236" y="696.3" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="169.904" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="174.224" y="696.3" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="181.892" y="696.3" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="186.212" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="191.12" y="696.3" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="198.68" y="696.3" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="636.0" x="206.348" y="696.3" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="364.0" x="213.908" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="218.228" y="696.3" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="364.0" x="225.896" y="696.3" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="230.216" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="235.124" y="696.3" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="242.792" y="696.3" font-size="12.0">2</text>
+ <text  stroke="#000000" svgx:width="636.0" x="250.46" y="696.3" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="364.0" x="258.128" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="262.448" y="696.3" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="364.0" x="270.116" y="696.3" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="274.316" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="279.224" y="696.3" font-size="12.0">6</text>
+ <text  stroke="#000000" svgx:width="636.0" x="286.892" y="696.3" font-size="12.0">0</text>
+ <text  stroke="#000000" svgx:width="364.0" x="294.56" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="298.88" y="696.3" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="364.0" x="306.548" y="696.3" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="310.868" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="315.656" y="696.3" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="636.0" x="323.324" y="696.3" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="330.992" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="335.192" y="696.3" font-size="12.0">3</text>
+ <text  stroke="#000000" svgx:width="364.0" x="342.86" y="696.3" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="347.18" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="352.088" y="696.3" font-size="12.0">5</text>
+ <text  stroke="#000000" svgx:width="636.0" x="359.756" y="696.3" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="367.424" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="371.744" y="696.3" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="364.0" x="379.412" y="696.3" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="383.732" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="388.52" y="696.3" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="396.188" y="696.3" font-size="12.0">7</text>
+ <text  stroke="#000000" svgx:width="364.0" x="403.856" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="408.176" y="696.3" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="364.0" x="415.844" y="696.3" font-size="12.0">,</text>
+ <text  stroke="#000000" svgx:width="352.0" x="420.164" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="636.0" x="424.952" y="696.3" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="636.0" x="432.62" y="696.3" font-size="12.0">4</text>
+ <text  stroke="#000000" svgx:width="364.0" x="440.288" y="696.3" font-size="12.0">.</text>
+ <text  stroke="#000000" svgx:width="636.0" x="444.608" y="696.3" font-size="12.0">1</text>
+ <text  stroke="#000000" svgx:width="454.0" x="452.276" y="696.3" font-size="12.0">;</text>
+ <text  stroke="#000000" svgx:width="352.0" x="457.556" y="696.3" font-size="12.0"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="1058.0" x="462.91" y="696.3" font-size="12.0" font-style="bold">m</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="689.0" x="475.606" y="696.3" font-size="12.0" font-style="bold">/</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="597.0" x="483.898" y="696.3" font-size="12.0" font-style="bold">z</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="342.0" x="491.14" y="696.3" font-size="12.0" font-style="bold"> </text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="495.94" y="696.3" font-size="12.0" font-style="bold">(</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="867.0" x="502.456" y="696.3" font-size="12.0" font-style="bold">+</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="683.0" x="512.86" y="696.3" font-size="12.0" font-style="bold">E</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="546.0" x="521.02" y="696.3" font-size="12.0" font-style="bold">I</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="543.0" x="527.608" y="696.3" font-size="12.0" font-style="bold">)</text>
+ <text font-weight="bold"  stroke="#000000"  svgx:width="402.0" x="534.124" y="696.3" font-size="12.0" font-style="bold">:</text>
+ <text  stroke="#000000" svgx:width="352.0" x="538.78" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="542.98" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="547.18" y="696.3" font-size="12.0"> </text>
+ <text  stroke="#000000" svgx:width="352.0" x="551.38" y="696.3" font-size="12.0"> </text>
+</svg>

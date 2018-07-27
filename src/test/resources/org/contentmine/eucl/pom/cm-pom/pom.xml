@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+    <prerequisites>
+       <maven>2.2.1</maven>
+    </prerequisites>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<groupId>org.contentmine</groupId>
+	<artifactId>cm-parent</artifactId>
+	<version>7.0.4</version>
+	<packaging>pom</packaging>
+
+	<name>ContentMine Parent POM</name>
+	<description>Parent POM for Maven managed projects in ContentMine.org. Based on WWMM POM at https://wwmm.ch.cam.ac.uk</description>
+	<url>https://github.com/ContentMine/cm-pom</url>
+	
+    <organization>
+        <name>Peter Murray-Rust</name>
+        <url>http://contentmine.org </url>
+    </organization>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/ContentMine/cm-pom/src</url>
+		<connection>scm:hg:https://github.com/ContentMine/cm-pom</connection>
+		<developerConnection>scm:hg:https://github.com/ContentMine/cm-pom</developerConnection>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>ojd20</id>
+			<name>Jim Downing</name>
+		</developer>
+		<developer>
+			<id>petermr</id>
+			<name>Peter Murray-Rust</name>
+		</developer>
+		<developer>
+			<id>tarrow</id>
+			<name>Tom Arrow</name>
+		</developer>
+		<developer>
+			<id>mjw99</id>
+			<name>Mark J. Williamson</name>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+		<maven-source-plugin.version>2.4</maven-source-plugin.version>
+		<maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
+		<maven-clean-plugin.version>2.6.1</maven-clean-plugin.version>
+		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+		<maven-release-plugin.version>2.5.2</maven-release-plugin.version>
+		<maven-assembly-plugin.version>2.5.4</maven-assembly-plugin.version>
+		<maven-enforcer-plugin.version>1.4</maven-enforcer-plugin.version>
+		
+		<junit.version>4.12</junit.version>
+	</properties>
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+
+				<!-- Use java 1.7 -->
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<optimize>true</optimize>
+					</configuration>
+				</plugin>
+
+				<!-- Include POM.xml in source JAR -->
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${maven-source-plugin.version}</version>
+					<configuration>
+						<includePom>true</includePom>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>${maven-dependency-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven-clean-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${maven-jar-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${maven-install-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>${maven-deploy-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${maven-release-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${maven-assembly-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>${maven-enforcer-plugin.version}</version>
+				</plugin>
+				
+				<!--  dependency graph -->
+		        <plugin>
+		          <groupId>ch.elca.el4j.maven.plugins</groupId>
+		          <artifactId>maven-depgraph-plugin</artifactId>
+		          <version>3.1</version>
+		        </plugin>
+			</plugins>
+		</pluginManagement>
+ 	</build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>index</report>
+							<report>summary</report>
+							<report>dependencies</report>
+							<report>project-team</report>
+							<report>license</report>
+							<report>cim</report>
+							<report>scm</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+    </reporting>
+	
+	<dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>${junit.version}</version>
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+
+</project>

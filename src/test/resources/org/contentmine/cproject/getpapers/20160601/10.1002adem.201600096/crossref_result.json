@@ -1,0 +1,151 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:41:20Z",
+    "timestamp": 1464828080854
+  },
+  "reference-count": 69,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adem.201600096",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T23:53:47Z",
+    "timestamp": 1464825227000
+  },
+  "source": "CrossRef",
+  "title": [
+    "FE Exploratory Investigation on the Performance of SMA-Reinforced Laminated Glass Panels"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Engineering and Architecture; University of Trieste; Piazzale Europa 1 34127 Trieste Italy"
+        }
+      ],
+      "family": "Bedon",
+      "given": "Chiara"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Faculdade de Ciências e Tecnologia; Department of Civil Engineering; Universidade Nova de Lisboa, Quinta da Torre; 2829-516 Caparica Portugal"
+        }
+      ],
+      "family": "Amarante dos Santos",
+      "given": "Filipe"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Advanced Engineering Materials",
+    "Adv. Eng. Mater."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadem.201600096"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T23:53:50Z",
+    "timestamp": 1464825230000
+  },
+  "score": 1,
+  "subtitle": [
+    "FE Exploratory Investigation on the Performance…"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adem.201600096",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "1438-1656"
+  ],
+  "subject": [
+    "Materials Science(all)",
+    "Condensed Matter Physics"
+  ]
+}

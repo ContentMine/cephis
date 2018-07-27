@@ -1,0 +1,104 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:19Z",
+    "timestamp": 1464910999047
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "issue": "4",
+  "published-print": {
+    "date-parts": [
+      [
+        1997,
+        4,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1001/archoto.123.4.385",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:34:57Z",
+    "timestamp": 1464906897000
+  },
+  "page": "385",
+  "source": "CrossRef",
+  "title": [
+    "Complications of the Transconjunctival Approach"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "volume": "123",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Mullins",
+      "given": "J. Byron"
+    },
+    {
+      "affiliation": [],
+      "family": "Holds",
+      "given": "John B."
+    },
+    {
+      "affiliation": [],
+      "family": "Branham",
+      "given": "Gregory H."
+    },
+    {
+      "affiliation": [],
+      "family": "Thomas",
+      "given": "J. Regan"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "container-title": [
+    "Arch Otolaryngol Head Neck Surg",
+    "Archives of Otolaryngology–Head & Neck Surgery"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:34:58Z",
+    "timestamp": 1464906898000
+  },
+  "score": 1,
+  "subtitle": [
+    "A Review of 400 Cases"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        1997,
+        4,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/archoto.123.4.385",
+  "ISSN": [
+    "0886-4470"
+  ],
+  "subject": [
+    "Surgery",
+    "Otorhinolaryngology"
+  ]
+}

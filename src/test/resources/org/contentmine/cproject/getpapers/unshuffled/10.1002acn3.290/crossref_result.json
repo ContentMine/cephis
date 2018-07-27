@@ -1,0 +1,323 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        5
+      ]
+    ],
+    "date-time": "2016-03-05T10:44:53Z",
+    "timestamp": 1457174693401
+  },
+  "reference-count": 28,
+  "publisher": "Wiley-Blackwell",
+  "issue": "3",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "VINNOVA",
+      "DOI": "10.13039/501100001858"
+    },
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "Knut och Alice Wallenbergs Stiftelse",
+      "DOI": "10.13039/501100004063"
+    },
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "Torsten Söderbergs Stiftelse",
+      "DOI": "10.13039/100007464"
+    },
+    {
+      "award": [
+        "P0502788"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Vetenskapsrådet",
+      "DOI": "10.13039/501100004359"
+    },
+    {
+      "award": [
+        "P0502788"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Larry L. Hillblom Foundation",
+      "DOI": "10.13039/100001167"
+    },
+    {
+      "award": [
+        "AG019724"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "National Institute on Aging",
+      "DOI": "10.13039/100000049"
+    },
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "National Institute of Neurological Disorders and Stroke",
+      "DOI": "10.13039/100000065"
+    },
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "National Center for Advancing Translational Sciences",
+      "DOI": "10.13039/100006108"
+    },
+    {
+      "award": [
+        "AG03879",
+        "4RTNI"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "National Institutes of Health",
+      "DOI": "10.13039/100000002"
+    },
+    {
+      "award": [
+        "NS092089",
+        "ARTFL"
+      ],
+      "name": "Advancing Research and Treatment for Frontotemporal Lobar Degeneration"
+    },
+    {
+      "award": [
+        "AG23481-11"
+      ],
+      "name": "National Research Service Award, Institutional Research Training Grant"
+    },
+    {
+      "award": [],
+      "name": "Tau Consortium"
+    },
+    {
+      "award": [],
+      "name": "Hillblom Aging Network"
+    },
+    {
+      "award": [],
+      "name": "Swedish State Support for Clinical Research"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        3
+      ]
+    ]
+  },
+  "DOI": "10.1002/acn3.290",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T09:31:54Z",
+    "timestamp": 1454319114000
+  },
+  "page": "216-225",
+  "source": "CrossRef",
+  "title": [
+    "Plasma neurofilament light chain predicts progression in progressive supranuclear palsy"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "volume": "3",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Rojas",
+      "given": "Julio C."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Karydas",
+      "given": "Anna"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Bang",
+      "given": "Jee"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Tsai",
+      "given": "Richard M."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Clinical Neurochemistry Laboratory; Institute of Neuroscience and Physiology; Sahlgrenska Academy at University of Gothenburg; Sahlgrenska University Hospital; Mölndal Sweden"
+        }
+      ],
+      "family": "Blennow",
+      "given": "Kaj"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Clinical Neurochemistry Laboratory; Institute of Neuroscience and Physiology; Sahlgrenska Academy at University of Gothenburg; Sahlgrenska University Hospital; Mölndal Sweden"
+        }
+      ],
+      "family": "Liman",
+      "given": "Victor"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Kramer",
+      "given": "Joel H."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Rosen",
+      "given": "Howard"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Miller",
+      "given": "Bruce L."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Clinical Neurochemistry Laboratory; Institute of Neuroscience and Physiology; Sahlgrenska Academy at University of Gothenburg; Sahlgrenska University Hospital; Mölndal Sweden"
+        },
+        {
+          "name": "Department of Molecular Neuroscience; UCL Institute of Neurology; Queen Square London United Kingdom"
+        }
+      ],
+      "family": "Zetterberg",
+      "given": "Henrik"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Memory and Aging Center; Department of Neurology; University of California, San Francisco; San Francisco California"
+        }
+      ],
+      "family": "Boxer",
+      "given": "Adam L."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Annals of Clinical and Translational Neurology",
+    "Ann Clin Transl Neurol"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Facn3.290"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        2
+      ]
+    ],
+    "date-time": "2016-03-02T12:43:50Z",
+    "timestamp": 1456922630000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/acn3.290",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2328-9503"
+  ]
+}

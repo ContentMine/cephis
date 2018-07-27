@@ -1,0 +1,86 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:41:07Z",
+    "timestamp": 1464828067306
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jama.2016.7992",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T23:24:00Z",
+    "timestamp": 1464823440000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Sodium Reduction—Saving Lives by Putting Choice Into Consumers’ Hands"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Centers for Disease Control and Prevention, Atlanta, Georgia"
+        }
+      ],
+      "family": "Frieden",
+      "given": "Thomas R."
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T23:24:04Z",
+    "timestamp": 1464823444000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jama.2016.7992",
+  "ISSN": [
+    "0098-7484"
+  ],
+  "subject": [
+    "Medicine(all)"
+  ]
+}

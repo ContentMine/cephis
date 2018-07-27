@@ -1,0 +1,11 @@
+<semanticDocument xmlns="http://www.xml-cml.org/schema/ami2">
+	<assert name="s.outputDir" value="target"/>
+	<documentIterator filename="src/test/resources/org/xmlcml/svg2xml/command/policies.pdf">
+	  <pageIterator>
+	    <assert name="d.pageCount" value="1"/>
+	  </pageIterator>
+	</documentIterator>
+</semanticDocument>
+
+
+

@@ -1,0 +1,108 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:51:36Z",
+    "timestamp": 1455623496661
+  },
+  "reference-count": 16,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "DOI": "10.3390/molecules21020188",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T15:26:22Z",
+    "timestamp": 1454599582000
+  },
+  "page": "188",
+  "source": "CrossRef",
+  "title": [
+    "Two New Oleanane-Type Saponins with Anti-Proliferative Activity from Camellia oleifera Abel. Seed Cake"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Zong",
+      "given": "Jian-Fa"
+    },
+    {
+      "affiliation": [],
+      "family": "Peng",
+      "given": "Yun-Ru"
+    },
+    {
+      "affiliation": [],
+      "family": "Bao",
+      "given": "Guan-Hu"
+    },
+    {
+      "affiliation": [],
+      "family": "Hou",
+      "given": "Ru-Yan"
+    },
+    {
+      "affiliation": [],
+      "family": "Wan",
+      "given": "Xiao-Chun"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:52:56Z",
+    "timestamp": 1455396776000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020188"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020188",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        21
+      ]
+    ],
+    "date-time": "2016-03-21T09:23:07Z",
+    "timestamp": 1458552187493
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/gi-2015-25",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:34:42Z",
+    "timestamp": 1454322882000
+  },
+  "page": "1-30",
+  "source": "CrossRef",
+  "title": [
+    "Mars MOURA magnetometer demonstration for high resolution mapping on terrestrial analogues"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Diaz Michelena",
+      "given": "Marina"
+    },
+    {
+      "affiliation": [],
+      "family": "Kilian",
+      "given": "Rolf"
+    },
+    {
+      "affiliation": [],
+      "family": "Sanz",
+      "given": "Ruy"
+    },
+    {
+      "affiliation": [],
+      "family": "Rios",
+      "given": "Francisco"
+    },
+    {
+      "affiliation": [],
+      "family": "Baeza",
+      "given": "Oscar"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Geoscientific Instrumentation, Methods and Data Systems Discussions",
+    "Geosci. Instrum. Method. Data Syst. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        18
+      ]
+    ],
+    "date-time": "2016-03-18T23:45:56Z",
+    "timestamp": 1458344756000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/gi-2015-25",
+  "ISSN": [
+    "2193-0872"
+  ]
+}

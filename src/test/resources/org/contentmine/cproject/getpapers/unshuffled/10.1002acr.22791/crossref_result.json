@@ -1,0 +1,186 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        25
+      ]
+    ],
+    "date-time": "2016-06-25T17:40:17Z",
+    "timestamp": 1466876417281
+  },
+  "reference-count": 20,
+  "publisher": "Wiley-Blackwell",
+  "issue": "7",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            23
+          ]
+        ],
+        "date-time": "2016-06-23T00:00:00Z",
+        "timestamp": 1466640000000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            23
+          ]
+        ],
+        "date-time": "2016-06-23T00:00:00Z",
+        "timestamp": 1466640000000
+      },
+      "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        7
+      ]
+    ]
+  },
+  "DOI": "10.1002/acr.22791",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T05:18:42Z",
+    "timestamp": 1454303922000
+  },
+  "page": "988-994",
+  "source": "CrossRef",
+  "title": [
+    "What to Expect When Expecting With Systemic Lupus Erythematosus (SLE): A Population-Based Study of Maternal and Fetal Outcomes in SLE and Pre-SLE"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "volume": "68",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Karolinska Institute; Stockholm Sweden"
+        }
+      ],
+      "family": "Arkema",
+      "given": "Elizabeth V."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "University of California; San Diego"
+        }
+      ],
+      "family": "Palmsten",
+      "given": "Kristin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Linköping University; Linköping Sweden"
+        }
+      ],
+      "family": "Sjöwall",
+      "given": "Christopher"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Karolinska University Hospital, Karolinska Institute; Stockholm Sweden"
+        }
+      ],
+      "family": "Svenungsson",
+      "given": "Elisabet"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Weill Cornell Medical College; New York New York"
+        }
+      ],
+      "family": "Salmon",
+      "given": "Jane E."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Stanford School of Medicine, Stanford, California, and Karolinska Institute; Stockholm Sweden"
+        }
+      ],
+      "family": "Simard",
+      "given": "Julia F."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        23
+      ]
+    ]
+  },
+  "container-title": [
+    "Arthritis Care & Research"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Facr.22791"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        25
+      ]
+    ],
+    "date-time": "2016-06-25T15:57:04Z",
+    "timestamp": 1466870224000
+  },
+  "score": 1,
+  "subtitle": [
+    "Maternal and Fetal Outcomes in SLE"
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        23
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/acr.22791",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2151-464X"
+  ]
+}

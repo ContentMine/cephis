@@ -1,0 +1,100 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        15
+      ]
+    ],
+    "date-time": "2016-03-15T23:40:30Z",
+    "timestamp": 1458085230665
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/soil-2016-5",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:35:22Z",
+    "timestamp": 1454322922000
+  },
+  "page": "1-27",
+  "source": "CrossRef",
+  "title": [
+    "Determining the susceptibility of soils materials to erosion by rain-impacted flows"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Kinnell",
+      "given": "P. I. A.",
+      "ORCID": "http://orcid.org/0000-0002-1645-6016"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "SOIL Discussions",
+    "SOIL Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        15
+      ]
+    ],
+    "date-time": "2016-03-15T22:20:26Z",
+    "timestamp": 1458080426000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/soil-2016-5",
+  "ISSN": [
+    "2199-3998"
+  ]
+}

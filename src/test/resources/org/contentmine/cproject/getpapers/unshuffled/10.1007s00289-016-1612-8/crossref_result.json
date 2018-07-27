@@ -1,0 +1,139 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        22
+      ]
+    ],
+    "date-time": "2016-06-22T21:40:32Z",
+    "timestamp": 1466631632334
+  },
+  "reference-count": 44,
+  "publisher": "Springer Nature",
+  "issue": "8",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        8
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00289-016-1612-8",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T09:25:17Z",
+    "timestamp": 1454318717000
+  },
+  "page": "2353-2372",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "The synthesis of silica-coated magnetic nanoparticles and using as adsorbent"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "73",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Aroguz",
+      "given": "Ayse Z."
+    },
+    {
+      "affiliation": [],
+      "family": "Sayılı",
+      "given": "Guler"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Polymer Bulletin",
+    "Polym. Bull."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00289-016-1612-8.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00289-016-1612-8/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        22
+      ]
+    ],
+    "date-time": "2016-06-22T20:27:35Z",
+    "timestamp": 1466627255000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "1612"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00289-016-1612-8",
+  "ISSN": [
+    "0170-0839",
+    "1436-2449"
+  ],
+  "subject": [
+    "Materials Chemistry",
+    "Chemistry(all)",
+    "Polymers and Plastics",
+    "Condensed Matter Physics"
+  ]
+}

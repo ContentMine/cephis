@@ -1,0 +1,575 @@
+info: quickscrape 0.4.7 launched with...
+info: - URLs from file: undefined
+info: - Scraperdir: /home/pm286/journal-scrapers/scrapers
+info: - Rate limit: 17 per minute
+info: - Log level: info
+info: urls to scrape: 8097
+info: processing URL: http://dx.doi.org/10.1109/tse.2015.2478001
+info: processing URL: http://dx.doi.org/10.1109/tcbb.2015.2495179
+info: processing URL: http://dx.doi.org/10.1166/jnn.2016.10659
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1109/tvcg.2015.2489660
+info: processing URL: http://dx.doi.org/10.1109/tcbb.2015.2456897
+info: processing URL: http://dx.doi.org/10.12820/rbafs.v.21n2p181-189
+info: processing URL: http://dx.doi.org/10.1158/1055-9965.epi-16-0079
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60001
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60002
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60008
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60007
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60009
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60004
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60003
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60006
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/60005
+info: processing URL: http://dx.doi.org/10.1109/tsc.2015.2449314
+info: processing URL: http://dx.doi.org/10.1017/s1365100515001066
+info: processing URL: http://dx.doi.org/10.1177/1040638715626487
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2492559
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2492558
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2492561
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2492567
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2492565
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2492549
+info: processing URL: http://dx.doi.org/10.1109/lpt.2016.2520618
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2492554
+info: processing URL: http://dx.doi.org/10.1109/tcbb.2015.2462348
+info: processing URL: http://dx.doi.org/10.12820/rbafs.v.21n2p133-143
+info: processing URL: http://dx.doi.org/10.14710/jitaa.41.1.21-27
+info: processing URL: http://dx.doi.org/10.20448/journal.500/2016.3.2/500.2.150.162
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1370/afm.1906
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.17212/2075-0862-2016-1.1-23-38
+info: processing URL: http://dx.doi.org/10.1109/tpami.2015.2459678
+info: processing URL: http://dx.doi.org/10.1109/tpds.2015.2421449
+info: processing URL: http://dx.doi.org/10.1088/0022-3727/49/13/135503
+info: processing URL: http://dx.doi.org/10.1017/s0026749x15000426
+info: processing URL: http://dx.doi.org/10.18520/cs/v110/i6/1000-1009
+info: processing URL: http://dx.doi.org/10.1088/1751-8113/49/15/155202
+info: processing URL: http://dx.doi.org/10.1088/1751-8113/49/15/155201
+info: processing URL: http://dx.doi.org/10.1109/tcbb.2016.2535578
+info: processing URL: http://dx.doi.org/10.1088/0268-1242/31/4/045004
+info: processing URL: http://dx.doi.org/10.1088/0268-1242/31/4/045003
+info: processing URL: http://dx.doi.org/10.1088/0268-1242/31/4/045002
+info: processing URL: http://dx.doi.org/10.1109/tbdata.2015.2511001
+info: processing URL: http://dx.doi.org/10.14710/jitaa.41.1.
+info: processing URL: http://dx.doi.org/10.1109/lpt.2015.2506480
+info: processing URL: http://dx.doi.org/10.1109/tsc.2016.2547518
+info: processing URL: http://dx.doi.org/10.1109/tbdata.2016.2562840
+info: processing URL: http://dx.doi.org/10.1109/tbdata.2016.2562839
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/259
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/58001
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/58002
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/58003
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/58004
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435750
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435748
+info: processing URL: http://dx.doi.org/10.20448/journal.504/2016.3.1/504.1.8.17
+info: processing URL: http://dx.doi.org/10.14710/jitaa.41.1.37-44
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435749
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2493549
+info: processing URL: http://dx.doi.org/10.1109/tkde.2015.2493537
+info: processing URL: http://dx.doi.org/10.1088/0031-9155/61/6/2283
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/67006
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/67005
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/67004
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/67003
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/67002
+info: processing URL: http://dx.doi.org/10.1209/0295-5075/113/67001
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2428692
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160005
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160002
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160003
+info: processing URL: http://dx.doi.org/10.3997/2352-8281.20160004
+info: processing URL: http://dx.doi.org/10.1109/tpds.2015.2421352
+info: processing URL: http://dx.doi.org/10.1136/bcr-2015-213750
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1109/tdsc.2015.2423680
+info: processing URL: http://dx.doi.org/10.1088/1751-8113/49/15/155301
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435789
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435790
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435791
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435792
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435772
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435779
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435785
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2435784
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/354
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/347
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/341
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035011
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035012
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035013
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035014
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035015
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035016
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035017
+info: processing URL: http://dx.doi.org/10.1017/s0003581516000056
+info: processing URL: http://dx.doi.org/10.1017/s0004972715001823
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/375
+info: processing URL: http://dx.doi.org/10.1017/s0004972715001835
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/366
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/361
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/315
+info: processing URL: http://dx.doi.org/10.1109/tc.2015.2481411
+info: processing URL: http://dx.doi.org/10.1109/jlt.2016.2523343
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/308
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/301
+info: processing URL: http://dx.doi.org/10.1017/s0003581516000093
+info: processing URL: http://dx.doi.org/10.1017/s000358151600007x
+info: processing URL: http://dx.doi.org/10.17850/njg96-1-04
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035018
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035019
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/335
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035022
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035021
+info: processing URL: http://dx.doi.org/10.1088/0965-0393/24/3/035020
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/329
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/321
+info: processing URL: http://dx.doi.org/10.5588/ijtld.15.0156
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18520/cs/v110/i6/1038-1049
+info: processing URL: http://dx.doi.org/10.1109/tbdata.2016.2546301
+info: processing URL: http://dx.doi.org/10.1109/tbdata.2016.2546302
+info: processing URL: http://dx.doi.org/10.1109/tbdata.2016.2546303
+info: processing URL: http://dx.doi.org/10.1109/tmc.2015.2418766
+info: processing URL: http://dx.doi.org/10.1166/jnn.2016.10827
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/ajms.5.1.51_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.1831
+info: processing URL: http://dx.doi.org/10.1088/0031-9155/61/6/2333
+info: processing URL: http://dx.doi.org/10.14416/j.kmutnb.2015.07.020
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.14416/j.kmutnb.2015.07.019
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1371/journal.pone.0148782
+info: URL processed: captured 23/33 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.1088/0031-9155/61/6/2319
+info: processing URL: http://dx.doi.org/10.9744/jak.17.2.71-81
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3390/pharmaceutics8010006
+info: URL processed: captured 13/19 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1088/0022-3727/49/13/135306
+info: processing URL: http://dx.doi.org/10.1088/0022-3727/49/13/135308
+info: processing URL: http://dx.doi.org/10.1088/0022-3727/49/13/135307
+info: processing URL: http://dx.doi.org/10.1088/0022-3727/49/13/135309
+info: processing URL: http://dx.doi.org/10.1088/0031-9155/61/6/2302
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/266
+info: processing URL: http://dx.doi.org/10.1109/lpt.2015.2506187
+info: processing URL: http://dx.doi.org/10.1088/1751-8113/49/15/155001
+info: processing URL: http://dx.doi.org/10.1109/tpds.2015.2410280
+info: processing URL: http://dx.doi.org/10.1088/1751-8113/49/15/155002
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/278
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/273
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.04eg03
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2903
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2919
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/285
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/292
+info: processing URL: http://dx.doi.org/10.1109/tvcg.2015.2505296
+info: processing URL: http://dx.doi.org/10.12820/rbafs.v.21n2p190-197
+info: processing URL: http://dx.doi.org/10.7567/jjap.55.05fc01
+info: processing URL: http://dx.doi.org/10.9744/jak.17.1.57-70
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1166/jnn.2016.10766
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1109/tbdata.2016.2541160
+info: processing URL: http://dx.doi.org/10.1088/0954-3899/43/4/044001
+info: processing URL: http://dx.doi.org/10.1109/tcbb.2015.2442974
+info: processing URL: http://dx.doi.org/10.3766/jaaa.27.3.1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.4088/jcp.15m09893
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2832
+info: processing URL: http://dx.doi.org/10.1109/tpds.2015.2417163
+info: processing URL: http://dx.doi.org/10.3892/ijmm.2016.2513
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.3892/ijmm.2016.2512
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.2812
+info: processing URL: http://dx.doi.org/10.1001/jamainternmed.2016.0016
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1077800416637258
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1109/tpami.2015.2465901
+info: processing URL: http://dx.doi.org/10.1109/tsc.2014.2360860
+info: processing URL: http://dx.doi.org/10.1017/s0953820816000030
+info: processing URL: http://dx.doi.org/10.2174/1567205013666151116125810
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1088/0253-6102/65/3/381
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.1731
+info: processing URL: http://dx.doi.org/10.1186/s12864-016-2500-1
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.2174/1573403x12666160301121253
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1017/ice.2016.42
+info: processing URL: http://dx.doi.org/10.5740/jaoacint.16-0034
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1109/tdsc.2014.2382590
+info: processing URL: http://dx.doi.org/10.1109/lpt.2016.2515052
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00247
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00247, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00247, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00247, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00247/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00247/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163343517&tmr=load=1472163342407&core=1472163342557&main=1472163343511&ifr=1472163343522&cb=0&cdn=0&md=0&kw=Health Anyiety,Implicit Association Test,functional magnetic resonance imaging (fMRI),prefrontal cortex (PFC),Executive Function&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00247/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00247/full&dt=Cough Is Dangerous: Neural Correlates of Implicit Body Symptoms Associations&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6e0e1ce3344a&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Cough%20Is%20Dangerous%3A%20Neural%20Correlates%20of%20Implicit%20Body%20Symptoms%20Associations&description=The%20negative%20interpretation%20of%20body%20sensations%20(e.g.%2C%20as%20sign%20of%20a%20severe%20illness)%20is%20a%20crucial%20cognitive%20process%20in%20pathological%20health%20anxiety%20(HA).%20However%2C%20little%20is%20known%20about%20the%20nature%20and%20the%20degree%20of%20automaticity%20of%20this%20interpretation%20bias.%20We%20applied%20an%20implicit%20association%20test%20(IAT)%20in%2020%20subjects%20during%20functional%20magnetic%20resonance%20imaging%20(fMRI)%20to%20investigate%20behavioral%20and%20neural%20correlates%20of%20implicit%20attitudes%20towards%20symptom%20words.%20On%20the%20behavioral%20level%2C%20body%20symptom%20words%20elicited%20strong%20negative%20implicit%20association%20effects%2C%20as%20indexed%20by%20slowed%20reaction%20times%20when%20symptom%20words%20were%20paired%20with%20the%20attribute%20%E2%80%9Charmless%E2%80%9D%20(incongruent%20condition)%20relative%20to%20a%20control%20condition.%20fMRI%20revealed%20increased%20activation%20in%20the%20dorsolateral%20prefrontal%20cortex%20and%20posterior%20parietal%20cortex%20for%20the%20comparison%20of%20incongruent%20words%20with%20control%20words%2C%20as%20well%20as%20with%20a%20lower%20significance%20threshold%20also%20in%20comparison%20to%20congruent%20words.%20Moreover%2C%20activation%20in%20the%20dorsolateral%20prefrontal%20cortex%2C%20posterior%20parietal%20cortex%2C%20nucleus%20accumbens%2C%20and%20cerebellum%20varied%20with%20individual%20levels%20of%20HA%20(again%2C%20in%20comparison%20to%20control%20words%2C%20as%20well%20as%20with%20a%20lower%20significance%20threshold%20also%20in%20comparison%20to%20congruent%20words).%20Slowed%20reaction%20times%20as%20well%20as%20increased%20activation%20in%20dorsolateral%20prefrontal%20and%20posterior%20parietal%20cortex%20point%20to%20increased%20inhibitory%20demands%20during%20the%20incongruent%20IAT%20condition.%20The%20positive%20association%20between%20HA%20severity%20and%20neural%20activity%20...&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00247%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F172682%252F172682_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00247/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2658ms.
+[36m[info][0m [phantom] Done 3 steps in 2662ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamafacial.2015.1219
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1044/leader.an9.21032016.64
+info: URL processed: captured 5/11 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.5117/nedtaa2016.1.trip
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1107/s2059798315010268
+info: URL processed: captured 9/13 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.5117/nedtaa2016.1.trij
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0049
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0047
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0961203315625119
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0042
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s00739-016-0307-0
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1044/leader.ftr1.21032016.38
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s11010-016-2677-2
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamaoncol.2015.4997
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.2148/benv.42.1.72
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/003181516x14593238581097
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/1742271x16632283
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s35146-016-0004-9
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00277
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00277, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00277, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00277, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00277/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00277/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163432476&tmr=load=1472163431761&core=1472163431814&main=1472163432471&ifr=1472163432480&cb=0&cdn=0&md=0&kw=cognitive enhancement,prescription stimulants;,Stress,Psychological,coping,university students&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00277/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00277/full&dt=Australian University Students’ Coping Strategies and Use of Pharmaceutical Stimulants as Cognitive Enhancers&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6e672afd7631&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Australian%20University%20Students%E2%80%99%20Coping%20Strategies%20and%20Use%20of%20Pharmaceutical%20Stimulants%20as%20Cognitive%20Enhancers&description=Background%3A%20There%20are%20reports%20that%20some%20university%20students%20are%20using%20prescription%20stimulants%20for%20non-medical%20%E2%80%98pharmaceutical%20cognitive%20enhancement%20(PCE)%E2%80%99%20to%20improve%20alertness%2C%20focus%2C%20memory%2C%20and%20mood%20in%20an%20attempt%20to%20manage%20the%20demands%20of%20study%20at%20university.%20Purported%20demand%20for%20PCEs%20in%20academic%20contexts%20have%20been%20based%20on%20incomplete%20understandings%20of%20student%20motivations%2C%20and%20often%20based%20on%20untested%20assumptions%20about%20the%20context%20within%20which%20stimulants%20are%20used.%20They%20may%20represent%20attempts%20to%20cope%20with%20biopsychosocial%20stressors%20in%20university%20life%20by%20offsetting%20students%E2%80%99%20inadequate%20coping%20responses%2C%20which%20in%20turn%20may%20affect%20their%20cognitive%20performance.%20This%20study%20aimed%20to%20identify%20(a)%20what%20strategies%20students%20adopted%20to%20cope%20with%20the%20stress%20of%20university%20life%20and%2C%20(b)%20to%20assess%20whether%20students%20who%20have%20used%20stimulants%20for%20PCE%20exhibit%20particular%20stress%20or%20coping%20patterns.Methods%3A%20We%20interviewed%2038%20university%20students%20(with%20and%20without%20PCE%20experience)%20about%20their%20experience%20of%20managing%20student%20life%2C%20specifically%20their%20educational%20values%2C%20study%20habits%20and%20achievement%2C%20stress%20management%2C%20getting%20assistance%2C%20competing%20activities%20and%20responsibilities%2C%20health%20habits%2C%20and%20cognitive%20enhancement%20practices.%20All%20interview%20transcripts%20were%20coded%20into%20themes%20and%20analysed.Results%3A%20Our%20thematic%20analysis%20revealed%20that%2C%20generally%2C%20self-rated%20coping%20ability%20decreased%20as%20students%E2%80%99%20self-rated%20stress%20level%20increased.%20Students%20used%20emotion-%20and%20problem-focused%20coping%20for%20the%20most%20part%20and%20adju...&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00277%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F178540%252F178540_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00277/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2485ms.
+[36m[info][0m [phantom] Done 3 steps in 2592ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00278
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00278, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00278, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00278, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00278/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00278/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163436742&tmr=load=1472163435952&core=1472163436015&main=1472163436736&ifr=1472163436749&cb=0&cdn=0&md=0&kw=Music,music cognition,melody,declarative memory,recognition,sex differences,musical training,medial temporal,Language&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00278/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00278/full&dt=Sex Differences in Music: A Female Advantage at Recognizing Familiar Melodies&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6e6b8c6780be&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Sex%20Differences%20in%20Music%3A%20A%20Female%20Advantage%20at%20Recognizing%20Familiar%20Melodies&description=Although%20sex%20differences%20have%20been%20observed%20in%20various%20cognitive%20domains%2C%20there%20has%20been%20little%20work%20examining%20sex%20differences%20in%20the%20cognition%20of%20music.%20We%20tested%20the%20prediction%20that%20women%20would%20be%20better%20than%20men%20at%20recognizing%20familiar%20melodies%2C%20since%20memories%20of%20specific%20melodies%20are%20likely%20to%20be%20learned%20(at%20least%20in%20part)%20by%20declarative%20memory%2C%20which%20shows%20female%20advantages.%20Participants%20were%2024%20men%20and%2024%20women%2C%20with%20half%20musicians%20and%20half%20non-musicians%20in%20each%20group.%20The%20two%20groups%20were%20matched%20on%20age%2C%20education%2C%20and%20various%20measures%20of%20musical%20training.%20Participants%20were%20presented%20with%20well-known%20and%20novel%20melodies%2C%20and%20were%20asked%20to%20indicate%20their%20recognition%20of%20familiar%20melodies%20as%20rapidly%20as%20possible.%20The%20women%20were%20significantly%20faster%20than%20the%20men%20in%20responding%2C%20with%20a%20large%20effect%20size.%20The%20female%20advantage%20held%20across%20musicians%20and%20non-musicians%2C%20and%20across%20melodies%20with%20and%20without%20commonly%20associated%20lyrics%2C%20as%20evidenced%20by%20an%20absence%20of%20interactions%20between%20sex%20and%20these%20factors.%20Additionally%2C%20the%20results%20did%20not%20seem%20to%20be%20explained%20by%20sex%20differences%20in%20response%20biases%2C%20or%20in%20basic%20auditory%20or%20motor%20processes%20as%20tested%20in%20a%20control%20task.%20Though%20caution%20is%20warranted%20given%20that%20this%20is%20the%20first%20study%20to%20examine%20sex%20differences%20in%20familiar%20melody%20recognition%2C%20the%20results%20are%20consistent%20with%20the%20hypothesis%20motivating%20our%20prediction%2C%20namely%20that%20declarative%20memory%20underlies%20knowledge%20about%20music%20(particularly%20about%20familiar%20melodies)%2C%20and%20that%20the%20female%20a...&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00278%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F163687%252F163687_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00278/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2691ms.
+[36m[info][0m [phantom] Done 3 steps in 2699ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00279
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00279, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00279, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00279, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00279/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00279/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163441374&tmr=load=1472163440593&core=1472163440659&main=1472163441367&ifr=1472163441378&cb=0&cdn=0&md=0&kw=Active Learning,Research Methods,statistics,computer based experiments,Authentic data,canned data&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00279/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00279/full&dt=Active Learning in Research Methods Classes Is Associated with Higher Knowledge and Confidence, Though not Evaluations or Satisfaction&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6e70e954f1bf&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Active%20Learning%20in%20Research%20Methods%20Classes%20Is%20Associated%20with%20Higher%20Knowledge%20and%20Confidence%2C%20Though%20not%20Evaluations%20or%20Satisfaction&description=Research%20methods%20and%20statistics%20are%20regarded%20as%20difficult%20subjects%20to%20teach%2C%20fueling%20investigations%20into%20techniques%20that%20increase%20student%20engagement.%20Students%20enjoy%20active%20learning%20opportunities%20like%20hands-on%20demonstrations%2C%20authentic%20research%20participation%2C%20and%20working%20with%20real%20data.%20However%2C%20enhanced%20enjoyment%20does%20not%20always%20correspond%20with%20enhanced%20learning%20and%20performance.%20In%20this%20study%2C%20we%20developed%20a%20workshop%20activity%20in%20which%20students%20participated%20in%20a%20computer-based%20experiment%20and%20used%20class-generated%20data%20to%20run%20a%20range%20of%20statistical%20procedures.%20To%20enable%20evaluation%2C%20we%20developed%20a%20parallel%2C%20didactic%2Fcanned%20workshop%2C%20which%20was%20identical%20to%20the%20activity-based%20version%2C%20except%20that%20students%20were%20told%20about%20the%20experiment%20and%20used%20a%20pre-existing%2Fcanned%20dataset%20to%20perform%20their%20analyses.%20Tutorial%20groups%20were%20randomized%20to%20one%20of%20the%20two%20workshop%20versions%2C%20and%2039%20students%20completed%20a%20post-workshop%20evaluation%20questionnaire.%20A%20series%20of%20generalized%20linear%20mixed%20models%20suggested%20that%2C%20compared%20to%20the%20students%20in%20the%20didactic%2Fcanned%20condition%2C%20students%20exposed%20to%20the%20activity-based%20workshop%20displayed%20significantly%20greater%20knowledge%20of%20the%20methodological%20and%20statistical%20issues%20addressed%20in%20class%2C%20and%20were%20more%20confident%20about%20their%20ability%20to%20use%20this%20knowledge%20in%20the%20future.%20However%2C%20overall%20evaluations%20and%20satisfaction%20between%20the%20two%20groups%20were%20not%20reliably%20different.%20Implications%20of%20these%20findings%20and%20suggestions%20for%20future%20research%20are%20discussed.&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00279%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F163446%252F163446_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00279/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2297ms.
+[36m[info][0m [phantom] Done 3 steps in 2299ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ1094
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ1094, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ1094, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ1094, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.3, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/6/NP.3"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.3.full.pdf#page=1&view=FitH, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/6/NP.3.full.pdf+html?frame=sidebar, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/6/NP.3.full.pdf+html, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/6/NP.3&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.UkA2wFQ4VIY.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCPHdkkn0RKOpGV2Jmb6bwUP5RNAJA#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472163449055&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=58081628, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.UkA2wFQ4VIY.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCPHdkkn0RKOpGV2Jmb6bwUP5RNAJA#rpctoken=678180146&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/6/NP.3 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 7266ms.
+[36m[info][0m [phantom] Done 3 steps in 7276ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s12913-016-1320-y
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1007/s40314-016-0328-6
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1386/smt.10.1.7_1
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.18358/np-26-i3440
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1093/cid/civ950
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.1093/cid/civ950, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.1093/cid/civ950, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/lookup/doi/10.1093/cid/civ950, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/content/62/suppl_1/S83, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://cid.oxfordjournals.org/content/62/suppl_1/S83"
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Top&u=cid.oxfordjournals.org/content/62/suppl_1/S83, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Right1&u=cid.oxfordjournals.org/content/62/suppl_1/S83, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://cid.oxfordjournals.org/resource/htmlfiles/advert.html?p=Bottom&u=cid.oxfordjournals.org/content/62/suppl_1/S83, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&size=small&count=false&origin=http://cid.oxfordjournals.org&url=http://cid.oxfordjournals.org/content/62/suppl_1/S83&gsrc=3p&ic=1&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.UkA2wFQ4VIY.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCPHdkkn0RKOpGV2Jmb6bwUP5RNAJA#_methods=onPlusOne,_ready,_close,_open,_resizeMe,_renderstart,oncircled,drefresh,erefresh,onload&id=I0_1472163477711&parent=http://cid.oxfordjournals.org&pfname=&rpctoken=21853213, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=https://accounts.google.com/o/oauth2/postmessageRelay?parent=http://cid.oxfordjournals.org&jsh=m;/_/scs/apps-static/_/js/k=oz.gapi.en_GB.UkA2wFQ4VIY.O/m=__features__/am=AQ/rt=j/d=1/rs=AGLTcCPHdkkn0RKOpGV2Jmb6bwUP5RNAJA#rpctoken=419183853&forcesecure=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://cid.oxfordjournals.org/content/62/suppl_1/S83 (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 6485ms.
+[36m[info][0m [phantom] Done 3 steps in 6487ms
+info: URL processed: captured 7/8 elements (1 captures failed)
+info: processing URL: http://dx.doi.org/10.1136/bjsports-2015-095780
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.18488/journal.aefr/2016.6.3/102.3.162.171
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/2054270415622776
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/186870316x14555506071335
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1088/0022-3727/49/13/135106
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0060
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1088/0022-3727/49/13/135105
+info: processing URL: http://dx.doi.org/10.1186/s12986-016-0075-0
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00267
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00267, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00267, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00267, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00267/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00267/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163535333&tmr=load=1472163534580&core=1472163534619&main=1472163535327&ifr=1472163535338&cb=0&cdn=0&md=0&kw=observational learning,Demonstration,Tool Use,infants,Social cues&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00267/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00267/full&dt=What Does It Take for an Infant to Learn How to Use a Tool by Observation?&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6ecee87e5629&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=What%20Does%20It%20Take%20for%20an%20Infant%20to%20Learn%20How%20to%20Use%20a%20Tool%20by%20Observation%3F&description=Observational%20learning%20is%20probably%20one%20of%20the%20most%20powerful%20factors%20determining%20progress%20during%20child%20development.%20When%20learning%20a%20new%20skill%2C%20infants%20rely%20on%20their%20own%20exploration%3B%20but%20they%20also%20frequently%20benefit%20from%20an%20adult%E2%80%99s%20verbal%20support%20or%20from%20demonstration%20by%20an%20adult%20modelling%20the%20action.%20At%20what%20age%20and%20under%20what%20conditions%20does%20adult%20demonstration%20really%20help%20the%20infant%20to%20learn%20a%20novel%20behavior%3F%20In%20this%20review%2C%20we%20summarize%20recently%20published%20work%20we%20have%20conducted%20on%20the%20acquisition%20of%20tool%20use%20during%20the%20second%20year%20of%20life.%20In%20particular%2C%20we%20consider%20under%20what%20conditions%20and%20to%20what%20extent%20seeing%20a%20demonstration%20from%20an%20adult%20advances%20an%20infant's%20understanding%20of%20how%20to%20use%20a%20tool%20to%20obtain%20an%20out-of-reach%20object.%20Our%20results%20show%20that%20classic%20demonstration%20starts%20being%20helpful%20at%2018%20months%20of%20age.%20When%20adults%20explicitly%20show%20their%20intention%20prior%20to%20demonstration%2C%20even%2016-month-old%20infants%20learn%20from%20the%20demonstration.%20On%20the%20other%20hand%2C%20providing%20an%20explicit%20demonstration%20(%E2%80%9Clook%20at%20how%20I%20do%20it%E2%80%9D)%20is%20not%20very%20useful%20before%20infants%20are%20ready%20to%20succeed%20by%20themselves%20anyway.%20In%20contrast%2C%20repeated%20observations%20of%20the%20required%20action%20in%20a%20social%20context%2C%20without%20explicit%20reference%20to%20this%20action%2C%20considerably%20advances%20the%20age%20of%20success%20and%20the%20usefulness%20of%20providing%20a%20demonstration.%20We%20also%20show%20that%20the%20effect%20of%20demonstration%20can%20be%20enhanced%20if%20the%20demonstration%20makes%20the%20baby%20laugh.%20Taken%20together%2C%20the%20results%20from%20this%20series%20of%20studies%20on%20observationa...&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00267%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F173223%252F173223_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00267/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2354ms.
+[36m[info][0m [phantom] Done 3 steps in 2359ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3928/00485713-20160120-01
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00263
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00263, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00263, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00263, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00263/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00263/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163543321&tmr=load=1472163542477&core=1472163542540&main=1472163543316&ifr=1472163543326&cb=0&cdn=0&md=0&kw=Speech Perception,energetic masking,informational masking,synthetic speech,autonomic nervous system response,Effortful listening&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00263/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00263/full&dt=Autonomic Nervous System Responses During Perception of Masked Speech may Reflect Constructs other than Subjective Listening Effort&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6ed64a2b6177&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Autonomic%20Nervous%20System%20Responses%20During%20Perception%20of%20Masked%20Speech%20may%20Reflect%20Constructs%20other%20than%20Subjective%20Listening%20Effort&description=Typically%2C%20understanding%20speech%20seems%20effortless%20and%20automatic.%20However%2C%20a%20variety%20of%20factors%20may%2C%20independently%20or%20interactively%2C%20make%20listening%20more%20effortful.%20Physiological%20measures%20may%20help%20to%20distinguish%20between%20the%20application%20of%20different%20cognitive%20mechanisms%20whose%20operation%20is%20perceived%20as%20effortful.%20In%20the%20present%20study%2C%20physiological%20and%20behavioral%20measures%20associated%20with%20task%20demand%20were%20collected%20along%20with%20behavioral%20measures%20of%20performance%20while%20participants%20listened%20to%20and%20repeated%20sentences.%20The%20goal%20was%20to%20measure%20psychophysiological%20reactivity%20associated%20with%20three%20degraded%20listening%20conditions%2C%20each%20of%20which%20differed%20in%20terms%20of%20the%20source%20of%20the%20difficulty%20(distortion%2C%20energetic%20masking%2C%20and%20informational%20masking)%2C%20and%20therefore%20were%20expected%20to%20engage%20different%20cognitive%20mechanisms.%20These%20conditions%20were%20chosen%20to%20be%20matched%20for%20overall%20performance%20(keywords%20correct)%2C%20and%20were%20compared%20to%20listening%20to%20unmasked%20speech%20produced%20by%20a%20natural%20voice.%20The%20three%20degraded%20conditions%20were%3A%20(1)%20Unmasked%20speech%20produced%20by%20a%20computer%20speech%20synthesizer%2C%20(2)%20%20Speech%20produced%20by%20a%20natural%20voice%20and%20masked%20by%20speech-shaped%20noise%20and%20(3)%20Speech%20produced%20by%20a%20natural%20voice%20and%20masked%20by%20two-talker%20babble.%20Masked%20conditions%20were%20both%20presented%20at%20a%20-8%20dB%20signal%20to%20noise%20ratio%20(SNR)%2C%20a%20level%20shown%20in%20previous%20research%20to%20result%20in%20comparable%20levels%20of%20performance%20for%20these%20stimuli%20and%20maskers.%20Performance%20was%20measured%20in%20terms%20of%20proportion%20of%20key%20words%20identified%20corr...&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00263%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F170291%252F170291_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00263/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2756ms.
+[36m[info][0m [phantom] Done 3 steps in 2761ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.3110
+info: processing URL: http://dx.doi.org/10.1136/medethics-2015-102739corr1
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00214
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00214, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00214, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00214, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00214/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00214/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163564134&tmr=load=1472163563371&core=1472163563420&main=1472163564127&ifr=1472163564138&cb=0&cdn=0&md=0&kw=Reference,Repeated name penalty,pronouns,semantic relations,spoken language comprehension&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00214/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00214/full&dt=Semantic Relations Cause Interference in Spoken Language Comprehension When Using Repeated Definite References, Not Pronouns&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6eeb5a640370&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Semantic%20Relations%20Cause%20Interference%20in%20Spoken%20Language%20Comprehension%20When%20Using%20Repeated%20Definite%20References%2C%20Not%20Pronouns&description=The%20choice%20and%20processing%20of%20referential%20expressions%20depend%20on%20the%20referents%E2%80%99%20status%20within%20the%20discourse%2C%20such%20that%20pronouns%20are%20generally%20preferred%20over%20full%20repetitive%20references%20when%20the%20referent%20is%20salient.%20Here%20we%20report%20two%20visual-world%20experiments%20showing%20that%3A%20(1)%20in%20spoken%20language%20comprehension%2C%20this%20preference%20is%20reflected%20in%20delayed%20fixations%20to%20referents%20mentioned%20after%20repeated%20definite%20references%20compared%20with%20after%20pronouns%3B%20(2)%20repeated%20references%20are%20processed%20differently%20than%20new%20references%3B%20(3)%20long-term%20semantic%20memory%20representations%20affect%20the%20processing%20of%20pronouns%20and%20repeated%20names%20differently.%20Overall%2C%20these%20results%20support%20the%20role%20of%20semantic%20discourse%20representation%20in%20referential%20processing%20and%20reveal%20important%20details%20about%20how%20pronouns%20and%20full%20repeated%20references%20are%20processed%20in%20the%20context%20of%20these%20representations.%20The%20results%20suggest%20the%20need%20for%20modifications%20to%20current%20theoretical%20accounts%20of%20reference%20processing%20such%20as%20Discourse%20Prominence%20Theory%20and%20the%20Informational%20Load%20Hypothesis.&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00214%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F141839%252F141839_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00214/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2295ms.
+[36m[info][0m [phantom] Done 3 steps in 2300ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.2148/benv.42.1.107
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.4017/gt.2016.14.3.013.00
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1044/leader.ftr2.21032016.46
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.15537/smj.2016.3.13625
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.11591/ijpeds.v7.i1.pp66-74
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0300985815612556
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5327/z201600010001rbm
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0011
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0361684315622644
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.12928/telkomnika.v14i1.3169
+info: processing URL: http://dx.doi.org/10.1038/nmiddleeast.2016.23
+info: URL processed: captured 1/11 elements (10 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00209
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00209, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00209, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00209, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00209/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00209/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163629708&tmr=load=1472163628893&core=1472163628937&main=1472163629702&ifr=1472163629712&cb=0&cdn=0&md=0&kw=nonnative speech perception,Tashlhiyt Berber,french,geminate obstruents,timing perception&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00209/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00209/full&dt=Differential Difficulties in Perception of Tashlhiyt Berber Consonant Quantity Contrasts by Native Tashlhiyt Listeners vs. Berber-Naïve French Listeners&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf6f2ce3c9b4c1&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Differential%20Difficulties%20in%20Perception%20of%20Tashlhiyt%20Berber%20Consonant%20Quantity%20Contrasts%20by%20Native%20Tashlhiyt%20Listeners%20vs.%20Berber-Na%C3%AFve%20French%20Listeners&description=In%20a%20discrimination%20experiment%20on%20several%20Tashlhiyt%20Berber%20singleton-geminate%20contrasts%2C%20we%20find%20that%20French%20listeners%20encounter%20substantial%20difficulty%20compared%20to%20native%20speakers.%20Native%20listeners%20of%20Tashlhiyt%20perform%20near%20ceiling%20level%20on%20all%20contrasts.%20French%20listeners%20perform%20better%20on%20final%20contrasts%20such%20as%20fit-fitt%20than%20initial%20contrasts%20such%20as%20bi-bbi%20or%20sir-ssir.%20That%20is%2C%20French%20listeners%20are%20more%20sensitive%20to%20silent%20closure%20duration%20in%20word-final%20voiceless%20stops%20than%20to%20either%20voiced%20murmur%20or%20frication%20duration%20of%20fully%20voiced%20stops%20or%20voiceless%20fricatives%20in%20word-initial%20position.%20We%20propose%2C%20tentatively%2C%20that%20native%20speakers%20of%20French%2C%20a%20language%20in%20which%20gemination%20is%20usually%20not%20considered%20to%20be%20phonemic%2C%20have%20not%20acquired%20quantity%20contrasts%20but%20yet%20exhibit%20a%20presumably%20universal%20sensitivity%20to%20rhythm%2C%20whereby%20listeners%20are%20able%20to%20perceive%20and%20compare%20the%20relative%20temporal%20distance%20between%20beats%20given%20by%20successive%20salient%20phonetic%20events%20such%20as%20a%20sequence%20of%20vowel%20nuclei.&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00209%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F111804%252F111804_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00209/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 3941ms.
+[36m[info][0m [phantom] Done 3 steps in 3945ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1109/tsc.2014.2363654
+info: processing URL: http://dx.doi.org/10.1542/pir.2015-0067
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1371/journal.pmed.1001967
+info: URL processed: captured 21/33 elements (12 captures failed)
+info: processing URL: http://dx.doi.org/10.1371/journal.pmed.1001968
+info: URL processed: captured 21/33 elements (12 captures failed)
+info: processing URL: http://dx.doi.org/10.3904/kjim.2015.227
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamasurg.2015.3940
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.17212/2075-0862-2016-1.2-22-29
+info: processing URL: http://dx.doi.org/10.2148/benv.42.1.120
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3844/ajassp.2016.261.266
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1001/jamasurg.2015.3947
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1542/pir.2015-0064
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0007
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/219944616x14537295637871
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1166/jbt.2016.1457
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1166/jbt.2016.1452
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0956474815624589
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0256090916634223
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0030
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0036
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.1177/0956474815624596
+info: URL processed: captured 6/11 elements (5 captures failed)
+info: processing URL: http://dx.doi.org/10.3923/ajft.2016.76.83
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1364/josaa.33.000ed3
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.5588/ijtld.15.1024-2
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.1049/htl.2015.0037
+info: URL processed: captured 7/11 elements (4 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00233
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00233, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00233, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00233, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00233/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00233/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163890205&tmr=load=1472163889418&core=1472163889487&main=1472163890200&ifr=1472163890209&cb=0&cdn=0&md=0&kw=Mortality salience,terror management (TMT),CSR communication,Attribution,Value-orientation&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00233/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00233/full&dt=Perceived Mortality and Perceived Morality: Perceptions of Value-Orientation Are More Likely When a Decision Is Preceded by a Mortality Reminder&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf70310df247ae&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Perceived%20Mortality%20and%20Perceived%20Morality%3A%20Perceptions%20of%20Value-Orientation%20Are%20More%20Likely%20When%20a%20Decision%20Is%20Preceded%20by%20a%20Mortality%20Reminder&description=The%20questions%20addressed%20in%20this%20paper%20are%20whether%20and%20how%20reported%20mortality%20reminders%20can%20function%20as%20an%20indication%20of%20sincerity%20when%20communicating%20ambiguously%20motivated%20decisions.%20In%20two%20experiments%2C%20participants%20were%20exposed%20to%20a%20fictitious%20CEO%20who%20announced%20a%20decision%20to%20implement%20new%20organizational%20measures%20that%20were%20both%20environmentally%20and%20financially%20beneficial.%20In%20the%20experimental%20condition%2C%20the%20CEO%20attributed%20her%20new%20ideas%20to%20a%20recent%20mortality%20reminder.%20In%20the%20active%20control%20condition%2C%20the%20CEO%20attributed%20her%20decision%20to%20a%20non-lethal%20dentistry%20health%20scare%2C%20and%20in%20the%20passive%20control%20condition%20the%20CEO%20did%20not%20give%20any%20account%20of%20events%20preceding%20her%20decision.%20When%20a%20CEO%20implemented%20new%20corporate%20initiatives%20after%20a%20mortality%20reminder%2C%20her%20motivation%20for%20doing%20so%20was%20perceived%20as%20somewhat%20more%20motivated%20by%20intrinsic%20values%2C%20and%20significantly%20less%20motivated%20by%20financial%20gains.%20This%20change%20in%20attribution%20patterns%20was%20demonstrated%20to%20be%20indirectly%20related%20to%20a%20positive%20evaluation%20of%20the%20CEO%2C%20as%20well%20as%20an%20increased%20willingness%20to%20pay%20for%20the%20organization%E2%80%99s%20services.%20The%20second%20experiment%20further%20demonstrated%20that%20the%20reduced%20attribution%20to%20financial%20motivation%20associated%20with%20mortality%20awareness%20persisted%20even%20when%20the%20CEO%20in%20question%20was%20known%20for%20placing%20a%20high%20personal%20priority%20on%20financial%20goal%20attainment.%20The%20findings%20underscore%20the%20importance%20of%20perceived%20value-oriented%20motivation%20when%20communicating%20climate%20change%20mitigating%20policies%2C%20and%20the%20role%20of%20mortality%20...&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00233%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F179053%252F179053_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00233/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2301ms.
+[36m[info][0m [phantom] Done 3 steps in 2444ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/smll.201503509
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.3389/fpsyg.2016.00226
+[36m[info][0m [phantom] Starting...
+[36m[info][0m [phantom] Running suite: 3 steps
+[32;1m[debug][0m [phantom] opening url: http://dx.doi.org/10.3389/fpsyg.2016.00226, HTTP GET
+[32;1m[debug][0m [phantom] Navigation requested: url=http://dx.doi.org/10.3389/fpsyg.2016.00226, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00226, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] Navigation requested: url=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00226/full, type=Other, willNavigate=true, isMainFrame=true
+[32;1m[debug][0m [phantom] url changed to "http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00226/full"
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=about:blank, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Navigation requested: url=http://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.2732950400095433&iit=1472163899106&tmr=load=1472163898380&core=1472163898446&main=1472163899100&ifr=1472163899110&cb=0&cdn=0&md=0&kw=female faces,makeup,Memory,attractiveness,Impression&ab=-&dh=journal.frontiersin.org&dr=&du=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00226/full&href=http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00226/full&dt=Faces with Light Makeup Are Better Recognized than Faces with Heavy Makeup&dbg=0&cap=tc=0&ab=0&inst=1&jsl=1&prod=undefined&lng=en&ogt=image,url,description,title,site_name,type=article&pc=men&pub=ra-535f7e222fc3ca72&ssl=0&sid=57bf703a179ebf61&srpl=1&srf=0.01&srx=1&ver=300&xck=0&xtr=0&og=type=article&site_name=Frontiers&title=Faces%20with%20Light%20Makeup%20Are%20Better%20Recognized%20than%20Faces%20with%20Heavy%20Makeup&description=Many%20women%20wear%20facial%20makeup%20to%20accentuate%20their%20appeal%20and%20attractiveness.%20Makeup%20may%20vary%20from%20natural%20(light)%20to%20glamorous%20(heavy)%2C%20depending%20of%20the%20context%20of%20interpersonal%20situations%2C%20an%20emphasis%20on%20femininity%2C%20and%20current%20societal%20makeup%20trends.%20This%20study%20examined%20how%20light%20makeup%20and%20heavy%20makeup%20influenced%20attractiveness%20ratings%20and%20facial%20recognition.%20In%20a%20rating%20task%2C%2038%20Japanese%20women%20assigned%20attractiveness%20ratings%20to%2036%20Japanese%20female%20faces%20with%20no%20makeup%2C%20light%20makeup%2C%20and%20heavy%20makeup%20(12%20each).%20In%20a%20subsequent%20recognition%20task%2C%20the%20participants%20were%20presented%20with%2036%20old%20and%2036%20new%20faces.%20Results%20indicated%20that%20attractiveness%20was%20rated%20highest%20for%20the%20light%20makeup%20faces%20and%20lowest%20for%20the%20no%20makeup%20faces.%20In%20contrast%2C%20recognition%20performance%20was%20higher%20for%20the%20no%20makeup%20and%20light%20make%20up%20faces%20than%20for%20the%20heavy%20makeup%20faces.%20Faces%20with%20heavy%20makeup%20produced%20a%20higher%20rate%20of%20false%20recognition%20than%20did%20other%20faces%2C%20possibly%20because%20heavy%20makeup%20creates%20an%20impression%20of%20the%20style%20of%20makeup%20itself%2C%20rather%20than%20the%20individual%20wearing%20the%20makeup.%20The%20present%20study%20suggests%20that%20light%20makeup%20is%20preferable%20to%20heavy%20makeup%20in%20that%20light%20makeup%20does%20not%20interfere%20with%20individual%20recognition%20and%20gives%20beholders%20positive%20impressions.&url=http%3A%2F%2Fjournal.frontiersin.org%2Farticle%2F10.3389%2Ffpsyg.2016.00226%2Ffull&image=http%253A%252F%252Fwww.frontiersin.org%252Ffiles%252FMyHome%2520Article%2520Library%252F177977%252F177977_Thumb_60.jpg&csi=undefined&rev=v7.4.6-wp&ct=0&xld=1&xd=1, type=Other, willNavigate=true, isMainFrame=false
+[32;1m[debug][0m [phantom] Successfully injected Casper client-side utilities
+[32;1m[debug][0m [phantom] start page is loaded
+[36m[info][0m [phantom] Step anonymous 3/3 http://journal.frontiersin.org/article/10.3389/fpsyg.2016.00226/full (HTTP 200)
+[36m[info][0m [phantom] Step anonymous 3/3: done in 2305ms.
+[36m[info][0m [phantom] Done 3 steps in 2321ms
+info: URL processed: captured 6/8 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.5117/ped2016.1.bakk
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.2174/0929866523666160223122257
+error: page did not return a 200 so moving on to next url in list
+info: processing URL: http://dx.doi.org/10.3747/pdi.2014.00322
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.1002/eji.201546114
+info: URL processed: captured 9/11 elements (2 captures failed)
+info: processing URL: http://dx.doi.org/10.12977/stor617
+info: URL processed: captured 5/11 elements (6 captures failed)
+info: processing URL: http://dx.doi.org/10.1628/093245616x14472269022861
+info: URL processed: captured 0/11 elements (11 captures failed)
+info: processing URL: http://dx.doi.org/10.3928/19425864-20160205-01
+info: URL processed: captured 8/11 elements (3 captures failed)
+info: processing URL: http://dx.doi.org/10.1186/s13052-016-0234-y

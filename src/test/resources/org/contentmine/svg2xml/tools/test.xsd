@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xsd:schema 
+    targetNamespace="http://www.xml-cml.org/schema/ami2"
+	xmlns=          "http://www.xml-cml.org/schema/ami2"
+    elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:h="http://www.w3.org/1999/xhtml"
+	>
+	<xsd:element name="foo" id="foo">
+		<xsd:annotation>
+			<xsd:documentation>
+				<h:div class="summary">foo</h:div>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="bar" />
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="note">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="to" type="xsd:string" />
+				<xsd:element name="from" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

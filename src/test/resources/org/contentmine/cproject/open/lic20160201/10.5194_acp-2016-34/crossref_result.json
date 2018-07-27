@@ -1,0 +1,146 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        30
+      ]
+    ],
+    "date-time": "2016-05-30T22:41:56Z",
+    "timestamp": 1464648116172
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "603557"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Directorate-General for the Environment",
+      "DOI": "10.13039/501100000802"
+    }
+  ],
+  "DOI": "10.5194/acp-2016-34",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:39:00Z",
+    "timestamp": 1454323140000
+  },
+  "page": "1-25",
+  "source": "CrossRef",
+  "title": [
+    "Observations of PAN and its confinement in the Asian Summer Monsoon Anticyclone in high spatial resolution"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Ungermann",
+      "given": "J.",
+      "ORCID": "http://orcid.org/0000-0001-9095-8332"
+    },
+    {
+      "affiliation": [],
+      "family": "Ern",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Kaufmann",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Müller",
+      "given": "R.",
+      "ORCID": "http://orcid.org/0000-0002-5024-9977"
+    },
+    {
+      "affiliation": [],
+      "family": "Spang",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Ploeger",
+      "given": "F."
+    },
+    {
+      "affiliation": [],
+      "family": "Vogel",
+      "given": "B."
+    },
+    {
+      "affiliation": [],
+      "family": "Riese",
+      "given": "M."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        30
+      ]
+    ],
+    "date-time": "2016-05-30T21:35:55Z",
+    "timestamp": 1464644155000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2016-34",
+  "ISSN": [
+    "1680-7375"
+  ]
+}

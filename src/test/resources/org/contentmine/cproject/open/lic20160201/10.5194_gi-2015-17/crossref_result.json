@@ -1,0 +1,146 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        30
+      ]
+    ],
+    "date-time": "2016-04-30T15:42:49Z",
+    "timestamp": 1462030969925
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "2015 Italy-USA PGR00175"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Ministero degli Affari Esteri e della Cooperazione Internazionale",
+      "DOI": "10.13039/501100006601"
+    }
+  ],
+  "DOI": "10.5194/gi-2015-17",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:44:39Z",
+    "timestamp": 1454334279000
+  },
+  "page": "1-17",
+  "source": "CrossRef",
+  "title": [
+    "A novel permanent gauge-cam station for surface flow observations on the Tiber river"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Tauro",
+      "given": "Flavia",
+      "ORCID": "http://orcid.org/0000-0002-5176-3492"
+    },
+    {
+      "affiliation": [],
+      "family": "Petroselli",
+      "given": "Andrea"
+    },
+    {
+      "affiliation": [],
+      "family": "Porfiri",
+      "given": "Maurizio"
+    },
+    {
+      "affiliation": [],
+      "family": "Giandomenico",
+      "given": "Lorenzo"
+    },
+    {
+      "affiliation": [],
+      "family": "Bernardi",
+      "given": "Guido"
+    },
+    {
+      "affiliation": [],
+      "family": "Mele",
+      "given": "Francesco"
+    },
+    {
+      "affiliation": [],
+      "family": "Spina",
+      "given": "Domenico"
+    },
+    {
+      "affiliation": [],
+      "family": "Grimaldi",
+      "given": "Salvatore",
+      "ORCID": "http://orcid.org/0000-0001-5715-106X"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Geoscientific Instrumentation, Methods and Data Systems Discussions",
+    "Geosci. Instrum. Method. Data Syst. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        30
+      ]
+    ],
+    "date-time": "2016-04-30T14:13:41Z",
+    "timestamp": 1462025621000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/gi-2015-17",
+  "ISSN": [
+    "2193-0872"
+  ]
+}

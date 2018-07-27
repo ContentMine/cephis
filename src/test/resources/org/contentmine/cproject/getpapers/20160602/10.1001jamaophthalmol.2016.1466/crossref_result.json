@@ -1,0 +1,84 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:20Z",
+    "timestamp": 1464911000016
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaophthalmol.2016.1466",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:17Z",
+    "timestamp": 1464906917000
+  },
+  "source": "CrossRef",
+  "title": [
+    "New Understanding of Age-Related Macular Degeneration Through Quantitative Autofluorescence"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of Ophthalmology, New York University School of Medicine, New York"
+        }
+      ],
+      "family": "Smith",
+      "given": "R. Theodore"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Ophthalmol",
+    "JAMA Ophthalmology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:18Z",
+    "timestamp": 1464906918000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaophthalmol.2016.1466",
+  "ISSN": [
+    "2168-6165"
+  ]
+}

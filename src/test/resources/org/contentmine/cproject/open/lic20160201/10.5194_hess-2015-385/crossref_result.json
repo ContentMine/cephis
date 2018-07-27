@@ -1,0 +1,128 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        11
+      ]
+    ],
+    "date-time": "2016-05-11T14:41:33Z",
+    "timestamp": 1462977693015
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/hess-2015-385",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:22:46Z",
+    "timestamp": 1454322166000
+  },
+  "page": "1-49",
+  "source": "CrossRef",
+  "title": [
+    "Geochemical inverse modeling of chemical and isotopic data from groundwaters in Sahara (Ouargla basin, Algeria)"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Slimani",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Guendouz",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Trolard",
+      "given": "F."
+    },
+    {
+      "affiliation": [],
+      "family": "Moulla",
+      "given": "A.-S."
+    },
+    {
+      "affiliation": [],
+      "family": "Hamdi-Aissa",
+      "given": "B."
+    },
+    {
+      "affiliation": [],
+      "family": "Bourrié",
+      "given": "G."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Hydrology and Earth System Sciences Discussions",
+    "Hydrol. Earth Syst. Sci. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        11
+      ]
+    ],
+    "date-time": "2016-05-11T13:12:54Z",
+    "timestamp": 1462972374000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/hess-2015-385",
+  "ISSN": [
+    "1812-2116"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Earth and Planetary Sciences (miscellaneous)"
+  ]
+}

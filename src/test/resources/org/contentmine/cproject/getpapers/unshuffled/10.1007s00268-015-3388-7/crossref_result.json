@@ -1,0 +1,156 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        16
+      ]
+    ],
+    "date-time": "2016-05-16T15:46:05Z",
+    "timestamp": 1463413565513
+  },
+  "reference-count": 24,
+  "publisher": "Springer Nature",
+  "issue": "6",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/4.0"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00268-015-3388-7",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T21:01:26Z",
+    "timestamp": 1454360486000
+  },
+  "page": "1454-1461",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Abdominal Compartment Syndrome and Intra-abdominal Ischemia in Patients with Severe Acute Pancreatitis"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "40",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Smit",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Buddingh",
+      "given": "K. T."
+    },
+    {
+      "affiliation": [],
+      "family": "Bosma",
+      "given": "B."
+    },
+    {
+      "affiliation": [],
+      "family": "Nieuwenhuijs",
+      "given": "V. B."
+    },
+    {
+      "affiliation": [],
+      "family": "Hofker",
+      "given": "H. S."
+    },
+    {
+      "affiliation": [],
+      "family": "Zijlstra",
+      "given": "J. G."
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "World J Surg",
+    "World Journal of Surgery"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00268-015-3388-7.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00268-015-3388-7/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        16
+      ]
+    ],
+    "date-time": "2016-05-16T14:03:22Z",
+    "timestamp": 1463407402000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "3388"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00268-015-3388-7",
+  "ISSN": [
+    "0364-2313",
+    "1432-2323"
+  ],
+  "subject": [
+    "Surgery"
+  ]
+}

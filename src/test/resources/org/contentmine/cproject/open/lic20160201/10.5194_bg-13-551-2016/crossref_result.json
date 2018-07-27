@@ -1,0 +1,135 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:40:30Z",
+    "timestamp": 1454582430697
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "NE/F008856/1"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Natural Environment Research Council",
+      "DOI": "10.13039/501100000270"
+    }
+  ],
+  "DOI": "10.5194/bg-13-551-2016",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:41:38Z",
+    "timestamp": 1454323298000
+  },
+  "page": "551-566",
+  "source": "CrossRef",
+  "title": [
+    "Runoff- and erosion-driven transport of cattle slurry: linking molecular tracers to hydrological processes"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "volume": "13",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Lloyd",
+      "given": "C. E. M."
+    },
+    {
+      "affiliation": [],
+      "family": "Michaelides",
+      "given": "K."
+    },
+    {
+      "affiliation": [],
+      "family": "Chadwick",
+      "given": "D. R."
+    },
+    {
+      "affiliation": [],
+      "family": "Dungait",
+      "given": "J. A. J.",
+      "ORCID": "http://orcid.org/0000-0001-9074-4174"
+    },
+    {
+      "affiliation": [],
+      "family": "Evershed",
+      "given": "R. P."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Biogeosciences"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:41:40Z",
+    "timestamp": 1454323300000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/bg-13-551-2016",
+  "ISSN": [
+    "1726-4189"
+  ],
+  "subject": [
+    "Earth-Surface Processes",
+    "Ecology, Evolution, Behavior and Systematics"
+  ]
+}

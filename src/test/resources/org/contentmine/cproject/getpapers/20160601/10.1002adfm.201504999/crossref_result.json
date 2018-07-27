@@ -1,0 +1,215 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:40:48Z",
+    "timestamp": 1464784848577
+  },
+  "reference-count": 42,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "11204207"
+      ],
+      "doi-asserted-by": "crossref",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    },
+    {
+      "award": [
+        "20120032120074"
+      ],
+      "name": "PhD Programs Foundation of the Ministry of Education of China"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adfm.201504999",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:47:53Z",
+    "timestamp": 1464781673000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Ultrathin Epitaxial Ferromagneticγ-Fe2O3Layer as High Efficiency Spin Filtering Materials for Spintronics Device Based on Semiconductors"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Division of Physical Science and Engineering; King Abdullah University of Science and Technology (KAUST); Thuwal 23955 Kingdom of Saudi Arabia"
+        },
+        {
+          "name": "Tianjin Key Laboratory of Low Dimensional Materials Physics and Preparing Technology; Institute of Advanced Materials Physics; Faculty of Science; Tianjin University; Tianjin 300072 P. R. China"
+        }
+      ],
+      "family": "Li",
+      "given": "Peng"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Physical Science and Engineering; King Abdullah University of Science and Technology (KAUST); Thuwal 23955 Kingdom of Saudi Arabia"
+        }
+      ],
+      "family": "Xia",
+      "given": "Chuan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "KAUST Supercomputing Laboratory (KSL); King Abdullah University of Science & Technology (KAUST); Thuwal 23955-6900 Kingdom of Saudi Arabia"
+        }
+      ],
+      "family": "Zhu",
+      "given": "Zhiyong"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Physical Science and Engineering; King Abdullah University of Science and Technology (KAUST); Thuwal 23955 Kingdom of Saudi Arabia"
+        }
+      ],
+      "family": "Wen",
+      "given": "Yan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Physical Science and Engineering; King Abdullah University of Science and Technology (KAUST); Thuwal 23955 Kingdom of Saudi Arabia"
+        }
+      ],
+      "family": "Zhang",
+      "given": "Qiang"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Physical Science and Engineering; King Abdullah University of Science and Technology (KAUST); Thuwal 23955 Kingdom of Saudi Arabia"
+        }
+      ],
+      "family": "Alshareef",
+      "given": "Husam N."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Division of Physical Science and Engineering; King Abdullah University of Science and Technology (KAUST); Thuwal 23955 Kingdom of Saudi Arabia"
+        }
+      ],
+      "family": "Zhang",
+      "given": "Xi-Xiang"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Adv. Funct. Mater.",
+    "Advanced Functional Materials"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadfm.201504999"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:47:56Z",
+    "timestamp": 1464781676000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adfm.201504999",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "1616-301X"
+  ],
+  "subject": [
+    "Electrochemistry",
+    "Electronic, Optical and Magnetic Materials",
+    "Condensed Matter Physics",
+    "Biomaterials"
+  ]
+}

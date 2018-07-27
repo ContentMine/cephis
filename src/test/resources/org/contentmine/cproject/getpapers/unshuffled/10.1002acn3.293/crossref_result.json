@@ -1,0 +1,238 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        5
+      ]
+    ],
+    "date-time": "2016-03-05T10:44:54Z",
+    "timestamp": 1457174694311
+  },
+  "reference-count": 33,
+  "publisher": "Wiley-Blackwell",
+  "issue": "3",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "National Institutes of Health",
+      "DOI": "10.13039/100000002"
+    },
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "National Institute of Neurological Disorders and Stroke",
+      "DOI": "10.13039/100000065"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        3
+      ]
+    ]
+  },
+  "DOI": "10.1002/acn3.293",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T09:48:29Z",
+    "timestamp": 1454320109000
+  },
+  "page": "166-179",
+  "source": "CrossRef",
+  "title": [
+    "Insufficient disease inhibition by intrathecal rituximab in progressive multiple sclerosis"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "volume": "3",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunological Diseases Unit; National Institute of Neurological Disorders and Stroke (NINDS); Bethesda Maryland"
+        }
+      ],
+      "family": "Komori",
+      "given": "Mika"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunological Diseases Unit; National Institute of Neurological Disorders and Stroke (NINDS); Bethesda Maryland"
+        }
+      ],
+      "family": "Lin",
+      "given": "Yen Chih"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunology Clinic; NINDS; Bethesda Maryland"
+        }
+      ],
+      "family": "Cortese",
+      "given": "Irene"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunological Diseases Unit; National Institute of Neurological Disorders and Stroke (NINDS); Bethesda Maryland"
+        }
+      ],
+      "family": "Blake",
+      "given": "Andrew"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunology Clinic; NINDS; Bethesda Maryland"
+        }
+      ],
+      "family": "Ohayon",
+      "given": "Joan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunological Diseases Unit; National Institute of Neurological Disorders and Stroke (NINDS); Bethesda Maryland"
+        }
+      ],
+      "family": "Cherup",
+      "given": "Jamie"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Flow Cytometry Core Facility; NINDS; Bethesda Maryland"
+        }
+      ],
+      "family": "Maric",
+      "given": "Dragan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunological Diseases Unit; National Institute of Neurological Disorders and Stroke (NINDS); Bethesda Maryland"
+        }
+      ],
+      "family": "Kosa",
+      "given": "Peter"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Clinical Neuroscience Program; NINDS; Bethesda Maryland"
+        }
+      ],
+      "family": "Wu",
+      "given": "Tianxia"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Neuroimmunological Diseases Unit; National Institute of Neurological Disorders and Stroke (NINDS); Bethesda Maryland"
+        },
+        {
+          "name": "NIH Center for Human Immunology (CHI); the National Institutes of Health (NIH); Bethesda Maryland"
+        }
+      ],
+      "family": "Bielekova",
+      "given": "Bibiana"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Annals of Clinical and Translational Neurology",
+    "Ann Clin Transl Neurol"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Facn3.293"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        2
+      ]
+    ],
+    "date-time": "2016-03-02T12:42:22Z",
+    "timestamp": 1456922542000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/acn3.293",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2328-9503"
+  ]
+}

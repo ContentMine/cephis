@@ -1,0 +1,85 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T02:41:35Z",
+    "timestamp": 1464835295243
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "issue": "23",
+  "published-print": {
+    "date-parts": [
+      [
+        1996,
+        6,
+        19
+      ]
+    ]
+  },
+  "DOI": "10.1001/jama.275.23.1780n",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:09Z",
+    "timestamp": 1464830589000
+  },
+  "page": "1780n",
+  "source": "CrossRef",
+  "title": [
+    "Over the Steep Rise"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "volume": "275",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Hadduck",
+      "given": "Kevin"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "container-title": [
+    "JAMA"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:23:09Z",
+    "timestamp": 1464830589000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        1996,
+        6,
+        19
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jama.275.23.1780n",
+  "ISSN": [
+    "0098-7484"
+  ],
+  "subject": [
+    "Medicine(all)"
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T12:41:50Z",
+    "timestamp": 1464784910079
+  },
+  "reference-count": 51,
+  "publisher": "Wiley-Blackwell",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 31,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2016-06-01T00:00:00Z",
+        "timestamp": 1464739200000
+      },
+      "URL": "http://onlinelibrary.wiley.com/termsAndConditions"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "31070855",
+        "31370965"
+      ],
+      "doi-asserted-by": "crossref",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    },
+    {
+      "award": [
+        "KM2016100250017"
+      ],
+      "name": "Scientific Research Common Program of the Beijing Municipal Commission of Education"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1002/adhm.201600114",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:23Z",
+    "timestamp": 1464781163000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Enhanced Biological Functions of Human Mesenchymal Stem-Cell Aggregates Incorporating E-Cadherin-Modified PLGA Microparticles"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Zhang",
+      "given": "Yan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        },
+        {
+          "name": "Nano Medical Engineering Laboratory; RIKEN; 2-1 Hirosawa Wako Saitama 351-0198 Japan"
+        }
+      ],
+      "family": "Mao",
+      "given": "Hongli"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Gao",
+      "given": "Chao"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Li",
+      "given": "Suhua"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Shuai",
+      "given": "Qizhi"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Xu",
+      "given": "Jianbin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Xu",
+      "given": "Ke"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Cao",
+      "given": "Lei"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Hepatobiliary Surgery; Beijing Chaoyang Hospital; Capital Medical University; Beijing 100020 China"
+        }
+      ],
+      "family": "Lang",
+      "given": "Ren"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "National Engineering Research Center for Biomaterials; Sichuan University; Chengdu 610064 China"
+        }
+      ],
+      "family": "Gu",
+      "given": "Zhongwei"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Biomaterials Center for Regenerative Medical Engineering; Foundation for Advancement of International Science; 24-16, kasuga, 3-chome Tsukuba 305-0821 Japan"
+        }
+      ],
+      "family": "Akaike",
+      "given": "Toshihiro"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "The Key Laboratory of Bioactive Materials; Ministry of Education; College of Life Science; Nankai University; Tianjin 300071 China"
+        }
+      ],
+      "family": "Yang",
+      "given": "Jun"
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Advanced Healthcare Materials",
+    "Adv. Healthcare Mater."
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fadhm.201600114"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ],
+    "date-time": "2016-06-01T11:39:27Z",
+    "timestamp": 1464781167000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/adhm.201600114",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2192-2640"
+  ]
+}

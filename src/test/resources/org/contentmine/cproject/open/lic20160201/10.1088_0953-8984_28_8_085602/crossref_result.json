@@ -1,0 +1,230 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T10:34:18Z",
+    "timestamp": 1454668458381
+  },
+  "reference-count": 47,
+  "publisher": "IOP Publishing",
+  "issue": "8",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        2
+      ]
+    ]
+  },
+  "DOI": "10.1088/0953-8984/28/8/085602",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T16:13:29Z",
+    "timestamp": 1454343209000
+  },
+  "page": "085602",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    " Photoheat-induced Schottky nanojunction and indirect Mott transition in VO 2 : photocurrent analysis "
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "28",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Kim",
+      "given": "Hyun-Tak"
+    },
+    {
+      "affiliation": [],
+      "family": "Kim",
+      "given": "Minjung"
+    },
+    {
+      "affiliation": [],
+      "family": "Sohn",
+      "given": "Ahrum"
+    },
+    {
+      "affiliation": [],
+      "family": "Slusar",
+      "given": "Tetiana"
+    },
+    {
+      "affiliation": [],
+      "family": "Seo",
+      "given": "Giwan"
+    },
+    {
+      "affiliation": [],
+      "family": "Cheong",
+      "given": "Hyeonsik"
+    },
+    {
+      "affiliation": [],
+      "family": "Kim",
+      "given": "Dong-Wook"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Journal of Physics: Condensed Matter",
+    "J. Phys.: Condens. Matter"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/0953-8984/28/i=8/a=085602/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/0953-8984/28/i=8/a=085602?key=crossref.aef26c6aa4cab6042bab5b448f27a187"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        2
+      ]
+    ],
+    "date-time": "2016-02-02T07:16:00Z",
+    "timestamp": 1454397360000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/0953-8984/28/8/085602",
+  "ISSN": [
+    "0953-8984",
+    "1361-648X"
+  ],
+  "subject": [
+    "Materials Science(all)",
+    "Condensed Matter Physics"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Journal of Physics: Condensed Matter"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "paper"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Photoheat-induced Schottky nanojunction and indirect Mott transition in VO 2 : photocurrent analysis"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-11-17"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2016-01-08"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-01"
+    }
+  ]
+}

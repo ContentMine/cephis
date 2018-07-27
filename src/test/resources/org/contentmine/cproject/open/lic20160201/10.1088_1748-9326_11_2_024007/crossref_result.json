@@ -1,0 +1,218 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T11:16:57Z",
+    "timestamp": 1455362217160
+  },
+  "reference-count": 64,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 8,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            9
+          ]
+        ],
+        "date-time": "2016-02-09T00:00:00Z",
+        "timestamp": 1454976000000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 8,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            9
+          ]
+        ],
+        "date-time": "2016-02-09T00:00:00Z",
+        "timestamp": 1454976000000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "Helmholtz-Gemeinschaft",
+      "DOI": "10.13039/501100001656"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1748-9326/11/2/024007",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        9
+      ]
+    ],
+    "date-time": "2016-02-09T17:13:59Z",
+    "timestamp": 1455038039000
+  },
+  "page": "024007",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    " Iron fertilisation and century-scale effects of open ocean dissolution of olivine in a simulated CO 2 removal experiment "
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "11",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Hauck",
+      "given": "Judith"
+    },
+    {
+      "affiliation": [],
+      "family": "Köhler",
+      "given": "Peter"
+    },
+    {
+      "affiliation": [],
+      "family": "Wolf-Gladrow",
+      "given": "Dieter"
+    },
+    {
+      "affiliation": [],
+      "family": "Völker",
+      "given": "Christoph"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        9
+      ]
+    ]
+  },
+  "container-title": [
+    "Environ. Res. Lett.",
+    "Environmental Research Letters"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=024007/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=024007?key=crossref.7d5ab8a17f2b2687fa59e1d3b4b66cf6"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        10
+      ]
+    ],
+    "date-time": "2016-02-10T07:48:01Z",
+    "timestamp": 1455090481000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1748-9326/11/2/024007",
+  "ISSN": [
+    "1748-9326"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Environmental Research Letters"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "lett"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "Iron fertilisation and century-scale effects of open ocean dissolution of olivine in a simulated CO 2 removal experiment"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-10-27"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2016-01-14"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-09"
+    }
+  ]
+}

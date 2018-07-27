@@ -1,0 +1,282 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T01:41:01Z",
+    "timestamp": 1464831661636
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamacardio.2016.0695",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:31Z",
+    "timestamp": 1464827851000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Diagnosis of Myocardial Infarction Using a High-Sensitivity Troponin I 1-Hour Algorithm"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Neumann",
+      "given": "Johannes Tobias"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany"
+        }
+      ],
+      "family": "Sörensen",
+      "given": "Nils Arne"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany"
+        }
+      ],
+      "family": "Schwemer",
+      "given": "Tjark"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany"
+        }
+      ],
+      "family": "Ojeda",
+      "given": "Francisco"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany"
+        }
+      ],
+      "family": "Bourry",
+      "given": "Rafael"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany"
+        }
+      ],
+      "family": "Sciacca",
+      "given": "Vanessa"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Schaefer",
+      "given": "Sarina"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany"
+        }
+      ],
+      "family": "Waldeyer",
+      "given": "Christoph"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany"
+        }
+      ],
+      "family": "Sinning",
+      "given": "Christoph"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Institute of Clinical Chemistry and Laboratory Medicine, University Medical Center Hamburg-Eppendorf, Hamburg, Germany4Unit of Clinical Chemistry, Department of Molecular Medicine and Surgery, Karolinska Institute, Stockholm, Sweden"
+        }
+      ],
+      "family": "Renné",
+      "given": "Thomas"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Emergency Department, Christchurch Hospital, Christchurch, New Zealand"
+        }
+      ],
+      "family": "Than",
+      "given": "Martin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Emergency Medicine, Royal Brisbane and Women’s Hospital, Brisbane, Australia"
+        }
+      ],
+      "family": "Parsonage",
+      "given": "William"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Cardiology, Cardiovascular Research Institute Basel, University Hospital Basel, Basel, Switzerland"
+        }
+      ],
+      "family": "Wildi",
+      "given": "Karin"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Makarova",
+      "given": "Nataliya"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Schnabel",
+      "given": "Renate B."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Cardiology, Charité Universitätsmedizin Berlin, Campus Benjamin Franklin, Berlin, Germany"
+        }
+      ],
+      "family": "Landmesser",
+      "given": "Ulf"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Cardiology, Cardiovascular Research Institute Basel, University Hospital Basel, Basel, Switzerland"
+        }
+      ],
+      "family": "Mueller",
+      "given": "Christian"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Emergency Medicine, Royal Brisbane and Women’s Hospital, Brisbane, Australia"
+        }
+      ],
+      "family": "Cullen",
+      "given": "Louise"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Emergency Medicine, Royal Brisbane and Women’s Hospital, Brisbane, Australia"
+        }
+      ],
+      "family": "Greenslade",
+      "given": "Jaimi"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Zeller",
+      "given": "Tanja"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Blankenberg",
+      "given": "Stefan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Karakas",
+      "given": "Mahir"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of General and Interventional Cardiology, University Heart Center Hamburg, University Hospital Hamburg-Eppendorf, Hamburg, Germany2German Center for Cardiovascular Research, Partner Site Hamburg/Kiel/Lübeck, Hamburg, Germany"
+        }
+      ],
+      "family": "Westermann",
+      "given": "Dirk"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Cardiology",
+    "JAMA Cardiol"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T00:37:35Z",
+    "timestamp": 1464827855000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamacardio.2016.0695",
+  "ISSN": [
+    "2380-6583"
+  ]
+}

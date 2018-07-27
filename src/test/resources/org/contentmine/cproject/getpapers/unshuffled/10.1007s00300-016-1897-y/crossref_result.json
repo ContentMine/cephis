@@ -1,0 +1,149 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:37:29Z",
+    "timestamp": 1454582249591
+  },
+  "reference-count": 55,
+  "publisher": "Springer Science + Business Media",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://www.springer.com/tdm"
+    }
+  ],
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "crossref",
+      "name": "Ministerio de Ciencia e Innovación",
+      "DOI": "10.13039/501100004837"
+    }
+  ],
+  "DOI": "10.1007/s00300-016-1897-y",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T06:56:04Z",
+    "timestamp": 1454309764000
+  },
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Effects of simultaneous increase in temperature and ocean acidification on biochemical composition and photosynthetic performance of common macroalgae from Kongsfjorden (Svalbard)"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Gordillo",
+      "given": "Francisco J. L.",
+      "ORCID": "http://orcid.org/0000-0003-1302-7213"
+    },
+    {
+      "affiliation": [],
+      "family": "Carmona",
+      "given": "Raquel"
+    },
+    {
+      "affiliation": [],
+      "family": "Viñegla",
+      "given": "Benjamín"
+    },
+    {
+      "affiliation": [],
+      "family": "Wiencke",
+      "given": "Christian"
+    },
+    {
+      "affiliation": [],
+      "family": "Jiménez",
+      "given": "Carlos"
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Polar Biol",
+    "Polar Biology"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://link.springer.com/content/pdf/10.1007/s00300-016-1897-y.pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://link.springer.com/article/10.1007/s00300-016-1897-y/fulltext.html"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T06:56:07Z",
+    "timestamp": 1454309767000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "1897"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00300-016-1897-y",
+  "ISSN": [
+    "0722-4060",
+    "1432-2056"
+  ],
+  "subject": [
+    "Agricultural and Biological Sciences(all)"
+  ]
+}

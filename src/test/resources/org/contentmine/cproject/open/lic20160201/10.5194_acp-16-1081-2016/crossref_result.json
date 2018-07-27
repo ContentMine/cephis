@@ -1,0 +1,165 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T10:40:32Z",
+    "timestamp": 1454582432639
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/acp-16-1081-2016",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:45:29Z",
+    "timestamp": 1454323529000
+  },
+  "page": "1081-1104",
+  "source": "CrossRef",
+  "title": [
+    "Size distribution and optical properties of mineral dust aerosols transported in the western Mediterranean"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "volume": "16",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Denjean",
+      "given": "C."
+    },
+    {
+      "affiliation": [],
+      "family": "Cassola",
+      "given": "F."
+    },
+    {
+      "affiliation": [],
+      "family": "Mazzino",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Triquet",
+      "given": "S."
+    },
+    {
+      "affiliation": [],
+      "family": "Chevaillier",
+      "given": "S."
+    },
+    {
+      "affiliation": [],
+      "family": "Grand",
+      "given": "N."
+    },
+    {
+      "affiliation": [],
+      "family": "Bourrianne",
+      "given": "T."
+    },
+    {
+      "affiliation": [],
+      "family": "Momboisse",
+      "given": "G."
+    },
+    {
+      "affiliation": [],
+      "family": "Sellegri",
+      "given": "K."
+    },
+    {
+      "affiliation": [],
+      "family": "Schwarzenbock",
+      "given": "A."
+    },
+    {
+      "affiliation": [],
+      "family": "Freney",
+      "given": "E.",
+      "ORCID": "http://orcid.org/0000-0002-9363-9115"
+    },
+    {
+      "affiliation": [],
+      "family": "Mallet",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Formenti",
+      "given": "P."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics",
+    "Atmos. Chem. Phys."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:45:29Z",
+    "timestamp": 1454323529000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-16-1081-2016",
+  "ISSN": [
+    "1680-7324"
+  ],
+  "subject": [
+    "Atmospheric Science"
+  ]
+}

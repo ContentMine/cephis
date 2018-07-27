@@ -1,0 +1,103 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T23:43:12Z",
+    "timestamp": 1464910992372
+  },
+  "reference-count": 0,
+  "publisher": "American Medical Association (AMA)",
+  "DOI": "10.1001/jamaophthalmol.2016.1305",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:16Z",
+    "timestamp": 1464906916000
+  },
+  "source": "CrossRef",
+  "title": [
+    "Zika Virus, Microcephaly, and Ocular Findings—Reply"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1001",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Vision Institute, Department of Ophthalmology, Paulista Medical School, Federal University of São Paulo, São Paulo, Brazil"
+        }
+      ],
+      "family": "Belfort",
+      "given": "Rubens",
+      "suffix": "Jr"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Department of Ophthalmology, Hospital Geral Roberto Santos, Salvador, Brazil"
+        }
+      ],
+      "family": "de Paula Freitas",
+      "given": "Bruno"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Vision Institute, Department of Ophthalmology, Paulista Medical School, Federal University of São Paulo, São Paulo, Brazil"
+        }
+      ],
+      "family": "de Oliveira Dias",
+      "given": "João Rafael"
+    }
+  ],
+  "member": "http://id.crossref.org/member/10",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "container-title": [
+    "JAMA Ophthalmol",
+    "JAMA Ophthalmology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2016-06-02T22:35:16Z",
+    "timestamp": 1464906916000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        6,
+        2
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1001/jamaophthalmol.2016.1305",
+  "ISSN": [
+    "2168-6165"
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        26
+      ]
+    ],
+    "date-time": "2016-04-26T13:41:31Z",
+    "timestamp": 1461678091035
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/gmd-2016-22",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T12:48:44Z",
+    "timestamp": 1454330924000
+  },
+  "page": "1-64",
+  "source": "CrossRef",
+  "title": [
+    "Improved representation of plant functional types and physiology in the Joint UK Land Environment Simulator (JULES v4.2) using plant trait information"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Harper",
+      "given": "Anna",
+      "ORCID": "http://orcid.org/0000-0001-7294-6039"
+    },
+    {
+      "affiliation": [],
+      "family": "Cox",
+      "given": "Peter"
+    },
+    {
+      "affiliation": [],
+      "family": "Friedlingstein",
+      "given": "Pierre"
+    },
+    {
+      "affiliation": [],
+      "family": "Wiltshire",
+      "given": "Andy"
+    },
+    {
+      "affiliation": [],
+      "family": "Jones",
+      "given": "Chris"
+    },
+    {
+      "affiliation": [],
+      "family": "Sitch",
+      "given": "Stephen"
+    },
+    {
+      "affiliation": [],
+      "family": "Mercado",
+      "given": "Lina M."
+    },
+    {
+      "affiliation": [],
+      "family": "Groenendijk",
+      "given": "Margriet"
+    },
+    {
+      "affiliation": [],
+      "family": "Robertson",
+      "given": "Eddy"
+    },
+    {
+      "affiliation": [],
+      "family": "Kattge",
+      "given": "Jens",
+      "ORCID": "http://orcid.org/0000-0002-1022-8469"
+    },
+    {
+      "affiliation": [],
+      "family": "Bönisch",
+      "given": "Gerhard"
+    },
+    {
+      "affiliation": [],
+      "family": "Atkin",
+      "given": "Owen K.",
+      "ORCID": "http://orcid.org/0000-0003-1041-5202"
+    },
+    {
+      "affiliation": [],
+      "family": "Bahn",
+      "given": "Michael"
+    },
+    {
+      "affiliation": [],
+      "family": "Cornelissen",
+      "given": "Johannes"
+    },
+    {
+      "affiliation": [],
+      "family": "Niinemets",
+      "given": "Ülo"
+    },
+    {
+      "affiliation": [],
+      "family": "Onipchenko",
+      "given": "Vladimir"
+    },
+    {
+      "affiliation": [],
+      "family": "Peñuelas",
+      "given": "Josep",
+      "ORCID": "http://orcid.org/0000-0002-7215-0150"
+    },
+    {
+      "affiliation": [],
+      "family": "Poorter",
+      "given": "Lourens"
+    },
+    {
+      "affiliation": [],
+      "family": "Reich",
+      "given": "Peter B."
+    },
+    {
+      "affiliation": [],
+      "family": "Soudzilovskaia",
+      "given": "Nadia"
+    },
+    {
+      "affiliation": [],
+      "family": "van Bodegom",
+      "given": "Peter"
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Geoscientific Model Development Discussions",
+    "Geosci. Model Dev. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        4,
+        26
+      ]
+    ],
+    "date-time": "2016-04-26T12:53:32Z",
+    "timestamp": 1461675212000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/gmd-2016-22",
+  "ISSN": [
+    "1991-962X"
+  ]
+}

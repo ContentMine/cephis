@@ -1,0 +1,196 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        26
+      ]
+    ],
+    "date-time": "2016-03-26T10:15:59Z",
+    "timestamp": 1458987359316
+  },
+  "reference-count": 54,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2016-05-01T00:00:00Z",
+        "timestamp": 1462060800000
+      },
+      "URL": "http://www.elsevier.com/tdm/userlicense/1.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "71372156"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "National Natural Science Foundation of China",
+      "DOI": "10.13039/501100001809"
+    },
+    {
+      "award": [
+        "13YJC630098"
+      ],
+      "name": "Humanity and Social Science Youth foundation of Ministry of Education of China"
+    },
+    {
+      "award": [
+        "201308120087"
+      ],
+      "name": "China State Scholarship Fund"
+    },
+    {
+      "award": [
+        "2014XST-0007"
+      ],
+      "name": "Independent Innovation Foundation of Tianjin University"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijpe.2016.01.021",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T17:31:11Z",
+    "timestamp": 1454347871000
+  },
+  "page": "50-60",
+  "update-policy": "http://dx.doi.org/10.1016/elsevier_cm_policy",
+  "source": "CrossRef",
+  "title": [
+    "The optimal decision of customer order decoupling point for order insertion scheduling in logistics service supply chain"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1016",
+  "volume": "175",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Liu",
+      "given": "Weihua"
+    },
+    {
+      "affiliation": [],
+      "family": "Liang",
+      "given": "Zhicheng"
+    },
+    {
+      "affiliation": [],
+      "family": "Ye",
+      "given": "Zi"
+    },
+    {
+      "affiliation": [],
+      "family": "Liu",
+      "given": "Liang"
+    }
+  ],
+  "member": "http://id.crossref.org/member/78",
+  "container-title": [
+    "International Journal of Production Economics"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/xml",
+      "URL": "http://api.elsevier.com/content/article/PII:S0925527316000347?httpAccept=text/xml"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/plain",
+      "URL": "http://api.elsevier.com/content/article/PII:S0925527316000347?httpAccept=text/plain"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        24
+      ]
+    ],
+    "date-time": "2016-03-24T02:06:46Z",
+    "timestamp": 1458785206000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        5
+      ]
+    ]
+  },
+  "alternative-id": [
+    "S0925527316000347"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijpe.2016.01.021",
+  "ISSN": [
+    "0925-5273"
+  ],
+  "subject": [
+    "Management Science and Operations Research",
+    "Economics and Econometrics",
+    "Industrial and Manufacturing Engineering",
+    "Business, Management and Accounting(all)"
+  ],
+  "assertion": [
+    {
+      "label": "This article is maintained by",
+      "name": "publisher",
+      "value": "Elsevier"
+    },
+    {
+      "label": "Article Title",
+      "name": "articletitle",
+      "value": "The optimal decision of customer order decoupling point for order insertion scheduling in logistics service supply chain"
+    },
+    {
+      "label": "Journal Title",
+      "name": "journaltitle",
+      "value": "International Journal of Production Economics"
+    },
+    {
+      "label": "CrossRef DOI link to publisher maintained version",
+      "name": "articlelink",
+      "value": "http://dx.doi.org/10.1016/j.ijpe.2016.01.021"
+    },
+    {
+      "label": "Content Type",
+      "name": "content_type",
+      "value": "article"
+    },
+    {
+      "label": "Copyright",
+      "name": "copyright",
+      "value": "Copyright © 2016 Elsevier B.V. All rights reserved."
+    }
+  ]
+}

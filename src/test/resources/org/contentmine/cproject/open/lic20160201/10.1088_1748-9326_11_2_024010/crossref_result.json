@@ -1,0 +1,255 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:52:46Z",
+    "timestamp": 1455623566246
+  },
+  "reference-count": 55,
+  "publisher": "IOP Publishing",
+  "issue": "2",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 11,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            12
+          ]
+        ],
+        "date-time": "2016-02-12T00:00:00Z",
+        "timestamp": 1455235200000
+      },
+      "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 11,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            12
+          ]
+        ],
+        "date-time": "2016-02-12T00:00:00Z",
+        "timestamp": 1455235200000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1088/1748-9326/11/2/024010",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        12
+      ]
+    ],
+    "date-time": "2016-02-12T15:21:44Z",
+    "timestamp": 1455290504000
+  },
+  "page": "024010",
+  "update-policy": "http://dx.doi.org/10.1088/crossmark-policy",
+  "source": "CrossRef",
+  "title": [
+    "The impact of European legislative and technology measures to reduce air pollutants on air quality, human health and climate"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1088",
+  "volume": "11",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Turnock",
+      "given": "S T"
+    },
+    {
+      "affiliation": [],
+      "family": "Butt",
+      "given": "E W"
+    },
+    {
+      "affiliation": [],
+      "family": "Richardson",
+      "given": "T B"
+    },
+    {
+      "affiliation": [],
+      "family": "Mann",
+      "given": "G W"
+    },
+    {
+      "affiliation": [],
+      "family": "Reddington",
+      "given": "C L"
+    },
+    {
+      "affiliation": [],
+      "family": "Forster",
+      "given": "P M"
+    },
+    {
+      "affiliation": [],
+      "family": "Haywood",
+      "given": "J"
+    },
+    {
+      "affiliation": [],
+      "family": "Crippa",
+      "given": "M"
+    },
+    {
+      "affiliation": [],
+      "family": "Janssens-Maenhout",
+      "given": "G"
+    },
+    {
+      "affiliation": [],
+      "family": "Johnson",
+      "given": "C E"
+    },
+    {
+      "affiliation": [],
+      "family": "Bellouin",
+      "given": "N"
+    },
+    {
+      "affiliation": [],
+      "family": "Carslaw",
+      "given": "K S"
+    },
+    {
+      "affiliation": [],
+      "family": "Spracklen",
+      "given": "D V"
+    }
+  ],
+  "member": "http://id.crossref.org/member/266",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        12
+      ]
+    ]
+  },
+  "container-title": [
+    "Environ. Res. Lett.",
+    "Environmental Research Letters"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=024010/pdf"
+    },
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "text/html",
+      "URL": "http://stacks.iop.org/1748-9326/11/i=2/a=024010?key=crossref.79dfb38064ff7788cd263494d6151e27"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T07:34:46Z",
+    "timestamp": 1455348886000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1088/1748-9326/11/2/024010",
+  "ISSN": [
+    "1748-9326"
+  ],
+  "assertion": [
+    {
+      "label": "Journal title",
+      "name": "journal_title",
+      "value": "Environmental Research Letters"
+    },
+    {
+      "label": "Article type",
+      "name": "article_type",
+      "value": "lett"
+    },
+    {
+      "label": "Article title",
+      "name": "article_title",
+      "value": "The impact of European legislative and technology measures to reduce air pollutants on air quality, human health and climate"
+    },
+    {
+      "label": "Copyright information",
+      "name": "copyright_information",
+      "value": "© 2016 IOP Publishing Ltd"
+    },
+    {
+      "label": "License information",
+      "name": "license_information",
+      "value": "cc-by Original content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI."
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date received",
+      "name": "date_received",
+      "value": "2015-09-18"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Date accepted",
+      "name": "date_accepted",
+      "value": "2016-01-25"
+    },
+    {
+      "group": {
+        "label": "Publication dates",
+        "name": "publication_dates"
+      },
+      "label": "Online publication date",
+      "name": "date_epub",
+      "value": "2016-02-12"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fulltext_pdf": {
+    "value": []
+  },
+  "fulltext_html": {
+    "value": [
+      "http://www.nature.com/srep/2016/160601/srep27030/full/srep27030.html"
+    ]
+  },
+  "title": {
+    "value": [
+      "ATAC-seq on biobanked specimens defines a unique chromatin accessibility structure in naïve SLE B cells"
+    ]
+  },
+  "author": {
+    "value": [
+      "Christopher D. Scharer",
+      "Emily L. Blalock",
+      "Benjamin G. Barwick",
+      "Robert R. Haines",
+      "Chungwen Wei",
+      "Ignacio Sanz",
+      "Jeremy M. Boss"
+    ]
+  },
+  "date": {
+    "value": []
+  },
+  "doi": {
+    "value": [
+      "doi:10.1038/srep27030"
+    ]
+  },
+  "volume": {
+    "value": [
+      "6"
+    ]
+  },
+  "issue": {
+    "value": []
+  },
+  "firstpage": {
+    "value": [
+      "27030"
+    ]
+  },
+  "description": {
+    "value": [
+      "Biobanking is a widespread practice for storing biological samples for future studies ranging from genotyping to RNA analysis."
+    ]
+  }
+}

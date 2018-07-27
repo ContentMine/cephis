@@ -1,0 +1,98 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:50:52Z",
+    "timestamp": 1455623452142
+  },
+  "reference-count": 16,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "DOI": "10.3390/molecules21020178",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T15:03:26Z",
+    "timestamp": 1454339006000
+  },
+  "page": "178",
+  "source": "CrossRef",
+  "title": [
+    "Unusual Nitrogenous Phenalenone Derivatives from the Marine-Derived Fungus Coniothyrium cereale"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Elsebai",
+      "given": "Mahmoud"
+    },
+    {
+      "affiliation": [],
+      "family": "Ghabbour",
+      "given": "Hazem"
+    },
+    {
+      "affiliation": [],
+      "family": "Mehiri",
+      "given": "Mohamed"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:52:27Z",
+    "timestamp": 1455396747000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020178"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020178",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

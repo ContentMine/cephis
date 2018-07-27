@@ -1,0 +1,33 @@
+<semanticDocument xmlns="http://www.xml-cml.org/schema/ami2">
+	<documentIterator>
+		<pageIterator timeout="15000" maxMbyte="5.0">
+			<variable name="p.root" value="${d.outDir}/${p.page}" />
+			<pageWriter filename="${p.root}_start.svg" />
+			<pageNormalizer 
+			    normalizeHighCodePoints="true"
+				removeImageData="true"
+				canRotateLandscape="true"
+				formatDecimalPlaces="3" />
+			<pathNormalizer 
+			    removeDuplicatePaths="true"
+				createHigherPrimitives="true" 
+				removeEmptySVGG="true"
+				minLinesInPolyline="8" 
+				joinPolylines="true" 
+				/>
+			<whitespaceChunker depth="3" />
+			<deleteNodes xpath="//svg:rect[@title='leafNodes']" />
+			<chunkAnalyzer 
+			    xpath="//svg:g[@LEAF]" 
+			    subSup="true"
+				removeNumericTSpans="true" 
+				splitAtSpaces="true" />
+			<pageNormalizer
+				formatDecimalPlaces="3" />
+			<pageWriter filename="${p.root}_end.svg" />
+		</pageIterator>
+	</documentIterator>
+</semanticDocument>
+
+
+

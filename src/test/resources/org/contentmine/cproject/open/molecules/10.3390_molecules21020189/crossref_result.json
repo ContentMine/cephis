@@ -1,0 +1,116 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:51:36Z",
+    "timestamp": 1455623496756
+  },
+  "reference-count": 46,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "funder": [
+    {
+      "award": [],
+      "doi-asserted-by": "publisher",
+      "name": "King Abdulaziz City for Science and Technology",
+      "DOI": "10.13039/501100004919"
+    }
+  ],
+  "DOI": "10.3390/molecules21020189",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ],
+    "date-time": "2016-02-04T15:26:22Z",
+    "timestamp": 1454599582000
+  },
+  "page": "189",
+  "source": "CrossRef",
+  "title": [
+    "Design, Synthesis and Anticancer Evaluation of Novel Quinazoline-Sulfonamide Hybrids"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Ghorab",
+      "given": "Mostafa"
+    },
+    {
+      "affiliation": [],
+      "family": "Alsaid",
+      "given": "Mansour"
+    },
+    {
+      "affiliation": [],
+      "family": "Al-Dosari",
+      "given": "Mohammed"
+    },
+    {
+      "affiliation": [],
+      "family": "El-Gazzar",
+      "given": "Marwa"
+    },
+    {
+      "affiliation": [],
+      "family": "Parvez",
+      "given": "Mohammad"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:53:04Z",
+    "timestamp": 1455396784000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        4
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020189"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020189",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

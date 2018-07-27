@@ -1,0 +1,51 @@
+{
+  "fulltext_pdf": {
+    "value": []
+  },
+  "fulltext_html": {
+    "value": []
+  },
+  "title": {
+    "value": [
+      "Magnetostructural coupling and magnetocaloric effect in Ni-Mn-Ga-Cu microwires"
+    ]
+  },
+  "author": {
+    "value": [
+      "Xuexi Zhang",
+      "Mingfang Qian",
+      "Zhe Zhang",
+      "Longsha Wei",
+      "Lin Geng",
+      "Jianfei Sun"
+    ]
+  },
+  "date": {
+    "value": []
+  },
+  "doi": {
+    "value": [
+      "10.1063/1.4941232"
+    ]
+  },
+  "volume": {
+    "value": [
+      "108"
+    ]
+  },
+  "issue": {
+    "value": [
+      "5"
+    ]
+  },
+  "firstpage": {
+    "value": [
+      "052401"
+    ]
+  },
+  "description": {
+    "value": [
+      "Ni-Mn-Ga-X microwires were produced by melt-extraction technique on a large scale. Their shape memory effect,superelasticity, and damping capacity have been demonstrated. Here, the excellent magnetocaloric effect was revealed in Ni-Mn-Ga-Cu microwires produced by melt-extraction and subsequent annealing. The overlap of the martensitic and magnetic transformations, i.e., magnetostructural coupling, was achieved in the annealed microwires. The magnetostructural coupling and wide martensitic transformation temperature range contribute to a large magnetic entropy change of −8.3 J/kg K with a wide working temperature interval of ∼13 K under a magnetic field of 50 kOe. Accordingly, a high refrigeration capacity of ∼78 J/kg was produced in the annealed microwires."
+    ]
+  }
+}

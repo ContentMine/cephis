@@ -1,0 +1,108 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        8
+      ]
+    ],
+    "date-time": "2016-02-08T10:35:28Z",
+    "timestamp": 1454927728902
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "issue": "1",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/angeo-34-153-2016",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T13:24:26Z",
+    "timestamp": 1454333066000
+  },
+  "page": "153-156",
+  "source": "CrossRef",
+  "title": [
+    "Physical origin of pickup currents"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "volume": "34",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Vasyliūnas",
+      "given": "V. M."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Ann. Geophys.",
+    "Annales Geophysicae"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        5
+      ]
+    ],
+    "date-time": "2016-02-05T16:48:34Z",
+    "timestamp": 1454690914000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/angeo-34-153-2016",
+  "ISSN": [
+    "1432-0576"
+  ],
+  "subject": [
+    "Earth and Planetary Sciences (miscellaneous)",
+    "Space and Planetary Science",
+    "Astronomy and Astrophysics",
+    "Atmospheric Science",
+    "Geology"
+  ]
+}

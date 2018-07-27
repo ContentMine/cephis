@@ -1,0 +1,257 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        5
+      ]
+    ],
+    "date-time": "2016-03-05T10:44:52Z",
+    "timestamp": 1457174692860
+  },
+  "reference-count": 40,
+  "publisher": "Wiley-Blackwell",
+  "issue": "3",
+  "license": [
+    {
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://doi.wiley.com/10.1002/tdm_license_1"
+    },
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "201249",
+        "250281"
+      ],
+      "name": "National Council of Science and Technology (CONACYT - Mexico)"
+    },
+    {
+      "award": [
+        "C15-FAI-04-95.95"
+      ],
+      "name": "Universidad Autonoma de San Luis Potosi"
+    }
+  ],
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        3
+      ]
+    ]
+  },
+  "DOI": "10.1002/acn3.285",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T09:29:13Z",
+    "timestamp": 1454318953000
+  },
+  "page": "191-199",
+  "source": "CrossRef",
+  "title": [
+    "Parkinson disease and progressive supranuclear palsy: protein expression in skin"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1002",
+  "volume": "3",
+  "author": [
+    {
+      "affiliation": [
+        {
+          "name": "Servicio de Neurología; Hospital Central “Ignacio Morones Prieto”; San Luis Potosí México"
+        },
+        {
+          "name": "Doctorado en Ciencias Aplicadas; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Rodríguez-Leyva",
+      "given": "Ildefonso"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Departamento de Bioquímica; Facultad de Medicina; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Chi-Ahumada",
+      "given": "Erika G."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Departamento de Bioquímica; Facultad de Medicina; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Carrizales",
+      "given": "Juan"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Instituto Nacional de Neurología y Neurocirugía “Manuel Velasco Suárez”; México"
+        }
+      ],
+      "family": "Rodríguez-Violante",
+      "given": "Mayela"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Instituto Nacional de Neurología y Neurocirugía “Manuel Velasco Suárez”; México"
+        }
+      ],
+      "family": "Velázquez-Osuna",
+      "given": "Salvador"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Servicio de Neurología; Hospital Central “Ignacio Morones Prieto”; San Luis Potosí México"
+        }
+      ],
+      "family": "Medina-Mier",
+      "given": "Verónica"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Laboratorio de Neurotoxicología; Facultad de Ciencias Químicas; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Martel-Gallegos",
+      "given": "María G."
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Laboratorio de Neurotoxicología; Facultad de Ciencias Químicas; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Zarazúa",
+      "given": "Sergio"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Departamento de Bioquímica; Facultad de Medicina; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Enríquez-Macías",
+      "given": "Lourdes"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Departamento de Bioquímica; Facultad de Medicina; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Castro",
+      "given": "Adriana"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Instituto de Medicina Forense; Universidad Veracruzana; Boca del Río México"
+        }
+      ],
+      "family": "Calderón-Garcidueñas",
+      "given": "Ana Laura"
+    },
+    {
+      "affiliation": [
+        {
+          "name": "Departamento de Bioquímica; Facultad de Medicina; Universidad Autónoma de San Luis Potosí; San Luis Potosí México"
+        }
+      ],
+      "family": "Jiménez-Capdeville",
+      "given": "María E."
+    }
+  ],
+  "member": "http://id.crossref.org/member/311",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Annals of Clinical and Translational Neurology",
+    "Ann Clin Transl Neurol"
+  ],
+  "link": [
+    {
+      "intended-application": "text-mining",
+      "content-version": "vor",
+      "content-type": "application/pdf",
+      "URL": "http://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Facn3.285"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        3,
+        2
+      ]
+    ],
+    "date-time": "2016-03-02T12:43:10Z",
+    "timestamp": 1456922590000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.1002/acn3.285",
+  "archive": [
+    "Portico"
+  ],
+  "ISSN": [
+    "2328-9503"
+  ]
+}

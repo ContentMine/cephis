@@ -1,0 +1,119 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        16
+      ]
+    ],
+    "date-time": "2016-02-16T11:51:19Z",
+    "timestamp": 1455623479485
+  },
+  "reference-count": 190,
+  "publisher": "MDPI AG",
+  "issue": "2",
+  "DOI": "10.3390/molecules21020182",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        3
+      ]
+    ],
+    "date-time": "2016-02-03T15:06:26Z",
+    "timestamp": 1454511986000
+  },
+  "page": "182",
+  "source": "CrossRef",
+  "title": [
+    "Elicitation, an Effective Strategy for the Biotechnological Production of Bioactive High-Added Value Compounds in Plant Cell Factories"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.3390",
+  "volume": "21",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Ramirez-Estrada",
+      "given": "Karla"
+    },
+    {
+      "affiliation": [],
+      "family": "Vidal-Limon",
+      "given": "Heriberto"
+    },
+    {
+      "affiliation": [],
+      "family": "Hidalgo",
+      "given": "Diego"
+    },
+    {
+      "affiliation": [],
+      "family": "Moyano",
+      "given": "Elisabeth",
+      "ORCID": "http://orcid.org/0000-0002-0820-7220"
+    },
+    {
+      "affiliation": [],
+      "family": "Golenioswki",
+      "given": "Marta"
+    },
+    {
+      "affiliation": [],
+      "family": "Cusidó",
+      "given": "Rosa"
+    },
+    {
+      "affiliation": [],
+      "family": "Palazon",
+      "given": "Javier"
+    }
+  ],
+  "member": "http://id.crossref.org/member/1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        3
+      ]
+    ]
+  },
+  "container-title": [
+    "Molecules"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        13
+      ]
+    ],
+    "date-time": "2016-02-13T20:52:42Z",
+    "timestamp": 1455396762000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        3
+      ]
+    ]
+  },
+  "alternative-id": [
+    "molecules21020182"
+  ],
+  "URL": "http://dx.doi.org/10.3390/molecules21020182",
+  "ISSN": [
+    "1420-3049"
+  ],
+  "subject": [
+    "Organic Chemistry"
+  ]
+}

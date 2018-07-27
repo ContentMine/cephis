@@ -1,0 +1,106 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        15
+      ]
+    ],
+    "date-time": "2016-02-15T11:26:56Z",
+    "timestamp": 1455535616333
+  },
+  "reference-count": 54,
+  "publisher": "Springer Science + Business Media",
+  "issue": "4",
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        3
+      ]
+    ]
+  },
+  "DOI": "10.1007/s00285-015-0956-2",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T19:58:23Z",
+    "timestamp": 1454356703000
+  },
+  "page": "1011-1037",
+  "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy",
+  "source": "CrossRef",
+  "title": [
+    "Frequency dependence 3.0: an attempt at codifying the evolutionary ecology perspective"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.1007",
+  "volume": "72",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Metz",
+      "given": "Johan A. J."
+    },
+    {
+      "affiliation": [],
+      "family": "Geritz",
+      "given": "Stefan A. H."
+    }
+  ],
+  "member": "http://id.crossref.org/member/297",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "J. Math. Biol.",
+    "Journal of Mathematical Biology"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        12
+      ]
+    ],
+    "date-time": "2016-02-12T12:05:58Z",
+    "timestamp": 1455278758000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "alternative-id": [
+    "956"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s00285-015-0956-2",
+  "ISSN": [
+    "0303-6812",
+    "1432-1416"
+  ],
+  "subject": [
+    "Agricultural and Biological Sciences (miscellaneous)",
+    "Modelling and Simulation",
+    "Applied Mathematics"
+  ]
+}

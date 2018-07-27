@@ -1,0 +1,127 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        3
+      ]
+    ],
+    "date-time": "2016-05-03T16:42:48Z",
+    "timestamp": 1462293768610
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "NNH13ZDA001N-AURAST"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Goddard Space Flight Center",
+      "DOI": "10.13039/100006198"
+    }
+  ],
+  "DOI": "10.5194/amt-2015-409",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:26:34Z",
+    "timestamp": 1454322394000
+  },
+  "page": "1-36",
+  "source": "CrossRef",
+  "title": [
+    "Top-of-the-atmosphere shortwave flux estimation from UV satellite observations: An empirical approach using data from the A-train constellation"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Gupta",
+      "given": "Pawan"
+    },
+    {
+      "affiliation": [],
+      "family": "Joiner",
+      "given": "Joanna"
+    },
+    {
+      "affiliation": [],
+      "family": "Vasilkov",
+      "given": "Alexander"
+    },
+    {
+      "affiliation": [],
+      "family": "Bhartia",
+      "given": "P. K."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmos. Meas. Tech. Discuss.",
+    "Atmospheric Measurement Techniques Discussions"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        3
+      ]
+    ],
+    "date-time": "2016-05-03T15:20:35Z",
+    "timestamp": 1462288835000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/amt-2015-409",
+  "ISSN": [
+    "1867-8610"
+  ],
+  "subject": [
+    "Atmospheric Science"
+  ]
+}

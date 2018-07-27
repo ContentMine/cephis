@@ -1,0 +1,210 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        6
+      ]
+    ],
+    "date-time": "2016-05-06T21:40:36Z",
+    "timestamp": 1462570836133
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "DOI": "10.5194/amt-2015-400",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:24:23Z",
+    "timestamp": 1454322263000
+  },
+  "page": "1-37",
+  "source": "CrossRef",
+  "title": [
+    "The SPectrometer for Ice Nuclei (SPIN): An instrument to investigate ice nucleation"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Garimella",
+      "given": "S."
+    },
+    {
+      "affiliation": [],
+      "family": "Kristensen",
+      "given": "T. B."
+    },
+    {
+      "affiliation": [],
+      "family": "Ignatius",
+      "given": "K."
+    },
+    {
+      "affiliation": [],
+      "family": "Welti",
+      "given": "A.",
+      "ORCID": "http://orcid.org/0000-0002-3549-1212"
+    },
+    {
+      "affiliation": [],
+      "family": "Voigtländer",
+      "given": "J."
+    },
+    {
+      "affiliation": [],
+      "family": "Kulkarni",
+      "given": "G. R."
+    },
+    {
+      "affiliation": [],
+      "family": "Sagan",
+      "given": "F."
+    },
+    {
+      "affiliation": [],
+      "family": "Kok",
+      "given": "G. L."
+    },
+    {
+      "affiliation": [],
+      "family": "Dorsey",
+      "given": "J."
+    },
+    {
+      "affiliation": [],
+      "family": "Nichman",
+      "given": "L.",
+      "ORCID": "http://orcid.org/0000-0003-3923-1589"
+    },
+    {
+      "affiliation": [],
+      "family": "Rothenberg",
+      "given": "D."
+    },
+    {
+      "affiliation": [],
+      "family": "Rösch",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Kirchgäßner",
+      "given": "A.",
+      "ORCID": "http://orcid.org/0000-0001-7483-3652"
+    },
+    {
+      "affiliation": [],
+      "family": "Ladkin",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Wex",
+      "given": "H."
+    },
+    {
+      "affiliation": [],
+      "family": "Wilson",
+      "given": "T. W."
+    },
+    {
+      "affiliation": [],
+      "family": "Ladino",
+      "given": "L. A."
+    },
+    {
+      "affiliation": [],
+      "family": "Abbatt",
+      "given": "J. P. D."
+    },
+    {
+      "affiliation": [],
+      "family": "Stetzer",
+      "given": "O."
+    },
+    {
+      "affiliation": [],
+      "family": "Lohmann",
+      "given": "U."
+    },
+    {
+      "affiliation": [],
+      "family": "Stratmann",
+      "given": "F."
+    },
+    {
+      "affiliation": [],
+      "family": "Cziczo",
+      "given": "D. J."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmos. Meas. Tech. Discuss.",
+    "Atmospheric Measurement Techniques Discussions"
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        6
+      ]
+    ],
+    "date-time": "2016-05-06T20:23:27Z",
+    "timestamp": 1462566207000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/amt-2015-400",
+  "ISSN": [
+    "1867-8610"
+  ],
+  "subject": [
+    "Atmospheric Science"
+  ]
+}

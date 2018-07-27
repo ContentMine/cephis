@@ -1,0 +1,155 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        18
+      ]
+    ],
+    "date-time": "2016-05-18T10:41:42Z",
+    "timestamp": 1463568102874
+  },
+  "reference-count": 0,
+  "publisher": "Copernicus GmbH",
+  "license": [
+    {
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "start": {
+        "date-parts": [
+          [
+            2016,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2016-02-01T00:00:00Z",
+        "timestamp": 1454284800000
+      },
+      "URL": "http://creativecommons.org/licenses/by/3.0/"
+    }
+  ],
+  "funder": [
+    {
+      "award": [
+        "IZERZ0 142146",
+        "BSSGI0 155846"
+      ],
+      "doi-asserted-by": "publisher",
+      "name": "Schweizerischer Nationalfonds zur Förderung der Wissenschaftlichen Forschung",
+      "DOI": "10.13039/501100001711"
+    }
+  ],
+  "DOI": "10.5194/acp-2016-31",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ],
+    "date-time": "2016-02-01T10:34:08Z",
+    "timestamp": 1454322848000
+  },
+  "page": "1-36",
+  "source": "CrossRef",
+  "title": [
+    "Urban increments of gaseous and aerosol pollutants and their sources using mobile aerosol mass spectrometry measurements"
+  ],
+  "prefix": "http://id.crossref.org/prefix/10.5194",
+  "author": [
+    {
+      "affiliation": [],
+      "family": "Elser",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Bozzetti",
+      "given": "C."
+    },
+    {
+      "affiliation": [],
+      "family": "El-Haddad",
+      "given": "I."
+    },
+    {
+      "affiliation": [],
+      "family": "Maasikmets",
+      "given": "M."
+    },
+    {
+      "affiliation": [],
+      "family": "Teinemaa",
+      "given": "E."
+    },
+    {
+      "affiliation": [],
+      "family": "Richter",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Wolf",
+      "given": "R."
+    },
+    {
+      "affiliation": [],
+      "family": "Slowik",
+      "given": "J. G."
+    },
+    {
+      "affiliation": [],
+      "family": "Baltensperger",
+      "given": "U."
+    },
+    {
+      "affiliation": [],
+      "family": "Prévôt",
+      "given": "A. S. H."
+    }
+  ],
+  "member": "http://id.crossref.org/member/3145",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "container-title": [
+    "Atmospheric Chemistry and Physics Discussions",
+    "Atmos. Chem. Phys. Discuss."
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2016,
+        5,
+        18
+      ]
+    ],
+    "date-time": "2016-05-18T09:07:38Z",
+    "timestamp": 1463562458000
+  },
+  "score": 1,
+  "subtitle": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        2,
+        1
+      ]
+    ]
+  },
+  "URL": "http://dx.doi.org/10.5194/acp-2016-31",
+  "ISSN": [
+    "1680-7375"
+  ]
+}
