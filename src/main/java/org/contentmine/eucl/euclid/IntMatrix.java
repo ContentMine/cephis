@@ -15,6 +15,8 @@
  */
 
 package org.contentmine.eucl.euclid;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.text.DecimalFormat;
@@ -23,6 +25,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.ArrayBase.Trim;
+import org.contentmine.eucl.euclid.util.MultisetUtil;
 
 /**
  * rectangular real number matrix class IntMatrix represents a rectangular m-x-n
@@ -1584,4 +1587,53 @@ public class IntMatrix implements EuclidConstants {
 			this.replaceColumnData(icol, col);
 		}
 	}
+	
+	/** use this one
+	 * No header
+	 * 
+	 * @param cooccurrenceFile
+	 * @throws IOException
+	 */
+	public void writeCSV(File cooccurrenceFile) throws IOException {
+		writeCSV(cooccurrenceFile, (String)null, (String)null);
+	}
+	
+	/** probably a bad idea
+	 * 
+	 * @param cooccurrenceFile
+	 * @param rowName
+	 * @param colName
+	 * @throws IOException
+	 */
+	public void writeCSV(File cooccurrenceFile, String rowName, String colName) throws IOException {
+		FileWriter w = new FileWriter(cooccurrenceFile);
+		if (rowName != null && colName != null) {
+			// write row/col titles and pad with commas
+			w.write(rowName +","+ colName);
+			for (int i = 2; i < cols; i++) {
+				w.write(",");
+			}
+			w.write("\n");
+		}
+		writeCSV(w);
+		w.close();
+		LOG.trace("wrote: "+cooccurrenceFile);
+	}
+	
+	public void writeCSV(Writer w) throws IOException {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (j > 0) {
+                    sb.append(",");
+                }
+                String field = String.valueOf(flmat[i][j]);
+                sb.append(field);
+            }
+            sb.append("\n");
+        }
+        String string = sb.toString();
+		w.write(string);
+	}
+	
 }

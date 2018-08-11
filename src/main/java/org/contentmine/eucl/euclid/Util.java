@@ -3197,6 +3197,17 @@ public class Util implements EuclidConstants {
 		}
 		return sb.toString();
 	}
+
+	public static String escapeCSVField(String string) {
+		// escape " with ""
+		if (string.contains("\"")) {
+			string = string.replace("\"", "\"\"");
+		}
+		if (string.contains("'")) {
+			string = "\""+string+"\"";
+		}
+		return string;
+	}
 }
 
 

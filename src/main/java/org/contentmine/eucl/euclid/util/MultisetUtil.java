@@ -1,10 +1,14 @@
 package org.contentmine.eucl.euclid.util;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
+import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.xml.XMLUtil;
 
 import com.google.common.collect.ImmutableSortedMultiset;
@@ -232,7 +236,33 @@ public class MultisetUtil<T extends Object> {
 		}
 		return newEntries;
 	}
-	
+
+	public static void writeCSV(File csvFile, List<Entry<String>> entryList, String title) throws IOException {
+		if (csvFile != null) {
+			List<String> rows = new ArrayList<String>();
+			if (title != null) {
+				rows.add(title+","+"count");
+			}
+			for (Entry<String> entry : entryList) {
+				String element = entry.getElement();
+				element = Util.escapeCSVField(element);
+				rows.add(element+","+entry.getCount());
+			}
+			csvFile.getParentFile().mkdirs();
+			FileUtils.writeLines(csvFile, rows);
+		}
+	}
+
+	/** output file without title.
+	 * 
+	 * @param csvFile
+	 * @param entryList
+	 * @throws IOException
+	 */
+	public static void writeCSV(File csvFile, List<Entry<String>> entryList) throws IOException {
+		writeCSV(csvFile, entryList, null);
+	}
+
 
 
 }
