@@ -87,7 +87,7 @@ public class CTreeFilesTest {
 			Assert.assertEquals("files ", 2, files.length); // has fulltext.pdf as well as svg
 			File svgDir = cTree.getExistingSVGDir();
 			Assert.assertTrue("exists", svgDir.exists());
-			List<File> svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(cTree.getExistingSVGFileList());
+			List<File> svgFiles = cTree.getExistingSortedSVGFileList();
 			Assert.assertEquals("svgFiles ", svgCounts[i], svgFiles.size());
 			SVGElement svg = SVGElement.readAndCreateSVG(svgFiles.get(0));
 			List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(svg);
@@ -137,7 +137,7 @@ public class CTreeFilesTest {
 			File[] files = cTree.getDirectory().listFiles();
 			File svgTablesDir = cTree.getExistingSVGTablesDir();
 			Assert.assertTrue("exists", svgTablesDir.exists());
-			List<File> svgTablesFiles = cTree.getExistingSVGTablesDirList();
+			List<File> svgTablesFiles = cTree.getExistingSortedSVGTablesDirList();
 			Assert.assertEquals("tables ", tables[i], svgTablesFiles.size());
 		}
 		
@@ -164,7 +164,7 @@ public class CTreeFilesTest {
 		File svgTablesDir = tree239.getExistingSVGTablesDir();
 		Assert.assertTrue("exists", svgTablesDir.exists());
 		// FIXME Stefan fails - sort me
-		File tablesFile1 = tree239.getExistingSVGTablesDirList().get(0);
+		File tablesFile1 = tree239.getExistingSortedSVGTablesDirList().get(0);
 		Assert.assertEquals("table1 ", "table1", tablesFile1.getName());
 		File svgTable = tree239.getExistingTableFile(1, TableFormat.TABLE_SVG);
 		Assert.assertNotNull(TableFormat.TABLE_SVG.toString(), svgTable);
