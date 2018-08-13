@@ -27,6 +27,7 @@ import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.cproject.util.XMLUtils;
 import org.contentmine.eucl.euclid.Int2Range;
+import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlFactory;
@@ -869,7 +870,11 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return tablesDir;
 	}
 
-	public List<File> getExistingSVGTablesDirList() {
+	/** returns sorted list of SVGTables.
+	 * 
+	 * @return
+	 */
+	public List<File> getExistingSortedSVGTablesDirList() {
 		File svgTablesDir = getExistingSVGTablesDir();
 		List<File> files = new ArrayList<File>();
 		if (svgTablesDir != null) {
@@ -878,7 +883,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			files = globber.listFiles();
 			removeNonDirectories(files);
 		}
-		return files;
+		return  CMFileUtil.sortUniqueFilesByEmbeddedIntegers(files);
 	}
 
 	/**
@@ -888,7 +893,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	 * @return null if not found
 	 */
 	public File getExistingTableDirSerial(int serial) {
-		List<File> files = getExistingSVGTablesDirList();
+		List<File> files = getExistingSortedSVGTablesDirList();
 		for (File file : files) {
 			if (file.getName().equals(TABLE_DIR_PREFIX+serial)) {
 				return file;
@@ -1642,6 +1647,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public DocumentCache getDocumentCache() {
 		return documentCache;
+	}
+
+	public List<File> getExistingSortedSVGFileList() {
+		return  CMFileUtil.sortUniqueFilesByEmbeddedIntegers(this.getExistingSVGFileList());
 	}
 
 }
