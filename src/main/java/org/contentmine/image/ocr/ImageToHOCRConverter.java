@@ -70,6 +70,8 @@ public class ImageToHOCRConverter {
         output.getParentFile().mkdirs();
         ProcessBuilder tesseractBuilder = new ProcessBuilder(
         		USR_LOCAL_BIN_TESSERACT, inputImageFile.getAbsolutePath(), output.getAbsolutePath(), TESS_CONFIG, HOCR, ENCODING );
+//        ProcessBuilder tesseractBuilder = new ProcessBuilder(
+//        		"tesseract", inputImageFile.getAbsolutePath(), output.getAbsolutePath(), TESS_CONFIG, HOCR, ENCODING );
         tesseractBuilder.redirectError(ProcessBuilder.Redirect.INHERIT);
     	Process tesseractProc = null;
         try {

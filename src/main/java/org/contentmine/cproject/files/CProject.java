@@ -244,7 +244,7 @@ public class CProject extends CContainer {
 	}
 
 	/** getCTreeList after recalculating from current Files.
-	 * 
+	 * also sorts it
 	 * to get Current CTreeList, use getCTreeList()
 	 * @return
 	 */
@@ -255,8 +255,7 @@ public class CProject extends CContainer {
 		}
 		return cTreeList;
 	}
-	
-	
+		
 
 	public List<File> getResultsXMLFileList() {
 		List<File> resultsXMLList = new ArrayList<File>();

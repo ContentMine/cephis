@@ -9,6 +9,7 @@ import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.CTree.TableFormat;
 import org.contentmine.cproject.util.CMineTestFixtures;
 import org.contentmine.eucl.euclid.test.TestUtil;
+import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGText;
 import org.junit.Assert;
@@ -71,16 +72,22 @@ public class CTreeFilesTest {
 		CMineTestFixtures.createCleanedCopiedDirectory(CMineFixtures.TEST_PDF_SVG_DIR, targetDir);
 		CProject cProject = new CProject(targetDir);
 		CTreeList cTreeList = cProject.getOrCreateCTreeList();
+		Assert.assertEquals("ctreeList", ""
+				+ "[target/pdfsvg/Article_1948,"
+				+ " target/pdfsvg/Article_2115,"
+				+ " target/pdfsvg/Article_2156]", cTreeList.toString());
 		Assert.assertEquals("svgDirs ", 3, cTreeList.size());
 		int[] svgCounts = {13, 14, 9};
-		int[] textCounts = {3744, 1456, 7979}; // may be fragile
+//		int[] textCounts = {3744, 1456, 7979}; // may be fragile
+		int[] textCounts = {3782, 3681, 4305}; // may be fragile
 		for (int i = 0; i < cTreeList.size(); i++) {
 			CTree cTree = cProject.getOrCreateCTreeList().get(i);
+			LOG.debug(cTree);
 			File[] files = cTree.getDirectory().listFiles();
 			Assert.assertEquals("files ", 2, files.length); // has fulltext.pdf as well as svg
 			File svgDir = cTree.getExistingSVGDir();
 			Assert.assertTrue("exists", svgDir.exists());
-			List<File> svgFiles = cTree.getExistingSVGFileList();
+			List<File> svgFiles = CMFileUtil.sortUniqueFilesByEmbeddedIntegers(cTree.getExistingSVGFileList());
 			Assert.assertEquals("svgFiles ", svgCounts[i], svgFiles.size());
 			SVGElement svg = SVGElement.readAndCreateSVG(svgFiles.get(0));
 			List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(svg);
@@ -156,6 +163,7 @@ public class CTreeFilesTest {
 		Assert.assertNotNull(TREE239, tree239);
 		File svgTablesDir = tree239.getExistingSVGTablesDir();
 		Assert.assertTrue("exists", svgTablesDir.exists());
+		// FIXME Stefan fails - sort me
 		File tablesFile1 = tree239.getExistingSVGTablesDirList().get(0);
 		Assert.assertEquals("table1 ", "table1", tablesFile1.getName());
 		File svgTable = tree239.getExistingTableFile(1, TableFormat.TABLE_SVG);

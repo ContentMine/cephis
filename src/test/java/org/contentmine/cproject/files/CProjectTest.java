@@ -17,6 +17,7 @@ import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.metadata.AbstractMetadata;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineTestFixtures;
+import org.contentmine.eucl.euclid.test.TestUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -286,8 +287,9 @@ public class CProjectTest {
 
 	@Test
 	public void testGlobFileListSmallCommand() throws IOException {
-		File targetDir = new File("target/patents/US08979small");
 		File sourceDir = new File(CMineFixtures.TEST_MISC_DIR, "patents/US08979small");
+		if (!TestUtil.checkForeignDirExists(sourceDir)) return;
+		File targetDir = new File("target/patents/US08979small");
 		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
 		String args = "-i scholarly.html --filter file(**/*) --project "+targetDir+" --output cTreeList.xml";
 		DefaultArgProcessor argProcessor = new CProjectArgProcessor();
@@ -609,6 +611,7 @@ project2
 	 */
 	public void testMakeProject() throws IOException {
 		File pdfDir = new File(CMineFixtures.TEST_FILES_DIR, "misc/pdfDir");
+		if (!TestUtil.checkForeignDirExists(pdfDir)) return;
 		File targetDir = new File("target/makeproj/");
 		CMineTestFixtures.cleanAndCopyDir(pdfDir, targetDir);
 		List<File> files = new ArrayList<File>(FileUtils.listFiles(targetDir, new String[] {"pdf"}, false));
