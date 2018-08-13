@@ -120,13 +120,14 @@ public class CMineGlobber {
 	 */
 	public void match(String pathString, String location) throws IOException {
 		ensureFileList();
-		final PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher(pathString);
+		final String finalPathString = pathString;
+		final PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher(finalPathString);
 		Files.walkFileTree(Paths.get(location), new SimpleFileVisitor<Path>() {
 
 			@Override
 			public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) throws IOException {
 				if (debug) {
-					LOG.debug("m "+pathString+"; p "+path);
+					LOG.debug("m "+finalPathString+"; p "+path);
 				}
 				if (pathMatcher.matches(path) && useFiles) {
 					fileList.add(path.toFile());
@@ -138,7 +139,7 @@ public class CMineGlobber {
 		    public FileVisitResult preVisitDirectory(Path path, BasicFileAttributes attrs)
 		            throws IOException {
 				if (debug) {
-					LOG.debug("dir "+pathString+"; p "+path);
+					LOG.debug("dir "+finalPathString+"; p "+path);
 				}
 				if (pathMatcher.matches(path) && useDirectories) {
 					fileList.add(path.toFile());
@@ -149,7 +150,7 @@ public class CMineGlobber {
 			@Override
 			public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
 				if (debug) {
-					LOG.debug("m "+pathString+"; d "+file);
+					LOG.debug("m "+finalPathString+"; d "+file);
 				}
 				return FileVisitResult.CONTINUE;
 			}

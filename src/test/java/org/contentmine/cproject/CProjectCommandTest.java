@@ -395,6 +395,7 @@ may become unnecessary as getpapers and quickscrape are reconciled
 	@Test
 	public void testExtractDOIPrefixes() throws IOException {
 		File sourceDir = new File(CMineFixtures.TEST_DOWNLOAD_DIR, "rename");
+		Assert.assertTrue("rename exists", sourceDir.exists());
 		File prefixOutFile = new File(CMineFixtures.GETPAPERS_TARGET, "rename/prefixes.xml");
 		String cmd = "--project "+sourceDir.toString()+" --extractPrefixes "+prefixOutFile.toString();
 		new CProject().run(cmd);
@@ -412,6 +413,7 @@ may become unnecessary as getpapers and quickscrape are reconciled
 //				+ " </cTreeList>\n"
 //				+ " <cTreeList prefix=\"10.1016\"",
 // 		element.toXML().substring(0,  300));
+		
 		Assert.assertTrue(element.getChildCount() > 0);
 	}
 	
@@ -435,6 +437,7 @@ may become unnecessary as getpapers and quickscrape are reconciled
 		File[] files = outputFile.listFiles();
 		Assert.assertEquals(4, files.length);
 		CProject emptyProject = new CProject(new File(outputFile, "10.0000"));
+		// FIXME Stefan fails
 		Assert.assertEquals(1,  emptyProject.getOrCreateCTreeList().size());
 		File projectDir1 = new File(outputFile, "10.1001");
 		Assert.assertTrue("project1", projectDir1.listFiles().length > 0); 
@@ -466,6 +469,7 @@ may become unnecessary as getpapers and quickscrape are reconciled
 		CProject emptyProject = new CProject(new File(outputFile, "10.0000"));
 		Assert.assertEquals(0,  emptyProject.getOrCreateCTreeList().size());
 		File projectDir1 = new File(outputFile, "10.1001");
+		// FIXME Stefan fails
 		Assert.assertEquals("project1", 1, projectDir1.listFiles().length); 
 		CProject project1 = new CProject(projectDir1);
 		Assert.assertEquals(1,  project1.getOrCreateCTreeList().size());

@@ -1,5 +1,7 @@
 package org.contentmine.eucl.euclid.test;
 
+import java.io.File;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -35,4 +37,19 @@ public class TestUtil {
 		}
 		return roughlyEqual;
 	}
+	
+	/** checks whether file exists and LOGs a warning
+	 * 
+	 * @param file
+	 * @return
+	 */
+	public static boolean checkForeignDirExists(File file) {
+		if (!file.exists()) {
+			LOG.warn("Cannot find "+file+" Skipping");
+			return true;
+		}
+		return false;
+	}
+
+
 }

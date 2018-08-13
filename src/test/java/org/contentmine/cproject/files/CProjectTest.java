@@ -287,7 +287,8 @@ public class CProjectTest {
 	@Test
 	public void testGlobFileListSmallCommand() throws IOException {
 		File targetDir = new File("target/patents/US08979small");
-		CMineTestFixtures.cleanAndCopyDir(new File(CMineFixtures.TEST_MISC_DIR, "patents/US08979small"), targetDir);
+		File sourceDir = new File(CMineFixtures.TEST_MISC_DIR, "patents/US08979small");
+		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
 		String args = "-i scholarly.html --filter file(**/*) --project "+targetDir+" --output cTreeList.xml";
 		DefaultArgProcessor argProcessor = new CProjectArgProcessor();
 		argProcessor.parseArgs(args);

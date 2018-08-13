@@ -2,9 +2,6 @@ package org.contentmine.graphics.svg.cache;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -12,6 +9,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
+import org.contentmine.eucl.euclid.test.TestUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlDiv;
@@ -324,6 +322,7 @@ private static final Logger LOG = Logger.getLogger(TextCacheTest.class);
 	@Test
 	public void testReadPagesGVSUDevereux() {
 		File buildDir = new File("src/test/resources/closed/gvsu/");
+		if (!TestUtil.checkForeignDirExists(buildDir)) return;
 		String fileroot = "Devereux1950";
 		File targetDir = new File(SVGHTMLFixtures.TARGET_TEXT_BUILD_DIR, fileroot);
 		File directory = new File(buildDir, fileroot);
