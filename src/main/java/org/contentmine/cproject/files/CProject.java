@@ -97,6 +97,13 @@ public class CProject extends CContainer {
 	};
 	public static final String OMIT_EMPTY = "omitEmpty";
 	
+	/** contains --makeProject and standard PDF args	*/
+	public static String MAKE_PROJECT = 
+			" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf";
+//	public static String MAKE_PROJECT_CMD = 
+//			" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf";
+
+
 	private CTreeList cTreeList;
 	private ProjectSnippetsTree projectSnippetsTree;
 	private ProjectFilesTree projectFilesTree;
@@ -108,6 +115,7 @@ public class CProject extends CContainer {
 
 	private CProjectIO projectIO;
 	private CorpusCache corpusCache;
+	
 	public static void main(String[] args) {
 		CProject cProject = new CProject();
 		cProject.run(args);

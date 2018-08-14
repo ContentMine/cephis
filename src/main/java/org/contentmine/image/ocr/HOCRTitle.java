@@ -25,6 +25,9 @@ public class HOCRTitle {
 	private static final String IMAGE = "image";
 	private static final String PPAGENO = "ppageno";
 	private static final String TEXTANGLE = "textangle";
+	private static final String X_ASCENDERS = "x_ascenders";
+	private static final String X_DESCENDERS = "x_descenders";
+	private static final String X_SIZE = "x_size";
 	private static final String X_WCONF = "x_wconf";
 	
 	private final static Pattern BASELINE_PATTERN = Pattern.compile("\\s*baseline\\s+(-?\\d*\\.?\\d+)\\s+(-?\\d*\\.?\\d+)\\s*");
@@ -32,6 +35,9 @@ public class HOCRTitle {
 	private final static Pattern IMAGE_NAME_PATTERN = Pattern.compile("\\s*image\\s+\"(.*)\"\\s*");
 	private final static Pattern PPAGENO_PATTERN = Pattern.compile("\\s*ppageno\\s+(\\d+)\\s*");
 	private final static Pattern TEXTANGLE_PATTERN = Pattern.compile("\\s*textangle\\s+(-?\\d*\\.?\\d+)\\s*");
+	private final static Pattern X_ASCENDERS_PATTERN = Pattern.compile("\\s*x_ascenders\\s+(\\d+\\.?\\d*)\\s*");
+	private final static Pattern X_DESCENDERS_PATTERN = Pattern.compile("\\s*x_descenders\\s+(\\d+\\.?\\d*)\\s*");
+	private final static Pattern X_SIZE_PATTERN = Pattern.compile("\\s*x_size\\s+(\\d+\\.?\\d*)\\s*");
 	private final static Pattern X_WCONF_PATTERN = Pattern.compile("\\s*x_wconf\\s+(\\d+)\\s*");
 
 	private String[] fields;
@@ -41,6 +47,9 @@ public class HOCRTitle {
 	private String imageName;
 	private Integer ppageno;
 	private Double textangle;
+	private Double xAscenders;
+	private Double xDescenders;
+	private Double xSize;
 	private Integer xwconf;
 	
 	public HOCRTitle(String title) {
@@ -63,8 +72,14 @@ public class HOCRTitle {
 				baseline = createBaseline(field);
 			} else if (field.startsWith(TEXTANGLE)) {
 				textangle = createTextangle(field);
+			} else if (field.startsWith(X_ASCENDERS)) {
+				xAscenders = createXAscenders(field);
+			} else if (field.startsWith(X_DESCENDERS)) {
+				xDescenders = createXDescenders(field);
+			} else if (field.startsWith(X_SIZE)) {
+				xSize = createXSize(field);
 			} else {
-				throw new RuntimeException("unknown title field: "+field);
+				LOG.warn("********** unknown title field: "+field+ " ************");
 			}
 		}
 	}
@@ -88,6 +103,37 @@ public class HOCRTitle {
 		}
 		return ppageno;
 	}
+
+	private Double createXSize(String field) {
+		Matcher matcher = X_SIZE_PATTERN.matcher(field);
+		if (matcher.matches()) {
+			xSize = new Double(matcher.group(1));
+		} else {
+			throw new RuntimeException("Cannot parse x_size: "+field);
+		}
+		return xSize;
+	}
+
+	private Double createXAscenders(String field) {
+		Matcher matcher = X_ASCENDERS_PATTERN.matcher(field);
+		if (matcher.matches()) {
+			xAscenders = new Double(matcher.group(1));
+		} else {
+			throw new RuntimeException("Cannot parse x_ascenders: "+field);
+		}
+		return xAscenders;
+	}
+
+	private Double createXDescenders(String field) {
+		Matcher matcher = X_DESCENDERS_PATTERN.matcher(field);
+		if (matcher.matches()) {
+			xDescenders = new Double(matcher.group(1));
+		} else {
+			throw new RuntimeException("Cannot parse x_descenders: "+field);
+		}
+		return xDescenders;
+	}
+
 
 	private Integer createXWConf(String field) {
 		Matcher matcher = X_WCONF_PATTERN.matcher(field);

@@ -1,8 +1,9 @@
 .classpath
 .settings/
 .project
-misc/
 target
+src/test/resources/org/contentmine/cproject/files/misc/
+src/test/resources/org/contentmine/graphics/svg/misc/
 OLD/
 src/test/resources/org/OLD/
 bin/

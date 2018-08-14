@@ -186,7 +186,10 @@ public class ImageProcessor {
 		try {
 			inputFile = file;
 			image = ImageIO.read(file);
+			LOG.debug("read image: "+image);
+			ImageIO.write(image, "png", new File("target/imageTest.png"));
 			processImage(image);
+			LOG.debug("processed image");
 			return image;
 		} catch (Exception e) {
 			throw new RuntimeException("Bad image: " + file, e);

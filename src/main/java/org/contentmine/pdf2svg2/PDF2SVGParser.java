@@ -140,7 +140,12 @@ public class PDF2SVGParser extends PageDrawer    {
     	super.getPaint(color);
         // if this is the non-stroking color
         if (getGraphicsState().getNonStrokingColor() == color) {
-        	String fill = "#"+Integer.toHexString(color.toRGB());
+        	try {
+        		int rgb = color.toRGB();
+        		String fill = "#"+Integer.toHexString(rgb);
+        	} catch (Exception e) {
+        		LOG.warn("color bug "+e);
+        	}
 //			LOG.trace("color++++++++++++ "+fill+"/lw "+getGraphicsState().getLineWidth());
         } else {
 //        	LOG.trace("non- ???? nonStroking "+color);        	

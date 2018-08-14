@@ -21,6 +21,8 @@ import org.contentmine.image.diagram.DiagramAnalyzer;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.junit.Test;
 
+import junit.framework.Assert;
+
 
 public class HOCRTest {
 	public static final Logger LOG = Logger.getLogger(HOCRTest.class);
@@ -172,8 +174,9 @@ public class HOCRTest {
 		OCRProcessor ocrProcessor = new OCRProcessor();
 		HOCRReader hocrReader = ocrProcessor.createHOCRReaderAndProcess(valueFile, htmlOutfile);
 		SVGSVG svg = (SVGSVG) hocrReader.getOrCreateSVG();
-		SVGSVG.wrapAndWriteAsSVG(svg, new File(targetDir, "yvalues.svg"));
-		// not good enough for reading.
+		File yvalues = new File(targetDir, "yvalues.svg");
+		SVGSVG.wrapAndWriteAsSVG(svg, yvalues);
+		Assert.assertTrue("yvalues exists", yvalues.exists());
 	}
 
 

@@ -46,9 +46,9 @@ public class TestUtil {
 	public static boolean checkForeignDirExists(File file) {
 		if (!file.exists()) {
 			LOG.warn("Cannot find "+file+" Skipping");
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 
