@@ -118,6 +118,7 @@ public class PageCacheIT {
 	 * 
 	 */
 	@Test
+	@Ignore
 	public void testSuperPixelArrayForArticles() {
 		// these are non-compact
 //		File[] journalDirs = SVGHTMLFixtures.G_S_TABLE_DIR.listFiles();
