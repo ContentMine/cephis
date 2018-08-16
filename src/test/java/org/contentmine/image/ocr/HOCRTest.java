@@ -127,6 +127,10 @@ public class HOCRTest {
 		File htmlOutfile = new File(targetDir, "hocrFile.html");
 		OCRProcessor ocrProcessor = new OCRProcessor();
 		HOCRReader hocrReader = ocrProcessor.createHOCRReaderAndProcess(binarizedFile, htmlOutfile);
+		if (hocrReader == null) {
+			LOG.error("Tesseract not installed");
+			return;
+		}
 		SVGSVG svg = (SVGSVG) hocrReader.getOrCreateSVG();
 		SVGSVG.wrapAndWriteAsSVG(svg, new File(targetDir, "hocr.svg"));
 	}
@@ -173,6 +177,10 @@ public class HOCRTest {
 		File htmlOutfile = new File(targetDir, "hocrFile.html");
 		OCRProcessor ocrProcessor = new OCRProcessor();
 		HOCRReader hocrReader = ocrProcessor.createHOCRReaderAndProcess(valueFile, htmlOutfile);
+		if (hocrReader == null) {
+			LOG.error("Tesseract not installed");
+			return;
+		}
 		SVGSVG svg = (SVGSVG) hocrReader.getOrCreateSVG();
 		File yvalues = new File(targetDir, "yvalues.svg");
 		SVGSVG.wrapAndWriteAsSVG(svg, yvalues);

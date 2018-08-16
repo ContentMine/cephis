@@ -8,6 +8,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.Unzipper;
+import org.contentmine.eucl.euclid.test.TestUtil;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +30,7 @@ public class UnZipTest {
 	
 	@Test
 	public void testUnZip() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		copyAndCleanOutDir(miscZipDir, targetZip);
 		Unzipper unZipper = new Unzipper();
 		unZipper.setZipFile(new File(targetZip,"test.zip"));
@@ -40,6 +42,7 @@ public class UnZipTest {
 	
 	@Test
 	public void testUnZipBad() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		copyAndCleanOutDir(miscZipDir, targetZip);
 		Unzipper unZipper = new Unzipper();
 		unZipper.setZipFile(new File(CMineFixtures.TEST_MISC_DIR, "badzip/US08979996-20150317.ZIP"));
@@ -54,6 +57,7 @@ public class UnZipTest {
 	
 	@Test
 	public void testUnZipInclude() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		copyAndCleanOutDir(miscZipDir, targetZip);
 		Unzipper unZipper = new Unzipper();
 		unZipper.setZipFile(new File(targetZip,"test.zip"));
@@ -66,6 +70,7 @@ public class UnZipTest {
 
 	@Test
 	public void testUnZipExclude() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		copyAndCleanOutDir(miscZipDir, targetZip);
 		Unzipper unZipper = new Unzipper();
 		unZipper.setZipFile(new File(targetZip,"test.zip"));
@@ -78,6 +83,7 @@ public class UnZipTest {
 
 	@Test
 	public void testUnzipRoot() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		copyAndCleanOutDir(miscZipDir,targetZip);
 		Unzipper unZipper = new Unzipper();
 		unZipper.setZipFile(new File(targetZip,"test.zip"));

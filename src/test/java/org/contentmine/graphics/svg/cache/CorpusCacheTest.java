@@ -6,8 +6,10 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.files.CTreeList;
+import org.contentmine.eucl.euclid.test.TestUtil;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
@@ -68,6 +70,7 @@ public class CorpusCacheTest {
 	 * @throws Exception
 	 */
 	public void testALLGVSUPapersIT() throws Exception {
+		if (!TestUtil.checkForeignDirExists(SVGHTMLFixtures.CLOSED_GVSU)) return;
 		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
 		CorpusCache corpusCache = CorpusCache.createCorpusCache(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
 		Assert.assertNotNull(corpusCache);
@@ -86,6 +89,7 @@ public class CorpusCacheTest {
 	@Test
 	@Ignore("long")
 	public void testCreatorALLGVSUPapersIT() throws Exception {
+		if (!TestUtil.checkForeignDirExists(SVGHTMLFixtures.CLOSED_GVSU)) return;
 		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
 		CorpusCache corpusCache = CorpusCache.createCorpusCache(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
         corpusCache.convertPDF2SVG();
@@ -94,6 +98,7 @@ public class CorpusCacheTest {
 	@Test
 //	@Ignore("long")
 	public void testConvertPDF2HTMLALLGVSUPapersIT() throws Exception {
+		if (!TestUtil.checkForeignDirExists(SVGHTMLFixtures.CLOSED_GVSU)) return;
 		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
 		CorpusCache corpusCache = CorpusCache.createCorpusCache(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
         corpusCache.convertPDF2HTML();
@@ -103,6 +108,7 @@ public class CorpusCacheTest {
 	// FIXME TEST A
     @Ignore("HTML output not yet fixed")
 	public void testALLGVSUPapers2HTMLIT() throws Exception {
+		if (!TestUtil.checkForeignDirExists(SVGHTMLFixtures.CLOSED_GVSU)) return;
 		SVGHTMLFixtures.cleanAndCopyDir(SVGHTMLFixtures.CLOSED_GVSU, SVGHTMLFixtures.CLOSED_GVSU_TARGET);
         CProject cProject = new CProject(SVGHTMLFixtures.CLOSED_GVSU_TARGET);
         CorpusCache corpusCache = new CorpusCache(cProject);

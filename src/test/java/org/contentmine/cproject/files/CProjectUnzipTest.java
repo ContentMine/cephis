@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.CProjectArgProcessor;
 import org.contentmine.cproject.args.DefaultArgProcessor;
+import org.contentmine.eucl.euclid.test.TestUtil;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -24,7 +25,9 @@ public class CProjectUnzipTest {
 
 	@Test
 	public void testUnzip() throws IOException {
-		copyToAndCleanOutDir(new File(CMineFixtures.TEST_MISC_DIR, "zips"));
+		File zipsDir = new File(CMineFixtures.TEST_MISC_DIR, "zips");
+		if (!TestUtil.checkForeignDirExists(zipsDir)) {return;}
+		copyToAndCleanOutDir(zipsDir);
 		String args = "-i fulltext.xml -o scholarly.html --project "+targetZips;
 		LOG.trace(args);
 		DefaultArgProcessor argProcessor = new CProjectArgProcessor();
@@ -34,7 +37,9 @@ public class CProjectUnzipTest {
 
 	@Test
 	public void testUnzipWithArgs() throws IOException {
-		copyToAndCleanOutDir(new File(CMineFixtures.TEST_MISC_DIR, "zips"));
+		File zipsDir = new File(CMineFixtures.TEST_MISC_DIR, "zips");
+		if (!TestUtil.checkForeignDirExists(zipsDir)) {return;}
+		copyToAndCleanOutDir(zipsDir);
 		String args = "-i fulltext.xml --unzip --include .*\\.XML --rename .*\\.XML fulltext.xml --project "+targetZips;
 		LOG.trace(args);
 		DefaultArgProcessor argProcessor = new CProjectArgProcessor();

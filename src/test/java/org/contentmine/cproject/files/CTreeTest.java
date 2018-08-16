@@ -14,6 +14,7 @@ import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.metadata.AbstractMetadata.Type;
 import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineTestFixtures;
+import org.contentmine.eucl.euclid.test.TestUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -47,6 +48,7 @@ public class CTreeTest {
 	 * 
 	 */
 	public void testCreateCTree() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		File cTreeDirectory = new File(TEST_CREATE+"/test_pdf_1471_2148_14_70_pdf");
 		if (cTreeDirectory.exists()) FileUtils.forceDelete(cTreeDirectory);
 		String args = "-i "+CMineFixtures.TEST_MISC_DIR+"/test_pdf_1471-2148-14-70.pdf  -o target/testcreate/ --ctree";
@@ -81,6 +83,7 @@ public class CTreeTest {
 	 * with "fulltext.pdf" in each.
 	 */
 	public void testCreateCTreesUsingCTreeCommand() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		File inputDir = new File(CMineFixtures.TEST_MISC_DIR, "theses/");
 		File outputDir = new File(TARGET_THESES);
 		if (outputDir.exists()) FileUtils.forceDelete(outputDir);
@@ -111,6 +114,7 @@ public class CTreeTest {
 	 * with "fulltext.pdf" in each.
 	 */
 	public void testCreateCTreesUsingProject() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		File inputDir = new File(CMineFixtures.TEST_MISC_DIR, "theses/");
 		File projectDir = new File(TARGET_THESES);
 		if (projectDir.exists()) FileUtils.forceDelete(projectDir);
@@ -238,6 +242,7 @@ public class CTreeTest {
 	
 	@Test
 	public void testGlobFileListMediumCommand() throws IOException {
+		if (!TestUtil.checkForeignDirExists(CMineFixtures.TEST_MISC_DIR)) return;
 		File targetDir = new File("target/patents/US08979/US08979000-20150317/");
 		CMineTestFixtures.cleanAndCopyDir(new File(CMineFixtures.TEST_MISC_DIR, "patents/US08979/US08979000-20150317/"), targetDir);
 		String args = "-i scholarly.html --filter file(**/*) --ctree "+targetDir+" -o files.xml";
