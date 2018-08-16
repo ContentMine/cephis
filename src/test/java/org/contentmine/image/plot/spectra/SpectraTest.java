@@ -4,10 +4,17 @@ import java.io.File;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.test.TestUtil;
+import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
+import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.image.diagram.DiagramAnalyzer;
+import org.contentmine.image.pixel.PixelGraph;
+import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.junit.Test;
+
+import junit.framework.Assert;
 
 public class SpectraTest {
 	private static final Logger LOG = Logger.getLogger(SpectraTest.class);
@@ -25,22 +32,27 @@ public class SpectraTest {
 			.setInputDir(sourceDir)
 			.setOutputDir(targetDir)
 			.setThinning(null)
-//			.setThreshold(135)
 			;
-		LOG.debug("created DA");
 		diagramAnalyzer.readAndProcessInputFile();
-		diagramAnalyzer.writeBinarizedFile(new File(targetDir, "binarized0.png"));
-		LOG.debug("read DA");
-//		LOG.debug(diagramAnalyzer.getOrCreateSortedPixelIslandList());
-		diagramAnalyzer.writeBinarizedFile(new File(targetDir, "binarized.png"));
-		LOG.debug("wrote binarized");
-//		PixelIslandList pixelIslandList = diagramAnalyzer.writeLargestPixelIsland();
-
-//		diagramAnalyzer.readAndProcessInputFile();
-		int[] thresholds = new int[]{50, 70, 90, 110, 130, 150, 170, 190, 210};
-		diagramAnalyzer.scanThresholds(thresholds);
-//		diagramAnalyzer.writeBinarizedFile(new File(targetDir, "binarized.png"));
-		PixelIslandList pixelIslandList = diagramAnalyzer.writeLargestPixelIsland();
-
+		PixelIslandList pixelIslandList = diagramAnalyzer.getOrCreateSortedPixelIslandList();
+		Assert.assertTrue("pixel islands "+pixelIslandList.size(), TestUtil.roughlyEqual(525, pixelIslandList.size(), 0.02));
+		diagramAnalyzer.writeLargestPixelIsland();
+		File file = new File(targetDir, "islands.svg");
+		String[] fill = {"red", "blue", "green", "magenta", "cyan"};
+		SVGG g = new SVGG();
+		for (int i = 0; i < Math.min(100,  pixelIslandList.size()); i++) {
+			pixelIslandList.get(i).getPixelList().plotPixels(g, fill[i % fill.length]);
+		}
+		SVGSVG.wrapAndWriteAsSVG(g, file);
+		PixelIsland largestPixelIsland = pixelIslandList.get(0);
+		PixelGraph largestGraph = largestPixelIsland.getOrCreateGraph();
+		LOG.debug("pg "+largestGraph);
+		largestGraph.doEdgeSegmentation();
+		largestGraph.setSegmentCreationTolerance(0.2);
+		SVGG segments = largestGraph.createSegmentedEdges();
+//		segments = new SVGG();
+		File segmentsFile = new File(targetDir, "segments.svg");
+		largestGraph.drawNodes(new String[] {"red"}, segments);
+		SVGSVG.wrapAndWriteAsSVG(segments, segmentsFile);
 	}
 }
