@@ -122,7 +122,7 @@ public class SVGSVG extends SVGElement {
 		}
 		g.setBoundingBoxCached(false);
 		g.getBoundingBox();
-		LOG.debug("wrote "+file.getAbsolutePath());
+//		LOG.debug("wrote "+file.getAbsolutePath());
 		return wrapAndWriteAsSVG(g, file);
 	}
 	
@@ -131,7 +131,7 @@ public class SVGSVG extends SVGElement {
 	 * */
 	public static SVGSVG wrapAndWriteAsSVG(SVGElement svgg, File file) {
 		if (svgg == null) {
-			LOG.warn("NULL svgg");
+//			LOG.warn("NULL svgg");
 			return null;
 		}
 		Real2Range bbox = svgg.getBoundingBox();
@@ -249,7 +249,7 @@ public class SVGSVG extends SVGElement {
 
 	public void writeQuietly(File file) {
 		if (file == null) {
-			LOG.error("Cannot write null file");
+			LOG.trace("ERROR Cannot write null file");
 		} else {
 			try {
 				File parentFile = file.getParentFile();

@@ -86,14 +86,10 @@ public class TimecourseTest {
 		 */
 		Real2Array placeboCoords = extractCoords(bela, "placebo");
 		Assert.assertEquals(4, placeboCoords.size());
-		LOG.debug("pl"+placeboCoords);
 		Real2Array mepCoords = extractCoords(bela, "mep");
-		LOG.debug("mep"+mepCoords);
 		Assert.assertEquals(7, mepCoords.size());
 		RealArray mepX = mepCoords.getXArray();
-		LOG.debug("mepx "+mepX);
 		RealArray mepY = mepCoords.getYArray();
-		LOG.debug("mepy "+mepY);
 		
 		
 
@@ -123,15 +119,11 @@ public class TimecourseTest {
 		 </g>
 		 */
 		Real2Array mepCoords = extractCoordsSteps(belb, "mep");
-		LOG.debug("mep"+mepCoords);
 		Assert.assertEquals(7, mepCoords.getList().size());
 		Real2Array placeboCoords = extractCoordsBrokenSteps(belb, "placebo");
 		Assert.assertEquals(4, placeboCoords.size());
-		LOG.debug("pl"+placeboCoords);
 		RealArray mepX = mepCoords.getXArray();
-		LOG.debug("mepx "+mepX);
 		RealArray mepY = mepCoords.getYArray();
-		LOG.debug("mepy "+mepY);
 
 		// *[@class='plot.polyline'
 	}
@@ -154,21 +146,17 @@ public class TimecourseTest {
 		 */
 		SVGLineList xticks = getLineList(belc, ".//*[@class='xaxis.ticks.minor']/*[local-name()='path']");
 		Assert.assertEquals(19, xticks.size());
-//		LOG.debug("xt "+xticks);
 		double x0 = xticks.get(0).getMidPoint().getX();
 		// becuse of major ticks 18 => 23
 		double x23 = xticks.get(18).getMidPoint().getX();
 		double deltax = (x23 - x0)/23 * 1.002;
-//		LOG.debug(x0+"/"+x23+"/"+deltax);
 		SVGLineList yticks = getLineList(belc, ".//*[@class='yaxis.ticks']/*[local-name()='path']");
-//		LOG.debug("yt "+yticks);
 		// 134/8
 		Assert.assertEquals(9, yticks.size());
 		double y0 = yticks.get(0).getMidPoint().getY(); // this is actually the first point
 		double y5 = yticks.get(5).getMidPoint().getY();
 		double deltay = - (y5 - y0); // one unit
 		double yorig1 = yticks.get(8).getMidPoint().getY(); // this is y=1
-//		LOG.debug(y0+"/"+y5+"/"+deltay+"/"+yorig1);
 		double xkludge = 1.4; //becuase the plot is wonky
 		Real2 origin = new Real2(x0 - xkludge, yorig1 + (-1) * deltay); // add 1 de
 		
@@ -186,34 +174,32 @@ public class TimecourseTest {
 		String fileroot = "bel";
 		File sourceDir = new File(SVGHTMLFixtures.TIMECOURSE_DIR, fileroot);
 		File targetDir = new File(SVGHTMLFixtures.TARGET_TIMECOURSE_DIR, fileroot);
-		LOG.debug("target "+targetDir);
 		File file = new File(sourceDir, "svg/dosagec.svg"); 
 		ComponentCache componentCache = ComponentCache.createComponentCache(file);
 		List<SVGRect> rectList = componentCache.getOrCreateRectCache().getOrCreateRectList();
-		LOG.debug("rect "+rectList);
 		List<SVGLine> lineList = componentCache.getOrCreateLineCache().getOrCreateLineList();
-		LOG.debug("line "+lineList.size());
+//		LOG.debug("line "+lineList.size());
 		SVGSVG.wrapAndWriteAsSVG(lineList, new File(targetDir, "lines.svg"));
-		LOG.debug("short hor line "+componentCache.getOrCreateLineCache().getOrCreateShortHorizontalLineList().size());
-		LOG.debug("long hor line "+componentCache.getOrCreateLineCache().getOrCreateLongHorizontalLineList().size());
-		LOG.debug("vert line "+componentCache.getOrCreateLineCache().getOrCreateVerticalLineList().size());
+//		LOG.debug("short hor line "+componentCache.getOrCreateLineCache().getOrCreateShortHorizontalLineList().size());
+//		LOG.debug("long hor line "+componentCache.getOrCreateLineCache().getOrCreateLongHorizontalLineList().size());
+//		LOG.debug("vert line "+componentCache.getOrCreateLineCache().getOrCreateVerticalLineList().size());
 		List<SVGCircle> circleList = componentCache.getOrCreateShapeCache().getCircleList();
 		SVGSVG.wrapAndWriteAsSVG(circleList, new File(targetDir, "circles.svg"));
-		LOG.debug("circle "+circleList.size());
+//		LOG.debug("circle "+circleList.size());
 		
 		List<SVGText> horizontalTexts = componentCache.getOrCreateTextCache().getOrCreateHorizontalTexts();
 		List<SVGTriangle> triangleList = componentCache.getOrCreateShapeCache().getTriangleList();
-		LOG.debug("triangle "+triangleList.size());
+//		LOG.debug("triangle "+triangleList.size());
 		SVGSVG.wrapAndWriteAsSVG(triangleList, new File(targetDir, "triangles.svg"));
 		
 		List<SVGPolygon> polygonList = componentCache.getOrCreateShapeCache().getPolygonList();
-		LOG.debug("polygon "+polygonList.size());
+//		LOG.debug("polygon "+polygonList.size());
 		SVGSVG.wrapAndWriteAsSVG(polygonList, new File(targetDir, "polygons.svg"));
 		
-		LOG.debug("hor text "+horizontalTexts.size());
+//		LOG.debug("hor text "+horizontalTexts.size());
 		SVGSVG.wrapAndWriteAsSVG(horizontalTexts, new File(targetDir, "horText.svg"));
 		List<SVGText> verticalTexts = componentCache.getOrCreateTextCache().getOrCreateVerticalTexts();
-		LOG.debug("vert text "+verticalTexts.size());
+//		LOG.debug("vert text "+verticalTexts.size());
 		SVGSVG.wrapAndWriteAsSVG(verticalTexts, new File(targetDir, "verText.svg"));
 		
 	}
@@ -242,8 +228,8 @@ public class TimecourseTest {
 		RealArray xpoints = xpointsRaw.multiplyBy(1./deltax).format(xplaces);
 		RealArray ypointsRaw = points.getYArray();
 		RealArray ypoints = ypointsRaw.multiplyBy(1./deltay).format(yplaces);
-		LOG.debug(title+".score : "+ypoints);
-		LOG.debug(title+".week : "+xpoints);
+//		LOG.debug(title+".score : "+ypoints);
+//		LOG.debug(title+".week : "+xpoints);
 		return null;
 	}
 
@@ -256,8 +242,8 @@ public class TimecourseTest {
 		error0x = error0x.multiplyBy(1./deltax).format(xplaces);
 		RealArray error0y = error00.getYArray();
 		error0y = error0y.multiplyBy(1./deltay).format(yplaces);
-		LOG.debug(title+".week: "+error0x);
-		LOG.debug(title+".score."+(errend == 0 ? "min" : "max")+": "+error0y);
+//		LOG.debug(title+".week: "+error0x);
+//		LOG.debug(title+".score."+(errend == 0 ? "min" : "max")+": "+error0y);
 	}
 
 	private Real2Array getPointsFromLineList(SVGLineList lineList, int serial) {
@@ -314,7 +300,7 @@ public class TimecourseTest {
 		List<SVGElement> plots = SVGUtil.getQuerySVGElements(svgElement, ".//*[@title='" + title + "' and @class='plot']");
 		Assert.assertEquals(1,  plots.size());
 		SVGElement plot = plots.get(0);
-		LOG.debug("sub "+plot.toXML());
+//		LOG.debug("sub "+plot.toXML());
 		List<SVGElement> childs =  SVGUtil.getQuerySVGElements(plot, "./*[@class='plot.polypath']");
 		Assert.assertEquals(1,  childs.size());
 		List<SVGPath> paths = SVGPath.extractPaths(childs.get(0));
@@ -332,7 +318,7 @@ public class TimecourseTest {
 		SVGElement placeboPlot = plot.get(0);
 		List<SVGElement> childs =  SVGUtil.getQuerySVGElements(placeboPlot, "./*[@class='plot.polyline']");
 //		Assert.assertEquals(1,  childs.size());
-		LOG.debug("steps "+childs);
+//		LOG.debug("steps "+childs);
 		List<SVGPath> paths = SVGPath.extractPaths(childs.get(0));
 //		Assert.assertEquals(1,  paths.size());
 		SVGPath path = paths.get(0);

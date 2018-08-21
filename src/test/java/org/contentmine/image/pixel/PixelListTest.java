@@ -186,7 +186,6 @@ E straight 16: (39,31)(38,32)(39,33)(39,34)(39,35)(39,36)(39,37)(39,38)(39,39)(3
 		// largest is a "phi-like" shape of line crossing circle
 		PixelIsland pixelIsland = pixelIslandList.get(0);
 		PixelGraph graph = pixelIsland.copyGraphAndTidy();
-		LOG.debug(graph);
 		PixelEdgeList edgeList = graph.getOrCreateEdgeList();
 		SVGG g = new SVGG();
 		for (int i = 0; i < edgeList.size(); i++) {
@@ -194,7 +193,6 @@ E straight 16: (39,31)(38,32)(39,33)(39,34)(39,35)(39,36)(39,37)(39,38)(39,39)(3
 			PixelList pixelList = edge.getPixelList();
 //			LOG.debug(pixelList.get(0)+"/"+pixelList.get(pixelList.size()-1));
 			RealArray radiansPerPixel = pixelList.calculateCurvatureRadiansPerPixel().format(2);
-			LOG.debug("curvature rads/pixel:"+radiansPerPixel);
 			List<Real2> directionRadians = edge.getPixelList().calculateDirectionInRadians();
 			SVGElement edgeSVG = pixelList.getOrCreateSVG();
 			edgeSVG.setStrokeWidth(0.6);
@@ -259,12 +257,9 @@ E straight 16: (39,31)(38,32)(39,33)(39,34)(39,35)(39,36)(39,37)(39,38)(39,39)(3
 		PixelNode node00 = edge0.getNodes().get(0);
 		PixelNode node01 = edge0.getNodes().get(1);
 		PixelEdge edge1 = edgeList.get(4); // should be straight
-		LOG.debug("edge0: "+edge0);
-		LOG.debug("edge1: "+edge1);
 		PixelNode node10 = edge1.getNodes().get(0);
 		PixelNode node11 = edge1.getNodes().get(1);
 		PixelEdge edge = edge0.join(edge1, node01, node10);
-		LOG.debug("edge: "+edge);
 		
 	}
 
@@ -310,7 +305,6 @@ E straight 16: (39,31)(38,32)(39,33)(39,34)(39,35)(39,36)(39,37)(39,38)(39,39)(3
 		Assert.assertEquals("edge nodes", 2, edge.getNodes().size());
 		edge = edge.cyclise();
 		Assert.assertEquals("edge", 20 + 29 - 1 - 1, edge.size());
-		LOG.debug(edge);
 		Assert.assertEquals("edge nodes", 1, edge.getNodes().size());
 		Assert.assertEquals("node 0", "<(39,31)>", edge.getNodes().get(0).toString());
 	}
@@ -348,27 +342,18 @@ E straight 16: (39,31)(38,32)(39,33)(39,34)(39,35)(39,36)(39,37)(39,38)(39,39)(3
 			g.appendChild(svgLine);
 		}
 		
-		LOG.debug("SEG "+segmentList);
-		
 		SVGSVG.wrapAndWriteAsSVG(gline, new File("target/pixelList/line.svg"));
 		
 		PixelEdge edge2 = new PixelEdge(edgeList.get(2));
-		LOG.debug("e2 "+edge2.size()+"; "+edge2);
 		PixelEdge edge3 = new PixelEdge(edgeList.get(3));
-		LOG.debug("e3 "+edge3.size()+"; "+edge3);
 		PixelEdge cycle = edge2.join(edge3);
-		LOG.debug("cyc "+cycle.size()+"; "+cycle);
 		cycle = cycle.cyclise();
-		LOG.debug("cyc "+cycle.size()+"; "+cycle);
 		double segmentCreationTolerance = 1.0;
 		PixelSegmentList cyclicSegmentList = cycle.getOrCreateSegmentList(segmentCreationTolerance);
-		LOG.debug("pse "+cyclicSegmentList.size()+"; "+cyclicSegmentList);
 		SVGElement svgPse = cyclicSegmentList.getSVGG();
-		LOG.debug(svgPse.toXML());
 		svgPse.setStrokeWidth(0.5);
 		svgPse.setStroke("yellow");
 		SVGCircle circle = cyclicSegmentList.createCircle(/*segmentCreationTolerance*/3.0);
-		LOG.debug("cyc"+circle);
 		SVGElement gcycle = cycle.getOrCreateSVG();
 		gcycle.setStroke("pink");
 		gcycle.setStrokeWidth(3.0);
@@ -387,14 +372,14 @@ E straight 16: (39,31)(38,32)(39,33)(39,34)(39,35)(39,36)(39,37)(39,38)(39,39)(3
 			Pixel pixeli = segmentedEdge.get(i);
 			Int2 vector = pixeli.subtract(pixel0);
 			Real2 rVector = new Real2(vector);
-			LOG.debug("0->"+i+": "+rVector+"; "+Util.format(rVector.getAngle(),2));
+			LOG.trace("0->"+i+": "+rVector+"; "+Util.format(rVector.getAngle(),2));
 			Int2 vector_1 = pixeli.subtract(segmentedEdge.get(i - 1));
 			Real2 rVector_1 = new Real2(vector_1);
-			LOG.debug("    "+(i-1)+"->"+i+": "+rVector_1+"; "+Util.format(rVector_1.getAngle(),2));
+			LOG.trace("    "+(i-1)+"->"+i+": "+rVector_1+"; "+Util.format(rVector_1.getAngle(),2));
 			if (i > 1) {
 				Int2 vector02 = pixeli.subtract(segmentedEdge.get(i - 2));
 				Real2 rVector02 = new Real2(vector02);
-				LOG.debug("        "+(i-2)+"->"+i+": "+rVector02+"; "+Util.format(rVector02.getAngle(),2));
+				LOG.trace("        "+(i-2)+"->"+i+": "+rVector02+"; "+Util.format(rVector02.getAngle(),2));
 			}
 		}
 	}

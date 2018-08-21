@@ -481,7 +481,7 @@ public class CProjectArgProcessor extends DefaultArgProcessor {
 					return;
 				}
  			}
-			LOG.debug("prefix list "+prefixList);
+			LOG.trace("prefix list "+prefixList);
 			if (output == null) {
 				throw new RuntimeException("must give output directory (--output)");
 			}

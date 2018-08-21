@@ -55,7 +55,7 @@ public class PubstyleTest {
 		LOG.trace("HEADER "+pubstyle.getHeader(pageType).toXML());
 		LOG.trace("RAW "+pubstyle.getRawPage(pageType).toXML());
 		Assert.assertEquals("TYPE ", PageType.PN, pubstyle.getPageType());
-		LOG.debug("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
+		//LOG.debug("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
 		Assert.assertNull("WIDEIMAGE ", pubstyle.getWideImage(pageType));
 		Assert.assertNull("WIDETABLE ", pubstyle.getWideTable(pageType));
 		// Page2
@@ -85,7 +85,7 @@ public class PubstyleTest {
 		LOG.trace("HEADER "+pubstyle.getHeader(pageType).toXML());
 		LOG.trace("RAW "+pubstyle.getRawPage(pageType).toXML());
 		Assert.assertEquals("TYPE ", PageType.PN, pubstyle.getPageType());
-		LOG.debug("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
+		//LOG.debug("PAGE "+pubstyle.getPubstylePage(pageType).toXML());
 		Assert.assertNull("WIDEIMAGE ", pubstyle.getWideImage(pageType));
 		Assert.assertNull("WIDETABLE ", pubstyle.getWideTable(pageType));
 	}
@@ -95,7 +95,7 @@ public class PubstyleTest {
 		PubstyleManager pubstyleManager = new PubstyleManager();
 		SVGPubstyle bmcStyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
 		Assert.assertNotNull("style", bmcStyle);
-		LOG.debug("style: "+bmcStyle.toXML());
+		//LOG.debug("style: "+bmcStyle.toXML());
 		Assert.assertEquals("bmc", bmcStyle.getPubstyleName());
 	}
 	
@@ -131,11 +131,11 @@ public class PubstyleTest {
 		SVGPubstyle pubstyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
 		SVGPubstylePage pubstylePage2 = pubstyle.getPubstylePage(PageType.P2);
 		Assert.assertNotNull("page2", pubstylePage2);
-		LOG.debug("page2 "+pubstylePage2.toXML());
+		//LOG.debug("page2 "+pubstylePage2.toXML());
 		SVGPubstyleAbstract pubstyleAbstract = pubstyle.getAbstract();
 		Assert.assertNotNull("abstract", pubstyleAbstract);
 		SVGElement pubstyleHeader = pubstyle.getHeader(PageType.P2);
-		LOG.error("FIXTEST");
+		//LOG.error("FIXTEST");
 		if (true) return;
 		Assert.assertNotNull("header", pubstyleHeader);
 		SVGElement pubstyleFooter = pubstyle.getFooter(PageType.P2);
@@ -180,8 +180,8 @@ public class PubstyleTest {
 					"mosquitos1/12936_2017_Article_1948/svg/fulltext-page"+ipage+".svg");
 			SVGElement inputSVGElement = SVGElement.readAndCreateSVG(inputSvgFile);
 			Map<String, String> keyValues = pubstyleHeader.extractKeyValues(inputSVGElement);
-			LOG.debug("keys "+keyValues.entrySet());
-			LOG.error("Authors and journal are muddled");
+			//LOG.debug("keys "+keyValues.entrySet());
+			//LOG.error("Authors and journal are muddled");
 			Assert.assertEquals((ipage == 1) ? 6 : 7, keyValues.size());
 			Assert.assertEquals("16", keyValues.get("vol"));
 			Assert.assertEquals(ipage == 1 ? null : ""+ipage, keyValues.get("page"));
@@ -202,10 +202,10 @@ public class PubstyleTest {
 		Assert.assertEquals("pages",  14, pageCacheList.size());
 		// we start at 1
 		PageCache pageCache0 = pageCacheList.get(1);
-		LOG.debug(pageCache0.getSerialNumber());
+//		LOG.debug(pageCache0.getSerialNumber());
 		pubstyle.setEndPage(pageCacheList.size());
 		for (PageCache pageCache : pageCacheList) {
-			LOG.debug("===================== current "+pageCache+"====================");
+//			LOG.debug("===================== current "+pageCache+"====================");
 			pubstyle.setCurrentPage(pageCache.getSerialNumber());
 //			SVGElement inputSVGElement = SVGElement.readAndCreateSVG(pageCache.getSVGElement());
 //			LOG.debug("inputSVG: "+inputSVGElement.toXML().length());
@@ -247,7 +247,7 @@ public class PubstyleTest {
 				pubstyle.setCurrentPage(page);
 				File inputSvgFile = new File(SVGHTMLFixtures.G_S_CORPUS_DIR, pageRoot+page+".svg");
 				if (!inputSvgFile.exists()) {
-					LOG.debug("====================FINISHED=================");
+//					LOG.debug("====================FINISHED=================");
 					break;
 				}
 				SVGElement inputSVGElement = SVGElement.readAndCreateSVG(inputSvgFile);

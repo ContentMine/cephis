@@ -186,10 +186,10 @@ public class ImageProcessor {
 		try {
 			inputFile = file;
 			image = ImageIO.read(file);
-			LOG.debug("read image: "+image);
+			LOG.trace("read image: "+image);
 			ImageIO.write(image, "png", new File("target/imageTest.png"));
 			processImage(image);
-			LOG.debug("processed image");
+			LOG.trace("processed image");
 			return image;
 		} catch (Exception e) {
 			throw new RuntimeException("Bad image: " + file, e);
@@ -380,7 +380,7 @@ public class ImageProcessor {
 			// this is messy - the super thinning should have been done earlier
 			islandList = mainProcessor.getOrCreatePixelIslandList(thinning != null);
 			if (islandList == null) {
-				LOG.error("Could not create islandList");
+				LOG.trace("ERROR Could not create islandList");
 			} else {
 				islandList.setMainProcessor(mainProcessor);
 			}
@@ -442,7 +442,7 @@ public class ImageProcessor {
 		} else {
 			while (argIterator.hasNext()) {
 				if (debug) {
-					LOG.debug(argIterator.getCurrent());
+					LOG.trace(argIterator.getCurrent());
 				}
 				parseArgAndAdvance(argIterator);
 			}
@@ -457,7 +457,7 @@ public class ImageProcessor {
 		ensurePixelProcessor();
 		String arg = argIterator.getCurrent();
 		if (debug) {
-			LOG.debug(arg);
+//			LOG.debug(arg);
 		}
 		if (false) {
 
@@ -496,7 +496,7 @@ public class ImageProcessor {
 		} else {
 			found = mainProcessor.processArg(argIterator);
 			if (!found) {
-				LOG.debug("skipped unknown token: " + argIterator.getLast());
+				LOG.trace("skipped unknown token: " + argIterator.getLast());
 				argIterator.next();
 			}
 		}

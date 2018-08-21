@@ -43,7 +43,7 @@ public class PageHeaderCache extends PageComponentCache {
 				this.allElementList.add(element);
 			}
 		}
-		LOG.debug("TOP "+allElementList.size());
+		LOG.trace("TOP "+allElementList.size());
 	}
 	
 	public Double getYMax() {

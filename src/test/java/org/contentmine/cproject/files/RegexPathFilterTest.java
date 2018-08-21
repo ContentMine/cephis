@@ -89,7 +89,7 @@ public class RegexPathFilterTest {
 				TrueFileFilter.TRUE));
 		Collections.sort(files);
 		Assert.assertEquals("files",  149, files.size());
-		LOG.debug(files);
+//		LOG.debug(files);
 	}
 	
 	@Test
@@ -101,7 +101,7 @@ public class RegexPathFilterTest {
 				TrueFileFilter.TRUE));
 		Collections.sort(files);
 		Assert.assertEquals("files",  149, files.size());
-		LOG.debug(files);
+//		LOG.debug(files);
 	}
 	
 }

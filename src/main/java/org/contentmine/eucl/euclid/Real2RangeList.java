@@ -140,7 +140,6 @@ public class Real2RangeList extends BoundingBoxManager implements Iterable<Real2
 
 	public Integer getCommonestIntegerHeight() {
 		getOrCreateIntegerHeightSet();
-		LOG.debug("heights "+heightSet);
 		return (Integer) MultisetUtil.getCommonestValue(heightSet);
 	}
 

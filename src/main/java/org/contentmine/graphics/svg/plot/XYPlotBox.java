@@ -93,7 +93,6 @@ public class XYPlotBox extends AbstractPlotBox {
 	public void readAndStructureFigures(AbstractCMElement svgElement) {
 		List<SVGElement> textElements = SVGUtil.getQuerySVGElements(svgElement, ".//*[local-name()='text']");
 		List<SVGText> texts = SVGText.extractTexts(textElements);
-		LOG.debug("texts "+texts.size());
 	}
 
 	protected void scaleXYDataPointsToValues() {

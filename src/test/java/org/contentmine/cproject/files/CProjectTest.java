@@ -84,8 +84,6 @@ public class CProjectTest {
 	@Test
 	public void testGetCTreeListWithPrefixes() {
 		File cProjectDir = new File(CMineFixtures.TEST_OPEN_DIR, "lic20160201");
-		LOG.debug("cp "+cProjectDir);
-		LOG.debug("files " + cProjectDir.listFiles().length);
 		CProject cProject = new CProject(cProjectDir);
 		CTreeList cTreeList = cProject.getOrCreateCTreeList();
 		Assert.assertEquals("ctrees", 123, cTreeList.size());
@@ -554,7 +552,6 @@ project2
 		CProject project = new CProject(new File(CMineFixtures.TEST_PROJECTS_DIR, "project2/"));
 		List<AbstractMetadata.Type> types = project.getExistingMetadataTypes();
 		Assert.assertEquals("[EPMC]", types.toString());
-		LOG.debug(types);
 		
 	}
 
@@ -599,7 +596,6 @@ project2
 		
 		project1.normalizeDOIBasedDirectoryCTrees();
 		cTreeList = project1.getOrCreateCTreeList();
-		LOG.debug(cTreeList.toString());
 		Assert.assertTrue("unnormalized", cTreeList.toString().contains(
 				"target/getpapers/doiNames/10.1103_physrevb.93.075101"));
 		Assert.assertTrue("unnormalized", cTreeList.toString().contains(
@@ -619,7 +615,6 @@ project2
 		Assert.assertEquals(5, files.size());
 		Assert.assertTrue(files.toString().contains("target/makeproj/10.1007_s00213-016-4471-y.pdf"));
 		String cmd = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
-		LOG.debug(">> "+cmd);
 		new CProject().run(cmd);
 		if (true) return;
 		// assert mechanism by globbing files

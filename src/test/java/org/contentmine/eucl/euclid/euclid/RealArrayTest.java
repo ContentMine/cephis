@@ -1265,7 +1265,6 @@ public class RealArrayTest {
 		RealArray realArray = new RealArray("2 4 6 8 10");
 		double epsilon = 0.01;
 		RealArithmeticProgression a = RealArithmeticProgression.createAP(realArray, epsilon);
-		LOG.debug(a.toString());
 	}
 	
 	@Test

@@ -166,7 +166,7 @@ public class RGBImageMatrix {
 		for (int x = 0; x < channel.length; x++) {
 			for (int y = 0; y < channel[0].length; y++) {
 				int r = channel[x][y];
-				System.err.print((r==255) ? "." : "*");
+				System.err.print(">rgb>"+((r==255) ? "." : "*"));
 			}
 			System.err.println();
 		}
@@ -179,10 +179,8 @@ public class RGBImageMatrix {
 	 */
 	@Deprecated //"probably wrong"
 	public RGBImageMatrix applyFilter(IntArray function) {
-		LOG.debug("function: "+function);
 		RGBImageMatrix newMatrix = this.copy();
 		for (int channel = 0; channel < ImageUtil.RGB.length; channel++) {
-			LOG.debug("channel: "+channel);
 			IntMatrix matrix = newMatrix.getMatrix(channel);
 			// extract row, filter and replace
 			for (int iRow = 0; iRow < matrix.getRows(); iRow++) {

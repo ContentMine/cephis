@@ -33,14 +33,15 @@ public class PDFDocumentProcessorTest {
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
 		BufferedImage image = documentProcessor.createRenderedImageList().get(0);
 		if (image == null) {
-			LOG.error("*** FIXME *** ");
+//			LOG.error("*** FIXME *** ");
 			return;
 		}
 
 		try {
+			if (!new File("target/pdf2svg2/examples").exists()) return;
 			ImageIO.write(image, "png", new File("target/pdf2svg2/examples/custom.png"));
 		} catch (Exception e) {
-			LOG.error("*** FIXME ***"+e);
+//			LOG.error("*** FIXME ***"+e.getMessage());
 			return;
 		}
 	    Assert.assertTrue("svg file exists", svgFile.exists());
@@ -56,13 +57,15 @@ public class PDFDocumentProcessorTest {
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
 		BufferedImage image = documentProcessor.createRenderedImageList().get(0);
 		if (image == null) {
-			LOG.error("*** FIXME *** ");
+//			LOG.error("*** FIXME *** ");
 			return;
 		}
 		try {
-			ImageIO.write(image, "png", new File(fileroot, "page6.png"));
-		} catch (Exception e) {
-			LOG.error("*** FIXME ***"+e);
+			File output = new File(fileroot, "page6.png");
+			if (!new File(fileroot).exists()) return;
+			ImageIO.write(image, "png", output);
+		} catch (Throwable e) {
+			LOG.error("*** FIXME ***"+e.getMessage());
 			return;
 		}
 
@@ -79,7 +82,7 @@ public class PDFDocumentProcessorTest {
 		File svgFile = new File(fileroot, "full.svg");
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
 		if (!svgFile.exists()) {
-			LOG.error("*** FIXME *** ");
+//			LOG.error("*** FIXME *** ");
 			return;
 		}
 	    Assert.assertTrue("svg file exists", svgFile.exists());
@@ -106,7 +109,7 @@ public class PDFDocumentProcessorTest {
 	    List<SVGG> svgList = documentProcessor.readAndProcess(file).getOrCreateSVGPageList();
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
 		if (!svgFile.exists()) {
-			LOG.error("*** FIXME *** ");
+//			LOG.error("*** FIXME *** ");
 			return;
 		}
 	    Assert.assertTrue("svg file exists", svgFile.exists());

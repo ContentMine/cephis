@@ -131,7 +131,7 @@ public class ImageToHOCRConverter {
 
 	private File createOutputHtmlFileDescriptorForHOCR_HOCR(File output) {
 		String filename = output.getAbsolutePath()+".hocr";
-		LOG.debug("creating hocr.hocr name: "+filename);
+		LOG.trace("creating hocr.hocr name: "+filename);
 		return new File(filename);
 	}
 

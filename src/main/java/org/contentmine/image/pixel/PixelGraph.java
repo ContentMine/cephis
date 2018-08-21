@@ -853,7 +853,7 @@ public class PixelGraph {
 			getOrCreateNodeList();
 			isSingleCycle = false;
 			if (edgeList == null) {
-				LOG.debug("NULL EDGE");
+				LOG.trace("NULL EDGE");
 			} else if (edgeList.size() == 1) {
 				if (nodeList == null || nodeList.size() == 1) {
 					// before creation of segments
@@ -1040,7 +1040,6 @@ public class PixelGraph {
 	public PixelIslandList resolveCyclicCrossing() {
 		PixelIslandList islandList = new PixelIslandList();
 		Map<PixelNode,Multiset<PixelNode>> multipleNodeSetByNode = createMultipleNodeSetByNodeMap();
-		LOG.debug(multipleNodeSetByNode);
 		return islandList;
 	}
 
@@ -1051,7 +1050,7 @@ public class PixelGraph {
 			PixelNode node = nodeList.get(i);
 			PixelNodeList connectedNodes = node.getConnectedNodes();
 			if (connectedNodes.contains(node)) {
-				LOG.debug("ouroboros");
+				LOG.trace("ouroboros");
 			}
 			Multiset<PixelNode> multipleNodeSet = connectedNodes.getMultipleNodes();
 			multipleNodeSetByNode.put(node, multipleNodeSet);
@@ -1250,7 +1249,7 @@ public class PixelGraph {
 			} else {
 				// check for triangles
 				if (edge.getOtherNode(node0).equals(edge1.getOtherNode(node1))) {
-					LOG.debug("removed triangle edge");
+					LOG.trace("removed triangle edge");
 					this.edgeList.remove(edge1);
 				} else {
 					// move node0 to take role of node1

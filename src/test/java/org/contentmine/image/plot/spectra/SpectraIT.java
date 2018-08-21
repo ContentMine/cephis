@@ -46,7 +46,7 @@ public class SpectraIT {
 		SVGSVG.wrapAndWriteAsSVG(g, file);
 		PixelIsland largestPixelIsland = pixelIslandList.get(0);
 		PixelGraph largestGraph = largestPixelIsland.getOrCreateGraph();
-		LOG.debug("pg "+largestGraph);
+//		LOG.debug("pg "+largestGraph);
 		largestGraph.doEdgeSegmentation();
 		largestGraph.setSegmentCreationTolerance(0.2);
 		SVGG segments = largestGraph.createSegmentedEdges();

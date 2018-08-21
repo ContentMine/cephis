@@ -235,15 +235,15 @@ public class AnnotatedAxis {
 			// maybe a spurious end tick - not monotonically increasing
 			int nticks = tickCoords.size();
 			if (tickCoords.get(nticks - 1) < tickCoords.get(nticks - 2)) {
-				LOG.debug("removing spurious tick: "+tickCoords.get(nticks - 1));
+				LOG.trace("removing spurious tick: "+tickCoords.get(nticks - 1));
 				tickCoords.deleteElement(nticks - 1);
 			}
 		} else if (tickValueCoords.size() == tickCoords.size() ) {
 			LOG.trace("ok");
 		} else {
-			LOG.error(axisType+" cannot match ticks with valueCoords: \n"+tickValueCoords+"; ticks "+tickCoords);
+//			LOG.error(axisType+" cannot match ticks with valueCoords: \n"+tickValueCoords+"; ticks "+tickCoords);
 //			throw new RuntimeException("cannot match ticks with values; "+axisType+" tickValues: "+tickValueCoords.size()+"; ticks: " + tickCoords.size());
-			LOG.error("cannot match ticks with values; "+axisType+" tickValues: "+tickValueCoords.size()+"; ticks: " + tickCoords.size());
+//			LOG.error("cannot match ticks with values; "+axisType+" tickValues: "+tickValueCoords.size()+"; ticks: " + tickCoords.size());
 			return;
 		}
 		RealArray tick2ValueDiffs = tickCoords.subtract(tickValueCoords);

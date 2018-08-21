@@ -108,7 +108,6 @@ public class RealRangeArrayTest {
 		array2.add(rr10_20);
 		Assert.assertFalse("order matters", array.equals(array2));
 		array2.sortAndRemoveOverlapping();
-		LOG.debug(array.toString() + "// "+array2.toString());
 		Assert.assertEquals("after sorting", array.toString(), array2.toString());
 	}
 	
