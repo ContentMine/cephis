@@ -95,6 +95,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	 * 
 	 */
 	@Test
+	@Ignore
 	// FIXME TEST
 	public void testJSTORDevereux() {
 		String fileroot = "Devereux1950";
