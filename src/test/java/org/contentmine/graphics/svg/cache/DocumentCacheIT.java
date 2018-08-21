@@ -39,7 +39,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	public void testDocument() {
 		String fileroot = "varga1";
 		File directory = new File(SVGHTMLFixtures.G_S_PAGE_DIR, fileroot);
-		LOG.debug("dir "+directory);
+//		LOG.debug("dir "+directory);
 		Assert.assertTrue("dir ", directory.exists());
 		DocumentCache documentCache = DocumentCache.createDocumentCache(directory);
 		documentCache.setCreateSummaryDebugBoxes(true);
@@ -47,10 +47,10 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 		// superimposed pages
 		SVGElement g = documentCache.getOrCreateConvertedSVGElement();
 		Assert.assertNotNull("non-null g", g);
-		LOG.debug("gg "+g.toXML());
+//		LOG.debug("gg "+g.toXML());
 		Assert.assertTrue("empty g", g.getChildCount() > 0);
 		File file = new File("target/document/"+fileroot+"/boxes.svg");
-		LOG.debug("wrote: "+file.getAbsolutePath());
+//		LOG.debug("wrote: "+file.getAbsolutePath());
 		SVGSVG.wrapAndWriteAsSVG(g, file);
 		Assert.assertTrue("file exists: "+file, file.exists());
 	}
@@ -61,7 +61,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 	public void testPageComponents() {
 		
 		DocumentCache documentCache = new DocumentCache();
-		LOG.warn("incomplete, pageLayout not fixed");
+//		LOG.warn("incomplete, pageLayout not fixed");
 		documentCache.analyzePages(SVGHTMLFixtures.G_S_PAGE_DIR, PageLayout.AMSOCGENE_RESOURCE, 9, "varga1/", new File("target/cache"));
 //		documentCache.analyzePages(PageLayout.BMC, 8, "bmc/1471-2148-11-329/", new File("target/cache"));
 //		documentCache.analyzePages(PageLayout.PLOSONE2016, 15, "TimmermansPLOS/", new File("target/cache"));
@@ -106,7 +106,7 @@ public static final Logger LOG = Logger.getLogger(DocumentCacheIT.class);
 		Assert.assertNotNull("non-null g", g);
 		Assert.assertTrue("empty g", g.getChildCount() > 0);
 		File file = new File("target/document/"+fileroot+"/boxes.svg");
-		LOG.debug("wrote: "+file.getAbsolutePath());
+//		LOG.debug("wrote: "+file.getAbsolutePath());
 		SVGSVG.wrapAndWriteAsSVG(g, file);
 		Assert.assertTrue("file exists: "+file, file.exists());
 	}

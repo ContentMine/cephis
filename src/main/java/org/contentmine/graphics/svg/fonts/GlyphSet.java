@@ -175,7 +175,6 @@ public class GlyphSet {
 	public static GlyphSet readGlyphSet(File file) {
 		GlyphSet glyphSet = new GlyphSet();
 		AbstractCMElement glyphSetXml = SVGElement.readAndCreateSVG(file);
-		LOG.debug("read glyphset "+file);
 		// no local name yet
 		List<SVGElement> glyphList = SVGUtil.getQuerySVGElements(glyphSetXml, "./*");
 		for (SVGElement glyph : glyphList) {
@@ -183,7 +182,6 @@ public class GlyphSet {
 			glyphSet.getOrCreateSignatureSet().add(signature);
 			String character = glyph.getAttributeValue(GlyphSet.CHARACTER);
 			glyphSet.getOrCreateCharacterMapBySignature().put(signature, character);
-//			LOG.debug("glyphset "+signature+" => "+character);
 		}
 		return glyphSet;
 	}
@@ -215,13 +213,13 @@ public class GlyphSet {
 				} else {
 					List<SVGPath> pathList = splitPaths(svgPath);
 					if (pathList.size() > 1) {
-//						LOG.debug("PL"+pathList);
+						LOG.trace("PL"+pathList);
 					}
-					LOG.debug("===================");
+					LOG.trace("===================");
 					for (SVGPath path : pathList) {
 						convertedElement = createTextFromGlyph(path);
 						convertedElementList.add(convertedElement);
-						LOG.debug(">gs >"+convertedElement.getValue()+";" +convertedElement.toXML());
+						LOG.trace(">gs >"+convertedElement.getValue()+";" +convertedElement.toXML());
 					}
 				}
 			}
@@ -252,16 +250,16 @@ public class GlyphSet {
 		String signature = path.getOrCreateSignatureAttributeValue();
 		String character = getCharacterBySignature(signature);
 		if (character == null) {
-			LOG.debug("cannot find character for: "+signature);
+			LOG.trace("cannot find character for: "+signature);
 			character = "*";
 		} else if (character.equals("")) {
-			LOG.debug("uncertain character for: "+signature);
+			LOG.trace("uncertain character for: "+signature);
 			character = "?";
 		} else if (character.equals("l")) {
-			LOG.debug("l character for: "+signature);
+			LOG.trace("l character for: "+signature);
 			character = "l";
 		} else {
-			LOG.debug(">"+character+"<");
+			LOG.trace(">"+character+"<");
 		}
 		Real2 delta = new Real2(0.0, 0.0);
 		if (!character.equals("") && !character.equals("?")) {

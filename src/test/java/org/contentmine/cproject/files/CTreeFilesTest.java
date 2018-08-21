@@ -82,7 +82,6 @@ public class CTreeFilesTest {
 		int[] textCounts = {3782, 3681, 4305}; // may be fragile
 		for (int i = 0; i < cTreeList.size(); i++) {
 			CTree cTree = cProject.getOrCreateCTreeList().get(i);
-			LOG.debug(cTree);
 			File[] files = cTree.getDirectory().listFiles();
 			Assert.assertEquals("files ", 2, files.length); // has fulltext.pdf as well as svg
 			File svgDir = cTree.getExistingSVGDir();

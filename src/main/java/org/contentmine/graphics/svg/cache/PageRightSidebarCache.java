@@ -44,7 +44,7 @@ public class PageRightSidebarCache extends PageComponentCache {
 				this.allElementList.add(element);
 			}
 		}
-		LOG.debug("RIGHT "+allElementList.size());
+		LOG.trace("RIGHT "+allElementList.size());
 	}
 	
 	public Double getXMin() {

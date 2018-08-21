@@ -47,7 +47,7 @@ public class PageLeftSidebarCache extends PageComponentCache {
 				this.allElementList.add(element);
 			}
 		}
-		LOG.debug("LEFT "+allElementList.size());
+		LOG.trace("LEFT "+allElementList.size());
 	}
 	
 	public Double getXMax() {

@@ -112,7 +112,7 @@ public class TextCache extends AbstractCache {
 	public void extractTexts(AbstractCMElement svgElement) {
 		if (svgElement != null) {
 			originalTextList = SVGText.extractSelfAndDescendantTexts(svgElement);
-			LOG.debug("original "+originalTextList.size());
+//			LOG.debug("original "+originalTextList.size());
 			ingestOriginalTextList();
 		}
 	}
@@ -123,19 +123,15 @@ public class TextCache extends AbstractCache {
 	}
 	
 	void ingestOriginalTextList() {
-		LOG.trace("i0");
 		originalTextList = SVGText.removeTextsWithEmptyContent(originalTextList, ownerComponentCache == null ? true : ownerComponentCache.isRemoveWhitespace());
 		formatCoordinates(originalTextList, coordinateDecimalPlaces);
 		if (useCompactOutput) {
 			createCompactedTextsAndReplace();
 		}
-		LOG.trace("i1");
 		if (ownerComponentCache != null) {
 			ownerComponentCache.addElementsToExtractedElement(this.getOrCreateOriginalTextList());
 		}
-		LOG.trace("i2");
 		this.createHorizontalAndVerticalTexts();
-		LOG.trace("i3");
 
 	}
 
@@ -150,11 +146,9 @@ public class TextCache extends AbstractCache {
 
 	public List<SVGText> getOrCreateOriginalTextList() {
 		if (originalTextList == null) {
-			LOG.trace("e0");
 			if (inputSVGElement != null) {
 				extractTexts(inputSVGElement);
 			}
-			LOG.trace("e1");
 		}
 		return originalTextList;
 	}
@@ -433,7 +427,7 @@ public class TextCache extends AbstractCache {
 				for (StyleAttributeFactory normalAttributeFactory : mainStyleAttributeFactoryList) {
 					if (nonNormalAttributeFactory.isBoldOrItalicSuperset(normalAttributeFactory)) {
 						// FIXME add code to capture this and link to main style
-						LOG.debug("Contains: "+nonNormalAttributeFactory+"; "+normalAttributeFactory);
+						LOG.trace("Contains: "+nonNormalAttributeFactory+"; "+normalAttributeFactory);
 					}
 				}
 			}

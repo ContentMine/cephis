@@ -52,7 +52,7 @@ public class GlyphTest {
 		XPlotBox xPlotBox = new XPlotBox();
 		ComponentCache componentCache = new ComponentCache(xPlotBox); 
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
-		LOG.debug("CC"+componentCache);
+//		LOG.debug("CC"+componentCache);
 		List<SVGRect> rects = componentCache.getOrCreateRectCache().getOrCreateRectList();
 		SVGSVG.wrapAndWriteAsSVG(rects, new File(outputDir, fileroot+"/"+"rects.svg"));
 		List<SVGLine> lines = componentCache.getOrCreateLineCache().getOrCreateLineList();
@@ -211,7 +211,6 @@ public class GlyphTest {
 			g.appendChild(text);
 		}
 		File file = new File(outputDir, fileroot+"/"+"characters.svg");
-		LOG.debug("characters written to "+file);
 		SVGSVG.wrapAndWriteAsSVG(g, file);
 		
 	}
@@ -226,7 +225,7 @@ public class GlyphTest {
 		for (int serial = 0; serial < pathPrimitiveListList.size(); serial++) {
 			PathPrimitiveList pathPrimitiveListx = pathPrimitiveListList.get(serial);
 			g.appendChild(pathPrimitiveListx.createAnnotatedSVG(String.valueOf(serial)));
-			LOG.debug(pathPrimitiveListx.getOrCreateSignature());
+//			LOG.debug(pathPrimitiveListx.getOrCreateSignature());
 		}
 		return g;
 	}

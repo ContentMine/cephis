@@ -439,17 +439,14 @@ public class PixelEdge {
 	public PixelEdge join(PixelEdge edge, PixelNode thisNode, PixelNode edgeNode) {
 		PixelEdge newPixelEdge = null;
 		if (thisNode.getCentrePixel().equals(edgeNode.getCentrePixel())) {
-			LOG.debug("JOIN "+this.size()+"; "+edge.size());
 			newPixelEdge = new PixelEdge();
 			PixelNode thisOther = this.getOtherNode(thisNode);
 			newPixelEdge.addNode(thisOther, 0);
 			PixelList newEdgePixelList0 = new PixelList(this.pixelList);
 			newPixelEdge.addPixelList(newEdgePixelList0);
 			PixelList newEdgePixelList1 = new PixelList(edge.pixelList);
-			LOG.debug("newEdgePixelList1 "+newEdgePixelList1.size());
 			newEdgePixelList1.remove(0);
 			newPixelEdge.addPixelList(newEdgePixelList1);
-			LOG.debug(newPixelEdge.size());
 			PixelNode edgeOther = edge.getOtherNode(edgeNode);
 			newPixelEdge.addNode(edgeOther, 1);
 		}
@@ -537,7 +534,7 @@ public class PixelEdge {
 		PixelEdgeList edgeList = new PixelEdgeList();
 		PixelNodeList nodeList = getNodes();
 		if (nodeList == null || nodeList.size() - 1 < nodeIndex) {
-			LOG.warn("Too few edges "+nodeList.size()+" for index: "+nodeIndex);
+			LOG.trace("Too few edges "+nodeList.size()+" for index: "+nodeIndex);
 			return edgeList;
 		}
 		return nodeList.get(nodeIndex).getEdges();
@@ -565,7 +562,7 @@ public class PixelEdge {
 				singleNodeCount++;
 			}
 			if (singleNodeCount == 2) {
-				LOG.error("OUROBOROS edge");
+				LOG.debug("OUROBOROS edge");
 				return null;
 			}
 			totalSingleNodeCount += singleNodeCount;

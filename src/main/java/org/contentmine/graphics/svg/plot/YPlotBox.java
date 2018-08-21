@@ -46,17 +46,14 @@ public class YPlotBox extends AbstractPlotBox {
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
 		// these need changing for bar plots
 		RectCache rectCache = componentCache.getOrCreateRectCache();
-		LOG.debug("rect "+rectCache);
 		SVGElement rectCacheSVG = rectCache.getOrCreateConvertedSVGElement();
 		SVGSVG.wrapAndWriteAsSVG(rectCacheSVG, new File("target/bar/rect.svg"));
 
 		LineCache lineCache = componentCache.getOrCreateLineCache();
-		LOG.debug("line "+lineCache);
 		SVGElement lineCacheSVG = lineCache.getOrCreateConvertedSVGElement();
 		SVGSVG.wrapAndWriteAsSVG(lineCacheSVG, new File("target/bar/line.svg"));
 		
 		TextCache textCache = componentCache.getOrCreateTextCache();
-		LOG.debug("text "+textCache);
 		SVGElement textCacheSVG = textCache.getOrCreateConvertedSVGElement();
 		SVGSVG.wrapAndWriteAsSVG(textCacheSVG, new File("target/bar/text.svg"));
 		List<SVGText> horTextList = textCache.getOrCreateHorizontalTexts();
@@ -68,7 +65,6 @@ public class YPlotBox extends AbstractPlotBox {
 		
 		ShapeCache shapeCache = componentCache.getOrCreateShapeCache();
 		SVGElement shapeCacheSVG = shapeCache.getOrCreateConvertedSVGElement();
-		LOG.debug("shapes: "+shapeCache);
 		SVGSVG.wrapAndWriteAsSVG(shapeCacheSVG, new File("target/bar/shape.svg"));
 		
 // axial polylines are converted to individual axes.

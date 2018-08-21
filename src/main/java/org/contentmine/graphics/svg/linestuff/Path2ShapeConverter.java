@@ -189,7 +189,7 @@ public class Path2ShapeConverter {
 			for (SVGPath path : pathList) {
 				SVGShape shape = convertPathToShape(path);
 				if (shape instanceof SVGRhomb) {
-					LOG.debug("RHOMB "+shape.toString());
+					LOG.trace("RHOMB "+shape.toString());
 				}
 				// unconverted path, add as raw
 				if (shape == null) {

@@ -879,7 +879,6 @@ public class IntArrayTest {
 		IntArray filter = new IntArray("-1 3 -1");
 		IntArray newArray = array.applyFilterNew(filter);
 		Assert.assertEquals("convoluted", "(0,0,2,12,2,0,0)", newArray.toString());
-		LOG.debug("n "+newArray);
 	}
 
 

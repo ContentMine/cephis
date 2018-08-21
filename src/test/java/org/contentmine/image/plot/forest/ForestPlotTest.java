@@ -59,14 +59,13 @@ public class ForestPlotTest {
 		String fileRoot = "blue";
 		String plotType = "forest";
 		File imageFile = new File(ImageAnalysisFixtures.DIAGRAMS_DIR, plotType + "/"+fileRoot+".png");
-		LOG.debug("image file "+imageFile);
+		LOG.trace("image file "+imageFile);
 		Assert.assertTrue("file exists "+imageFile, imageFile.exists());
 		int nvalues = 4; // i.e. 16-bit color
 		nvalues = 2;
 		BufferedImage image = UtilImageIO.loadImage(imageFile.toString());
-//		ImageUtil.flattenImage(image, nvalues);
 		File file = new File("target/"+plotType+"/"+fileRoot+"/"+"posterize.png");
-		LOG.debug("posterized file "+file);
+		LOG.trace("posterized file "+file);
 		ImageIOUtil.writeImageQuietly(image, file);
 
 		ColorAnalyzer colorAnalyzer = new ColorAnalyzer(image);
@@ -83,7 +82,7 @@ public class ForestPlotTest {
 			if (v == 0) {
 //				LOG.debug("GRAY");
 			} else {
-				System.out.println(entry+"/"+count); 
+//				System.out.println(entry+"/"+count); 
 			}
 		}
 		ImageIOUtil.writeImageQuietly(image, new File("target/posterize.png"));

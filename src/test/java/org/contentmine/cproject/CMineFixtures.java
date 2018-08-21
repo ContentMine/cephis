@@ -69,7 +69,7 @@ public class CMineFixtures {
 	public static boolean exist(File file) {
 		boolean exist = true;
 		if (file != null && !file.exists()) {
-			LOG.info("skipped local test: "+file);
+			LOG.trace("skipped local test: "+file);
 			exist = false;
 		}
 		return exist;

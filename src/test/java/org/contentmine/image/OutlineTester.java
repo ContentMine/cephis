@@ -70,7 +70,7 @@ public class OutlineTester {
 	
 		PixelRing outline = pixelRingList.get(1).getPixelsTouching(pixelRingList.get(0));
 		for (int iRing = 0; iRing < Math.min(expectedRingSizes.length, pixelRingList.size()); iRing++) {
-			LOG.debug("ser "+currentIslandIndex+", iRing "+iRing);
+//			LOG.debug("ser "+currentIslandIndex+", iRing "+iRing);
 			Assert.assertEquals("ring"+iRing, expectedRingSizes[currentIslandIndex][iRing], pixelRingList.get(iRing).size());
 		}
 		g = new SVGG();

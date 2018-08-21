@@ -860,7 +860,7 @@ public class SVGElement extends GraphicsElement {
 		double d = Double.NaN;
 		String v = this.getAttributeValue(attName);
 		if (v == null) {
-			LOG.warn("DEFAULT ZERO "+attName);
+//			LOG.warn("DEFAULT ZERO "+attName);
 			d = 0.0;
 		} else {
 			try {

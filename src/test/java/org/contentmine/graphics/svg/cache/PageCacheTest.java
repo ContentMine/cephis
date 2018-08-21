@@ -242,7 +242,7 @@ public class PageCacheTest {
 				lastFontSize = fontSize;
 				lastTotalRect = totalRect;
 			}
-			LOG.debug("==================\n");
+			LOG.trace("==================\n");
 		}
 		File targetDir = new File("target/demos/varga/");
 		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "boxes"+ipage+".svg"));
@@ -310,7 +310,7 @@ public class PageCacheTest {
 				lastRowRectList = rowRectList;
 				lastTotalRect = totalRect;
 			}
-			LOG.debug("==================\n");
+			LOG.trace("==================\n");
 		}
 		File targetDir = new File("target/demos/varga/");
 		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "boxes"+ipage+".svg"));
@@ -323,11 +323,11 @@ public class PageCacheTest {
 		Pattern pattern = Pattern.compile("(?<title>(B8,?)+),(?<head>(N6,?))(?<body>(N8,?)+)(?<bottom>(N10,?)+)");
 		Matcher matcher = pattern.matcher(s);
 		if (matcher.matches()) {
-			LOG.debug(matcher.groupCount());
-			LOG.debug(matcher.group("title"));
-			LOG.debug(matcher.group("head"));
-			LOG.debug(matcher.group("body"));
-			LOG.debug(matcher.group("bottom"));
+//			LOG.debug(matcher.groupCount());
+//			LOG.debug(matcher.group("title"));
+//			LOG.debug(matcher.group("head"));
+//			LOG.debug(matcher.group("body"));
+//			LOG.debug(matcher.group("bottom"));
 		}
 	}
 	
@@ -360,7 +360,7 @@ public class PageCacheTest {
 	public void testBMCTextWithPubstyle() {
 		PubstyleManager pubstyleManager = new PubstyleManager();
 		SVGPubstyle bmcStyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
-		LOG.debug(bmcStyle.toXML());
+//		LOG.debug(bmcStyle.toXML());
 //		Pubstyle pubstyle = pubstyleManager.guessPubstyleFromFirstPage(new File(SVGHTMLFixtures.CORPUS_DIR, 
 //				"mosquitos/12936_2017_Article_1948/svg/fulltext-page2.svg"));
 		Assert.assertEquals("bmc", bmcStyle.getPubstyleName());
@@ -379,13 +379,13 @@ public class PageCacheTest {
 		File buildDir = SVGHTMLFixtures.G_S_TEXT_BUILD_DIR;
 		String fileroot = "Devereux1950page.1";
 		File targetDir = new File(SVGHTMLFixtures.TARGET_TEXT_BUILD_DIR, fileroot);
-		LOG.debug(targetDir);
+//		LOG.debug(targetDir);
 		File svgFile = new File(buildDir, fileroot+".svg");
 		PageCache pageCache = new PageCache();
 		pageCache.readGraphicsComponentsAndMakeCaches(svgFile);
 		HtmlDiv div = pageCache.createHTMLFromTextList();
 		File htmlFile = new File(targetDir, "page1.html");
-		LOG.debug("HT "+htmlFile);
+//		LOG.debug("HT "+htmlFile);
 		HtmlHtml.wrapAndWriteAsHtml(div, htmlFile);
 
 	}

@@ -276,7 +276,7 @@ public class LineCache extends AbstractCache {
 			List<SVGLine> horizontalLines0 = SVGLine.findHorizontalOrVerticalLines(lineList, LineDirection.HORIZONTAL, AnnotatedAxis.EPS);
 			horizontalLines = SVGLine.mergeParallelLines(horizontalLines0, joinEps );
 			if (horizontalLines0.size() != horizontalLines.size()) {
-				LOG.info("merged horizontal lines: ");
+				LOG.trace("merged horizontal lines: ");
 			}
 			Collections.sort(horizontalLines, new HorizontalLineComparator());
 			getOrCreateLongHorizontalLineList();

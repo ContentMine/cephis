@@ -563,7 +563,7 @@ public class PixelNucleusFactory {
 			} else if (getNucleusByPixel(neighbours.get(1)) != null) {
 				nucleusNeighbourIndex = 1;
 			} else {
-				LOG.error("No neighbour in nucleus");
+				LOG.trace("No neighbour in nucleus");
 			}
 			if (nucleusNeighbourIndex != -1) {
 				Pixel nucleusPixel = neighbours.get(nucleusNeighbourIndex);
@@ -641,12 +641,12 @@ public class PixelNucleusFactory {
 		if (node == null) {
 			PixelNucleus nucleus = getNucleusByPixel(pixel);
 			if (nucleus == null) {
-				LOG.error("Cannot find nucleus for edge end pixel: " + pixel);
+				LOG.trace("ERROR Cannot find nucleus for edge end pixel: " + pixel);
 			} else {
 				node = nucleus.getNode();
 				Pixel centrePixel = node.getCentrePixel();
 				if (centrePixel == null) {
-					LOG.error("null centrePixel for: " + node + "; " + nucleus);
+					LOG.trace("ERROR null centrePixel for: " + node + "; " + nucleus);
 				} else if (pixel.equals(centrePixel)) {
 					// this is fine
 				} else if (!pixel.isNeighbour(centrePixel)) {
@@ -681,7 +681,7 @@ public class PixelNucleusFactory {
 //		unusedPixels = new PixelList(island.getPixelList());
 		if (nodeList != null) {
 			if (nodeList.size() == 0) {
-				LOG.warn("NO NODES");
+				LOG.trace("WARN NO NODES");
 			}
 			for (PixelNode node : nodeList) {
 				Iterator<PixelEdge> edgeIterator = node.getEdges().iterator();
@@ -799,7 +799,7 @@ public class PixelNucleusFactory {
 			LOG.trace("RHOMBUS");
 			newNucleus = new TwoWayNucleus(centrePixel, pixelList, island);
 		} else {
-			LOG.error("UNKNOWN 4 PIXEL NUCLEUS in " + island.size() + "; "
+			LOG.trace("UNKNOWN 4 PIXEL NUCLEUS in " + island.size() + "; "
 					+ island.getIntBoundingBox() + "; " + centrePixel + "; "
 					+ pixelList + "; neigh "
 					+ pixelList.getOrCreateNeighbours());
@@ -952,7 +952,7 @@ public class PixelNucleusFactory {
 			} else if (neighbours.size() == 4) {
 				connect4List.add(pixel);
 			} else {
-				LOG.error("strange neighbour count "+neighbours);
+				LOG.trace("strange neighbour count "+neighbours);
 			}
 		}
 		if (connect3List.size() == 2 && connect4List.size() == 2) {

@@ -273,7 +273,7 @@ public class DefaultArgProcessor {
 			InputStream is = clazz.getResourceAsStream(resourceName);
 			if (is == null) {
 				String message = "Cannot find input resource stream: class("+clazz+"); "+resourceName;
-				LOG.debug("************************* "+message);
+				//LOG.debug("************************* "+message);
 				throw new RuntimeException(message);
 			}
 			Element argListElement = new Builder().build(is).getRootElement();
@@ -385,7 +385,7 @@ public class DefaultArgProcessor {
 
 	public void parseMakeProject(ArgumentOption option, ArgIterator argIterator) {
 		String defalt = option.getDefaultString();
-		LOG.debug("defalt: "+defalt);
+//		LOG.debug("defalt: "+defalt);
 		outputFileRegex = argIterator.getString(option);
 	}
 

@@ -133,10 +133,10 @@ public class PlotImageTest {
 		}
 		List<Multiset.Entry<Integer>> horizontalLengths = MultisetUtil.createEntryList(
 				 MultisetUtil.getEntriesSortedByCount(horizontalLengthSet));
-		LOG.debug("hor "+horizontalLengths);
+		LOG.trace("hor "+horizontalLengths);
 		
 		List<Multiset.Entry<Integer>> verticalLengths = MultisetUtil.createListSortedByCount(verticalLengthSet);
-		LOG.debug("vert "+verticalLengths);
+		LOG.trace("vert "+verticalLengths);
 		SVGSVG.wrapAndWriteAsSVG(gg, new File(targetDir, "gridLines.svg"));
 		
 	}
@@ -175,10 +175,10 @@ public class PlotImageTest {
 		SVGSVG.wrapAndWriteAsSVG(g, new File(targetDir, "nodes.svg"));
 		List<Multiset.Entry<Integer>> xEntries = MultisetUtil.createEntryList(
 				 MultisetUtil.getEntriesSortedByValue(xSet));
-		LOG.debug("x "+xEntries);
+		Assert.assertEquals(57, xEntries.size());
 		List<Multiset.Entry<Integer>> yEntries = MultisetUtil.createEntryList(
 				 MultisetUtil.getEntriesSortedByValue(ySet));
-		LOG.debug("y "+yEntries);
+		Assert.assertEquals(75, yEntries.size());
 	}
 	
 	@Test
@@ -239,12 +239,12 @@ public class PlotImageTest {
 		List<Multiset.Entry<Integer>> xEntries = MultisetUtil.createEntryList(
 				 MultisetUtil.getEntriesSortedByValue(xSet));
 		IntArray xBins = createIndexBins(xEntries);
-		LOG.debug("x "+xBins);
-		LOG.debug(MultisetUtil.createEntriesWithCountGreater(xEntries, 6));
+		LOG.trace("x "+xBins);
+		LOG.trace(MultisetUtil.createEntriesWithCountGreater(xEntries, 6));
 		List<Multiset.Entry<Integer>> yEntries = MultisetUtil.createEntryList(
 				 MultisetUtil.getEntriesSortedByValue(ySet));
 		IntArray yBins = createIndexBins(yEntries);
-		LOG.debug(MultisetUtil.createEntriesWithCountGreater(yEntries, 6));
+		LOG.trace(MultisetUtil.createEntriesWithCountGreater(yEntries, 6));
 	}
 
 	@Test

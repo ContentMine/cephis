@@ -60,7 +60,6 @@ public abstract class AbstractPubstyle extends SVGG {
 	public Map<String, String> matchTexts(List<SVGText> texts) {
 		Map<String, String> keyValues = new HashMap<String, String>();
 		List<NamePattern> namePatterns = getOrCreateNamePatternList();
-		LOG.debug("namePatterns: "+namePatterns);
 		for (SVGText text : texts) {
 			matchAgainstText(keyValues, text);
 		}
@@ -225,7 +224,7 @@ public abstract class AbstractPubstyle extends SVGG {
 	private List<SVGPath> createTemplatePaths() {
 		templatePaths = SVGPath.extractSelfAndDescendantPaths(this);
 		if (templatePaths.size() > 0) {
-			LOG.debug("PATHS "+templatePaths.size());
+//			LOG.debug("PATHS "+templatePaths.size());
 		}
 		return templatePaths;
 	}

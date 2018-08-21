@@ -281,7 +281,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
 				LOG.trace("small body: "+rangesArray);
 			}
 		} else {
-			LOG.debug("Ranges: "+rangesArray.size()+"; "+rangesArray);
+//			LOG.debug("Ranges: "+rangesArray.size()+"; "+rangesArray);
 		}
 
 	}
@@ -355,7 +355,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
 		// write SVG
 		SVGElement markedChunk = tableTextStructurer.getSVGChunk();
 		
-		LOG.warn("Check SVGChunk after refactor");
+//		LOG.warn("Check SVGChunk after refactor");
 //		SVGElement markedChunk = this.annotatedSvgChunk;
 		if (markedChunk == null) {
 			throw new RuntimeException("Missing markedChunk - change logic");
@@ -452,7 +452,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
 			);
 		TableTitleSection tableTitle = getOrCreateTableTitleSection();
 		if (tableTitle == null) {
-			LOG.warn("no table title");
+//			LOG.warn("no table title");
 		} else {
 			svgChunk = tableTitle.createMarkedContent(
 					(SVGElement) svgChunk.copy(),
@@ -462,7 +462,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
 		}
 		TableHeaderSection tableHeader = getOrCreateTableHeaderSection();
 		if (tableHeader == null) {
-			LOG.warn("no table header");
+//			LOG.warn("no table header");
 		} else {
 			tableHeader.createHeaderRowsAndColumnGroups();
 			svgChunk = tableHeader.createMarkedSections(
@@ -510,10 +510,10 @@ public class TableContentCreator extends PageLayoutAnalyzer {
 	 * @throws IOException 
 	 */
 	public void createHTML(File annotSvgFile, File outDir) throws IOException {
-		LOG.debug("reading SVG from "+annotSvgFile);
+//		LOG.debug("reading SVG from "+annotSvgFile);
 		HtmlHtml html = createHtmlFromSVG();
 		File outfile = new File(outDir, annotSvgFile.getName()+".html");
-		LOG.debug("writing HTML to : "+outfile);
+//		LOG.debug("writing HTML to : "+outfile);
 		XMLUtil.debug(html, outfile, 1);
 		
 		
@@ -776,7 +776,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
 	private void addBody(AbstractCMElement svgElement, HtmlTable table) {
 		List<SVGG> gs = getGElements(svgElement);
 		if (gs.size() == 0) {
-			LOG.warn("No annotated body");
+//			LOG.warn("No annotated body");
 			return;
 		}
 		List<List<SVGRect>> columnList = new ArrayList<List<SVGRect>>();

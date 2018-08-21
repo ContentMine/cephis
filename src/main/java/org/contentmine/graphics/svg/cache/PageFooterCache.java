@@ -44,7 +44,7 @@ public class PageFooterCache extends PageComponentCache {
 				this.allElementList.add(element);
 			}
 		}
-		LOG.debug("BOTTOM "+allElementList.size());
+//		LOG.debug("BOTTOM "+allElementList.size());
 	}
 	
 	public Double getYMin() {

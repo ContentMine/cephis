@@ -192,7 +192,7 @@ Edges: [
 		String outputFileRoot = boxFileroot+"/"+"orig.svg";
 		File boxOutputFile = new File(outputDir, outputFileRoot);
 		SVGSVG.wrapAndWriteAsSVG(allElements, boxOutputFile);
-		LOG.debug("writing: "+boxOutputFile);
+//		LOG.debug("writing: "+boxOutputFile);
 		MoleculeBuilder moleculeBuilderi = new MoleculeBuilder();
 		try {
 			File outputDir2 = new File("target/", dirRoot+"/"+boxFileroot);

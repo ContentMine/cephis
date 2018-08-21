@@ -276,7 +276,7 @@ public class SVGPubstyle extends AbstractPubstyle {
 		if (pubstyleColumn != null) {
 			pubstyleColumn.setXPath(column);
 			pubstyleColumn.setContainingPubstyle(this);
-			LOG.debug("COLUMN "+column);
+			LOG.trace("COLUMN "+column);
 		}
 		return pubstyleColumn;
 	}
@@ -423,7 +423,7 @@ public class SVGPubstyle extends AbstractPubstyle {
 	// ===========================================
 	private void debugNullElement(String clazz, SVGElement element) {
 		if (element == null) {
-			LOG.debug("xml for null "+clazz+ this.toXML().substring(0,  100)+" ...");
+			LOG.trace("xml for null "+clazz+ this.toXML().substring(0,  100)+" ...");
 		}
 	}
 
