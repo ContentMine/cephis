@@ -16,8 +16,8 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
-public class SpectraTest {
-	private static final Logger LOG = Logger.getLogger(SpectraTest.class);
+public class SpectraIT {
+	private static final Logger LOG = Logger.getLogger(SpectraIT.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}

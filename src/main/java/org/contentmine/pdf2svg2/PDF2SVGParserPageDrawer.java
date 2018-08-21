@@ -71,8 +71,8 @@ import nu.xom.Attribute;
  *  
  * @author pm286
  */
-public class PDF2SVGParser extends PageDrawer    {
-	private static final Logger LOG = Logger.getLogger(PDF2SVGParser.class);
+public class PDF2SVGParserPageDrawer extends PageDrawer    {
+	private static final Logger LOG = Logger.getLogger(PDF2SVGParserPageDrawer.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
@@ -116,7 +116,7 @@ public class PDF2SVGParser extends PageDrawer    {
 	private Double minBoldWeight = 500.;
 
 
-	PDF2SVGParser(PageDrawerParameters parameters) throws IOException        {
+	PDF2SVGParserPageDrawer(PageDrawerParameters parameters) throws IOException        {
         super(parameters);
         init();
     }

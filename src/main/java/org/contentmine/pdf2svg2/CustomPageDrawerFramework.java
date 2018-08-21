@@ -56,11 +56,11 @@ import org.eclipse.jetty.util.log.Log;
  * cloned and hacked with thanks by pm286
  */
 
-public class CustomPageDrawer
+public class CustomPageDrawerFramework
 {
 	
 
-	private static final Logger LOG = Logger.getLogger(CustomPageDrawer.class);
+	private static final Logger LOG = Logger.getLogger(CustomPageDrawerFramework.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
@@ -77,9 +77,12 @@ public class CustomPageDrawer
         File targetDir = new File("target/pdf2svg2/", path);
         targetDir.mkdirs();
 		PDDocument doc = PDDocument.load(new File(file, path+".pdf"));
+        PDFRenderer renderer = new MyPDFRenderer(doc);
         for (int i : pages) {
         	LOG.debug(">> "+i);
-	        PDFRenderer renderer = new MyPDFRenderer(doc);
+        	/** we trap the image-drawing part to capture the graphics strokes! 
+        	 * this will get routed to create SVG as well 
+        	 * */
 	        BufferedImage image = renderer.renderImage(i);
 			ImageIO.write(image, "PNG", new File(targetDir, "page"+i+".png"));
         }

@@ -618,7 +618,7 @@ project2
 		List<File> files = new ArrayList<File>(FileUtils.listFiles(targetDir, new String[] {"pdf"}, false));
 		Assert.assertEquals(5, files.size());
 		Assert.assertTrue(files.toString().contains("target/makeproj/10.1007_s00213-016-4471-y.pdf"));
-		String cmd = "--project " + targetDir + CProject.MAKE_PROJECT;
+		String cmd = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
 		LOG.debug(">> "+cmd);
 		new CProject().run(cmd);
 		if (true) return;

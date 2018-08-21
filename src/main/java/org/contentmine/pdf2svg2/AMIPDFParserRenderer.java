@@ -10,31 +10,31 @@ import org.apache.pdfbox.rendering.PageDrawer;
 import org.apache.pdfbox.rendering.PageDrawerParameters;
 
 /** helper class extending PDFBox renderer
+ * works with PageDrawer to capture the PDF input stream
  * 
  * @author pm286
  *
  */
-public class AMIPDFRenderer extends PDFRenderer {
-	private static final Logger LOG = Logger.getLogger(AMIPDFRenderer.class);
+public class AMIPDFParserRenderer extends PDFRenderer {
+	private static final Logger LOG = Logger.getLogger(AMIPDFParserRenderer.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	private PDF2SVGParser pdf2svgParser;
+	private PDF2SVGParserPageDrawer pdf2svgParserPageDrawer;
 
-	AMIPDFRenderer(PDDocument document) {
+	AMIPDFParserRenderer(PDDocument document) {
         super(document);
     }
 
     @Override
     protected PageDrawer createPageDrawer(PageDrawerParameters parameters) throws IOException {
-        pdf2svgParser = new PDF2SVGParser(parameters);
-
-        return pdf2svgParser;
+        pdf2svgParserPageDrawer = new PDF2SVGParserPageDrawer(parameters);
+        return pdf2svgParserPageDrawer;
     }
     
-    public PDF2SVGParser getPDF2SVGParser() {
-    	return pdf2svgParser;
+    public PDF2SVGParserPageDrawer getPDF2SVGParserPageDrawer() {
+    	return pdf2svgParserPageDrawer;
     }
 
 }

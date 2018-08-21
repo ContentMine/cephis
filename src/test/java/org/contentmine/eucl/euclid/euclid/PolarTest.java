@@ -20,6 +20,7 @@ import static org.contentmine.eucl.euclid.EuclidConstants.EPS;
 
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Complex;
+import org.contentmine.eucl.euclid.EuclidConstants;
 import org.contentmine.eucl.euclid.Polar;
 import org.contentmine.eucl.euclid.Real2;
 import org.junit.Assert;
@@ -57,8 +58,8 @@ public class PolarTest {
 	 */
 	@Test
 	public void testPolar() {
-		Assert.assertEquals("polar", 0.0, p0.getTheta().getRadian(), EPS);
-		Assert.assertEquals("polar", 0.0, p0.getR(), EPS);
+		Assert.assertEquals("polar", 0.0, p0.getTheta().getRadian(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", 0.0, p0.getR(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -67,10 +68,10 @@ public class PolarTest {
 	@Test
 	public void testPolarDoubleDouble() {
 		Assert.assertEquals("polar", Math.atan(2. / 1.), p1.getTheta()
-				.getRadian(), EPS);
-		Assert.assertEquals("polar", Math.sqrt(5.), p1.getR(), EPS);
-		Assert.assertEquals("polar", 1., p1.getX(), EPS);
-		Assert.assertEquals("polar", 2., p1.getY(), EPS);
+				.getRadian(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", Math.sqrt(5.), p1.getR(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", 1., p1.getX(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", 2., p1.getY(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -80,7 +81,7 @@ public class PolarTest {
 	public void testPolarDoubleAngle() {
 		Assert.assertEquals("polar", Math.PI / 3., p2.getTheta().getRadian(),
 				EPS);
-		Assert.assertEquals("polar", 10., p2.getR(), EPS);
+		Assert.assertEquals("polar", 10., p2.getR(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -90,8 +91,8 @@ public class PolarTest {
 	public void testPolarComplex() {
 		Polar c = new Polar(new Complex(1., 2.));
 		Assert.assertEquals("polar", Math.atan(2. / 1.), c.getTheta()
-				.getRadian(), EPS);
-		Assert.assertEquals("polar", Math.sqrt(5.), c.getR(), EPS);
+				.getRadian(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", Math.sqrt(5.), c.getR(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -101,8 +102,8 @@ public class PolarTest {
 	public void testPolarPolar() {
 		Polar p = new Polar(p1);
 		Assert.assertEquals("polar", Math.atan(2. / 1.), p.getTheta()
-				.getRadian(), EPS);
-		Assert.assertEquals("polar", Math.sqrt(5.), p.getR(), EPS);
+				.getRadian(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", Math.sqrt(5.), p.getR(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -110,7 +111,7 @@ public class PolarTest {
 	 */
 	@Test
 	public void testGetR() {
-		Assert.assertEquals("polar", Math.sqrt(5.), p1.getR(), EPS);
+		Assert.assertEquals("polar", Math.sqrt(5.), p1.getR(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -119,7 +120,7 @@ public class PolarTest {
 	@Test
 	public void testGetTheta() {
 		Assert.assertEquals("polar", Math.atan(2. / 1.), p1.getTheta()
-				.getRadian(), EPS);
+				.getRadian(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -128,14 +129,14 @@ public class PolarTest {
 	@Test
 	public void testPlus() {
 		Polar pa = new Polar(10., 20.);
-		Assert.assertEquals("polar", 10., pa.getX(), EPS);
-		Assert.assertEquals("polar", 20., pa.getY(), EPS);
+		Assert.assertEquals("polar", 10., pa.getX(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", 20., pa.getY(), EuclidConstants.EPS12);
 		Polar pb = new Polar(30., 40.);
-		Assert.assertEquals("polar", 30., pb.getX(), EPS);
-		Assert.assertEquals("polar", 40., pb.getY(), EPS);
+		Assert.assertEquals("polar", 30., pb.getX(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", 40., pb.getY(), EuclidConstants.EPS12);
 		Polar pc = pa.plus(pb);
-		Assert.assertEquals("polar", 40., pc.getX(), EPS);
-		Assert.assertEquals("polar", 60., pc.getY(), EPS);
+		Assert.assertEquals("polar", 40., pc.getX(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", 60., pc.getY(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -146,8 +147,8 @@ public class PolarTest {
 		Polar pa = new Polar(10., 20.);
 		Polar pb = new Polar(30., 50.);
 		Polar pc = pa.subtract(pb);
-		Assert.assertEquals("polar", -20., pc.getX(), EPS);
-		Assert.assertEquals("polar", -30., pc.getY(), EPS);
+		Assert.assertEquals("polar", -20., pc.getX(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", -30., pc.getY(), EuclidConstants.EPS12);
 	}
 
 	/**
@@ -157,8 +158,8 @@ public class PolarTest {
 	public void testSubtract() {
 		Polar pa = new Polar(10., 20.);
 		pa.subtract();
-		Assert.assertEquals("polar", -10., pa.getX(), EPS);
-		Assert.assertEquals("polar", -20., pa.getY(), EPS);
+		Assert.assertEquals("polar", -10., pa.getX(), EuclidConstants.EPS12);
+		Assert.assertEquals("polar", -20., pa.getY(), EuclidConstants.EPS12);
 	}
 
 	/**

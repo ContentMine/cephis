@@ -18,13 +18,27 @@ public class CMineTestFixtures {
 		LOG.setLevel(Level.DEBUG);
 	}
 	
-	public static void cleanAndCopyDir(File sourceDir, File targetDir) {
+	/** copies source onto target after cleaning
+	 * if copy fails, writes error message and returns false
+	 * 
+	 * recommended
+	 *   if (!CmineTestFixtures.cleanAndCopyDir(s, t) {
+	 *       abort / return
+	 *   }
+	 * 
+	 * @param sourceDir
+	 * @param targetDir
+	 * @return
+	 */
+	public static boolean cleanAndCopyDir(File sourceDir, File targetDir) {
 		try {
 			if (targetDir.exists()) FileUtils.forceDelete(targetDir);
 			LOG.trace(sourceDir.getAbsolutePath());
 			FileUtils.copyDirectory(sourceDir, targetDir);
+			return true;
 		} catch (IOException ioe) {
-			throw new RuntimeException("failed to clean and copy: "+sourceDir+" @ "+targetDir +": "+ioe, ioe);
+			LOG.error("failed to clean and copy: "+sourceDir+" @ "+targetDir +": "+ioe, ioe);
+			return false;
 		}
 	}
 

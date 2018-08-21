@@ -13,7 +13,7 @@ import org.contentmine.cproject.util.CMineTestFixtures;
 import org.contentmine.eucl.euclid.test.TestUtil;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
-import org.contentmine.pdf2svg2.AMISVGCreator;
+import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -45,20 +45,21 @@ public class VectorSpectraIT {
 		File targetDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_TARGET_DIR, fileroot);
 		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
 		CProject cProject = new CProject();
-		String command = "--project " + targetDir + CProject.MAKE_PROJECT;
+		String command = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
 		cProject.run(command);
 		Assert.assertTrue("target pdf "+targetDir, new File(targetDir, "c8ob00931g1").exists());
 		
 	}
 
 	@Test
+	@Ignore
 	public void testPDF2SVG() throws Exception {
 		String fileroot = "rsc";
 		File sourceDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_DIR, fileroot);
 		File targetDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_TARGET_DIR, fileroot);
 		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
 		CProject cProject = new CProject();
-		String command = "--project " + targetDir + CProject.MAKE_PROJECT;
+		String command = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
 		cProject.run(command);
 //		String ctreeS = "c8ob00931g1";
 //		String ctreeS = "c8ob00998h1";
@@ -66,10 +67,14 @@ public class VectorSpectraIT {
 		File ctreeFile = new File(targetDir, ctreeS);
 		Assert.assertTrue("target pdf "+targetDir, ctreeFile.exists());
         File file = new File(ctreeFile, "fulltext.pdf");
-	    AMISVGCreator svgCreator = new AMISVGCreator();
-	    SVGG svgg = svgCreator.createSVG(file);
-	    svgCreator.writeSVGPages(targetDir);
-	    svgCreator.writeRawImages(targetDir);
+	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+	    documentProcessor.readAndProcess(file);
+	    documentProcessor.writeSVGPages(targetDir);
+	    try {
+	    	documentProcessor.writeRawImages(targetDir);
+	    } catch (Exception e) {
+	    	LOG.error("image creaton NYI");
+	    }
 	}
 
 	@Test
@@ -80,7 +85,7 @@ public class VectorSpectraIT {
 		File targetDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_TARGET_DIR, fileroot);
 		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
 		CProject cProject = new CProject();
-		String command = "--project " + targetDir + CProject.MAKE_PROJECT;
+		String command = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
 		cProject.run(command);
 		String[] ctreeNames = {
 			"c8ob00931g1",
@@ -106,7 +111,7 @@ public class VectorSpectraIT {
 		File targetDir = new File("target/projects/stefan", fileroot);
 		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
 		CProject cProject = new CProject();
-		String command = "--project " + targetDir + CProject.MAKE_PROJECT;
+		String command = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
 		cProject.run(command);
 		File[] ctreeNames = targetDir.listFiles();
 		List<File> cTreeFiles = Arrays.asList(ctreeNames);
@@ -121,10 +126,10 @@ public class VectorSpectraIT {
 		File ctreeDir = new File(targetDir, ctree);
 		Assert.assertTrue("target pdf "+targetDir, ctreeDir.exists());
 		File file = new File(ctreeDir, "fulltext.pdf");
-		AMISVGCreator svgCreator = new AMISVGCreator();
-		svgCreator.createSVG(file);
-		svgCreator.writeSVGPages(ctreeDir);
-		svgCreator.writeRawImages(ctreeDir);
+		PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+		documentProcessor.readAndProcess(file);
+		documentProcessor.writeSVGPages(ctreeDir);
+		documentProcessor.writeRawImages(ctreeDir);
 	}
 
 

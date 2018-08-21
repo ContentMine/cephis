@@ -91,10 +91,6 @@
 				<version>1.8.1</version>
 				<configuration>
 					<programs>
-						<program>
-							<mainClass>org.xmlcml.cproject.PMan</mainClass>
-							<id>pman</id>
-						</program>
                          <program>
                             <mainClass>org.contentmine.cproject.files.CProject</mainClass>
                             <id>cproject</id>
