@@ -30,8 +30,8 @@ import junit.framework.Assert;
  * extraction of semantics from Broad Street Cholera Map
  *
  */
-public class CholeraTest {
-	private static final Logger LOG = Logger.getLogger(CholeraTest.class);
+public class CholeraTestIT {
+	private static final Logger LOG = Logger.getLogger(CholeraTestIT.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}

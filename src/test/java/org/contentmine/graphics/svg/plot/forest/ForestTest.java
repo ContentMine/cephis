@@ -245,27 +245,6 @@ public class ForestTest {
 		}
 	}
 
-	@Test
-	public void testColorize() throws IOException {
-		for (String fileRoot : new String[] {
-			"blue",
-			"gr1a",
-			"gr2a",
-			"srep36553-f2",
-			"f2a",
-			"srep44789-f5",
-			"f5a",
-			"tableBlue",
-			}) {
-			File forestFile = new File(ImageAnalysisFixtures.FOREST_DIR, fileRoot + ".png");
-
-			ColorAnalyzer colorAnalyzer = new ColorAnalyzer();
-			colorAnalyzer.readImage(forestFile);
-			colorAnalyzer.setOutputDirectory(new File("target/"+fileRoot));
-			LOG.debug("colorAnalyze "+fileRoot);
-			colorAnalyzer.defaultPosterize();
-		}
-	}
 
 	//============
 	

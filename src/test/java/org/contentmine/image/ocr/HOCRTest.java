@@ -31,22 +31,6 @@ public class HOCRTest {
 	}
 
 	@Test
-	public void testText() throws IOException {
-		String fileRoot = "introText";
-		File targetDir = new File(SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, fileRoot);
-		File chemFile = new File(SVGHTMLFixtures.EARLY_CHEM_DIR, fileRoot + ".png");
-		DiagramAnalyzer diagramAnalyzer = new DiagramAnalyzer();
-		// get the blocks
-		diagramAnalyzer.setThinning(null);
-		int[] thresholds = new int[]{100,105,110,115,120,125};
-		diagramAnalyzer.scanThresholdsAndWriteBinarizedFiles(targetDir, thresholds, chemFile);
-		int threshold = 115;
-		File htmlOutfile = new File(targetDir, "hocrFile.html");
-		OCRProcessor ocrProcessor = new OCRProcessor();
-		HOCRReader hocrReader = ocrProcessor.createHOCRReaderAndProcess(new File(targetDir, "binarized"+threshold+".png"), htmlOutfile);
-	}
-
-	@Test
 	public void testFormula() throws IOException {
 		String fileRoot = "adrenaline0";
 		File targetDir = new File(SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, fileRoot);

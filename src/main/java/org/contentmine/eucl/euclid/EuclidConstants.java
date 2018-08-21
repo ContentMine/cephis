@@ -308,6 +308,7 @@ public interface EuclidConstants {
 
     /** */
     double EPS = 1.0E-14;
+    double EPS12 = 1.0E-12;
     /** */
     double ONE_THIRD = 1.0/3.0;
     /** */

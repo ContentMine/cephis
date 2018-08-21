@@ -98,7 +98,7 @@ public class CProject extends CContainer {
 	public static final String OMIT_EMPTY = "omitEmpty";
 	
 	/** contains --makeProject and standard PDF args	*/
-	public static String MAKE_PROJECT = 
+	public static String MAKE_PROJECT_PDF = 
 			" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf";
 //	public static String MAKE_PROJECT_CMD = 
 //			" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf";

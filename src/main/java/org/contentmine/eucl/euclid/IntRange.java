@@ -472,4 +472,19 @@ public class IntRange implements EuclidConstants, Comparable<IntRange> {
 		Collections.sort(intRangeList, lowEndComparator);
 		return intRangeList;
 	}
+	
+	/** creates integer array from min to max inclusive
+	 * returns emptyList if invalid or min = Integer.MIN_VALUE or max = Integer.MAX_VALUE
+	 * @return
+	 */
+	public IntArray createArray() {
+		IntArray intArray = new IntArray(); 
+		if (isValid() && minval > Integer.MIN_VALUE && maxval < Integer.MAX_VALUE) {
+			for (int i = minval; i <= maxval; i++) {
+				intArray.addElement(i);
+			}
+		}
+		return intArray;
+		
+	}
 }

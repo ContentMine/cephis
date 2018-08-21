@@ -25,7 +25,7 @@ public class MakeProject {
 		} else {
 			// try absolute filename
 			File dir = new File(args[0]);
-			String command = " --project "+ dir + CProject.MAKE_PROJECT;
+			String command = " --project "+ dir + CProject.MAKE_PROJECT_PDF;
 			LOG.debug(">> "+command);
 			if (!checkDirectory(dir)) {
 				dir = new File(".", args[0]);
@@ -34,7 +34,7 @@ public class MakeProject {
 				LOG.debug("dir "+dir.getCanonicalPath());
 				CProject cProject = new CProject(dir);
 				
-				command = " --project "+ dir + CProject.MAKE_PROJECT;
+				command = " --project "+ dir + CProject.MAKE_PROJECT_PDF;
 				LOG.debug(">> "+command);
 				cProject.run(command);
 			} else {

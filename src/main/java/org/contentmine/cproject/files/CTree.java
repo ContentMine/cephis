@@ -36,7 +36,7 @@ import org.contentmine.graphics.layout.SuperPixelArrayManager;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.cache.DocumentCache;
-import org.contentmine.pdf2svg2.AMISVGCreator;
+import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -1581,16 +1581,16 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		File pdfFile = getExistingFulltextPDF();
 		if (pdfFile != null) {
 			List<File> svgFiles = getExistingSVGFileList();
-			AMISVGCreator svgCreator = new AMISVGCreator();
+			PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 			if (svgFiles.size() == 0) {
-			    SVGG svgg = svgCreator.createSVG(pdfFile);
+			    documentProcessor.readAndProcess(pdfFile);
 				directory.mkdirs();
 				if (cProject.getOrCreateProjectIO().isWriteSVGPages()) {
-					svgCreator.writeSVGPages(directory);
+					documentProcessor.writeSVGPages(directory);
 				}
 				// this is expensive
 				if (cProject.getOrCreateProjectIO().isWriteRawImages()) {
-					svgCreator.writeRawImages(directory);
+					documentProcessor.writeRawImages(directory);
 				}
 			}
 		}

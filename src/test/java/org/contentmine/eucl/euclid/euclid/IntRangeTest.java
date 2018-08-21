@@ -19,6 +19,7 @@ package org.contentmine.eucl.euclid.euclid;
 import java.util.Arrays;
 import java.util.List;
 
+import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntRange;
 import org.junit.Assert;
 import org.junit.Before;
@@ -281,5 +282,19 @@ public class IntRangeTest {
 		Assert.assertEquals(1,  totalList.size());
 		Assert.assertEquals("(222,288)",  totalList.get(0).toString());
 		
+	}
+	
+	@Test
+	public void testCreateArray() {
+		IntArray intArray = new IntRange(2,3).createArray();
+		Assert.assertEquals("(2,3)", intArray.toString());
+		intArray = new IntRange(2,2).createArray();
+		Assert.assertEquals("(2)", intArray.toString());
+		intArray = new IntRange(2,5).createArray();
+		Assert.assertEquals("(2,3,4,5)", intArray.toString());
+		intArray = new IntRange(2,1).createArray();
+		Assert.assertEquals("()", intArray.toString());
+		intArray = new IntRange().createArray();
+		Assert.assertEquals("()", intArray.toString());
 	}
 }

@@ -68,36 +68,7 @@ public class PlotTest {
 		;
 	}
 
-	/**
-	 * Image from PLoSONE as archetypal X-Y plot.
-	 * 
-	 * 
-	 * journal.pone.0095565.g002.png. The plot has: * x and y axes (each with
-	 * ticks, numbers and title) y - axis has horizontal numbers but rotated
-	 * title
-	 * points with error bars 
-	 * best-fit line
-	 * 
-	 * Note that the antialiasing is severe and occasionally bleeds between
-	 * characters
-	 *
-	 * @throws IOException
-	 */
-	@Test
-	public void testDefaultSharkPlot() throws IOException {
-		File g002 = new File(G002_DIR, "g002.png");
-		BufferedImage image = UtilImageIO.loadImage(g002.toString());
-		ImageProcessor imageProcessor = ImageProcessor.createDefaultProcessorAndProcess(image);
-		ImageIOUtil.writeImageQuietly(image, new File("target/" + SHARK + "/raw.png"));
-		BufferedImage defaultBinaryImage = imageProcessor.getImage();
-		ImageIOUtil.writeImageQuietly(defaultBinaryImage, new File("target/"
-				+ SHARK + "/defaultBinary.png"));
-		// by default it thins it
-		Assert.assertEquals("pixels", 89, imageProcessor
-				.getOrCreatePixelIslandList().size());
-		int pixels = imageProcessor.getOrCreatePixelIslandList().getPixelList()
-				.size();
-	}
+
 
 	@Test
 	public void testDefaultSharkPlotCLI() {
