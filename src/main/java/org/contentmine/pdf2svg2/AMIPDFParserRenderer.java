@@ -25,11 +25,13 @@ public class AMIPDFParserRenderer extends PDFRenderer {
 
 	AMIPDFParserRenderer(PDDocument document) {
         super(document);
+        LOG.trace("created parserRenderer");
     }
 
     @Override
     protected PageDrawer createPageDrawer(PageDrawerParameters parameters) throws IOException {
         pdf2svgParserPageDrawer = new PDF2SVGParserPageDrawer(parameters);
+        LOG.trace("created PDF2SVGParserPageDrawer");
         return pdf2svgParserPageDrawer;
     }
     

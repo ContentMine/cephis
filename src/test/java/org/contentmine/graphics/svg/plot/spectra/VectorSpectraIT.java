@@ -52,7 +52,7 @@ public class VectorSpectraIT {
 	}
 
 	@Test
-	@Ignore
+//	@Ignore
 	public void testPDF2SVG() throws Exception {
 		String fileroot = "rsc";
 		File sourceDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_DIR, fileroot);
@@ -65,9 +65,11 @@ public class VectorSpectraIT {
 //		String ctreeS = "c8ob00998h1";
 		String ctreeS = "c8ob00847g1";
 		File ctreeFile = new File(targetDir, ctreeS);
+		LOG.debug(targetDir);
 		Assert.assertTrue("target pdf "+targetDir, ctreeFile.exists());
         File file = new File(ctreeFile, "fulltext.pdf");
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+	    documentProcessor.addIncludePages(45);
 	    documentProcessor.readAndProcess(file);
 	    documentProcessor.writeSVGPages(targetDir);
 	    try {

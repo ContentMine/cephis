@@ -27,6 +27,8 @@ public class SVGHTMLFixtures {
 	public static final File ORG_CONTENTMINE = new File(RESOURCES_DIR, "org/contentmine/");
 	
 	public static final File GRAPHICS_DIR = new File(ORG_CONTENTMINE, "graphics/");
+	public static final File PDF2SVG2_DIR = new File(ORG_CONTENTMINE, "pdf2svg2/");
+	public static final File TARGET_PDF2SVG2_DIR = new File(TARGET_DIR, "pdf2svg2/");
 	public static final File GR_SVG_DIR = new File(GRAPHICS_DIR, "svg/");
 	public static final File TARGET_SVG_DIR = new File(TARGET_DIR, "svg/");
 	public static final File GR_MATHML_DIR = new File(GRAPHICS_DIR, "math/");
@@ -133,6 +135,10 @@ public class SVGHTMLFixtures {
 	public static final File FUNNEL_DIR = new File(G_S_PLOT_DIR, "funnel");
 	public static final File TEX_PLOT_DIR = new File(G_S_PLOT_DIR, "tex");
 	public static final File BLKSAM_PLOT_DIR = new File(G_S_PLOT_DIR, "blk_sam");
+
+	public static final String BIORXIV = "biorxiv";
+	public static final File BIORXIV_DIR = new File(PDF2SVG2_DIR, BIORXIV);
+	public static final File BIORXIV_TARGET_DIR = new File(TARGET_PDF2SVG2_DIR, BIORXIV);
 
 	public static final File SVG_IMAGES_DIR = new File(GR_SVG_DIR, "svgimages");
 	
