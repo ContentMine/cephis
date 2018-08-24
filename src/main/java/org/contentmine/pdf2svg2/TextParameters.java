@@ -51,21 +51,23 @@ public class TextParameters {
     	 //Font/TrueType/KAJWHP+Helvetica/org.apache.pdfbox.pdmodel.font.PDFontDescriptor@26aa12dd/[0.001,0.0,0.0,0.001,0.0,0.0]
     			 
     	fdescriptor = font.getFontDescriptor();
-    	// more later
-		LOG.trace("fw "+font.getAverageFontWidth()+   // 472.5 
-    			"/sw "+font.getSpaceWidth()+            // 633.78906
-    			"/ty "+font.getType()+                  // Font
-    			"/st "+font.getSubType()+               // TrueType
-    			"/nm "+font.getName()+                  // KAJWHP+Helvetica
-    			"/"+fdescriptor+        // object
-    			"{"+
-    			    "ff: "+fdescriptor.getFontFamily()+";"+
-    			    "wt: "+fdescriptor.getFontWeight()+";"+
-    			    "it: "+fdescriptor.isItalic()+";"+
-    			    "sy: "+fdescriptor.isSymbolic()+";"+
-    			"}"+
-    			"/"+font.getFontMatrix()+            // /[0.001,0.0,0.0,0.001,0.0,0.0]  3*2 ??
-    			"");
+    	if (fdescriptor != null) {
+	    	// more later
+			LOG.trace("fw "+font.getAverageFontWidth()+   // 472.5 
+	    			"/sw "+font.getSpaceWidth()+            // 633.78906
+	    			"/ty "+font.getType()+                  // Font
+	    			"/st "+font.getSubType()+               // TrueType
+	    			"/nm "+font.getName()+                  // KAJWHP+Helvetica
+	    			"/"+fdescriptor+        // object
+	    			"{"+
+	    			    "ff: "+fdescriptor.getFontFamily()+";"+
+	    			    "wt: "+fdescriptor.getFontWeight()+";"+
+	    			    "it: "+fdescriptor.isItalic()+";"+
+	    			    "sy: "+fdescriptor.isSymbolic()+";"+
+	    			"}"+
+	    			"/"+font.getFontMatrix()+            // /[0.001,0.0,0.0,0.001,0.0,0.0]  3*2 ??
+	    			"");
+    	}
 	}
 
 	@Override
@@ -93,42 +95,42 @@ public class TextParameters {
 	}
 	
 	public String getFontName() {
-		return fdescriptor.getFontName();
+		return fdescriptor == null ? null : fdescriptor.getFontName();
 	}
 	
 	public String getFontFamily() {
-		return fdescriptor.getFontFamily();
+		return fdescriptor == null ? null : fdescriptor.getFontFamily();
 	}
 	public Double getFontWeight() {
-        return (Double) (double) fdescriptor.getFontWeight();
+        return fdescriptor == null ? null : (Double) (double) fdescriptor.getFontWeight();
 	}
 	
 	public boolean isAllCap() {
-		return fdescriptor.isAllCap();
+		return fdescriptor == null ? false : fdescriptor.isAllCap();
 	}
 	
     public boolean isForceBold() {
-    	return fdescriptor.isForceBold();
+    	return fdescriptor == null ? false : fdescriptor.isForceBold();
     }
     
     public boolean isItalic() {
-    	return fdescriptor.isItalic();
+    	return fdescriptor == null ? false : fdescriptor.isItalic();
     }
     
 	public boolean isSerif() {
-		return fdescriptor.isSerif();
+		return fdescriptor == null ? false : fdescriptor.isSerif();
 	}
 	
 	public boolean isScript() {
-		return fdescriptor.isScript();
+		return fdescriptor == null ? false : fdescriptor.isScript();
 	}
 	
 	public boolean isSmallCap() {
-		return fdescriptor.isSmallCap();
+		return fdescriptor == null ? false : fdescriptor.isSmallCap();
 	}
 	
     public boolean isSymbolic() {
-    	return fdescriptor.isSymbolic();
+    	return fdescriptor == null ? false : fdescriptor.isSymbolic();
     }
 
 	@Override

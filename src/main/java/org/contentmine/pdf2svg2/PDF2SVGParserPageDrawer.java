@@ -26,6 +26,7 @@ import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColor;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImage;
+import org.apache.pdfbox.pdmodel.graphics.shading.AxialShadingPaint;
 import org.apache.pdfbox.pdmodel.graphics.state.PDGraphicsState;
 import org.apache.pdfbox.pdmodel.graphics.state.PDTextState;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
@@ -122,6 +123,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     }
 
     private void init() {
+    	LOG.trace("created parserPageDrawer");
     	svgg = new SVGG();
     	svgg.setFill("none");
     	integerByClipStringMap = new HashMap<String, Integer>();
@@ -298,7 +300,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 
 	private void addBoldFromFontWeight() {
 		Double fontWeight = textParameters.getFontWeight();
-		if (fontWeight > 0.0) {
+		if (fontWeight != null && fontWeight > 0.0) {
 			LOG.trace("wt: "+fontWeight);
 			if (fontWeight > minBoldWeight ) {
 				currentSVGText.setFontWeight(FontWeight.BOLD);
@@ -335,6 +337,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
      */
     @Override
     public void fillPath(int windingRule) throws IOException {
+//    	System.out.println(" PATH ");
     	super.fillPath(windingRule);
     	GeneralPath generalPath = getLinePath();
 		currentSvgPath = new SVGPath(generalPath);
@@ -380,6 +383,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     public void moveTo(float x, float y) {
     	super.moveTo(x, y);
     	MovePrimitive mp = new MovePrimitive(new Real2(x, createY((double)y)));
+//    	System.out.print(" MOVE "+mp);
     	if (currentPathPrimitiveList == null) {
     		currentPathPrimitiveList = new PathPrimitiveList();
     	}
@@ -390,6 +394,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     public void lineTo(float x, float y) {
     	super.lineTo(x, y);
     	LinePrimitive lp = new LinePrimitive(new Real2(x, createY((double)y)));
+//    	System.out.print(" LINE "+lp);
     	checkNotNullAndAdd(lp);
     }
 
@@ -399,6 +404,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     	String coordString = x1+","+createY((double)y1)+","+x2+","+createY((double)y2)+","+x3+","+createY((double)y3);
     	Real2Array r2a = Real2Array.createFromPairs(coordString, ",");
     	CubicPrimitive cp = new CubicPrimitive(r2a); 
+//    	System.out.print(" CURVE "+cp);
     	checkNotNullAndAdd(cp);
     }
 
@@ -412,6 +418,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     public void closePath()    {
     	super.closePath();
     	ClosePrimitive cp = new ClosePrimitive();
+//    	System.out.print(" CLOSE ");
     	checkNotNullAndAdd(cp);
     }
 
@@ -426,7 +433,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     public void endPath()    {
     	super.endPath();
     	if (currentPathPrimitiveList == null) {
-    		LOG.warn("cannot close path on non-existent primitiveList");
+    		LOG.trace("WARN: cannot close path on non-existent primitiveList");
     	}  else {
     		currentSvgPath = new SVGPath(currentPathPrimitiveList);
     		addCurrentPathAttributes(currentSvgPath);
@@ -437,7 +444,9 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 //    		currentSvgPath.setStrokeWidth((double)graphicsState.getLineWidth());
 
     		svgg.appendChild(currentSvgPath);
-    	}
+        	System.out.print(" END ");
+        }
+    	currentPathPrimitiveList = null;
 		currentSvgPath = null;
 		
     }
@@ -474,11 +483,13 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 		} catch (Exception e) {throw new RuntimeException(e);}
 		
 		// these *might* be useful
-		fontDescriptor.getItalicAngle();
-		fontDescriptor.isAllCap();
-		fontDescriptor.isForceBold();
-		fontDescriptor.isItalic();
-		fontDescriptor.isSmallCap();
+		if (fontDescriptor != null) {
+			fontDescriptor.getItalicAngle();
+			fontDescriptor.isAllCap();
+			fontDescriptor.isForceBold();
+			fontDescriptor.isItalic();
+			fontDescriptor.isSmallCap();
+		}
 	}
 
 	/** get fill and stroke from graphics2D.
@@ -675,8 +686,11 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     	Real2 p00 = new Real2(p0.getX(), createY(p2.getY()));
     	Real2 p22 = new Real2(p2.getX(), createY(p0.getY()));
     	SVGRect rect = new SVGRect(p00, p22);
+    	rect.format(3);
     	addCurrentPathAttributes(rect);
-    	svgg.appendChild(rect);
+    	// try skipping this 
+//    	svgg.appendChild(rect);
+//    	System.out.print(" RECT "+rect);
 //        // to ensure that the path is created in the right direction, we have to create
 //        // it by combining single lines instead of creating a simple rectangle
 //        linePath.moveTo((float) p0.getX(), (float) p0.getY());
@@ -695,8 +709,14 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 	private String getAMIFill() {
 		PDColor nonStrokingColor = getGraphicsState().getNonStrokingColor();
 		String rgb = translatePDColorToRGBCSSString(nonStrokingColor);
-        Color paint = (Color) getGraphics().getPaint();
-        rgb = getCSSColor(paint);
+		Paint paintP = getGraphics().getPaint();
+		if (paintP instanceof Color) {
+			Color paint = (Color) paintP;
+			rgb = getCSSColor(paint);
+		} else if (paintP instanceof AxialShadingPaint) {
+			AxialShadingPaint axp = (AxialShadingPaint) paintP;
+			LOG.debug(axp);
+		}
 		return rgb;
 	}
 
@@ -719,6 +739,9 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 				col = String.format("#%06x", color.toRGB());
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (UnsupportedOperationException uoe) {
+				LOG.error("UNSUPPORTED OPERATION");
+//				uoe.printStackTrace();
 			}
 		}
 		return col == null ? SVGText.NONE : col;

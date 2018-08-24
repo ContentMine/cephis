@@ -24,6 +24,7 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.eucl.xml.XMLUtil;
@@ -136,8 +137,11 @@ public class SVGSVG extends SVGElement {
 		}
 		Real2Range bbox = svgg.getBoundingBox();
 		if (bbox == null || !bbox.isValid()) {
-			LOG.trace("NULL bbox: "+bbox+" // "+svgg.toXML());
-			return null;
+			LOG.error("***ERROR*** NULL bbox: "+bbox+" // "+svgg.toXML());
+			svgg = new SVGText(new Real2(100., 100.), "null/empty bbox: ");
+			svgg.setFontSize(100.);
+			svgg.setFontWeight(FontWeight.BOLD);
+			return wrapAndWriteAsSVG(svgg, file, 1000, 500.);
 		}
 		return wrapAndWriteAsSVG(svgg, file, bbox.getXMax() + BBOX_MARGIN_X, bbox.getYMax() + BBOX_MARGIN_Y);
 	}

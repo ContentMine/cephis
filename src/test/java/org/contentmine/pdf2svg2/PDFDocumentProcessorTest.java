@@ -3,15 +3,14 @@ package org.contentmine.pdf2svg2;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
-import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.junit.Assert;
@@ -28,21 +27,20 @@ public class PDFDocumentProcessorTest {
         File file = new File("src/test/resources/org/contentmine/pdf2svg2/",
                 "custom-render-demo.pdf");
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-	    List<SVGG> svgList = documentProcessor.readAndProcess(file).getOrCreateSVGPageList();
+	    documentProcessor.readAndProcess(file);
+		List<SVGG> svgList = documentProcessor.getOrCreateSVGPageList();
 	    File svgFile = new File("target/pdf2svg2/examples/custom.svg");
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
 		BufferedImage image = documentProcessor.createRenderedImageList().get(0);
 		if (image == null) {
-//			LOG.error("*** FIXME *** ");
-			return;
+			throw new RuntimeException("Null image");
 		}
 
 		try {
 			if (!new File("target/pdf2svg2/examples").exists()) return;
 			ImageIO.write(image, "png", new File("target/pdf2svg2/examples/custom.png"));
 		} catch (Exception e) {
-//			LOG.error("*** FIXME ***"+e.getMessage());
-			return;
+			throw new RuntimeException("couldn't write image");
 		}
 	    Assert.assertTrue("svg file exists", svgFile.exists());
 	}
@@ -55,9 +53,10 @@ public class PDFDocumentProcessorTest {
 	    String fileroot = "target/pdf2svg2/examples/page6/";
 		File svgFile = new File(fileroot, "page6.svg");
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
+		Assert.assertTrue(svgFile+" exists", svgFile.exists());
 		BufferedImage image = documentProcessor.createRenderedImageList().get(0);
 		if (image == null) {
-//			LOG.error("*** FIXME *** ");
+			LOG.error("*** FIXME *** ");
 			return;
 		}
 		try {
@@ -86,7 +85,7 @@ public class PDFDocumentProcessorTest {
 			return;
 		}
 	    Assert.assertTrue("svg file exists", svgFile.exists());
-		List<BufferedImage> imageList = documentProcessor.createRenderedImageList();
+		Map<PageSerial, BufferedImage> imageList = documentProcessor.createRenderedImageList();
 		for (int i = 0; i < imageList.size(); i++) {
 			ImageIO.write(imageList.get(i), "png", new File(fileroot, "page."+i+".png"));
 		}
@@ -100,7 +99,7 @@ public class PDFDocumentProcessorTest {
 	public void testIncludePages() throws InvalidPasswordException, IOException {
         File file = new File("src/test/resources/org/contentmine/pdf2svg/bmc/", "1471-2148-11-329.pdf");
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-	    documentProcessor.addIncludePage(3, 7);
+	    documentProcessor.addIncludePages(3, 7);
 	    Assert.assertEquals("include", "[3, 7]", documentProcessor.getOrCreateIncludePageList().toString());
 	    documentProcessor.readAndProcess(file);
 	    
