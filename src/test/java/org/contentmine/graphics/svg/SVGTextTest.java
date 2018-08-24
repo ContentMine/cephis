@@ -23,6 +23,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.testutil.TestUtils;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.junit.Assert;
@@ -493,6 +494,20 @@ public class SVGTextTest {
 		File textDir = new File("target/text/");
 		textDir.mkdirs();
 		XMLUtil.outputQuietly(svg, new File(textDir, "text3.svg"), 1);
+	}
+	
+	@Test
+	public void testRemoveCharacter() {
+		String textS = "abc";
+		RealArray xArray = new RealArray(new double[]{1.0, 2.0, 3.0});
+		SVGText text = new SVGText();
+		text.setText(textS);
+		text.setX(xArray);
+		LOG.debug(text.toXML());
+		text.removeCharacter(1);
+		Assert.assertEquals("deleted 1", "<text xmlns=\"http://www.w3.org/2000/svg\" x=\"1.0,3.0\">ac</text>", text.toXML());
+		LOG.debug(text.toXML());
+		
 	}
 	
 }

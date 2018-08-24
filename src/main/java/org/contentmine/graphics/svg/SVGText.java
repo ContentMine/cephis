@@ -1476,6 +1476,16 @@ public class SVGText extends SVGElement {
 		this.setX(xArray);
 	}
 
+	public void removeCharacter(int i) {
+		String textS = getText();
+		if (i >= 0 && i < textS.length()) {
+			setText(textS.substring(0, i)+textS.substring(i+1));
+			RealArray xArray = getXArray();
+			xArray.deleteElement(i);
+			this.setX(xArray);
+		}
+	}
+
 	/** use when you want a text that has default font-family
 	 * 
 	 * @param xy

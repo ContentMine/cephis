@@ -39,6 +39,7 @@ import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGSVG;
+import org.contentmine.graphics.svg.SVGText;
 
 /**
  * Example showing custom rendering by subclassing PageDrawer.
@@ -110,6 +111,7 @@ public class PDFDocumentProcessor {
 			return null;
 		}
         currentSVGG = pdf2svgParserDrawer.getSVGG();
+        
 		return currentSVGG;
 	}
 
@@ -134,16 +136,21 @@ public class PDFDocumentProcessor {
 		        svgPageBySerial = new HashMap<PageSerial, SVGG>();
 		        rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
 		        for (int iPage = 0; iPage < currentDoc.getNumberOfPages(); iPage++) {
-		        	if (pageIsIncluded(iPage)) {
-			        	System.out.print("["+iPage+"]");
-						PageSerial pageSerial = new PageSerial(iPage);
-			        	BufferedImage renderImage = parserRenderer.renderImage(iPage);
+	        		int readerPage = iPage+1;
+		        	if (pageIsIncluded(readerPage)) {
+			        	System.out.print("["+readerPage+"]");
+						PageSerial pageSerial = new PageSerial(readerPage);
+			        	BufferedImage renderImage = parserRenderer.processPage(iPage);
 						renderedImageBySerial.put(pageSerial, renderImage);
 						SVGG svgPage = extractSVGG();
+						cleanUp(svgPage);
 						svgPageBySerial.put(pageSerial, svgPage);
 						List<BufferedImage> subImageList = createRawSubImageList();
+//						if (subImageList.size() > 0) {
+//							LOG.debug("subImage: "+subImageList.size());
+//						}
 						for (int subImage = 0; subImage < subImageList.size();subImage++) {
-							rawImageBySerial.put(new PageSerial(iPage, subImage), subImageList.get(subImage));
+							rawImageBySerial.put(new PageSerial(iPage, subImage + 1), subImageList.get(subImage));
 						}
 		        	}
 		        }
@@ -152,6 +159,15 @@ public class PDFDocumentProcessor {
 			}
 		}
         return renderedImageBySerial;
+	}
+
+	private void cleanUp(SVGG svgPage) {
+		List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(svgPage);
+		for (SVGText text : texts) {
+			if (text.getText().startsWith(" ")) {
+				text.removeCharacter(0);
+			}
+		}
 	}
 
 	/** reads PDF and extracts images and creates SVG.

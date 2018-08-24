@@ -1,5 +1,6 @@
 package org.contentmine.pdf2svg2;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import org.apache.log4j.Level;
@@ -38,5 +39,22 @@ public class AMIPDFParserRenderer extends PDFRenderer {
     public PDF2SVGParserPageDrawer getPDF2SVGParserPageDrawer() {
     	return pdf2svgParserPageDrawer;
     }
+
+    /** process the page - main entry point
+     * An intermezzo to create a more appropriate name
+     *  calls super.renderImage() 
+     * 
+     * @param iPage
+     * @return
+     */
+	public BufferedImage processPage(int iPage) {
+		BufferedImage image = null;
+		try {
+			image = super.renderImage(iPage);
+		} catch (IOException e) {
+			throw new RuntimeException("fails to parse page", e);
+		}
+		return image;
+	}
 
 }
