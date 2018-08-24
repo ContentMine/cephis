@@ -11,8 +11,8 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 
-public class Biorxiv {
-	private static final Logger LOG = Logger.getLogger(Biorxiv.class);
+public class BiorxivTest {
+	private static final Logger LOG = Logger.getLogger(BiorxivTest.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
@@ -22,29 +22,17 @@ public class Biorxiv {
 		File sourceDir = SVGHTMLFixtures.BIORXIV_DIR;
 		File targetDir = SVGHTMLFixtures.BIORXIV_TARGET_DIR;
 		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
-		String[] files = {
-		"103861",
-		"188912",
-		"199992",
-		"220731",
-		"247593",
-		"277350",
-		"329839",
-		"362400",
-		"363937",
-		"385682"
-	};
 		String fileroot = "103861";
 		File file = new File(targetDir, fileroot+".full.pdf");
 		Assert.assertTrue("target pdf "+targetDir, file.exists());
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-	    documentProcessor.addExcludePages(10);
+//	    documentProcessor.addIncludePages(1);
 	    documentProcessor.readAndProcess(file);
 	    documentProcessor.writeSVGPages(new File(targetDir, fileroot));
 	    try {
 	    	documentProcessor.writeRawImages(targetDir);
 	    } catch (Exception e) {
-	    	LOG.error("image creaton NYI");
+	    	LOG.error("image creation NYI");
 	    }
 	}
 
@@ -70,12 +58,11 @@ public class Biorxiv {
 			LOG.debug("******* "+file+" **********");
 			Assert.assertTrue("target pdf "+targetDir, file.exists());
 		    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-		    documentProcessor.addExcludePages(10);
 		    documentProcessor.readAndProcess(file);
 		    File outputDir = new File(targetDir, fileroot);
 			documentProcessor.writeSVGPages(outputDir);
 		    try {
-		    	documentProcessor.writeRawImages(targetDir);
+		    	documentProcessor.writeRawImages(outputDir);
 		    } catch (Exception e) {
 		    	LOG.error("image creation NYI");
 		    }

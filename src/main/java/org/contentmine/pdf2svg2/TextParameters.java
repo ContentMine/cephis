@@ -114,7 +114,15 @@ public class TextParameters {
     }
     
     public boolean isItalic() {
-    	return fdescriptor == null ? false : fdescriptor.isItalic();
+    	if (fdescriptor != null) {
+    		boolean italic = fdescriptor.isItalic();
+    		if (italic) {
+//    			LOG.debug("F "+fdescriptor.getFontName());
+//    			throw new RuntimeException("ITALIC");
+    		}
+    		return italic;
+    	}
+    	return false;
     }
     
 	public boolean isSerif() {

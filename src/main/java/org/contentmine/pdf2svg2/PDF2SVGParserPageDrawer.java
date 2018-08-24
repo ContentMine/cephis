@@ -81,6 +81,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 	private static final String CLIP_PATH = "clipPath";
 	private static final Graphics2D TEXT = null;
 	private static final String SVG_RHMARGIN = "svg_rhmargin";
+	private static final double YMAX = 800.;
 
 	private SVGG svgg;
 	private double yEpsilon = 0.05; // guess
@@ -127,7 +128,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     	svgg = new SVGG();
     	svgg.setFill("none");
     	integerByClipStringMap = new HashMap<String, Integer>();
-    	yMax = 800; // hopefully overwritten by mediaBox
+    	yMax = YMAX; // hopefully overwritten by mediaBox
     	rawImageList = new ArrayList<BufferedImage>();
 
 	}
@@ -177,30 +178,35 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     	Angle rotAngle = textParameters.getAngle();
     	Double x = Util.format((double) textRenderingMatrix.getTranslateX(), nPlaces);
     	Double y = createY(Util.format((double) textRenderingMatrix.getTranslateY(), nPlaces));
+    	/** do not use this at this stage
     	addSpaceIfSpaceLargerThanRatio(x, y);
+    	 */
     	currentXY = new Real2(x, y);
     	currentDisplacement = new Real2(
     			displacementxy.getX() * scales.getX(), displacementxy.getY() * scales.getY()).format(nPlaces);
     	boolean newText = true;
     	if (currentSVGText == null || currentTextParameters == null) {
-    		createAndAddCurrentSVGText();
+    		createAndAddEmptyCurrentSVGText();
     	} else if (!currentTextParameters.hasEqualFont(textParameters)) {
-    		createAndAddCurrentSVGText();
+    		createAndAddEmptyCurrentSVGText();
     	} else if (isYChanged(y)) {
-    		createAndAddCurrentSVGText();
+    		createAndAddEmptyCurrentSVGText();
     	} else if (isScaleChanged(scales)) {
-    		createAndAddCurrentSVGText();
+    		createAndAddEmptyCurrentSVGText();
     	} else {
     		newText = false;
     	}
     	if (unicode == null) {
-    	} else if (unicode.equals(" ") && newText) {
-    		// skip leading space
-    	} else {
-	    	currentSVGText.appendText(unicode);
-	    	currentSVGText.appendX(x);
-	    	currentSVGText.setY(y);
+    		LOG.error("Null unicode");
+    		unicode = "?";
     	}
+    	if (unicode.length() > 1) {
+    		throw new RuntimeException("Unicode length > 1: "+unicode);
+    	}
+    	
+    	currentSVGText.appendText(unicode);
+    	currentSVGText.appendX(x);
+    	currentSVGText.setY(y);
     	if (newText) {
     		addCurrentTextAttributes(currentSVGText);
     	}
@@ -240,6 +246,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     	}
 	}
 
+	/** dangerous - do not use here */
 	private void addSpaceIfSpaceLargerThanRatio(Double x, Double y) {
 		Double deltaX = (currentX == null || x == null) ? null : Util.format(x - currentX, 2);
     	Double spaceOffsetRatio = (deltaX == null || currentDisplacement == null) ? null : deltaX / currentDisplacement.getX();
@@ -279,7 +286,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 		return delta > yEpsilon;
 	}
 
-	private void createAndAddCurrentSVGText() {
+	private void createAndAddEmptyCurrentSVGText() {
 		drawRHMargin();
 		currentSVGText = new SVGText();
 		currentSVGText.setFontFamily(textParameters.getFontFamily());
@@ -316,9 +323,9 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 			}
 			Double xLast = Double.valueOf(currentSVGText.getAttributeValue(SVG_RHMARGIN));
 			if (yLast != null && xLast != null) {
-				drawMargin(yLast, xLast, "red");
+//				drawMargin(yLast, xLast, "red");
 				RealArray xArray = currentSVGText.getXArray();
-				drawMargin(yLast, xArray.getLast(), "blue");
+//				drawMargin(yLast, xArray.getLast(), "blue");
 			}
 		}
 	}
@@ -539,122 +546,141 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     	BufferedImage bufferedImage = pdImage.getImage();
     	rawImageList.add(bufferedImage);
     	
-//        Matrix ctm = getGraphicsState().getCurrentTransformationMatrix();
-//        AffineTransform at = ctm.createAffineTransform();
-//
-//        if (!pdImage.getInterpolate())
-//        {
-//            boolean isScaledUp = pdImage.getWidth() < Math.round(at.getScaleX()) ||
-//                                 pdImage.getHeight() < Math.round(at.getScaleY());
-//
-//            // if the image is scaled down, we use smooth interpolation, eg PDFBOX-2364
-//            // only when scaled up do we use nearest neighbour, eg PDFBOX-2302 / mori-cvpr01.pdf
-//            // stencils are excluded from this rule (see survey.pdf)
-//            if (isScaledUp || pdImage.isStencil())
-//            {
-//                graphics.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
-//                        RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
-//            }
-//        }
-//
-//        if (pdImage.isStencil())
-//        {
-//            if (getGraphicsState().getNonStrokingColor().getColorSpace() instanceof PDPattern)
-//            {
-//                // The earlier code for stencils (see "else") doesn't work with patterns because the
-//                // CTM is not taken into consideration.
-//                // this code is based on the fact that it is easily possible to draw the mask and 
-//                // the paint at the correct place with the existing code, but not in one step.
-//                // Thus what we do is to draw both in separate images, then combine the two and draw
-//                // the result. 
-//                // Note that the device scale is not used. In theory, some patterns can get better
-//                // at higher resolutions but the stencil would become more and more "blocky".
-//                // If anybody wants to do this, have a look at the code in showTransparencyGroup().
-//
-//                // draw the paint
-//                Paint paint = getNonStrokingPaint();
-//                Rectangle2D unitRect = new Rectangle2D.Float(0, 0, 1, 1);
-//                Rectangle2D bounds = at.createTransformedShape(unitRect).getBounds2D();
-//                BufferedImage renderedPaint = 
-//                        new BufferedImage((int) Math.ceil(bounds.getWidth()), 
-//                                          (int) Math.ceil(bounds.getHeight()), 
-//                                           BufferedImage.TYPE_INT_ARGB);
-//                Graphics2D g = (Graphics2D) renderedPaint.getGraphics();
-//                g.translate(-bounds.getMinX(), -bounds.getMinY());
-//                g.setPaint(paint);
-//                g.fill(bounds);
-//                g.dispose();
-//
-//                // draw the mask
-//                BufferedImage mask = pdImage.getImage();
-//                BufferedImage renderedMask = new BufferedImage((int) Math.ceil(bounds.getWidth()), 
-//                                                               (int) Math.ceil(bounds.getHeight()), 
-//                                                               BufferedImage.TYPE_INT_RGB);
-//                g = (Graphics2D) renderedMask.getGraphics();
-//                g.translate(-bounds.getMinX(), -bounds.getMinY());
-//                AffineTransform imageTransform = new AffineTransform(at);
-//                imageTransform.scale(1.0 / mask.getWidth(), -1.0 / mask.getHeight());
-//                imageTransform.translate(0, -mask.getHeight());
-//                g.drawImage(mask, imageTransform, null);
-//                g.dispose();
-//
-//                // apply the mask
-//                final int[] transparent = new int[4];
-//                int[] alphaPixel = null;
-//                WritableRaster raster = renderedPaint.getRaster();
-//                WritableRaster alpha = renderedMask.getRaster();
-//                int h = renderedMask.getRaster().getHeight();
-//                int w = renderedMask.getRaster().getWidth();
-//                for (int y = 0; y < h; y++)
-//                {
-//                    for (int x = 0; x < w; x++)
-//                    {
-//                        alphaPixel = alpha.getPixel(x, y, alphaPixel);
-//                        if (alphaPixel[0] == 255)
-//                        {
-//                            raster.setPixel(x, y, transparent);
-//                        }
-//                    }
-//                }
-//                
-//                // draw the image
-//                setClip();
-//                graphics.setComposite(getGraphicsState().getNonStrokingJavaComposite());
-//                graphics.drawImage(renderedPaint, 
-//                        AffineTransform.getTranslateInstance(bounds.getMinX(), bounds.getMinY()), 
-//                        null);
-//            }
-//            else
-//            {
-//                // fill the image with stenciled paint
-//                BufferedImage image = pdImage.getStencilImage(getNonStrokingPaint());
-//
-//                // draw the image
-//                drawBufferedImage(image, at);
-//            }
-//        }
-//        else
-//        {
-//            if (subsamplingAllowed)
-//            {
-//                int subsampling = getSubsampling(pdImage, at);
-//                // draw the subsampled image
-//                drawBufferedImage(pdImage.getImage(null, subsampling), at);
-//            }
-//            else
-//            {
-//                // subsampling not allowed, draw the image
-//                drawBufferedImage(pdImage.getImage(), at);
-//            }
-//        }
-//
-//        if (!pdImage.getInterpolate())
-//        {
-//            // JDK 1.7 has a bug where rendering hints are reset by the above call to
-//            // the setRenderingHint method, so we re-set all hints, see PDFBOX-2302
-//            setRenderingHints();
-//        }
+        SVGRect rect = getBoundingRect();
+        svgg.appendChild(rect);
+
+        /**
+        if (!pdImage.getInterpolate())
+        {
+            boolean isScaledUp = pdImage.getWidth() < Math.round(at.getScaleX()) ||
+                                 pdImage.getHeight() < Math.round(at.getScaleY());
+
+            // if the image is scaled down, we use smooth interpolation, eg PDFBOX-2364
+            // only when scaled up do we use nearest neighbour, eg PDFBOX-2302 / mori-cvpr01.pdf
+            // stencils are excluded from this rule (see survey.pdf)
+            if (isScaledUp || pdImage.isStencil())
+            {
+                graphics.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+                        RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+            }
+        }
+        */
+
+        /**
+        if (pdImage.isStencil())
+        {
+            if (getGraphicsState().getNonStrokingColor().getColorSpace() instanceof PDPattern)
+            {
+                // The earlier code for stencils (see "else") doesn't work with patterns because the
+                // CTM is not taken into consideration.
+                // this code is based on the fact that it is easily possible to draw the mask and 
+                // the paint at the correct place with the existing code, but not in one step.
+                // Thus what we do is to draw both in separate images, then combine the two and draw
+                // the result. 
+                // Note that the device scale is not used. In theory, some patterns can get better
+                // at higher resolutions but the stencil would become more and more "blocky".
+                // If anybody wants to do this, have a look at the code in showTransparencyGroup().
+
+                // draw the paint
+                Paint paint = getNonStrokingPaint();
+                Rectangle2D unitRect = new Rectangle2D.Float(0, 0, 1, 1);
+                Rectangle2D bounds = at.createTransformedShape(unitRect).getBounds2D();
+                BufferedImage renderedPaint = 
+                        new BufferedImage((int) Math.ceil(bounds.getWidth()), 
+                                          (int) Math.ceil(bounds.getHeight()), 
+                                           BufferedImage.TYPE_INT_ARGB);
+                Graphics2D g = (Graphics2D) renderedPaint.getGraphics();
+                g.translate(-bounds.getMinX(), -bounds.getMinY());
+                g.setPaint(paint);
+                g.fill(bounds);
+                g.dispose();
+
+                // draw the mask
+                BufferedImage mask = pdImage.getImage();
+                BufferedImage renderedMask = new BufferedImage((int) Math.ceil(bounds.getWidth()), 
+                                                               (int) Math.ceil(bounds.getHeight()), 
+                                                               BufferedImage.TYPE_INT_RGB);
+                g = (Graphics2D) renderedMask.getGraphics();
+                g.translate(-bounds.getMinX(), -bounds.getMinY());
+                AffineTransform imageTransform = new AffineTransform(at);
+                imageTransform.scale(1.0 / mask.getWidth(), -1.0 / mask.getHeight());
+                imageTransform.translate(0, -mask.getHeight());
+                g.drawImage(mask, imageTransform, null);
+                g.dispose();
+
+                // apply the mask
+                final int[] transparent = new int[4];
+                int[] alphaPixel = null;
+                WritableRaster raster = renderedPaint.getRaster();
+                WritableRaster alpha = renderedMask.getRaster();
+                int h = renderedMask.getRaster().getHeight();
+                int w = renderedMask.getRaster().getWidth();
+                for (int y = 0; y < h; y++)
+                {
+                    for (int x = 0; x < w; x++)
+                    {
+                        alphaPixel = alpha.getPixel(x, y, alphaPixel);
+                        if (alphaPixel[0] == 255)
+                        {
+                            raster.setPixel(x, y, transparent);
+                        }
+                    }
+                }
+                
+                // draw the image
+                setClip();
+                graphics.setComposite(getGraphicsState().getNonStrokingJavaComposite());
+                graphics.drawImage(renderedPaint, 
+                        AffineTransform.getTranslateInstance(bounds.getMinX(), bounds.getMinY()), 
+                        null);
+            }
+            else
+            {
+                // fill the image with stenciled paint
+                BufferedImage image = pdImage.getStencilImage(getNonStrokingPaint());
+
+                // draw the image
+                drawBufferedImage(image, at);
+            }
+        }
+        else
+        {
+            if (subsamplingAllowed)
+            {
+                int subsampling = getSubsampling(pdImage, at);
+                // draw the subsampled image
+                drawBufferedImage(pdImage.getImage(null, subsampling), at);
+            }
+            else
+            {
+                // subsampling not allowed, draw the image
+                drawBufferedImage(pdImage.getImage(), at);
+            }
+        }
+
+        if (!pdImage.getInterpolate())
+        {
+            // JDK 1.7 has a bug where rendering hints are reset by the above call to
+            // the setRenderingHint method, so we re-set all hints, see PDFBOX-2302
+            setRenderingHints();
+        }
+        
+        */
     }
+
+	private SVGRect getBoundingRect() {
+		Matrix ctm = getGraphicsState().getCurrentTransformationMatrix();
+        AffineTransform at = ctm.createAffineTransform();
+        Rectangle2D unitRect = new Rectangle2D.Float(0, 0, 1, 1);
+        Rectangle2D bounds = at.createTransformedShape(unitRect).getBounds2D();
+		Real2Range box = new Real2Range(
+        		new RealRange(bounds.getMinX(), bounds.getMaxX()),
+        		new RealRange(yMax - bounds.getMaxY(), yMax - bounds.getMinY())
+        		).format(3);
+        SVGRect rect = SVGRect.createFromReal2Range(box);
+        rect.setStroke("blue").setStrokeWidth(0.3);
+		return rect;
+	}
 
     /**
      * Draws the page to the requested context.
