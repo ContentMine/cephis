@@ -87,7 +87,6 @@ public class DocumentParser extends PDFRenderer {
         svgPageBySerial = new HashMap<PageSerial, SVGG>();
         rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
         int numberOfPages = currentDoc.getNumberOfPages();
-        LOG.debug("pages "+numberOfPages);
 		for (int iPage = 0; iPage < numberOfPages; iPage++) {
 			PageSerial pageSerial = PageSerial.createFromZeroBasedPage(iPage);
         	if (processor.getOrCreatePageIncluder().pageIsIncluded(pageSerial)) {
@@ -132,9 +131,8 @@ public class DocumentParser extends PDFRenderer {
 	private void cleanUp(SVGG svgPage) {
 		List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(svgPage);
 		for (SVGText text : texts) {
-			if (text.getText().startsWith(" ")) {
-				text.removeCharacter(0);
-			}
+			text.removeLeadingSpaces();
+			text.addEmpiricalStylesFromFont();
 		}
 	}
 

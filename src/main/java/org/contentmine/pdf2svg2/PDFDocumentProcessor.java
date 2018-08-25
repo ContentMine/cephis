@@ -116,7 +116,7 @@ public class PDFDocumentProcessor {
 		for (Map.Entry<PageSerial, SVGG> entry : documentParser.getOrCreateSvgPageBySerial().entrySet()) {
 			PageSerial key = entry.getKey();
 			SVGSVG.wrapAndWriteAsSVG(entry.getValue(), new File(svgDir, 
-			""+key.getZeroBasedSerialString()+CTree.DOT+CTree.SVG));
+			CTree.FULLTEXT_PAGE+CTree.DOT+key.getZeroBasedSerialString()+CTree.DOT+CTree.SVG));
 		}
 	}
 
