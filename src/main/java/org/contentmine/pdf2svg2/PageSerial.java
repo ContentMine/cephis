@@ -5,7 +5,16 @@ import org.apache.log4j.Logger;
 
 /** identifier for page and subcomponents
  * 
- * currently pageSerial[.optionalSub]
+ * Computer scientists and modules count from 0
+ * Libraries and bibliographers count from 1
+ * 
+ * This holds both schemes and allows access though named methods
+ * 
+ * Can hold both the page numbers and indexes within the page (subPage, e.g. repeated figures)
+ * 
+ * May also hold other ids (such as Figures, etc.)
+ * generally there is a PageSerial for chunks of processed information - pages, images
+ * 
  * 
  * */
 
@@ -15,40 +24,43 @@ public class PageSerial implements Comparable {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	private Integer page;
-	private Integer subPage;
+	private Integer zeroBasedPage;
+	private Integer zeroBasedSubPage;
 
-	public PageSerial(int page) {
-		this.page = page;
+	private PageSerial() {
+		
 	}
 
-	public PageSerial(int page, int subPage) {
-		this.page = page;
-		this.subPage = subPage;
+	public Integer getZeroBasedPage() {
+		return zeroBasedPage;
 	}
 
-	public Integer getPage() {
-		return page;
+	public Integer getOneBasedPage() {
+		return zeroBasedPage + 1;
 	}
 
-	public void setPage(Integer page) {
-		this.page = page;
+	public void setZeroBasedPage(Integer zeroBasedPage) {
+		this.zeroBasedPage = zeroBasedPage;
 	}
 
-	public Integer getSubPage() {
-		return subPage;
+	public Integer getZeroBasedSubPage() {
+		return zeroBasedSubPage;
 	}
 
-	public void setSubPage(Integer subPage) {
-		this.subPage = subPage;
+	public Integer getOneBasedSubPage() {
+		return zeroBasedSubPage + 1;
+	}
+
+	public void setZeroBasedSubPage(Integer subPage) {
+		this.zeroBasedSubPage = subPage;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((page == null) ? 0 : page.hashCode());
-		result = prime * result + ((subPage == null) ? 0 : subPage.hashCode());
+		result = prime * result + ((zeroBasedPage == null) ? 0 : zeroBasedPage.hashCode());
+		result = prime * result + ((zeroBasedSubPage == null) ? 0 : zeroBasedSubPage.hashCode());
 		return result;
 	}
 
@@ -61,22 +73,22 @@ public class PageSerial implements Comparable {
 		if (getClass() != obj.getClass())
 			return false;
 		PageSerial other = (PageSerial) obj;
-		if (page == null) {
-			if (other.page != null)
+		if (zeroBasedPage == null) {
+			if (other.zeroBasedPage != null)
 				return false;
-		} else if (!page.equals(other.page))
+		} else if (!zeroBasedPage.equals(other.zeroBasedPage))
 			return false;
-		if (subPage == null) {
-			if (other.subPage != null)
+		if (zeroBasedSubPage == null) {
+			if (other.zeroBasedSubPage != null)
 				return false;
-		} else if (!subPage.equals(other.subPage))
+		} else if (!zeroBasedSubPage.equals(other.zeroBasedSubPage))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "PageSerial [page=" + page + ", subPage=" + subPage + "]";
+		return "PageSerial [page=" + zeroBasedPage + ", subPage=" + zeroBasedSubPage + "]";
 	}
 
 	/** 
@@ -92,22 +104,44 @@ public class PageSerial implements Comparable {
 	public int compareTo(Object o) {
 		if (o instanceof PageSerial) {
 			PageSerial p = (PageSerial) o;
-			if (this.page < p.page) return -1;
-			if (this.page > p.page) return 1;
-			if (this.subPage == null && p.subPage == null) return 0;
-			if (this.subPage == null && p.subPage != null) return -1;
-			if (this.subPage != null && p.subPage == null) return 1;
-			return this.subPage - p.subPage;
+			if (this.zeroBasedPage < p.zeroBasedPage) return -1;
+			if (this.zeroBasedPage > p.zeroBasedPage) return 1;
+			if (this.zeroBasedSubPage == null && p.zeroBasedSubPage == null) return 0;
+			if (this.zeroBasedSubPage == null && p.zeroBasedSubPage != null) return -1;
+			if (this.zeroBasedSubPage != null && p.zeroBasedSubPage == null) return 1;
+			return this.zeroBasedSubPage - p.zeroBasedSubPage;
 		}
 		return 0;
 	}
 	
-	public String getSerialString() {
-		String pageS = String.valueOf(page);
-		if (subPage != null) {
-			pageS += "."+subPage;
+	public String getZeroBasedSerialString() {
+		String pageS = String.valueOf(zeroBasedPage);
+		if (zeroBasedSubPage != null) {
+			pageS += "."+zeroBasedSubPage;
 		}
 		return pageS;
 	}
+
+	public String getOneBasedSerialString() {
+		String pageS = String.valueOf(getOneBasedPage());
+		if (zeroBasedSubPage != null) {
+			pageS += "."+getOneBasedSubPage();
+		}
+		return pageS;
+	}
+
+	public static PageSerial createFromZeroBasedPage(Integer iPage) {
+		PageSerial pageSerial = new PageSerial();
+		pageSerial.zeroBasedPage = iPage;
+		return pageSerial;
+	}
 	
+	public static PageSerial createFromZeroBasedPages(Integer iPage, Integer iSubPage) {
+		PageSerial pageSerial = new PageSerial();
+		pageSerial.zeroBasedPage = iPage;
+		pageSerial.zeroBasedSubPage = iSubPage;
+		return pageSerial;
+	}
+
+
 }
