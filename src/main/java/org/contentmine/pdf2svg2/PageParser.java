@@ -72,8 +72,8 @@ import nu.xom.Attribute;
  *  
  * @author pm286
  */
-public class PDF2SVGParserPageDrawer extends PageDrawer    {
-	private static final Logger LOG = Logger.getLogger(PDF2SVGParserPageDrawer.class);
+public class PageParser extends PageDrawer    {
+	private static final Logger LOG = Logger.getLogger(PageParser.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
@@ -114,11 +114,13 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 	private int fontPrecision = 2;
 	private Double maxSpaceRatio = 1.2;
 	private List<BufferedImage> rawImageList;
+	private PageSerial pageSerial;
 
 	private Double minBoldWeight = 500.;
+	private BufferedImage renderedImage;
 
 
-	PDF2SVGParserPageDrawer(PageDrawerParameters parameters) throws IOException        {
+	PageParser(PageDrawerParameters parameters) throws IOException        {
         super(parameters);
         init();
     }
@@ -201,7 +203,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     		unicode = "?";
     	}
     	if (unicode.length() > 1) {
-    		throw new RuntimeException("Unicode length > 1: "+unicode);
+    		LOG.warn("Unicode length > 1: "+unicode);
     	}
     	
     	currentSVGText.appendText(unicode);
@@ -451,7 +453,7 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
 //    		currentSvgPath.setStrokeWidth((double)graphicsState.getLineWidth());
 
     		svgg.appendChild(currentSvgPath);
-        	System.out.print(" END ");
+//        	System.out.print(" END ");
         }
     	currentPathPrimitiveList = null;
 		currentSvgPath = null;
@@ -540,11 +542,12 @@ public class PDF2SVGParserPageDrawer extends PageDrawer    {
     @Override
     public void drawImage(PDImage pdImage) throws IOException    {
     	super.drawImage(pdImage);
-    	int height = pdImage.getHeight();
-    	int width = pdImage.getWidth();
-    	System.out.print("["+width+"*"+height+"]");
     	BufferedImage bufferedImage = pdImage.getImage();
     	rawImageList.add(bufferedImage);
+    	int height = pdImage.getHeight();
+    	int width = pdImage.getWidth();
+//    	System.out.print("["+width+"*"+height+"]");
+    	System.out.print("["+"."+rawImageList.size()+"]");
     	
         SVGRect rect = getBoundingRect();
         svgg.appendChild(rect);
@@ -886,8 +889,30 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	public List<BufferedImage> getRawImageList() {
+	public List<BufferedImage> getOrCreateRawImageList() {
+		if (rawImageList == null) {
+			rawImageList = new ArrayList<BufferedImage>();
+		}
 		return rawImageList;
 	}
+
+	/** sets the serial number of the page.
+	 * normally the serial of the pages as iterated through the PDDocument.
+	 * 
+	 * @param iPage
+	 */
+	public void setPageSerial(PageSerial pageSerial) {
+		this.pageSerial = pageSerial;
+	}
+
+	public void setRenderedImage(BufferedImage renderImage) {
+		this.renderedImage = renderImage;
+	}
+	
+	public BufferedImage getRenderedImage() {
+		return renderedImage;
+	}
+
+
 	
 }

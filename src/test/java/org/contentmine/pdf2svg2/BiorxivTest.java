@@ -58,13 +58,14 @@ public class BiorxivTest {
 			LOG.debug("******* "+file+" **********");
 			Assert.assertTrue("target pdf "+targetDir, file.exists());
 		    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+		    documentProcessor.setMinimumImageBox(100, 100);
 		    documentProcessor.readAndProcess(file);
 		    File outputDir = new File(targetDir, fileroot);
 			documentProcessor.writeSVGPages(outputDir);
 		    try {
 		    	documentProcessor.writeRawImages(outputDir);
 		    } catch (Exception e) {
-		    	LOG.error("image creation NYI");
+		    	LOG.error("image creation NYI" + e);
 		    }
 		}
 	}

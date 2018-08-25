@@ -2,16 +2,17 @@ package org.contentmine.graphics.svg.plot.spectra;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.util.CMineTestFixtures;
 import org.contentmine.eucl.euclid.test.TestUtil;
-import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 import org.junit.Ignore;
@@ -69,7 +70,7 @@ public class VectorSpectraIT {
 		Assert.assertTrue("target pdf "+targetDir, ctreeFile.exists());
         File file = new File(ctreeFile, "fulltext.pdf");
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-	    documentProcessor.addIncludePages(45);
+	    documentProcessor.getOrCreatePageIncluder().addZeroNumberedIncludePages(45);
 	    documentProcessor.readAndProcess(file);
 	    documentProcessor.writeSVGPages(targetDir);
 	    try {
@@ -101,27 +102,45 @@ public class VectorSpectraIT {
 	}
 
 	@Test
-	@Ignore // too long
-	public void testPDF2SVG50RSCArticles() throws Exception {
+	@Ignore // VERY LONG
+	public void testStefan100() throws Exception {
 		String fileroot = "journals2";
-//		File sourceDir = new File(SVGHTMLFixtures.SPECTRA_PLOT_DIR, fileroot);
 		File sourceDir = new File("/Users/pm286/workspace/projects/stefan/", fileroot);
-		if (TestUtil.checkForeignDirExists(sourceDir)) {
+		if (!TestUtil.checkForeignDirExists(sourceDir)) {
 			LOG.debug(sourceDir+" does not exist");
 			return;
 		}
 		File targetDir = new File("target/projects/stefan", fileroot);
-		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
-		CProject cProject = new CProject();
-		String command = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
-		cProject.run(command);
-		File[] ctreeNames = targetDir.listFiles();
-		List<File> cTreeFiles = Arrays.asList(ctreeNames);
-		Collections.sort(cTreeFiles);
-		for (File cTreeFile : cTreeFiles) {
-			String ctree = cTreeFile.getName();
-			writeSVGAndPNG(targetDir, ctree);
+		List<File> files = createStefanFiles(sourceDir, targetDir);
+		Assert.assertTrue(files.size() >= 100);
+		for (File file : files) {
+			LOG.debug("******* "+file+" **********");
+			String filename = file.toString();
+			if (filename.endsWith(".pdf")) {
+				String fileroot1 = FilenameUtils.getBaseName(filename);
+			    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+			    documentProcessor.setMinimumImageBox(100, 100);
+			    documentProcessor.readAndProcess(file);
+			    File outputDir = new File(targetDir, fileroot1);
+				documentProcessor.writeSVGPages(outputDir);
+		    	documentProcessor.writeRawImages(outputDir);
+			}
 		}
+	}
+
+	// ========================================
+
+	private List<File> createStefanFiles(File sourceDir, File targetDir) {
+		List<File> files2 = new ArrayList<File>();
+		if (!TestUtil.checkForeignDirExists(sourceDir)) {
+			LOG.debug(sourceDir+" does not exist");
+		} else {
+			CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
+			File[] files = sourceDir.listFiles();
+			files2 = Arrays.asList(files);
+			Collections.sort(files2);
+		}
+		return files2;
 	}
 
 	private void writeSVGAndPNG(File targetDir, String ctree) throws IOException {

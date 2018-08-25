@@ -31,20 +31,6 @@ public class PDFDocumentProcessorTest {
 		List<SVGG> svgList = documentProcessor.getOrCreateSVGPageList();
 	    File svgFile = new File("target/pdf2svg2/examples/custom.svg");
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
-		BufferedImage image = documentProcessor.createRenderedImageList().get(0);
-		if (image == null) {
-//			throw new RuntimeException("Null image");
-		}
-
-		/*
-		try {
-			if (!new File("target/pdf2svg2/examples").exists()) return;
-			ImageIO.write(image, "png", new File("target/pdf2svg2/examples/custom.png"));
-		} catch (Exception e) {
-			throw new RuntimeException("couldn't write image");
-		}
-	    Assert.assertTrue("svg file exists", svgFile.exists());
-	    */
 	}
 
 	@Test
@@ -55,22 +41,6 @@ public class PDFDocumentProcessorTest {
 	    String fileroot = "target/pdf2svg2/examples/page6/";
 		File svgFile = new File(fileroot, "page6.svg");
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
-		Assert.assertTrue(svgFile+" exists", svgFile.exists());
-		BufferedImage image = documentProcessor.createRenderedImageList().get(0);
-		if (image == null) {
-			LOG.error("*** FIXME *** ");
-			return;
-		}
-		try {
-			File output = new File(fileroot, "page6.png");
-			if (!new File(fileroot).exists()) return;
-			ImageIO.write(image, "png", output);
-		} catch (Throwable e) {
-			LOG.error("*** FIXME ***"+e.getMessage());
-			return;
-		}
-
-	    Assert.assertTrue("svg file exists", svgFile.exists());
 	}
 
 	@Test
@@ -82,27 +52,14 @@ public class PDFDocumentProcessorTest {
 	    String fileroot = "target/pdf2svg2/bmc/1471-2148-11-329/";
 		File svgFile = new File(fileroot, "full.svg");
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
-		if (!svgFile.exists()) {
-//			LOG.error("*** FIXME *** ");
-			return;
-		}
-	    Assert.assertTrue("svg file exists", svgFile.exists());
-		Map<PageSerial, BufferedImage> imageList = documentProcessor.createRenderedImageList();
-		for (int i = 0; i < imageList.size(); i++) {
-//			ImageIO.write(imageList.get(i), "png", new File(fileroot, "page."+i+".png"));
-		}
-		int i = 0;
-		for (SVGG svgPage : documentProcessor.getOrCreateSVGPageList()) {
-			SVGSVG.wrapAndWriteAsSVG(svgPage, new File(fileroot, "page."+(i++)+".svg"));
-		}
 	}
 
 	@Test
 	public void testIncludePages() throws InvalidPasswordException, IOException {
         File file = new File("src/test/resources/org/contentmine/pdf2svg/bmc/", "1471-2148-11-329.pdf");
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-	    documentProcessor.addIncludePages(3, 7);
-	    Assert.assertEquals("include", "[3, 7]", documentProcessor.getOrCreateIncludePageList().toString());
+	    documentProcessor.getOrCreatePageIncluder().addZeroNumberedIncludePages(3, 7);
+	    Assert.assertEquals("include", "[3, 7]", documentProcessor.getOrCreatePageIncluder().getOrCreateZeroNumberedIncludePageList().toString());
 	    documentProcessor.readAndProcess(file);
 	    
 	    String fileroot = "target/pdf2svg2/bmc/1471-2148-11-329/";

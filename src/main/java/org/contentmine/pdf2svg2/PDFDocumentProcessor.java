@@ -20,12 +20,8 @@ package org.contentmine.pdf2svg2;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 
 import javax.imageio.ImageIO;
 
@@ -33,13 +29,10 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.contentstream.PDFGraphicsStreamEngine;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
-import org.apache.pdfbox.rendering.PDFRenderer;
 import org.contentmine.cproject.files.CTree;
-import org.contentmine.eucl.euclid.IntRange;
+import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.SVGText;
 
 /**
  * Example showing custom rendering by subclassing PageDrawer.
@@ -58,17 +51,11 @@ public class PDFDocumentProcessor {
 		LOG.setLevel(Level.DEBUG);
 	}
 	
-	private PDF2SVGParserPageDrawer pdf2svgParserDrawer;
+	private PageParser pageParser;
 	private PDDocument currentDoc;
-	private AMIPDFParserRenderer parserRenderer;
-	private SVGG currentSVGG;
+	private DocumentParser documentParser;
 	private File currentFile;
-	private Map<PageSerial, SVGG> svgPageBySerial;
-	private Map<PageSerial, BufferedImage> rawImageBySerial;
-	private Map<PageSerial, BufferedImage> renderedImageBySerial;
-	private List<String> imageSerialList;
-	private TreeSet<Integer> includeSortedPageNumbers;
-	private TreeSet<Integer> excludeSortedPageNumbers;
+	private Int2 minImageBox;
 
 	public PDFDocumentProcessor() {
 		init();
@@ -81,17 +68,19 @@ public class PDFDocumentProcessor {
 	public PDFDocumentProcessor readAndProcess(File file) throws IOException {
 		if (file != null && file.exists() && !file.isDirectory()) {
 			readDocument(file);
-			ensureParserRenderer();
-	        createRenderedImageList();
-//			getOrCreateSVGPageList();
+			getOrCreateDocumentParser();
+	        documentParser.parseDocument(currentDoc);
+	        currentDoc.close();
 		}
         return this;
 	}
 
-	private void ensureParserRenderer() {
-		if (parserRenderer == null) {
-			parserRenderer = new AMIPDFParserRenderer(currentDoc);
+	private DocumentParser getOrCreateDocumentParser() {
+		if (documentParser == null) {
+			documentParser = new DocumentParser(currentDoc);
 		}
+		documentParser.getOrCreatePageIncluder();
+		return documentParser;
 	}
 
 	private PDDocument readDocument(File file) throws IOException {
@@ -100,136 +89,10 @@ public class PDFDocumentProcessor {
 		return currentDoc;
 	}
 
-	private SVGG extractSVGG() {
-		if (parserRenderer == null) {
-			LOG.error("no parser renderer");
-			return null;
-		}
-		this.pdf2svgParserDrawer = parserRenderer.getPDF2SVGParserPageDrawer();
-		if (pdf2svgParserDrawer == null) {
-			LOG.error("no parser drawer");
-			return null;
-		}
-        currentSVGG = pdf2svgParserDrawer.getSVGG();
-        
-		return currentSVGG;
-	}
 
 	private List<BufferedImage> createRawSubImageList() {
-		this.pdf2svgParserDrawer = parserRenderer.getPDF2SVGParserPageDrawer();
-        return pdf2svgParserDrawer.getRawImageList();
-	}
-
-	/** reads PDF and extracts images and creates SVG.
-	 * 
-	 * @param file
-	 * @return
-	 * @throws InvalidPasswordException
-	 * @throws IOException
-	 */
-	public Map<PageSerial, BufferedImage> createRenderedImageList() throws IOException {
-		if (renderedImageBySerial == null) {
-			if (updateCurrentDoc() != null) {
-				renderedImageBySerial = new HashMap<PageSerial, BufferedImage>();
-				ensureParserRenderer();
-		        imageSerialList = new ArrayList<String>();
-		        svgPageBySerial = new HashMap<PageSerial, SVGG>();
-		        rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
-		        for (int iPage = 0; iPage < currentDoc.getNumberOfPages(); iPage++) {
-	        		int readerPage = iPage+1;
-		        	if (pageIsIncluded(readerPage)) {
-			        	System.out.print("["+readerPage+"]");
-						PageSerial pageSerial = new PageSerial(readerPage);
-			        	BufferedImage renderImage = parserRenderer.processPage(iPage);
-						renderedImageBySerial.put(pageSerial, renderImage);
-						SVGG svgPage = extractSVGG();
-						cleanUp(svgPage);
-						svgPageBySerial.put(pageSerial, svgPage);
-						List<BufferedImage> subImageList = createRawSubImageList();
-//						if (subImageList.size() > 0) {
-//							LOG.debug("subImage: "+subImageList.size());
-//						}
-						for (int subImage = 0; subImage < subImageList.size();subImage++) {
-							rawImageBySerial.put(new PageSerial(iPage, subImage + 1), subImageList.get(subImage));
-						}
-		        	}
-		        }
-		        // fixe this
-		        currentDoc.close();
-			}
-		}
-        return renderedImageBySerial;
-	}
-
-	private void cleanUp(SVGG svgPage) {
-		List<SVGText> texts = SVGText.extractSelfAndDescendantTexts(svgPage);
-		for (SVGText text : texts) {
-			if (text.getText().startsWith(" ")) {
-				text.removeCharacter(0);
-			}
-		}
-	}
-
-	/** reads PDF and extracts images and creates SVG.
-	 * 
-	 * @param file
-	 * @return list of files (can be empty but not null)
-	 * @throws InvalidPasswordException
-	 * @throws IOException
-	 */
-	public List<SVGG> getOrCreateSVGPageList() {
-		List<SVGG> pageList = null;
-		if (svgPageBySerial != null) {
-			pageList = new ArrayList<SVGG>(svgPageBySerial.values());
-		} else {
-			pageList = new ArrayList<SVGG>();
-		}
-//		if (svgPageList == null) {
-//			if (updateCurrentDoc() != null) {
-//				svgPageList = new HashMap<Integer, SVGG>();
-//				ensureParserRenderer();
-//		        imageSerialList = new ArrayList<String>();
-//		        // pages count from 1, not zero
-//		        for (int iPage = 1; iPage <= currentDoc.getNumberOfPages(); iPage++) {
-//		        	if (pageIsIncluded(iPage)) {
-//			        	System.out.print("["+iPage+"]");
-//						SVGG svgPage = extractSVGG();
-//						if (svgPage == null) {
-//							svgPage = new SVGG("page");
-//						}
-//						svgPageList.put(iPage, svgPage);
-//		        	}
-//		        }
-//		        try {
-//					currentDoc.close();
-//				} catch (IOException e) {
-//					throw new RuntimeException("Cannot close document", e);
-//				}
-//			}
-//		}
-        return pageList;
-	}
-
-	/** include page by number.
-	 * 
-	 * if (pages have been included) return true if in list else false
-	 * else if (pages have been excluded) return false if in list else true
-	 * else return true
-	 * 
-	 * @param iPage
-	 * @return
-	 */
-	private boolean pageIsIncluded(Integer iPage) {
-		boolean include = true;
-		if (includeSortedPageNumbers != null) {
-			include = includeSortedPageNumbers.contains(iPage);
-		} else if (excludeSortedPageNumbers != null) {
-			include = !excludeSortedPageNumbers.contains(iPage);
-		}
-		if (!include) {
-			LOG.trace("excluded page "+iPage);
-		}
-		return include;
+		this.pageParser = documentParser.getPageParser();
+        return pageParser.getOrCreateRawImageList();
 	}
 
 	private PDDocument updateCurrentDoc() {
@@ -248,17 +111,13 @@ public class PDFDocumentProcessor {
 		return this;
 	}
 
-	public Map<PageSerial, BufferedImage> getRawImageMap() {
-		return rawImageBySerial;
-	}
-
 	public void writeSVGPages(File parent) {
 		File svgDir = new File(parent, CTree.SVG + "/");
 		LOG.debug("writing to: "+svgDir);
-		for (Map.Entry<PageSerial, SVGG> entry : svgPageBySerial.entrySet()) {
+		for (Map.Entry<PageSerial, SVGG> entry : documentParser.getOrCreateSvgPageBySerial().entrySet()) {
 			PageSerial key = entry.getKey();
 			SVGSVG.wrapAndWriteAsSVG(entry.getValue(), new File(svgDir, 
-			""+key.getSerialString()+CTree.DOT+CTree.SVG));
+			""+key.getZeroBasedSerialString()+CTree.DOT+CTree.SVG));
 		}
 	}
 
@@ -269,7 +128,7 @@ public class PDFDocumentProcessor {
 	 * @throws IOException
 	 */
 	public void writePageImages(File parent) throws IOException {
-		Map<PageSerial, BufferedImage> imageList = createRenderedImageList();
+		List<BufferedImage> imageList = documentParser.getOrCreateRenderedImageList();
 		File pageDir = new File(parent, CTree.PAGES + "/");
 		pageDir.mkdirs();
 		for (int i = 0; i < imageList.size(); i++) {
@@ -284,12 +143,13 @@ public class PDFDocumentProcessor {
 	public void writeRawImages(File parent) throws IOException {
 		File imagesDir = new File(parent, CTree.IMAGES + "/");
 		imagesDir.mkdirs();
-		Map<PageSerial, BufferedImage> rawImageByPageSerial = getRawImageMap();
-//		if (rawImageList.size() != imageSerialList.size()) {
-//			throw new RuntimeException("inconsistent raw "+rawImageList.size()+" serials "+imageSerialList);
-//		}
-		for (int i = 0; i < rawImageByPageSerial.size(); i++) {
-			ImageIO.write(rawImageByPageSerial.get(i), CTree.PNG, new File(imagesDir, imageSerialList.get(i)));
+		Map<PageSerial, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap();
+		for (PageSerial pageSerial : rawImageByPageSerial.keySet()) {
+			BufferedImage image = rawImageByPageSerial.get(pageSerial);
+			if (image.getHeight() >= minImageBox.getX() || image.getHeight() >= minImageBox.getY()) {
+				ImageIO.write(image, CTree.PNG, 
+					new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG));
+			}
 		}
 	}
 	
@@ -302,21 +162,10 @@ public class PDFDocumentProcessor {
         pdfBox2Test();
     }
 
-	private static void renderDoc(File file, String path, int[] pages) throws InvalidPasswordException, IOException {
-        File targetDir = new File("target/pdf2svg2/", path);
-        targetDir.mkdirs();
-		PDDocument doc = PDDocument.load(new File(file, path+".pdf"));
-        PDFRenderer renderer = new AMIPDFParserRenderer(doc);
-        for (int i : pages) {
-        	LOG.debug(">> "+i);
-//	        PDFRenderer renderer = new MyPDFRenderer(doc);
-	        BufferedImage image = renderer.renderImage(i);
-			ImageIO.write(image, "PNG", new File(targetDir, "page"+i+".png"));
-        }
-        doc.close();
-	}
-
-
+	/** tests against regression.
+	 * 
+	 * @throws IOException
+	 */
 	private static void pdfBox2Test() throws IOException {
 		File file = new File("src/test/resources" + "/org/contentmine/pdf2svg2" + "/",
                 "custom-render-demo.pdf");
@@ -325,52 +174,30 @@ public class PDFDocumentProcessor {
         documentProcessor.readAndProcess(file);
        List<SVGG> pages = documentProcessor.getOrCreateSVGPageList();
         SVGSVG.wrapAndWriteAsSVG(pages, new File("target/pdf2svg2/examples/custom.svg"));
-        BufferedImage renderedImage = documentProcessor.createRenderedImageList().get(0);
+        BufferedImage renderedImage = documentProcessor.getRenderedImageList().get(0);
         ImageIO.write(renderedImage, "PNG", new File("target/pdf2svg2/examples/custom.ami.png"));
 	}
 
-	public PDFDocumentProcessor addIncludePages(List<Integer> includePages) {
-		getOrCreateIncludePageList().addAll(includePages);
-		return this;
+	private List<BufferedImage> getRenderedImageList() {
+		return getOrCreateDocumentParser().getOrCreateRenderedImageList();
 	}
 
-	public PDFDocumentProcessor addIncludePages(IntRange includePages) {
-		List<Integer> pages = includePages.createArray().getIntegerList();
-		return addIncludePages(pages);
+	public List<SVGG> getOrCreateSVGPageList() {
+		return getOrCreateDocumentParser().getOrCreateSVGList();
 	}
 
-	public PDFDocumentProcessor addIncludePages(Integer ...includePages) {
-		getOrCreateIncludePageList().addAll(new ArrayList<Integer>(Arrays.asList(includePages)));
-		return this;
+	public PageIncluder getOrCreatePageIncluder() {
+		return getOrCreateDocumentParser().getOrCreatePageIncluder();
 	}
 
-	public TreeSet<Integer> getOrCreateIncludePageList() {
-		if (includeSortedPageNumbers == null) {
-			this.includeSortedPageNumbers = new TreeSet<Integer>();
-		}
-		return includeSortedPageNumbers;
-	}
-
-	public PDFDocumentProcessor addExcludePages(List<Integer> excludePages) {
-		getOrCreateExcludePageList().addAll(excludePages);
-		return this;
-	}
-
-	public PDFDocumentProcessor addExcludePages(IntRange excludePages) {
-		List<Integer> pages = excludePages.createArray().getIntegerList();
-		return addExcludePages(pages);
-	}
-
-	public PDFDocumentProcessor addExcludePages(Integer ... excludePages) {
-		getOrCreateExcludePageList().addAll(new ArrayList<Integer>(Arrays.asList(excludePages)));
-		return this;
-	}
-
-	public TreeSet<Integer> getOrCreateExcludePageList() {
-		if (excludeSortedPageNumbers == null) {
-			this.excludeSortedPageNumbers = new TreeSet<Integer>();
-		}
-		return excludeSortedPageNumbers;
+	/** smallest box allowed for images.
+	 * 
+	 * image will be rejected if fits within the box
+	 * @param i
+	 * @param j
+	 */
+	public void setMinimumImageBox(int width, int height) {
+		this.minImageBox = new Int2(width, height);
 	}
 
 }
