@@ -59,22 +59,14 @@ public class PDFDocumentProcessorTest {
         File file = new File("src/test/resources/org/contentmine/pdf2svg/bmc/", "1471-2148-11-329.pdf");
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 	    documentProcessor.getOrCreatePageIncluder().addZeroNumberedIncludePages(3, 7);
-	    Assert.assertEquals("include", "[3, 7]", documentProcessor.getOrCreatePageIncluder().getOrCreateZeroNumberedIncludePageList().toString());
+	    Assert.assertEquals("include", "[3, 7]", 
+	    		documentProcessor.getOrCreatePageIncluder().getOrCreateZeroNumberedIncludePageList().toString());
 	    documentProcessor.readAndProcess(file);
 	    
 	    String fileroot = "target/pdf2svg2/bmc/1471-2148-11-329/";
 		File svgFile = new File(fileroot, "full.svg");
 	    List<SVGG> svgList = documentProcessor.readAndProcess(file).getOrCreateSVGPageList();
 		SVGSVG.wrapAndWriteAsSVG(svgList, svgFile);
-		if (!svgFile.exists()) {
-//			LOG.error("*** FIXME *** ");
-			return;
-		}
-	    Assert.assertTrue("svg file exists", svgFile.exists());
-		int i = 0;
-		for (SVGG svgPage : documentProcessor.getOrCreateSVGPageList()) {
-			SVGSVG.wrapAndWriteAsSVG(svgPage, new File(fileroot, "page."+(i++)+".svg"));
-		}
 	}
 
 }

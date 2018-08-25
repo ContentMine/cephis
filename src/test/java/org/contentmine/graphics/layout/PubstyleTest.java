@@ -13,10 +13,6 @@ import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
-import org.contentmine.graphics.svg.cache.CorpusCache;
-import org.contentmine.graphics.svg.cache.DocumentCache;
-import org.contentmine.graphics.svg.cache.PageCache;
-import org.contentmine.graphics.svg.cache.PageCacheList;
 import org.contentmine.graphics.svg.layout.DocumentChunk;
 import org.contentmine.graphics.svg.layout.PubstyleManager;
 import org.contentmine.graphics.svg.layout.SVGPubstyle;
@@ -188,37 +184,6 @@ public class PubstyleTest {
 		}
 
 	}
-
-	@Test
-	// FIXME TEST
-	public void testPubstyleSections() {
-		PubstyleManager pubstyleManager = new PubstyleManager();
-		SVGPubstyle pubstyle = pubstyleManager.getSVGPubstyleFromPubstyleName("bmc");
-		CorpusCache corpus = CorpusCache.createCorpusCache(new File(SVGHTMLFixtures.G_S_CORPUS_DIR, "mosquitos1"));
-		Assert.assertEquals("documents", 3,  corpus.getOrCreateDocumentCacheList().size());
-		
-		DocumentCache documentCache = corpus.getDocumentCache("12936_2017_Article_1948");
-		PageCacheList pageCacheList = documentCache.getOrCreatePageCacheList();
-		Assert.assertEquals("pages",  14, pageCacheList.size());
-		// we start at 1
-		PageCache pageCache0 = pageCacheList.get(1);
-//		LOG.debug(pageCache0.getSerialNumber());
-		pubstyle.setEndPage(pageCacheList.size());
-		for (PageCache pageCache : pageCacheList) {
-//			LOG.debug("===================== current "+pageCache+"====================");
-			pubstyle.setCurrentPage(pageCache.getSerialNumber());
-//			SVGElement inputSVGElement = SVGElement.readAndCreateSVG(pageCache.getSVGElement());
-//			LOG.debug("inputSVG: "+inputSVGElement.toXML().length());
-//			List<DocumentChunk> documentChunks = pubstyle.createDocumentChunks(inputSVGElement);
-//			LOG.debug("DocumentChunks: "+documentChunks.size());
-//			// some pages are null
-////			Assert.assertTrue("document chunk != 0 "+page, documentChunks.size() > 0);
-//			File file = new File("target/pubstyle/" + documentCache.getName() + "/page"+page+".svg");
-//			SVGSVG.wrapAndWriteAsSVG(documentChunks, file);
-////			Assert.assertTrue("page.svg", file.exists());
-		}
-	}
-
 
 	@Test
 	@Ignore // long

@@ -73,11 +73,7 @@ public class VectorSpectraIT {
 	    documentProcessor.getOrCreatePageIncluder().addZeroNumberedIncludePages(45);
 	    documentProcessor.readAndProcess(file);
 	    documentProcessor.writeSVGPages(targetDir);
-	    try {
-	    	documentProcessor.writeRawImages(targetDir);
-	    } catch (Exception e) {
-	    	LOG.error("image creaton NYI");
-	    }
+    	documentProcessor.writeRawImages(targetDir);
 	}
 
 	@Test
