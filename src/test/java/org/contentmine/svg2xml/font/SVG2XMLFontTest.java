@@ -74,17 +74,5 @@ public class SVG2XMLFontTest {
 		Assert.assertEquals("Aring", 667, ww[197]);
 	}
 
-	
-	@Test
-	/** lists system fonts.
-	 * 
-	 */
-	public void testDisplayFonts() {
-		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		String[] fontFamilyNames = graphicsEnvironment.getAvailableFontFamilyNames();
-		for (String fontFamilyName : fontFamilyNames) {
-			LOG.trace(fontFamilyName);
-		}
-	}
 
 }

@@ -56,6 +56,7 @@ public class PDFDocumentProcessor {
 	private DocumentParser documentParser;
 	private File currentFile;
 	private Int2 minImageBox;
+	private PageIncluder pageIncluder;
 
 	public PDFDocumentProcessor() {
 		init();
@@ -69,8 +70,7 @@ public class PDFDocumentProcessor {
 		if (file != null && file.exists() && !file.isDirectory()) {
 			readDocument(file);
 			getOrCreateDocumentParser();
-	        documentParser.parseDocument(currentDoc);
-	        currentDoc.close();
+	        documentParser.parseDocument(this, currentDoc);
 		}
         return this;
 	}
@@ -79,7 +79,6 @@ public class PDFDocumentProcessor {
 		if (documentParser == null) {
 			documentParser = new DocumentParser(currentDoc);
 		}
-		documentParser.getOrCreatePageIncluder();
 		return documentParser;
 	}
 
@@ -146,7 +145,7 @@ public class PDFDocumentProcessor {
 		Map<PageSerial, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap();
 		for (PageSerial pageSerial : rawImageByPageSerial.keySet()) {
 			BufferedImage image = rawImageByPageSerial.get(pageSerial);
-			if (image.getHeight() >= minImageBox.getX() || image.getHeight() >= minImageBox.getY()) {
+			if (minImageBox == null || image.getHeight() >= minImageBox.getX() || image.getHeight() >= minImageBox.getY()) {
 				ImageIO.write(image, CTree.PNG, 
 					new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG));
 			}
@@ -187,8 +186,12 @@ public class PDFDocumentProcessor {
 	}
 
 	public PageIncluder getOrCreatePageIncluder() {
-		return getOrCreateDocumentParser().getOrCreatePageIncluder();
+		if (pageIncluder == null) {
+			pageIncluder = new PageIncluder();
+		}
+		return pageIncluder;
 	}
+
 
 	/** smallest box allowed for images.
 	 * 

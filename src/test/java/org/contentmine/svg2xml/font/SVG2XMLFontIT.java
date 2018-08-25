@@ -3,6 +3,7 @@ package org.contentmine.svg2xml.font;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
 
 import org.apache.log4j.Level;
@@ -96,5 +97,18 @@ public class SVG2XMLFontIT {
 				LOG.trace("===================================");
 			}
 		}
+
+	
+	@Test
+	/** lists system fonts.
+	 * 
+	 */
+	public void testDisplayFonts() {
+		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		String[] fontFamilyNames = graphicsEnvironment.getAvailableFontFamilyNames();
+		for (String fontFamilyName : fontFamilyNames) {
+			LOG.trace(fontFamilyName);
+		}
+	}
 
 }

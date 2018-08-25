@@ -46,8 +46,8 @@ import junit.framework.Assert;
  * @author pm286
  *
  */
-public class PlotImageTest {
-	private static final Logger LOG = Logger.getLogger(PlotImageTest.class);
+public class PlotImageIT {
+	private static final Logger LOG = Logger.getLogger(PlotImageIT.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
