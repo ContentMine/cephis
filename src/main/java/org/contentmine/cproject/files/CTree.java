@@ -825,13 +825,15 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedDirectory(SVG_DIR, true);
 	}
 
+	/** currently in <cTree>/svg/fulltext-page.?123.svg
+	 */
 	public List<File> getExistingSVGFileList() {
 		File svgDir = getExistingSVGDir();
 		List<File> files = new ArrayList<File>();
 		if (svgDir != null) {
 			List<File> svgFiles0 = Arrays.asList(svgDir.listFiles());
 //			LOG.debug("Svg list "+svgFiles0.size());
-			CMineGlobber globber = new CMineGlobber().setRegex(".*/" + CTree.FULLTEXT_PAGE + "\\d+.svg").setLocation(svgDir);
+			CMineGlobber globber = new CMineGlobber().setRegex(".*/" + CTree.FULLTEXT_PAGE + "\\.?" + "\\d+.svg").setLocation(svgDir);
 			files = globber.listFiles();
 		}
 		return files;

@@ -31,7 +31,9 @@ import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlSub;
 import org.contentmine.graphics.html.HtmlSup;
+import org.contentmine.graphics.svg.GraphicsElement.FontStyle;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
+import org.contentmine.graphics.svg.StyleBundle.FontWeight;
 import org.contentmine.graphics.svg.fonts.FontWidths;
 
 import nu.xom.Attribute;
@@ -1483,6 +1485,35 @@ public class SVGText extends SVGElement {
 			RealArray xArray = getXArray();
 			xArray.deleteElement(i);
 			this.setX(xArray);
+		}
+	}
+
+	public void removeLeadingSpaces() {
+		while(true) {
+			String text = getText();
+			if (text != null && text.startsWith(" ")) {
+				removeCharacter(0);
+			} else {
+				break;
+			}
+		}
+	}
+
+	/** somettimes the font styles and weights are not set properly.
+	 * 
+	 * this uses the fontName/family to look for substrings such as "ital'
+	 */
+	public void addEmpiricalStylesFromFont() {
+		String name = getSVGXFontName();
+		String family = getFontFamily();
+		String nameFamily = (String.valueOf(name)+String.valueOf(family)).toLowerCase();
+		String weight = String.valueOf(getFontWeight()).toLowerCase();  // bold or normal
+		String style = String.valueOf(getFontStyle()).toLowerCase();  // italic or normall
+		if (style.equals(FontStyle.NORMAL.toString().toLowerCase()) && nameFamily.indexOf("ital") != -1) {
+			setFontStyle(FontStyle.ITALIC);
+		}
+		if (weight.equals(FontWeight.NORMAL.toString().toLowerCase()) && nameFamily.indexOf("bold") != -1) {
+			setFontWeight(FontWeight.BOLD.toString());
 		}
 	}
 
