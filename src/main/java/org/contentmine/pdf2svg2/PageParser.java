@@ -120,9 +120,10 @@ public class PageParser extends PageDrawer    {
 	private BufferedImage renderedImage;
 
 
-	PageParser(PageDrawerParameters parameters) throws IOException        {
+	PageParser(PageDrawerParameters parameters, int iPage) throws IOException        {
         super(parameters);
         init();
+    	this.pageSerial = PageSerial.createFromZeroBasedPage(iPage);
     }
 
     private void init() {
@@ -542,15 +543,30 @@ public class PageParser extends PageDrawer    {
     @Override
     public void drawImage(PDImage pdImage) throws IOException    {
     	super.drawImage(pdImage);
+    	if (pageSerial == null) {
+    		throw new RuntimeException("null pageSerial");
+    	}
+		PageSerial imageSerial = PageSerial.createFromZeroBasedPages(
+    		pageSerial.getZeroBasedPage(), rawImageList.size());
     	BufferedImage bufferedImage = pdImage.getImage();
     	rawImageList.add(bufferedImage);
-    	int height = pdImage.getHeight();
-    	int width = pdImage.getWidth();
-//    	System.out.print("["+width+"*"+height+"]");
     	System.out.print("["+"."+rawImageList.size()+"]");
     	
         SVGRect rect = getBoundingRect();
+        rect.format(3);
+        String serialTitle = pageSerial.getOneBasedSerialString();
+		rect.setTitle(serialTitle);
         svgg.appendChild(rect);
+        int width = (int)(double)rect.getWidth();
+        int height = (int)(double)rect.getHeight();
+        String oneBasedSerialString = imageSerial.getOneBasedSerialString();
+        String title = "image."+oneBasedSerialString+"["+width+"*"+height+"]";
+        SVGText text = new SVGText(rect.getBoundingBox().getLLURCorners()[0], title);
+        text.addSVGClassName("image");
+		text.setId("image."+oneBasedSerialString);
+		text.addAttribute(new Attribute("width", ""+width));
+		text.addAttribute(new Attribute("height", ""+height));
+        svgg.appendChild(text);
 
         /**
         if (!pdImage.getInterpolate())
@@ -717,7 +733,7 @@ public class PageParser extends PageDrawer    {
     	SVGRect rect = new SVGRect(p00, p22);
     	rect.format(3);
     	addCurrentPathAttributes(rect);
-    	// try skipping this 
+    	// try skipping this - it seems to give unnecessary rects
 //    	svgg.appendChild(rect);
 //    	System.out.print(" RECT "+rect);
 //        // to ensure that the path is created in the right direction, we have to create
@@ -902,6 +918,9 @@ xmlns="http://www.w3.org/2000/svg">
 	 * @param iPage
 	 */
 	public void setPageSerial(PageSerial pageSerial) {
+		if (pageSerial == null) {
+			throw new RuntimeException("null pageSerial");
+		}
 		this.pageSerial = pageSerial;
 	}
 

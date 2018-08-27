@@ -48,10 +48,8 @@ public class BiorxivTest {
 		List<File> svgFiles = cTree.getExistingSVGFileList();
 		Assert.assertEquals(29,  svgFiles.size());
 		SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
-		svgDocumentProcessor.readSVGFiles(svgFiles);
-		HtmlDiv div = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
-		HtmlHtml html = new HtmlHtml();
-		html.getOrCreateBody().appendChild(div);
+		svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
+		HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
 		File htmlFile = new File(targetDir, fileroot+".html");
 //		LOG.debug(htmlFile);
 		XMLUtil.debug(html, htmlFile, 1);
@@ -68,10 +66,8 @@ public class BiorxivTest {
 		for (CTree cTree : cTreeList) {
 			List<File> svgFiles = cTree.getExistingSVGFileList();
 			SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
-			svgDocumentProcessor.readSVGFiles(svgFiles);
-			HtmlDiv div = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
-			HtmlHtml html = new HtmlHtml();
-			html.getOrCreateBody().appendChild(div);
+			svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
+			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
 			File htmlFile = new File(targetDir, cTree.getName()+".html");
 			XMLUtil.debug(html, htmlFile, 1);
 		}

@@ -34,7 +34,8 @@ public class DocumentParser extends PDFRenderer {
 	private Map<PageSerial, SVGG> svgPageBySerial;
 	private Map<PageSerial, BufferedImage> rawImageBySerial;
 	private Map<PageSerial, BufferedImage> renderedImageBySerial;
-//	private List<String> imageSerialList;
+	private int pageIndex;
+	private int iPage;
 
 
 	DocumentParser(PDDocument document) {
@@ -49,8 +50,7 @@ public class DocumentParser extends PDFRenderer {
 	 */
     @Override
     protected PageDrawer createPageDrawer(PageDrawerParameters parameters) throws IOException {
-        currentPageParser = new PageParser(parameters);
-        LOG.trace("created PDF2SVGParserPageDrawer");
+        currentPageParser = new PageParser(parameters, iPage);
         return currentPageParser;
     }
     
@@ -62,15 +62,31 @@ public class DocumentParser extends PDFRenderer {
      * @return
      */
 	public void processPage(int iPage) {
+		PageSerial pageSerial = PageSerial.createFromZeroBasedPage(iPage);
+		this.iPage = iPage;
 		try {
 			BufferedImage renderImage = super.renderImage(iPage);
 			currentPageParser.setRenderedImage(renderImage);
-			currentPageParser.setPageSerial(PageSerial.createFromZeroBasedPage(iPage));
+			currentPageParser.setPageSerial(pageSerial);
 		} catch (IOException e) {
 			throw new RuntimeException("fails to parse page", e);
 		}
 	}
 	
+    /**
+     * Returns the given page as an RGB image at 72 DPI
+     * @param pageIndex the zero-based index of the page to be converted.
+     * @return the rendered page image
+     * @throws IOException if the PDF cannot be read
+     */
+	/** meant to catch page index, but doesn't yet work ...*/
+	@Override
+    public BufferedImage renderImage(int pageIndex) throws IOException
+    {
+    	this.pageIndex = pageIndex;
+        return super.renderImage(pageIndex, 1);
+    }
+
 	public PageParser getPageParser() {
 		return currentPageParser;
 	}
@@ -87,7 +103,8 @@ public class DocumentParser extends PDFRenderer {
         svgPageBySerial = new HashMap<PageSerial, SVGG>();
         rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
         int numberOfPages = currentDoc.getNumberOfPages();
-		for (int iPage = 0; iPage < numberOfPages; iPage++) {
+        iPage = 0;
+        for (; iPage < numberOfPages; iPage++) {
 			PageSerial pageSerial = PageSerial.createFromZeroBasedPage(iPage);
         	if (processor.getOrCreatePageIncluder().pageIsIncluded(pageSerial)) {
 	        	System.out.print("["+pageSerial.getOneBasedPage()+"]");
@@ -151,6 +168,9 @@ public class DocumentParser extends PDFRenderer {
 	}
 
 	public Map<PageSerial, SVGG> getOrCreateSvgPageBySerial() {
+		if (svgPageBySerial == null) {
+			svgPageBySerial = new HashMap<PageSerial, SVGG>();
+		}
 		return svgPageBySerial;
 	}
 

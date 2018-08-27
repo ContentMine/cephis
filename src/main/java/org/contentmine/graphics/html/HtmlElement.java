@@ -407,31 +407,36 @@ public abstract class HtmlElement extends AbstractCMElement {
 		return htmlElement;
 	}
 	
-	public void setAttribute(String name, String value) {
+	public HtmlElement setAttribute(String name, String value) {
 		this.addAttribute(new Attribute(name, value));
+		return this;
 	}
 
-	public void setContent(String content) {
+	public HtmlElement setContent(String content) {
 		this.appendChild(content);
+		return this;
 	}
 	
 	public String getClassAttribute() {
 		return this.getAttributeValue(CLASS);
 	}
 
-	public void setClassAttribute(String value) {
+	public HtmlElement setClassAttribute(String value) {
 		this.setAttribute(CLASS, value);
+		return this;
 	}
 
-	public void setId(String value) {
+	public HtmlElement setId(String value) {
 		if (value == null) {
 			throw new RuntimeException("NULL id");
 		}
 		this.setAttribute(ID, value);
+		return this;
 	}
 
-	public void setName(String value) {
+	public HtmlElement setName(String value) {
 		this.setAttribute(NAME, value);
+		return this;
 	}
 
 	public void output(OutputStream os) throws IOException {
@@ -442,9 +447,10 @@ public abstract class HtmlElement extends AbstractCMElement {
 		XMLUtil.debug(this, msg);
 	}
 
-	public void setValue(String value) {
+	public HtmlElement setValue(String value) {
 		this.removeChildren();
 		this.appendChild(value);
+		return this;
 	}
 
 	public String getId() {
@@ -455,36 +461,42 @@ public abstract class HtmlElement extends AbstractCMElement {
 		return this.getAttributeValue(TITLE);
 	}
 
-	public void setUTF8Charset(String string) {
+	public HtmlElement setUTF8Charset(String string) {
 		this.addAttribute(new Attribute(CHARSET, UTF_8));
+		return this;
 	}
 
-	public void setCharset(String charset) {
+	public HtmlElement setCharset(String charset) {
 		this.addAttribute(new Attribute(CHARSET, charset));
+		return this;
 	}
 
-	public void setType(String type) {
+	public HtmlElement setType(String type) {
 		this.addAttribute(new Attribute(TYPE, type));
+		return this;
 	}
 
-	public void addJavascript(String content) {
+	public HtmlElement addJavascript(String content) {
 		HtmlScript script = new HtmlScript();
 		script.setCharset(UTF_8);
 		script.setType(TEXT_JAVASCRIPT);
 		script.appendChild(content); 
 		this.appendChild(script);
+		return this;
 	}
 
-	public void setTitle(String title) {
+	public HtmlElement setTitle(String title) {
 		this.addAttribute(new Attribute(TITLE, title));
+		return this;
 	}
 
 	/** the value should be constructed used StyleBundle
 	 * 
 	 * @param style
 	 */
-	public void setStyle(String style) {
+	public HtmlElement setStyle(String style) {
 		setAttributeOrRemoveIfNull(STYLE, style);
+		return this;
 	}
 
 	public boolean isBold() {

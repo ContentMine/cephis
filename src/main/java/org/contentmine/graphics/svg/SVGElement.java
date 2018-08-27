@@ -1659,7 +1659,7 @@ public class SVGElement extends GraphicsElement {
 		this.convertOldStyleToStyle();
 		Double value = StyleBundle.getFontSize(this);
 		if (value == null) {
-			LOG.warn("missing font-size: "+this.getStyle());
+			LOG.trace("missing font-size: "+this.getStyle());
 			String attVal = getAttributeFromStyle(StyleBundle.FONT_SIZE);
 			if (attVal == null) {
 				attVal = this.getAttributeValue(StyleBundle.FONT_SIZE);

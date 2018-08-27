@@ -51,8 +51,10 @@ public class HtmlScript  extends HtmlElement {
 		return this.getAttributeValue(SRC);
 	}
 	
-	public void setContent(String content) {
+	@Override
+	public HtmlElement setContent(String content) {
 		addSplitLines(content);
+		return this;
 	}
 
 	public void addSplitLines(String content) {
