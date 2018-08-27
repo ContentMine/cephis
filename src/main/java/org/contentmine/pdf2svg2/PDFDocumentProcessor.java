@@ -22,6 +22,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
 
@@ -113,10 +115,16 @@ public class PDFDocumentProcessor {
 	public void writeSVGPages(File parent) {
 		File svgDir = new File(parent, CTree.SVG + "/");
 		LOG.debug("writing to: "+svgDir);
-		for (Map.Entry<PageSerial, SVGG> entry : documentParser.getOrCreateSvgPageBySerial().entrySet()) {
-			PageSerial key = entry.getKey();
-			SVGSVG.wrapAndWriteAsSVG(entry.getValue(), new File(svgDir, 
-			CTree.FULLTEXT_PAGE+CTree.DOT+key.getZeroBasedSerialString()+CTree.DOT+CTree.SVG));
+		if (documentParser != null) {
+			Map<PageSerial, SVGG> svgPageBySerial = documentParser.getOrCreateSvgPageBySerial();
+			Set<Entry<PageSerial, SVGG>> entrySet = svgPageBySerial.entrySet();
+			if (entrySet != null) {
+				for (Map.Entry<PageSerial, SVGG> entry : entrySet) {
+					PageSerial key = entry.getKey();
+					SVGSVG.wrapAndWriteAsSVG(entry.getValue(), new File(svgDir, 
+					CTree.FULLTEXT_PAGE+CTree.DOT+key.getZeroBasedSerialString()+CTree.DOT+CTree.SVG));
+				}
+			}
 		}
 	}
 
@@ -142,13 +150,17 @@ public class PDFDocumentProcessor {
 	public void writeRawImages(File parent) throws IOException {
 		File imagesDir = new File(parent, CTree.IMAGES + "/");
 		imagesDir.mkdirs();
-		Map<PageSerial, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap();
-		for (PageSerial pageSerial : rawImageByPageSerial.keySet()) {
-			BufferedImage image = rawImageByPageSerial.get(pageSerial);
-			if (minImageBox == null || image.getHeight() >= minImageBox.getX() || image.getHeight() >= minImageBox.getY()) {
-				ImageIO.write(image, CTree.PNG, 
-					new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG));
+		if (documentParser != null) {
+			Map<PageSerial, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap();
+			for (PageSerial pageSerial : rawImageByPageSerial.keySet()) {
+				BufferedImage image = rawImageByPageSerial.get(pageSerial);
+				if (minImageBox == null || image.getHeight() >= minImageBox.getX() || image.getHeight() >= minImageBox.getY()) {
+					ImageIO.write(image, CTree.PNG, 
+						new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG));
+				}
 			}
+		} else {
+			LOG.error("Null document parser");
 		}
 	}
 	
