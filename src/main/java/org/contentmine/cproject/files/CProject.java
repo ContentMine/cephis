@@ -21,6 +21,7 @@ import org.contentmine.cproject.metadata.AbstractMetadata.Type;
 import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
+import org.contentmine.eucl.euclid.util.MultisetUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
@@ -339,7 +340,7 @@ public class CProject extends CContainer {
 
 	/**
 	 * 
-	 * @param glob (e.g. * * /word/ * * /result.xml) [spaces to escape comments so remove spaces a]
+	 * @param glob (e.g. ** /word/ ** /result.xml) [spaces to escape comments so remove spaces a]
 	 * @return
 	 */
 	public ProjectFilesTree extractProjectFilesTree(String glob) {
@@ -520,6 +521,13 @@ public class CProject extends CContainer {
 		return map;
 	}
 	
+	/** gets all files relating to a reserved name.
+	 * 
+	 * result is a multimap, The file list is map.values()
+	 * 
+	 * @param reservedName
+	 * @return
+	 */
 	public Multimap<CTree, File> extractCTreeFileMapContaining(String reservedName) {
 		CTreeList cTreeList = getOrCreateCTreeList();
 		Multimap<CTree, File> map = ArrayListMultimap.create();
@@ -585,6 +593,23 @@ public class CProject extends CContainer {
 			}
 		}
 		return cTreeList;
+	}
+
+	/** return cTrees with given names.
+	 * 
+	 * @param treeNames
+	 * @return
+	 */
+	public CTreeList getCTreeList(List<String> treeNames) {
+		Set<String> treeNameSet = new HashSet<String>(treeNames);
+		CTreeList cTreeList = this.getOrCreateCTreeList();
+		CTreeList cTreeListNew = new CTreeList();
+		for (CTree cTree : cTreeList) {
+			if (treeNameSet.contains(cTree.getName())) {
+				cTreeListNew.add(cTree);
+			}
+		}
+		return cTreeListNew;
 	}
 
 	public void normalizeDOIBasedDirectoryCTrees() {

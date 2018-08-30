@@ -560,4 +560,11 @@ may become unnecessary as getpapers and quickscrape are reconciled
 		Assert.assertEquals("out urls", 195, outUrls.size());
 	}
 	
+	@Test
+	public void testMakeProject() {
+	    String cmd = " --project foo --fileFilter '.*/(.*).pdf' --makeProject '(\1)/fulltext.pdf'";
+	    CProject cProject = new CProject();
+	    cProject.run(cmd);
+	}
+	
 }

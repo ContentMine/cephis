@@ -9,9 +9,13 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
+import org.contentmine.graphics.html.HtmlB;
 import org.contentmine.graphics.html.HtmlDiv;
+import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlHtml;
+import org.contentmine.graphics.html.HtmlI;
 import org.contentmine.graphics.html.HtmlImg;
+import org.contentmine.graphics.html.HtmlP;
 import org.contentmine.graphics.html.HtmlSpan;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGSVG;
@@ -159,6 +163,8 @@ public class SVGDocumentProcessor {
 		subDiv = new HtmlDiv();
 		subDiv.setClassAttribute(RUNNING);
 		pageDiv.appendChild(subDiv);
+		HtmlP para = new HtmlP();
+		currentDiv.appendChild(para);
 		for (SVGText text : textList) {
 			text.format(3);
 			if (addPageNumberToDiv(pageDiv, text) != null) continue;
@@ -167,7 +173,7 @@ public class SVGDocumentProcessor {
 			if (addSubDiv(currentDiv,  TABLE,    getHeading(text, 12.5, TABLE_REGEX))  != null) continue;
 			if (addSubDiv(pageDiv, SECTION,  getHeading(text, 16.5, SECTION_HEAD_LIST)) != null) continue;
 			if (addSubDiv(subDiv,  SUB_SECTION, getHeading(text, 12.5, MINOR_SECTIONS)) != null) continue;
-			currentDiv.appendChild(createSpan(text));
+			para.appendChild(createSpan(text));
 		}
 		return pageDiv;
 	}
@@ -212,7 +218,7 @@ public class SVGDocumentProcessor {
 			subDiv = new HtmlDiv();
 			subDiv.setClassAttribute(classAttribute).setTitle(heading.getText());
 			parentDiv.appendChild(subDiv);
-			HtmlSpan span = createSpan(heading);
+			HtmlElement span = createSpan(heading);
 			subDiv.appendChild(span);
 			currentDiv = subDiv;
 		}
@@ -239,7 +245,7 @@ public class SVGDocumentProcessor {
 
 	private HtmlSpan addImageNumberToDiv(HtmlDiv div, SVGText text) {
 		if (IMAGE.equals(text.getAttributeValue(CLASS))) {
-			HtmlSpan span = createSpan(text);
+			HtmlElement span = createSpan(text);
 			span.setStyle("font-size:10pt;");
 			span.setClassAttribute(IMAGE);
 			HtmlImg img = new HtmlImg();
@@ -249,7 +255,7 @@ public class SVGDocumentProcessor {
 			img.setSrc("../images/page."+pageSerialS+".png");
 			div.appendChild(img);
 			div.appendChild(span);
-			return span;
+			if (span instanceof HtmlSpan) return (HtmlSpan) span;
 		}
 		return null;
 	}
@@ -257,7 +263,9 @@ public class SVGDocumentProcessor {
 	private List<SVGText> ignoreLineNumbers(List<SVGText> textList) {
 		List<SVGText> newTextList = new ArrayList<SVGText>();
 		for (SVGText text : textList) {
-			if (text.getX() < 50 && text.getText().trim().length() < 4) {
+			if (text == null) {
+			} else if (text.getX() != null && text.getX() < 50 &&
+					text.getText() != null && text.getText().trim().length() < 4) {
 			} else {
 				newTextList.add(text);
 			}
@@ -294,12 +302,35 @@ public class SVGDocumentProcessor {
 	private HtmlSpan createSpan(SVGText text) {
 		HtmlSpan span = new HtmlSpan();
 		if (text != null) {
-			span.appendChild(text.getText());
+			String textS = text.getText();
 			StyleBundle bundle = text.getStyleBundle();
-			span.setStyle(bundle.getCSSStyle());
+			String cssStyle = bundle.getCSSStyle().toLowerCase();
+			boolean italic = cssStyle.contains("font-style:italic;");
+			boolean bold = cssStyle.contains("font-weight:bold;");
+			HtmlElement parent = span;
+			if (bold) {
+				HtmlB b = new HtmlB();
+				parent.appendChild(b);
+				parent = b;
+			}
+			if (italic) {
+				HtmlI i = new HtmlI();
+				parent.appendChild(i);
+				parent = i;
+			}
+			// maybe trailing space is problem?
+			textS = textS.trim();
+			parent.appendChild(textS);
+			span.setStyle(cssStyle);
 			span.addAttribute(new Attribute("x", ""+text.getX()));
 			span.addAttribute(new Attribute("y", ""+text.getY()));
 		}
 		return span;
+	}
+
+	private HtmlElement copyTo(HtmlElement span, HtmlElement newElement) {
+		newElement.copyAttributesFrom(span);
+		newElement.copyChildrenFrom(span);
+		return newElement;
 	}
 }

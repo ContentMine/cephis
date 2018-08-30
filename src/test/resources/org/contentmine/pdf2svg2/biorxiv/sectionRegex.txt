@@ -1,32 +1,31 @@
 Abstract 
-Introduction 
-Methods 
-MATERIALS AND METHODS
-Materials and methods
-Sampling
-Results and Discussion)
-RESULTS
-Discussion
-Additional information 
-Contributions 
-Competing financial interests 
-Corresponding authors 
-Supporting information 
+*Corresponding Author
+Abbreviations: 
 Acknowledgements 
+Additional information 
+Authors:
+Competing financial interests 
+Competing interests
 Conclusions
 Conflicts of interest
-Notes and references
-Funding
-Competing interests
+Contributions 
 Correspondence
+Corresponding authors 
+Discussion
+Funding
+Introduction 
+Key words:
+Materials and methods
+Methods 
+Notes and references
 References
-Authors: 
-*Corresponding Author
-KEY WORDS:
-ABBREVIATIONS: 
-ACKNOWLEDGMENTS
-FUNDING
-SUPPORTING INFORMATION 
+Results
+Results and Discussion
+Sampling
+Supporting information 
+
+
+Figure Legends
 
 Figure 1.
 Figure S1. Protocols for gRNA cloning in entry vectors.

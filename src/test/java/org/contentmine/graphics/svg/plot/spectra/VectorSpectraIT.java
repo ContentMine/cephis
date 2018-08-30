@@ -11,6 +11,8 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CProject;
+import org.contentmine.cproject.files.CTree;
+import org.contentmine.cproject.files.CTreeList;
 import org.contentmine.cproject.util.CMineTestFixtures;
 import org.contentmine.eucl.euclid.test.TestUtil;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
@@ -53,7 +55,6 @@ public class VectorSpectraIT {
 	}
 
 	@Test
-//	@Ignore
 	public void testPDF2SVG() throws Exception {
 		String fileroot = "rsc";
 		File sourceDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_DIR, fileroot);
@@ -123,6 +124,39 @@ public class VectorSpectraIT {
 			}
 		}
 	}
+
+	@Test
+	public void testPDF2SVG2HTML() throws Exception {
+		String fileroot = "rsc";
+		File sourceDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_DIR, fileroot);
+		File targetDir = new File(SVGHTMLFixtures.G_SPECTRA_PLOT_TARGET_DIR, fileroot);
+		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
+		CProject cProject = new CProject(targetDir);
+		String command = "--project " + targetDir + CProject.MAKE_PROJECT_PDF;
+		cProject.run(command);
+		String[] cTreeNames = {
+			"c8ob00931g1",
+//			"c8ob00998h1",
+//			"c8ob00847g1",
+		};
+		CTreeList cTreeList = cProject.getCTreeList(Arrays.asList(cTreeNames));
+		LOG.debug(targetDir);
+		CTree cTree = cTreeList.get(0);
+		Assert.assertTrue(cTree.getDirectory().exists());
+        File file = cTree.getExistingFulltextPDF();
+	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+	    documentProcessor.getOrCreatePageIncluder().addZeroNumberedIncludePages(45);
+	    documentProcessor.readAndProcess(file);
+	    documentProcessor.writeSVGPages(targetDir);
+    	documentProcessor.writeRawImages(targetDir);
+	}
+
+
+	@Test
+	public void testSuppdata10() {
+		
+	}
+	
 
 	// ========================================
 

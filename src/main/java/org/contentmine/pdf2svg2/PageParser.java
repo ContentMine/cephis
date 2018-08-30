@@ -150,7 +150,7 @@ public class PageParser extends PageDrawer    {
         		int rgb = color.toRGB();
         		String fill = "#"+Integer.toHexString(rgb);
         	} catch (Exception e) {
-        		LOG.warn("color bug "+e);
+        		LOG.trace("color bug "+e);
         	}
 //			LOG.trace("color++++++++++++ "+fill+"/lw "+getGraphicsState().getLineWidth());
         } else {
@@ -508,7 +508,6 @@ public class PageParser extends PageDrawer    {
 	 */
 	private void setFillAndStrokeFromGraphics2D(SVGText text) {
 		PDGraphicsState graphicsState = getGraphicsState();
-//		LOG.debug("G:L "+graphicsState.getLineWidth());
 		String fillColor = translatePDColorToRGBCSSString(graphicsState.getNonStrokingColor());
 		text.setFill(fillColor);
 		setStrokeIfFillIsNone(text, graphicsState, fillColor);
@@ -760,7 +759,7 @@ public class PageParser extends PageDrawer    {
 			rgb = getCSSColor(paint);
 		} else if (paintP instanceof AxialShadingPaint) {
 			AxialShadingPaint axp = (AxialShadingPaint) paintP;
-			LOG.debug(axp);
+			LOG.trace(axp);
 		}
 		return rgb;
 	}
@@ -785,7 +784,7 @@ public class PageParser extends PageDrawer    {
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (UnsupportedOperationException uoe) {
-				LOG.error("UNSUPPORTED OPERATION");
+				LOG.trace("UNSUPPORTED OPERATION");
 //				uoe.printStackTrace();
 			}
 		}
