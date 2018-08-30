@@ -3,6 +3,7 @@ package org.contentmine.cproject.files;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -627,6 +628,18 @@ project2
 		Assert.assertTrue("filename ", fulltextFiles.toString().contains("target/makeproj/10.1007_s00213-016-4477-5/fulltext.pdf"));
 	}
 	
+	@Test
+	public void testGetCTreesByNameList() {
+		File pdfDir = new File(CMineFixtures.TEST_FILES_DIR, "projects/project2");
+		if (!TestUtil.checkForeignDirExists(pdfDir)) return;
+		CProject cProject = new CProject(pdfDir);
+		List<String> treeNames = Arrays.asList(new String[]{"PMC4417228", "foobar", "PMC4521097"});
+		CTreeList cTreeList = cProject.getCTreeList(treeNames);
+		Assert.assertEquals(2,  cTreeList.size());
+		Assert.assertTrue(cTreeList.containsName("PMC4417228"));
+		Assert.assertTrue(cTreeList.containsName("PMC4521097"));
+	}
+
 
 	//==================================
 	

@@ -140,6 +140,10 @@ public class SVGHTMLFixtures {
 	public static final File BIORXIV_DIR = new File(PDF2SVG2_DIR, BIORXIV);
 	public static final File BIORXIV_TARGET_DIR = new File(TARGET_PDF2SVG2_DIR, BIORXIV);
 
+	public static final String RSC = "rsc";
+	public static final File RSC_DIR = new File(PDF2SVG2_DIR, RSC);
+	public static final File RSC_TARGET_DIR = new File(TARGET_PDF2SVG2_DIR, RSC);
+
 	public static final File SVG_IMAGES_DIR = new File(GR_SVG_DIR, "svgimages");
 	
 	public final static String IMAGE_SVG = ""
