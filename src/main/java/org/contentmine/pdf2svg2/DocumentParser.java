@@ -41,7 +41,18 @@ public class DocumentParser extends PDFRenderer {
 	DocumentParser(PDDocument document) {
         super(document);
         LOG.trace("created parserRenderer");
+        clean();
     }
+	
+	public void clean() {
+		currentPageParser = null;
+		currentSVGG = null;
+		svgPageBySerial = null;
+		rawImageBySerial = null;
+		renderedImageBySerial = null;
+		pageIndex = -1;
+		iPage = -1;
+	}
 
 	/** create pageParser, actually a subclassed PageDrawer.
 	 * think of PageDrawer as a parser that routes graphics ot SVG and creation
@@ -65,11 +76,13 @@ public class DocumentParser extends PDFRenderer {
 		PageSerial pageSerial = PageSerial.createFromZeroBasedPage(iPage);
 		this.iPage = iPage;
 		try {
-			BufferedImage renderImage = super.renderImage(iPage);
+			BufferedImage renderImage = super.renderImage(this.iPage);
 			currentPageParser.setRenderedImage(renderImage);
 			currentPageParser.setPageSerial(pageSerial);
 		} catch (IOException e) {
 			throw new RuntimeException("fails to parse page", e);
+		} catch (IndexOutOfBoundsException ioobe) {
+			LOG.error("BUG! "+ioobe);
 		}
 	}
 	

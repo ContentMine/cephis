@@ -65,13 +65,25 @@ public class PDFDocumentProcessor {
 	}
 	
 	private void init() {
+		clean();
 	}
 	
 
+	void clean() {
+		pageParser = null;
+		currentDoc = null;
+		documentParser = null;
+		currentFile = null;
+		minImageBox = null;
+		pageIncluder = null;
+	}
+
 	public PDFDocumentProcessor readAndProcess(File file) throws IOException {
 		if (file != null && file.exists() && !file.isDirectory()) {
+			clean();
 			readDocument(file);
 			getOrCreateDocumentParser();
+			documentParser.clean();
 	        documentParser.parseDocument(this, currentDoc);
 		}
         return this;

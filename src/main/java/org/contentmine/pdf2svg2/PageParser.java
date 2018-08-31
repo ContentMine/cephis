@@ -434,9 +434,10 @@ public class PageParser extends PageDrawer    {
 
 	private void checkNotNullAndAdd(SVGPathPrimitive p) {
 		if (currentPathPrimitiveList == null) {
-    		throw new RuntimeException("cannot close path on non-existent primitiveList");
+    		LOG.warn("cannot close path on non-existent primitiveList");
+    	} else {
+    		currentPathPrimitiveList.add(p);
     	}
-    	currentPathPrimitiveList.add(p);
 	}
 
     @Override
