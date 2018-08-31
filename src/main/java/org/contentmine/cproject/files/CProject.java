@@ -2,15 +2,22 @@ package org.contentmine.cproject.files;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+//import org.apache.http.HttpException;
+//import org.apache.http.HttpStatus;
+//import org.apache.http.client.HttpClient;
+//import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.CProjectArgProcessor;
@@ -21,12 +28,14 @@ import org.contentmine.cproject.metadata.AbstractMetadata.Type;
 import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
-import org.contentmine.eucl.euclid.util.MultisetUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.svg.cache.CorpusCache;
 import org.contentmine.graphics.svg.cache.DocumentCache;
+import org.contentmine.pdf2svg2.PDFDocumentProcessor;
+import org.contentmine.svg2xml.pdf.SVGDocumentProcessor;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;
@@ -63,6 +72,11 @@ public class CProject extends CContainer {
 	public static final String WORD_FREQUENCIES_SNIPPETS_XML = "word.frequencies.snippets.xml";
 	
 	public static final String DATA_TABLES_HTML = "dataTables.html";
+	// will relocate later
+	private static final String SUPPNAME = "suppname";
+	private static final String C_TREE = "cTree";
+	public static final String HTTP_ACS_SUPPDATA = 
+			"https?://pubs\\.acs\\.org/doi/suppl/10\\.1021/(?<"+C_TREE+">.*)/suppl_file/(?<"+SUPPNAME+">.*)\\.pdf";
 
 	protected static final String[] ALLOWED_METADATA_NAMES = new String[] {
 			// these are messy, 
@@ -909,6 +923,127 @@ public class CProject extends CContainer {
 
 	public void setCorpusCache(CorpusCache corpusCache) {
 		this.corpusCache = corpusCache;
+	}
+
+	/** creates SVG and extracts Images from PDF in CTrees.
+	 * 
+	 */
+	public void convertPDFOutputSVGFilesImageFiles() {
+		CTreeList cTreeList = getOrCreateCTreeList();
+	    File directory = getDirectory();
+	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+		documentProcessor.setMinimumImageBox(100, 100);
+		for (CTree cTree : cTreeList) {
+		    try {
+			    documentProcessor.readAndProcess(cTree.getExistingFulltextPDF());
+				File outputDir = new File(directory, cTree.getName());
+				documentProcessor.writeSVGPages(outputDir);
+		    	documentProcessor.writeRawImages(outputDir);
+		    } catch (IOException ioe) {
+		    	LOG.error("cannot read/process: " + cTree + "; "+ioe);
+		    }
+		}
+	}
+
+	/** converts SVG from PDF files to HTML.
+	 */
+	public void convertPDFSVGandWriteHtml() {
+		CTreeList cTreeList = getOrCreateCTreeList();
+		File targetDir = getDirectory();
+		for (CTree cTree : cTreeList) {
+			List<File> svgFiles = cTree.getExistingSVGFileList();
+			SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
+			svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
+			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
+			File htmlFile = new File(new File(targetDir, cTree.getName()), CTree.SCHOLARLY_HTML);
+			try {
+				XMLUtil.debug(html, htmlFile, 1);
+			} catch (IOException e) {
+				LOG.error("Cannot write html: " + htmlFile);
+			}
+		}
+	}
+
+	/** extracts project from URLs.*/
+	public static CProject makeProjectFromURLs(File projectDir, List<String> urlSList, String httpPattern) {
+		Pattern pattern = Pattern.compile(httpPattern);
+		CProject cProject = null;
+		if (urlSList != null) {
+			if (!projectDir.exists()) projectDir.mkdirs();
+			cProject = new CProject(projectDir);
+			for (String urlS : urlSList) {
+				Matcher matcher = pattern.matcher(urlS);
+				String cTreeName =  null;
+				String suppdata = null;
+				if (matcher.matches()) {
+					cTreeName = matcher.group(C_TREE);
+					suppdata = matcher.group(SUPPNAME);
+					CTree cTree = cProject.getExistingCTreeOrCreateNew(cTreeName);
+					if (cTree != null) {
+						readURL(urlS, cTree);  
+					}
+				} else {
+					LOG.error("Fails match: "+urlS+"\n"+pattern);
+				}
+			}
+		}
+		return cProject;
+	}
+
+	private static void readURL(String urlS, CTree cTree) /*throws MalformedURLException */{
+		
+		/**
+		File pdfFile = new File(cTree.getDirectory(), CTree.FULLTEXT_PDF);
+		URL url = new URL(urlS);
+		// Create an instance of HttpClient.
+		HttpClient client = new HttpClient();
+
+		// Create a method instance.
+		GetMethod method = new GetMethod(url);
+		
+		// Provide custom retry handler is necessary
+		method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, 
+				new DefaultHttpMethodRetryHandler(3, false));
+
+		try {
+		  // Execute the method.
+		  int statusCode = client.executeMethod(method);
+
+		  if (statusCode != HttpStatus.SC_OK) {
+		    System.err.println("Method failed: " + method.getStatusLine());
+		  }
+
+		  // Read the response body.
+		  byte[] responseBody = method.getResponseBody();
+
+		  // Deal with the response.
+		  // Use caution: ensure correct character encoding and is not binary data
+		  System.out.println(new String(responseBody));
+
+		} catch (HttpException e) {
+		  System.err.println("Fatal protocol violation: " + e.getMessage());
+		  e.printStackTrace();
+		} catch (IOException e) {
+		  System.err.println("Fatal transport error: " + e.getMessage());
+		  e.printStackTrace();
+		} finally {
+		  // Release the connection.
+		  method.releaseConnection();
+		}
+		*/
+	}
+
+	public CTree getExistingCTreeOrCreateNew(String cTreeName) {
+		CTree cTree = getCTreeByName(cTreeName);
+		if (cTree == null) {
+			File cTreeFile = new File(directory, cTreeName);
+			cTree = new CTree(cTreeFile);
+			this.add(cTree);
+			if (!cTreeFile.exists()) {
+				cTreeFile.mkdirs();
+			}
+		}
+		return cTree;
 	}
 
 }

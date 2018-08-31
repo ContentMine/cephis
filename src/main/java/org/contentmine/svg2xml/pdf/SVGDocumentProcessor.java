@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.graphics.html.HtmlB;
 import org.contentmine.graphics.html.HtmlDiv;
@@ -34,6 +35,7 @@ import nu.xom.Attribute;
  *
  */
 public class SVGDocumentProcessor {
+	private static final String RELATIVE_IMAGES_DIR = "./images";
 	private static final Logger LOG = Logger.getLogger(SVGDocumentProcessor.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -233,7 +235,7 @@ public class SVGDocumentProcessor {
 			try {
 				number = Integer.parseInt(textS);
 				if (number > 0 && text.getY() > 730) {
-					div.setTitle("page "+number);
+					div.setTitle(PAGE + number);
 					LOG.trace("number "+number);
 				}
 			} catch (Exception e) {
@@ -252,7 +254,9 @@ public class SVGDocumentProcessor {
 			String textS = text.getText();
 			// image.10.1[...]
 			String pageSerialS = textS.substring("image.".length(), textS.indexOf("["));
-			img.setSrc("../images/page."+pageSerialS+".png");
+			img.setSrc(RELATIVE_IMAGES_DIR + "/" + PAGE + CTree.DOT + pageSerialS + CTree.DOT + CTree.PNG);
+			img.addAttribute(new Attribute("width", "50%"));
+//			img.addAttribute(new Attribute("height", "50%"));
 			div.appendChild(img);
 			div.appendChild(span);
 			if (span instanceof HtmlSpan) return (HtmlSpan) span;
