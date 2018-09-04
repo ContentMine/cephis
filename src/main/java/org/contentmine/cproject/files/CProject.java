@@ -2,8 +2,6 @@ package org.contentmine.cproject.files;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -130,6 +128,7 @@ public class CProject extends CContainer {
 
 	private CProjectIO projectIO;
 	private CorpusCache corpusCache;
+	private CTreeList includeCTreeList;
 	
 	public static void main(String[] args) {
 		CProject cProject = new CProject();
@@ -614,7 +613,7 @@ public class CProject extends CContainer {
 	 * @param treeNames
 	 * @return
 	 */
-	public CTreeList getCTreeList(List<String> treeNames) {
+	public CTreeList createCTreeList(List<String> treeNames) {
 		Set<String> treeNameSet = new HashSet<String>(treeNames);
 		CTreeList cTreeList = this.getOrCreateCTreeList();
 		CTreeList cTreeListNew = new CTreeList();
@@ -929,20 +928,44 @@ public class CProject extends CContainer {
 	 * 
 	 */
 	public void convertPDFOutputSVGFilesImageFiles() {
-		CTreeList cTreeList = getOrCreateCTreeList();
+		CTreeList cTreeList = getIncludeCTreeList();
+		cTreeList = cTreeList != null ? cTreeList : getOrCreateCTreeList();
 	    File directory = getDirectory();
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 		documentProcessor.setMinimumImageBox(100, 100);
 		for (CTree cTree : cTreeList) {
+			File outputDir = new File(directory, cTree.getName());
+			boolean make = false;
+			if (make && skipExistingDir(outputDir)) {
+				LOG.debug("Skipping existing CTree: "+cTree);
+				continue;
+			}
 		    try {
 			    documentProcessor.readAndProcess(cTree.getExistingFulltextPDF());
-				File outputDir = new File(directory, cTree.getName());
 				documentProcessor.writeSVGPages(outputDir);
 		    	documentProcessor.writeRawImages(outputDir);
 		    } catch (IOException ioe) {
 		    	LOG.error("cannot read/process: " + cTree + "; "+ioe);
 		    }
 		}
+	}
+
+	/** get files soecifically included */
+	private CTreeList getIncludeCTreeList() {
+		return includeCTreeList;
+	}
+
+	/** simple "make" - to be enhanced later 
+	 * 
+	 * @param outputDir
+	 * @return
+	 */
+	private boolean skipExistingDir(File outputDir) {
+		boolean skip = false;
+		if (outputDir.exists()) {
+			skip = true;
+		}
+		return skip;
 	}
 
 	/** converts SVG from PDF files to HTML.
@@ -964,7 +987,8 @@ public class CProject extends CContainer {
 		}
 	}
 
-	/** extracts project from URLs.*/
+	/** extracts project from URLs.
+	 * */
 	public static CProject makeProjectFromURLs(File projectDir, List<String> urlSList, String httpPattern) {
 		Pattern pattern = Pattern.compile(httpPattern);
 		CProject cProject = null;
@@ -1044,6 +1068,14 @@ public class CProject extends CContainer {
 			}
 		}
 		return cTree;
+	}
+
+	public void makeProject() {
+		this.run("--project "+this.getDirectory()+" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf");
+	}
+
+	public void setIncludeTreeList(List<String> treeNames) {
+		includeCTreeList = this.createCTreeList(treeNames);
 	}
 
 }

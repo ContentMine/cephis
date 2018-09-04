@@ -183,7 +183,7 @@ public class SVGDocumentProcessor {
 	private SVGText getHeading(SVGText text, double textSize, String[] leadingStrings) {
 		Double x = text.getX();
 		String textS = text.getText();
-		if (x < leftMarginX) {
+		if (x != null && x < leftMarginX) {
 			Double fontSize = text.getFontSize();
 			if (fontSize > textSize || 
 					FontWeight.BOLD.toString().toLowerCase().equals(text.getFontWeight().toLowerCase())) {
@@ -203,12 +203,14 @@ public class SVGDocumentProcessor {
 
 	private SVGText getHeading(SVGText text, double textSize, Pattern pattern) {
 		Double x = text.getX();
-		String textS = text.getText();
-		Matcher matcher = pattern.matcher(textS);
-		if (x < leftMarginX) {
-			if (matcher.matches()) {
-				LOG.trace("TABFIG: "+textS);
-				return text;
+		if (x != null) {
+			String textS = text.getText();
+			Matcher matcher = pattern.matcher(textS);
+			if (x < leftMarginX) {
+				if (matcher.matches()) {
+					LOG.trace("TABFIG: "+textS);
+					return text;
+				}
 			}
 		}
 		return null;

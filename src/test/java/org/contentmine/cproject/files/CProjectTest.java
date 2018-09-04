@@ -634,7 +634,7 @@ project2
 		if (!TestUtil.checkForeignDirExists(pdfDir)) return;
 		CProject cProject = new CProject(pdfDir);
 		List<String> treeNames = Arrays.asList(new String[]{"PMC4417228", "foobar", "PMC4521097"});
-		CTreeList cTreeList = cProject.getCTreeList(treeNames);
+		CTreeList cTreeList = cProject.createCTreeList(treeNames);
 		Assert.assertEquals(2,  cTreeList.size());
 		Assert.assertTrue(cTreeList.containsName("PMC4417228"));
 		Assert.assertTrue(cTreeList.containsName("PMC4521097"));

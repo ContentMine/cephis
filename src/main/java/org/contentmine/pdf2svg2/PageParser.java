@@ -73,6 +73,7 @@ import nu.xom.Attribute;
  * @author pm286
  */
 public class PageParser extends PageDrawer    {
+	private static final String ILLEGAL_CHAR = "?";
 	private static final Logger LOG = Logger.getLogger(PageParser.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -201,13 +202,18 @@ public class PageParser extends PageDrawer    {
     	}
     	if (unicode == null) {
     		LOG.error("Null unicode");
-    		unicode = "?";
+    		unicode = ILLEGAL_CHAR;
     	}
     	if (unicode.length() > 1) {
     		LOG.warn("Unicode length > 1: "+unicode);
     	}
     	
-    	currentSVGText.appendText(unicode);
+    	try {
+    		currentSVGText.appendText(unicode);
+    	} catch (Exception e) {
+    		LOG.error("Cannot add character: "+e);
+    		currentSVGText.appendText(ILLEGAL_CHAR);
+    	}
     	currentSVGText.appendX(x);
     	currentSVGText.setY(y);
     	if (newText) {
@@ -534,7 +540,9 @@ public class PageParser extends PageDrawer    {
 	}
 
 	private String removeArbitraryPrefix(String fontName) {
-		fontName = fontName.replace("^[A-Z]*\\+", "");
+		if (fontName != null) {
+			fontName = fontName.replace("^[A-Z]*\\+", "");
+		}
 		return fontName;
 	}
 

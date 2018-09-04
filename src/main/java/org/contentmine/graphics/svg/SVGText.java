@@ -1483,8 +1483,12 @@ public class SVGText extends SVGElement {
 		if (i >= 0 && i < textS.length()) {
 			setText(textS.substring(0, i)+textS.substring(i+1));
 			RealArray xArray = getXArray();
-			xArray.deleteElement(i);
-			this.setX(xArray);
+			try {
+				xArray.deleteElement(i);
+				this.setX(xArray);
+			} catch (ArrayIndexOutOfBoundsException aioobe) {
+				LOG.error("BUG in SVGText delete");
+			}
 		}
 	}
 
