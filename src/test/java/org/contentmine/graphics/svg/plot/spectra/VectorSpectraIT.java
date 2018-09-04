@@ -139,7 +139,7 @@ public class VectorSpectraIT {
 //			"c8ob00998h1",
 //			"c8ob00847g1",
 		};
-		CTreeList cTreeList = cProject.getCTreeList(Arrays.asList(cTreeNames));
+		CTreeList cTreeList = cProject.createCTreeList(Arrays.asList(cTreeNames));
 		LOG.debug(targetDir);
 		CTree cTree = cTreeList.get(0);
 		Assert.assertTrue(cTree.getDirectory().exists());
