@@ -42,6 +42,7 @@ import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Util;
+import org.contentmine.graphics.svg.GraphicsElement;
 import org.contentmine.graphics.svg.GraphicsElement.FontStyle;
 import org.contentmine.graphics.svg.GraphicsElement.FontWeight;
 import org.contentmine.graphics.svg.SVGClipPath;
@@ -146,7 +147,7 @@ public class PageParser extends PageDrawer    {
     	
     	super.getPaint(color);
         // if this is the non-stroking color
-        if (getGraphicsState().getNonStrokingColor() == color) {
+        if (getGraphicsState().getNonStrokingColor().equals(color)) {
         	try {
         		int rgb = color.toRGB();
         		String fill = "#"+Integer.toHexString(rgb);
@@ -182,12 +183,13 @@ public class PageParser extends PageDrawer    {
     	Angle rotAngle = textParameters.getAngle();
     	Double x = Util.format((double) textRenderingMatrix.getTranslateX(), nPlaces);
     	Double y = createY(Util.format((double) textRenderingMatrix.getTranslateY(), nPlaces));
-    	/** do not use this at this stage
+    	// this is necessary for documents without explicit spaces.
+    	// if occasionally gives problems when there is a leading space (I think)
     	addSpaceIfSpaceLargerThanRatio(x, y);
-    	 */
     	currentXY = new Real2(x, y);
-    	currentDisplacement = new Real2(
-    			displacementxy.getX() * scales.getX(), displacementxy.getY() * scales.getY()).format(nPlaces);
+    	float xDisplacement = displacementxy.getX();
+		currentDisplacement = new Real2(
+    			xDisplacement * scales.getX(), displacementxy.getY() * scales.getY()).format(nPlaces);
     	boolean newText = true;
     	if (currentSVGText == null || currentTextParameters == null) {
     		createAndAddEmptyCurrentSVGText();
@@ -255,7 +257,7 @@ public class PageParser extends PageDrawer    {
     	}
 	}
 
-	/** dangerous - do not use here */
+	/** use when PDF has no explicit spaces. Messy */
 	private void addSpaceIfSpaceLargerThanRatio(Double x, Double y) {
 		Double deltaX = (currentX == null || x == null) ? null : Util.format(x - currentX, 2);
     	Double spaceOffsetRatio = (deltaX == null || currentDisplacement == null) ? null : deltaX / currentDisplacement.getX();
@@ -350,16 +352,21 @@ public class PageParser extends PageDrawer    {
 
 	/**
      * Filled path bounding boxes.
+     * getting the fill color is still a problem
      */
     @Override
     public void fillPath(int windingRule) throws IOException {
 //    	System.out.println(" PATH ");
+    	
     	super.fillPath(windingRule);
     	GeneralPath generalPath = getLinePath();
 		currentSvgPath = new SVGPath(generalPath);
 		addCurrentPathAttributes(currentSvgPath);
+		// no justification for this - we need to sort of fill color
+		currentSvgPath.setFill(GraphicsElement.NONE);
 
 		svgg.appendChild(currentSvgPath);
+		
     	
         // draw path (note that getLinePath() is now reset)
         super.fillPath(windingRule);
@@ -454,6 +461,9 @@ public class PageParser extends PageDrawer    {
     	}  else {
     		currentSvgPath = new SVGPath(currentPathPrimitiveList);
     		addCurrentPathAttributes(currentSvgPath);
+    		// fixes bug - probably shouldn't fill at all
+    		currentSvgPath.setFill(GraphicsElement.NONE);
+    		
 //    		getGraphicsState().getLineDashPattern()
 //    		if (graphicsState.getDashPattern() != null) {
 //    			setDashArray(currentSvgPath);
