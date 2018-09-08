@@ -934,7 +934,9 @@ public class CProject extends CContainer {
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 		documentProcessor.setMinimumImageBox(100, 100);
 		for (CTree cTree : cTreeList) {
-			File outputDir = new File(directory, cTree.getName());
+			String name = cTree.getName();
+	        System.out.println("cTree: "+name);
+			File outputDir = new File(directory, name);
 			boolean make = false;
 			if (make && skipExistingDir(outputDir)) {
 				LOG.debug("Skipping existing CTree: "+cTree);
@@ -950,7 +952,7 @@ public class CProject extends CContainer {
 		}
 	}
 
-	/** get files soecifically included */
+	/** get files specifically included */
 	private CTreeList getIncludeCTreeList() {
 		return includeCTreeList;
 	}
@@ -1070,12 +1072,57 @@ public class CProject extends CContainer {
 		return cTree;
 	}
 
-	public void makeProject() {
-		this.run("--project "+this.getDirectory()+" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf");
+	/** turns foo.suffix into foo/fulltext.suffix */	
+	public void makeProject(String suffix) {
+		List<File> files = saveRaw(suffix);
+		if (files.size() > 0) {
+			this.run("--project "+this.getDirectory()+" --makeProject (\\1)/fulltext."+suffix + " --fileFilter .*/(.*)\\." + suffix);
+		}
+		return;
+	}
+
+	private List<File> saveRaw(String suffix) {
+		File rawDir = new File(this.directory, suffix);
+		CMineGlobber globber = new CMineGlobber().setLocation(this.directory).setRegex(".*\\." + suffix);
+		List<File> files = globber.listFiles();
+		files = removeFulltext(suffix, files);
+		if (files.size() > 0) {
+			if (!rawDir.exists()) {
+				LOG.debug("Made dir for copies: "+rawDir);
+				rawDir.mkdirs();
+			}
+			for (File file : files) {
+				File movedFile = new File(rawDir, file.getName());
+				if (!movedFile.exists()) {
+					try {
+						FileUtils.moveFile(file, movedFile);
+					} catch (IOException e) {
+						LOG.debug("failed to save file: " + file + ", " + e);
+					}
+				}
+			}
+		}
+		return files;
+	}
+
+	private List<File> removeFulltext(String suffix, List<File> files) {
+		List<File> newFiles = new ArrayList<File>();
+		for (File file : files) {
+			if (!file.toString().endsWith(CTree.FULLTEXT+CTree.DOT+suffix)) {
+				newFiles.add(file);
+			}
+		}
+		files = newFiles;
+		return files;
 	}
 
 	public void setIncludeTreeList(List<String> treeNames) {
 		includeCTreeList = this.createCTreeList(treeNames);
+		return;
+	}
+
+	public void setCTreelist(CTreeList cTreeList) {
+		this.cTreeList = cTreeList;
 	}
 
 }

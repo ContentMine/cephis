@@ -385,7 +385,6 @@ public class DefaultArgProcessor {
 
 	public void parseMakeProject(ArgumentOption option, ArgIterator argIterator) {
 		String defalt = option.getDefaultString();
-//		LOG.debug("defalt: "+defalt);
 		outputFileRegex = argIterator.getString(option);
 	}
 
@@ -559,7 +558,7 @@ public class DefaultArgProcessor {
 		if (inputDirName == null) {
 			LOG.error("dependencyGraph requires --inputDir");
 		} else {
-			LOG.debug("dependemcies in: "+inputDirName);
+			LOG.debug("dependencies in: "+inputDirName);
 			LOG.error("NYI");
 		}
 	}
@@ -1445,7 +1444,7 @@ public class DefaultArgProcessor {
 		// captures the capture group numbers!
 		Pattern bracketedCaptureGroupNumberPattern = Pattern.compile("\\(\\\\\\d+\\)"); 
 		List<File> files = new RegexPathFilter(inputFileFilterPattern).listNonDirectoriesRecursively(directory);
-		LOG.debug("files "+directory+" && "+files);
+//		LOG.debug("files "+directory+"; "+files);
 		for (File file : files) {
 			String inputPath;
 			try {
@@ -1468,7 +1467,7 @@ public class DefaultArgProcessor {
 					throw new RuntimeException("cannot moveFile "+file, e);
 				}
 			} else {
-				LOG.debug("skipped: "+file);
+//				LOG.debug("skipped: "+file);
 			}
 		}
 	}

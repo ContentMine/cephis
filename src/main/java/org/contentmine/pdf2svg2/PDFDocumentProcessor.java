@@ -126,7 +126,7 @@ public class PDFDocumentProcessor {
 
 	public void writeSVGPages(File parent) {
 		File svgDir = new File(parent, CTree.SVG + "/");
-		LOG.debug("writing to: "+svgDir);
+		System.out.println("\nwriting to: "+svgDir);
 		if (documentParser != null) {
 			Map<PageSerial, SVGG> svgPageBySerial = documentParser.getOrCreateSvgPageBySerial();
 			Set<Entry<PageSerial, SVGG>> entrySet = svgPageBySerial.entrySet();
@@ -150,11 +150,14 @@ public class PDFDocumentProcessor {
 		List<BufferedImage> imageList = documentParser.getOrCreateRenderedImageList();
 		File pageDir = new File(parent, CTree.PAGES + "/");
 		pageDir.mkdirs();
-		for (int i = 0; i < imageList.size(); i++) {
+		int imageCount = imageList.size();
+		for (int i = 0; i < imageCount; i++) {
 			BufferedImage im = imageList.get(i);
 			if (im != null) {
-				ImageIO.write(im, CTree.PNG, new File(pageDir, 
-						CTree.createNumberedFullTextPageBasename(i)+CTree.DOT+CTree.PNG));
+				if (isLargerThanImageBox(im)) {
+					ImageIO.write(im, CTree.PNG, new File(pageDir, 
+							CTree.createNumberedFullTextPageBasename(i)+CTree.DOT+CTree.PNG));
+				}
 			}
 		}
 	}
@@ -166,7 +169,7 @@ public class PDFDocumentProcessor {
 			Map<PageSerial, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap();
 			for (PageSerial pageSerial : rawImageByPageSerial.keySet()) {
 				BufferedImage image = rawImageByPageSerial.get(pageSerial);
-				if (minImageBox == null || image.getHeight() >= minImageBox.getX() || image.getHeight() >= minImageBox.getY()) {
+				if (isLargerThanImageBox(image)) {
 					ImageIO.write(image, CTree.PNG, 
 						new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG));
 				}
@@ -174,6 +177,10 @@ public class PDFDocumentProcessor {
 		} else {
 			LOG.error("Null document parser");
 		}
+	}
+
+	private boolean isLargerThanImageBox(BufferedImage image) {
+		return minImageBox == null || image.getHeight() >= minImageBox.getX() || image.getHeight() >= minImageBox.getY();
 	}
 	
 	/** this runs a test for sanity checking

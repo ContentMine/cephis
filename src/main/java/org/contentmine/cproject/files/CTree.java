@@ -832,7 +832,6 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		List<File> files = new ArrayList<File>();
 		if (svgDir != null) {
 			List<File> svgFiles0 = Arrays.asList(svgDir.listFiles());
-//			LOG.debug("Svg list "+svgFiles0.size());
 			CMineGlobber globber = new CMineGlobber().setRegex(".*/" + CTree.FULLTEXT_PAGE + "\\.?" + "\\d+.svg").setLocation(svgDir);
 			files = globber.listFiles();
 		}
