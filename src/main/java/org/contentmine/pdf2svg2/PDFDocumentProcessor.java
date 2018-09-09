@@ -31,6 +31,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.contentstream.PDFGraphicsStreamEngine;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.graphics.svg.SVGG;
@@ -48,7 +49,7 @@ import org.contentmine.graphics.svg.SVGSVG;
  */
 public class PDFDocumentProcessor {
 	private static final String PAGES = "pages";
-	private static final Logger LOG = Logger.getLogger(PDFDocumentProcessor.class);
+	public static final Logger LOG = Logger.getLogger(PDFDocumentProcessor.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
@@ -81,12 +82,18 @@ public class PDFDocumentProcessor {
 	public PDFDocumentProcessor readAndProcess(File file) throws IOException {
 		if (file != null && file.exists() && !file.isDirectory()) {
 			clean();
-			readDocument(file);
-			getOrCreateDocumentParser();
-			documentParser.clean();
-	        documentParser.parseDocument(this, currentDoc);
+			PDDocument doc = readDocument(file);
+			readAndProcess(doc);
 		}
         return this;
+	}
+
+	public void readAndProcess(PDDocument doc) throws IOException {
+		currentDoc = doc;
+		getOrCreateDocumentParser();
+		documentParser = new DocumentParser(currentDoc);
+		documentParser.clean();
+		documentParser.parseDocument(this, currentDoc);
 	}
 
 	private DocumentParser getOrCreateDocumentParser() {

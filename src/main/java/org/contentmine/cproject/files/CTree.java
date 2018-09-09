@@ -17,6 +17,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.args.log.AbstractLogElement;
 import org.contentmine.cproject.args.log.CMineLog;
@@ -27,6 +28,7 @@ import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.cproject.util.XMLUtils;
 import org.contentmine.eucl.euclid.Int2Range;
+import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
@@ -34,9 +36,9 @@ import org.contentmine.graphics.html.HtmlFactory;
 import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.layout.SuperPixelArrayManager;
 import org.contentmine.graphics.svg.SVGElement;
-import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.cache.DocumentCache;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
+import org.contentmine.pdf2svg2.PageIncluder;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -400,10 +402,15 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private boolean writeXHtml = true;
 	private SuperPixelArrayManager spaManager;
 	private DocumentCache documentCache;
+	private int deltaPages;
 
 	public CTree() {
 		super();
-		
+		init();
+	}
+	
+	protected void init() {
+		deltaPages = 200;
 	}
 	
 	/** creates CTree object but does not alter filestore.
@@ -411,6 +418,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	 * @param directory
 	 */
 	public CTree(File directory) {
+		this();
 		this.directory = directory;
 	}
 
@@ -1652,6 +1660,45 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public List<File> getExistingSortedSVGFileList() {
 		return  CMFileUtil.sortUniqueFilesByEmbeddedIntegers(this.getExistingSVGFileList());
+	}
+
+	public void processPDFTree() {
+		int start = 0;
+		File existingFulltextPDF = getExistingFulltextPDF();
+		if (existingFulltextPDF == null) {
+			LOG.debug("null PDF for: "+this.getName());
+			return;
+		}
+		PDDocument document = null;
+		try {
+			document = PDDocument.load(existingFulltextPDF);
+		} catch (Exception e) {
+			throw new RuntimeException("Cannot load PDF "+existingFulltextPDF, e);
+		}
+		int pageCount = document.getNumberOfPages();
+		while (start < pageCount) {
+			LOG.debug("**************** processing " + start + "***************");
+		    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+		    try {
+		    	PageIncluder pageIncluder = documentProcessor.getOrCreatePageIncluder();
+				pageIncluder.addZeroNumberedIncludePages(new IntRange(start, start + deltaPages));
+				LOG.debug("pages "+pageIncluder.toString());
+		    	documentProcessor.readAndProcess(document);
+		    	documentProcessor.writeSVGPages(directory);
+		    	documentProcessor.writeRawImages(directory);
+		    } catch (IOException ioe) {
+		    	LOG.error("cannot read/process: " + this + "; "+ioe);
+		    }
+		    start += deltaPages;
+		}
+	}
+
+	public int getDeltaPages() {
+		return deltaPages;
+	}
+
+	public void setDeltaPages(int deltaPages) {
+		this.deltaPages = deltaPages;
 	}
 
 }

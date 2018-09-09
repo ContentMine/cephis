@@ -59,6 +59,7 @@ public class PageIncluder {
 
 	public void addZeroNumberedIncludePages(IntRange includePages) {
 		List<Integer> pages = includePages.createArray().getIntegerList();
+		addZeroNumberedIncludePages(pages);
 	}
 
 	public void addZeroNumberedIncludePages(Integer ...includePages) {
@@ -91,5 +92,17 @@ public class PageIncluder {
 		return excludeZeroBasedSortedPageNumbers;
 	}
 
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		if (includeZeroBasedSortedPageNumbers != null) {
+			sb.append("include: " + includeZeroBasedSortedPageNumbers.toString()+"\n");
+		} else if (excludeZeroBasedSortedPageNumbers != null) {
+			sb.append("exclude: "+excludeZeroBasedSortedPageNumbers.toString()+"\n");
+		} else {
+			sb.append("include all");
+		}
+		return sb.toString();
+		
+	}
 
 }

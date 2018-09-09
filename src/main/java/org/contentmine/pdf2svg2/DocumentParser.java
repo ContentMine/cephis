@@ -116,10 +116,11 @@ public class DocumentParser extends PDFRenderer {
         svgPageBySerial = new HashMap<PageSerial, SVGG>();
         rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
         int numberOfPages = currentDoc.getNumberOfPages();
+    	PageIncluder pageIncluder = processor.getOrCreatePageIncluder();
         iPage = 0;
         for (; iPage < numberOfPages; iPage++) {
 			PageSerial pageSerial = PageSerial.createFromZeroBasedPage(iPage);
-        	if (processor.getOrCreatePageIncluder().pageIsIncluded(pageSerial)) {
+			if (pageIncluder.pageIsIncluded(pageSerial)) {
 	        	System.out.print("["+pageSerial.getOneBasedPage()+"]");
 	        	this.processPage(iPage);
 	        	BufferedImage renderedImage = currentPageParser.getRenderedImage();
