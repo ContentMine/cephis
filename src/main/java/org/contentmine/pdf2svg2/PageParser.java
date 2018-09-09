@@ -461,7 +461,7 @@ public class PageParser extends PageDrawer    {
     	}  else {
     		currentSvgPath = new SVGPath(currentPathPrimitiveList);
     		addCurrentPathAttributes(currentSvgPath);
-    		// fixes bug - probably shouldn't fill at all
+    		// fixes bug - probably shouldn't fill at all //BUG
     		currentSvgPath.setFill(GraphicsElement.NONE);
     		
 //    		getGraphicsState().getLineDashPattern()

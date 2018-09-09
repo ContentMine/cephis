@@ -18,6 +18,7 @@ import org.apache.commons.io.FilenameUtils;
 //import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.contentmine.cproject.CProjectArgProcessor;
 import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.args.FileXPathSearcher;
@@ -46,7 +47,7 @@ import nu.xom.Node;
 
 public class CProject extends CContainer {
 
-	static final Logger LOG = Logger.getLogger(CProject.class);
+	public static final Logger LOG = Logger.getLogger(CProject.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
@@ -930,25 +931,13 @@ public class CProject extends CContainer {
 	public void convertPDFOutputSVGFilesImageFiles() {
 		CTreeList cTreeList = getIncludeCTreeList();
 		cTreeList = cTreeList != null ? cTreeList : getOrCreateCTreeList();
-	    File directory = getDirectory();
+//	    File directory = getDirectory();
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 		documentProcessor.setMinimumImageBox(100, 100);
 		for (CTree cTree : cTreeList) {
 			String name = cTree.getName();
 	        System.out.println("cTree: "+name);
-			File outputDir = new File(directory, name);
-			boolean make = false;
-			if (make && skipExistingDir(outputDir)) {
-				LOG.debug("Skipping existing CTree: "+cTree);
-				continue;
-			}
-		    try {
-			    documentProcessor.readAndProcess(cTree.getExistingFulltextPDF());
-				documentProcessor.writeSVGPages(outputDir);
-		    	documentProcessor.writeRawImages(outputDir);
-		    } catch (IOException ioe) {
-		    	LOG.error("cannot read/process: " + cTree + "; "+ioe);
-		    }
+			cTree.processPDFTree();
 		}
 	}
 
@@ -972,7 +961,7 @@ public class CProject extends CContainer {
 
 	/** converts SVG from PDF files to HTML.
 	 */
-	public void convertPDFSVGandWriteHtml() {
+	public void convertPSVGandWriteHtml() {
 		CTreeList cTreeList = getOrCreateCTreeList();
 		File targetDir = getDirectory();
 		for (CTree cTree : cTreeList) {
