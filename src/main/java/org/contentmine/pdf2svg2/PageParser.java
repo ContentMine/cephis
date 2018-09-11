@@ -203,11 +203,11 @@ public class PageParser extends PageDrawer    {
     		newText = false;
     	}
     	if (unicode == null) {
-    		LOG.error("Null unicode");
+    		System.err.print("?");
     		unicode = ILLEGAL_CHAR;
     	}
     	if (unicode.length() > 1) {
-    		LOG.warn("Unicode length > 1: "+unicode);
+    		LOG.trace("Unicode length > 1: "+unicode);
     	}
     	
     	try {
