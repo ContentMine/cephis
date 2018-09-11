@@ -1616,7 +1616,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			HtmlHtml fulltextHtml = documentCache.getConcatenatedHtml();
 			//this is an interim kludge		
 			htmlFile = new File(this.getDirectory(), "fulltext.html");
-			LOG.debug("HT "+htmlFile);
+			LOG.trace("HT "+htmlFile);
 			HtmlHtml.wrapAndWriteAsHtml(fulltextHtml, htmlFile);
 
 		}
@@ -1677,12 +1677,12 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		}
 		int pageCount = document.getNumberOfPages();
 		while (start < pageCount) {
-			LOG.debug("**************** processing " + start + "***************");
+			LOG.trace("**************** processing " + start + "***************");
 		    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 		    try {
 		    	PageIncluder pageIncluder = documentProcessor.getOrCreatePageIncluder();
 				pageIncluder.addZeroNumberedIncludePages(new IntRange(start, start + deltaPages));
-				LOG.debug("pages "+pageIncluder.toString());
+				LOG.trace("pages "+pageIncluder.toString());
 		    	documentProcessor.readAndProcess(document);
 		    	documentProcessor.writeSVGPages(directory);
 		    	documentProcessor.writeRawImages(directory);
