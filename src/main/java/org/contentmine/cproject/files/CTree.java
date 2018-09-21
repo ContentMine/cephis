@@ -1591,6 +1591,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		if (pdfFile != null) {
 			List<File> svgFiles = getExistingSVGFileList();
 			PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+			// don't create if exist already
 			if (svgFiles.size() == 0) {
 			    documentProcessor.readAndProcess(pdfFile);
 				directory.mkdirs();
@@ -1615,7 +1616,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			documentCache.convertSVG2PageCacheList(); // ensures SVG files
 			HtmlHtml fulltextHtml = documentCache.getConcatenatedHtml();
 			//this is an interim kludge		
-			htmlFile = new File(this.getDirectory(), "fulltext.html");
+			htmlFile = new File(this.getDirectory(), FULLTEXT_HTML);
 			LOG.trace("HT "+htmlFile);
 			HtmlHtml.wrapAndWriteAsHtml(fulltextHtml, htmlFile);
 

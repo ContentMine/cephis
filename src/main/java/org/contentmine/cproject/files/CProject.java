@@ -861,6 +861,7 @@ public class CProject extends CContainer {
 	}
 
 	public void writeProjectAndCTreeList() throws IOException {
+		LOG.warn("*****CTreeList is memory intensive - write every CTree and clear memory*****");
 		if (directory != null) {
 			directory.mkdirs();
 			if (cTreeList != null) {
@@ -914,6 +915,7 @@ public class CProject extends CContainer {
 	 * 
 	 */
 	public void convertSVG2HTML() {
+		LOG.error("convertSVG2HTML NYI");
 		for (CTree cTree : getOrCreateCTreeList()) {
 			LOG.debug("============="+cTree.getDirectory()+"=============");
 			DocumentCache documentCache = cTree.getOrCreateDocumentCache();			
