@@ -50,12 +50,15 @@ public class CrossrefTest {
 	 * @throws IOException
 	 */
 	@Test
-	@Ignore // downloads many
+//	@Ignore // downloads many
 	public void testCreateDownloadAgro() throws IOException {
 		String fromDate = "2010-05-02";
 		String untilDate = "2016-05-03";
-		String query = "Puccinia";
-		CrossrefDownloader.runCrossRefQuery(fromDate, untilDate, query, true, 500, new File("target/xref/puccinia"));
+		String query = "marchantia";
+		File outputDir = new File("target/crossref/"+query);
+		CrossrefDownloader.runCrossRefQuery(fromDate, untilDate, query, true, 500, outputDir);
+		
+		
 	}
 	
 	/**
