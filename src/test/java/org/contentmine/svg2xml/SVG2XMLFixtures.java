@@ -91,6 +91,9 @@ public class SVG2XMLFixtures {
 	public final static File ANYOUTDIR = new File(TARGET, "any");
 	public final static File ANYSVGDIR = new File(SVGTOP, "any");
 
+	public final static File SVG2XMLOUTDIR = new File(TARGET, "svg2xml");
+	public final static File HTMLOUTDIR = new File(SVG2XMLOUTDIR, "html");
+	
 	public static final File ANALYZER_DIR = new File(SVG2XML_DIR, "analyzer/");
 	
 	//A 4 line chunk (paragraph) with no suscripts
