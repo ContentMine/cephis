@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CTree;
+import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.graphics.html.HtmlB;
 import org.contentmine.graphics.html.HtmlDiv;
@@ -35,6 +36,10 @@ import nu.xom.Attribute;
  *
  */
 public class SVGDocumentProcessor {
+	private static final double DEFAULT_SUBSECTION_FONT_SIZE = 12.5;
+	private static final double DEFAULT_SECTION_FONT_SIZE = 16.5;
+	private static final double DEFAULT_TAB_FONT_SIZE = 12.5;
+	private static final double DEFAULT_FIG_FONT_SIZE = 12.5;
 	private static final String RELATIVE_IMAGES_DIR = "./images";
 	private static final Logger LOG = Logger.getLogger(SVGDocumentProcessor.class);
 	static {
@@ -122,6 +127,8 @@ public class SVGDocumentProcessor {
 	private HtmlDiv pageDiv;
 	private Double leftMarginX;
 	private Double largeTextSize;
+	private double toleranceRatio;
+	private double yToler;
 
 	public SVGDocumentProcessor() {
 		init();
@@ -130,6 +137,7 @@ public class SVGDocumentProcessor {
 	private void init() {
 		leftMarginX = 80.;
 		largeTextSize = 13.;
+		yToler = 0.1;
 	}
 
 	public List<SVGSVG> readSVGFilesIntoSortedPageList(List<File> svgFiles) {
@@ -171,13 +179,70 @@ public class SVGDocumentProcessor {
 			text.format(3);
 			if (addPageNumberToDiv(pageDiv, text) != null) continue;
 			if (addImageNumberToDiv(currentDiv, text) != null) continue;
-			if (addSubDiv(currentDiv,  FIGURE,   getHeading(text, 12.5, FIGURE_REGEX)) != null) continue;
-			if (addSubDiv(currentDiv,  TABLE,    getHeading(text, 12.5, TABLE_REGEX))  != null) continue;
-			if (addSubDiv(pageDiv, SECTION,  getHeading(text, 16.5, SECTION_HEAD_LIST)) != null) continue;
-			if (addSubDiv(subDiv,  SUB_SECTION, getHeading(text, 12.5, MINOR_SECTIONS)) != null) continue;
-			para.appendChild(createSpan(text));
+			
+			if (false ||
+			    addSubDiv(currentDiv,  FIGURE,      getHeading(text, DEFAULT_FIG_FONT_SIZE, FIGURE_REGEX)) != null ||
+				addSubDiv(currentDiv,  TABLE,       getHeading(text, DEFAULT_TAB_FONT_SIZE, TABLE_REGEX))  != null ||
+			    addSubDiv(pageDiv,     SECTION,     getHeading(text, DEFAULT_SECTION_FONT_SIZE, SECTION_HEAD_LIST)) != null ||
+			    addSubDiv(subDiv,      SUB_SECTION, getHeading(text, DEFAULT_SUBSECTION_FONT_SIZE, MINOR_SECTIONS)) != null
+                ) {
+                	LOG.debug("NOJOIN ");
+                	continue;
+            }
+			LOG.debug("JOIN?" );
+			addTextToPara(para, text);
 		}
 		return pageDiv;
+	}
+
+	private void addTextToPara(HtmlP para, SVGText text) {
+		HtmlSpan currentSpan = createSpan(text);
+		HtmlSpan lastSpan = para.getLastSpan();
+		if (!mergeCurrentWithLast(currentSpan, lastSpan)) {
+			para.appendChild(currentSpan);
+		}
+	}
+
+	private boolean mergeCurrentWithLast(HtmlSpan currentSpan, HtmlSpan lastSpan) {
+		if (lastSpan != null) {
+			Double lastX = lastSpan.getX();
+			Double lastY = lastSpan.getY();
+			Double currentX = currentSpan.getX();
+			Double currentY = currentSpan.getY();
+			if (lastX == null || currentX == null || lastY == null || currentY == null) {
+				throw new RuntimeException("No coordinates given");
+			}
+
+			StyleBundle currentStyle = StyleBundle.getStyleBundle(currentSpan);
+			StyleBundle lastStyle = StyleBundle.getStyleBundle(lastSpan);
+			// if fontSize, stroke, strokewidth, fille changed, cannot merge
+//			LOG.debug("STYLE "+currentStyle+" // "+lastStyle);
+			if (!lastStyle.matchesFontSize(currentStyle, toleranceRatio)) {
+				LOG.debug("FONT SIZE "+currentStyle+" // "+lastStyle);
+				return false;
+			}
+			if (!lastStyle.matchesStrokeWidth(currentStyle, toleranceRatio)) {
+				LOG.debug("FONT STYLE "+currentStyle+" // "+lastStyle);
+				return false;
+			}
+			if (!lastStyle.matchesStroke(currentStyle)) {
+				LOG.debug("STROKE "+currentStyle+" // "+lastStyle);
+				return false;
+			}
+			if (!lastStyle.matchesFill(currentStyle)) {
+				LOG.debug("FILL "+currentStyle+" // "+lastStyle);
+				return false;
+			}
+			if (!lastStyle.matchesFontFamily(currentStyle)) {
+				LOG.debug("FAMILIY "+currentStyle+" // "+lastStyle);
+				return false;
+			}
+			if (lastX < currentX && Real.isEqual(lastY, currentY, yToler)) {
+				LOG.debug(" SAME LINE "+currentStyle+" // "+lastStyle);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private SVGText getHeading(SVGText text, double textSize, String[] leadingStrings) {

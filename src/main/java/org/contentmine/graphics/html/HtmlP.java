@@ -78,4 +78,9 @@ public class HtmlP extends HtmlElement {
 		return spanList;
 	}
 
+	public HtmlSpan getLastSpan() {
+		List<HtmlSpan> spanList = getSpanList();
+		return spanList.size() == 0 ? null : spanList.get(spanList.size() - 1);
+	}
+
 }

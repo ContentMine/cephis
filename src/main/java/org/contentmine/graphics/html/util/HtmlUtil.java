@@ -367,6 +367,17 @@ public class HtmlUtil {
 		return s;
 	}
 
+	/**
+	 *  returns "*[local-name()='"+tag+"']" 
+	 *  primarily to balance quotes
+	 *  
+	 * @param tag
+	 * @return
+	 */
+	public static String elem(String tag) {
+		return "*[local-name()='"+tag+"']";
+	}
+
 //	@Deprecated
 //	public static HtmlElement replaceEntitiesAndJavascriptTags(String ss) throws IOException {
 //		ss = HtmlUtil.stripDOCTYPE(ss);

@@ -251,6 +251,10 @@ public abstract class HtmlElement extends AbstractCMElement {
 		separate;
 	};
 	
+	// coordinates
+	public final static String X = "x"; 
+	public final static String Y = "y"; 
+	
 	/** constructor.
 	 * 
 	 * @param name
@@ -490,7 +494,7 @@ public abstract class HtmlElement extends AbstractCMElement {
 		return this;
 	}
 
-	/** the value should be constructed used StyleBundle
+	/** the value should be constructed using StyleBundle
 	 * 
 	 * @param style
 	 */
@@ -554,6 +558,28 @@ public abstract class HtmlElement extends AbstractCMElement {
     		super.appendChild(child);
     	}
     }
+    
+	public Double getX() {
+		return getCoordinateValue(X);
+	}
+
+	public Double getY() {
+		return getCoordinateValue(Y);
+	}
+
+	private Double getCoordinateValue(String coordName) {
+		String coordString = this.getAttributeValue(coordName);
+		Double coord = null;
+		if (coordString != null) {
+			try {
+				coord = (Double) Double.parseDouble(coordString);
+			} catch (Exception e) {
+				throw new RuntimeException("Cannot parse as double "+coordString);
+			}
+		}
+		return coord;
+	}
+
 
 
 }

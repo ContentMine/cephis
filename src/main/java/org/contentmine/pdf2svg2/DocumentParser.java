@@ -80,7 +80,7 @@ public class DocumentParser extends PDFRenderer {
 			currentPageParser.setRenderedImage(renderImage);
 			currentPageParser.setPageSerial(pageSerial);
 		} catch (IOException e) {
-			throw new RuntimeException("fails to parse page", e);
+			LOG.error("fails to parse page " + e);
 		} catch (IndexOutOfBoundsException ioobe) {
 			LOG.error("BUG! "+ioobe);
 		}
