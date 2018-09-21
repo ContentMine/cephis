@@ -709,7 +709,7 @@ public class StyleBundle implements XMLConstants {
 		return fontStyle1.equals(fontStyle2);
 	}
 	
-	/** assume null == normal
+	/** 
 	 * 
 	 * @param styleBundle
 	 * @return
@@ -722,16 +722,61 @@ public class StyleBundle implements XMLConstants {
 		return  (fontSize / fontSize2 > ratio && fontSize2  / fontSize > ratio) ;
 	}
 	
-	/** assume null == normal
-	 * 
+	/**
+	 * null values match
 	 * @param styleBundle
 	 * @return
 	 */
 	public boolean matchesStrokeWidth(StyleBundle styleBundle, double tolerRatio) {
 		Double strokeWidth2 = styleBundle.getStrokeWidth();
-		if (strokeWidth == null || strokeWidth2 == null) return false;
+		if (strokeWidth == null || strokeWidth2 == null) return true;
 		// normalize ratio to < 1.0
 		double ratio = tolerRatio < 1 ? tolerRatio : 1 / tolerRatio;
 		return  (strokeWidth / strokeWidth2 > ratio && strokeWidth2  / strokeWidth > ratio) ;
+	}
+	
+	/** 
+	 * null returns false
+	 * @param styleBundle
+	 * @return
+	 */
+	public boolean matchesStroke(StyleBundle styleBundle) {
+		String stroke2 = styleBundle.getStroke();
+		if (stroke == null) {
+			return (stroke2 == null);
+		}
+		return  stroke.equals(stroke2) ;
+	}
+	
+	/** assume null == false
+	 * 
+	 * @param styleBundle
+	 * @return
+	 */
+	public boolean matchesFill(StyleBundle styleBundle) {
+		String fill2 = styleBundle.getFill();
+		if (fill == null) {
+			return (fill2 == null);
+		}
+		return  fill.equals(fill2) ;
+	}
+	
+	/** 
+	 * difficult because foo-bold should match foo
+	 * @param styleBundle
+	 * @return
+	 */
+	public boolean matchesFontFamily(StyleBundle styleBundle) {
+		String fontFamily2 = styleBundle.getFontFamily();
+		if (fontFamily == null || fontFamily2 == null) {
+			throw new RuntimeException("cannot have null font families");
+		}
+		if (fontFamily.equals(fontFamily2)) {
+			LOG.debug("MATCH");
+			return true;
+		} else {
+			LOG.debug(fontFamily + " != " + fontFamily2);
+			return false;
+		}
 	}
 }
