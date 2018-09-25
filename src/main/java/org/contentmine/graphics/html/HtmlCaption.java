@@ -33,4 +33,19 @@ public class HtmlCaption extends HtmlElement {
 	public HtmlCaption() {
 		super(TAG);
 	}
+	
+	/** convenience method as best way to add complex text.
+	 * 
+	 * @param para
+	 */
+	public void appendChild(HtmlP para) {
+		super.appendChild(para);
+	}
+
+	/** convenience method to prompt user.
+	 * 
+	 */
+	public void appendChild(String text) {
+		super.appendChild(text);
+	}
 }
