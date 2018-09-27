@@ -22,6 +22,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.StyleBundle;
@@ -565,6 +566,12 @@ public abstract class HtmlElement extends AbstractCMElement {
 
 	public Double getY() {
 		return getCoordinateValue(Y);
+	}
+	
+	public Real2 getXY() {
+		Double x = getX();
+		Double y = getY();
+		return x == null || y == null ? null : new Real2(x, y);
 	}
 
 	private Double getCoordinateValue(String coordName) {
