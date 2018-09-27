@@ -176,6 +176,7 @@ public class SVGDocumentProcessor {
 		HtmlP para = new HtmlP();
 		currentDiv.appendChild(para);
 		for (SVGText text : textList) {
+//			text.normalize();
 			text.format(3);
 			if (addPageNumberToDiv(pageDiv, text) != null) continue;
 			if (addImageNumberToDiv(currentDiv, text) != null) continue;
@@ -189,9 +190,9 @@ public class SVGDocumentProcessor {
                 	LOG.debug("NOJOIN ");
                 	continue;
             }
-			LOG.debug("JOIN?" );
+			LOG.debug("JOIN? text:" + text.getXY() + " to " + para.getXY());
 			addTextToPara(para, text);
-		}
+ 		}
 		return pageDiv;
 	}
 
@@ -205,6 +206,7 @@ public class SVGDocumentProcessor {
 
 	private boolean mergeCurrentWithLast(HtmlSpan currentSpan, HtmlSpan lastSpan) {
 		if (lastSpan != null) {
+			LOG.debug(lastSpan.getValue()+" <-> "+currentSpan.getValue());
 			Double lastX = lastSpan.getX();
 			Double lastY = lastSpan.getY();
 			Double currentX = currentSpan.getX();
