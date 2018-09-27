@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.xml.XMLUtil;
 
+import com.google.common.collect.HashMultiset;
 import com.google.common.collect.ImmutableSortedMultiset;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multiset.Entry;
@@ -27,52 +28,13 @@ import nu.xom.Node;
  */
 public class MultisetUtil<T extends Object> {
 
-	/** sort entrySet by count.
-	 * convenience method.
-	 * @param wordSet
-	 * @return
-	 */
-//	public static Iterable<Multiset.Entry<String>> getStringEntriesSortedByCount(Multiset<String> wordSet) {
-//		return Multisets.copyHighestCountFirst(wordSet).entrySet();
-//	}
-//
-//	public static Iterable<Entry<String>> getStringEntriesSortedByValue(Multiset<String> wordSet) {
-//		return  ImmutableSortedMultiset.copyOf(wordSet).entrySet();
-//	}
-
-//	
-//	public static Iterable<Entry<Integer>> getIntegerEntriesSortedByValue(Multiset<Integer> integerSet) {
-//		return  ImmutableSortedMultiset.copyOf(integerSet).entrySet();		
-//	}
-	
-//	public static Iterable<Multiset.Entry<Integer>> getIntegerEntriesSortedByCount(Multiset<Integer> integerSet) {
-//		return Multisets.copyHighestCountFirst(integerSet).entrySet();
-//	}
-
-
-//	public static Iterable<Entry<Double>> getDoubleEntriesSortedByValue(Multiset<Double> doubleSet) {
-//		return  ImmutableSortedMultiset.copyOf(doubleSet).entrySet();		
-//	}
-	
 	public static <T> Iterable<Entry<T>> getEntriesSortedByValue(Multiset<T> set) {
 		return  ImmutableSortedMultiset.copyOf(set).entrySet();		
 	}
 	
-//	public static Iterable<Multiset.Entry<Double>> getDoubleEntriesSortedByCount(Multiset<Double> doubleSet) {
-//		return Multisets.copyHighestCountFirst(doubleSet).entrySet();
-//	}
-
 	public static <T> Iterable<Multiset.Entry<T>> getEntriesSortedByCount(Multiset<T> objectSet) {
 		return Multisets.copyHighestCountFirst(objectSet).entrySet();
 	}
-
-//	public static Iterable<Multiset.Entry<Int2Range>> getInt2RangeEntriesSortedByCount(Multiset<Int2Range> int2RangeSet) {
-//		return Multisets.copyHighestCountFirst(int2RangeSet).entrySet();
-//	}
-
-
-
-
 
 	/** extracts a list of attribute values.
 	 * 
@@ -97,12 +59,6 @@ public class MultisetUtil<T extends Object> {
 		return value;
 	}
 
-//	public static Double getHighestValue(Multiset<Double> valueSet) {
-//		Iterable<Multiset.Entry<Double>> values = MultisetUtil.getDoubleEntriesSortedByValue(valueSet);
-//		List<Entry<Double>> entries = createDoubleEntryList(values);
-//		return entries.size() == 0 ? null : entries.get(entries.size() - 1).getElement();
-//	}
-	
 	public static <T> Comparable<T> getHighestValue(Multiset<T> valueSet) {
 		Iterable<Multiset.Entry<T>> values = MultisetUtil.getEntriesSortedByValue(valueSet);
 		List<Entry<T>> entries = createEntryList(values);
@@ -117,58 +73,6 @@ public class MultisetUtil<T extends Object> {
 		return value;
 	}
 
-//	public static List<Entry<String>> createStringEntryList(Iterable<Entry<String>> iterable) {
-//		List<Entry<String>> entries = new ArrayList<Entry<String>>();
-//		for (Entry<String> entry : iterable) {
-//			entries.add(entry);
-//		}
-//		return entries;
-//	}
-	
-//	@Deprecated
-//	public static List<Entry<Double>> createDoubleEntryList(Iterable<Entry<Double>> iterable) {
-//		List<Entry<Double>> entries = new ArrayList<Entry<Double>>();
-//		for (Entry<Double> entry : iterable) {
-//			entries.add(entry);
-//		}
-//		return entries;
-//	}
-
-//	public static List<Entry<Integer>> createIntegerEntryList(Iterable<Entry<Integer>> iterable) {
-//		List<Entry<Integer>> entries = new ArrayList<Entry<Integer>>();
-//		for (Entry<Integer> entry : iterable) {
-//			entries.add(entry);
-//		}
-//		return entries;
-//	}
-
-//	/** gets list of iterables.
-//	 * 
-//	 * @param iterable
-//	 * @return
-//	 */
-//	@Deprecated
-//	public static List<Entry<Object>> createObjectEntryList(Iterable<Entry<Object>> iterable) {
-//		List<Entry<Object>> entries = new ArrayList<Entry<Object>>();
-//		for (Entry<Object> entry : iterable) {
-//			entries.add(entry);
-//		}
-//		return entries;
-//	}
-
-	/** gets list of iterables.
-	 * 
-	 * @param iterable
-	 * @return
-	 */
-//	public static List<Entry<Int2Range>> createInt2RangeEntryList(Iterable<Entry<Int2Range>> iterable) {
-//		List<Entry<Int2Range>> entries = new ArrayList<Entry<Int2Range>>();
-//		for (Entry<Int2Range> entry : iterable) {
-//			entries.add(entry);
-//		}
-//		return entries;
-//	}
-
 	public static <T> List<Entry<T>> createEntryList(Iterable<Entry<T>> iterable) {
 		List<Entry<T>> entries = new ArrayList<Entry<T>>();
 		for (Entry<T> entry : iterable) {
@@ -177,41 +81,13 @@ public class MultisetUtil<T extends Object> {
 		return entries;
 	}
 
-//	public static List<Entry<Integer>> createIntegerListSortedByCount(Multiset<Integer> lengthSet) {
-//		return MultisetUtil.createEntryList(MultisetUtil.getIntegerEntriesSortedByCount(lengthSet));
-//	}
-
 	public static <T> List<Entry<T>> createListSortedByValue(Multiset<T> lengthSet) {
 		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByValue(lengthSet));
 	}
 
-//	public static List<Entry<Double>> createDoubleListSortedByCount(Multiset<Double> lengthSet) {
-//		return MultisetUtil.createEntryList(MultisetUtil.getDoubleEntriesSortedByCount(lengthSet));
-//	}
-//
-//	public static List<Entry<Double>> createDoubleListSortedByValue(Multiset<Double> lengthSet) {
-//		return MultisetUtil.createEntryList(MultisetUtil.getDoubleEntriesSortedByValue(lengthSet));
-//	}
-//
-//	public static List<Entry<String>> createStringListSortedByCount(Multiset<String> lengthSet) {
-//		return MultisetUtil.createEntryList(MultisetUtil.getStringEntriesSortedByCount(lengthSet));
-//	}
-//
-//	public static List<Entry<String>> createStringListSortedByValue(Multiset<String> lengthSet) {
-//		return MultisetUtil.createEntryList(MultisetUtil.getStringEntriesSortedByValue(lengthSet));
-//	}
-//	
-//	public static List<Entry<Object>> createObjectListSortedByCount(Multiset<Object> objectSet) {
-//		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByCount(objectSet));
-//	}
-
-//	public static List<Entry<Int2Range>> createInt2RangeListSortedByCount(Multiset<Int2Range> int2RangeSet) {
-//	return MultisetUtil.createInt2RangeEntryList(MultisetUtil.getEntriesSortedByCount(int2RangeSet));
-//}
-
 	public static <T> List<Entry<T>> createListSortedByCount(Multiset<T> int2RangeSet) {
-	return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByCount(int2RangeSet));
-}
+		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByCount(int2RangeSet));
+	}
 
 	public static Map<Integer, Integer> createIntegerFrequencyMap(Multiset<Integer> set) {
 		Map<Integer, Integer> countByInteger = new HashMap<Integer, Integer>();
@@ -236,6 +112,26 @@ public class MultisetUtil<T extends Object> {
 		}
 		return newEntries;
 	}
+	
+	/** create Multset from the String representation.
+	 * 
+	 * @param multisetString
+	 * @return
+	 */
+	public static Multiset<String> createMultiset(String multisetString) {
+		Multiset<String> plantPartMultiset = HashMultiset.create();
+		multisetString = multisetString.substring(1,  multisetString.length() - 1);
+		String[] multisetStrings = multisetString.split("\\s*\\,\\s*");
+		for (String s : multisetStrings) {
+			String[] ss = s.split(" x ");
+			String value = ss[0];
+			int count = ss.length ==  1 ? 1 : Integer.parseInt(ss[1]);
+			plantPartMultiset.add(value, count);
+		}
+		return  plantPartMultiset;
+	}
+
+
 
 	public static void writeCSV(File csvFile, List<Entry<String>> entryList, String title) throws IOException {
 		if (csvFile != null) {
