@@ -22,10 +22,11 @@ import java.io.Writer;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.ArrayBase.Trim;
-import org.contentmine.eucl.euclid.util.MultisetUtil;
 
 /**
  * rectangular real number matrix class IntMatrix represents a rectangular m-x-n
@@ -626,6 +627,9 @@ public class IntMatrix implements EuclidConstants {
      * @return value of largest element
      */
     public int largestElement() {
+    	if (this.rows <= 0 || this.cols <= 0) {
+            throw new EuclidRuntimeException("zero size matrix");
+    	}
         Int2 temp = indexOfLargestElement();
         if (temp == null) {
             throw new EuclidRuntimeException("bug; null index for largest element");
@@ -1635,5 +1639,87 @@ public class IntMatrix implements EuclidConstants {
         String string = sb.toString();
 		w.write(string);
 	}
+
+	/** use this one
+	 * No header
+	 * 
+	 * @param cooccurrenceFile
+	 * @throws IOException
+	 */
+	public void writeSVG(File cooccurrenceFile) throws IOException {
+		writeSVG(cooccurrenceFile, (String)null, (String)null);
+	}
 	
+	public void writeSVG(File cooccurrenceFile, String rowName, String colName) throws IOException {
+		throw new RuntimeException("NYI");
+//		FileWriter w = new FileWriter(cooccurrenceFile);
+//		if (rowName != null && colName != null) {
+//			// write row/col titles and pad with commas
+//			w.write(rowName +","+ colName);
+//			for (int i = 2; i < cols; i++) {
+//				w.write(",");
+//			}
+//			w.write("\n");
+//		}
+//		writeSVG(w);
+//		w.close();
+//		LOG.trace("wrote: "+cooccurrenceFile);
+	}
+
+	public void writeSVG(Writer w) throws IOException {
+		throw new RuntimeException("NYI");
+//        StringBuffer sb = new StringBuffer();
+//        for (int i = 0; i < rows; i++) {
+//            for (int j = 0; j < cols; j++) {
+//                if (j > 0) {
+//                    sb.append(",");
+//                }
+//                String field = String.valueOf(flmat[i][j]);
+//                sb.append(field);
+//            }
+//            sb.append("\n");
+//        }
+//        String string = sb.toString();
+//		w.write(string);
+	}
+
+	/** reads output of toString() 
+	 * 
+	 * @param s
+	 * @return
+	 */
+	private static Pattern HEAD = Pattern.compile("\\{(\\d+)\\,(\\d+)\\}");
+	public static IntMatrix readMatrix(String s) {
+		IntMatrix intMatrix = null;
+		String[] ss = s.split("\n");
+		if (ss == null || ss.length < 1) {
+			throw new RuntimeException("empty intMatrix string");
+		}
+		Matcher matcher = HEAD.matcher(ss[0]);
+		if (!matcher.matches()) {
+			throw new RuntimeException("Bad intMatrix header");
+		}
+		int rows = Integer.valueOf(matcher.group(1));
+		if (ss.length != rows + 1) {
+			throw new RuntimeException("Bad intMatrix row count; declared " + rows + "; found " + (ss.length - 1));
+		}
+		int cols = Integer.valueOf(matcher.group(2));
+		int[][] data = new int[rows][cols];
+		for (int irow = 0; irow < rows; irow++) {
+			String rowS = ss[irow + 1].trim();
+			if (!rowS.startsWith("(") || !rowS.endsWith(")")) {
+				throw new RuntimeException("Bad intMatrix row: "+rowS);
+			}
+			rowS = rowS.substring(1,  rowS.length() - 1);
+			String[] rowSS = rowS.split("\\,");
+			IntArray intArray = new IntArray(rowSS);
+			if (intArray.size() != cols) {
+				throw new RuntimeException("Bad length (" + intArray.size() + ", expected (" + cols + ") ) for intMatrix row "+irow);
+			}
+			data[irow] = intArray.array;
+		}
+		intMatrix = new IntMatrix(data);
+		return intMatrix;
+	}
+
 }
