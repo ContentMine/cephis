@@ -49,12 +49,9 @@ public class ProjectSchemaTest {
 	
 	@Test
 	public void testProjectWithResultsSchemaCheck() {
-		InputStream is = this.getClass().getResourceAsStream(
-				DefaultArgProcessor.FILES_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML);
-		AbstractSchemaElement projectSchema = (AbstractSchemaElement) CProjectSchema.create(XMLUtil.parseQuietlyToRootElement(is));
 		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "indiaverysmall/");
 		Assert.assertTrue("file exists", cProjectFile.exists());
-		ContainerCheck projectCheck = new ContainerCheck(projectSchema);
+		ContainerCheck projectCheck = new ContainerCheck();
 		projectCheck.checkProject(new CProject(cProjectFile));
 		Assert.assertEquals("unchecked files", 0, projectCheck.getUncheckedFiles().size());
 	}

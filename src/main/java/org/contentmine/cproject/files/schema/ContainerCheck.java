@@ -1,13 +1,16 @@
 package org.contentmine.cproject.files.schema;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.files.CContainer;
 import org.contentmine.cproject.files.CContainerTraverser;
+import org.contentmine.eucl.xml.XMLUtil;
 
 /** checks content of CProject against schema
  * 
@@ -26,7 +29,17 @@ public class ContainerCheck {
 	private List<File> sortedFiles;
 	private List<File> uncheckedFiles;
 
-	ContainerCheck() {
+	public ContainerCheck() {
+		AbstractSchemaElement projectSchema = getDefaultProjectSchema();
+		setProjectSchema(projectSchema);
+	}
+
+	private AbstractSchemaElement getDefaultProjectSchema() {
+		InputStream is = this.getClass().getResourceAsStream(
+				DefaultArgProcessor.FILES_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML);
+		AbstractSchemaElement projectSchema = 
+				(AbstractSchemaElement) CProjectSchema.create(XMLUtil.parseQuietlyToRootElement(is));
+		return projectSchema;
 	}
 	
 	public ContainerCheck(AbstractSchemaElement projectSchema) {
@@ -51,14 +64,12 @@ public class ContainerCheck {
 	}
 
 	private void checkDirectories() {
-//		LOG.debug("======= DIRECTORIES ========");
 		sortedDirectories = containerTraverser.getOrCreateSortedDirectoryList();
 		FilenameSets dirnameSets = schema.getDirnameSets();
 		dirnameSets.check(sortedDirectories);
 	}
 
 	private void checkFiles() {
-//		LOG.debug("======= FILES ========");
 		sortedFiles = containerTraverser.getOrCreateSortedFileList();
 		FilenameSets filenameSets = schema.getFilenameSets();
 		filenameSets.check(sortedFiles);
@@ -67,6 +78,5 @@ public class ContainerCheck {
 	public List<File> getUncheckedFiles() {
 		return uncheckedFiles;
 	}
-
 
 }

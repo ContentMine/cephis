@@ -15,6 +15,8 @@ import org.contentmine.graphics.svg.SVGHTMLFixtures;
 import org.contentmine.svg2xml.pdf.SVGDocumentProcessor;
 import org.junit.Test;
 
+import junit.framework.Assert;
+
 public class BiorxivIT {
 	private static final Logger LOG = Logger.getLogger(BiorxivIT.class);
 	static {
@@ -68,5 +70,40 @@ public class BiorxivIT {
 			XMLUtil.debug(html, htmlFile, 1);
 		}
 
+	}
+
+	@Test
+		public void testBiorxivMarchantia2HTML1() throws Exception {
+			File sourceDir = SVGHTMLFixtures.BIORXIV_DIR;
+			File targetDir = SVGHTMLFixtures.BIORXIV_TARGET_DIR;
+			CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
+			String fileroot = "103861";
+			CTree cTree = new CTree(new File(targetDir, fileroot));
+			List<File> svgFiles = cTree.getExistingSVGFileList();
+			Assert.assertEquals(29,  svgFiles.size());
+			SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
+			svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
+			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
+			File htmlFile = new File(targetDir, fileroot+".html");
+	//		LOG.debug(htmlFile);
+			XMLUtil.debug(html, htmlFile, 1);
+			
+		}
+
+	@Test
+	public void testBiorxivMarchantia2HTMLAll() throws Exception {
+		File sourceDir = SVGHTMLFixtures.BIORXIV_DIR;
+		File targetDir = SVGHTMLFixtures.BIORXIV_TARGET_DIR;
+		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
+		CProject project = new CProject(targetDir);
+		CTreeList cTreeList = project.getOrCreateCTreeList();
+		for (CTree cTree : cTreeList) {
+			List<File> svgFiles = cTree.getExistingSVGFileList();
+			SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
+			svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
+			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
+			File htmlFile = new File(targetDir, cTree.getName()+".html");
+			XMLUtil.debug(html, htmlFile, 1);
+		}
 	}
 }
