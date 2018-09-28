@@ -129,7 +129,7 @@ public abstract class AbstractSchemaElement extends AbstractCMElement {
 		} else if(PSchema.TAG.equalsIgnoreCase(tag)) {
 			schemaElement = new PSchema();
 		} else {
-			String msg = "Unknown schame tag "+tag;
+			String msg = "Unknown scheme tag "+tag;
 			throw new RuntimeException(msg);
 		}
 		XMLUtil.copyAttributes(element, schemaElement);

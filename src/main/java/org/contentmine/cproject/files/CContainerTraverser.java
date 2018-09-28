@@ -32,10 +32,15 @@ public class CContainerTraverser {
 	}
 	
 	private void ensureSortedFileAndDirectoryChildren() {
+		File directory = cContainer.getDirectory();
+		ensureSortedFileAndDirectoryChildren(directory);
+	}
+
+	public void ensureSortedFileAndDirectoryChildren(File directory) {
 		if (fileList == null || directoryList == null) {
 			directoryList = new ArrayList<File>();
 			fileList = new ArrayList<File>();
-			File[] ff = cContainer.getDirectory().listFiles();
+			File[] ff = directory.listFiles();
 			if (ff != null) {
 				List<File> files = Arrays.asList(ff);
 				Collections.sort(files);
