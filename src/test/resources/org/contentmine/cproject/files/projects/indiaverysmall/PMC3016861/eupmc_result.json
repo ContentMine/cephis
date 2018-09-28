@@ -1,0 +1,369 @@
+{
+  "id": [
+    "20879913"
+  ],
+  "source": [
+    "MED"
+  ],
+  "pmid": [
+    "20879913"
+  ],
+  "pmcid": [
+    "PMC3016861"
+  ],
+  "doi": [
+    "10.1673/031.010.12301"
+  ],
+  "title": [
+    "Seasonal and altitudinal changes in population density of 20 species of Drosophila in Chamundi hill."
+  ],
+  "authorString": [
+    "Guruprasad BR, Hegde SN, Krishna MS."
+  ],
+  "authorList": [
+    {
+      "author": [
+        {
+          "fullName": [
+            "Guruprasad BR"
+          ],
+          "firstName": [
+            "Basavarajpur R"
+          ],
+          "lastName": [
+            "Guruprasad"
+          ],
+          "initials": [
+            "BR"
+          ]
+        },
+        {
+          "fullName": [
+            "Hegde SN"
+          ],
+          "firstName": [
+            "Shridhar N"
+          ],
+          "lastName": [
+            "Hegde"
+          ],
+          "initials": [
+            "SN"
+          ]
+        },
+        {
+          "fullName": [
+            "Krishna MS"
+          ],
+          "firstName": [
+            "Mysore S"
+          ],
+          "lastName": [
+            "Krishna"
+          ],
+          "initials": [
+            "MS"
+          ]
+        }
+      ]
+    }
+  ],
+  "journalInfo": [
+    {
+      "volume": [
+        "10"
+      ],
+      "journalIssueId": [
+        "1741235"
+      ],
+      "dateOfPublication": [
+        "2010 "
+      ],
+      "monthOfPublication": [
+        "0"
+      ],
+      "yearOfPublication": [
+        "2010"
+      ],
+      "printPublicationDate": [
+        "2010-01-01"
+      ],
+      "journal": [
+        {
+          "title": [
+            "Journal of insect science (Online)"
+          ],
+          "ISOAbbreviation": [
+            "J. Insect Sci."
+          ],
+          "medlineAbbreviation": [
+            "J Insect Sci"
+          ],
+          "NLMid": [
+            "101096396"
+          ],
+          "ISSN": [
+            "1536-2442"
+          ],
+          "ESSN": [
+            "1536-2442"
+          ]
+        }
+      ]
+    }
+  ],
+  "pubYear": [
+    "2010"
+  ],
+  "pageInfo": [
+    "123"
+  ],
+  "abstractText": [
+    "A year long study was conducted to analyze the altitudinal and seasonal variation in a population of Drosophila (Diptera: Drosophilidae) on Chamundi hill of Mysore, Karnataka State, India. A total of 16,671 Drosophila flies belonging to 20 species of 4 subgenera were collected at altitudes of 680 m, 780 m, 880 m and 980 m. The subgenus Sophophora was predominant with 14 species and the subgenus Drosilopha was least represented with only a single species. Cluster analysis and constancy methods were used to analyze the species occurrence qualitatively. Altitudinal changes in the population density, and relative abundance of the different species at different seasons were also studied. The diversity of the Drosophila community was assessed by applying the Simpson and Berger-Parker indices. At 680 m the Simpson Index was low at 0.129 and the Berger- Parker index was high at 1.1 at 980 m. Linear regression showed that the Drosophila community was positively correlated with rainfall but not elevation, Furthermore the density of Drosophila changed significantly in different seasons (F = 11.20, df 2, 9; P<0.004). The distributional pattern of a species or related group of species was uneven in space and time. D. malerkotliana and D. nasuta were found at all altitudes and can be considered as dominant species."
+  ],
+  "affiliation": [
+    "Department of Studies in Zoology, Manasagangotri, Mysore-570006, India. gurup2006@yahoo.co.in"
+  ],
+  "language": [
+    "eng"
+  ],
+  "pubModel": [
+    "Print"
+  ],
+  "pubTypeList": [
+    {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    }
+  ],
+  "meshHeadingList": [
+    {
+      "meshHeading": [
+        {
+          "majorTopic_YN": [
+            "N"
+          ],
+          "descriptorName": [
+            "Animals"
+          ]
+        },
+        {
+          "majorTopic_YN": [
+            "Y"
+          ],
+          "descriptorName": [
+            "Drosophila"
+          ]
+        },
+        {
+          "majorTopic_YN": [
+            "Y"
+          ],
+          "descriptorName": [
+            "Altitude"
+          ]
+        },
+        {
+          "majorTopic_YN": [
+            "Y"
+          ],
+          "descriptorName": [
+            "Biodiversity"
+          ]
+        },
+        {
+          "majorTopic_YN": [
+            "Y"
+          ],
+          "descriptorName": [
+            "Seasons"
+          ]
+        },
+        {
+          "majorTopic_YN": [
+            "N"
+          ],
+          "descriptorName": [
+            "Population Density"
+          ]
+        },
+        {
+          "majorTopic_YN": [
+            "N"
+          ],
+          "descriptorName": [
+            "India"
+          ]
+        }
+      ]
+    }
+  ],
+  "subsetList": [
+    {
+      "subset": [
+        {
+          "code": [
+            "IM"
+          ],
+          "name": [
+            "Index Medicus"
+          ]
+        }
+      ]
+    }
+  ],
+  "fullTextUrlList": [
+    {
+      "fullTextUrl": [
+        {
+          "availability": [
+            "Open access"
+          ],
+          "availabilityCode": [
+            "OA"
+          ],
+          "documentStyle": [
+            "pdf"
+          ],
+          "site": [
+            "Europe_PMC"
+          ],
+          "url": [
+            "http://europepmc.org/articles/PMC3016861?pdf=render"
+          ]
+        },
+        {
+          "availability": [
+            "Open access"
+          ],
+          "availabilityCode": [
+            "OA"
+          ],
+          "documentStyle": [
+            "html"
+          ],
+          "site": [
+            "Europe_PMC"
+          ],
+          "url": [
+            "http://europepmc.org/articles/PMC3016861"
+          ]
+        },
+        {
+          "availability": [
+            "Free"
+          ],
+          "availabilityCode": [
+            "F"
+          ],
+          "documentStyle": [
+            "html"
+          ],
+          "site": [
+            "PubMedCentral"
+          ],
+          "url": [
+            "https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/20879913/?tool=EBI"
+          ]
+        },
+        {
+          "availability": [
+            "Free"
+          ],
+          "availabilityCode": [
+            "F"
+          ],
+          "documentStyle": [
+            "pdf"
+          ],
+          "site": [
+            "PubMedCentral"
+          ],
+          "url": [
+            "https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/20879913/pdf/?tool=EBI"
+          ]
+        },
+        {
+          "availability": [
+            "Subscription required"
+          ],
+          "availabilityCode": [
+            "S"
+          ],
+          "documentStyle": [
+            "doi"
+          ],
+          "site": [
+            "DOI"
+          ],
+          "url": [
+            "https://doi.org/10.1673/031.010.12301"
+          ]
+        }
+      ]
+    }
+  ],
+  "isOpenAccess": [
+    "Y"
+  ],
+  "inEPMC": [
+    "Y"
+  ],
+  "inPMC": [
+    "Y"
+  ],
+  "hasPDF": [
+    "Y"
+  ],
+  "hasBook": [
+    "N"
+  ],
+  "hasSuppl": [
+    "N"
+  ],
+  "citedByCount": [
+    "3"
+  ],
+  "hasReferences": [
+    "Y"
+  ],
+  "hasTextMinedTerms": [
+    "Y"
+  ],
+  "hasDbCrossReferences": [
+    "N"
+  ],
+  "hasLabsLinks": [
+    "Y"
+  ],
+  "license": [
+    "cc by"
+  ],
+  "authMan": [
+    "N"
+  ],
+  "epmcAuthMan": [
+    "N"
+  ],
+  "nihAuthMan": [
+    "N"
+  ],
+  "hasTMAccessionNumbers": [
+    "N"
+  ],
+  "dateOfCompletion": [
+    "2011-01-13"
+  ],
+  "dateOfCreation": [
+    "2010-09-30"
+  ],
+  "dateOfRevision": [
+    "2013-07-03"
+  ],
+  "firstPublicationDate": [
+    "2010-01-01"
+  ]
+}

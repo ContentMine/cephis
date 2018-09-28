@@ -1,0 +1,284 @@
+{
+  "id": [
+    "22476065"
+  ],
+  "source": [
+    "MED"
+  ],
+  "pmid": [
+    "22476065"
+  ],
+  "pmcid": [
+    "PMC3000698"
+  ],
+  "doi": [
+    "10.1093/aobpla/plq007"
+  ],
+  "title": [
+    "Nucleated succession by an endemic palm Phoenix pusilla enhances diversity of woody species in the arid Coromandel Coast of India."
+  ],
+  "authorString": [
+    "Kinhal V, Parthasarathy N."
+  ],
+  "authorList": [
+    {
+      "author": [
+        {
+          "fullName": [
+            "Kinhal V"
+          ],
+          "firstName": [
+            "Vijayalaxmi"
+          ],
+          "lastName": [
+            "Kinhal"
+          ],
+          "initials": [
+            "V"
+          ],
+          "affiliation": [
+            "Department of Ecology and Environmental Sciences ,  Pondicherry University ,  Puducherry 605014 ,  India."
+          ]
+        },
+        {
+          "fullName": [
+            "Parthasarathy N"
+          ],
+          "firstName": [
+            "N"
+          ],
+          "lastName": [
+            "Parthasarathy"
+          ],
+          "initials": [
+            "N"
+          ]
+        }
+      ]
+    }
+  ],
+  "journalInfo": [
+    {
+      "volume": [
+        "2010"
+      ],
+      "journalIssueId": [
+        "1784462"
+      ],
+      "dateOfPublication": [
+        "2010 "
+      ],
+      "monthOfPublication": [
+        "0"
+      ],
+      "yearOfPublication": [
+        "2010"
+      ],
+      "printPublicationDate": [
+        "2010-01-01"
+      ],
+      "journal": [
+        {
+          "title": [
+            "AoB PLANTS"
+          ],
+          "ISOAbbreviation": [
+            "AoB Plants"
+          ],
+          "medlineAbbreviation": [
+            "AoB Plants"
+          ],
+          "NLMid": [
+            "101539425"
+          ],
+          "ISSN": [
+            "2041-2851"
+          ],
+          "ESSN": [
+            "2041-2851"
+          ]
+        }
+      ]
+    }
+  ],
+  "pubYear": [
+    "2010"
+  ],
+  "pageInfo": [
+    "plq007"
+  ],
+  "abstractText": [
+    "BACKGROUND AND AIMS: Phoenix pusilla, an endemic shrubby palm, was used as a model nurse plant in degraded tropical dry evergreen forest (TDEF) landscapes. This choice was informed by traditional ecological knowledge of the Irula tribe of south India. We tested whether the presence of P. pusilla in water-stressed arid regions improves conditions for other species to establish, resulting in nucleated succession. Success would point the way forward for establishing species-rich woodland in abandoned farm land on the south-eastern Coromandel Coast of India. METHODOLOGY: Spatial associations of woody species in the natural landscape were studied. Experimental tests of nurse plant potential examined the extent to which P. pusilla (i) promoted seed germination, (ii) seedling emergence and (iii) establishment of two TDEF species, and (iv) ameliorated soil and microclimatic conditions over 8 months. PRINCIPAL RESULTS: Phoenix pusilla cooled the soil by up to 50 % and decreased radiation by up to 9-fold, especially in summer. Soil organic matter and water-holding capacity increased, as did seedling number and seedling height of tested TDEF species. The presence of P. pusilla favoured a greater abundance (20 %) of woody plants with a bias towards primary (11) rather than secondary (2) species, indicating species specificity of the effect. CONCLUSIONS: Phoenix pusilla ameliorated abiotic stresses present in open ground to create a patchy species-rich mosaic. This nucleated succession created using P. pusilla provided an important refuge for primary TDEF species. This effect can be expected to have impact at the landscape scale and may prove useful in managing landscapes and in biodiversity conservation. The conservation value of these patchy landscapes deserves to be more widely recognized as they persist in populated areas and thus merit protection. The value of traditional tribal knowledge in identifying a highly effective nurse species is highlighted by this study."
+  ],
+  "affiliation": [
+    "Department of Ecology and Environmental Sciences ,  Pondicherry University ,  Puducherry 605014 ,  India."
+  ],
+  "language": [
+    "eng"
+  ],
+  "pubModel": [
+    "Print-Electronic"
+  ],
+  "pubTypeList": [
+    {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    }
+  ],
+  "fullTextUrlList": [
+    {
+      "fullTextUrl": [
+        {
+          "availability": [
+            "Open access"
+          ],
+          "availabilityCode": [
+            "OA"
+          ],
+          "documentStyle": [
+            "pdf"
+          ],
+          "site": [
+            "Europe_PMC"
+          ],
+          "url": [
+            "http://europepmc.org/articles/PMC3000698?pdf=render"
+          ]
+        },
+        {
+          "availability": [
+            "Open access"
+          ],
+          "availabilityCode": [
+            "OA"
+          ],
+          "documentStyle": [
+            "html"
+          ],
+          "site": [
+            "Europe_PMC"
+          ],
+          "url": [
+            "http://europepmc.org/articles/PMC3000698"
+          ]
+        },
+        {
+          "availability": [
+            "Free"
+          ],
+          "availabilityCode": [
+            "F"
+          ],
+          "documentStyle": [
+            "html"
+          ],
+          "site": [
+            "PubMedCentral"
+          ],
+          "url": [
+            "https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/22476065/?tool=EBI"
+          ]
+        },
+        {
+          "availability": [
+            "Free"
+          ],
+          "availabilityCode": [
+            "F"
+          ],
+          "documentStyle": [
+            "pdf"
+          ],
+          "site": [
+            "PubMedCentral"
+          ],
+          "url": [
+            "https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/22476065/pdf/?tool=EBI"
+          ]
+        },
+        {
+          "availability": [
+            "Subscription required"
+          ],
+          "availabilityCode": [
+            "S"
+          ],
+          "documentStyle": [
+            "doi"
+          ],
+          "site": [
+            "DOI"
+          ],
+          "url": [
+            "https://doi.org/10.1093/aobpla/plq007"
+          ]
+        }
+      ]
+    }
+  ],
+  "isOpenAccess": [
+    "Y"
+  ],
+  "inEPMC": [
+    "Y"
+  ],
+  "inPMC": [
+    "Y"
+  ],
+  "hasPDF": [
+    "Y"
+  ],
+  "hasBook": [
+    "N"
+  ],
+  "hasSuppl": [
+    "N"
+  ],
+  "citedByCount": [
+    "3"
+  ],
+  "hasReferences": [
+    "Y"
+  ],
+  "hasTextMinedTerms": [
+    "Y"
+  ],
+  "hasDbCrossReferences": [
+    "N"
+  ],
+  "hasLabsLinks": [
+    "Y"
+  ],
+  "license": [
+    "cc by-nc"
+  ],
+  "authMan": [
+    "N"
+  ],
+  "epmcAuthMan": [
+    "N"
+  ],
+  "nihAuthMan": [
+    "N"
+  ],
+  "hasTMAccessionNumbers": [
+    "N"
+  ],
+  "dateOfCompletion": [
+    "2012-08-23"
+  ],
+  "dateOfCreation": [
+    "2012-04-05"
+  ],
+  "dateOfRevision": [
+    "2015-06-25"
+  ],
+  "electronicPublicationDate": [
+    "2010-05-21"
+  ],
+  "firstPublicationDate": [
+    "2010-05-21"
+  ]
+}
