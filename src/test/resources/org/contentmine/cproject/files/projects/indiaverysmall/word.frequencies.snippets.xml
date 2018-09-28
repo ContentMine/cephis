@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSnippetsTree>
+ <snippetsTree>
+  <snippets file="/Users/pm286/workspace/projects/gita/lantana/indiaverysmall/PMC3000698/results/word/frequencies/results.xml">
+   <result title="frequency" word="species" count="72"/>
+   <result title="frequency" word="pusilla" count="54"/>
+   <result title="frequency" word="nurse" count="44"/>
+   <result title="frequency" word="plants" count="33"/>
+   <result title="frequency" word="open" count="32"/>
+   <result title="frequency" word="Ecology" count="27"/>
+   <result title="frequency" word="plant" count="27"/>
+   <result title="frequency" word="forest" count="24"/>
+  </snippets>
+ </snippetsTree>
+ <snippetsTree>
+  <snippets file="/Users/pm286/workspace/projects/gita/lantana/indiaverysmall/PMC3016861/results/word/frequencies/results.xml">
+   <result title="frequency" word="species" count="73"/>
+   <result title="frequency" word="Drosophila" count="59"/>
+   <result title="frequency" word="different" count="26"/>
+   <result title="frequency" word="population" count="24"/>
+  </snippets>
+ </snippetsTree>
+ <snippetsTree>
+  <snippets file="/Users/pm286/workspace/projects/gita/lantana/indiaverysmall/PMC3048348/results/word/frequencies/results.xml">
+   <result title="frequency" word="protease" count="48"/>
+   <result title="frequency" word="activity" count="39"/>
+   <result title="frequency" word="enzyme" count="35"/>
+   <result title="frequency" word="Pseudomonas" count="23"/>
+  </snippets>
+ </snippetsTree>
+</projectSnippetsTree>

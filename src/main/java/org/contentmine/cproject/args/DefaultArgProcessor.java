@@ -124,21 +124,23 @@ import nu.xom.Node;
  */
 public class DefaultArgProcessor {
 	
-	private static final String ORG_CONTENTMINE_CPROJECT = "/org/contentmine/cproject";
+	public static final String ORG_CONTENTMINE_CPROJECT = "/org/contentmine/cproject";
 	private static final Logger LOG = Logger.getLogger(DefaultArgProcessor.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
 	
-	private static final String ARGS2HTML_XSL = ORG_CONTENTMINE_CPROJECT + "/args/args2html.xsl";
+	private static String ARGS_TOP = ORG_CONTENTMINE_CPROJECT + "/args";
+	private static final String ARGS2HTML_XSL = ARGS_TOP+ "/args2html.xsl";
+	protected static final String ARGS_XML = "args.xml";
+	public static String ARGS_XML_RESOURCE = ARGS_TOP+"/"+ARGS_XML;
+	public static String FILES_TOP = ORG_CONTENTMINE_CPROJECT + "/files";
+	
 	private static final File MAIN_RESOURCES = new File("src/main/resources");
 	public static final String MINUS = "-";
 	public static final String[] DEFAULT_EXTENSIONS = {"html", "xml", "pdf"};
 	public final static String H = "-h";
 	public final static String HELP = "--help";
-	private static String RESOURCE_NAME_TOP = ORG_CONTENTMINE_CPROJECT + "/args";
-	protected static final String ARGS_XML = "args.xml";
-	private static String ARGS_RESOURCE = RESOURCE_NAME_TOP+"/"+ARGS_XML;
 	private static final String NAME = "name";
 	private static final String VERSION = "version";
 	
@@ -263,7 +265,7 @@ public class DefaultArgProcessor {
 	
 	
 	private String getArgsResource() {
-		return ARGS_RESOURCE;
+		return ARGS_XML_RESOURCE;
 	}
 	
 	public void readArgumentOptions(Class clazz, String resourceName) {

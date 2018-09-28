@@ -32,8 +32,12 @@ public class CMineTestFixtures {
 	 */
 	public static boolean cleanAndCopyDir(File sourceDir, File targetDir) {
 		try {
+			if (!sourceDir.exists() || !sourceDir.isDirectory()) {
+				throw new RuntimeException("sourceDir does not exist: "+sourceDir);
+			}
 			if (targetDir.exists()) FileUtils.forceDelete(targetDir);
 			LOG.trace(sourceDir.getAbsolutePath());
+			
 			FileUtils.copyDirectory(sourceDir, targetDir);
 			return true;
 		} catch (IOException ioe) {

@@ -38,6 +38,15 @@ public abstract class AbstractCMElement extends Element implements XMLConstants 
 	public static final String CHARSET = "charset";
 
 	/** 
+	 * Constructor no namespace
+	 * 
+	 * @param name
+	 */
+	public AbstractCMElement(String name) {
+		super(name);
+	}
+
+	/** 
 	 * Constructor.
 	 * 
 	 * @param name
