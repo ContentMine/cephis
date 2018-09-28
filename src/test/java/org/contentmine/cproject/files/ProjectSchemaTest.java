@@ -55,4 +55,14 @@ public class ProjectSchemaTest {
 		projectCheck.checkProject(new CProject(cProjectFile));
 		Assert.assertEquals("unchecked files", 0, projectCheck.getUncheckedFiles().size());
 	}
+	
+	@Test
+	public void testProjectAndCTrees() {
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "indiaverysmall/");
+		Assert.assertTrue("file exists", cProjectFile.exists());
+		ContainerCheck projectCheck = new ContainerCheck();
+		projectCheck.setCheckTrees(true);
+		projectCheck.checkProject(new CProject(cProjectFile));
+		Assert.assertEquals("unchecked files", 0, projectCheck.getUncheckedFiles().size());
+	}
 }
