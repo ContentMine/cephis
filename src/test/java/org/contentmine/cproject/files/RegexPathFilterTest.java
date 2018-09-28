@@ -31,7 +31,7 @@ public class RegexPathFilterTest {
 	public void testRegexPathFilterCrude() {
 		RegexPathFilter regexPathFilter = new RegexPathFilter(".*project.*");
 		List<File> files = new ArrayList<File>(FileUtils.listFiles(CMineFixtures.TEST_PROJECTS_DIR, regexPathFilter, TrueFileFilter.TRUE));
-		Assert.assertEquals("files",  70, files.size());
+		Assert.assertEquals("files",  202, files.size());
 	}
 	
 	@Test
@@ -88,7 +88,7 @@ public class RegexPathFilterTest {
 				TrueFileFilter.TRUE, 
 				TrueFileFilter.TRUE));
 		Collections.sort(files);
-		Assert.assertEquals("files",  149, files.size());
+		Assert.assertEquals("files",  351, files.size());
 //		LOG.debug(files);
 	}
 	

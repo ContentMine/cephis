@@ -253,11 +253,13 @@
 			<artifactId>json-path</artifactId>
 			<version>${json-path.version}</version>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
 			<version>${commons-csv.version}</version>
 		</dependency>
+		-->
 		<!--
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
