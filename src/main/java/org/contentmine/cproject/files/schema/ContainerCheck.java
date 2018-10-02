@@ -27,27 +27,38 @@ public class ContainerCheck {
 	private CContainerTraverser containerTraverser;
 	private List<File> sortedDirectories;
 	private List<File> sortedFiles;
-	private List<File> uncheckedFiles;
+	private List<File> totalUncheckedFiles;
 	private boolean checkTrees;
 
 	public ContainerCheck() {
 		AbstractSchemaElement projectSchema = getDefaultProjectSchema();
 		setProjectSchema(projectSchema);
+		init();
+	}
+
+	public ContainerCheck(String schemaString) {
+		InputStream is = this.getClass().getResourceAsStream(
+				DefaultArgProcessor.SCHEMA_TOP + "/" + schemaString);
+		setProjectSchema(schemaString, is);
+		init();
+	}
+
+	private void init() {
+		totalUncheckedFiles = new ArrayList<File>();
 	}
 
 	private AbstractSchemaElement getDefaultProjectSchema() {
+		String schemaTemplate = DefaultArgProcessor.SCHEMA_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML;
 		InputStream is = this.getClass().getResourceAsStream(
-				DefaultArgProcessor.FILES_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML);
+				schemaTemplate);
+		if (is == null) {
+			throw new RuntimeException("cannot find/load schema from" + schemaTemplate);
+		}
 		AbstractSchemaElement projectSchema = 
 				(AbstractSchemaElement) CProjectSchema.create(XMLUtil.parseQuietlyToRootElement(is));
 		return projectSchema;
 	}
 
-	public ContainerCheck(String schemaString) {
-		InputStream is = this.getClass().getResourceAsStream(
-				DefaultArgProcessor.FILES_TOP + "/" + schemaString);
-		setProjectSchema(schemaString, is);
-	}
 
 	private void setProjectSchema(String schemaString, InputStream is) {
 		if (is == null) {
@@ -57,6 +68,7 @@ public class ContainerCheck {
 				(AbstractSchemaElement) CProjectSchema.create(XMLUtil.parseQuietlyToRootElement(is));
 		setProjectSchema(schema1);
 	}
+	
 	public ContainerCheck(AbstractSchemaElement projectSchema) {
 		setProjectSchema(projectSchema);
 	}
@@ -71,27 +83,36 @@ public class ContainerCheck {
 	}
 
 	private void checkDirectoriesAndFilesAgainstSchema() {
-		checkDirectories();
-		checkFiles();
-		uncheckedFiles = new ArrayList<File>(sortedDirectories);
-		uncheckedFiles.addAll(sortedFiles);
+		List<File> uncheckedDirectories = checkDirectories();
+		List<File> uncheckedFiles = checkFiles();
+		ensureTotalUncheckedFiles();
+		totalUncheckedFiles.addAll(uncheckedDirectories);
+		totalUncheckedFiles.addAll(uncheckedFiles);
+	}
+
+	private void ensureTotalUncheckedFiles() {
+		if (totalUncheckedFiles == null) {
+			totalUncheckedFiles = new ArrayList<File>();
+		}
+	}
+
+	private List<File> checkDirectories() {
+		sortedDirectories = containerTraverser.getOrCreateSortedDirectoryList();
+		FilenameSets dirnameSets = schema.getDirnameSets();
+		dirnameSets.checkFiles(sortedDirectories, checkTrees);
+		return sortedDirectories;
+	}
+
+	private List<File> checkFiles() {
+		sortedFiles = containerTraverser.getOrCreateSortedFileList();
+		FilenameSets filenameSets = schema.getFilenameSets();
+		filenameSets.checkFiles(sortedFiles);
+		return sortedFiles;
 		
 	}
 
-	private void checkDirectories() {
-		sortedDirectories = containerTraverser.getOrCreateSortedDirectoryList();
-		FilenameSets dirnameSets = schema.getDirnameSets();
-		dirnameSets.check(sortedDirectories, checkTrees);
-	}
-
-	private void checkFiles() {
-		sortedFiles = containerTraverser.getOrCreateSortedFileList();
-		FilenameSets filenameSets = schema.getFilenameSets();
-		filenameSets.check(sortedFiles);
-	}
-
-	public List<File> getUncheckedFiles() {
-		return uncheckedFiles;
+	public List<File> getTotalUncheckedFiles() {
+		return totalUncheckedFiles;
 	}
 
 	public void setCheckTrees(boolean b) {

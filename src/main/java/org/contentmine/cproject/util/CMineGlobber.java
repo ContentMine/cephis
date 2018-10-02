@@ -177,7 +177,7 @@ public class CMineGlobber {
 			LOG.warn("null location");
 		} else {
 			if (location.startsWith("/")) {
-				LOG.warn("matches against whole file system; might delete system files: BE careful: "+location);			
+				LOG.trace("matches against whole file system; might delete system files: BE careful: "+location);			
 			}
 			this.location = location;
 		}

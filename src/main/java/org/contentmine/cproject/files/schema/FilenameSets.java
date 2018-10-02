@@ -54,27 +54,39 @@ public class FilenameSets  {
 		}
 	}
 	
-	public void check(List<File> files) {
-		check(files, false);
+	public void checkFiles(List<File> files) {
+		checkFiles(files, false);
 	}
 		
-	public void check(List<File> files, boolean checkTrees) {
+	public void checkFiles(List<File> files, boolean checkTrees) {
 		this.checkTrees = checkTrees;
 		this.files = files;
-		checkRegex();
+		// check exact matches before regexes
 		checkNames();
+		checkRegex();
+		LOG.trace("unmatched "+files);
 	}
 
 	private void checkNames() {
 		for (String schemaFilename : schemaElementSetByName.keySet()) {
 			AbstractSchemaElement schemaElement = schemaElementSetByName.get(schemaFilename);
 			List<File> matchedFiles = checkAndRemoveMatchingFiles(schemaElement);
+			if (matchedFiles.size() == 0) {
+				LOG.trace("no files for: " + schemaElement.getLabel());
+			} else {
+				LOG.trace("Matched files "+ schemaElement.getLabel() + " ... " + matchedFiles);
+			}
 		}
 	}
 	
 	private void checkRegex() {
 		for (AbstractSchemaElement schemaElement : regexSchemaElementSet) {
 			List<File> matchedFiles = checkAndRemoveMatchingFiles(schemaElement);
+			if (matchedFiles.size() == 0) {
+				LOG.trace("no regex for "+schemaElement.getRegex());
+			} else {
+				LOG.trace("Matched regexes "+ schemaElement.getLabel() + matchedFiles);
+			}
 		}
 	}
 
@@ -82,8 +94,7 @@ public class FilenameSets  {
 		/** exactly one of schemaFileame or pattern should not be null
 		 * 
 		 */
-		String schemaFilename = schemaElement.getName();
-		Pattern pattern = schemaElement.getPattern();
+		SchemaFileMatcher fileMatcher = new SchemaFileMatcher(schemaElement);
 		List<File> matchedFiles = new ArrayList<File>();
 		boolean change = true;
 		while (change) {
@@ -91,14 +102,17 @@ public class FilenameSets  {
 			for (int i = 0; i < files.size(); i++) {
 				File file = files.get(i);
 				String filename = file.getName();
-				if (filename.equals(schemaFilename) || 
-						(pattern != null && pattern.matcher(filename).matches())) {
+				if (fileMatcher.matches(filename)) {
 					files.remove(i);
 					matchedFiles.add(file);
 					String schema = schemaElement.getSchema();
 					if (schema != null && checkTrees) {
+						LOG.trace("*******following: "+schema);
 						ContainerCheck schemaCheck = new ContainerCheck(schema);
+						schemaCheck.setCheckTrees(checkTrees);
 						schemaCheck.checkProject(new SimpleContainer(file));
+//						checkUnmatchedFiles();
+						LOG.trace("*******end: "+schema);
 					}
 					change = true;
 					break;
@@ -108,5 +122,14 @@ public class FilenameSets  {
 		return matchedFiles;
 	}
 
+	private void checkUnmatchedFiles() {
+		if (getFiles().size() != 0) {
+			LOG.debug("unmatched files "+getFiles());
+		}
+	}
+
+	public List<File> getFiles() {
+		return files;
+	}
 
 }

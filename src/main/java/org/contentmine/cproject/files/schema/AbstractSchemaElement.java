@@ -83,11 +83,11 @@ public abstract class AbstractSchemaElement extends AbstractCMElement {
 
 	public static final String C_PROJECT_TEMPLATE_XML = "cProjectTemplate.xml";
 	public static final String C_TREE_TEMPLATE_XML = "cTreeTemplate.xml";
-	private static final String COUNT = "count";
-	private static final String NAME = "name";
-	private static final String REGEX = "regex";
-	private static final String SCHEMA = "schema";
-	private static final String TYPE = "type";
+	public static final String COUNT = "count";
+	public static final String NAME = "name";
+	public static final String REGEX = "regex";
+	public static final String SCHEMA = "schema";
+	public static final String TYPE = "type";
 
 	private List<File> directoryList;
 	private List<File> fileList;
@@ -181,6 +181,10 @@ public abstract class AbstractSchemaElement extends AbstractCMElement {
 		return sb.toString();
 	}
 
+	public String getLabel() {
+		return getName() != null ? getName() : getRegex();
+	}
+	
 	public String getCount() {
 		return this.getAttributeValue(COUNT);
 	}
