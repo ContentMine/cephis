@@ -28,8 +28,8 @@ public class ProjectSchemaTest {
 
 	@Test
 	public void testProjectSchema() {
-		InputStream is = this.getClass().getResourceAsStream(
-				DefaultArgProcessor.FILES_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML);
+		String name = DefaultArgProcessor.SCHEMA_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML;
+		InputStream is = this.getClass().getResourceAsStream(name);
 		Assert.assertNotNull("stream", is);
 		AbstractSchemaElement schemaElement = AbstractSchemaElement.create(XMLUtil.parseQuietlyToRootElement(is));
 		Assert.assertNotNull(schemaElement);
@@ -37,32 +37,101 @@ public class ProjectSchemaTest {
 	
 	@Test
 	public void testProjectSchemaCheck() {
-		InputStream is = this.getClass().getResourceAsStream(
-				DefaultArgProcessor.FILES_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML);
+		String name = DefaultArgProcessor.SCHEMA_TOP + "/" + AbstractSchemaElement.C_PROJECT_TEMPLATE_XML;
+		InputStream is = this.getClass().getResourceAsStream(name);
 		AbstractSchemaElement projectSchema = (AbstractSchemaElement) CProjectSchema.create(XMLUtil.parseQuietlyToRootElement(is));
 		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "project2/");
 		Assert.assertTrue("file exists", cProjectFile.exists());
 		ContainerCheck projectCheck = new ContainerCheck(projectSchema);
 		projectCheck.checkProject(new CProject(cProjectFile));
-		Assert.assertEquals("unchecked files", 0, projectCheck.getUncheckedFiles().size());
+		Assert.assertEquals("unchecked files", 0, projectCheck.getTotalUncheckedFiles().size());
 	}
 	
 	@Test
 	public void testProjectWithResultsSchemaCheck() {
-		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "indiaverysmall/");
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "treesWithResults/");
 		Assert.assertTrue("file exists", cProjectFile.exists());
 		ContainerCheck projectCheck = new ContainerCheck();
 		projectCheck.checkProject(new CProject(cProjectFile));
-		Assert.assertEquals("unchecked files", 0, projectCheck.getUncheckedFiles().size());
+		Assert.assertEquals("unchecked files", 0, projectCheck.getTotalUncheckedFiles().size());
 	}
 	
 	@Test
 	public void testProjectAndCTrees() {
-		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "indiaverysmall/");
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "treesWithResults/");
 		Assert.assertTrue("file exists", cProjectFile.exists());
 		ContainerCheck projectCheck = new ContainerCheck();
 		projectCheck.setCheckTrees(true);
 		projectCheck.checkProject(new CProject(cProjectFile));
-		Assert.assertEquals("unchecked files", 0, projectCheck.getUncheckedFiles().size());
+		Assert.assertEquals("unchecked files", 0, projectCheck.getTotalUncheckedFiles().size());
+	}
+	
+	@Test
+	public void testCooccurrence() {
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "cooc/");
+		Assert.assertTrue("file exists", cProjectFile.exists());
+		ContainerCheck projectCheck = new ContainerCheck();
+		projectCheck.setCheckTrees(true);
+		projectCheck.checkProject(new CProject(cProjectFile));
+		List<File> uncheckedFiles = projectCheck.getTotalUncheckedFiles();
+		Assert.assertEquals("unchecked files", 1, uncheckedFiles.size());
+		Assert.assertEquals("unchecked", "src/test/resources/org/contentmine/cproject/files/projects/cooc/unexpectedfile.txt",
+				uncheckedFiles.get(0).toString());
+	}
+	
+	/** simple CTrees with common children
+	 * 
+	 */
+	@Test
+	public void testDoiNames() {
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "doiNames/");
+		Assert.assertTrue("file exists", cProjectFile.exists());
+		ContainerCheck projectCheck = new ContainerCheck();
+		projectCheck.setCheckTrees(true);
+		projectCheck.checkProject(new CProject(cProjectFile));
+		List<File> uncheckedFiles = projectCheck.getTotalUncheckedFiles();
+		Assert.assertEquals("unchecked files", 0, uncheckedFiles.size());
+	}
+	
+	/** simple CTrees with common children and some CTree siblings
+	 * 
+	 */
+	@Test
+	public void testProject2() {
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "project2/");
+		Assert.assertTrue("file exists", cProjectFile.exists());
+		ContainerCheck projectCheck = new ContainerCheck();
+		projectCheck.setCheckTrees(true);
+		projectCheck.checkProject(new CProject(cProjectFile));
+		List<File> uncheckedFiles = projectCheck.getTotalUncheckedFiles();
+		Assert.assertEquals("unchecked files", 0, uncheckedFiles.size());
+	}
+	
+	/** CTrees with results added by AMI
+	 * 
+	 */
+	@Test
+	public void testCTreesWithResults() {
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "treesWithResults/");
+		Assert.assertTrue("file exists", cProjectFile.exists());
+		ContainerCheck projectCheck = new ContainerCheck();
+		projectCheck.setCheckTrees(true);
+		projectCheck.checkProject(new CProject(cProjectFile));
+		List<File> uncheckedFiles = projectCheck.getTotalUncheckedFiles();
+		Assert.assertEquals("unchecked files", 0, uncheckedFiles.size());
+	}
+	
+	/** simple CTrees with common children and some CTree siblings
+	 * 
+	 */
+	@Test
+	public void testCTreesWithSVGImages() {
+		File cProjectFile = new File(CMineFixtures.TEST_PROJECTS_DIR, "treesWithSvgImages/");
+		Assert.assertTrue("file exists", cProjectFile.exists());
+		ContainerCheck projectCheck = new ContainerCheck();
+		projectCheck.setCheckTrees(true);
+		projectCheck.checkProject(new CProject(cProjectFile));
+		List<File> uncheckedFiles = projectCheck.getTotalUncheckedFiles();
+//		Assert.assertEquals("unchecked files", 0, uncheckedFiles.size());
 	}
 }

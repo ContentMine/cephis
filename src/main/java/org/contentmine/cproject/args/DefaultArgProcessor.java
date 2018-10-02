@@ -135,6 +135,7 @@ public class DefaultArgProcessor {
 	protected static final String ARGS_XML = "args.xml";
 	public static String ARGS_XML_RESOURCE = ARGS_TOP+"/"+ARGS_XML;
 	public static String FILES_TOP = ORG_CONTENTMINE_CPROJECT + "/files";
+	public static String SCHEMA_TOP = ORG_CONTENTMINE_CPROJECT + "/schema";
 	
 	private static final File MAIN_RESOURCES = new File("src/main/resources");
 	public static final String MINUS = "-";
