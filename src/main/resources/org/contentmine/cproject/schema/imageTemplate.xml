@@ -1,0 +1,12 @@
+<dir name="image">
+     <file regex="page\.(\d+)\.(\d+)\.png" count="0,9999">
+         <p>Images extracted from PDFs. First capture is page, second is serial within page</p>
+     </file>
+	     <!-- 
+	  <dir regex="image_\d+">
+	    <file name="image.gif" count="0,1"/>
+	    <file name="image.png" count="0,1"/>
+	    <file name="image.svg" count="0,1"/>
+	  </dir>
+	  -->
+</dir>
