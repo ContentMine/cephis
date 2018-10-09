@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import org.contentmine.graphics.svg.SVGG;
+import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGPolygon;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.junit.Assert;
@@ -32,7 +33,7 @@ public class PixelOutlinerTest {
 		PixelList diamond = PixelListTest.CREATE_DIAMOND();
 		PixelOutliner outliner = new PixelOutliner(diamond);
 		outliner.createOutline();
-		SVGPolygon polygon = outliner.getSVGPolygon();
+		SVGPoly polygon = outliner.getSVGPolygon();
 		SVGG g = new SVGG();
 		g.appendChild(diamond.getOrCreateSVG());
 		g.appendChild(polygon);
@@ -49,7 +50,7 @@ public class PixelOutlinerTest {
 		Assert.assertEquals("polygon0", 24, polygonList.get(0).size());
 		Assert.assertEquals("polygon1", 24, polygonList.get(1).size());
 		SVGG g = new SVGG();
-		for (SVGPolygon polygon : polygonList) {
+		for (SVGPoly polygon : polygonList) {
 			g.appendChild(polygon);
 		}
 		SVGSVG.wrapAndWriteAsSVG(g, new File("target/pixels/twoIslands.svg"));
