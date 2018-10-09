@@ -19,7 +19,7 @@ import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
-import org.contentmine.graphics.svg.SVGPolyline;
+import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.image.ImageParameters;
 import org.contentmine.image.pixel.PixelComparator.ComparatorType;
 import org.contentmine.image.pixel.PixelNucleus.PixelJunctionType;
@@ -1017,7 +1017,7 @@ public class PixelGraph {
 			if (line != null) {
 				line.setCSSStyle("stroke:green;stroke-width:1.2;");
 			} else {
-				SVGPolyline polyline = edge.createPolylineFromSegmentList();
+				SVGPoly polyline = edge.createPolylineFromSegmentList();
 				if (polyline != null) {
 					line.setCSSStyle("blue;stroke-width:1.2;");					
 				}

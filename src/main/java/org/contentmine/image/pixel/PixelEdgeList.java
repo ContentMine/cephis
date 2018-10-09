@@ -65,7 +65,7 @@ public class PixelEdgeList implements Iterable<PixelEdge> {
 
 	public PixelEdge get(int i) {
 		ensureList();
-		return list.get(i);
+		return i >= list.size() ? null : list.get(i);
 	}
 
 	// {(1,2)(0,3)(1,4)(2,4)(3,4)(4,3)(3,2)}/[(1,2), (3,2)]{(1,2)(2,2)(3,2)}/[(1,2), (3,2)]
@@ -116,6 +116,14 @@ public class PixelEdgeList implements Iterable<PixelEdge> {
 
 	public void reverse() {
 		Collections.reverse(list);
+	}
+
+	public void addAll(PixelEdgeList edgeList1) {
+		if (edgeList1 != null) {
+			for (PixelEdge edge1 : edgeList1) {
+				this.add(edge1);
+			}
+		}
 	}
 
 }

@@ -2,6 +2,7 @@ package org.contentmine.image.pixel;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -1051,6 +1052,36 @@ public class PixelIsland implements Iterable<Pixel> {
 		getOrCreateNodeList();
 		if (edgeList == null) {
 			edgeList = getOrCreateNucleusFactory().createPixelEdgeListFromNodeList();
+			if (edgeList.size() == 0 && nodeList.size() > 0 && size() > 1) {
+				PixelGraph graph = this.getOrCreateGraph();
+				edgeList = graph.getOrCreateEdgeList();
+			}
+		}
+		return edgeList;
+	}
+
+	private PixelEdgeList createCyclicEdges() {
+		LOG.debug("*************** nodeList: " + nodeList.size());
+		for (PixelNode node : nodeList) {
+			PixelEdgeList edgeList1 = createPixelEdgeListFromCycles(node);
+			edgeList.addAll(edgeList1);
+		}
+		return edgeList;
+	}
+
+	private PixelEdgeList createPixelEdgeListFromCycles(PixelNode node) {
+		PixelEdgeList edgeList = new PixelEdgeList();
+		PixelList neighbours = node.getDiagonalNeighbours(this);
+		neighbours.addAll(node.getOrthogonalNeighbours(this));
+		LOG.debug("NEIG"+neighbours);
+		if (neighbours.size() == 0) {
+			LOG.debug("SINGLE POINT");
+		} else if (neighbours.size() == 1) {
+			LOG.debug("acyclic " + pixelList.size());
+		} else if (neighbours.size() == 2) {
+			LOG.debug("CYCLE? " + pixelList.size());
+		} else {
+			LOG.debug(" multiple neighbours: " + neighbours.size() + "/" + this.pixelList.size());
 		}
 		return edgeList;
 	}
@@ -1340,6 +1371,21 @@ public class PixelIsland implements Iterable<Pixel> {
 
 	public void setIslandAnnotation(PixelIslandAnnotation islandAnnotation) {
 		this.islandAnnotation = islandAnnotation;
+	}
+
+	public boolean removeEdge(PixelEdge edge) {
+		if (edgeList != null) {
+			return edgeList.remove(edge);
+		}
+		return false;
+	}
+
+	public boolean removePixelEdgeList(PixelEdgeList edgeList) {
+		boolean remove = false;
+		for (PixelEdge edge : edgeList) {
+			remove |= this.removeEdge(edge);
+		}
+		return remove;
 	}
 
 

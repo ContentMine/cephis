@@ -704,6 +704,15 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		}
 	}
 
+	public void removeIslandsLessThan(int minimumSize) {
+		for (int i = list.size() - 1; i >= 0; i--) {
+			PixelIsland island = list.get(i);
+			if (island.size() < minimumSize) {
+				list.remove(island);
+			}
+		}
+	}
+
 	public List<PixelList> getOrCreateOutlineList() {
 		if (outlineList == null) {
 			outlineList = new ArrayList<PixelList>();
