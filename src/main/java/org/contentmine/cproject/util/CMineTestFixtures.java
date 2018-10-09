@@ -35,6 +35,10 @@ public class CMineTestFixtures {
 			if (!sourceDir.exists() || !sourceDir.isDirectory()) {
 				throw new RuntimeException("sourceDir does not exist: "+sourceDir);
 			}
+			if (sourceDir.equals(targetDir)) {
+				LOG.error("Target and source are identical; Cannot delete");
+				return false;
+			}
 			if (targetDir.exists()) FileUtils.forceDelete(targetDir);
 			LOG.trace(sourceDir.getAbsolutePath());
 			
