@@ -12,6 +12,7 @@ import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
+import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGPolyline;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.image.geom.DouglasPeucker;
@@ -334,10 +335,15 @@ public class PixelEdge {
 		return nodeList.remove(node);
 	}
 
-	public SVGPolyline createPolylineFromSegmentList() {
+	public SVGPoly createPolylineFromSegmentList() {
 		SVGPolyline polyline = null;
 		if (segmentList != null) {
-			
+			polyline = new SVGPolyline();
+			for (int i = 0; i < segmentList.size(); i++) {
+				PixelSegment pixelSegment = segmentList.get(i);
+				polyline.add(pixelSegment.getSVGLine());
+			}
+			polyline.setReal2Array(polyline.getReal2Array());
 		}
 		return polyline;
 	}
@@ -422,17 +428,19 @@ public class PixelEdge {
 	 * @param npoints >=2 ideally less than size() / 2
 	 * @return
 	 */
+	@Deprecated
 	public PixelEdge createSegmentedEdge(int nsegments) {
 		// copy the pixelEdge
 		PixelEdge subEdge = new PixelEdge(this);
-		IntArray integers = IntArray.naturalNumbers(size() - 1);
-		IntArray segmentIndexes = integers.createSegmentedArray(nsegments);
-		PixelList segmentedPixelList = new PixelList();
-		for (int i = 0; i < segmentIndexes.size(); i++) {
-			Pixel pixel = this.get(segmentIndexes.elementAt(i));
-			segmentedPixelList.add(pixel);
+		PixelList segmentedPixelList = subEdge.createSegmentedPixelList(nsegments, this);
+		subEdge.segmentList = new PixelSegmentList();
+		int size = segmentedPixelList.size();
+		for (int i = 0; i < size - 1; i++) {
+			Int2 int20 = segmentedPixelList.get(i).getInt2();
+			Int2 int21 = segmentedPixelList.get(i + 1).getInt2();
+			PixelSegment segment = new PixelSegment(new Real2(int20), new Real2(int21));
+			subEdge.segmentList.add(segment);
 		}
-		subEdge.pixelList = segmentedPixelList;
 		return subEdge;
 	}
 
@@ -679,6 +687,32 @@ public class PixelEdge {
 			changed = true;
 		}
 		return changed;
+	}
+
+	public PixelSegmentList getPixelSegmentList() {
+		return segmentList;
+	}
+
+	/** creates a new sub PixelList at coarser frequency
+	 * 
+	 * delta = size / nsegments
+	 *  at 0, delta*1 , delta*2 ... size 
+	 * 
+	 * @param nsegments to split list into 
+	 * @param pixelEdge
+	 * @return
+	 */
+	public PixelList createSegmentedPixelList(int nsegments, PixelEdge pixelEdge) {
+		PixelList segmentedPixelList = new PixelList();
+		IntArray integers = IntArray.naturalNumbers(pixelEdge.size() - 1);
+		IntArray segmentIndexes = integers.createSegmentedArray(nsegments);
+		for (int i = 0; i < segmentIndexes.size(); i++) {
+			int idx = segmentIndexes.elementAt(i);
+			Pixel pixel = pixelEdge.get(idx);
+//			LOG.debug(pixel);
+			segmentedPixelList.add(pixel);
+		}
+		return segmentedPixelList;
 	}
 	
 

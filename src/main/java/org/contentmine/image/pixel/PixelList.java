@@ -152,11 +152,13 @@ public class PixelList implements Iterable<Pixel> {
 	}
 
 	private void checkFromSameIsland(Pixel pixel) {
-		PixelIsland island = pixel.getIsland();
-		if (this.island == null) {
-			this.island = island;
-		} else if (island == null || !this.island.equals(island)) {
-			throw new RuntimeException("change of island not allowed: "+this.island+"=>"+island);
+		if (pixel != null) {
+			PixelIsland island = pixel.getIsland();
+			if (this.island == null) {
+				this.island = island;
+			} else if (island == null || !this.island.equals(island)) {
+				throw new RuntimeException("change of island not allowed: "+this.island+"=>"+island);
+			}
 		}
 	}
 	

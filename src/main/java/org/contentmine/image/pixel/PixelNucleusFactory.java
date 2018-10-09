@@ -543,6 +543,9 @@ public class PixelNucleusFactory {
 		getOrCreateSpikePixelList();
 		if (edgeList.size() > 0) {
 			LOG.trace("EDGELIST "+edgeList.size());
+		} else if (island.size() >= 2) {
+			LOG.trace("No edges for node. Cyclic?");
+			
 		}
 		return edgeList;
 	}
