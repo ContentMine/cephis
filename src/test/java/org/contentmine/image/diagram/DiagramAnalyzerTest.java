@@ -262,6 +262,10 @@ public class DiagramAnalyzerTest {
 		ImageIOUtil.writeImageQuietly(image, file);
 	}
 
+	@Test
+	public void testContour() {
+		
+	}
 
 
 	//======================================
