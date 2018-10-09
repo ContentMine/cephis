@@ -671,4 +671,17 @@ public class ImageProcessor {
 		return inputSuffix;
 	}
 
+	public BufferedImage flipBinary() {
+		BufferedImage newImage = ImageUtil.deepCopy(image);
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j < image.getHeight(); j++) {
+				int oldColor = image.getRGB(i, j);
+				oldColor &= 0x00ffffff;
+				int newColor = oldColor ^ 0xffffff;
+				newImage.setRGB(i, j, newColor);
+			}
+		}
+		return newImage;
+	}
+
 }

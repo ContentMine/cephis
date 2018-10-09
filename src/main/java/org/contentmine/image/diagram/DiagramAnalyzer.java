@@ -22,6 +22,7 @@ import org.contentmine.eucl.euclid.Line2;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.svg.SVGG;
@@ -48,6 +49,7 @@ import org.contentmine.image.pixel.PixelRingList;
 import org.contentmine.image.pixel.PixelSegment;
 import org.contentmine.image.pixel.PixelSegmentList;
 import org.contentmine.image.processing.Thinning;
+import org.contentmine.image.processing.ZhangSuenThinning;
 
 /**
  * general analyzer of pixel diagrams.
@@ -1472,6 +1474,43 @@ public class DiagramAnalyzer {
 			File binarizedFile = new File(targetDir, "binarized"+threshold+".png");
 			writeBinarizedFile(binarizedFile);
 		}
+	}
+
+	/** convenience routine for creating binary pixelList.
+	 * 
+	 * @param imageFile
+	 * @return
+	 */
+	public PixelIslandList createDefaultPixelIslandList(File imageFile) {
+		ImageProcessor imageProcessor = getImageProcessor();
+		imageProcessor.setBinarize(true);
+		imageProcessor.setThreshold(180); // turns blue to black
+		imageProcessor.setThinning(new ZhangSuenThinning());
+		imageProcessor.setDebug(true);
+		imageProcessor.readAndProcessFile(imageFile);
+		getOrCreateGraphList(imageFile);
+		PixelIslandList pixelIslandList = getOrCreatePixelIslandList();
+		return pixelIslandList;
+	}
+
+	/** convenience routine for creating binary pixel rings.
+	 * 
+	 * @param imageFile
+	 * @return
+	 */
+	public PixelRingList createDefaultPixelRings(File imageFile) {
+		ImageProcessor imageProcessor = getImageProcessor();
+		imageProcessor.setBinarize(true);
+		imageProcessor.setThreshold(180); // turns blue to black
+		imageProcessor.setThinning(null);
+		imageProcessor.setDebug(true);
+		imageProcessor.readAndProcessFile(imageFile);
+		PixelIslandList pixelIslandList = getOrCreatePixelIslandList();
+		pixelIslandList.removeIslandsLessThan(new Real2Range(new RealRange(0, 10), new RealRange(0, 10)));
+		pixelIslandList.sortBySizeDescending();
+		PixelIsland mainTrace = pixelIslandList.get(0);
+		PixelRingList pixelRingList = mainTrace.getOrCreateInternalPixelRings();
+		return pixelRingList;
 	}
 
 }

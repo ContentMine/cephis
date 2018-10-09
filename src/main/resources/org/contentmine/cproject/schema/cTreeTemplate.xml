@@ -1,39 +1,56 @@
 <cTree>
 	<file name="manifest.xml" count="0,1">
 	  <p>Manifest listing all files in the tree, and other controlled files in this directory. 
-	  Follows structure of this file.</p>
+	  Follows structure of this file. Not currently used</p>
 	</file>
 	<file name="eupmc_result.json" count="0,1">
 	    <p>Metadata from getpapers/eupmc. </p>
+	    <input program="getpapers">EUPMC</input>
 	</file>
 	<file name="fulltext.html" count="0,1">
 	    <p>Raw HTML from publisher site. May not be well-formed or valid HTML5.</p>
+	    <input program="getpapers">PUBLISHER</input>
+	</file>
+	<file name="fulltext.pdf.html" count="0,1">
+	    <input program="pdf2html">fulltext.pdf</input>
+	    <p>converted from PDF</p>
 	</file>
 	<file name="fulltext.pdf" count="0,1">
 	    <p>Raw PDF from publisher site. </p>
+	    <input program="getpapers">PUBLISHER</input>
 	</file>
 	<file name="fulltext.pdf.txt" count="0,1">
-	    <p>Text file created from fulltext.xml with a converter. </p>
+	    <p>Text file created from fulltext.pdf with a converter. </p>
+	    <input program="pdf2txt">fulltext.pdf</input>
 	</file>
 	<file name="fulltext.txt" count="0,1">
 	    <p>Raw TXT from publisher site. </p>
+	    <input program="unknown">PUBLISHER</input>
 	</file>
 	<file name="fulltext.xml" count="0,1">
 	    <p>Raw XML from publisher site. Probably well-formed but not necessarily schema-compliant.</p>
+	    <input program="getpapers">PUBLISHER</input>
 	</file>
 	<file name="results.json" count="0,1">
 	    <p>Metadata and manifest output by quickscrape.</p>
+	    <input program="getpapers">EPMC</input>
+	</file>
+	<file name="semantic.html" count="0,1">
+	    <p>Converted from various inputs</p>
+	    <input program="some_semantifier"></input>
 	</file>
 	<file name="scholarly.html" count="0,1">
-	    <p>Scholarly HTML, normally created by transforming a fulltext.* input</p>
+	    <p>Scholarly HTML, normally created by transforming a fulltext.* input. Legacy, should be replaced</p>
 	</file>
 	<file regex="(gene|search|species|word)\.[a-z]+\.(snippets|count|documents).xml" count="0,99999">
 	    <p> summary of "results/", possibly shouldn't be here but in results</p>
+	    <input program="???">???</input>
 	</file>
 	<dir name="svg" schema="svgTemplate.xml">
 	    <p>Converted by PDF2SVG2</p>
+	    <input program="pdf2svg2">fulltext.pdf</input>
 	</dir>
-	<dir name="images" count="0,1">
+	<dir name="images" schema="imagesTemplate.xml" count="0,1">
 	    <p>Images or similar graphics downloaded from publisher site. There may be many images for one CTree, one directory per downloaded image.
 	     Numbering and naming may be ad hoc until we work it out.</p>
 	</dir>
