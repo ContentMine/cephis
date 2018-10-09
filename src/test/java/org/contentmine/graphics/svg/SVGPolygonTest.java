@@ -108,15 +108,15 @@ public class SVGPolygonTest {
 	
 	@Test
 	public void testIsGeometricallyEqualTo() {
-		SVGPolygon polygon = new SVGPolygon(new Real2Array(
+		SVGPoly polygon = new SVGPolygon(new Real2Array(
 				new RealArray(new double[]{ 10., 20., 30., 40., 50., 60.}),
 				new RealArray(new double[]{ 110., 120., 130., 140., 150., 160.}))
 				);
-		SVGPolygon polygon1 = new SVGPolygon(new Real2Array(
+		SVGPoly polygon1 = new SVGPolygon(new Real2Array(
 				new RealArray(new double[]{ 10.005, 20.005, 30.005, 40.005, 50.005, 60.005}),
 				new RealArray(new double[]{ 110., 120., 130., 140., 150., 160.}))
 				);
-		SVGPolygon polygon2 = new SVGPolygon(new Real2Array(
+		SVGPoly polygon2 = new SVGPolygon(new Real2Array(
 				new RealArray(new double[]{ 10.01, 20.01, 30.01, 40.01, 50.01, 60.01}),
 				new RealArray(new double[]{ 110., 120., 130., 140., 150., 160.}))
 				);

@@ -9,6 +9,7 @@ import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGHTMLFixtures;
+import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGPolyline;
 import org.contentmine.graphics.svg.cache.ComponentCache;
 import org.contentmine.graphics.svg.plot.XPlotBox;
@@ -44,7 +45,7 @@ public class PolylineIT {
 		List<SVGPolyline> polylines = componentCache.getOrCreatePolylineCache().getOrCreatePolylineList();
 		LOG.debug("P "+polylines.size());
 		AbstractCMElement g = new SVGG();
-		for (SVGPolyline polyline : polylines) {
+		for (SVGPoly polyline : polylines) {
 			LOG.debug(polyline.toXML());
 		}
 //		List<Multiset.Entry<String>> sigsByCount = glyphSet.getSignaturesSortedByCount();

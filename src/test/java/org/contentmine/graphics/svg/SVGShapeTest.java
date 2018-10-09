@@ -37,12 +37,12 @@ private static final Logger LOG = Logger.getLogger(SVGShapeTest.class);
 		shapes.add(rect);
 		SVGLine line = new SVGLine(new Real2(150., 160.), new Real2(180., 50.));
 		shapes.add(line);
-		SVGPolygon polygon = new SVGPolygon(new Real2Array(
+		SVGPoly polygon = new SVGPolygon(new Real2Array(
 				new RealArray(new double[]{ 10., 20., 30., 40., 50., 60.}),
 				new RealArray(new double[]{ 110., 120., 130., 140., 150., 160.}))
 				);
 		shapes.add(polygon);
-		SVGPolyline polyline = new SVGPolyline(new Real2Array(
+		SVGPoly polyline = new SVGPolyline(new Real2Array(
 				new RealArray(new double[]{ 10., 20., 30., 40., 50., 60.}),
 				new RealArray(new double[]{ 110., 120., 130., 140., 150., 160.}))
 				);
@@ -110,24 +110,24 @@ private static final Logger LOG = Logger.getLogger(SVGShapeTest.class);
 		shapes.add(rect);
 		line = new SVGLine(new Real2(150.005, 160.), new Real2(180., 50.));
 		shapes.add(line);
-		SVGPolygon polygon = new SVGPolygon(new Real2Array(
+		SVGPoly polygon = new SVGPolygon(new Real2Array(
 				new RealArray(new double[]{ 10., 20., 30., 40., 50., 60.}),
 				new RealArray(new double[]{ 110., 120., 130., 140., 150., 160.}))
 				);
 		shapes.add(polygon);
-		SVGPolyline polyline = new SVGPolyline(new Real2Array(
+		SVGPoly polyline = new SVGPolyline(new Real2Array(
 				new RealArray(new double[]{ 10., 20., 30., 40., 50., 60.}),
 				new RealArray(new double[]{ 110., 120., 130., 140., 150., 160.}))
 				);
 		shapes.add(polyline);
 		SVGPath path = new SVGPath("M 2 3 L 3 4 L 5 6");
 		shapes.add(path);
-		SVGPolygon polygon1 = new SVGPolygon(new Real2Array(
+		SVGPoly polygon1 = new SVGPolygon(new Real2Array(
 				new RealArray(new double[]{ 10.005, 20., 30., 40., 50., 60.}),
 				new RealArray(new double[]{ 110., 120.005, 130., 140., 150., 160.}))
 				);
 		shapes.add(polygon1);
-		SVGPolyline polyline1 = new SVGPolyline(new Real2Array(
+		SVGPoly polyline1 = new SVGPolyline(new Real2Array(
 				new RealArray(new double[]{ 10.005, 20., 30., 40., 50., 60.}),
 				new RealArray(new double[]{ 110., 120.005, 130., 140., 150., 160.}))
 				);
