@@ -24,6 +24,7 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
+import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGPolygon;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
@@ -536,7 +537,7 @@ public abstract class AbstractPlotBox {
 	protected SVGG createPolygonElement() {
 		getOrCreatePolygonList();
 		SVGG g = new SVGG();
-		for (SVGPolygon polygon : polygonList) {
+		for (SVGPoly polygon : polygonList) {
 			g.appendChild(polygon.copy());
 		}
 		return g;

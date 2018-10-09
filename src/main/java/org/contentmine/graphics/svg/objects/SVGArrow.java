@@ -7,7 +7,7 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGMarker;
 import org.contentmine.graphics.svg.SVGPath;
-import org.contentmine.graphics.svg.SVGPolyline;
+import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.graphics.svg.SVGUtil;
 
 public class SVGArrow extends SVGLine {
@@ -88,7 +88,7 @@ private static final Logger LOG = Logger.getLogger(SVGArrow.class);
 	private static SVGArrow createArrow(SVGLine subline, int lineEnd, SVGTriangle triangle, double delta) {
 		SVGArrow arrow = null;
 		if (subline != null && triangle != null) {
-			SVGPolyline polyline = triangle.getOrCreateClosedPolyline();
+			SVGPoly polyline = triangle.getOrCreateClosedPolyline();
 			Real2Range bboxLine = subline.getBoundingBox();
 			Real2Range bboxTriangle = triangle.getBoundingBox();
 			if (!SVGUtil.isNullReal2Range(bboxLine.intersectionWith(bboxTriangle))) {

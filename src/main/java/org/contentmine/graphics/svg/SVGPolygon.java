@@ -30,6 +30,8 @@ import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.path.ClosePrimitive;
+import org.contentmine.graphics.svg.path.PathPrimitiveList;
 
 import nu.xom.Element;
 import nu.xom.Node;
@@ -110,7 +112,7 @@ public class SVGPolygon extends SVGPoly {
 		return TAG;
 	}
 
-	public static SVGPolygon createPolygon(SVGRect rect) {
+	public static SVGPoly createPolygon(SVGRect rect) {
 		return rect == null ? null : createPolygon(rect.getBoundingBox());
 	}
 	
@@ -327,6 +329,12 @@ public class SVGPolygon extends SVGPoly {
 		List<SVGPoly> polylineGonList = SVGPoly.createSVGPolyList(lineList, eps );
 		List<SVGPolygon> polygonList = SVGPolygon.extractPolygons(polylineGonList);
 		return polygonList;
+	}
+	
+	@Override
+	protected void completePrimitive(PathPrimitiveList primitiveList) {
+		primitiveList.add(new ClosePrimitive());
+//		LOG.debug("CLOSE "+primitiveList.createD());
 	}
 
 

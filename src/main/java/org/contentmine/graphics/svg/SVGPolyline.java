@@ -31,6 +31,8 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.path.ClosePrimitive;
+import org.contentmine.graphics.svg.path.PathPrimitiveList;
 
 import nu.xom.Element;
 import nu.xom.Node;
@@ -395,6 +397,11 @@ public class SVGPolyline extends SVGPoly {
 		if (markerList.size() == 0) {
 			addNewMarker(line);
 		}
+		getOrCreateReal2Array();
+		if (real2Array.size() == 0) {
+			real2Array.addElement(line.getXY(0));
+		}
+		real2Array.addElement(line.getXY(1));
 		lineList.add(line);
 		addNewMarker(line);
 	}
@@ -444,7 +451,7 @@ public class SVGPolyline extends SVGPoly {
 	/** 
 	 * Alters direction of line. MODIFIES THIS.
 	 */
-	public SVGPolyline reverse() {
+	public SVGPoly reverse() {
 		Real2Array r2a = this.getReal2Array();
 		r2a.reverse();
 		this.setReal2Array(r2a);
@@ -768,6 +775,10 @@ public class SVGPolyline extends SVGPoly {
 		return polylineList;
 	}
 
+	@Override
+	protected void completePrimitive(PathPrimitiveList primitiveList) {
+		// no action
+	}
 
 
 }

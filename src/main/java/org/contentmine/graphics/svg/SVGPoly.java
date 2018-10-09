@@ -36,8 +36,12 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.RealArray.Monotonicity;
 import org.contentmine.eucl.euclid.Transform2;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.objects.SVGRhomb;
+import org.contentmine.graphics.svg.path.ClosePrimitive;
+import org.contentmine.graphics.svg.path.LinePrimitive;
+import org.contentmine.graphics.svg.path.MovePrimitive;
 import org.contentmine.graphics.svg.path.PathPrimitiveList;
 
 import nu.xom.Attribute;
@@ -134,7 +138,9 @@ public abstract class SVGPoly extends SVGShape {
 	public Real2Array getReal2Array() {
 		if (real2Array == null) {
 			String pointsValue = getAttributeValue("points");
-			real2Array = Real2Array.createFromPairs(pointsValue, ArrayBase.ARRAY_REGEX);
+			if (pointsValue != null) {
+				real2Array = Real2Array.createFromPairs(pointsValue, ArrayBase.ARRAY_REGEX);
+			}
 		}
 		return real2Array;
 	}
@@ -233,11 +239,13 @@ public abstract class SVGPoly extends SVGShape {
     }
     
     public Real2Range getBoundingBox() {
-    	if (boundingBoxNeedsUpdating()) {
-	    	boundingBox = new Real2Range();
+    	if (boundingBoxNeedsUpdating() || real2Array != null) {
 	    	getReal2Array();
-	    	for (int i = 0; i < real2Array.size(); i++) {
-	    		boundingBox.add(real2Array.get(i));
+	    	if (real2Array != null && real2Array.size() > 1) {
+		    	boundingBox = new Real2Range();
+		    	for (int i = 0; i < real2Array.size(); i++) {
+		    		boundingBox.add(real2Array.get(i));
+		    	}
 	    	}
     	}
     	return boundingBox;
@@ -631,6 +639,31 @@ public abstract class SVGPoly extends SVGShape {
 		}
 		return false;
 	}
+
+	protected void getOrCreateReal2Array() {
+		if (real2Array == null) {
+			real2Array = new Real2Array();
+		}
+	}
+
+	public SVGPath createPath() {
+		SVGPath path = new SVGPath();
+		PathPrimitiveList primitiveList = new PathPrimitiveList();
+		Real2Array array = this.getReal2Array();
+		Real2 orig = array.get(0);
+		SVGPathPrimitive move = new MovePrimitive(orig);
+		primitiveList.add(move);
+		for (int i = 1; i < array.size(); i++) {
+			primitiveList.add(new LinePrimitive(array.get(i)));
+		}
+		completePrimitive(primitiveList);
+		String dString = primitiveList.createD();
+		path.setDString(dString);
+		XMLUtil.copyAttributesFromTo(this, path);
+		return path;
+	}
+
+	protected abstract void completePrimitive(PathPrimitiveList primitiveList);
 
 	/** create polylines or polygons from a list of lines.
 	 * 
