@@ -16,6 +16,7 @@ import org.contentmine.eucl.euclid.RealMatrix;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
+import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.processing.HilditchThinning;
 import org.contentmine.image.processing.Thinning;
 import org.contentmine.image.processing.ZhangSuenThinning;
@@ -507,6 +508,93 @@ public class ImageUtil {
 		 boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
 		 WritableRaster raster = bi.copyData(null);
 		 return new BufferedImage(cm, raster, isAlphaPremultiplied, null);
+	}
+
+	/** creates a clipped image.
+	 * 
+	 * note if newWidth and newHeight access regions outside the size of oldImage they are ignored
+	 * if xoff < 0 , xoff reset to 0
+	 * if xoff > oldImage.width no copying
+	 * if oldImage is w 600, h 800
+	 * if xoff = 200 and newWidth = 300 then pixels 200...499 are copied
+	 * if xoff = 200 and newWidth = 500 then pixels 200...599 are copied
+
+	 * any undefined areas are set to 0
+	 * 
+	 * @param oldImage to copy from
+	 * @param xoff xvalue to start copying from
+	 * @param yoff yvalue to start copying from
+	 * @param newWidth width of copied image
+	 * @param newHeight height of copied image
+	 * @return
+	 */
+	public static BufferedImage createClippedImage(
+			BufferedImage oldImage, int xoff, int yoff, int newWidth, int newHeight) {
+		xoff = xoff < 0 ? 0 : xoff;
+		yoff = yoff < 0 ? 0 : yoff;
+		int type = oldImage.getType();
+		int oldWidth = oldImage.getWidth();
+		int oldHeight = oldImage.getHeight();
+		BufferedImage image = ImageUtil.createImage(newWidth, newHeight, 0, type);
+		for (int i = 0; i < Math.min(oldWidth - xoff, newWidth); i++) {
+			for (int j = 0; j < Math.min(oldHeight - yoff, newHeight); j++) {
+				int rgb = oldImage.getRGB(i + xoff, j + yoff);
+				image.setRGB(i,  j,  rgb);
+			}
+		}
+		return image;
+	}
+	
+	/**
+	 * creates image of given size and RGB fill
+	 * 
+	 * @param width > 0
+	 * @param height > 0
+	 * @param rgb
+	 * @param imageType
+	 * @return null if zero size image
+	 */
+	public static BufferedImage createImage(int width, int height, int rgb, int imageType) {
+		BufferedImage image = null;
+		if (width > 0 || height > 0) { 
+			image = new BufferedImage(width, height, imageType);
+			for (int i = 0; i < width; i++) {
+				for (int j = 0; j < height; j++) {
+					image.setRGB(i, j, rgb);
+				}
+			}
+		}
+		return image;
+	}
+	
+	public static void clearImage(BufferedImage image) {
+		for (int j = 0; j < image.getHeight(); j++) {
+			for (int i = 0; i < image.getWidth(); i++) {
+				image.setRGB(i, j, 0xffffff);
+			}
+		}
+	}
+
+	/** set box to given color
+	 * ranges are INCLUSIVE
+	 * 
+	 * @param image
+	 * @param range
+	 * @param rgb
+	 */
+	public static void setImageColor(BufferedImage image, Int2Range range, int rgb) {
+		if (range == null) return;
+		IntRange xRange = range.getXRange();
+		int x0 = Math.max(0, xRange.getMin());
+		int x1 = Math.min(image.getWidth(), xRange.getMax());
+		IntRange yRange = range.getYRange();
+		int y0 = Math.max(0, yRange.getMin());
+		int y1 = Math.min(image.getHeight(), yRange.getMax());
+		for (int i = x0; i <= x1; i++) {
+			for (int j = y0; j <= y1; j++) {
+				image.setRGB(i, j, rgb);
+			}
+		}
 	}
 
 }

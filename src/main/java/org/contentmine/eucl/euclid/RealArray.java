@@ -2430,6 +2430,53 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
 		}
 		return intArray;
 	}
+	
+	/** computes the time lag product of the array.
+	 * primarily for detecting whether there is a regular repeat 
+	 * NOT YET TESTED
+	 */
+	@Deprecated //"NOT YET TESTED"
+	private double createSimpleAutoConvolution0(int offset, int range) {
+		RealArray correlation = new RealArray(Math.min(nelem, offset+range));
+		double sum = 0.0;
+		int min = Math.min(nelem - offset, range);
+		int n = 0;
+//		LOG.debug(offset+"/"+min);
+		for (int i = offset; i <  min; i++) {
+			sum += array[i] * array [i + offset];
+			n++;
+		}
+		double corr = sum / n;
+//		LOG.debug("off " + offset + " corr "+corr);
+		return corr;
+	}
+
+	/**
+	 * 
+	 * @param maxoffset
+	 * @param range
+	 * @return
+	 */
+	public RealArray createSimpleAutoConvolution(int maxoffset,  int range) {
+		maxoffset = Math.min(maxoffset, this.nelem);
+		RealArray corrArray = new RealArray(maxoffset);
+		for (int offset = 0; offset < maxoffset; offset++) {
+			double corr = createSimpleAutoConvolution0(offset, range);
+			corrArray.setElementAt(offset, corr);
+		}
+		return corrArray;
+	}
+	
+	/**flatten values outside range onto range
+	 * 
+	 * @param int2
+	 */
+	public void flattenOutside(IntRange range) {
+		for (int i = 0; i < nelem; i++) {
+			this.setElementAt(i, Math.min(range.getMax(), Math.max(range.getMin(), this.elementAt(i))));
+		}
+	}
+
 
 }
 class DoubleIterator implements Iterator<Double> {
@@ -2456,6 +2503,7 @@ class DoubleIterator implements Iterator<Double> {
 	public void remove() {
 		throw new UnsupportedOperationException();
 	}
+	
 	
 }
 

@@ -1076,6 +1076,13 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
         }
         return temp;
     }
+        
+    public void addConstant(int c) {
+    	for (int i = 0; i < nelem; i++) {
+    		setElementAt(i, elementAt(i) + c);
+    	}
+    }
+    
     /**
      * returns values as strings.
      * 
@@ -1507,6 +1514,18 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
 			}
 		}
 		return integerList;
+	}
+	
+	/** mean rounded down.
+	 * 
+	 */
+	public int getMean() {
+		return sumAllElements()/nelem;
+	}
+	
+	public void subtractMean() {
+		int m = getMean();
+		this.addConstant(-m);
 	}
 	
 }
