@@ -14,6 +14,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.math.stat.descriptive.moment.GeometricMean;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Angle.Units;
@@ -34,6 +35,7 @@ import org.contentmine.graphics.svg.builder.SimpleBuilder;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ArgIterator;
 import org.contentmine.image.ImageProcessor;
+import org.contentmine.image.pixel.AxialPixelFrequencies;
 import org.contentmine.image.pixel.MainPixelProcessor;
 import org.contentmine.image.pixel.Pixel;
 import org.contentmine.image.pixel.PixelEdge;
@@ -1506,11 +1508,20 @@ public class DiagramAnalyzer {
 		imageProcessor.setDebug(true);
 		imageProcessor.readAndProcessFile(imageFile);
 		PixelIslandList pixelIslandList = getOrCreatePixelIslandList();
-		pixelIslandList.removeIslandsLessThan(new Real2Range(new RealRange(0, 10), new RealRange(0, 10)));
+		pixelIslandList.removeIslandsWithBBoxesLessThan(new Real2Range(new RealRange(0, 10), new RealRange(0, 10)));
 		pixelIslandList.sortBySizeDescending();
 		PixelIsland mainTrace = pixelIslandList.get(0);
 		PixelRingList pixelRingList = mainTrace.getOrCreateInternalPixelRings();
 		return pixelRingList;
+	}
+
+	public void createAxialPixelFrequencies() {
+		AxialPixelFrequencies frequencies = getImageProcessor().getMainProcessor().getOrCreateAxialPixelFrequencies();
+		
+	}
+
+	public AxialPixelFrequencies getAxialPixelFrequencies() {
+		return getImageProcessor().getMainProcessor().getOrCreateAxialPixelFrequencies();
 	}
 
 }

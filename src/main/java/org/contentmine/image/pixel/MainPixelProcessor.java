@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Axis.Axis2;
+import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.image.ArgIterator;
 import org.contentmine.image.ImageParameters;
 import org.contentmine.image.ImageProcessor;
@@ -38,6 +40,9 @@ public class MainPixelProcessor {
 	private File outputDir;
 	private int selectedIslandIndex;
 	private ImageParameters parameters;
+	private AxialPixelFrequencies axialPixelFrequencies;
+
+	private boolean isBinarised;
 
 	
 	public MainPixelProcessor(ImageProcessor imageProcessor) {
@@ -112,7 +117,7 @@ public class MainPixelProcessor {
 			pixelIslandList = floodFill.getIslandList();
 			ImageParameters parameters = getParameters();
 			if (parameters != null) {
-				pixelIslandList.removeIslandsLessThan(parameters.getMinimumIslandSize());
+				pixelIslandList.removeIslandsWithBBoxesLessThan(parameters.getMinimumIslandSize());
 				LOG.trace("after remove islands: " + pixelIslandList.size());
 			}
 			/*BufferedImage b = new BufferedImage(450, 170, BufferedImage.TYPE_INT_ARGB);
@@ -204,6 +209,23 @@ public class MainPixelProcessor {
 
 	public ImageParameters getParameters() {
 		return parameters;
+	}
+
+	public AxialPixelFrequencies getOrCreateAxialPixelFrequencies() {
+		if (axialPixelFrequencies == null) {
+			axialPixelFrequencies = new AxialPixelFrequencies(this);
+			axialPixelFrequencies.calculateAxialPixelFrequencies();
+		}
+		return axialPixelFrequencies;
+		
+	}
+
+	public boolean getBinarize() {
+		return imageProcessor.getBinarize();
+	}
+
+	public AxialPixelFrequencies getFrequencies() {
+		return axialPixelFrequencies;
 	}
 
 }

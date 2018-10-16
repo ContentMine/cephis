@@ -693,7 +693,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		return sb.toString();
 	}
 
-	public void removeIslandsLessThan(Real2Range minimumIslandSize) {
+	public void removeIslandsWithBBoxesLessThan(Real2Range minimumIslandSize) {
 		for (int i = list.size() - 1; i >= 0; i--) {
 			PixelIsland island = list.get(i);
 			Real2Range bbox = island.getBoundingBox();
@@ -704,7 +704,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		}
 	}
 
-	public void removeIslandsLessThan(int minimumSize) {
+	public void removeIslandsWithLessThanPixelCount(int minimumSize) {
 		for (int i = list.size() - 1; i >= 0; i--) {
 			PixelIsland island = list.get(i);
 			if (island.size() < minimumSize) {

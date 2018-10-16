@@ -52,6 +52,8 @@ public class ContourTest {
 	}
 	
 	/** an unthinned set of contours on a single diagram.
+	 * contours of Arthur's seat Edinburgh, thankx Alf Eaton.
+	 * 
 	 * 
 	 * @throws IOException
 	 */
@@ -132,14 +134,16 @@ public class ContourTest {
 		for (SVGG box : boxList) {
 			gg.appendChild(box);
 		}
-		SVGSVG.wrapAndWriteAsSVG(gg, new File("target/contour/"+root+ ".boxes.svg"), 10000, 5000);
+		gg.appendChild(makeBase().copy());
+//		SVGSVG.wrapAndWriteAsSVG(gg, new File("target/contour/"+root+ ".pathsbase.svg"), 10000, 5000);
+		SVGSVG.wrapAndWriteAsSVG(gg, new File("/Users/pm286/36a.pathsbase.svg"), 10000, 5000);
 				
 
 		SVGG allG = new SVGG();
 		allG.appendChild(makeBase().copy());
 //		allG.appendChild(makeStruts().copy());
 		
-		SVGSVG.wrapAndWriteAsSVG(allG, new File( "target/contour/"+root+ ".island.all.edges1.svg"));
+		SVGSVG.wrapAndWriteAsSVG(allG, new File( "/Users/pm286/36a.base.svg"));
 	}
 
 	private Map<Integer, List<Integer>> getChildContours(SVGG contoursSvg) {

@@ -684,4 +684,8 @@ public class ImageProcessor {
 		return newImage;
 	}
 
+	public MainPixelProcessor getMainProcessor() {
+		return mainProcessor;
+	}
+
 }
