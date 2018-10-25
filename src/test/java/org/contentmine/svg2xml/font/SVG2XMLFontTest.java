@@ -57,7 +57,7 @@ public class SVG2XMLFontTest {
 	@Test
 	@Ignore // not portable
 	public void testGetFontMetrics() {
-		BufferedImage bufferedImage = new BufferedImage(100, 100, 12);
+		BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_BINARY);
 		Graphics2D g2d = (Graphics2D) bufferedImage.getGraphics();
 		Font font = new Font("Helvetica", Font.PLAIN, 1000);
 		FontMetrics fontMetrics = g2d.getFontMetrics(font);

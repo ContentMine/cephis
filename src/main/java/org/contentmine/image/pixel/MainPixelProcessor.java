@@ -120,17 +120,6 @@ public class MainPixelProcessor {
 				pixelIslandList.removeIslandsWithBBoxesLessThan(parameters.getMinimumIslandSize());
 				LOG.trace("after remove islands: " + pixelIslandList.size());
 			}
-			/*BufferedImage b = new BufferedImage(450, 170, BufferedImage.TYPE_INT_ARGB);
-			java.awt.Graphics g = b.getGraphics();
-			g.setColor(Color.BLACK);
-			for (PixelIsland i : pixelIslandList.getList()) {
-				g.drawRect((int)(double) i.getBoundingBox().getXMin(), (int)(double) i.getBoundingBox().getYMin(), (int)(double) i.getBoundingBox().getXRange().getRange(), (int)(double) i.getBoundingBox().getYRange().getRange());
-			}
-			try {
-				javax.imageio.ImageIO.write(b, "PNG", new File("C:/workspace/foxboxes.png"));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}*/
 			if (superThinning) {
 				pixelIslandList.thinThickStepsOld();
 				pixelIslandList.trimOrthogonalStubs();
@@ -214,7 +203,7 @@ public class MainPixelProcessor {
 	public AxialPixelFrequencies getOrCreateAxialPixelFrequencies() {
 		if (axialPixelFrequencies == null) {
 			axialPixelFrequencies = new AxialPixelFrequencies(this);
-			axialPixelFrequencies.calculateAxialPixelFrequencies();
+			axialPixelFrequencies.calculateAxialPixelFrequenciesFromImage();
 		}
 		return axialPixelFrequencies;
 		

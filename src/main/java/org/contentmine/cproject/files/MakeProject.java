@@ -1,6 +1,7 @@
 package org.contentmine.cproject.files;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -24,22 +25,31 @@ public class MakeProject {
 			help();
 		} else {
 			// try absolute filename
-			File dir = new File(args[0]);
-			String command = " --project "+ dir + CProject.MAKE_PROJECT_PDF;
+			makeProject(new File(args[0]));
+		}
+	}
+
+	/** makes project from file
+	 * possible entry point
+	 * 
+	 * @param file
+	 * @throws IOException
+	 */
+	public static void makeProject(File file) throws IOException {
+		String filename = file.getAbsolutePath();
+		String command = " --project "+ file + CProject.MAKE_PROJECT_PDF;
+		LOG.debug(">> "+command);
+		if (!checkDirectory(file)) {
+			file = new File(".", filename);
+		}
+		if (checkDirectory(file)) {
+			LOG.debug("dir "+file.getCanonicalPath());
+			CProject cProject = new CProject(file);
+			command = " --project "+ file + CProject.MAKE_PROJECT_PDF;
 			LOG.debug(">> "+command);
-			if (!checkDirectory(dir)) {
-				dir = new File(".", args[0]);
-			}
-			if (checkDirectory(dir)) {
-				LOG.debug("dir "+dir.getCanonicalPath());
-				CProject cProject = new CProject(dir);
-				
-				command = " --project "+ dir + CProject.MAKE_PROJECT_PDF;
-				LOG.debug(">> "+command);
-				cProject.run(command);
-			} else {
-				LOG.error("cannot find absolute or relative file: "+args[0]);
-			}
+			cProject.run(command);
+		} else {
+			LOG.error("cannot find absolute or relative file: "+filename);
 		}
 	}
 

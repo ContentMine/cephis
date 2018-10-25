@@ -27,12 +27,12 @@ public class AxialPixelFrequencies {
 		this.mainPixelProcessor = mainPixelProcessor;
 	}
 	
-	public void calculateAxialPixelFrequencies() {
-		calculateXAxialPixelFrequencies();
-		calculateYAxialPixelFrequencies();
+	public void calculateAxialPixelFrequenciesFromImage() {
+		calculateXAxialPixelFrequenciesFromImage();
+		calculateYAxialPixelFrequenciesFromImage();
 	}
 	
-	private void calculateXAxialPixelFrequencies() {
+	private void calculateXAxialPixelFrequenciesFromImage() {
 		BufferedImage image = mainPixelProcessor.getImage();
 		if (image != null && mainPixelProcessor.getBinarize()) {
 			xFrequencies = new IntArray(image.getWidth());
@@ -48,7 +48,7 @@ public class AxialPixelFrequencies {
 //			LOG.debug(xFrequencies);
 		}
 	}
-	private void calculateYAxialPixelFrequencies() {
+	private void calculateYAxialPixelFrequenciesFromImage() {
 		BufferedImage image = mainPixelProcessor.getImage();
 		if (image != null && mainPixelProcessor.getBinarize()) {
 			yFrequencies = new IntArray(image.getHeight());

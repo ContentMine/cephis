@@ -116,11 +116,11 @@ public class PixelIsland implements Iterable<Pixel> {
 		getIslandAnnotation().setPlotThinned(true);
 	}
 
-	@Deprecated // shallow copy
+	@Deprecated // shallow copy, use createSeparateIslandWithClonedPixels
 	public PixelIsland(PixelList pixelList) {
 		this(pixelList, false);
 	}
-	
+			
 	public static PixelIsland createSeparateIslandWithClonedPixels(PixelList pixelList, boolean diagonal) {
 		PixelIsland cloneIsland = new PixelIsland();
 		for (Pixel pixel : pixelList) {
@@ -1386,6 +1386,20 @@ public class PixelIsland implements Iterable<Pixel> {
 			remove |= this.removeEdge(edge);
 		}
 		return remove;
+	}
+
+	/** sorts pixelList 
+	 * 
+	 */
+	public void sortXY() {
+		if (pixelList != null) pixelList.sortXY();
+	}
+
+	/** sorts pixelList 
+	 * 
+	 */
+	public void sortYx() {
+		if (pixelList != null) pixelList.sortYX();
 	}
 
 

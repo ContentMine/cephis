@@ -19,6 +19,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.Int2;
+import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.Line2;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
@@ -35,6 +36,8 @@ import org.contentmine.graphics.svg.builder.SimpleBuilder;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ArgIterator;
 import org.contentmine.image.ImageProcessor;
+import org.contentmine.image.ImageUtil;
+import org.contentmine.image.colour.ColorUtilities;
 import org.contentmine.image.pixel.AxialPixelFrequencies;
 import org.contentmine.image.pixel.MainPixelProcessor;
 import org.contentmine.image.pixel.Pixel;
@@ -380,6 +383,13 @@ public class DiagramAnalyzer {
 		return imageProcessor.getThinning();
 	}
 
+	public DiagramAnalyzer setBinarize(boolean binarize) {
+		ensureImageProcessor();
+		imageProcessor.setBinarize(binarize);
+		return this;
+	}
+
+
 	public DiagramAnalyzer setBase(String base) {
 		ensureImageProcessor();
 		this.imageProcessor.setBase(base);
@@ -416,6 +426,10 @@ public class DiagramAnalyzer {
 
 	public void readAndProcessInputFile(File file) {
 		imageProcessor.readAndProcessFile(file);
+	}
+
+	public void readAndProcessImage(BufferedImage image) {
+		imageProcessor.processImage(image);
 	}
 
 	public void processImageFile() {
@@ -996,9 +1010,9 @@ public class DiagramAnalyzer {
 //		return texts;
 //	}
 
-	private boolean tittleTest(Real2Range box2, double textHeight) {
-		return box2.getXRange().getRange() < textHeight * tittleSize && box2.getYRange().getRange() < textHeight * tittleSize;
-	}
+//	private boolean tittleTest(Real2Range box2, double textHeight) {
+//		return box2.getXRange().getRange() < textHeight * tittleSize && box2.getYRange().getRange() < textHeight * tittleSize;
+//	}
 
 	// deleted because of OCR removal
 //	private double findMaximumHeightOfText(PixelIslandList nonThinnedPixelIslandList, OCRManager manager) {
@@ -1208,15 +1222,6 @@ public class DiagramAnalyzer {
 		return false;
 	}
 
-	/*public static Line2[] getEdges(Int2Range box) {
-		Line2[] edges = new Line2[4];
-		edges[0] = new Line2(new Real2(box.getXRange().getMin(), box.getYRange().getMin()), new Real2(box.getXRange().getMax(), box.getYRange().getMin()));
-		edges[1] = new Line2(new Real2(box.getXRange().getMax(), box.getYRange().getMin()), new Real2(box.getXRange().getMax(), box.getYRange().getMax()));
-		edges[2] = new Line2(new Real2(box.getXRange().getMax(), box.getYRange().getMax()), new Real2(box.getXRange().getMin(), box.getYRange().getMax()));
-		edges[3] = new Line2(new Real2(box.getXRange().getMin(), box.getYRange().getMax()), new Real2(box.getXRange().getMin(), box.getYRange().getMin()));
-		return edges;
-	}*/
-	
 	private void onwardsToLimitingPixel(List<ListIterator<Pixel>> outlinerIterators, int i, Pixel limit, int limitOfTouchingPixels, PixelList output, boolean skipping) {
 		if (i >= outlinerIterators.size()) {
 			return;
@@ -1445,8 +1450,8 @@ public class DiagramAnalyzer {
 			if (imageProcessor.getInputDir() != null &&
 				imageProcessor.getBase() != null &&
 				imageProcessor.getInputSuffix() != null) {
-			inputFile = new File(imageProcessor.getInputDir(), imageProcessor.getBase()+
-				imageProcessor.getInputSuffix());
+					inputFile = new File(imageProcessor.getInputDir(), imageProcessor.getBase() +
+					imageProcessor.getInputSuffix());
 			} else {
 				throw new RuntimeException("Cannot create default input file");
 			}
@@ -1473,7 +1478,7 @@ public class DiagramAnalyzer {
 		for (int threshold : thresholds) {
 			setThreshold(threshold);
 			readAndProcessInputFile(chemFile);
-			File binarizedFile = new File(targetDir, "binarized"+threshold+".png");
+			File binarizedFile = new File(targetDir, "binarized" + threshold + ".png");
 			writeBinarizedFile(binarizedFile);
 		}
 	}
@@ -1515,6 +1520,26 @@ public class DiagramAnalyzer {
 		return pixelRingList;
 	}
 
+	/** convenience routine for creating binary pixel rings.
+	 * 
+	 * @param imageFile
+	 * @return
+	 */
+	public PixelRingList createDefaultPixelRings(BufferedImage image) {
+		ImageProcessor imageProcessor = getImageProcessor();
+		imageProcessor.setBinarize(true);
+		imageProcessor.setThreshold(180); // turns blue to black
+		imageProcessor.setThinning(null);
+		imageProcessor.setDebug(true);
+		imageProcessor.processImage(image);
+		PixelIslandList pixelIslandList = getOrCreatePixelIslandList();
+		pixelIslandList.removeIslandsWithBBoxesLessThan(new Real2Range(new RealRange(0, 10), new RealRange(0, 10)));
+		pixelIslandList.sortBySizeDescending();
+		PixelIsland mainTrace = pixelIslandList.get(0);
+		PixelRingList pixelRingList = mainTrace.getOrCreateInternalPixelRings();
+		return pixelRingList;
+	}
+
 	public void createAxialPixelFrequencies() {
 		AxialPixelFrequencies frequencies = getImageProcessor().getMainProcessor().getOrCreateAxialPixelFrequencies();
 		
@@ -1523,5 +1548,117 @@ public class DiagramAnalyzer {
 	public AxialPixelFrequencies getAxialPixelFrequencies() {
 		return getImageProcessor().getMainProcessor().getOrCreateAxialPixelFrequencies();
 	}
+
+	public void writeImage(File outfile) {
+		ImageIOUtil.writeImageQuietly(getImageProcessor().getImage(), outfile);
+	}
+
+	/** create default monochrome DiagramAnalyzer.
+	 * 
+	 * @param pixelList
+	 * @return
+	 */
+	public static DiagramAnalyzer createDiagramAnalyzer(PixelList pixelList) {
+		DiagramAnalyzer diagramAnalyzer = null;
+		if (pixelList != null && pixelList.size() > 0) {
+			Int2Range bbox = pixelList.getIntBoundingBox();
+			diagramAnalyzer = DiagramAnalyzer.createDiagramAnalyzer(
+				bbox.getXRange().getMax() + 1, // the +1 are because range is inclusive
+				bbox.getYRange().getMax() + 1,
+				pixelList);
+		}
+		return diagramAnalyzer;
+	}
+
+	/** creates binary image from pixels and wraps in new diagramAnalyzer.
+	 * 
+	 * @param width
+	 * @param height
+	 * @param pixelList
+	 * @return
+	 */
+	public static DiagramAnalyzer createDiagramAnalyzer(int width, int height, PixelList pixelList) {
+		BufferedImage image = createDefaultImage(width, height, pixelList);
+		LOG.debug("b on w; "+ImageUtil.createString(image));
+		DiagramAnalyzer diagramAnalyzer = new DiagramAnalyzer();
+		diagramAnalyzer.setDebug(true);
+		diagramAnalyzer.setThinning(null);
+		// perhaps do NOT binarize an already binarized diagram Or maybe?
+		diagramAnalyzer.setBinarize(false);
+//		diagramAnalyzer.setBinarize(true);
+		diagramAnalyzer.getImageProcessor().processImage(image);
+		LOG.debug("image "+ImageUtil.createString(diagramAnalyzer.getImage()));
+		return diagramAnalyzer;
+	}
+
+	public static BufferedImage createDefaultImage(int width, int height, PixelList pixelList) {
+		BufferedImage image = ImageUtil.createARGBBufferedImage(width, height);
+		populateImage(pixelList, image);
+		return image;
+	}
+
+	public BufferedImage createDefaultImage(PixelList pixelList) {
+		Int2Range bbox = pixelList.getIntBoundingBox();
+		BufferedImage image = ImageUtil.createARGBBufferedImage(
+				bbox.getXRange().getMax(),
+				bbox.getYRange().getMax());
+		populateImage(pixelList, image);
+		getImageProcessor().setImage(image);
+		return image;
+	}
+
+	private static void populateImage(PixelList pixelList, BufferedImage image) {
+		ImageUtil.setImageWhite(image);
+		for (Pixel pixel : pixelList) {
+			Int2 xy = pixel.getInt2();
+			int x = xy.getX();
+			int y = xy.getY();
+			if (x < image.getWidth() && y < image.getHeight()) {
+				image.setRGB(x, y, ColorUtilities.RGB_BLACK);
+			}
+		}
+	}
+
+	private void setDebug(boolean b) {
+		ensureImageProcessor().setDebug(b);
+	}
+
+	/** requires an image.
+	 * 
+	 */
+	public PixelIslandList createDefaultPixelIslandList() {
+		BufferedImage image = getImage();
+		if (image == null) {
+			throw new RuntimeException("must have created image");
+		}
+		return imageProcessor.getOrCreatePixelIslandList();
+	}
+
+	public PixelList getPixelList() {
+		return imageProcessor.getOrCreatePixelList();
+	}
+
+	public static DiagramAnalyzer processImage(BufferedImage image) {
+		DiagramAnalyzer diagramAnalyzer = null;
+		if (image != null) {
+			diagramAnalyzer = new DiagramAnalyzer();
+			diagramAnalyzer.setImage(image);
+			diagramAnalyzer.getImageProcessor().processImage();
+		}
+		return diagramAnalyzer;
+	}
+
+	public static DiagramAnalyzer processUnthinnedImage(BufferedImage image) {
+		DiagramAnalyzer diagramAnalyzer = null;
+		if (image != null) {
+			diagramAnalyzer = new DiagramAnalyzer();
+			diagramAnalyzer.setBinarize(true);
+			diagramAnalyzer.setThinning(null);
+			diagramAnalyzer.setImage(image);
+			diagramAnalyzer.getImageProcessor().processImage();
+		}
+		return diagramAnalyzer;
+	}
+
 
 }

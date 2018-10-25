@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
@@ -20,10 +21,12 @@ import org.contentmine.image.ImageUtil;
 import org.contentmine.image.colour.ColorAnalyzer;
 import org.contentmine.image.colour.ColorFrequenciesMap;
 import org.contentmine.image.colour.RGBColor;
+import org.contentmine.image.pixel.Pixel;
 import org.contentmine.image.pixel.PixelEdge;
 import org.contentmine.image.pixel.PixelGraph;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
+import org.contentmine.image.pixel.PixelList;
 import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
 import org.contentmine.image.pixel.PixelSegment;
@@ -38,14 +41,16 @@ public class DiagramAnalyzerTest {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
-	public static File TARGET_DIR = new File("target");
 	public static String FUNNEL = "funnel";
-	public static File TARGET_FUNNEL = new File(TARGET_DIR, FUNNEL+"/");
+	public static File TARGET_FUNNEL = new File(CMineFixtures.TARGET_DIR, FUNNEL+"/");
 	public static String ELECTRONIC = "electronic";
-	public static File TARGET_ELECTRONIC = new File(TARGET_DIR, ELECTRONIC+"/");
+	public static File TARGET_ELECTRONIC = new File(CMineFixtures.TARGET_DIR, ELECTRONIC+"/");
+	public static String DIAGRAM_ANALYZER = "diagramAnalyzer";
+	public static File TARGET_DIAGRAM_ANALYZER = new File(CMineFixtures.TARGET_DIR, DIAGRAM_ANALYZER);
 	
 	@Test
 	public void testFunnelSegments() {
+		
 		DiagramAnalyzer diagramAnalyzer = new DiagramAnalyzer();
 		String filename[] = (FUNNEL + "1.gif").split("\\.");
 //		String filename[] = "funnel2.jpg".split("\\.");
@@ -215,7 +220,44 @@ public class DiagramAnalyzerTest {
 		mergeImage = colorAnalyzer.mergeImages(imageFile1, imageFile2);
 	}
 
-	
+	@Test
+	/** create a DiagramAnalyzer from PixelList
+	 * all pixels will be black (000000)
+	 * 
+	 */
+	public void testCreateFromPixels() {
+		int width = 5;
+		int height = 7;	
+		PixelList pixelList = new PixelList();
+		for (int y = 0; y < height - 2; y++) {
+			int x = y;
+			pixelList.add(new Pixel(x, y ));
+			pixelList.add(new Pixel(x, y+1 ));
+			pixelList.add(new Pixel(x, y+2 ));
+		}
+		SVGSVG.wrapAndWriteAsSVG(pixelList.getOrCreateSVG(), new File(TARGET_DIAGRAM_ANALYZER, "diagonal.svg"));
+		DiagramAnalyzer diagramAnalyzer = DiagramAnalyzer.createDiagramAnalyzer(width, height, pixelList);
+		BufferedImage image = diagramAnalyzer.getImage();
+		StringBuilder sb = new StringBuilder();
+		for (int y = 0; y < height; y++) {
+			for (int x = 0; x < width; x++) {
+				sb.append("   "+Integer.toHexString(image.getRGB(x, y)).substring(0,  1));
+			}
+			sb.append("\n");
+		}
+		Assert.assertEquals(
+			"   0   f   f   f   f\n"
++ "   0   0   f   f   f\n"
++ "   0   0   0   f   f\n"
++ "   f   0   0   0   f\n"
++ "   f   f   0   0   0\n"
++ "   f   f   f   0   0\n"
++ "   f   f   f   f   0\n",
+sb.toString());
+		LOG.debug("\n"+sb);
+		ImageIOUtil.writeImageQuietly(image, new File(TARGET_DIAGRAM_ANALYZER, "diagonal.png"));
+
+	}
 
 
 	// =========================================
@@ -260,11 +302,6 @@ public class DiagramAnalyzerTest {
 		SVGSVG.wrapAndWriteAsSVG(g, new File(outdir, "colors.svg"));
 		file = new File(outdir, "poster.png");
 		ImageIOUtil.writeImageQuietly(image, file);
-	}
-
-	@Test
-	public void testContour() {
-		
 	}
 
 

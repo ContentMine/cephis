@@ -13,6 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.Real2;
@@ -45,6 +46,8 @@ public class PixelList implements Iterable<Pixel> {
 	private Real2Array points;
 	private PixelIsland island;
 	private Map<Int2, Pixel> pixelByCoordinateMap;
+	private Map<Integer, PixelList> pixelListByXCoordinateMap;
+	private Map<Integer, PixelList> pixelListByYCoordinateMap;
 
 	Int2Range bbox;
 	
@@ -74,6 +77,42 @@ public class PixelList implements Iterable<Pixel> {
 	public Pixel getPixelByCoordinate(Int2 coord) {
 		ensurePixelByCoordinateMap();
 		return pixelByCoordinateMap.get(coord);
+	}
+
+	public PixelList getPixelListByXCoordinate(Integer xcoord) {
+		ensurePixelListByXorYCoordinateMap();
+		return pixelListByXCoordinateMap.get(xcoord);
+	}
+
+	public PixelList getPixelListByYCoordinate(Integer ycoord) {
+		ensurePixelListByXorYCoordinateMap();
+		return pixelListByYCoordinateMap.get(ycoord);
+	}
+
+	private void ensurePixelListByXorYCoordinateMap() {
+		if (pixelListByYCoordinateMap == null || pixelListByXCoordinateMap == null) {
+			pixelListByXCoordinateMap = new HashMap<Integer, PixelList>();
+			pixelListByYCoordinateMap = new HashMap<Integer, PixelList>();
+			for (Pixel pixel : this) {
+				if (pixel == null) {
+					throw new RuntimeException("null pixel");
+				}
+				putPixelIntoPixelListMap(pixel, Axis2.X);
+				putPixelIntoPixelListMap(pixel, Axis2.Y);
+			}
+		}
+	}
+
+	private void putPixelIntoPixelListMap(Pixel pixel, Axis2 axis) {
+		Int2 xy = pixel.getInt2();
+		Integer coord = axis.equals(Axis2.X) ? xy.getX() : xy.getY();
+		Map<Integer, PixelList> map = axis.equals(Axis2.X) ? pixelListByXCoordinateMap : pixelListByYCoordinateMap;
+		PixelList pixelList = map.get(coord);
+		if (pixelList == null) {
+			pixelList = new PixelList();
+			map.put(coord, pixelList);
+		}
+		pixelList.add(pixel);
 	}
 
 	private void ensurePixelByCoordinateMap() {
@@ -197,6 +236,13 @@ public class PixelList implements Iterable<Pixel> {
 		return false;
 	}
 
+	/** gets pixels in this list touching another list.
+	 * NOT fully worked out so use with caution.
+	 * I think touching means neighbours (which could mean overlapping rings)
+	 * 
+	 * @param list1
+	 * @return
+	 */
 	public PixelList getPixelsTouching(PixelList list1) {
 		PixelList touchingList = null;
 		if (list1 != null) {
@@ -555,10 +601,18 @@ public class PixelList implements Iterable<Pixel> {
 
 	/**
 	 * sorts Y first, then X.
-	 * 
+	 * 'this' is changed
 	 */
 	public void sortYX() {
 		Collections.sort(list, new PixelComparator(ComparatorType.TOP, ComparatorType.LEFT));
+	}
+
+	/**
+	 * sorts X first, then Y (reading order).
+	 * 'this' is changed
+	 */
+	public void sortXY() {
+		Collections.sort(list, new PixelComparator(ComparatorType.LEFT, ComparatorType.TOP));
 	}
 
 	/** find all neighbours not in current set.

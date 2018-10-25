@@ -13,8 +13,6 @@ public class PixelRing extends PixelList {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-//	private PixelList pixelList;
-	
 	public PixelRing() {
 	}
 	
@@ -23,22 +21,7 @@ public class PixelRing extends PixelList {
 		super.list = pixelList.getList();
 	}
 
-//	public PixelList getOrCreatePixelList() {
-//		if (pixelList == null) {
-//			this.pixelList = new PixelList();
-//		}
-//		return pixelList;
-//	}
 	
-//	@Override
-//	public Iterator<Pixel> iterator() {
-//		return pixelList.iterator();
-//	}
-
-//	public boolean contains(Pixel pixel) {
-//		return getOrCreatePixelList().contains(pixel);
-//	}
-
 	public PixelRing getPixelsTouching(PixelRing pixelRing) {
 		PixelList touchingPixels = null;
 		if (pixelRing != null) {
@@ -46,19 +29,6 @@ public class PixelRing extends PixelList {
 		}
 		return new PixelRing(touchingPixels);
 	}
-
-//	public SVGG getOrCreateSVG() {
-//		return getList().getOrCreateSVG();
-//	}
-
-//	public int size() {
-//		return getOrCreatePixelList().size();
-//	}
-
-//	public void plotPixels(SVGG g, String fill) {
-//		this.getOrCreatePixelList().plotPixels(g, fill);
-//	}
-
 
 	/** grows a new ring "outside" this.
 	 * currently developed for nested pixel rings
@@ -89,10 +59,5 @@ public class PixelRing extends PixelList {
 		}
 		return newRing;
 	}
-
-//	public void add(Pixel pixel) {
-//		this.getOrCreatePixelList().add(pixel);
-//	}
-
 
 }

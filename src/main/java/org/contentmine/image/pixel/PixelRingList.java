@@ -8,16 +8,24 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.SVGG;
 
+/** a list if (generally nested) PixelRings
+ * generally created elsewhere (PixelIsland)
+ * 
+ * @author pm286
+ *
+ */
 public class PixelRingList implements Iterable<PixelRing> {
 
 	private final Logger LOG = Logger.getLogger(PixelRingList.class);
 	
 	public static final String[] DEFAULT_COLOURS = {"red", "cyan", "orange", "green", "magenta", "blue"};
 	private List<PixelRing> ringList;
-	private PixelIsland island;
-
+	private PixelIsland island; // not used at present, but could be useful in future
 	private PixelRing outline;
 	
+	/** generally should not be used to create PixelRingList. Create a PixelIsland and then
+	 * PixelIsland.createSeparateIslandWithClonedPixels()
+	 */
 	public PixelRingList() {
 		init();
 	}
@@ -94,7 +102,7 @@ public class PixelRingList implements Iterable<PixelRing> {
 	}
 	
 	/** plot rings with defaults
-	 * 
+	 * useful for debugging
 	 */
 	public SVGG plotPixels() {
 		return plotPixels(null, null);
@@ -149,6 +157,13 @@ public class PixelRingList implements Iterable<PixelRing> {
 		return g;
 	}
 
+	/** gets the pixels touching between ring0 and ring1.
+	 * NOT fully described or tested.
+	 * used in plotOutline() and PixelIsland.plotIsland()
+	 * 
+	 * @return
+	 */
+	@Deprecated //"not fully described"
 	public PixelRing getOrCreateOutline() {
 		if (outline == null) {
 			if (size() > 1) {
@@ -158,6 +173,7 @@ public class PixelRingList implements Iterable<PixelRing> {
 		return outline;
 	}
 	
+	@Deprecated //"not fully described"
 	public SVGG plotOutline(String colour) {
 		SVGG g = null;
 		outline = getOrCreateOutline();

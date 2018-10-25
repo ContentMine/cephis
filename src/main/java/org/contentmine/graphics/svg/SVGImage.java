@@ -45,6 +45,7 @@ import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealSquareMatrix;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.image.ImageUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -583,7 +584,7 @@ private void addXlinkHref(String href) {
 	private BufferedImage transform(BufferedImage img, AffineTransform affineTransform) {
 		int w = img.getWidth();
 	    int h = img.getHeight();
-	    BufferedImage rot = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+	    BufferedImage rot = ImageUtil.createARGBBufferedImage(w, h);
 		Graphics2D graphic = rot.createGraphics();
 		graphic.drawImage(img, affineTransform, null);
 		return rot;

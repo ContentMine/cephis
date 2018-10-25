@@ -41,8 +41,10 @@ public class CMineFixtures {
 	public static final File TEST_QUICKSCRAPE_DIR = new File(CMineFixtures.TEST_DOWNLOAD_DIR, "quickscrape");
 	public static final File TEST_SAMPLE = new File(CMineFixtures.TEST_DOWNLOAD_DIR, "sample");
 
+	public static final File TARGET_DIR = new File("target");
+
 	public static final File GETPAPERS_SRC = new File(TEST_CMINE_DIR, "getpapers");
-	public static final File GETPAPERS_TARGET = new File("target/getpapers");
+	public static final File GETPAPERS_TARGET = new File(TARGET_DIR,  "getpapers");
 	public static final File QUICKSCRAPE20160601_CSV = new File(GETPAPERS_SRC, "20160601quickscrape.csv");
 	public static final File PMR_CLOSED = new File("../closed");
 	public static final File GETPAPERS_OPEN = new File(TEST_CMINE_DIR, "open");

@@ -85,7 +85,7 @@ public class SVG2XMLFontIT {
 	
 			for (int i = 0; i < fontNames.length; i++) {
 				Font font = new Font(fontNames[i], Font.PLAIN, 1000);
-				BufferedImage bufferedImage = new BufferedImage(100, 100, 12);
+				BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_BINARY);
 				Graphics2D g2d = (Graphics2D) bufferedImage.getGraphics();
 				FontMetrics fontMetrics = g2d.getFontMetrics(font);
 				int[] ww = fontMetrics.getWidths();

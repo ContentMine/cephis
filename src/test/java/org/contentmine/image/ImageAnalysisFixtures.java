@@ -11,7 +11,11 @@ import org.contentmine.image.pixel.PixelList;
 public class ImageAnalysisFixtures {
 
 	public final static File TEST_RESOURCE_DIR = new File("src/test/resources");
-	public final static File TEST_IMAGE_DIR = new File(TEST_RESOURCE_DIR, "org/contentmine/image");
+	public final static File TEST_CONTENTMINE_DIR = new File(TEST_RESOURCE_DIR, "org/contentmine");
+	public final static File TEST_IMAGE_DIR = new File(TEST_CONTENTMINE_DIR, "image");
+	public final static File TEST_DIAGRAM_DIR = new File(TEST_IMAGE_DIR, "diagrams");
+	public final static File TEST_DIAGRAM_PLOT_DIR = new File(TEST_DIAGRAM_DIR, "plot");
+	public final static File TEST_DIAGRAM_PLOT_MISC_DIR = new File(TEST_DIAGRAM_PLOT_DIR, "misc");
 	public final static File TARGET_DIR = new File("target/");
 	
 	public final static File JOURNAL_HTML = new File(TEST_IMAGE_DIR, "journal.html");

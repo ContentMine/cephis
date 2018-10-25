@@ -5,7 +5,12 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntArray;
@@ -16,7 +21,7 @@ import org.contentmine.eucl.euclid.RealMatrix;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGRect;
 import org.contentmine.graphics.svg.SVGSVG;
-import org.contentmine.graphics.svg.util.ImageIOUtil;
+import org.contentmine.image.colour.ColorUtilities;
 import org.contentmine.image.processing.HilditchThinning;
 import org.contentmine.image.processing.Thinning;
 import org.contentmine.image.processing.ZhangSuenThinning;
@@ -38,10 +43,10 @@ public class ImageUtil {
 	public static final IntArray EDGE_ARRAY = new IntArray(new int[]{1,0,-1});
 	public static final IntArray SHARPEN_ARRAY = new IntArray(new int[]{-10, 20, -10});
 
-	public static int RED = 0;
-	public static int GREEN = 1;
-	public static int BLUE = 2;
-	public static int[] RGB = {RED, GREEN, BLUE};
+	public static int RED_INDEX = 0;
+	public static int GREEN_INDEX = 1;
+	public static int BLUE_INDEX = 2;
+	public static int[] RGB = {RED_INDEX, GREEN_INDEX, BLUE_INDEX};
 
 	public static BufferedImage zhangSuenThin(BufferedImage image) {
 		Thinning thinningService = new ZhangSuenThinning(image);
@@ -333,7 +338,8 @@ public class ImageUtil {
 		if (image0 == null) {
 			return null;
 		}
-		BufferedImage image = new BufferedImage(image0.getWidth() + 2*xmargin,  image0.getHeight()+2*ymargin, image0.getType());
+		BufferedImage image = new BufferedImage(image0.getWidth() + 2*xmargin,  image0.getHeight()+2*ymargin,
+				image0.getType());
 		// set to colour
 		for (int i = 0; i < image0.getWidth() + 2 * xmargin; i++) {
 			for (int j = 0; j < image0.getHeight() + 2 * ymargin; j++) {
@@ -360,7 +366,7 @@ public class ImageUtil {
 
 		int width = image.getWidth();
 		int height = image.getHeight();
-		BufferedImage image1 = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		BufferedImage image1 = createARGBBufferedImage(width, height);
 		for (int i = 1; i < width - 1; i++) {
 			for (int j = 1; j < height - 1; j++) {
 				int rgbij = image.getRGB(i, j);
@@ -424,7 +430,7 @@ public class ImageUtil {
 		int delta = 256 / nvalues;
 		int width = image.getWidth();
 		int height = image.getHeight();
-		BufferedImage image1 = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		BufferedImage image1 = createARGBBufferedImage(width, height);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				image1.setRGB(i, j, 0);
@@ -432,6 +438,16 @@ public class ImageUtil {
 			}
 		}
 		return image1;
+	}
+
+	/** creates image with BufferedImage.TYPE_INT_ARGB.
+	 * 
+	 * @param width
+	 * @param height
+	 * @return null if width or height < 1
+	 */
+	public static BufferedImage createARGBBufferedImage(int width, int height) {
+		return width < 1 || height < 1 ? null : new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 	}
 
 	/** flattens pixel to range of values.
@@ -493,7 +509,7 @@ public class ImageUtil {
 
 	public static String debugRGB(int rgb) {
 		int[] channels = ImageUtil.getRGBChannels(rgb);
-		return "r="+channels[RED]+",g="+channels[GREEN]+",b="+channels[BLUE];
+		return "r="+channels[RED_INDEX]+",g="+channels[GREEN_INDEX]+",b="+channels[BLUE_INDEX];
 	}
 	
 	/** deep copy image.
@@ -567,10 +583,10 @@ public class ImageUtil {
 		return image;
 	}
 	
-	public static void clearImage(BufferedImage image) {
+	public static void setImageWhite(BufferedImage image) {
 		for (int j = 0; j < image.getHeight(); j++) {
 			for (int i = 0; i < image.getWidth(); i++) {
-				image.setRGB(i, j, 0xffffff);
+				image.setRGB(i, j, ColorUtilities.ARGB_WHITE);
 			}
 		}
 	}
@@ -594,6 +610,64 @@ public class ImageUtil {
 			for (int j = y0; j <= y1; j++) {
 				image.setRGB(i, j, rgb);
 			}
+		}
+	}
+
+	public static String createString(BufferedImage image) {
+		int blackCount = 0;
+		int whiteCount = 0;
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j <image.getHeight(); j++) {
+				int rgb = image.getRGB(i, j);
+				int rgbNoAlpha = rgb & 0x00ffffff;
+				if (rgbNoAlpha == 0) {
+					blackCount++;
+				} else if (rgbNoAlpha == 0xffffff) {
+					whiteCount++;
+				}
+			}
+		}
+		String s = "width: " + image.getWidth() + "; height: " + image.getHeight() 
+		    + "; white: " + whiteCount + "; black: " + blackCount;
+		return s;
+	}
+
+	/** convenience wrapper to throw quietly and announce file name.
+	 * 
+	 * @param sourceFile
+	 * @return
+	 */
+	public static BufferedImage readImage(File file) {
+		BufferedImage image = null;
+		try {
+			image = ImageIO.read(file);
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("cannot find: "+file, e);
+		} catch (IOException ioe) {
+			if (file.isDirectory()) {
+				throw new RuntimeException("cannot use directory: "+file, ioe);
+			}
+			throw new RuntimeException("IOException: "+file.getAbsolutePath() + "; size: "+FileUtils.sizeOf(file), ioe);
+		}
+		return image;
+	}
+
+	/** convenience wrapper
+	 * 
+	 * @param image
+	 * @param file
+	 */
+	public static void writePngQuietly(BufferedImage image, File file) {
+		if (file == null) {
+			throw new RuntimeException("file is null");
+		}
+		if (!file.exists()) {
+			file.getParentFile().mkdirs();
+		}
+		try {
+			ImageIO.write(image, "png", file);
+		} catch (IOException e) {
+			throw new RuntimeException("cannot write image: " + file, e);
 		}
 	}
 

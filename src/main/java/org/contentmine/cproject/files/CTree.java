@@ -1,5 +1,6 @@
 package org.contentmine.cproject.files;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -37,6 +38,7 @@ import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.layout.SuperPixelArrayManager;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.cache.DocumentCache;
+import org.contentmine.image.ImageUtil;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 import org.contentmine.pdf2svg2.PageIncluder;
 
@@ -1701,5 +1703,11 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public void setDeltaPages(int deltaPages) {
 		this.deltaPages = deltaPages;
 	}
+
+	public void tidyImages() {
+		ImageManager imageManager = new ImageManager(this);
+		imageManager.tidyImages();
+	}
+
 
 }

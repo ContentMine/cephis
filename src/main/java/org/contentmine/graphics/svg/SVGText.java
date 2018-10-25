@@ -31,10 +31,9 @@ import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlSub;
 import org.contentmine.graphics.html.HtmlSup;
-import org.contentmine.graphics.svg.GraphicsElement.FontStyle;
 import org.contentmine.graphics.svg.SVGLine.LineDirection;
-import org.contentmine.graphics.svg.StyleBundle.FontWeight;
 import org.contentmine.graphics.svg.fonts.FontWidths;
+import org.contentmine.image.ImageUtil;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -1213,7 +1212,8 @@ public class SVGText extends SVGElement {
 	}
 
 	public BufferedImage createImage(int width, int height) {
-		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		BufferedImage image = ImageUtil.createARGBBufferedImage(width, height);
+		if (image == null) return null;
 		Graphics2D g = (Graphics2D) image.createGraphics();
 		g.setBackground(Color.WHITE);
 		g.clearRect(0, 0, width, height);
