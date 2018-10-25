@@ -19,6 +19,7 @@ import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.RealArray;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.image.ImageUtil;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -273,8 +274,9 @@ public class SVGImageTest {
 	
 	private WritableRaster readRasterText(String text, String filename, int height) {
 		int width = text.length()*6;
-		int imageType = 6;
-		BufferedImage bufferedImage = new BufferedImage(width, height, imageType);
+//		int imageType = /*6*/ BufferedImage.TYPE_INT_ARGB;		
+//		BufferedImage bufferedImage = new BufferedImage(width, height, imageType);
+		BufferedImage bufferedImage = ImageUtil.createARGBBufferedImage(width, height);
 		debugImage("new image ", bufferedImage);
 		Graphics2D g2d = bufferedImage.createGraphics();
 		g2d.setColor(Color.BLACK);

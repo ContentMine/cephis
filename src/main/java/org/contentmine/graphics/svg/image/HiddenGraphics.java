@@ -27,6 +27,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGImage;
+import org.contentmine.image.ImageUtil;
 
 
 public class HiddenGraphics {
@@ -70,7 +71,8 @@ public class HiddenGraphics {
 			setDefaultDimension();
 		}
 		// there may be ultra thin images for lines, etc.
-		img = new BufferedImage(Math.max(1, dimension.width), Math.max(1, dimension.height), BufferedImage.TYPE_INT_ARGB);
+		img = ImageUtil.createARGBBufferedImage(dimension.width, dimension.height);
+		if (img == null) return null;
 		g = img.createGraphics();
 		g.setBackground(backgroundColor);
 		g.clearRect(0, 0, dimension.width, dimension.height);

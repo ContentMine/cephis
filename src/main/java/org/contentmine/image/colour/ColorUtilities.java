@@ -14,14 +14,12 @@ import org.apache.log4j.Logger;
  *
  */
 public class ColorUtilities {
-
-
-	private static final int ARGB_WHITE = 0xffffffff;
-
 	private final static Logger LOG = Logger.getLogger(ColorUtilities.class);
-	
-    private static final int RGB_WHITE = 255 + 255*256 + 255*256*256;
-	private static final int RGB_BLACK = 0;
+
+
+	public static final int ARGB_WHITE = 0xffffffff;
+    public static final int RGB_WHITE = 255 + 255*256 + 255*256*256;
+	public static final int RGB_BLACK = 0;
 	
 	static final public double Y0 = 100;
 	static final public double gamma = 3;
@@ -137,7 +135,7 @@ public class ColorUtilities {
 				values = raster.getPixel(i, j, values);
 				int value = ColorUtilities.getValue(values);
 				if (value >= minBlack && value <= maxBlack) {
-					values = new int[]{0, 0, 0,255};
+					values = new int[]{0, 0, 0, 255};
 				} else {
 					values = new int[]{255, 255, 255, 255};
 				}

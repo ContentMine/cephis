@@ -13,6 +13,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.contentmine.CHESConstants;
 import org.contentmine.eucl.euclid.Int2;
+import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
@@ -23,6 +24,8 @@ import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.image.ImageParameters;
+import org.contentmine.image.ImageUtil;
+import org.contentmine.image.diagram.DiagramAnalyzer;
 import org.contentmine.image.pixel.PixelComparator.ComparatorType;
 import org.contentmine.image.processing.Thinning;
 import org.contentmine.image.processing.ZhangSuenThinning;
@@ -386,7 +389,8 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 			int y0 = (int) (double) bbox.getYMin();
 			int width = (int) (double) bbox.getXRange().getRange() + 1;
 			int height = (int) (double) bbox.getYRange().getRange() + 1;
-			image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+			image = ImageUtil.createARGBBufferedImage(width, height);
+			if (image == null) return image;
 			clearImage(width, height, image);
 			for (PixelIsland pixelIsland : this) {
 				pixelIsland.setToBlack(image, new Int2(x0, y0));
@@ -745,5 +749,16 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 			}
 		}
 		return bboxList;
+	}
+
+	public static PixelIslandList createPixelIslandList(PixelList pixelList) {
+		PixelIslandList islandList = new PixelIslandList();
+		if (pixelList != null) { 
+			DiagramAnalyzer diagramAnalyzer = DiagramAnalyzer.createDiagramAnalyzer(pixelList);
+			islandList = diagramAnalyzer.createDefaultPixelIslandList();
+			LOG.debug("PIL " + islandList);
+			LOG.debug("PL "+diagramAnalyzer.getPixelList());
+		}
+		return islandList;
 	}
 }

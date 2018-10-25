@@ -54,9 +54,9 @@ public class RGBImageMatrix {
 
 	private void createMatrixArray(int[][] mr, int[][] mg, int[][] mb) {
 		mrgb = new IntMatrix[3];
-		mrgb[ImageUtil.RED] = createIntMatrixFromArray(mr);
-		mrgb[ImageUtil.GREEN] = createIntMatrixFromArray(mg);
-		mrgb[ImageUtil.BLUE] = createIntMatrixFromArray(mb);
+		mrgb[ImageUtil.RED_INDEX] = createIntMatrixFromArray(mr);
+		mrgb[ImageUtil.GREEN_INDEX] = createIntMatrixFromArray(mg);
+		mrgb[ImageUtil.BLUE_INDEX] = createIntMatrixFromArray(mb);
 	}
 
 	private IntMatrix createIntMatrixFromArray(int[][] mr) {
@@ -115,10 +115,10 @@ public class RGBImageMatrix {
 		BufferedImage image = null;
 		int xmax = this.getCols();
 		int ymax = this.getRows();
-		IntMatrix rm = mrgb[ImageUtil.RED];
-		IntMatrix gm = mrgb[ImageUtil.GREEN];
-		IntMatrix bm = mrgb[ImageUtil.BLUE];
-		image = new BufferedImage(xmax, ymax, imageType);
+		IntMatrix rm = mrgb[ImageUtil.RED_INDEX];
+		IntMatrix gm = mrgb[ImageUtil.GREEN_INDEX];
+		IntMatrix bm = mrgb[ImageUtil.BLUE_INDEX];
+		image = ImageUtil.createARGBBufferedImage(xmax, ymax);
 		for (int y = 0; y < ymax; y++) {
 			for (int x = 0; x < xmax; x++) {
 				// x and y run differently in image ?? do they??

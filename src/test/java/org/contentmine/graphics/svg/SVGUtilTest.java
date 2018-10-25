@@ -19,6 +19,7 @@ import org.contentmine.eucl.euclid.RealRange;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.image.ImageUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -66,7 +67,7 @@ public class SVGUtilTest {
 		LOG.trace(affineTransform);
 		int width = 300;
 		int height = 300;
-		BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		BufferedImage img = ImageUtil.createARGBBufferedImage(width, height);
 		Graphics2D g2d = (Graphics2D) img.getGraphics();
 		g2d.setColor(Color.RED);
 		g2d.setTransform(affineTransform);
@@ -82,14 +83,14 @@ public class SVGUtilTest {
 		svgG.appendChild(rect);
 		int width = 300;
 		int height = 300;
-		BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		BufferedImage img = ImageUtil.createARGBBufferedImage(width, height);
 		Graphics2D g2d = (Graphics2D) img.getGraphics();
 		svgG.draw(g2d);
 		SVGHTMLFixtures.writeImageQuietly(img, new File("target/rect0.png"));
 		Transform2 transform2 = new Transform2(new Vector2(20., -70.));
 //		Transform2 transform2 = new Transform2(new Angle(0.2));
 		svgG.setTransform(transform2);
-		img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		img = ImageUtil.createARGBBufferedImage(width, height);
 		g2d = (Graphics2D) img.getGraphics();
 		svgG.draw(g2d);
 		SVGHTMLFixtures.writeImageQuietly(img, new File("target/rect1.png"));
@@ -122,17 +123,11 @@ public class SVGUtilTest {
 		g.appendChild(rect1);
 		SVGUtil.debug(svg, new FileOutputStream("target/concat0.svg"), 1);
 //		g.setTransform(new Transform2(new Vector2(100., 50.)));
-		BufferedImage img = new BufferedImage(width+1, height+1, BufferedImage.TYPE_INT_ARGB);
+		BufferedImage img = ImageUtil.createARGBBufferedImage(width+1, height+1);
 		Graphics2D g2d = (Graphics2D) img.getGraphics();
 		svg.draw(g2d);
 		SVGUtil.debug(svg, new FileOutputStream("target/concat0a.svg"), 1);
 		ImageIO.write(img, "png", new File("target/concat0.png"));
-//		Transform2 transform2 = new Transform2(new Vector2(20., -70.));
-//		svgG.setTransform(transform2);
-//		img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-//		g2d = (Graphics2D) img.getGraphics();
-//		svgG.draw(g2d);
-//		ImageIO.write(img, "png", new File("target/rect1.png"));
 	}
 	
 	@Test

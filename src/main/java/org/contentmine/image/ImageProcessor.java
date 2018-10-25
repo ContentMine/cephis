@@ -17,6 +17,7 @@ import org.contentmine.image.colour.RGBColor;
 import org.contentmine.image.pixel.MainPixelProcessor;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
+import org.contentmine.image.pixel.PixelList;
 import org.contentmine.image.processing.Thinning;
 import org.contentmine.image.processing.ZhangSuenThinning;
 import org.contentmine.image.slice.XSlice;
@@ -79,6 +80,8 @@ public class ImageProcessor {
 	private File inputDir;
 	private String inputSuffix;
 	private File outputDir;
+
+	private PixelList pixelList;
 
 	public ImageProcessor() {
 		setDefaults();
@@ -187,8 +190,9 @@ public class ImageProcessor {
 			inputFile = file;
 			image = ImageIO.read(file);
 			LOG.trace("read image: "+image);
-			ImageIO.write(image, "png", new File("target/imageTest.png"));
-			processImage(image);
+			if (debug) ImageIO.write(image, "png", new File("target/imageTest.png"));
+			image = processImage(image);
+			if (debug) ImageIO.write(image, "png", new File("target/imageTest1.png"));
 			LOG.trace("processed image");
 			return image;
 		} catch (Exception e) {
@@ -207,12 +211,14 @@ public class ImageProcessor {
 		thinnedImage = null;
 		this.setImage(img);
 		if (debug) {
+			LOG.debug("raw "+ImageUtil.createString(image));
 			String filename = TARGET + "/" + base + "/" + RAW_IMAGE_PNG;
 			ImageIOUtil.writeImageQuietly(this.image, filename);
 		}
 		if (this.binarize) {
 			ColorUtilities.convertTransparentToWhite(image);
 			this.image = ImageUtil.boofCVBinarization(this.image, threshold);
+			if (debug) LOG.debug("binarized "+ImageUtil.createString(image));
 			this.binarizedImage = this.image;
 			if (debug) {
 				String filename = TARGET + "/" + base + "/" + BINARIZED_PNG;
@@ -317,6 +323,11 @@ public class ImageProcessor {
 
 	public BufferedImage processImageFile() {
 		readImageFile();
+		processImage(image);
+		return image;
+	}
+
+	public void processImage() {
 		if (image != null) {
 			if (colorAnalyzer != null) {
 				colorAnalyzer.setInputImage(image);
@@ -326,8 +337,6 @@ public class ImageProcessor {
 				image = processImage(image);
 			}
 		}
-
-		return image;
 	}
 
 	public void readImageFile() {
@@ -386,6 +395,21 @@ public class ImageProcessor {
 			}
 		}
 		return islandList;
+	}
+
+	/** creates list via pixelIslands
+	 * 
+	 * @return
+	 */
+	public PixelList getOrCreatePixelList() {
+		if (pixelList == null) {
+			getOrCreatePixelIslandList();
+			pixelList = new PixelList();
+			for (PixelIsland pixelIsland : islandList) {
+				pixelList.addAll(pixelIsland.getPixelList());
+			}
+		}
+		return pixelList;
 	}
 
 	public MainPixelProcessor ensurePixelProcessor() {
