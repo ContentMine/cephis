@@ -20,6 +20,8 @@ import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.Int2Range;
+import org.contentmine.eucl.euclid.IntRange;
+import org.contentmine.eucl.euclid.IntRangeArray;
 import org.contentmine.eucl.euclid.Line2;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
@@ -1658,6 +1660,35 @@ public class DiagramAnalyzer {
 			diagramAnalyzer.getImageProcessor().processImage();
 		}
 		return diagramAnalyzer;
+	}
+
+	public IntRangeArray getYslices() {
+		IntRangeArray intRangeArray = null;
+		BufferedImage image = getImage();
+		if (image != null) {
+			int height = image.getHeight();
+			intRangeArray = new IntRangeArray();
+			for (int y = 0; y < height; y++) {
+				Integer xmin = null;
+				Integer xmax = null;
+				for (int x = 0; x < image.getWidth(); x++) {
+					int color = image.getRGB(x, y);
+					if ((color & 0x00ffffff) == 0) {
+						if (xmin == null) {
+							xmin = x;
+							xmax = x;
+						} else {
+							xmax = x;
+						}
+					}
+				}
+				if (xmin != null && xmax != null) {
+					IntRange intRange = new IntRange(xmin, xmax);
+					intRangeArray.add(intRange);
+				} 
+			}
+		}
+		return intRangeArray;
 	}
 
 

@@ -90,23 +90,6 @@ public class CustomPageDrawerFramework
 	}
 
     /**
-     * Example PDFRenderer subclass, uses MyPageDrawer for custom rendering.
-     */
-    private static class MyPDFRenderer extends PDFRenderer
-    {
-        MyPDFRenderer(PDDocument document)
-        {
-            super(document);
-        }
-
-        @Override
-        protected PageDrawer createPageDrawer(PageDrawerParameters parameters) throws IOException
-        {
-            return new MyPageDrawer(parameters);
-        }
-    }
-
-    /**
      * Example PageDrawer subclass with custom rendering.
      */
     private static class MyPageDrawer extends PageDrawer

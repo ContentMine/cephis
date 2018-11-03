@@ -1,5 +1,6 @@
 package org.contentmine.image.colour;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +43,10 @@ public class RGBColor {
 
 	public RGBColor(int rgb) {
 		this.rgb = ColorUtilities.removeAlpha(rgb);
+	}
+	
+	public RGBColor(Color color) {
+		
 	}
 
 	@Override

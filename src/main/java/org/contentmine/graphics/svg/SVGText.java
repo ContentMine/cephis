@@ -17,6 +17,7 @@ import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Angle.Units;
 import org.contentmine.eucl.euclid.EuclidConstants;
 import org.contentmine.eucl.euclid.EuclidRuntimeException;
+import org.contentmine.eucl.euclid.IntSet;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
@@ -1531,6 +1532,26 @@ public class SVGText extends SVGElement {
 	 */
 	public static SVGText createDefaultText(Real2 xy, String text, int fontSize, String stroke) {
 		return createText(xy, text, "font-size:"+fontSize+";stroke:"+stroke+";"+"font-family:Helvetica");
+	}
+
+	/** reorders the text.
+	 * 
+	 * new string has charAt(i) == text.charAt(intSet.elementAt(i))
+	 * @param intSet index of new order
+	 */
+	public void reorderByIndex(IntSet intSet) {
+		String text = getText();
+		int indexSize = intSet.size();
+		if (text.length() != indexSize) {
+			LOG.error("Cannot reorder unequal arrays; this="+text.length()+"; idx="+indexSize);
+		} else {
+//			LOG.debug("OK");
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < indexSize; i++) {
+				sb.append(text.charAt(intSet.elementAt(i)));
+			}
+			this.setText(sb.toString());
+		}
 	}
 	
 

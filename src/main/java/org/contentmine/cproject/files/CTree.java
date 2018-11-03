@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
@@ -28,6 +30,7 @@ import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.cproject.util.XMLUtils;
+import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
@@ -38,7 +41,6 @@ import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.layout.SuperPixelArrayManager;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.cache.DocumentCache;
-import org.contentmine.image.ImageUtil;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 import org.contentmine.pdf2svg2.PageIncluder;
 
@@ -259,8 +261,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	/** directories must end with slash.
 	 * 
 	 */
+	// this is confusing. there are (a) explicit images and (b) images extracted from PDFs
 	public static final String IMAGE_DIR         = "image/";
-	public static final String SVG_IMAGES_DIR    = "images/";
+	public static final String PDF_IMAGES_DIR    = "images/";
+	public static final String SVG_IMAGES_DIR    = "images/"; // not sure where these come from
 	public static final String PDF_DIR           = "pdf/";
 	public static final String RESULTS_DIR       = "results/";
 	public static final String SUPPLEMENTAL_DIR  = "supplement/";
@@ -810,6 +814,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public File getExistingImageDir() {
 		return getExistingReservedDirectory(IMAGE_DIR, false);
+	}
+
+	public File getExistingPDFImagesDir() {
+		return getExistingReservedDirectory(PDF_IMAGES_DIR, false);
 	}
 
 	public File getOrCreateExistingImageDir() {
@@ -1707,6 +1715,51 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public void tidyImages() {
 		ImageManager imageManager = new ImageManager(this);
 		imageManager.tidyImages();
+	}
+
+	public void extractSVGAndRawImages() throws IOException {
+		PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+		documentProcessor.setCTree(this);
+		documentProcessor.setMinimumImageBox(100, 100);
+		File existingFulltextPDF = getExistingFulltextPDF();
+		if (CMFileUtil.shouldMake(documentProcessor.getOutputSVGDirectory(getDirectory()), existingFulltextPDF) ||
+		    CMFileUtil.shouldMake(documentProcessor.getOutputImagesDirectory(getDirectory()), existingFulltextPDF)) { 
+			documentProcessor.readAndProcess(existingFulltextPDF);
+			documentProcessor.writeSVGPages();
+			documentProcessor.writeRawImages();
+		} else {
+			LOG.trace("skipped making SVG/Images for "+this.getName());
+			System.err.print(" skip ");
+		}
+	}
+
+	public File getImageFile(Int2 pageImage) {
+		File imageDir = this.getExistingImageDir();
+		return imageDir == null ? null : new File(imageDir, getImageName(pageImage));
+ 	}
+
+	private String getImageName(Int2 pageImage) {
+		return "page" + "." + pageImage.getX() + "." + pageImage.getY() + "." + CTree.PNG;
+	}
+
+	public File getPDFImageFile(Int2 pageImage) {
+		File imageDir = this.getExistingPDFImagesDir();
+		return imageDir == null ? null : new File(imageDir, getImageName(pageImage));
+ 	}
+
+	public BufferedImage getPDFImage(Int2 pageImage) {
+		File imageFile = this.getImageFile(pageImage);
+		BufferedImage image = null;
+		try {
+			image = imageFile == null ? null : ImageIO.read(imageFile);
+		} catch (IOException e) {
+			throw new RuntimeException("cannot create image", e);
+		}
+		return image;
+ 	}
+
+	public String createSVGFilename(Int2 pageImage) {
+		return "page" + pageImage.getX() + "." + pageImage.getY() + "." + CTree.SVG;
 	}
 
 

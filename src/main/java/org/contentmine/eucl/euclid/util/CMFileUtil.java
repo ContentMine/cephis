@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
+
 /** utilities which don't occur in Apache FileUtils or FilenameUtils
  * 
  * @author pm286
@@ -72,4 +74,32 @@ public class CMFileUtil {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	/** "make" logic for file dependencies.
+	 * 
+	 * returns true if fileToBeCreated is missing or is earlier than any existingEarlierFiles
+	 * if (fileToBeCreated is null throw RuntimeException)
+	 * 
+	 * @param fileToBeCreated
+	 * @param existingEarlierFiles
+	 * @return whether file should be "maked"
+	 * @throws RuntimeException if arguments are null
+	 */
+	public static boolean shouldMake(File fileToBeCreated, File... existingEarlierFiles) {
+		if (fileToBeCreated == null || existingEarlierFiles == null) {
+			throw new RuntimeException("Null arguments");
+		}
+		if (!fileToBeCreated.exists()) {
+			return true;
+		}
+		for (File existingFile : existingEarlierFiles) {
+			if (existingFile != null && !existingFile.exists()) {
+				if (FileUtils.isFileNewer(existingFile, fileToBeCreated)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 }

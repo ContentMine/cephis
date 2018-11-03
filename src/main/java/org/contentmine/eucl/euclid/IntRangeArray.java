@@ -36,6 +36,13 @@ public class IntRangeArray implements Iterable<IntRange> {
 		}
 	}
 
+	public IntRangeArray(int height) {
+		rangeList = new ArrayList<IntRange>(height);
+		for (int i = 0; i < height; i++) {
+			rangeList.add(null);
+		}
+	}
+
 	private void init() {
 		rangeList = new ArrayList<IntRange>();
 	}
@@ -179,5 +186,22 @@ public class IntRangeArray implements Iterable<IntRange> {
 				rangeList.add(null);
 			}
 		}
+	}
+
+	/** generates midpoint of each slice
+	 * 
+	 * @param offset
+	 * @return
+	 */
+	public Real2Array generateYMidpointArray() {
+		Real2Array points = new Real2Array(size());
+		for (int y = 0; y < size(); y++) {
+			IntRange yslice = get(y);
+			if (yslice != null) {
+				double xmid = yslice.getMidPoint();
+				points.setElement(y, new Real2(xmid, y));
+			}
+		}
+		return points;
 	}
 }
