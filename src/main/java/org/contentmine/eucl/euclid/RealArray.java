@@ -1719,13 +1719,14 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
     }
 
     /** create new reordered array.
+     * 'this' is not modified
      * 
      * @param intSet
      * @return
      */
     public RealArray createReorderedArray(IntSet intSet) {
     	RealArray ra = null;
-    	if (intSet.size() == this.size()) {
+    	if (intSet != null && intSet.size() == this.size()) {
     		ra = new RealArray(intSet.size());
     		for (int i = 0; i < intSet.size(); i++) {
     			ra.setElementAt(i, this.get(intSet.elementAt(i)));

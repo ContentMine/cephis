@@ -60,6 +60,7 @@ public class PDFDocumentProcessor {
 	private File currentFile;
 	private Int2 minImageBox;
 	private PageIncluder pageIncluder;
+	private CTree cTree;
 
 	public PDFDocumentProcessor() {
 		init();
@@ -131,10 +132,16 @@ public class PDFDocumentProcessor {
 		return this;
 	}
 
+	public void writeSVGPages() {
+		if(cTree != null) {
+			writeSVGPages(cTree.getDirectory());
+		}
+	}
+
 	public void writeSVGPages(File parent) {
-		File svgDir = new File(parent, CTree.SVG + "/");
-		System.out.println("\nwriting to: "+svgDir);
+		File svgDir = getOutputSVGDirectory(parent);
 		if (documentParser != null) {
+			LOG.trace("\nwriting SVG to: "+svgDir);
 			Map<PageSerial, SVGG> svgPageBySerial = documentParser.getOrCreateSvgPageBySerial();
 			Set<Entry<PageSerial, SVGG>> entrySet = svgPageBySerial.entrySet();
 			if (entrySet != null) {
@@ -144,7 +151,16 @@ public class PDFDocumentProcessor {
 					CTree.FULLTEXT_PAGE+CTree.DOT+key.getZeroBasedSerialString()+CTree.DOT+CTree.SVG));
 				}
 			}
+			LOG.debug("\nwrote SVG to: "+svgDir);
 		}
+	}
+
+	public File getOutputSVGDirectory(File parent) {
+		return new File(parent, CTree.SVG + "/");
+	}
+
+	public File getOutputImagesDirectory(File parent) {
+		return new File(parent, CTree.IMAGES + "/");
 	}
 
 	/** creates images from content
@@ -169,6 +185,11 @@ public class PDFDocumentProcessor {
 		}
 	}
 
+	public void writeRawImages() throws IOException {
+		if (cTree != null) {
+			writeRawImages(cTree.getDirectory());
+		}
+	}
 	public void writeRawImages(File parent) throws IOException {
 		File imagesDir = new File(parent, CTree.IMAGES + "/");
 		imagesDir.mkdirs();
@@ -239,6 +260,10 @@ public class PDFDocumentProcessor {
 	 */
 	public void setMinimumImageBox(int width, int height) {
 		this.minImageBox = new Int2(width, height);
+	}
+
+	public void setCTree(CTree cTree) {
+		this.cTree = cTree;
 	}
 
 }

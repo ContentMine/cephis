@@ -495,4 +495,15 @@ public class IntSet implements EuclidConstants {
 		return listList;
 	}
 
+	/** is the IntSet 0,1,2,3...
+	 * 
+	 * @return true if zero size or ordered
+	 */
+	public boolean isCountingFromZero() {
+		for (int i = 0; i < nelem; i++) {
+			if (i != array[i]) return false;
+		}
+		return true;
+	}
+
 }

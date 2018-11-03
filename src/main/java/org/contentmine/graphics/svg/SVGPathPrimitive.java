@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
+import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.graphics.svg.path.PathPrimitiveList;
 import org.contentmine.graphics.svg.path.SVGPathParser;
@@ -152,6 +153,10 @@ public abstract class SVGPathPrimitive {
 
 	public void setFirstPoint(Real2 lastPoint) {
 		this.zerothCoord = lastPoint;
+	}
+	
+	public Real2Range getBoundingBox() {
+		return coordArray == null || coordArray.size() == 0 ? null : coordArray.getRange2();
 	}
 
 //	public static void setFirstPoints(PathPrimitiveList primitiveList) {

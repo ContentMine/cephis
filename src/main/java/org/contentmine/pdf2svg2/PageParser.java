@@ -120,6 +120,11 @@ public class PageParser extends PageDrawer    {
 
 	private Double minBoldWeight = 500.;
 	private BufferedImage renderedImage;
+	
+	// to limit section being analyzed
+	private Real2Range viewBox;
+	// to avoid quadratic or similar performance
+	private int maxPrimitives;
 
 
 	PageParser(PageDrawerParameters parameters, int iPage) throws IOException        {
@@ -135,7 +140,13 @@ public class PageParser extends PageDrawer    {
     	integerByClipStringMap = new HashMap<String, Integer>();
     	yMax = YMAX; // hopefully overwritten by mediaBox
     	rawImageList = new ArrayList<BufferedImage>();
+    	setDefaults();
 
+	}
+
+	private void setDefaults() {
+		viewBox = new Real2Range(new RealRange(-100, 1000), new RealRange(-100, 1000));
+		maxPrimitives = 5000; /// 
 	}
 
 	/**
@@ -362,7 +373,7 @@ public class PageParser extends PageDrawer    {
     	GeneralPath generalPath = getLinePath();
 		currentSvgPath = new SVGPath(generalPath);
 		addCurrentPathAttributes(currentSvgPath);
-		// no justification for this - we need to sort of fill color
+		// no justification for this - we need to sort out fill color
 		currentSvgPath.setFill(GraphicsElement.NONE);
 
 		svgg.appendChild(currentSvgPath);
@@ -449,7 +460,15 @@ public class PageParser extends PageDrawer    {
 		if (currentPathPrimitiveList == null) {
     		LOG.warn("cannot close path on non-existent primitiveList");
     	} else {
-    		currentPathPrimitiveList.add(p);
+    		Real2Range bb = p.getBoundingBox();
+    		if (viewBox.includes(bb) && (true || currentPathPrimitiveList.size() < maxPrimitives)) {
+    			currentPathPrimitiveList.add(p);
+//    			System.err.print(p.getTag()+"/"+p.toString());
+//    			System.err.print(p.getTag());
+    		} else {
+//    			System.err.print(p.getTag() + "?" + viewBox +"/"+ (bb == null ? "x" : bb.format(3)));
+//    			LOG.debug("omitted primitive out of range");
+    		}
     	}
 	}
 
@@ -949,6 +968,15 @@ xmlns="http://www.w3.org/2000/svg">
 	public BufferedImage getRenderedImage() {
 		return renderedImage;
 	}
+
+	public Real2Range getViewBox() {
+		return viewBox;
+	}
+
+	public void setViewBox(Real2Range viewBox) {
+		this.viewBox = viewBox;
+	}
+
 
 
 	

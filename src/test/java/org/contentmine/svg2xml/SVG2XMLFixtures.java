@@ -28,6 +28,7 @@ public class SVG2XMLFixtures {
 	public static final File BMC_DIR = new File(SVG_DIR, "bmc");
 	public static final File MDPI_DIR = new File(SVG_DIR, "mdpi");
 	public static final File SVG1_DIR = new File(SVG2XML_DIR, "svg");
+
 	public static final File ACTION_SVG_DIR = new File(ACTION_DIR, "svg");
 	public static final File ACTION_PDF_DIR = new File(ACTION_DIR, "pdf");
 	// not standard
@@ -261,6 +262,7 @@ public class SVG2XMLFixtures {
 	public static final File TABLE_TYPE_LEFTBAR_DIR = new File(TABLE_TYPE_DIR, "leftbar");
 	public static final File TABLE_TYPE_PANEL_DIR = new File(TABLE_TYPE_DIR, "panel");
 	public static final File TABLE_TYPE_RULES_DIR = new File(TABLE_TYPE_DIR, "rules");
+	public static final File TABLE_TYPE_TEXT_DIR = new File(TABLE_TYPE_DIR, "text");
 	public static final File[] TABLE_TYPES = { 
 		TABLE_TYPE_APA_DIR,
 		TABLE_TYPE_APAROT_DIR,

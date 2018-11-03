@@ -42,8 +42,9 @@ public class CrossrefTest {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
-
-
+	private static final String QUICKSCRAPE = //  /Users/pm286/.nvm/v0.10.38/bin/quickscrape
+			"/usr/local/n/versions/node/6.2.1/bin/quickscrape";
+		;
 
 	/**
 	 * RUN CROSSREF WITHOUT GETPAPERS
@@ -93,9 +94,8 @@ public class CrossrefTest {
 	public void testQuickscrape() throws IOException {
 		File scrapers = new File("workspace/journalScrapers/scrapers");
 		File outdir = new File("target/crossref");
-		String CROSSREF = "/Users/pm286/.nvm/v0.10.38/bin/quickscrape";
 	    Process process = CMineUtil.runProcess(
-	    		new String[]{CROSSREF, "-q", "http://dx.plos.org/10.1371/journal.pone.0075293", 
+	    		new String[]{QUICKSCRAPE, "-q", "http://dx.plos.org/10.1371/journal.pone.0075293", 
 	    				"-d", scrapers.toString(), "-o", outdir.toString()}, null);
 	}
 
