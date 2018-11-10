@@ -80,4 +80,22 @@ public class CMStringUtil {
 		}
 		return ii;
 	}
+
+	/** rightpads string to totalLength usingspaces
+	 * if s >= totalLength no action
+	 *  
+	 * @param s
+	 * @param totalLength
+	 * @return
+	 */
+	public static String addPaddedSpaces(String s, int totalLength) {
+		if (s == null) {
+			return null;
+		}
+		StringBuilder sb = new StringBuilder(s);
+		for (int i = s.length(); i < totalLength; i++) {
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
 }
