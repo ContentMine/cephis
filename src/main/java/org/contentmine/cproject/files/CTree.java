@@ -1762,5 +1762,11 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return "page" + pageImage.getX() + "." + pageImage.getY() + "." + CTree.SVG;
 	}
 
+	public File getOrCreateDerivedImagesDir() {
+		File derivedImagesDir = new File(getOrCreateExistingImageDir(), "derived/");
+		derivedImagesDir.mkdirs();
+		return derivedImagesDir;
+	}
+
 
 }
