@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CTree;
+import org.contentmine.cproject.files.DebugPrint;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.graphics.html.HtmlB;
@@ -187,10 +188,10 @@ public class SVGDocumentProcessor {
 			    addSubDiv(pageDiv,     SECTION,     getHeading(text, DEFAULT_SECTION_FONT_SIZE, SECTION_HEAD_LIST)) != null ||
 			    addSubDiv(subDiv,      SUB_SECTION, getHeading(text, DEFAULT_SUBSECTION_FONT_SIZE, MINOR_SECTIONS)) != null
                 ) {
-                	LOG.debug("NOJOIN ");
+                	LOG.trace("NOJOIN ");
                 	continue;
             }
-			LOG.debug("JOIN? text:" + text.getXY() + " to " + para.getXY());
+			LOG.trace("JOIN? text:" + text.getXY() + " to " + para.getXY());
 			addTextToPara(para, text);
  		}
 		return pageDiv;
@@ -206,13 +207,14 @@ public class SVGDocumentProcessor {
 
 	private boolean mergeCurrentWithLast(HtmlSpan currentSpan, HtmlSpan lastSpan) {
 		if (lastSpan != null) {
-			LOG.debug(lastSpan.getValue()+" <-> "+currentSpan.getValue());
+			LOG.trace(lastSpan.getValue()+" <-> "+currentSpan.getValue());
 			Double lastX = lastSpan.getX();
 			Double lastY = lastSpan.getY();
 			Double currentX = currentSpan.getX();
 			Double currentY = currentSpan.getY();
 			if (lastX == null || currentX == null || lastY == null || currentY == null) {
-				throw new RuntimeException("No coordinates given");
+				System.err.println("No coordinates given");
+				return false;
 			}
 
 			StyleBundle currentStyle = StyleBundle.getStyleBundle(currentSpan);
@@ -220,27 +222,27 @@ public class SVGDocumentProcessor {
 			// if fontSize, stroke, strokewidth, fille changed, cannot merge
 //			LOG.debug("STYLE "+currentStyle+" // "+lastStyle);
 			if (!lastStyle.matchesFontSize(currentStyle, toleranceRatio)) {
-				LOG.debug("FONT SIZE "+currentStyle+" // "+lastStyle);
+				LOG.trace("FONT SIZE "+currentStyle+" // "+lastStyle);
 				return false;
 			}
 			if (!lastStyle.matchesStrokeWidth(currentStyle, toleranceRatio)) {
-				LOG.debug("FONT STYLE "+currentStyle+" // "+lastStyle);
+				LOG.trace("FONT STYLE "+currentStyle+" // "+lastStyle);
 				return false;
 			}
 			if (!lastStyle.matchesStroke(currentStyle)) {
-				LOG.debug("STROKE "+currentStyle+" // "+lastStyle);
+				LOG.trace("STROKE "+currentStyle+" // "+lastStyle);
 				return false;
 			}
 			if (!lastStyle.matchesFill(currentStyle)) {
-				LOG.debug("FILL "+currentStyle+" // "+lastStyle);
+				LOG.trace("FILL "+currentStyle+" // "+lastStyle);
 				return false;
 			}
 			if (!lastStyle.matchesFontFamily(currentStyle)) {
-				LOG.debug("FAMILIY "+currentStyle+" // "+lastStyle);
+				LOG.trace("FAMILY "+currentStyle+" // "+lastStyle);
 				return false;
 			}
 			if (lastX < currentX && Real.isEqual(lastY, currentY, yToler)) {
-				LOG.debug(" SAME LINE "+currentStyle+" // "+lastStyle);
+				LOG.trace(" SAME LINE "+currentStyle+" // "+lastStyle);
 				return true;
 			}
 		}
@@ -321,11 +323,14 @@ public class SVGDocumentProcessor {
 			span.setClassAttribute(IMAGE);
 			HtmlImg img = new HtmlImg();
 			String textS = text.getText();
-			// image.10.1[...]
+			DebugPrint.debugPrint(Level.DEBUG, ">IMG>"+textS);
+			// image.5.1[432*533]
 			String pageSerialS = textS.substring("image.".length(), textS.indexOf("["));
 			img.setSrc(RELATIVE_IMAGES_DIR + "/" + PAGE + CTree.DOT + pageSerialS + CTree.DOT + CTree.PNG);
-			img.addAttribute(new Attribute("width", "50%"));
-//			img.addAttribute(new Attribute("height", "50%"));
+			// extract width and height - crude ...[123*456]
+			String[] imageS = textS.split("[\\[\\]\\*]");
+			img.addAttribute(new Attribute("width", imageS[1]));
+			img.addAttribute(new Attribute("height", imageS[2]));
 			div.appendChild(img);
 			div.appendChild(span);
 			if (span instanceof HtmlSpan) return (HtmlSpan) span;
