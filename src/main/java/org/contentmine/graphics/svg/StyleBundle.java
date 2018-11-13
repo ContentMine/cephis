@@ -772,10 +772,10 @@ public class StyleBundle implements XMLConstants {
 			throw new RuntimeException("cannot have null font families");
 		}
 		if (fontFamily.equals(fontFamily2)) {
-			LOG.debug("MATCH");
+			LOG.trace("MATCH");
 			return true;
 		} else {
-			LOG.debug(fontFamily + " != " + fontFamily2);
+			LOG.trace(fontFamily + " != " + fontFamily2);
 			return false;
 		}
 	}

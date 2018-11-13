@@ -561,11 +561,12 @@ public abstract class HtmlElement extends AbstractCMElement {
     }
     
 	public Double getX() {
-		return getCoordinateValue(X);
+		Double x = getCoordinateValue(X);
+		return x;
 	}
-
 	public Double getY() {
-		return getCoordinateValue(Y);
+		Double y = getCoordinateValue(Y);
+		return y;
 	}
 	
 	public Real2 getXY() {
@@ -577,11 +578,11 @@ public abstract class HtmlElement extends AbstractCMElement {
 	private Double getCoordinateValue(String coordName) {
 		String coordString = this.getAttributeValue(coordName);
 		Double coord = null;
-		if (coordString != null) {
+		if (coordString != null && !"null".equals(coordString)) {
 			try {
 				coord = (Double) Double.parseDouble(coordString);
 			} catch (Exception e) {
-				throw new RuntimeException("Cannot parse as double "+coordString);
+				System.err.println("Cannot parse as double "+coordString);
 			}
 		}
 		return coord;

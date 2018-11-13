@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.eclipse.jetty.util.log.Log;
 
 /** utilities which don't occur in Apache FileUtils or FilenameUtils
  * 
@@ -14,6 +17,11 @@ import org.apache.commons.io.FileUtils;
  *
  */
 public class CMFileUtil {
+	private static final Logger LOG = Logger.getLogger(CMFileUtil.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
+
 
 	/**
 	 * sorts by embedded integer, in file(names) otherwise identical e.g. sorts
@@ -80,26 +88,52 @@ public class CMFileUtil {
 	 * returns true if fileToBeCreated is missing or is earlier than any existingEarlierFiles
 	 * if (fileToBeCreated is null throw RuntimeException)
 	 * 
+	 * @param fileToBeCreated if null return true as process may create it
+	 * @param debug if true log progress
+	 * @param existingEarlierFiles if null throw exception
+	 * 
+	 * @return whether file should be "maked"
+	 * @throws RuntimeException if existingEarlierFiles are null
+	 */
+	public static boolean shouldMake(File fileToBeCreated, boolean debug, File... existingEarlierFiles) {
+		if (existingEarlierFiles == null) {
+			throw new RuntimeException("Null files for make");
+		}
+		if (fileToBeCreated == null) {
+			LOG.debug("null target file); assume it will be created");
+			return true;
+		}
+		if (debug) LOG.debug("MAKE "+fileToBeCreated+" from "+existingEarlierFiles);
+		if (!fileToBeCreated.exists()) {
+			if (debug) LOG.debug("Target "+fileToBeCreated+" does not exist");
+			return true;
+		}
+		for (File existingFile : existingEarlierFiles) {
+			if (existingFile != null && !existingFile.exists()) {
+				if (FileUtils.isFileNewer(existingFile, fileToBeCreated)) {
+					if (debug) LOG.debug("Target "+existingFile+" newer than "+fileToBeCreated);
+					return true;
+				}
+			}
+		}
+		if (debug) LOG.debug("Target "+existingEarlierFiles+" all older than "+fileToBeCreated);
+		return false;
+	}
+
+	/** "make" logic for file dependencies.
+	 * 
+	 * returns true if fileToBeCreated is missing or is earlier than any existingEarlierFiles
+	 * if (fileToBeCreated is null throw RuntimeException)
+	 * 
+	 * no debug
+	 * 
 	 * @param fileToBeCreated
 	 * @param existingEarlierFiles
 	 * @return whether file should be "maked"
 	 * @throws RuntimeException if arguments are null
 	 */
 	public static boolean shouldMake(File fileToBeCreated, File... existingEarlierFiles) {
-		if (fileToBeCreated == null || existingEarlierFiles == null) {
-			throw new RuntimeException("Null arguments");
-		}
-		if (!fileToBeCreated.exists()) {
-			return true;
-		}
-		for (File existingFile : existingEarlierFiles) {
-			if (existingFile != null && !existingFile.exists()) {
-				if (FileUtils.isFileNewer(existingFile, fileToBeCreated)) {
-					return true;
-				}
-			}
-		}
-		return false;
+		return shouldMake(fileToBeCreated, false, existingEarlierFiles);
 	}
 
 }
