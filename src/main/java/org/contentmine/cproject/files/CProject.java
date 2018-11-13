@@ -30,11 +30,9 @@ import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
-import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.svg.cache.CorpusCache;
 import org.contentmine.graphics.svg.cache.DocumentCache;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
-import org.contentmine.svg2xml.pdf.SVGDocumentProcessor;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;
@@ -207,6 +205,7 @@ public class CProject extends CContainer {
 				unknownChildDirectoryList.add(directory);
 			}
 		}
+		return;
 	}
 
 	@Override
@@ -275,6 +274,8 @@ public class CProject extends CContainer {
 		this.getOrCreateFilesDirectoryCTreeLists();
 		if (cTreeList != null) {
 			cTreeList.sort();
+		} else {
+			cTreeList = new CTreeList();
 		}
 		return cTreeList;
 	}
@@ -465,12 +466,13 @@ public class CProject extends CContainer {
 	}
 
 	/** requires all cTrees to have scholarlyHtml
-	 * 
+	 * This is a BAD idea!
 	 * @param fraction of CTrees that need to have scholarly.html
+	 * 
 	 * @return
 	 */
 	public boolean hasScholarlyHTML(double fractionRequired) {
-		CTreeList cTreeList = this.getOrCreateCTreeList();
+		cTreeList = this.getOrCreateCTreeList();
 		
 		int hasNot = 0;
 		int total = 0;
@@ -937,6 +939,7 @@ public class CProject extends CContainer {
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 		documentProcessor.setMinimumImageBox(100, 100);
 		for (CTree cTree : cTreeList) {
+			cTree.setDebugLevel(debugLevel);
 			String name = cTree.getName();
 	        System.out.println("cTree: "+name);
 			cTree.processPDFTree();
@@ -965,18 +968,9 @@ public class CProject extends CContainer {
 	 */
 	public void convertPSVGandWriteHtml() {
 		CTreeList cTreeList = getOrCreateCTreeList();
-		File targetDir = getDirectory();
 		for (CTree cTree : cTreeList) {
-			List<File> svgFiles = cTree.getExistingSVGFileList();
-			SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
-			svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
-			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
-			File htmlFile = new File(new File(targetDir, cTree.getName()), CTree.SCHOLARLY_HTML);
-			try {
-				XMLUtil.debug(html, htmlFile, 1);
-			} catch (IOException e) {
-				LOG.error("Cannot write html: " + htmlFile);
-			}
+			DebugPrint.debugPrint(Level.INFO, "cTree: "+cTree);
+			cTree.createAndWriteScholorlyHtml();
 		}
 	}
 
@@ -1140,6 +1134,16 @@ public class CProject extends CContainer {
 		CTreeList cTreeList = getOrCreateCTreeList();
 		for (CTree cTree : cTreeList) {
 			cTree.tidyImages();
+		}
+	}
+
+	/** clean files of given name.
+	 * 
+	 * @param arg
+	 */
+	public void clean(String arg) {
+		for (CTree cTree : this.getOrCreateCTreeList()) {
+			cTree.clean(arg);
 		}
 	}
 }

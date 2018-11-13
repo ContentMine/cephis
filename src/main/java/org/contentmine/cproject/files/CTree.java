@@ -43,6 +43,7 @@ import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.cache.DocumentCache;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 import org.contentmine.pdf2svg2.PageIncluder;
+import org.contentmine.svg2xml.pdf.SVGDocumentProcessor;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -860,6 +861,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	// this is a child directory of svg (svg/images)
 	public File getExistingSVGImagesDir() {
 		File svgDir = getExistingReservedDirectory(SVG_DIR, false);
+		DebugPrint.debugPrint(Level.DEBUG, "svgDir exists");
 		File svgImageDir = null;
 		if (svgDir != null) {
 			svgImageDir = new File(svgDir, SVG_IMAGES_DIR);
@@ -1675,9 +1677,15 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public void processPDFTree() {
 		int start = 0;
+//		boolean debug = true;
 		File existingFulltextPDF = getExistingFulltextPDF();
 		if (existingFulltextPDF == null) {
-			LOG.debug("null PDF for: "+this.getName());
+			DebugPrint.warnPrintln(debugLevel, "null PDF for: "+this.getName());
+			return;
+		}
+		File svgDir = this.getExistingSVGDir();
+		if (svgDir != null && !CMFileUtil.shouldMake(svgDir, existingFulltextPDF)) {
+			DebugPrint.infoPrintln(debugLevel, "make is skipped: "+existingFulltextPDF);
 			return;
 		}
 		PDDocument document = null;
@@ -1768,5 +1776,31 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return derivedImagesDir;
 	}
 
+	void createAndWriteScholorlyHtml() {
+		List<File> svgFiles = getExistingSVGFileList();
+		SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
+		svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
+		File htmlFile = new File(getDirectory(), CTree.SCHOLARLY_HTML);
+		DebugPrint.debugPrint(Level.DEBUG, ">schol>"+htmlFile);
+		if (CMFileUtil.shouldMake(htmlFile, getExistingSVGDir())) {
+			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
+			try {
+				XMLUtil.debug(html, htmlFile, 1);
+			} catch (IOException e) {
+				LOG.error("Cannot write html: " + htmlFile);
+			}
+		}
+	}
+
+	public void clean(String arg) {
+		File file = new File(this.getDirectory(), arg);
+		if (arg.endsWith("/") || file.isDirectory()) {
+			FileUtils.deleteQuietly(file);
+			DebugPrint.debugPrintln("deleted: "+file);
+		} else {
+			FileUtils.deleteQuietly(file);
+			DebugPrint.debugPrintln("deleted: "+file);
+		}
+	}
 
 }
