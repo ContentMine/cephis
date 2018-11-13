@@ -39,6 +39,7 @@ public abstract class CContainer {
 	protected List<File> allowedChildFileList;
 	protected List<File> unknownChildDirectoryList;
 	protected List<File> unknownChildFileList;
+	protected Level debugLevel = Level.TRACE;
 
 	private boolean includeAllDirectories;
 
@@ -164,6 +165,7 @@ public abstract class CContainer {
 				}
 			}
 		}
+		return;
 	}
 
 	protected abstract void calculateFileAndCTreeLists();
@@ -289,6 +291,14 @@ public abstract class CContainer {
 		unknownChildDirectoryList = null;
 		unknownChildFileList = null;
 		
+	}
+
+	public Level getDebugLevel() {
+		return debugLevel;
+	}
+
+	public void setDebugLevel(Level debugLevel) {
+		this.debugLevel = debugLevel;
 	}
 
 }
