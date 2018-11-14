@@ -46,4 +46,19 @@ ami-word
 ## versioning
 Currently all versions are `SNAPSHOTS` and treated a such by Maven. 
 
+# commands
+
+## full build
+This will clean, build, test and install `cephis` in your personal `.m2` repository.
+```
+mvn clean install
+```
+This takes 1-2 inutes as no test is greater than 5 secs.
+It does not run the Integration tests. For that we have
+
+```
+mvn clean install -DskipITs=false
+```
+
+
 
