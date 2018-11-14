@@ -1,69 +1,32 @@
 # cephis
 
-Cephis is a library composed of 6 historical libraries (the name is an acronym). They were originally developed as separate
-modules but this became unwieldy to support versions and hierarchy so they have been merged into a single module. The modules 
-are somewhat preserved and could be called from other packages such as the chemical JUMBOConverters but their current use is for
-suporting Norma and AMI.
+Cephis has the following sorts of examples:
 
-## euclid
-`org.contentmine.eucl.euclid`
+* extended Unit tests ("Integration Tests")
+* projects decribed on ContentMine's "discuss" platform
 
-Utility routines dating from when Java had few libraries. Some could be replaced. They include:
+## Integration Tests
+Many `cephis` tests take a small problem and produce output and are referred to as *Integration Tests* (ITs). ITs have a special role in Maven and can be run or omitted as required. Typically many ITs:
 
-* arrays and lists
-* 2- and 3-D geometry
-* String operations
-* File operations
+ * Take a "long" time to run. All tests > 5 sec on my machine will be ITs. This means that the other tests act as more frequent Regression tests.
+ * depend on complex files and documents. This means they can be fragile over time and different platforms. A faling IT may occasionally be a fragile test rather than a fundamental problem. For example file listing order is not determined and although I am retrofitting sorting it isn't universal.
+ * are used in an exploratory manner. This coincides with [new approaches to TDD](https://herbertograca.com/2018/08/27/distillation-of-tdd-where-did-it-all-go-wrong/). Write the tasks addressing the generation of real results (query->results), get the hack working, then gradually coalesce into classes, and, when necessary, write tests for those.
+ * Occaasionally require "closed" resources such as paywalled scholarly articles. We cannot post these openly (Copyright) and these will fail for other developers. This doesn't matter.
+ 
+## Projects
+We do most projects as Open Notebook Science and have several successful projects on our discussion forum. Some are run from `norma` or `ami` but are mainly based on `cephis` technology. Examples:
 
-## html
-`org.contentmine.graphics.html`
+* [OCR of 50-year old articles](http://discuss.contentmine.org/t/extracting-structured-text-from-ocred-bitmaps/641)
+* [text mining with dictionaries](http://discuss.contentmine.org/t/analysis-of-articles-through-dictionaries-ami-obesity/660)
+* [OCR of very difficult ancient documents](http://discuss.contentmine.org/t/extracting-science-from-early-scientific-documents/613)
+* [transformation with stylesheets](http://discuss.contentmine.org/t/on-adding-a-new-transformer-to-norma/492) (`norma` uses `cephis`)
+* [extraction and clipping of tables](http://discuss.contentmine.org/t/cm-ucl-ii-semantic-content-enhancement-of-table-data/396)
+* [extracting data from vectors-based plots](http://discuss.contentmine.org/t/extracting-data-from-tilburg-funnel-plot-diagrams/386)
 
-A DOM for HTML. Unlike most DOMs which are created to render objects this is designed for creating the objects from non-semantic primitives.
-Most HTML elements which support objects and containment are present, but style objects are generally missing. We aim towards HTML5.
+There are many more - feel free to read the `discuss` and update this page.
 
-There is special support for building HTML from the output of OCR (HOCR).
 
-## svg
-`org.contentmine.graphics.svg`
 
-A DOM for SVG. Unlike most DOMs which are created to render objects this is designed for creating the objects from non-semantic primitives.
-Most SVG elements which support static objects and containment are present, but style and animations objects are generally missing. There is  much support for creating higher primitives from lower, thus:
-```path => line => rectangle => textbox```
 
-## font
-`org.contentmine.font`
-
-Support for managing font information, including non-unicode characters. Messy since PDF is messy.
-
-## image
-`org.contentmine.image`
-
-Support for processing an interpreting pixel images (bitmaps). Uses BoofCV for some of the orginal processing but then adds layers to creat 
-objects heuristically:
-``` pixels => islands => graphs => lines => shapes => SVG objects ```
-
-## pdf2svg
-`org.contentmine.pdf2svg` and `org.contentmine.pdf2svg2`
-
-Routines trapping the PDFBox primitives and creating SVG. Generally creates low level primitives 
-``` path character image```
-and then attempts to make geometrical objects and text (images are untouched)
-
-## svg2xml 
-creates HTML from SVG
-
-## cproject
-`org.contentmine.cproject`
-
-manages a file-based data structure for the result of parsing. A `CProject` is a directory containing `CTree`s which themselves may have many specific sub-directories. 
-
-# activity
-Most of the development is done on the `dev` branch by `petermr`. There is a master branch but low traffic and not recently sync'ed.
-
-## previous repos
-The library used to be in ca 10 separate repos, mainly owned by `petermr` with ContentMine masters. Most of these are in `cephis` but there is work on tables that `jkbrook` has contributed to which has not been integrated.
-
-## building and examples
-See separate pages.
-
+ 
 
