@@ -45,4 +45,8 @@ bmc                        // the CProject ("bmc")
 │   └── results.json
 ```
 
-## filenames and directories
+## filenames
+When filenames are not reserved (e.g. `cProject` and `cTree`s it is STRONGLY recommended to use only alphanumeric characters and "-_.". Spaces and other punctuation cause serious problems when importing and exporting. Although we support UNICODE many other systems do not and so we recommend restricting to `[A-Za-z0-9._-]` . Some of our tools may elide spaces and change other punctuation to "_"
+
+## transformations
+The philosophy is to bring the tool to the data (CProject), transform it 
