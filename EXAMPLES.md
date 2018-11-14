@@ -1,13 +1,9 @@
 # cephis
 
-Cephis is a **library** composed of 6 historical libraries (the name is an acronym). They were originally developed as separate
+Cephis is a library composed of 6 historical libraries (the name is an acronym). They were originally developed as separate
 modules but this became unwieldy to support versions and hierarchy so they have been merged into a single module. The modules 
 are somewhat preserved and could be called from other packages such as the chemical JUMBOConverters but their current use is for
 suporting Norma and AMI.
-
-Building requires Maven, see [BUILDING]{BUILDING.md}.
-
-Users will not normally "run" `cephis` but will either use tools built on top (`norma` and `ami`) or will build their own applications. Examples of use are given in [EXAMPLES]{EXAMPLES.md}.
 
 ## euclid
 `org.contentmine.eucl.euclid`
