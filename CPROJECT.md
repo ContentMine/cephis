@@ -13,29 +13,29 @@ system. This means they are:
 an example: (comments as //...) Note the plastic nature of the tree, with everything optional
 the order of files is unimportant
 ```
-bmc                        // the CProject ("bmc")
-├── 15_1_511               // first CTree ("15_1_511")
-│   ├── expected           // reserved name, file created by user
-│   │   └── regex          // reserved name; file created by user
-│   │       └── consort0   // user name
+bmc                              // the CProject ("bmc")
+├── 15_1_511                     // first CTree ("15_1_511")
+│   ├── expected                 // reserved name, file created by user
+│   │   └── regex                // reserved name; file created by user
+│   │       └── consort0         // user name
 │   │           └── results.xml  // reserved name
 │   ├── fulltext.html            // reserved name (downloaded by getpapers)
 │   ├── fulltext.pdf             // reserved name (downloaded by getpapers)
 │   ├── fulltext.xml             // reserved name (downloaded by getpapers)
 │   ├── quickscrape_result.json  // reserved name (from quickscrape)
-│   └── results.json       // reserved name (from getpapers)
-├── http_www.trialsjournal.com_content_16_1_1   // first CTree ("15_1_511")
-│   ├── 1745-6215-16-1-1.gif   // user name 
+│   └── results.json             // reserved name (from getpapers)
+├── http_www.trialsjournal.com_content_16_1_1   // second CTree ("http_www.trialsjournal.com_content_16_1_1")
+│   ├── 1745-6215-16-1-1.gif     // user name 
 │   ├── expected
-│   │   ├── identifier
+│   │   ├── identifier           // reserved name for identifier command
 │   │   │   ├── clin.isrctn
-│   │   │   │   └── results.xml
+│   │   │   │   └── results.xml  // reserved name for results
 │   │   │   └── clin.nct
 │   │   │       └── results.xml
-│   │   └── word
-│   │       ├── frequencies
-│   │       │   ├── results.html
-│   │       │   └── results.xml
+│   │   └── word                 // reserved name for word frequemcy analysis
+│   │       ├── frequencies      // reserved name
+│   │       │   ├── results.html // reserved name
+│   │       │   └── results.xml  // reserved name
 │   │       └── lengths
 │   │           ├── results.html
 │   │           └── results.xml
@@ -46,7 +46,8 @@ bmc                        // the CProject ("bmc")
 ```
 
 ## filenames
-When filenames are not reserved (e.g. `cProject` and `cTree`s it is STRONGLY recommended to use only alphanumeric characters and "-_.". Spaces and other punctuation cause serious problems when importing and exporting. Although we support UNICODE many other systems do not and so we recommend restricting to `[A-Za-z0-9._-]` . Some of our tools may elide spaces and change other punctuation to "_"
+
+When filenames are not reserved (e.g. `cProject` and `cTree`s it is STRONGLY recommended to use only alphanumeric characters and "-\_.". Spaces and other punctuation cause serious problems when importing and exporting. Although we support UNICODE many other systems do not and so we recommend restricting to `[A-Za-z0-9.\_-]` . Some of our tools may elide spaces and change other punctuation to "\_"
 
 ## transformations
 The philosophy is to bring the tool to the data (CProject), transform it 
