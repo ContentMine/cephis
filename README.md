@@ -56,3 +56,14 @@ creates HTML from SVG
 `org.contentmine.cproject`
 
 manages a file-based data structure for the result of parsing. A `CProject` is a directory containing `CTree`s which themselves may have many specific sub-directories. 
+
+# activity
+Most of the development is done on the `dev` branch by `petermr`. There is a master branch but low traffic and not recently sync'ed.
+
+## previous repos
+The library used to be in ca 10 separate repos, mainly owned by `petermr` with ContentMine masters. Most of these are in `cephis` but there is work on tables that `jkbrook` has contributed to which has not been integrated.
+
+## building and examples
+See separate pages.
+
+
