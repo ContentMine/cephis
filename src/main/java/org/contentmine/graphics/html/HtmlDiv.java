@@ -94,5 +94,19 @@ public class HtmlDiv extends HtmlElement {
 		return pList;
 	}
 
+	public static void debugListList(List<List<HtmlDiv>> divListList) {
+		for (List<HtmlDiv> divList : divListList) {
+			debugList(divList);
+		}
+	}
+
+	public static void debugList(List<HtmlDiv> divList) {
+		for (HtmlDiv div : divList) {
+			LOG.debug(div.toXML());
+		}
+		
+	}
+
+
 
 }

@@ -2,6 +2,7 @@ package org.contentmine.cproject.metadata;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -141,7 +142,7 @@ public abstract class AbstractMetadata {
 			List<JsonElement> elementList2 = JsonUtils.getListFromFile(file2);
 			Set<JsonElement> thisSet = new HashSet<JsonElement>(elementList);
 			
-			JsonArray array = (JsonArray) new JsonParser().parse(FileUtils.readFileToString(file));
+			JsonArray array = (JsonArray) new JsonParser().parse(FileUtils.readFileToString(file, Charset.forName("UTF-8")));
 			
 			for (JsonElement element2 : elementList2) {
 				if (!thisSet.contains(element2)) {
@@ -606,7 +607,7 @@ ARRAY translator; [{"affiliation":[],"family":"Munder","given":"Marc"},{"affilia
 				CTree.JSON.equals(FilenameUtils.getExtension(jsonFile.getName()))) {
 			try {
 				JsonParser jsonParser = new JsonParser();
-				JsonElement jsonElement = jsonParser.parse(FileUtils.readFileToString(jsonFile));
+				JsonElement jsonElement = jsonParser.parse(FileUtils.readFileToString(jsonFile, Charset.forName("UTF-8")));
 				if (Type.CROSSREF.equals(metadataType)) {
 					metadata = CrossrefMD.createMetadata();
 					metadata.analyzeElement(0, jsonElement);
@@ -937,7 +938,7 @@ ARRAY translator; [{"affiliation":[],"family":"Munder","given":"Marc"},{"affilia
 	}
 
 	public JsonElement readMetadataJson(File jsonFile) throws IOException {
-		metadataJson = new JsonParser().parse(FileUtils.readFileToString(jsonFile));
+		metadataJson = new JsonParser().parse(FileUtils.readFileToString(jsonFile, Charset.forName("UTF-8")));
 		return metadataJson;
 	}
 

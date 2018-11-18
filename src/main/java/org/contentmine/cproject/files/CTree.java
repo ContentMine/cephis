@@ -1242,7 +1242,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	private String readFileQuietly(File file) {
 		try {
-			return file == null ? null : FileUtils.readFileToString(file);
+			return file == null ? null : FileUtils.readFileToString(file, Charset.forName("UTF-8"));
 		} catch (IOException e) {
 //			throw new RuntimeException("Cannot read file: "+pdfTxt, e);
 			return null;

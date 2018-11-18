@@ -2,6 +2,7 @@ package org.contentmine.cproject.metadata;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,7 +109,7 @@ public class JsonUtils {
 	}
 
 	public static List<JsonElement> getListFromFile(File file) throws IOException {
-		String s = FileUtils.readFileToString(file);
+		String s = FileUtils.readFileToString(file, Charset.forName("UTF-8"));
 		JsonArray array = (JsonArray) new JsonParser().parse(s);
 		List<JsonElement> elements = new ArrayList<JsonElement>();
 		for (int i = 0; i < array.size(); i++) {

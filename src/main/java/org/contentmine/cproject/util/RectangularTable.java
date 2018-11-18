@@ -6,6 +6,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -74,7 +75,7 @@ public class RectangularTable {
 
     public final static RectangularTable readCSVTable(File file, boolean useHeader, CSVFormat csvFormat) throws IOException {
     	if (file != null) {
-        	String s = FileUtils.readFileToString(file);
+        	String s = FileUtils.readFileToString(file, Charset.forName("UTF-8"));
         	if (s != null) {
         		StringReader reader = new StringReader(s);
         		return readCSVTable(reader, useHeader, csvFormat);
