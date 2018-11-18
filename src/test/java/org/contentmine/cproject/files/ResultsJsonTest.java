@@ -2,6 +2,7 @@ package org.contentmine.cproject.files;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -34,7 +35,7 @@ public class ResultsJsonTest {
 		CTree ctree = new CTree(file);
 		File resultsJson = ctree.getExistingQuickscrapeMD();
 		Assert.assertNotNull("QMD is null: "+file, resultsJson);
-		String resultsJsonString = FileUtils.readFileToString(resultsJson);
+		String resultsJsonString = FileUtils.readFileToString(resultsJson, Charset.forName("UTF-8"));
 	    JsonParser parser = new JsonParser();
 	    JsonObject jsonObject = (JsonObject) parser.parse(resultsJsonString);
 		Assert.assertEquals("{\"value\":[\"Trials\"]}", jsonObject.get("journal").toString());
@@ -74,7 +75,7 @@ public class ResultsJsonTest {
 		CTree ctree = new CTree(file);
 		File resultsJson = ctree.getExistingQuickscrapeMD();
 		if (resultsJson != null) {
-			resultsJsonString = FileUtils.readFileToString(resultsJson);
+			resultsJsonString = FileUtils.readFileToString(resultsJson, Charset.forName("UTF-8"));
 		}
 		return resultsJsonString;
 	}

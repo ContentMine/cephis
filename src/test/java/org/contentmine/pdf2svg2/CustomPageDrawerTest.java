@@ -10,6 +10,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
+import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CustomPageDrawerTest {
@@ -19,9 +21,13 @@ public class CustomPageDrawerTest {
 	}
 	
 	@Test
+	@Ignore // doesn't call renderer properly // better examples exist
 	public void testCombinedAWTSVG() throws IOException {
-        File file = new File("src/main/resources/org/apache/pdfbox/examples/rendering/",
-                             "custom-render-demo.pdf");
+//        File file = new File("src/main/resources/org/apache/pdfbox/examples/rendering/",
+//                "custom-render-demo.pdf");
+        File file = new File("src/main/resources/org/contentmine/pdf2svg2/",
+                "custom-render-demo.pdf");
+        Assert.assertTrue(file.exists());
         
         PDDocument doc = PDDocument.load(file);
         PDFRenderer renderer = new MyPDFRenderer(doc);
