@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -278,7 +279,7 @@ public class CMineUtil {
 	public static String getTypeOfContent(File file) {
 		String contentType = null;
 		try {
-			String content = FileUtils.readFileToString(file);
+			String content = FileUtils.readFileToString(file, Charset.forName("UTF-8"));
 			if (content == null) {
 				
 			} else if (content.startsWith(PDF_START)) {

@@ -63,10 +63,12 @@ public abstract class AbstractCMElement extends Element implements XMLConstants 
 
 	public static List<HtmlElement> getChildElements(AbstractCMElement root, String tag) {
 		tag = tag.toLowerCase();
-		Nodes nodes = root.query("./*[local-name()='"+tag+"']");
 		List<HtmlElement> elements = new ArrayList<HtmlElement>();
-		for (int i = 0; i < nodes.size(); i++) {
-			elements.add((HtmlElement)nodes.get(i));
+		if (root != null) {
+			Nodes nodes = root.query("./*[local-name()='"+tag+"']");
+			for (int i = 0; i < nodes.size(); i++) {
+				elements.add((HtmlElement)nodes.get(i));
+			}
 		}
 		return elements;
 	}

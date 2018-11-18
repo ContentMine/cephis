@@ -32,6 +32,7 @@ import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Util;
+import org.contentmine.graphics.html.HtmlElement;
 
 import nu.xom.Attribute;
 import nu.xom.Builder;
@@ -1414,12 +1415,14 @@ public abstract class XMLUtil implements XMLConstants {
 	protected void removeAttributeWithName(String name) {
 	}
 
+	public static String toString(List<Element> elements) {
+		StringBuilder sb = new StringBuilder();
+		for (Element element : elements) {
+			sb.append(element.toXML());
+		}
+		return sb.toString();
+	}
+
 	
-//	public static void removeElementsByXPath(Element elem, String xpath) {
-//		List<Element> elements = XMLUtil.getQueryElements(elem, xpath);
-//		for (Element element : elements) {
-//			element.detach();
-//		}
-//	}
 
 }

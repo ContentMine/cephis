@@ -2,6 +2,7 @@ package org.contentmine.cproject.metadata;
 
 import java.io.File;
 import java.io.FilenameFilter;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -64,7 +65,7 @@ public class ScraperSet {
 			for (File scraperFile : scraperFiles) {
 				JsonElement jsonElement = null;
 				try {
-					jsonElement = new JsonParser().parse(FileUtils.readFileToString(scraperFile));
+					jsonElement = new JsonParser().parse(FileUtils.readFileToString(scraperFile, Charset.forName("UTF-8")));
 				} catch (Exception e) {
 					LOG.debug("Cannot read file: "+scraperFile+"; "+e);
 					continue;
