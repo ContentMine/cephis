@@ -44,13 +44,13 @@ public class DebugPrint {
 
 
 	private static void println(Level level, String msg, Level refLevel) {
-		if (level.isGreaterOrEqual(refLevel)) {
+		if (level != null && refLevel != null && level.isGreaterOrEqual(refLevel)) {
 			System.out.println(level+": "+msg);
 		}
 	}
 
 	private static void print(Level level, String msg, Level refLevel) {
-		if (level.isGreaterOrEqual(refLevel)) {
+		if (level != null && refLevel != null && level.isGreaterOrEqual(refLevel)) {
 			System.out.print(level+": "+msg);
 		}
 	}
