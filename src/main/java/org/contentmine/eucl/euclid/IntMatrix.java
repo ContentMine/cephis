@@ -1610,18 +1610,21 @@ public class IntMatrix implements EuclidConstants {
 	 * @throws IOException
 	 */
 	public void writeCSV(File cooccurrenceFile, String rowName, String colName) throws IOException {
-		FileWriter w = new FileWriter(cooccurrenceFile);
-		if (rowName != null && colName != null) {
-			// write row/col titles and pad with commas
-			w.write(rowName +","+ colName);
-			for (int i = 2; i < cols; i++) {
-				w.write(",");
+		if (cooccurrenceFile != null) {
+			cooccurrenceFile.getParentFile().mkdirs();
+			FileWriter w = new FileWriter(cooccurrenceFile);
+			if (rowName != null && colName != null) {
+				// write row/col titles and pad with commas
+				w.write(rowName +","+ colName);
+				for (int i = 2; i < cols; i++) {
+					w.write(",");
+				}
+				w.write("\n");
 			}
-			w.write("\n");
+			writeCSV(w);
+			w.close();
+			LOG.trace("wrote: "+cooccurrenceFile);
 		}
-		writeCSV(w);
-		w.close();
-		LOG.trace("wrote: "+cooccurrenceFile);
 	}
 	
 	public void writeCSV(Writer w) throws IOException {
@@ -1651,6 +1654,7 @@ public class IntMatrix implements EuclidConstants {
 	}
 	
 	public void writeSVG(File cooccurrenceFile, String rowName, String colName) throws IOException {
+		new RuntimeException().printStackTrace();
 		throw new RuntimeException("NYI");
 //		FileWriter w = new FileWriter(cooccurrenceFile);
 //		if (rowName != null && colName != null) {

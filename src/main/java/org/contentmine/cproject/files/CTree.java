@@ -35,6 +35,7 @@ import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
 import org.contentmine.graphics.html.HtmlFactory;
 import org.contentmine.graphics.html.HtmlHtml;
@@ -199,10 +200,14 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static final String XSL      = "xsl";
 
 	public static final String ABSTRACT  = "abstract";
+	public static final String BODY      = "body";
+	public static final String BACK      = "back";
 	public static final String CROSSREF  = "crossref";
 	public static final String EMPTY     = "empty";
+	public static final String FRONT     = "front";
 	public static final String FULLTEXT  = "fulltext";
 	public static final String IMAGE     = "image";
+	public static final String METHOD    = "method";
 	public static final String LOG1      = "log";
 	public static final String PAGE      = "page";
 	public static final String PAGES     = "pages";
@@ -210,7 +215,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static final String RESULTS   = "results";
 	public static final String SCHOLARLY = "scholarly";
 	
-	public static final String ABSTRACT_HTML      = ABSTRACT+DOT+HTML;
+//	public static final String ABSTRACT_HTML      = ABSTRACT+DOT+HTML;
 	public static final String EMPTY_XML          = EMPTY+DOT+XML;
 	public static final String FULLTEXT_DOCX      = FULLTEXT+DOT+DOCX;
 	public static final String FULLTEXT_HTML      = FULLTEXT+DOT+HTML;
@@ -239,7 +244,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public final static List<String> RESERVED_FILE_NAMES;
 	static {
 			RESERVED_FILE_NAMES = Arrays.asList(new String[] {
-					ABSTRACT_HTML,
+//					ABSTRACT_HTML,
 					
 					AbstractMetadata.Type.CROSSREF.getCTreeMDFilename(),
 					AbstractMetadata.Type.EPMC.getCTreeMDFilename(),
@@ -262,8 +267,13 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	/** directories must end with slash.
 	 * 
 	 */
+	
+	public static final String ABSTRACT_DIR      = "abstract/";
+	public static final String BACK_DIR          = "back/";
+	public static final String BODY_DIR          = "body/";
 	// this is confusing. there are (a) explicit images and (b) images extracted from PDFs
 	public static final String IMAGE_DIR         = "image/";
+	public static final String FRONT_DIR         = "front/";
 	public static final String PDF_IMAGES_DIR    = "images/";
 	public static final String SVG_IMAGES_DIR    = "images/"; // not sure where these come from
 	public static final String PDF_DIR           = "pdf/";
@@ -276,6 +286,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public final static List<String> RESERVED_DIR_NAMES;
 	static {
 			RESERVED_DIR_NAMES = Arrays.asList(new String[] {
+					ABSTRACT_DIR,
+					BACK_DIR,
+					BODY_DIR,
+					FRONT_DIR,
 					IMAGE_DIR,
 					SVG_IMAGES_DIR,
 					PDF_DIR,
@@ -410,6 +424,9 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private SuperPixelArrayManager spaManager;
 	private DocumentCache documentCache;
 	private int deltaPages;
+	private HtmlTagger htmlTagger;
+	private File abstractDir;
+	private File frontDir;
 
 	public CTree() {
 		super();
@@ -1802,5 +1819,45 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			DebugPrint.debugPrintln("deleted: "+file);
 		}
 	}
+
+	public void writeFulltextHtmlToChildDirectory(HtmlDiv div, String directoryName) {
+		File directory = getExistingReservedDirectory(directoryName, true);
+		File file = new File(directory, FULLTEXT_HTML);
+		try {
+			XMLUtil.debug(div, file, 1);
+		} catch (IOException e) {
+			throw new RuntimeException("cannot write file "+file, e);
+		}
+	}
+	
+	public void writeFulltextHtmlToBodyChildDirectory(HtmlDiv div, String subDirectoryName) {
+		File directory = getExistingReservedDirectory(BODY, true);
+		File subDirectory = getExistingReservedDirectory(subDirectoryName, true);
+		File file = new File(directory, FULLTEXT_HTML);
+		try {
+			XMLUtil.debug(div, file, 1);
+		} catch (IOException e) {
+			throw new RuntimeException("cannot write file "+file, e);
+		}
+	}
+	
+	public File getAbstractFile() {
+		abstractDir = getExistingAbstractDir(false);
+		return (abstractDir == null) ? null : new File(abstractDir, FULLTEXT_HTML);
+	}
+
+	public File getExistingAbstractDir(boolean forceCreate) {
+		return getExistingReservedDirectory(ABSTRACT_DIR, forceCreate);
+	}
+
+	public File getFrontDir() {
+		frontDir = getExistingFrontDir(false);
+		return frontDir;
+	}
+
+	public File getExistingFrontDir(boolean forceCreate) {
+		return getExistingReservedDirectory(FRONT_DIR, forceCreate);
+	}
+
 
 }

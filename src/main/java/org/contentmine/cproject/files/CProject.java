@@ -1146,4 +1146,10 @@ public class CProject extends CContainer {
 			cTree.clean(arg);
 		}
 	}
+
+//	public void addAbstractsAsFiles() {
+//		for (CTree cTree : getOrCreateCTreeList()) {
+//			cTree.addAbstractAsFile();
+//		}
+//	}
 }

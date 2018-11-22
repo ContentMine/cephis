@@ -98,6 +98,15 @@ public abstract class AbstractCMElement extends Element implements XMLConstants 
 		return element == null ? null : element.getAttributeValue(CLASS);
 	}
 
+	/** set "class" attribute.
+	 * 
+	 * @param element
+	 * @param value
+	 */
+	public static void setClassAttributeValue(Element element, String value) {
+		if (element != null && value != null) element.addAttribute(new Attribute(CLASS, value));
+	}
+
 	protected void copyAttributesChildrenElements(AbstractCMElement element) {
 		copyAttributesFrom(element);
 	    copyChildrenFrom(element);
