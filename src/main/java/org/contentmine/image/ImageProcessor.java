@@ -312,8 +312,10 @@ public class ImageProcessor {
 	}
 
 	public void readAndProcessFile(File file) {
-		this.setInputFile(file);
-		processImageFile(file);
+		if (file != null && !file.isDirectory()) {
+			this.setInputFile(file);
+			processImageFile(file);
+		}
 
 	}
 

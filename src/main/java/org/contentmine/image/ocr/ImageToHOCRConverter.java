@@ -11,6 +11,12 @@ import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
 
+/** moved to Norma?
+ * 
+ * @author pm286
+ *
+ */
+@Deprecated
 public class ImageToHOCRConverter {
 
 	private static final int TESSERACT_TIMEOUT_STEP = 100;
@@ -68,8 +74,12 @@ public class ImageToHOCRConverter {
         // tesseract performs the initial Image => HOCR conversion,
     	
         output.getParentFile().mkdirs();
+//        ProcessBuilder tesseractBuilder = new ProcessBuilder(
+//        		USR_LOCAL_BIN_TESSERACT, inputImageFile.getAbsolutePath(), output.getAbsolutePath(), TESS_CONFIG, HOCR, ENCODING );
+//        String tessConfig = TESS_CONFIG;
+        String tessConfig = "";
         ProcessBuilder tesseractBuilder = new ProcessBuilder(
-        		USR_LOCAL_BIN_TESSERACT, inputImageFile.getAbsolutePath(), output.getAbsolutePath(), TESS_CONFIG, HOCR, ENCODING );
+        		USR_LOCAL_BIN_TESSERACT, inputImageFile.getAbsolutePath(), output.getAbsolutePath(), tessConfig, HOCR, ENCODING );
 //        ProcessBuilder tesseractBuilder = new ProcessBuilder(
 //        		"tesseract", inputImageFile.getAbsolutePath(), output.getAbsolutePath(), TESS_CONFIG, HOCR, ENCODING );
         tesseractBuilder.redirectError(ProcessBuilder.Redirect.INHERIT);

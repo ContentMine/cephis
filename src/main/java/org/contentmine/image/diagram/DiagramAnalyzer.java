@@ -1518,7 +1518,7 @@ public class DiagramAnalyzer {
 		pixelIslandList.removeIslandsWithBBoxesLessThan(new Real2Range(new RealRange(0, 10), new RealRange(0, 10)));
 		pixelIslandList.sortBySizeDescending();
 		PixelIsland mainTrace = pixelIslandList.get(0);
-		PixelRingList pixelRingList = mainTrace.getOrCreateInternalPixelRings();
+		PixelRingList pixelRingList = mainTrace == null ? new PixelRingList() : mainTrace.getOrCreateInternalPixelRings();
 		return pixelRingList;
 	}
 

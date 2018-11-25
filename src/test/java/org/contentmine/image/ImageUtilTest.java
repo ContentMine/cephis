@@ -8,8 +8,10 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntMatrix;
 import org.contentmine.eucl.euclid.IntRange;
@@ -95,6 +97,25 @@ public class ImageUtilTest {
 		int redRgb = ImageUtil.setRgb(255, 0, 0);
 		int redFlip = ImageUtil.invertRgb(redRgb);
 		Assert.assertEquals(0x0000ffff, redFlip);
+	}
+	
+	@Test
+	public void testScaleImage() throws IOException {
+		File imageFile = new File(ImageAnalysisFixtures.TEST_DIAGRAM_PLOT_DIR, "plos/journal.pone.0094172/g002-2/figure.png");
+		Assert.assertEquals("size",  1460543, FileUtils.sizeOf(imageFile));
+		Assert.assertTrue("" + imageFile + " exists", imageFile.exists());
+		BufferedImage image = ImageUtil.readImage(imageFile);
+		Assert.assertEquals("width",  2976, image.getWidth());
+		int scalex = 2;
+		int scaley = 2;
+		BufferedImage newImage = ImageUtil.scaleImage(image, scalex, scaley);
+		File newDir = new File("target/image/plos/journal.pone.0094172/g002-2/");
+		newDir.mkdirs();
+		File outputFile = new File(newDir, "figure.png");
+		ImageIO.write(newImage, CTree.PNG, outputFile);
+		Assert.assertEquals("size",  1705925, FileUtils.sizeOf(outputFile));
+		BufferedImage newImage1 = ImageUtil.readImage(outputFile);
+		Assert.assertEquals("width",  5952, newImage1.getWidth());
 	}
 
 }

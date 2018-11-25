@@ -214,6 +214,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static final String RESULT    = "result";
 	public static final String RESULTS   = "results";
 	public static final String SCHOLARLY = "scholarly";
+	public static final String DERIVED   = "derived/";
 	
 //	public static final String ABSTRACT_HTML      = ABSTRACT+DOT+HTML;
 	public static final String EMPTY_XML          = EMPTY+DOT+XML;
@@ -1848,6 +1849,24 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public File getExistingAbstractDir(boolean forceCreate) {
 		return getExistingReservedDirectory(ABSTRACT_DIR, forceCreate);
+	}
+
+	public File getBackDir() {
+		frontDir = getExistingBackDir(false);
+		return frontDir;
+	}
+
+	public File getExistingBackDir(boolean forceCreate) {
+		return getExistingReservedDirectory(BACK_DIR, forceCreate);
+	}
+
+	public File getBodyDir() {
+		frontDir = getExistingBodyDir(false);
+		return frontDir;
+	}
+
+	public File getExistingBodyDir(boolean forceCreate) {
+		return getExistingReservedDirectory(BODY_DIR, forceCreate);
 	}
 
 	public File getFrontDir() {
