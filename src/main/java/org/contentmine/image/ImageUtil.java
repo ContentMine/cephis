@@ -1,6 +1,9 @@
 package org.contentmine.image;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
@@ -671,4 +674,179 @@ public class ImageUtil {
 		}
 	}
 
+	public static Integer getSingleColor(BufferedImage image) {
+		Integer color = null;
+		for (int irow = 0; irow < image.getHeight(); irow++) {
+			for (int jcol = 0; jcol < image.getWidth(); jcol++) {
+				int col = image.getRGB(jcol, irow);
+				if (color == null) {
+					color = col;
+				} else if (color != col) {
+					return null;
+				}
+			}
+		}
+		return color;
+	}
+
+	public static long createSimpleHash(BufferedImage image) {
+		long l = 0;
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j <image.getHeight(); j++) {
+				int rgb = image.getRGB(i, j);
+				l += rgb * 31 + i * 17 + j * 7;
+			}
+		}
+		return l;
+	}
+	
+	// from stackoverflow
+	// https://stackoverflow.com/questions/4756268/how-to-resize-the-buffered-image-n-graphics-2d-in-java/4756906#4756906
+	// not tested.Uses the graphics to expand and interpolate
+	// creates "terrible images"
+	public BufferedImage scaleImage(BufferedImage img, int width, int height,
+	        Color background) {
+	    int imgWidth = img.getWidth();
+	    int imgHeight = img.getHeight();
+	    if (imgWidth*height < imgHeight*width) {
+	        width = imgWidth*height/imgHeight;
+	    } else {
+	        height = imgHeight*width/imgWidth;
+	    }
+	    BufferedImage newImage = new BufferedImage(width, height,
+	            BufferedImage.TYPE_INT_RGB);
+	    Graphics2D g = newImage.createGraphics();
+	    try {
+	        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+	                RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+	        g.setBackground(background);
+	        g.clearRect(0, 0, width, height);
+	        g.drawImage(img, 0, 0, width, height, null);
+	    } finally {
+	        g.dispose();
+	    }
+	    return newImage;
+	}
+	
+	public enum Resizer {
+	    NEAREST_NEIGHBOR {
+	        @Override
+	        public BufferedImage resize(BufferedImage source,
+	                int width, int height) {
+	            return commonResize(source, width, height,
+	                    RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+	        }
+	    },
+	    BILINEAR {
+	        @Override
+	        public BufferedImage resize(BufferedImage source,
+	                int width, int height) {
+	            return commonResize(source, width, height,
+	                    RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+	        }
+	    },
+	    BICUBIC {
+	        @Override
+	        public BufferedImage resize(BufferedImage source,
+	                int width, int height) {
+	            return commonResize(source, width, height,
+	                    RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+	        }
+	    },
+	    PROGRESSIVE_BILINEAR {
+	        @Override
+	        public BufferedImage resize(BufferedImage source,
+	                int width, int height) {
+	            return progressiveResize(source, width, height,
+	                    RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+	        }
+	    },
+	    PROGRESSIVE_BICUBIC {
+	        @Override
+	        public BufferedImage resize(BufferedImage source,
+	                int width, int height) {
+	
+	
+	            return progressiveResize(source, width, height,
+	                    RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+	        }
+	    },
+	    AVERAGE {
+	        @Override
+	        public BufferedImage resize(BufferedImage source,
+	                int width, int height) {
+	            Image img2 = source.getScaledInstance(width, height,
+	                    Image.SCALE_AREA_AVERAGING);
+	            BufferedImage img = new BufferedImage(width, height,
+	                    source.getType());
+	            Graphics2D g = img.createGraphics();
+	            try {
+	                g.drawImage(img2, 0, 0, width, height, null);
+	            } finally {
+	                g.dispose();
+	            }
+	            return img;
+	        }
+	    };
+
+	    public abstract BufferedImage resize(BufferedImage source,
+	            int width, int height);
+	
+	    private static BufferedImage progressiveResize(BufferedImage source,
+	            int width, int height, Object hint) {
+	        int w = Math.max(source.getWidth()/2, width);
+	        int h = Math.max(source.getHeight()/2, height);
+	        BufferedImage img = commonResize(source, w, h, hint);
+	        while (w != width || h != height) {
+	            BufferedImage prev = img;
+	            w = Math.max(w/2, width);
+	            h = Math.max(h/2, height);
+	            img = commonResize(prev, w, h, hint);
+	            prev.flush();
+	        }
+	        return img;
+	    }
+	
+	    private static BufferedImage commonResize(BufferedImage source,
+	            int width, int height, Object hint) {
+	        BufferedImage img = new BufferedImage(width, height,
+	                source.getType());
+	        Graphics2D g = img.createGraphics();
+	        try {
+	            g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, hint);
+	            g.drawImage(source, 0, 0, width, height, null);
+	        } finally {
+	            g.dispose();
+	        }
+	        return img;
+	    }
+	};
+
+	/** creates a larger versio of the imgae.
+	 * at present each pixel is replaced in a new image by 2*2 identical pixels. 
+	 * This might be expanded to have some interpolation
+	 * @param image
+	 * @return larger image
+	 */
+	public static BufferedImage scaleImage(BufferedImage image, int scalex, int scaley) {
+		if (image == null) return null;
+		int width = image.getWidth();
+		int height = image.getHeight();
+		int newWidth = scalex * width;
+		int newHeight = scaley * height;
+		BufferedImage newImage = new BufferedImage(newWidth, newHeight, image.getType());
+		for (int x = 0; x < width; x++) {
+			int newx = scalex * x;
+			for (int y = 0; y < height; y++) {
+				int rgb = image.getRGB(x, y);
+				int newy = scaley * y;
+				for (int dx = 0; dx < scalex; dx++) {
+					for (int dy = 0; dy < scaley; dy++) {
+						newImage.setRGB(x + dx, y + dy, rgb);
+					}
+				}
+			}
+		}
+		return newImage;
+	}
 }

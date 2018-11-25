@@ -91,7 +91,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	}
 
 	public PixelIsland get(int i) {
-		return list.get(i);
+		return list == null || i >= list.size() ? null : list.get(i);
 	}
 
 	/** add and make sure pixelIsland has a pixelIslandList for communications.
