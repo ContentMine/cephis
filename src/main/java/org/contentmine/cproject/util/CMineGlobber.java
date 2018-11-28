@@ -99,6 +99,7 @@ public class CMineGlobber {
 	private boolean debug = false;
 	private boolean useDirectories = false;
 	private boolean useFiles = true;
+	private boolean recurse = true;
 
 
 	public CMineGlobber() {
@@ -144,7 +145,7 @@ public class CMineGlobber {
 				if (pathMatcher.matches(path) && useDirectories) {
 					fileList.add(path.toFile());
 				}
-				return FileVisitResult.CONTINUE;
+				return recurse ? FileVisitResult.CONTINUE : FileVisitResult.TERMINATE;
 		    }
 
 			@Override
@@ -275,4 +276,19 @@ public class CMineGlobber {
 		return this;
 	}
 
+	public boolean isRecurse() {
+		return recurse;
+	}
+
+	/** recurse through directories.
+	 * if false , lists only one level
+	 * 
+	 * @param recurse default is true
+	 */
+	public CMineGlobber setRecurse(boolean recurse) {
+		this.recurse = recurse;
+		return this;
+	}
+
 }
+

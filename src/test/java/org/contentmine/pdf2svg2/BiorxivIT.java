@@ -56,7 +56,7 @@ public class BiorxivIT {
 			    documentProcessor.readAndProcess(cTree.getExistingFulltextPDF());
 			    File outputDir = targetDir;
 				documentProcessor.writeSVGPages(outputDir);
-		    	documentProcessor.writeRawImages(outputDir);
+		    	documentProcessor.writePDFImages(outputDir);
 			}
 		}
 		cProject = new CProject(targetDir);

@@ -1070,6 +1070,7 @@ public class CProject extends CContainer {
 		File rawDir = new File(this.directory, suffix);
 		CMineGlobber globber = new CMineGlobber().setLocation(this.directory).setRegex(".*\\." + suffix);
 		List<File> files = globber.listFiles();
+//		LOG.debug("saveraw"+files);
 		files = removeFulltext(suffix, files);
 		if (files.size() > 0) {
 			if (!rawDir.exists()) {
@@ -1122,7 +1123,7 @@ public class CProject extends CContainer {
 		    documentProcessor.readAndProcess(cTree.getExistingFulltextPDF());
 		    File outputDir = new File(targetDir, cTree.getName());
 			documentProcessor.writeSVGPages(outputDir);
-	    	documentProcessor.writeRawImages(outputDir);
+	    	documentProcessor.writePDFImages(outputDir);
 		}
 		return cProject;
 	}
@@ -1147,9 +1148,14 @@ public class CProject extends CContainer {
 		}
 	}
 
-//	public void addAbstractsAsFiles() {
-//		for (CTree cTree : getOrCreateCTreeList()) {
-//			cTree.addAbstractAsFile();
-//		}
-//	}
+	/** clean files of given name.
+	 * 
+	 * @param arg
+	 */
+	public void cleanRegex(String arg) {
+		for (CTree cTree : this.getOrCreateCTreeList()) {
+			cTree.cleanRegex(arg);
+		}
+	}
+
 }
