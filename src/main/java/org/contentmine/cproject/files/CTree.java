@@ -273,10 +273,11 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public static final String BACK_DIR          = "back/";
 	public static final String BODY_DIR          = "body/";
 	// this is confusing. there are (a) explicit images and (b) images extracted from PDFs
-	public static final String IMAGE_DIR         = "image/";
+//	public static final String IMAGE_DIR         = "image/";
 	public static final String FRONT_DIR         = "front/";
-	public static final String PDF_IMAGES_DIR    = "images/";
-	public static final String SVG_IMAGES_DIR    = "images/"; // not sure where these come from
+	public static final String PDF_IMAGES_DIR    = "pdfimages/";
+	public static final String RAW_IMAGES_DIR    = "rawimages/";
+	public static final String SVG_IMAGES_DIR    = "svgimages/"; // not sure where these come from
 	public static final String PDF_DIR           = "pdf/";
 	public static final String RESULTS_DIR       = "results/";
 	public static final String SUPPLEMENTAL_DIR  = "supplement/";
@@ -291,7 +292,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 					BACK_DIR,
 					BODY_DIR,
 					FRONT_DIR,
-					IMAGE_DIR,
+					PDF_IMAGES_DIR,
+					RAW_IMAGES_DIR,
 					SVG_IMAGES_DIR,
 					PDF_DIR,
 					RESULTS_DIR,
@@ -823,16 +825,16 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	
 	/**
 	 */
-	public static File getExistingImageDir(CTree ctree) {
+	public static File getExistingRawImagesDir(CTree ctree) {
 		return (ctree == null) ? null : ctree.getExistingImageDir();
 	}
 	
-	public static File getExistingImageDir(File ctreeFile) {
+	public static File getExistingRawImagesDir(File ctreeFile) {
 		return new CTree(ctreeFile).getExistingImageDir();
 	}
 
 	public File getExistingImageDir() {
-		return getExistingReservedDirectory(IMAGE_DIR, false);
+		return getExistingReservedDirectory(RAW_IMAGES_DIR, false);
 	}
 
 	public File getExistingPDFImagesDir() {
@@ -840,7 +842,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	}
 
 	public File getOrCreateExistingImageDir() {
-		return getExistingReservedDirectory(IMAGE_DIR, true);
+		return getExistingReservedDirectory(RAW_IMAGES_DIR, true);
 	}
 
 	public File getExistingImageFile(String filename) {
@@ -1095,7 +1097,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		} else if (PDF.equals(extension)) {
 			filename = FULLTEXT_PDF;
 		} else if (isImageSuffix(extension)) {
-			filename = IMAGE_DIR;
+			filename = RAW_IMAGES_DIR;
 		} else if (isSupplementalSuffix(extension)) {
 			filename = SUPPLEMENTAL_DIR;
 		} else if (SVG.equals(extension)) {
@@ -1175,8 +1177,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return resultsDirectory;
 	}
 
-	File getImageDirectory() {
-		File imageDirectory = new File(getDirectory(), IMAGE_DIR);
+	File getRawImagesDirectory() {
+		File imageDirectory = new File(getDirectory(), RAW_IMAGES_DIR);
 		return imageDirectory;
 	}
 
@@ -1630,7 +1632,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 				}
 				// this is expensive
 				if (cProject.getOrCreateProjectIO().isWriteRawImages()) {
-					documentProcessor.writeRawImages(directory);
+					documentProcessor.writePDFImages(directory);
 				}
 			}
 		}
@@ -1703,7 +1705,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		}
 		File svgDir = this.getExistingSVGDir();
 		if (svgDir != null && !CMFileUtil.shouldMake(svgDir, existingFulltextPDF)) {
-			DebugPrint.infoPrintln(debugLevel, "make is skipped: "+existingFulltextPDF);
+//			DebugPrint.infoPrintln(debugLevel, "make is skipped: "+existingFulltextPDF);
 			return;
 		}
 		PDDocument document = null;
@@ -1722,7 +1724,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 				LOG.trace("pages "+pageIncluder.toString());
 		    	documentProcessor.readAndProcess(document);
 		    	documentProcessor.writeSVGPages(directory);
-		    	documentProcessor.writeRawImages(directory);
+		    	documentProcessor.writePDFImages(directory);
 		    } catch (IOException ioe) {
 		    	LOG.error("cannot read/process: " + this + "; "+ioe);
 		    }
@@ -1743,7 +1745,12 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		imageManager.tidyImages();
 	}
 
-	public void extractSVGAndRawImages() throws IOException {
+	/** not fully integrated yet
+	 * 
+	 * 
+	 * @throws IOException
+	 */
+	public void extractSVGAndPDFImages() throws IOException {
 		PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 		documentProcessor.setCTree(this);
 		documentProcessor.setMinimumImageBox(100, 100);
@@ -1752,7 +1759,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		    CMFileUtil.shouldMake(documentProcessor.getOutputImagesDirectory(getDirectory()), existingFulltextPDF)) { 
 			documentProcessor.readAndProcess(existingFulltextPDF);
 			documentProcessor.writeSVGPages();
-			documentProcessor.writeRawImages();
+			documentProcessor.writePDFImages();
 		} else {
 			LOG.trace("skipped making SVG/Images for "+this.getName());
 			System.err.print(" skip ");
@@ -1799,7 +1806,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
 		svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
 		File htmlFile = new File(getDirectory(), CTree.SCHOLARLY_HTML);
-		DebugPrint.debugPrint(Level.DEBUG, ">schol>"+htmlFile);
+//		DebugPrint.debugPrint(Level.DEBUG, ">schol>"+htmlFile);
 		if (CMFileUtil.shouldMake(htmlFile, getExistingSVGDir())) {
 			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
 			try {
@@ -1810,15 +1817,42 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		}
 	}
 
-	public void clean(String arg) {
+	/** this cleans a given file or directory.
+	 * 
+	 * @param arg
+	 * @return
+	 */
+	public boolean clean(String arg) {
 		File file = new File(this.getDirectory(), arg);
+		boolean status = false;
 		if (arg.endsWith("/") || file.isDirectory()) {
-			FileUtils.deleteQuietly(file);
-			DebugPrint.debugPrintln("deleted: "+file);
+			status = FileUtils.deleteQuietly(file);
+			DebugPrint.debugPrintln("deleted directory: "+file.getAbsolutePath());
 		} else {
-			FileUtils.deleteQuietly(file);
-			DebugPrint.debugPrintln("deleted: "+file);
+			status = FileUtils.deleteQuietly(file);
+			DebugPrint.debugPrintln("deleted file: "+file.getAbsolutePath());
 		}
+		return status;
+	}
+
+	public boolean cleanRegex(String arg) {
+		File file = new File(this.getDirectory(), arg);
+		CMineGlobber globber = new CMineGlobber().setRegex(arg).setRecurse(true).setLocation(file);
+		boolean status = true;
+		List<File> files = globber.listFiles();
+		for (File filex : files) {
+			try {
+				if (filex.isDirectory()) {
+					FileUtils.deleteDirectory(filex);
+				} else {
+					FileUtils.forceDelete(filex);
+				}
+			} catch (IOException ioe) {
+				status = false;
+				DebugPrint.debugPrint("cannot delete: "+filex);
+			}
+		}
+		return status;
 	}
 
 	public void writeFulltextHtmlToChildDirectory(HtmlDiv div, String directoryName) {

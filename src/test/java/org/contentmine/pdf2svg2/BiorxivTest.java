@@ -28,7 +28,7 @@ public class BiorxivTest {
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 	    documentProcessor.readAndProcess(file);
 	    documentProcessor.writeSVGPages(new File(targetDir, fileroot));
-    	documentProcessor.writeRawImages(targetDir);
+    	documentProcessor.writePDFImages(targetDir);
 	}
 	
 	

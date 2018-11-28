@@ -185,21 +185,23 @@ public class PDFDocumentProcessor {
 		}
 	}
 
-	public void writeRawImages() throws IOException {
+	public void writePDFImages() throws IOException {
 		if (cTree != null) {
-			writeRawImages(cTree.getDirectory());
+			writePDFImages(cTree.getDirectory());
 		}
 	}
-	public void writeRawImages(File parent) throws IOException {
-		File imagesDir = new File(parent, CTree.IMAGES + "/");
+	public void writePDFImages(File parent) throws IOException {
+		File imagesDir = new File(parent, CTree.PDF_IMAGES_DIR + "/");
 		imagesDir.mkdirs();
 		if (documentParser != null) {
 			Map<PageSerial, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap();
 			for (PageSerial pageSerial : rawImageByPageSerial.keySet()) {
 				BufferedImage image = rawImageByPageSerial.get(pageSerial);
 				if (isLargerThanImageBox(image)) {
+					File outputFile = new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG);
+//					if (shouldMake)
 					ImageIO.write(image, CTree.PNG, 
-						new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG));
+						outputFile);
 				}
 			}
 		} else {

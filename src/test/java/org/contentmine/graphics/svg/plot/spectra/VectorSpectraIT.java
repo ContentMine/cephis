@@ -74,7 +74,7 @@ public class VectorSpectraIT {
 	    documentProcessor.getOrCreatePageIncluder().addZeroNumberedIncludePages(45);
 	    documentProcessor.readAndProcess(file);
 	    documentProcessor.writeSVGPages(targetDir);
-    	documentProcessor.writeRawImages(targetDir);
+    	documentProcessor.writePDFImages(targetDir);
 	}
 
 	@Test
@@ -120,7 +120,7 @@ public class VectorSpectraIT {
 			    documentProcessor.readAndProcess(file);
 			    File outputDir = new File(targetDir, fileroot1);
 				documentProcessor.writeSVGPages(outputDir);
-		    	documentProcessor.writeRawImages(outputDir);
+		    	documentProcessor.writePDFImages(outputDir);
 			}
 		}
 	}
@@ -148,7 +148,7 @@ public class VectorSpectraIT {
 	    documentProcessor.getOrCreatePageIncluder().addZeroNumberedIncludePages(45);
 	    documentProcessor.readAndProcess(file);
 	    documentProcessor.writeSVGPages(targetDir);
-    	documentProcessor.writeRawImages(targetDir);
+    	documentProcessor.writePDFImages(targetDir);
 	}
 
 
@@ -180,7 +180,7 @@ public class VectorSpectraIT {
 		PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 		documentProcessor.readAndProcess(file);
 		documentProcessor.writeSVGPages(ctreeDir);
-		documentProcessor.writeRawImages(ctreeDir);
+		documentProcessor.writePDFImages(ctreeDir);
 	}
 
 
