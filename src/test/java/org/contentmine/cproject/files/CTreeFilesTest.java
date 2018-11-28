@@ -9,10 +9,10 @@ import org.contentmine.cproject.CMineFixtures;
 import org.contentmine.cproject.files.CTree.TableFormat;
 import org.contentmine.cproject.util.CMineTestFixtures;
 import org.contentmine.eucl.euclid.test.TestUtil;
-import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGText;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -99,7 +99,7 @@ public class CTreeFilesTest {
 	/** makes list of SVG files in project.
 	 * 
 	 */
-	
+	@Ignore // nit sure whether this uses new dir structure
 	public void testMakeSVGImagesList() {
 		File targetDir = new File("target/pdfsvg/");
 		CMineTestFixtures.createCleanedCopiedDirectory(CMineFixtures.TEST_PDF_SVG_DIR, targetDir);
@@ -112,6 +112,7 @@ public class CTreeFilesTest {
 			File[] files = cTree.getDirectory().listFiles();
 			Assert.assertEquals("files ", 2, files.length); // has fulltext.pdf as well as svg
 			File svgImagesDir = cTree.getExistingSVGImagesDir();
+			Assert.assertNotNull(svgImagesDir);
 			Assert.assertTrue("exists", svgImagesDir.exists());
 			List<File> svgImageFiles = cTree.getExistingSVGImagesFileList();
 			Assert.assertEquals("svgFiles ", svgImages[i], svgImageFiles.size());
