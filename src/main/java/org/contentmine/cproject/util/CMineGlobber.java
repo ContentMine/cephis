@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -288,6 +289,20 @@ public class CMineGlobber {
 	public CMineGlobber setRecurse(boolean recurse) {
 		this.recurse = recurse;
 		return this;
+	}
+	
+	public static List<File> listSortedChildFiles(File dir, String suffix) {
+		List<File> fileList = new ArrayList<File>(FileUtils.listFiles(dir, new String[] {suffix}, false));
+//		String pathString = "**/*." + suffix;
+//		List<File> listFiles = new CMineGlobber().setGlob(pathString).setRecurse(false).setLocation(dir).listFiles();
+		Collections.sort(fileList);
+		return fileList;
+	}
+
+	public static List<File> listSortedDescendantFiles(File dir, String suffix) {
+		List<File> listFiles = new CMineGlobber().setGlob("**/*." + suffix).setRecurse(true).setLocation(dir).listFiles();
+		Collections.sort(listFiles);
+		return listFiles;
 	}
 
 }

@@ -717,11 +717,28 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		}
 	}
 
+	/** 
+	 * gets outside pixels as lists (actually List<PixelRing>
+	 * @return
+	 */
 	public List<PixelList> getOrCreateOutlineList() {
 		if (outlineList == null) {
 			outlineList = new ArrayList<PixelList>();
+			List<PixelRing> pixelRingList = getOrCreatePixelRings();
+			for (PixelRing pixelRing : pixelRingList) {
+				outlineList.add(pixelRing);
+			}
 		}
 		return outlineList;
+	}
+
+	public List<PixelRing> getOrCreatePixelRings() {
+		List<PixelRing> pixelRingList = new ArrayList<PixelRing>();
+		for (PixelIsland pixelIsland : this) {
+			PixelRing outer = pixelIsland.getOrCreateInternalPixelRings().get(0);
+			pixelRingList.add(outer);
+		}
+		return pixelRingList;
 	}
 
 	public void addOutline(PixelList outline) {

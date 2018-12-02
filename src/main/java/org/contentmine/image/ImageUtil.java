@@ -676,12 +676,17 @@ public class ImageUtil {
 
 	public static Integer getSingleColor(BufferedImage image) {
 		Integer color = null;
+		int count = 0;
 		for (int irow = 0; irow < image.getHeight(); irow++) {
 			for (int jcol = 0; jcol < image.getWidth(); jcol++) {
 				int col = image.getRGB(jcol, irow);
+				// alpha might be random in some images
+				col &= 0x00ffffff;
+				count++;
 				if (color == null) {
 					color = col;
 				} else if (color != col) {
+					LOG.trace("> "+count+"; "+Integer.toHexString(color)+"/"+Integer.toHexString(col));
 					return null;
 				}
 			}
