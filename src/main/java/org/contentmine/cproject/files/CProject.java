@@ -944,6 +944,7 @@ public class CProject extends CContainer {
 	        System.out.println("cTree: "+name);
 			cTree.processPDFTree();
 		}
+		LOG.debug("Finished PDFSVG");
 	}
 
 	/** get files specifically included */
@@ -1068,9 +1069,10 @@ public class CProject extends CContainer {
 
 	private List<File> saveRaw(String suffix) {
 		File rawDir = new File(this.directory, suffix);
-		CMineGlobber globber = new CMineGlobber().setLocation(this.directory).setRegex(".*\\." + suffix);
+//		CMineGlobber globber = new CMineGlobber().setLocation(this.directory).setRegex(".*\\." + suffix);
+		CMineGlobber globber = new CMineGlobber().setLocation(this.directory).setGlob("**/*." + suffix).setRecurse(false);
 		List<File> files = globber.listFiles();
-//		LOG.debug("saveraw"+files);
+		LOG.debug("saveraw"+files);
 		files = removeFulltext(suffix, files);
 		if (files.size() > 0) {
 			if (!rawDir.exists()) {

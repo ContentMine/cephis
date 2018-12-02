@@ -2,6 +2,7 @@ package org.contentmine.eucl.euclid.util;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -111,12 +112,13 @@ public class CMFileUtil {
 		for (File existingFile : existingEarlierFiles) {
 			if (existingFile != null && !existingFile.exists()) {
 				if (FileUtils.isFileNewer(existingFile, fileToBeCreated)) {
+					LOG.debug("exist: "+existingFile.lastModified()+"; new "+fileToBeCreated.lastModified());
 					if (debug) LOG.debug("Target "+existingFile+" newer than "+fileToBeCreated);
 					return true;
 				}
 			}
 		}
-		if (debug) LOG.debug("Target "+existingEarlierFiles+" all older than "+fileToBeCreated);
+		if (debug) LOG.debug("Target "+(Arrays.asList(existingEarlierFiles))+" all older than "+fileToBeCreated);
 		return false;
 	}
 
@@ -133,7 +135,8 @@ public class CMFileUtil {
 	 * @throws RuntimeException if arguments are null
 	 */
 	public static boolean shouldMake(File fileToBeCreated, File... existingEarlierFiles) {
-		return shouldMake(fileToBeCreated, false, existingEarlierFiles);
+		boolean debug = false;
+		return shouldMake(fileToBeCreated, debug, existingEarlierFiles);
 	}
 
 }

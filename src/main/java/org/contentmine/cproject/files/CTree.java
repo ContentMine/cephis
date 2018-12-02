@@ -1796,7 +1796,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	}
 
 	public File getOrCreateDerivedImagesDir() {
-		File derivedImagesDir = new File(getOrCreateExistingImageDir(), "derived/");
+		File derivedImagesDir = new File(getExistingPDFImagesDir(), "derived/");
 		derivedImagesDir.mkdirs();
 		return derivedImagesDir;
 	}
@@ -1808,12 +1808,15 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		File htmlFile = new File(getDirectory(), CTree.SCHOLARLY_HTML);
 //		DebugPrint.debugPrint(Level.DEBUG, ">schol>"+htmlFile);
 		if (CMFileUtil.shouldMake(htmlFile, getExistingSVGDir())) {
+			LOG.debug("converting "+htmlFile);
 			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
 			try {
 				XMLUtil.debug(html, htmlFile, 1);
 			} catch (IOException e) {
 				LOG.error("Cannot write html: " + htmlFile);
 			}
+		} else {
+			LOG.trace("skipped "+htmlFile);
 		}
 	}
 
