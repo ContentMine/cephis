@@ -1822,13 +1822,13 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	/** this cleans a given file or directory.
 	 * 
-	 * @param arg
+	 * @param filename relative to CTree directory
 	 * @return
 	 */
-	public boolean clean(String arg) {
-		File file = new File(this.getDirectory(), arg);
+	public boolean clean(String filename) {
+		File file = new File(this.getDirectory(), filename);
 		boolean status = false;
-		if (arg.endsWith("/") || file.isDirectory()) {
+		if (filename.endsWith("/") || file.isDirectory()) {
 			status = FileUtils.deleteQuietly(file);
 			DebugPrint.debugPrintln("deleted directory: "+file.getAbsolutePath());
 		} else {
@@ -1838,9 +1838,14 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return status;
 	}
 
-	public boolean cleanRegex(String arg) {
-		File file = new File(this.getDirectory(), arg);
-		CMineGlobber globber = new CMineGlobber().setRegex(arg).setRecurse(true).setLocation(file);
+	/** this cleans given files or directories by regex.
+	 * 
+	 * @param filename regex relative to CTree directory
+	 * @return
+	 */
+	public boolean cleanRegex(String filename) {
+		File file = new File(this.getDirectory(), filename);
+		CMineGlobber globber = new CMineGlobber().setRegex(filename).setRecurse(true).setLocation(file);
 		boolean status = true;
 		List<File> files = globber.listFiles();
 		for (File filex : files) {
