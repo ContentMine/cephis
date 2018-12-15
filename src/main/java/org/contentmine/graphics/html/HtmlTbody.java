@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 
 import nu.xom.Elements;
 
@@ -33,7 +34,9 @@ public class HtmlTbody extends HtmlElement {
 	@SuppressWarnings("unused")
 	private final static Logger LOG = Logger.getLogger(HtmlTbody.class);
 	public final static String TAG = "tbody";
-
+	private HtmlTr headerRow;
+	private List<HtmlTr> rowList;
+	
 	/** constructor.
 	 * 
 	 */
@@ -45,16 +48,30 @@ public class HtmlTbody extends HtmlElement {
 		this.appendChild(row);
 	}
 	
+    @Deprecated // use getChildTrs
 	public List<HtmlElement> getRows() {
 		return getChildElements(this, HtmlTr.TAG);
 	}
-        
-    public List<HtmlTr> getChildTrs() {
-        List<HtmlTr> rowList = new ArrayList<HtmlTr>();
-        List<HtmlElement> rows = getChildElements(this, HtmlTr.TAG);
-        for (HtmlElement el : rows) {
-            rowList.add((HtmlTr) el);
-        }
+     
+	/** also extracts HeaderTr
+	 * 
+	 * @return
+	 */
+    public List<HtmlTr> getOrCreateChildTrs() {
+    	if (rowList == null) {
+	        rowList = new ArrayList<HtmlTr>();
+	        List<HtmlElement> rows = getChildElements(this, HtmlTr.TAG);
+	        for (HtmlElement el : rows) {
+	            HtmlTr row = (HtmlTr) el;
+				rowList.add(row);
+				// onlt get first Header
+	            if (row.getChildCount() > 0 && headerRow == null) {
+	            	if (XMLUtil.getQueryElements(row, "./*[local-name()='"+HtmlTh.TAG+"']").size() > 0) {
+	            		headerRow = row;
+	            	}
+	            }
+	        }
+    	}
         return rowList;
     }
     
@@ -67,4 +84,47 @@ public class HtmlTbody extends HtmlElement {
         }
         return elements;
     }
+    
+    public HtmlTr getHeaderRow() {
+    	getOrCreateChildTrs();
+    	return headerRow;
+    }
+
+    /** gets cells in tr/th
+     * 
+     * @return
+     */
+    public List<HtmlTh> getHeaderCells() {
+    	getOrCreateChildTrs();
+    	List<HtmlTh> cellList = new ArrayList<HtmlTh>();
+    	if (headerRow != null) {
+    		cellList = headerRow.getThChildren();
+    	}
+    	return cellList;
+    }
+    
+    /** gets index of column by th value.
+     * 
+     * @param nameRegex
+     * @return -1 if not found
+     */
+    public int getColumnIndex(String nameRegex) {
+    	getOrCreateChildTrs();
+    	if (headerRow != null) {
+    		List<String> thCellValues = headerRow.getThCellValues();
+			for (int i = 0; i < thCellValues.size(); i++) {
+    			String colName = thCellValues.get(i).trim();
+				if (colName.matches(nameRegex)) {
+    				return i;
+    			}
+    		}
+    	}
+    	return -1;
+    }
+
+	public List<HtmlTr> getRowList() {
+		return rowList;
+	}
+
+	
 }

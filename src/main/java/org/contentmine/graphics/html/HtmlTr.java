@@ -20,7 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.util.HtmlUtil;
+
+import nu.xom.Element;
 
 
 /** base class for lightweight generic SVG element.
@@ -48,6 +51,20 @@ public class HtmlTr extends HtmlElement {
 			thList.add((HtmlTh) th);
 		}
 		return thList;
+	}
+
+	/** some people mix TD and TH in rows.
+	 * 
+	 * @return
+	 */
+	public List<HtmlElement> getTdOrThChildren() {
+		List<HtmlElement> children = new ArrayList<HtmlElement>();
+		List<Element> elements = XMLUtil.getQueryElements(this, 
+				"./*[local-name()='" + HtmlTd.TAG + "' or local-name()='" + HtmlTh.TAG + "']");
+		for (Element element : elements) {
+			children.add((HtmlElement)element);
+		}
+		return children;
 	}
 	
 	public List<HtmlTd> getTdChildren() {
