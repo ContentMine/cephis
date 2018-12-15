@@ -290,15 +290,44 @@ public class CMineGlobber {
 		this.recurse = recurse;
 		return this;
 	}
-	
+
+	/** get sorted list of child directories.
+	 * 
+	 * @param dir
+	 * @return sorted list 
+	 */
+	public static List<File> listSortedChildDirectories(File dir) {
+		List<File> sortedDirList = new ArrayList<File>();
+		File[] fileList = dir.listFiles();
+		if (fileList != null) {
+			for (File file : fileList) {
+				if (file.isDirectory()) {
+					sortedDirList.add(file);
+				}
+			}
+		}
+		Collections.sort(sortedDirList);
+		return sortedDirList;
+	}
+
+	/** get sorted list of child files with given suffix.
+	 * 
+	 * @param dir
+	 * @param suffix (without '.')
+	 * @return sorted list 
+	 */
 	public static List<File> listSortedChildFiles(File dir, String suffix) {
 		List<File> fileList = new ArrayList<File>(FileUtils.listFiles(dir, new String[] {suffix}, false));
-//		String pathString = "**/*." + suffix;
-//		List<File> listFiles = new CMineGlobber().setGlob(pathString).setRecurse(false).setLocation(dir).listFiles();
 		Collections.sort(fileList);
 		return fileList;
 	}
 
+	/** get sorted list of descendant files with given suffix.
+	 * 
+	 * @param dir
+	 * @param suffix (without '.')
+	 * @return sorted list 
+	 */
 	public static List<File> listSortedDescendantFiles(File dir, String suffix) {
 		List<File> listFiles = new CMineGlobber().setGlob("**/*." + suffix).setRecurse(true).setLocation(dir).listFiles();
 		Collections.sort(listFiles);

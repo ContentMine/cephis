@@ -289,6 +289,8 @@ public abstract class XMLUtil implements XMLConstants {
 				serializer.setIndent(indent);
 			}
 			serializer.write(document);
+		} else {
+			LOG.warn("null element");
 		}
 	}
 	
@@ -497,6 +499,54 @@ public abstract class XMLUtil implements XMLConstants {
 			}
 		}
 		return node;
+	}
+
+	/**
+	 * get next sibling element.
+	 * 
+	 * @param current may be null
+	 * @return following sibling or null
+	 */
+	public static Element getFollowingSiblingElement(Node current) {
+		Element element = null;
+		if (current != null) {
+			ParentNode parent = current.getParent();
+			if (parent != null) {
+				int index = parent.indexOf(current) + 1;
+				for (; index < parent.getChildCount(); index++) {
+					Node sibling = parent.getChild(index);
+					if (sibling instanceof Element) {
+						element = (Element) sibling;
+						break;
+					}
+				}
+			}
+		}
+		return element;
+	}
+
+	/**
+	 * get preceding sibling element.
+	 * 
+	 * @param current may be null
+	 * @return following sibling or null
+	 */
+	public static Element getPrecedingSiblingElement(Node current) {
+		Element element = null;
+		if (current != null) {
+			ParentNode parent = current.getParent();
+			if (parent != null) {
+				int index = parent.indexOf(current) - 1;
+				for (; index >= 0; index--) {
+					Node sibling = parent.getChild(index);
+					if (sibling instanceof Element) {
+						element = (Element) sibling;
+						break;
+					}
+				}
+			}
+		}
+		return element;
 	}
 
 	/**
