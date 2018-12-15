@@ -287,7 +287,8 @@ public abstract class HtmlElement extends AbstractCMElement {
 	 * @return
 	 */
 	@Deprecated // use HtmlFactory instead
-	private static HtmlElement create(Element element, boolean abort, boolean ignoreNamespaces) {
+	public
+	static HtmlElement create(Element element, boolean abort, boolean ignoreNamespaces) {
 		HtmlElement htmlElement = null;
 		String tag = element.getLocalName();
 		String namespaceURI = element.getNamespaceURI();

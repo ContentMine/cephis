@@ -16,7 +16,11 @@
 
 package org.contentmine.graphics.html;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
+import org.contentmine.graphics.html.util.HtmlUtil;
 
 
 
@@ -26,10 +30,12 @@ import org.apache.log4j.Logger;
  *
  */
 public class HtmlA extends HtmlElement {
-	private static final String HREF = "href";
-	private static final String TARGET = "target";
 	private final static Logger LOG = Logger.getLogger(HtmlA.class);
 	public final static String TAG = "a";
+	public final static String ALL_A_XPATH = ".//h:a";
+
+	private static final String HREF = "href";
+	private static final String TARGET = "target";
 	
 	/** constructor.
 	 * 
@@ -53,5 +59,31 @@ public class HtmlA extends HtmlElement {
 	public String getHref() {
 		return this.getAttributeValue(HREF);
 	}
+	
+	/** convenience method to extract list of HtmlA in element
+	 * 
+	 * @param htmlElement
+	 * @return
+	 */
+	public static List<HtmlA> extractSelfAndDescendantAs(HtmlElement htmlElement) {
+		return HtmlA.extractAs(HtmlUtil.getQueryHtmlElements(htmlElement, ALL_A_XPATH));
+	}
+
+	/** makes a new list composed of the trs in the list
+	 * 
+	 * @param elements
+	 * @return
+	 */
+	public static List<HtmlA> extractAs(List<HtmlElement> elements) {
+		List<HtmlA> aList = new ArrayList<HtmlA>();
+		for (HtmlElement element : elements) {
+			if (element instanceof HtmlA) {
+				aList.add((HtmlA) element);
+			}
+		}
+		return aList;
+	}
+	
+
 
 }
