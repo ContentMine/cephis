@@ -1,18 +1,30 @@
 package org.contentmine.eucl.euclid.util;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.jetty.util.log.Log;
+
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
+
+import junit.framework.Assert;
 
 /** utilities which don't occur in Apache FileUtils or FilenameUtils
+ * 
+ * most methods are static but CMFileUtil can also be instantiated (e.g. for recording)
  * 
  * @author pm286
  *
@@ -23,6 +35,12 @@ public class CMFileUtil {
 		LOG.setLevel(Level.DEBUG);
 	}
 
+	private BiMap<File, File> newFileByOldFile;
+	private List<File> fileList;
+	
+	public CMFileUtil() {
+		
+	}
 
 	/**
 	 * sorts by embedded integer, in file(names) otherwise identical e.g. sorts
@@ -137,6 +155,169 @@ public class CMFileUtil {
 	public static boolean shouldMake(File fileToBeCreated, File... existingEarlierFiles) {
 		boolean debug = false;
 		return shouldMake(fileToBeCreated, debug, existingEarlierFiles);
+	}
+
+	public void add(List<File> fileList) {
+		this.fileList = fileList; 
+	}
+	
+	/** converts filenames to lowercase, removes punctuation and optionally truncates.
+	 * A-Z => a-z, 0-9.-_ are kept, space => '' everything else => _
+	 * if converted filenames are ambiguous, adds numeric values to disambiguate.
+	 * 
+	 * Example: if compress = 12
+	 * abcdefghijklm      => abcdefghijkl
+	 * abcdefghijkln      => abcdefghijkl1
+	 * abcdefghijklnx     => abcdefghijkl2
+	 * abcdefghijklnasasd => abcdefghijkl3
+	 * A & Z' 6 7!         ==> a_z_67_
+	 * @param files
+	 * @param compress
+	 * @return
+	 * @throws IOException 
+	 */
+	public Map<File, File> compressFileNames(int maxLength) {
+		if (fileList == null) {
+			throw new RuntimeException("no files in CMFileUtil");
+		}
+		if (maxLength < 1) {
+			throw new RuntimeException("filename lengths must be greater than 0");
+		}
+		getOrCreateNewFileByOldFile();
+		Multiset<String> basenameSet = HashMultiset.create();
+		for (File oldFile : fileList) {
+			if (!oldFile.exists()) {
+				LOG.error("file does not exist: "+oldFile);
+				continue;
+			}
+			String parent = oldFile.getAbsoluteFile().getParent();
+			String oldFilename = oldFile.getAbsolutePath().toString();
+			String basename = FilenameUtils.getBaseName(oldFilename);
+			String extension = FilenameUtils.getExtension(oldFilename);
+			basename = compressBase(basenameSet, basename, maxLength);
+			File newFile = new File(parent, basename+"."+extension);
+			String newFilename = newFile.getAbsolutePath().toString();
+			try {
+				if (newFilename.equalsIgnoreCase(oldFilename)) {
+					// differ only in case, so rename and rename back
+					newFile = CMFileUtil.convertNameToLowerCase(oldFile);
+					if (!newFile.exists()) {
+						throw new RuntimeException("BUG: failed to lowercase file: "+oldFile+" to "+newFile);
+					}
+				} else {
+					if (newFile.exists()) {
+						FileUtils.forceDelete(newFile);
+					}
+					FileUtils.moveFile(oldFile, newFile);
+				}
+			} catch (IOException e) {
+ 				throw new RuntimeException("cannot rename: "+oldFile, e);
+			}
+			
+			newFileByOldFile.put(oldFile, newFile);
+		}
+		
+		return newFileByOldFile;
+	}
+
+	private static String compressBase(Multiset<String> basenameSet, String basename, int maxLength) {
+		basename = basename.toLowerCase();
+		// strip whitespace
+		basename = basename.replaceAll("\\s*", "");
+		// removes punctuation and high characters
+		basename = basename.replaceAll("[^0-9a-z\\-_\\.]", "_");
+		// truncate
+		basename = basename.substring(0,  Math.min(maxLength, basename.length()));
+		basenameSet.add(basename);
+		int count = basenameSet.count(basename);
+		// if more than one of same root, add 2...
+		return (count == 1 ? basename : basename + count);
+	}
+
+	public BiMap<File, File> getOrCreateNewFileByOldFile() {
+		if (newFileByOldFile == null) {
+			newFileByOldFile = HashBiMap.create();
+		}
+		return newFileByOldFile;
+	}
+
+	public BiMap<File, File> getOrCreateOldFileByNewFile() {
+		getOrCreateNewFileByOldFile();
+		return newFileByOldFile.inverse();
+	}
+
+//	/** converts name to lowerCase.
+//	 * The name (after the final slash) is lowercased
+//	 * This is difficult on MAC and probably windows as it is
+//	 * case-insensitive. We add a junk suffix,
+//	 * rename the file, and then re-rename to the lowercase version.
+//	 * 
+//	 * A.txt => A.txt.<junk> => a.txt
+//	 * (junk includes a random number)
+//	 * 
+//	 * @param fileUpper
+//	 * @return
+//	 */
+//	public static File convertNameToLowerCase0(File fileUpper) throws IOException {
+//		String fileUpperAbsolute = fileUpper.getAbsolutePath();
+//		String path = FilenameUtils.getPath(fileUpperAbsolute);
+//		String name = FilenameUtils.getName(fileUpperAbsolute);
+//		//random suffix
+//		String suffix = ".junk"+(int)((Integer.MAX_VALUE)*Math.random());
+//		String lowerName = name.toLowerCase();
+//		File fileUpperJunk = new File(fileUpperAbsolute+suffix);
+//		if (fileUpperJunk.exists()) FileUtils.forceDelete(fileUpperJunk);
+//		FileUtils.moveFile(fileUpper, fileUpperJunk);
+//		File fileLower = new File(path, lowerName);
+//		String fileLowerAbsolute = fileLower.getAbsolutePath();
+//		if (fileLower.exists() /*&& !fileLowerAbsolute.equalsIgnoreCase(fileUpperAbsolute)*/) {
+//			LOG.debug("deleting "+fileLowerAbsolute+" (not "+fileUpperAbsolute+")");
+//			FileUtils.forceDelete(fileLower);
+//		}
+//		LOG.debug("mving "+fileUpperJunk+" to "+fileLower);
+//		FileUtils.moveFile(fileUpperJunk, fileLower);
+//		if (!fileLower.exists()) {
+//			throw new RuntimeException("move failed");
+//		}
+//		
+//		return fileLower;
+//	}
+
+	/** converts name to lowerCase.
+	 * The name (after the final slash) is lowercased
+	 * This is difficult on MAC and probably windows as it is
+	 * case-insensitive. We add a junk suffix,
+	 * rename the file, and then re-rename to the lowercase version.
+	 * 
+	 * A.txt => A.txt.<junk> => a.txt
+	 * (junk includes a random number)
+	 * 
+	 * @param fileUpper
+	 * @return
+	 */
+	public static File convertNameToLowerCase(File fileUpper) throws IOException {
+		String name = FilenameUtils.getName(fileUpper.getName());
+		File parent = fileUpper.getParentFile();
+		//random suffix
+		String suffix = ".junk"+(int)((Integer.MAX_VALUE)*Math.random());
+		String lowerName = name.toLowerCase();
+		File fileUpperJunk = new File(parent, name+suffix);
+		FileUtils.moveFile(fileUpper, fileUpperJunk);
+		File fileLower = new File(parent, lowerName);
+		FileUtils.moveFile(fileUpperJunk, fileLower);
+		if (!fileLower.exists()) {
+			throw new RuntimeException("move failed");
+		}
+		
+		return fileLower;
+	}
+
+	public Set<File> getNewKeySet() {
+		return getOrCreateOldFileByNewFile().keySet();
+	}
+
+	public Set<File> getOldKeySet() {
+		return getOrCreateNewFileByOldFile().keySet();
 	}
 
 }

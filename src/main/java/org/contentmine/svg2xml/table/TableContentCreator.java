@@ -1019,7 +1019,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
                 double curRowMinX;
                 HtmlTr prevRow = null;           
                            
-                List<HtmlTr> rows = table.getChildTrs();
+                List<HtmlTr> rows = table.getOrCreateChildTrs();
                 
                 HtmlTbody currentSubtable = null;
                 restructTable = new HtmlTbody();
@@ -1094,7 +1094,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
                                 // This is the start of a new section
                                 // The previous line is the end of the subtable
                                 this.addSubtableRow(currentSubtable, prevRow, false);
-                                List<HtmlTr> stRows = currentSubtable.getChildTrs();
+                                List<HtmlTr> stRows = currentSubtable.getOrCreateChildTrs();
                                 LOG.trace("ST:Complete: (" + prevMinX + "->" + curMinX + "):total rows:" + (stRows != null ? stRows.size() : 0));
 
                                 // Add the completed subtable to the restructured table
@@ -1287,7 +1287,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
             Arrays.fill(compoundDimensions, 1);
             
             if (tbody != null) {
-                List<HtmlTr> rows = tbody.getChildTrs();
+                List<HtmlTr> rows = tbody.getOrCreateChildTrs();
 
                 if (rows != null) {
                     for (int i = 0; i < rows.size(); i++) {
@@ -1323,7 +1323,7 @@ public class TableContentCreator extends PageLayoutAnalyzer {
         private void splitCompoundColumnContent(HtmlTbody tbody, int columnCount) {
             // Search table for columns with multiple numerical content values
             if (tbody != null) {
-                List<HtmlTr> rows = tbody.getChildTrs();
+                List<HtmlTr> rows = tbody.getOrCreateChildTrs();
 
                 if (rows != null) {
                     int[] compoundDimensions = determineSplitColumnDimensions(tbody, columnCount);

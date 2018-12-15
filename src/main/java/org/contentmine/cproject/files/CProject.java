@@ -18,7 +18,6 @@ import org.apache.commons.io.FilenameUtils;
 //import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.contentmine.cproject.CProjectArgProcessor;
 import org.contentmine.cproject.args.DefaultArgProcessor;
 import org.contentmine.cproject.args.FileXPathSearcher;
@@ -27,6 +26,7 @@ import org.contentmine.cproject.metadata.AbstractMetadata.Type;
 import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
+import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
@@ -35,9 +35,12 @@ import org.contentmine.graphics.svg.cache.DocumentCache;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 
 import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.BiMap;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import nu.xom.Element;
@@ -51,8 +54,13 @@ public class CProject extends CContainer {
 	}
 
 	public static final String PROJECT_TEMPLATE_XML = "cProjectTemplate.xml";
-	public static final String TREE_TEMPLATE_XML = "cTreeTemplate.xml";
-	public static final String URL_LIST = "urlList.txt";
+	public static final String TREE_TEMPLATE_XML    = "cTreeTemplate.xml";
+	public static final String URL_LIST             = "urlList.txt";
+	// attempt to capture history
+	public static final String LOGFILE_JSON         = "log.json";
+	public static final String MAKE_PROJECT_JSON    = "make_project.json";
+	private static final String OLD_FILE = "oldFile";
+	private static final String NEW_FILE = "newFile";
 	
 	public final static String IMAGE   = "image";
 	public final static String RESULTS = "results";
@@ -74,6 +82,8 @@ public class CProject extends CContainer {
 	private static final String C_TREE = "cTree";
 	public static final String HTTP_ACS_SUPPDATA = 
 			"https?://pubs\\.acs\\.org/doi/suppl/10\\.1021/(?<"+C_TREE+">.*)/suppl_file/(?<"+SUPPNAME+">.*)\\.pdf";
+	public static final String MAKE_PROJECT = "makeProject";
+	public static final String FILE_FILTER  = "fileFilter";
 
 	protected static final String[] ALLOWED_METADATA_NAMES = new String[] {
 			// these are messy, 
@@ -111,7 +121,7 @@ public class CProject extends CContainer {
 	
 	/** contains --makeProject and standard PDF args	*/
 	public static String MAKE_PROJECT_PDF = 
-			" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf";
+			" --" + MAKE_PROJECT + " (\\1)/" + CTree.FULLTEXT + "." + CTree.PDF + " --" + FILE_FILTER + " .*/(.*)\\.pdf";
 //	public static String MAKE_PROJECT_CMD = 
 //			" --makeProject (\\1)/fulltext.pdf --fileFilter .*/(.*)\\.pdf";
 
@@ -128,6 +138,8 @@ public class CProject extends CContainer {
 	private CProjectIO projectIO;
 	private CorpusCache corpusCache;
 	private CTreeList includeCTreeList;
+	private BiMap<File, File> newFileByOld;
+	private JsonArray renamedFileFileArray;
 	
 	public static void main(String[] args) {
 		CProject cProject = new CProject();
@@ -1058,21 +1070,60 @@ public class CProject extends CContainer {
 		return cTree;
 	}
 
-	/** turns foo.suffix into foo/fulltext.suffix */	
-	public void makeProject(String suffix) {
+	/** turns foo.suffix into foo/fulltext.suffix for each suffix */	
+	public void makeProject(String[] suffixes, int compress) {
+		if (suffixes != null) {
+			renamedFileFileArray = new JsonArray();
+			for (String suffix : suffixes) {
+				makeProject(suffix, compress);
+			}
+		}
+	}
+
+		/** turns foo.suffix into foo/fulltext.suffix.
+		 * 
+		 * if more than one suffix use makeProject(String[] suffixes, int compress)
+		 * 
+		 * */	
+	public void makeProject(String suffix, int compress) {
 		List<File> files = saveRaw(suffix);
-		if (files.size() > 0) {
-			this.run("--project "+this.getDirectory()+" --makeProject (\\1)/fulltext."+suffix + " --fileFilter .*/(.*)\\." + suffix);
+		if (files.size() == 0) {
+			return;
+		}
+		CMFileUtil fileUtil = new CMFileUtil();
+		fileUtil.add(files);
+		fileUtil.compressFileNames(compress);
+		newFileByOld = fileUtil.getOrCreateNewFileByOldFile();
+		List<File> oldFiles = new ArrayList<File>(newFileByOld.keySet());
+		List<File> newFiles = new ArrayList<File>();
+		for (File oldFile : oldFiles) {
+			File newFile = newFileByOld.get(oldFile);
+			newFiles.add(newFile);
+			addMappedFilesToRenamedFileArray(oldFile, newFile);
+		}
+		
+		if (newFiles.size() > 0) {
+			runMakeProjectCommandLine(suffix);
 		}
 		return;
 	}
 
+	private void runMakeProjectCommandLine(String suffix) {
+//				Collections.sort(newFiles);
+		this.run("--project "+this.getDirectory()+" --" +
+            MAKE_PROJECT + " (\\1)/" + CTree.FULLTEXT + "."+suffix + " --fileFilter .*/(.*)\\." + suffix);
+	}
+
+	private void addMappedFilesToRenamedFileArray(File oldFile, File newFile) {
+		JsonObject newOldFileObject = new JsonObject();
+		newOldFileObject.addProperty(NEW_FILE, newFile.toString());
+		newOldFileObject.addProperty(OLD_FILE, oldFile.toString());
+		renamedFileFileArray.add(newOldFileObject);
+	}
+
 	private List<File> saveRaw(String suffix) {
-		File rawDir = new File(this.directory, suffix);
-//		CMineGlobber globber = new CMineGlobber().setLocation(this.directory).setRegex(".*\\." + suffix);
-		CMineGlobber globber = new CMineGlobber().setLocation(this.directory).setGlob("**/*." + suffix).setRecurse(false);
-		List<File> files = globber.listFiles();
-		LOG.debug("saveraw"+files);
+		File rawDir = this.directory;
+		List<File> files =  CMineGlobber.listSortedChildFiles(rawDir, suffix);
 		files = removeFulltext(suffix, files);
 		if (files.size() > 0) {
 			if (!rawDir.exists()) {
@@ -1158,6 +1209,16 @@ public class CProject extends CContainer {
 		for (CTree cTree : this.getOrCreateCTreeList()) {
 			cTree.cleanRegex(arg);
 		}
+	}
+
+	public File getMakeProjectLogfile() {
+		File file = new File(this.directory, CProject.MAKE_PROJECT_JSON);
+		try {
+			FileUtils.write(file, renamedFileFileArray.toString(), "UTF-8");
+		} catch (IOException e) {
+			throw new RuntimeException("cannnot write log file: "+file, e);
+		}
+		return file;
 	}
 
 }
