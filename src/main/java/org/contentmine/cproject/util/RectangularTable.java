@@ -1,7 +1,9 @@
 package org.contentmine.cproject.util;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -19,6 +21,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.html.HtmlTable;
@@ -62,6 +65,7 @@ public class RectangularTable {
     	this.clearMaps();
 	}
 
+ 
     /** use default CSV format.
      * 
      * @param file
@@ -70,12 +74,23 @@ public class RectangularTable {
      * @throws IOException
      */
     public final static RectangularTable readCSVTable(File file, boolean useHeader) throws IOException {
-    	return readCSVTable(file, useHeader, CSVFormat.DEFAULT);
+    	return readCSVTable(new FileInputStream(file), useHeader, CSVFormat.DEFAULT);
     }
 
-    public final static RectangularTable readCSVTable(File file, boolean useHeader, CSVFormat csvFormat) throws IOException {
-    	if (file != null) {
-        	String s = FileUtils.readFileToString(file, Charset.forName("UTF-8"));
+    /** use default CSV format.
+     * 
+     * @param file
+     * @param useHeader
+     * @return
+     * @throws IOException
+     */
+    public final static RectangularTable readCSVTable(InputStream inputStream, boolean useHeader) throws IOException {
+    	return readCSVTable(inputStream, useHeader, CSVFormat.DEFAULT);
+    }
+
+    public final static RectangularTable readCSVTable(InputStream inputStream, boolean useHeader, CSVFormat csvFormat) throws IOException {
+    	if (inputStream != null) {
+        	String s = IOUtils.toString(inputStream, Charset.forName("UTF-8"));
         	if (s != null) {
         		StringReader reader = new StringReader(s);
         		return readCSVTable(reader, useHeader, csvFormat);
@@ -736,6 +751,15 @@ public class RectangularTable {
 			rectangularTable.addRow(strings);
 		}
 		return rectangularTable;
+	}
+
+	public List<List<String>> getColumnList(String[] colNames) {
+		List<List<String>> columnList = new ArrayList<List<String>>();
+		for (String colName : colNames) {
+			List<String> column = this.getColumn(colName);
+			columnList.add(column);
+		}
+		return columnList;
 	}
 
 

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,6 +27,7 @@ import org.contentmine.cproject.metadata.AbstractMetadata.Type;
 import org.contentmine.cproject.metadata.ProjectAnalyzer;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
+import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.euclid.util.CMFileUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlDiv;
@@ -41,7 +43,6 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import nu.xom.Element;
 import nu.xom.Node;
@@ -103,8 +104,6 @@ public class CProject extends CContainer {
 		AbstractMetadata.Type.QUICKSCRAPE.getCProjectMDFilename(),
 
 	};
-	
-	
 	
 	protected static final Pattern[] ALLOWED_FILE_PATTERNS = new Pattern[] {
 	};
@@ -769,8 +768,8 @@ public class CProject extends CContainer {
 
 	private void copyFiles(CProject project2) throws IOException {
 		List<File> projectFiles2 = project2.getAllNonDirectoryFiles();
-		List<File> projectFiles = this.getAllNonDirectoryFiles();
-		JsonParser jsonParser = new JsonParser();
+//		List<File> projectFiles = this.getAllNonDirectoryFiles();
+//		JsonParser jsonParser = new JsonParser();
 		for (File file2 : projectFiles2) {
 			String name2 = file2.getName();
 			File thisFile = this.getFileWithName(name2);
@@ -1071,20 +1070,21 @@ public class CProject extends CContainer {
 	}
 
 	/** turns foo.suffix into foo/fulltext.suffix for each suffix */	
-	public void makeProject(String[] suffixes, int compress) {
+	public void makeProject(List<String> suffixes, int compress) {
 		if (suffixes != null) {
 			renamedFileFileArray = new JsonArray();
 			for (String suffix : suffixes) {
 				makeProject(suffix, compress);
 			}
 		}
+		return;
 	}
 
-		/** turns foo.suffix into foo/fulltext.suffix.
-		 * 
-		 * if more than one suffix use makeProject(String[] suffixes, int compress)
-		 * 
-		 * */	
+	/** turns foo.suffix into foo/fulltext.suffix.
+	 * 
+	 * if more than one suffix use makeProject(String[] suffixes, int compress)
+	 * 
+	 * */	
 	public void makeProject(String suffix, int compress) {
 		List<File> files = saveRaw(suffix);
 		if (files.size() == 0) {
@@ -1211,14 +1211,29 @@ public class CProject extends CContainer {
 		}
 	}
 
-	public File getMakeProjectLogfile() {
-		File file = new File(this.directory, CProject.MAKE_PROJECT_JSON);
+	public File getMakeProjectLogfile(String filename) {
+		File file = new File(this.directory, filename);
 		try {
-			FileUtils.write(file, renamedFileFileArray.toString(), "UTF-8");
+			JsonObject log = new JsonObject();
+			log.addProperty("date", new Date().toString());
+			log.add("log from "+this.getDirectory(), renamedFileFileArray);
+			
+			String prettyString = Util.prettyPrintJson(log);
+			FileUtils.write(file, prettyString, "UTF-8");
 		} catch (IOException e) {
 			throw new RuntimeException("cannnot write log file: "+file, e);
 		}
 		return file;
 	}
+	
+	public File getMakeProjectLogfile() {
+		return getMakeProjectLogfile(CProject.MAKE_PROJECT_JSON);
+	}
+	
+	public String toString() {
+		String s = super.toString();
+		return s;
+	}
+
 
 }
