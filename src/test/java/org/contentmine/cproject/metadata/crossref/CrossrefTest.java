@@ -44,7 +44,9 @@ public class CrossrefTest {
 	}
 	private static final String QUICKSCRAPE = //  /Users/pm286/.nvm/v0.10.38/bin/quickscrape
 			"/usr/local/n/versions/node/6.2.1/bin/quickscrape";
-		;
+	private static final String GETPAPERS = //  /usr/local/n/versions/node/6.2.1/bin/getpapers
+			"/usr/local/n/versions/node/6.2.1/bin/getpapers";
+	private static final String LS = "ls > grotqz";
 
 	/**
 	 * RUN CROSSREF WITHOUT GETPAPERS
@@ -94,9 +96,28 @@ public class CrossrefTest {
 	public void testQuickscrape() throws IOException {
 		File scrapers = new File("workspace/journalScrapers/scrapers");
 		File outdir = new File("target/crossref");
+		System.out.println("quickscrape: "+QUICKSCRAPE);
 	    Process process = CMineUtil.runProcess(
 	    		new String[]{QUICKSCRAPE, "-q", "http://dx.plos.org/10.1371/journal.pone.0075293", 
 	    				"-d", scrapers.toString(), "-o", outdir.toString()}, null);
+	}
+
+	/** PURPOSE not yet documented */
+	@Test
+	public void testGetpapers() throws IOException {
+		String query = "aardvark";
+		File outdir = new File("target/crossref");
+	    Process process = CMineUtil.runProcess(
+	    		new String[]{GETPAPERS, "-q", query, 
+	    				"-o", outdir.toString()}, null);
+	}
+
+	/** PURPOSE not yet documented */
+	@Test
+	public void testLs() throws IOException {
+		String query = "aardvark";
+		File outdir = new File("target/crossref");
+	    Process process = CMineUtil.runProcess(new String[]{LS}, null);
 	}
 
 

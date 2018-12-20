@@ -291,6 +291,25 @@ public class CMineGlobber {
 		return this;
 	}
 
+	/** get sorted list of child files (not directories).
+	 * 
+	 * @param dir
+	 * @return sorted list 
+	 */
+	public static List<File> listSortedChildFiles(File dir) {
+		List<File> sortedFileList = new ArrayList<File>();
+		File[] fileList = dir.listFiles();
+		if (fileList != null) {
+			for (File file : fileList) {
+				if (!file.isDirectory()) {
+					sortedFileList.add(file);
+				}
+			}
+		}
+		Collections.sort(sortedFileList);
+		return sortedFileList;
+	}
+
 	/** get sorted list of child directories.
 	 * 
 	 * @param dir

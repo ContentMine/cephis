@@ -57,6 +57,10 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+
 
 /**
  * A number of miscellaneous tools. Originally devised for jumbo.sgml, now
@@ -3208,6 +3212,28 @@ public class Util implements EuclidConstants {
 		}
 		return string;
 	}
+
+	public static List<String> toStringList(Object[] objects) {
+		List<String> list = new ArrayList<String>();
+		if (objects != null) {
+			for (Object object : objects) {
+				list.add(object.toString());
+			}
+		}
+		return list;
+	}
+
+	/** pretty print a Json Object
+	 * 
+	 * @param json as JsonObject
+	 * @return object as String
+	 */
+	public static String prettyPrintJson(JsonObject json) {
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+	    String prettyJson = gson.toJson(json);
+	    return prettyJson;
+	}
+
 }
 
 

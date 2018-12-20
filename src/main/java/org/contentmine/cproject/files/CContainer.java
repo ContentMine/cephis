@@ -300,5 +300,9 @@ public abstract class CContainer {
 	public void setDebugLevel(Level debugLevel) {
 		this.debugLevel = debugLevel;
 	}
+	
+	public String toString() {
+		return "Dir: "+directory.toString();
+	}
 
 }

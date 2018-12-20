@@ -125,6 +125,19 @@ public class CMineUtil {
 		}
 	}
 
+	/** runs commandline process
+	 * 
+	 * @param args e.g. "doit arg1 ..."
+	 * @param inputStream CONFUSING!
+	 * this is copied into the outputStream of the proc (which is actually the input to the proc)
+	 * "returns the output stream connected to the normal input of the subprocess. Output to the 
+	 * stream is piped into the standard input of the process represented by this Process object."
+
+
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	public static Process runProcess(String[] args, InputStream inputStream) throws IOException {
 	    List<String> argList = Arrays.asList(args);
 		String program = argList.get(0);
