@@ -273,7 +273,8 @@ public abstract class HtmlElement extends AbstractCMElement {
 	 */
 	@Deprecated // use HtmlFactory
 	public static HtmlElement create(Element element) {
-		return HtmlElement.create(element, false, false);
+		// changed to ignoreNamespaces = true
+		return HtmlElement.create(element, false, true);
 	}
 		
 	/** creates subclassed elements.
