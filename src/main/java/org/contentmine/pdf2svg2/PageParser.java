@@ -586,6 +586,7 @@ public class PageParser extends PageDrawer    {
 		PageSerial imageSerial = PageSerial.createFromZeroBasedPages(
     		pageSerial.getZeroBasedPage(), rawImageList.size());
     	BufferedImage bufferedImage = pdImage.getImage();
+    	// FIXME should write image to disk here
     	rawImageList.add(bufferedImage);
     	System.out.print("["+"."+rawImageList.size()+"]");
     	

@@ -128,6 +128,7 @@ public class DocumentParser extends PDFRenderer {
 				SVGG svgPage = extractSVGG();
 				cleanUp(svgPage);
 				svgPageBySerial.put(pageSerial, svgPage);
+				// FIXME we should write the images to disk, not store them?
 				List<BufferedImage> subImageList = currentPageParser.getOrCreateRawImageList();
 				for (int subImage = 0; subImage < subImageList.size();subImage++) {
 					rawImageBySerial.put(PageSerial.createFromZeroBasedPages(iPage, subImage),
