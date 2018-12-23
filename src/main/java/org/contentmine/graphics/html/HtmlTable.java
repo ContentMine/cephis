@@ -84,8 +84,47 @@ public class HtmlTable extends HtmlElement {
 		return (HtmlTfoot) getSingleChildElement(this, HtmlTfoot.TAG); 
 	}
 
-	public HtmlTbody getThead() {
-		return (HtmlTbody) getSingleChildElement(this, HtmlThead.TAG); 
+	public HtmlThead getThead() {
+		return (HtmlThead) getSingleChildElement(this, HtmlThead.TAG); 
+	}
+
+	/** at present order depends on order in calling code
+	 * 
+	 * @return
+	 */
+	public HtmlTable ensureHeadBodyFoot() {
+		getOrCreateThead();
+		getOrCreateTbody();
+		getOrCreateTfoot();
+		
+		return this;
+	}
+
+	public HtmlThead getOrCreateThead() {
+		HtmlThead thead = getThead(); 
+		if (thead == null) {
+			thead = new HtmlThead();
+			this.appendChild(thead);
+		}
+		return thead;
+	}
+
+	public HtmlTbody getOrCreateTbody() {
+		HtmlTbody tbody = getTbody(); 
+		if (tbody == null) {
+			tbody = new HtmlTbody();
+			this.appendChild(tbody);
+		}
+		return tbody;
+	}
+
+	public HtmlTfoot getOrCreateTfoot() {
+		HtmlTfoot tfoot = getTfoot(); 
+		if (tfoot == null) {
+			tfoot = new HtmlTfoot();
+			this.appendChild(tfoot);
+		}
+		return tfoot;
 	}
 
 	public HtmlTr getSingleLeadingTrThChild() {

@@ -2,6 +2,7 @@ package org.contentmine.graphics.html.util;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.StringWriter;
 import java.net.URL;
 import java.util.ArrayList;
@@ -125,12 +126,13 @@ public class HtmlUtil {
 	}
 	
 	/** read file and subclass elements to HtmlElement.
-	 * 
+	 * @Deprecated("seems to fail on reading")
 	 * @param file
 	 * @return
 	 * @throws Exception
 	 */
 	public static HtmlElement readAndCreateElement(URL url) throws Exception {
+		LOG.debug("reading URL into HTML "+url);
 		HtmlUnitWrapper htmlUnitWrapper = new HtmlUnitWrapper();
 		HtmlElement htmlElement = htmlUnitWrapper.readAndCreateElement(url);
 		return htmlElement;
@@ -376,6 +378,25 @@ public class HtmlUtil {
 	 */
 	public static String elem(String tag) {
 		return "*[local-name()='"+tag+"']";
+	}
+
+	/** only use on well-formed HTML
+	 * 
+	 * @param urlString
+	 * @return
+	 */
+	public static HtmlElement readAndCreateElement(String urlString) {
+		HtmlElement htmlElement = null;
+		try {
+			URL url = new URL(urlString);
+			InputStream openStream = url.openStream();
+			Element element = XMLUtil.parseQuietlyToRootElement(openStream);
+			openStream.close();
+			htmlElement = HtmlElement.create(element);
+		} catch (Exception e) {
+			throw new RuntimeException("cannot parse/open "+urlString, e);
+		}
+		return htmlElement;
 	}
 
 //	@Deprecated

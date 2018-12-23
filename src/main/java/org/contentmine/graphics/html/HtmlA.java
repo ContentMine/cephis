@@ -44,6 +44,13 @@ public class HtmlA extends HtmlElement {
 		super(TAG);
 	}
 	
+	public static HtmlA createFromHrefAndContent(String href, String value) {
+		HtmlA a = new HtmlA();
+		a.setHref(href);
+		a.setValue(value);
+		return a;
+	}
+	
 	public void setHref(String href) {
 		this.setAttribute(HREF, href);
 	}
@@ -69,7 +76,7 @@ public class HtmlA extends HtmlElement {
 		return HtmlA.extractAs(HtmlUtil.getQueryHtmlElements(htmlElement, ALL_A_XPATH));
 	}
 
-	/** makes a new list composed of the trs in the list
+	/** makes a new list composed of the A's in the list
 	 * 
 	 * @param elements
 	 * @return
@@ -83,7 +90,9 @@ public class HtmlA extends HtmlElement {
 		}
 		return aList;
 	}
-	
 
-
+	public static String getDescendantHref(HtmlElement htmlElement) {
+		List<HtmlA> aList = HtmlA.extractSelfAndDescendantAs(htmlElement);
+		return aList.size() == 1 ? aList.get(0).getHref() : null;
+	}
 }

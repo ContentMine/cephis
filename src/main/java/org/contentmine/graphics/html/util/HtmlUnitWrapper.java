@@ -38,7 +38,8 @@ public class HtmlUnitWrapper {
 	 * @throws Exception
 	 */
 	public HtmlElement readAndCreateElement(URL url) throws Exception {
-		
+
+		// use gargoylesoft
 	    webClient = new WebClient();
 	    rawHtmlPage = webClient.getPage(url.toString());
 	    pageAsXml = rawHtmlPage.asXml();

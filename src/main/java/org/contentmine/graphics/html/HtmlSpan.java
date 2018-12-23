@@ -22,6 +22,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.html.util.HtmlUtil;
 
+import nu.xom.Node;
+
 
 /** 
  *  @author pm286
@@ -72,6 +74,12 @@ public class HtmlSpan extends HtmlElement {
 
 	public static List<HtmlSpan> extractSpans(HtmlElement htmlElement, String xpath) {
 		return HtmlSpan.extractSpans(HtmlUtil.getQueryHtmlElements(htmlElement, xpath));
+	}
+
+	public static HtmlSpan createSpanWithContent(String string) {
+		HtmlSpan span = new HtmlSpan();
+		span.appendChild(string);
+		return span;
 	}
 
 

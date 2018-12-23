@@ -54,4 +54,18 @@ public class HtmlThead extends HtmlElement {
         return rowList;
     }
 
+    /** gets first (usually only) Tr.
+     * creates and adds if not present.
+     * @return first row (created empty if absent)
+     */
+	public HtmlTr getOrCreateChildTr() {
+		List<HtmlTr> rows = getChildTrs();
+		if (rows.size() == 0) {
+			HtmlTr row = new HtmlTr();
+			this.appendChild(row);
+			rows = getChildTrs();
+		}
+		return rows.get(0);
+	}
+
 }
