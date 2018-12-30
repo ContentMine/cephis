@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlMeta;
 
 import nu.xom.Element;
 import nu.xom.Nodes;
@@ -398,6 +399,16 @@ public class HtmlUtil {
 		}
 		return htmlElement;
 	}
+
+	public static List<HtmlElement> getQueryHtmlElements(List<? extends HtmlElement> htmlElementList, String xpath) {
+		ArrayList<HtmlElement> resultList = new ArrayList<>();
+		for (HtmlElement htmlElement : htmlElementList) {
+			List<HtmlElement> elements = HtmlUtil.getQueryHtmlElements(htmlElement, xpath);
+			resultList.addAll(elements);
+		}
+		return resultList;
+	}
+	
 
 //	@Deprecated
 //	public static HtmlElement replaceEntitiesAndJavascriptTags(String ss) throws IOException {

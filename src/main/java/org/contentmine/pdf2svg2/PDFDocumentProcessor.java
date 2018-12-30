@@ -31,7 +31,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.contentstream.PDFGraphicsStreamEngine;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.graphics.svg.SVGG;
@@ -46,6 +45,8 @@ import org.contentmine.graphics.svg.SVGSVG;
  *
  * @author John Hewson
  * @author P Murray-Rust
+ * 
+ * DocumentProcessor also includes a pageIncluder which 
  */
 public class PDFDocumentProcessor {
 	private static final String PAGES = "pages";
@@ -61,6 +62,11 @@ public class PDFDocumentProcessor {
 	private Int2 minImageBox;
 	private PageIncluder pageIncluder;
 	private CTree cTree;
+	private String svgDirname = CTree.SVG;
+	private String pdfImagesDirname = CTree.PDF_IMAGES_DIR;
+	private int maxPages;
+	private boolean outputSVG = true;
+	private boolean outputPDFImages = true;
 
 	public PDFDocumentProcessor() {
 		init();
@@ -111,21 +117,21 @@ public class PDFDocumentProcessor {
 	}
 
 
-	private List<BufferedImage> createRawSubImageList() {
-		this.pageParser = documentParser.getPageParser();
-        return pageParser.getOrCreateRawImageList();
-	}
+//	private Map<String, BufferedImage> createRawSubImageList() {
+//		this.pageParser = documentParser.getPageParser();
+//        return pageParser.getOrCreateRawImageList();
+//	}
 
-	private PDDocument updateCurrentDoc() {
-		if (currentDoc == null && currentFile != null) {
-			try {
-				currentDoc = PDDocument.load(currentFile);
-			} catch (IOException e) {
-				throw new RuntimeException("Cannot read currentFile", e);
-			}
-		}
-		return currentDoc;
-	}
+//	private PDDocument updateCurrentDoc() {
+//		if (currentDoc == null && currentFile != null) {
+//			try {
+//				currentDoc = PDDocument.load(currentFile);
+//			} catch (IOException e) {
+//				throw new RuntimeException("Cannot read currentFile", e);
+//			}
+//		}
+//		return currentDoc;
+//	}
 
 	public PDFDocumentProcessor setFile(File file) {
 		this.currentFile = file;
@@ -140,7 +146,7 @@ public class PDFDocumentProcessor {
 
 	public void writeSVGPages(File parent) {
 		File svgDir = getOutputSVGDirectory(parent);
-		if (documentParser != null) {
+		if (documentParser != null && outputSVG) {
 			LOG.trace("\nwriting SVG to: "+svgDir);
 			Map<PageSerial, SVGG> svgPageBySerial = documentParser.getOrCreateSvgPageBySerial();
 			Set<Entry<PageSerial, SVGG>> entrySet = svgPageBySerial.entrySet();
@@ -156,7 +162,15 @@ public class PDFDocumentProcessor {
 	}
 
 	public File getOutputSVGDirectory(File parent) {
-		return new File(parent, CTree.SVG + "/");
+		return new File(parent, getSVGDirname() + "/");
+	}
+
+	public String getSVGDirname() {
+		return svgDirname;
+	}
+
+	public void setSVGDirname(String svgDirname) {
+		this.svgDirname = svgDirname;
 	}
 
 	public File getOutputImagesDirectory(File parent) {
@@ -191,22 +205,30 @@ public class PDFDocumentProcessor {
 		}
 	}
 	public void writePDFImages(File parent) throws IOException {
-		File imagesDir = new File(parent, CTree.PDF_IMAGES_DIR + "/");
-		imagesDir.mkdirs();
-		if (documentParser != null) {
-			Map<PageSerial, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap();
-			for (PageSerial pageSerial : rawImageByPageSerial.keySet()) {
-				BufferedImage image = rawImageByPageSerial.get(pageSerial);
-				if (isLargerThanImageBox(image)) {
-					File outputFile = new File(imagesDir, "page."+pageSerial.getOneBasedSerialString()+"."+CTree.PNG);
-//					if (shouldMake)
-					ImageIO.write(image, CTree.PNG, 
-						outputFile);
+		if (outputPDFImages) {
+			File imagesDir = new File(parent, getPDFImagesDirname() + "/");
+			imagesDir.mkdirs();
+			if (documentParser != null) {
+				Map<String, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap1();
+				LOG.debug("Raw Image"+rawImageByPageSerial);
+				for (String title : rawImageByPageSerial.keySet()) {
+					BufferedImage image = rawImageByPageSerial.get(title);
+					System.err.print(" pdfimage ");
+					File outputFile = new File(imagesDir, title+"."+CTree.PNG);
+					ImageIO.write(image, CTree.PNG, outputFile);
 				}
+			} else {
+				LOG.error("Null document parser");
 			}
-		} else {
-			LOG.error("Null document parser");
 		}
+	}
+
+	public String getPDFImagesDirname() {
+		return pdfImagesDirname;
+	}
+	
+	public void setPDFImagesDirname(String pdfImagesDirname) {
+		this.pdfImagesDirname =  pdfImagesDirname;
 	}
 
 	private boolean isLargerThanImageBox(BufferedImage image) {
@@ -267,5 +289,30 @@ public class PDFDocumentProcessor {
 	public void setCTree(CTree cTree) {
 		this.cTree = cTree;
 	}
+
+	public void setMaxPages(int maxpages) {
+		this.maxPages = maxpages;
+	}
+
+	public int getMaxPages() {
+		return maxPages;
+	}
+
+	public boolean isOutputSVG() {
+		return outputSVG;
+	}
+
+	public void setOutputSVG(boolean outputSVG) {
+		this.outputSVG = outputSVG;
+	}
+
+	public boolean isOutputPDFImages() {
+		return outputPDFImages;
+	}
+
+	public void setOutputPDFImages(boolean outputPDFImages) {
+		this.outputPDFImages = outputPDFImages;
+	}
+	
 
 }
