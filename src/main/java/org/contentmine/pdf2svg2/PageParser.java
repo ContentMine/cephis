@@ -35,6 +35,7 @@ import org.apache.pdfbox.rendering.PageDrawerParameters;
 import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.Vector;
 import org.contentmine.eucl.euclid.Angle;
+import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
@@ -115,7 +116,8 @@ public class PageParser extends PageDrawer    {
 	private int pageRotation;
 	private int fontPrecision = 2;
 	private Double maxSpaceRatio = 1.2;
-	private List<BufferedImage> rawImageList;
+//	private List<BufferedImage> rawImageList;
+	private Map<String, BufferedImage> imageByTitle;
 	private PageSerial pageSerial;
 
 	private Double minBoldWeight = 500.;
@@ -139,7 +141,7 @@ public class PageParser extends PageDrawer    {
     	svgg.setFill("none");
     	integerByClipStringMap = new HashMap<String, Integer>();
     	yMax = YMAX; // hopefully overwritten by mediaBox
-    	rawImageList = new ArrayList<BufferedImage>();
+    	imageByTitle = new HashMap<String, BufferedImage>();
     	setDefaults();
 
 	}
@@ -584,21 +586,22 @@ public class PageParser extends PageDrawer    {
     		throw new RuntimeException("null pageSerial");
     	}
 		PageSerial imageSerial = PageSerial.createFromZeroBasedPages(
-    		pageSerial.getZeroBasedPage(), rawImageList.size());
+    		pageSerial.getZeroBasedPage(), imageByTitle.size());
     	BufferedImage bufferedImage = pdImage.getImage();
     	// FIXME should write image to disk here
-    	rawImageList.add(bufferedImage);
-    	System.out.print("["+"."+rawImageList.size()+"]");
+    	System.out.print("["+"."+imageByTitle.size()+"]");
     	
         SVGRect rect = getBoundingRect();
         rect.format(3);
         String serialTitle = pageSerial.getOneBasedSerialString();
 		rect.setTitle(serialTitle);
         svgg.appendChild(rect);
+        Int2Range box = new Int2Range(rect.getBoundingBox());
         int width = (int)(double)rect.getWidth();
         int height = (int)(double)rect.getHeight();
         String oneBasedSerialString = imageSerial.getOneBasedSerialString();
-        String title = "image."+oneBasedSerialString+"["+width+"*"+height+"]";
+        String title = createTitle(box, oneBasedSerialString);
+    	imageByTitle.put(title,bufferedImage);
         SVGText text = new SVGText(rect.getBoundingBox().getLLURCorners()[0], title);
         text.addSVGClassName("image");
 		text.setId("image."+oneBasedSerialString);
@@ -724,6 +727,10 @@ public class PageParser extends PageDrawer    {
         
         */
     }
+
+	private String createTitle(Int2Range box, String oneBasedSerialString) {
+		return "image."+oneBasedSerialString+"."+box.getXRange().getMin()+"_"+box.getXRange().getMax()+"."+box.getYRange().getMin()+"_"+box.getYRange().getMax();
+	}
 
 	private SVGRect getBoundingRect() {
 		Matrix ctm = getGraphicsState().getCurrentTransformationMatrix();
@@ -943,11 +950,11 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	public List<BufferedImage> getOrCreateRawImageList() {
-		if (rawImageList == null) {
-			rawImageList = new ArrayList<BufferedImage>();
+	public Map<String, BufferedImage> getOrCreateRawImageMap() {
+		if (imageByTitle == null) {
+			imageByTitle = new HashMap<String, BufferedImage>();
 		}
-		return rawImageList;
+		return imageByTitle;
 	}
 
 	/** sets the serial number of the page.

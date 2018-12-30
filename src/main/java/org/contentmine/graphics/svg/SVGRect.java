@@ -268,7 +268,6 @@ public class SVGRect extends SVGShape {
     /** round to decimal places.
      * 
      * @param places
-     * @return this
      */
     public void format(int places) {
     	Real2 xy = getXY();

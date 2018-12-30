@@ -139,6 +139,7 @@ public class CProject extends CContainer {
 	private CTreeList includeCTreeList;
 	private BiMap<File, File> newFileByOld;
 	private JsonArray renamedFileFileArray;
+	private PDFDocumentProcessor pdfDocumentProcessor;
 	
 	public static void main(String[] args) {
 		CProject cProject = new CProject();
@@ -942,20 +943,29 @@ public class CProject extends CContainer {
 
 	/** creates SVG and extracts Images from PDF in CTrees.
 	 * 
+	 * Maybe shouldn't be in CProject, but that would need redesign
+	 * 
 	 */
 	public void convertPDFOutputSVGFilesImageFiles() {
 		CTreeList cTreeList = getIncludeCTreeList();
 		cTreeList = cTreeList != null ? cTreeList : getOrCreateCTreeList();
-//	    File directory = getDirectory();
-	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-		documentProcessor.setMinimumImageBox(100, 100);
+		getOrCreatePDFDocumentProcessor();
+		pdfDocumentProcessor.setMinimumImageBox(100, 100);
 		for (CTree cTree : cTreeList) {
 			cTree.setDebugLevel(debugLevel);
 			String name = cTree.getName();
 	        System.out.println("cTree: "+name);
+	        cTree.setPDFDocumentProcessor(pdfDocumentProcessor);
 			cTree.processPDFTree();
 		}
 		LOG.debug("Finished PDFSVG");
+	}
+
+	public PDFDocumentProcessor getOrCreatePDFDocumentProcessor() {
+		if (pdfDocumentProcessor == null) {
+			pdfDocumentProcessor = new PDFDocumentProcessor();
+		}
+		return pdfDocumentProcessor;
 	}
 
 	/** get files specifically included */
@@ -1164,22 +1174,22 @@ public class CProject extends CContainer {
 		this.cTreeList = cTreeList;
 	}
 
-	public static CProject createProjectFromPDFsAndMakeCTrees(File sourceDir) throws IOException {
-		File targetDir = sourceDir;
-		CProject cProject = new CProject(targetDir);
-		MakeProject.makeProject(sourceDir);
-		CTreeList cTreeList = cProject.getOrCreateCTreeList();
-		for (CTree cTree : cTreeList) {
-			LOG.debug("******* "+cTree+" **********");
-		    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
-		    documentProcessor.setMinimumImageBox(100, 100);
-		    documentProcessor.readAndProcess(cTree.getExistingFulltextPDF());
-		    File outputDir = new File(targetDir, cTree.getName());
-			documentProcessor.writeSVGPages(outputDir);
-	    	documentProcessor.writePDFImages(outputDir);
-		}
-		return cProject;
-	}
+//	public static CProject createProjectFromPDFsAndMakeCTrees(File sourceDir) throws IOException {
+//		File targetDir = sourceDir;
+//		CProject cProject = new CProject(targetDir);
+//		MakeProject.makeProject(sourceDir);
+//		CTreeList cTreeList = cProject.getOrCreateCTreeList();
+//		for (CTree cTree : cTreeList) {
+//			LOG.debug("******* "+cTree+" **********");
+//		    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+//		    documentProcessor.setMinimumImageBox(100, 100);
+//		    documentProcessor.readAndProcess(cTree.getExistingFulltextPDF());
+//		    File outputDir = new File(targetDir, cTree.getName());
+//			documentProcessor.writeSVGPages(outputDir);
+//	    	documentProcessor.writePDFImages(outputDir);
+//		}
+//		return cProject;
+//	}
 
 	/** tidy images in Ctrees but also look for commonailty at Documrnt level.
 	 * 

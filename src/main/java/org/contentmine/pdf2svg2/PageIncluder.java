@@ -61,6 +61,10 @@ public class PageIncluder {
 		List<Integer> pages = includePages.createArray().getIntegerList();
 		addZeroNumberedIncludePages(pages);
 	}
+	public void setZeroNumberedIncludePages(IntRange includePages) {
+		this.includeZeroBasedSortedPageNumbers = null;
+		addZeroNumberedIncludePages(includePages);
+	}
 
 	public void addZeroNumberedIncludePages(Integer ...includePages) {
 		getOrCreateZeroNumberedIncludePageList().addAll(new ArrayList<Integer>(Arrays.asList(includePages)));

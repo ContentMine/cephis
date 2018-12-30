@@ -3,6 +3,7 @@ package org.contentmine.pdf2svg2;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,10 +33,11 @@ public class DocumentParser extends PDFRenderer {
 	private PageParser currentPageParser;
 	private SVGG currentSVGG;
 	private Map<PageSerial, SVGG> svgPageBySerial;
-	private Map<PageSerial, BufferedImage> rawImageBySerial;
+//	private Map<PageSerial, BufferedImage> rawImageBySerial;
 	private Map<PageSerial, BufferedImage> renderedImageBySerial;
 	private int pageIndex;
 	private int iPage;
+	private Map<String, BufferedImage> rawImageByTitle;
 
 
 	DocumentParser(PDDocument document) {
@@ -48,7 +50,7 @@ public class DocumentParser extends PDFRenderer {
 		currentPageParser = null;
 		currentSVGG = null;
 		svgPageBySerial = null;
-		rawImageBySerial = null;
+		rawImageByTitle = null;
 		renderedImageBySerial = null;
 		pageIndex = -1;
 		iPage = -1;
@@ -114,7 +116,8 @@ public class DocumentParser extends PDFRenderer {
 	public Map<PageSerial, BufferedImage> parseDocument(PDFDocumentProcessor processor, PDDocument currentDoc) throws IOException {
 		renderedImageBySerial = new HashMap<PageSerial, BufferedImage>();
         svgPageBySerial = new HashMap<PageSerial, SVGG>();
-        rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
+//        rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
+        rawImageByTitle = new HashMap<>();
         int numberOfPages = currentDoc.getNumberOfPages();
     	PageIncluder pageIncluder = processor.getOrCreatePageIncluder();
         iPage = 0;
@@ -129,10 +132,19 @@ public class DocumentParser extends PDFRenderer {
 				cleanUp(svgPage);
 				svgPageBySerial.put(pageSerial, svgPage);
 				// FIXME we should write the images to disk, not store them?
-				List<BufferedImage> subImageList = currentPageParser.getOrCreateRawImageList();
-				for (int subImage = 0; subImage < subImageList.size();subImage++) {
-					rawImageBySerial.put(PageSerial.createFromZeroBasedPages(iPage, subImage),
-							subImageList.get(subImage));
+				Map<String, BufferedImage> subImageMap = currentPageParser.getOrCreateRawImageMap();
+//				LOG.debug("SUBI "+subImageMap);
+				List<String> sortedImageTitles = new ArrayList<>(subImageMap.keySet());
+				Collections.sort(sortedImageTitles);
+//				LOG.debug(sortedImageTitles);
+				
+//				for (int subImage = 0; subImage < subImageMap.size();subImage++) {
+//					rawImageBySerial.put(PageSerial.createFromZeroBasedPages(iPage, subImage),
+//							subImageMap.get(subImage));
+//				}
+				for (String title : sortedImageTitles) {
+					BufferedImage image = subImageMap.get(title);
+					rawImageByTitle.put(title, image);
 				}
         	}
         }
@@ -156,8 +168,12 @@ public class DocumentParser extends PDFRenderer {
         return pageList;
 	}
 	
-	public Map<PageSerial, BufferedImage> getRawImageMap() {
-		return rawImageBySerial;
+//	public Map<PageSerial, BufferedImage> getRawImageMap() {
+//		return rawImageBySerial;
+//	}
+
+	public Map<String, BufferedImage> getRawImageMap1() {
+		return rawImageByTitle;
 	}
 
 	private void cleanUp(SVGG svgPage) {

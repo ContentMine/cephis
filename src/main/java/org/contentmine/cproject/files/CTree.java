@@ -426,10 +426,11 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private boolean writeXHtml = true;
 	private SuperPixelArrayManager spaManager;
 	private DocumentCache documentCache;
-	private int deltaPages;
+//	private int deltaPages;
 	private HtmlTagger htmlTagger;
 	private File abstractDir;
 	private File frontDir;
+	private PDFDocumentProcessor pdfDocumentProcessor;
 
 	public CTree() {
 		super();
@@ -437,7 +438,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	}
 	
 	protected void init() {
-		deltaPages = 200;
+//		deltaPages = 200;
 	}
 	
 	/** creates CTree object but does not alter filestore.
@@ -1622,17 +1623,17 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		File pdfFile = getExistingFulltextPDF();
 		if (pdfFile != null) {
 			List<File> svgFiles = getExistingSVGFileList();
-			PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+			getOrCreatePDFDocumentProcessor();
 			// don't create if exist already
 			if (svgFiles.size() == 0) {
-			    documentProcessor.readAndProcess(pdfFile);
+			    pdfDocumentProcessor.readAndProcess(pdfFile);
 				directory.mkdirs();
 				if (cProject.getOrCreateProjectIO().isWriteSVGPages()) {
-					documentProcessor.writeSVGPages(directory);
+					pdfDocumentProcessor.writeSVGPages(directory);
 				}
 				// this is expensive
 				if (cProject.getOrCreateProjectIO().isWriteRawImages()) {
-					documentProcessor.writePDFImages(directory);
+					pdfDocumentProcessor.writePDFImages(directory);
 				}
 			}
 		}
@@ -1697,7 +1698,6 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public void processPDFTree() {
 		int start = 0;
-//		boolean debug = true;
 		File existingFulltextPDF = getExistingFulltextPDF();
 		if (existingFulltextPDF == null) {
 			DebugPrint.warnPrintln(debugLevel, "null PDF for: "+this.getName());
@@ -1705,7 +1705,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		}
 		File svgDir = this.getExistingSVGDir();
 		if (svgDir != null && !CMFileUtil.shouldMake(svgDir, existingFulltextPDF)) {
-//			DebugPrint.infoPrintln(debugLevel, "make is skipped: "+existingFulltextPDF);
+			DebugPrint.infoPrintln(debugLevel, "make is skipped: "+existingFulltextPDF);
 			return;
 		}
 		PDDocument document = null;
@@ -1715,16 +1715,18 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			throw new RuntimeException("Cannot load PDF "+existingFulltextPDF, e);
 		}
 		int pageCount = document.getNumberOfPages();
+		int deltaPages = pdfDocumentProcessor.getMaxPages();
+		System.out.print(" max pages: "+deltaPages);
 		while (start < pageCount) {
-			LOG.trace("**************** processing " + start + "***************");
-		    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
+			System.out.println(" " + start + " ");
+			getOrCreatePDFDocumentProcessor();
 		    try {
-		    	PageIncluder pageIncluder = documentProcessor.getOrCreatePageIncluder();
-				pageIncluder.addZeroNumberedIncludePages(new IntRange(start, start + deltaPages));
-				LOG.trace("pages "+pageIncluder.toString());
-		    	documentProcessor.readAndProcess(document);
-		    	documentProcessor.writeSVGPages(directory);
-		    	documentProcessor.writePDFImages(directory);
+		    	PageIncluder pageIncluder = pdfDocumentProcessor.getOrCreatePageIncluder();
+				pageIncluder.setZeroNumberedIncludePages(new IntRange(start, start + deltaPages - 1));
+				System.out.print("pages "+pageIncluder.toString());
+		    	pdfDocumentProcessor.readAndProcess(document);
+		    	pdfDocumentProcessor.writeSVGPages(directory);
+		    	pdfDocumentProcessor.writePDFImages(directory);
 		    } catch (IOException ioe) {
 		    	LOG.error("cannot read/process: " + this + "; "+ioe);
 		    }
@@ -1732,13 +1734,13 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		}
 	}
 
-	public int getDeltaPages() {
-		return deltaPages;
-	}
+//	public int getDeltaPages() {
+//		return deltaPages;
+//	}
 
-	public void setDeltaPages(int deltaPages) {
-		this.deltaPages = deltaPages;
-	}
+//	public void setDeltaPages(int deltaPages) {
+//		this.deltaPages = deltaPages;
+//	}
 
 	public void tidyImages() {
 		ImageManager imageManager = new ImageManager(this);
@@ -1830,10 +1832,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		boolean status = false;
 		if (filename.endsWith("/") || file.isDirectory()) {
 			status = FileUtils.deleteQuietly(file);
-			DebugPrint.debugPrintln("deleted directory: "+file.getAbsolutePath());
+			if (status) DebugPrint.debugPrintln("deleted directory: "+file.getAbsolutePath());
 		} else {
 			status = FileUtils.deleteQuietly(file);
-			DebugPrint.debugPrintln("deleted file: "+file.getAbsolutePath());
+			if (status) DebugPrint.debugPrintln("deleted file: "+file.getAbsolutePath());
 		}
 		return status;
 	}
@@ -1918,6 +1920,17 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public File getExistingFrontDir(boolean forceCreate) {
 		return getExistingReservedDirectory(FRONT_DIR, forceCreate);
+	}
+
+	public void setPDFDocumentProcessor(PDFDocumentProcessor pdfDocumentProcessor) {
+		this.pdfDocumentProcessor = pdfDocumentProcessor;
+	}
+	
+	public PDFDocumentProcessor getOrCreatePDFDocumentProcessor() {
+		if (pdfDocumentProcessor == null) {
+			pdfDocumentProcessor = new PDFDocumentProcessor();
+		}
+		return pdfDocumentProcessor;
 	}
 
 
