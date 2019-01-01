@@ -113,6 +113,8 @@ public class MainPixelProcessor {
 	public PixelIslandList getOrCreatePixelIslandList(boolean superThinning) {
 		if (pixelIslandList == null && getImage() != null) {
 			FloodFill floodFill = new ImageFloodFill(image);
+			floodFill.setMaxIslands(maxIsland);
+			LOG.trace("flood fill finished");
 			floodFill.setDiagonal(true);
 			pixelIslandList = floodFill.getIslandList();
 			ImageParameters parameters = getParameters();

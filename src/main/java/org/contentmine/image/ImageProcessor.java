@@ -94,12 +94,13 @@ public class ImageProcessor {
 	}
 
 	public void setDefaults() {
-		ensurePixelProcessor();
+		ensureMainPixelProcessor();
 		ensureParameterObject();
 
 		mainProcessor.setDefaults();
 		this.setThreshold(getDefaultThreshold());
-		this.setThinning(new ZhangSuenThinning());
+		this.setThinning(null);
+//		this.setThinning(new ZhangSuenThinning());
 		this.setOutputDir(getDefaultOutputDirectory());
 		this.setBinarize(true);
 		this.setThreshold(DEFAULT_THRESHOLD);
@@ -387,7 +388,7 @@ public class ImageProcessor {
 
 	public PixelIslandList getOrCreatePixelIslandList() {
 		if (islandList == null) {
-			ensurePixelProcessor();
+			ensureMainPixelProcessor();
 			// this is messy - the super thinning should have been done earlier
 			islandList = mainProcessor.getOrCreatePixelIslandList(thinning != null);
 			if (islandList == null) {
@@ -414,7 +415,7 @@ public class ImageProcessor {
 		return pixelList;
 	}
 
-	public MainPixelProcessor ensurePixelProcessor() {
+	public MainPixelProcessor ensureMainPixelProcessor() {
 		ensureParameterObject();
 		if (mainProcessor == null) {
 			mainProcessor = new MainPixelProcessor(this);
@@ -480,7 +481,7 @@ public class ImageProcessor {
 
 	public boolean parseArgAndAdvance(ArgIterator argIterator) {
 		boolean found = true;
-		ensurePixelProcessor();
+		ensureMainPixelProcessor();
 		String arg = argIterator.getCurrent();
 		if (debug) {
 //			LOG.debug(arg);
@@ -569,7 +570,7 @@ public class ImageProcessor {
 	}
 
 	void runCommands() {
-		ensurePixelProcessor();
+		ensureMainPixelProcessor();
 		if (this.image == null) {
 			if (inputFile != null) {
 				processImageFile();

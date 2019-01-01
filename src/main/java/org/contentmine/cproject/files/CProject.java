@@ -958,7 +958,7 @@ public class CProject extends CContainer {
 	        cTree.setPDFDocumentProcessor(pdfDocumentProcessor);
 			cTree.processPDFTree();
 		}
-		LOG.debug("Finished PDFSVG");
+		LOG.trace("Finished PDFSVG");
 	}
 
 	public PDFDocumentProcessor getOrCreatePDFDocumentProcessor() {

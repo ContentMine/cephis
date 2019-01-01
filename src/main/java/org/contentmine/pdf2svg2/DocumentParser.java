@@ -116,7 +116,6 @@ public class DocumentParser extends PDFRenderer {
 	public Map<PageSerial, BufferedImage> parseDocument(PDFDocumentProcessor processor, PDDocument currentDoc) throws IOException {
 		renderedImageBySerial = new HashMap<PageSerial, BufferedImage>();
         svgPageBySerial = new HashMap<PageSerial, SVGG>();
-//        rawImageBySerial = new HashMap<PageSerial, BufferedImage>();
         rawImageByTitle = new HashMap<>();
         int numberOfPages = currentDoc.getNumberOfPages();
     	PageIncluder pageIncluder = processor.getOrCreatePageIncluder();
@@ -124,31 +123,28 @@ public class DocumentParser extends PDFRenderer {
         for (; iPage < numberOfPages; iPage++) {
 			PageSerial pageSerial = PageSerial.createFromZeroBasedPage(iPage);
 			if (pageIncluder.pageIsIncluded(pageSerial)) {
-	        	System.out.print("["+pageSerial.getOneBasedPage()+"]");
-	        	this.processPage(iPage);
-	        	BufferedImage renderedImage = currentPageParser.getRenderedImage();
-				renderedImageBySerial.put(pageSerial, renderedImage);
-				SVGG svgPage = extractSVGG();
-				cleanUp(svgPage);
-				svgPageBySerial.put(pageSerial, svgPage);
-				// FIXME we should write the images to disk, not store them?
-				Map<String, BufferedImage> subImageMap = currentPageParser.getOrCreateRawImageMap();
-//				LOG.debug("SUBI "+subImageMap);
-				List<String> sortedImageTitles = new ArrayList<>(subImageMap.keySet());
-				Collections.sort(sortedImageTitles);
-//				LOG.debug(sortedImageTitles);
-				
-//				for (int subImage = 0; subImage < subImageMap.size();subImage++) {
-//					rawImageBySerial.put(PageSerial.createFromZeroBasedPages(iPage, subImage),
-//							subImageMap.get(subImage));
-//				}
-				for (String title : sortedImageTitles) {
-					BufferedImage image = subImageMap.get(title);
-					rawImageByTitle.put(title, image);
-				}
+	        	parsePage(pageSerial);
         	}
         }
         return renderedImageBySerial;
+	}
+
+	private void parsePage(PageSerial pageSerial) {
+		System.out.print("["+pageSerial.getOneBasedPage()+"]");
+		this.processPage(iPage);
+		BufferedImage renderedImage = currentPageParser.getRenderedImage();
+		renderedImageBySerial.put(pageSerial, renderedImage);
+		SVGG svgPage = extractSVGG();
+		cleanUp(svgPage);
+		svgPageBySerial.put(pageSerial, svgPage);
+		// FIXME we should write the images to disk, not store them?
+		Map<String, BufferedImage> subImageMap = currentPageParser.getOrCreateRawImageMap();
+		List<String> sortedImageTitles = new ArrayList<>(subImageMap.keySet());
+		Collections.sort(sortedImageTitles);
+		for (String title : sortedImageTitles) {
+			BufferedImage image = subImageMap.get(title);
+			rawImageByTitle.put(title, image);
+		}
 	}
 	
 	/** reads PDF and extracts images and creates SVG.

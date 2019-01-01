@@ -210,12 +210,16 @@ public class PDFDocumentProcessor {
 			imagesDir.mkdirs();
 			if (documentParser != null) {
 				Map<String, BufferedImage> rawImageByPageSerial = documentParser.getRawImageMap1();
-				LOG.debug("Raw Image"+rawImageByPageSerial);
 				for (String title : rawImageByPageSerial.keySet()) {
 					BufferedImage image = rawImageByPageSerial.get(title);
-					System.err.print(" pdfimage ");
 					File outputFile = new File(imagesDir, title+"."+CTree.PNG);
-					ImageIO.write(image, CTree.PNG, outputFile);
+					// only write if necessary as this is very time consuming. Unlikely to be different 
+					if (outputFile.exists()) {
+						System.out.print(" skip");
+					} else {
+						ImageIO.write(image, CTree.PNG, outputFile);
+						System.out.print(" img ");
+					}
 				}
 			} else {
 				LOG.error("Null document parser");

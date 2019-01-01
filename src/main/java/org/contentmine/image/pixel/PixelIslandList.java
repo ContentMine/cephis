@@ -707,6 +707,14 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 			
 		}
 	}
+	
+	/** removes islands with box dimensions both less than int2.
+	 * 
+	 * @param int2
+	 */
+	public void removeIslandsWithBBoxesLessThan(Int2 int2) {
+		removeIslandsWithBBoxesLessThan(new Real2Range(new RealRange(0, int2.getX()), new RealRange(0, int2.getY())));
+	}
 
 	public void removeIslandsWithLessThanPixelCount(int minimumSize) {
 		for (int i = list.size() - 1; i >= 0; i--) {
@@ -778,4 +786,5 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		}
 		return islandList;
 	}
+
 }

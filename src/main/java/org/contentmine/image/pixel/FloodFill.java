@@ -21,6 +21,7 @@ public abstract class FloodFill {
 	protected PixelIslandList islandList;
 	protected int width;
 	protected int height;
+	private int maxIslands = 5000;
 
 	protected FloodFill(int width, int height) {
 		this.width = width;
@@ -29,14 +30,18 @@ public abstract class FloodFill {
 	
 	protected abstract boolean isBlack(int posX, int posY);
 	
-	public void fill() {
+	public boolean fill() {
 		painted = new boolean[height][width];
 
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				addNextUnpaintedBlack(i, j);
+				if (islandList.size() >= maxIslands ) {
+					return false;
+				}
 			}
 		}
+		return true;
 	}
 	
 	protected void addNextUnpaintedBlack(int i, int j) {
@@ -68,6 +73,7 @@ public abstract class FloodFill {
 		ensureIslandList();
 		islandList.add(island);
 		LOG.trace("islandList "+islandList.size());
+		return;
 	}
 
 	private void ensureIslandList() {
@@ -78,11 +84,14 @@ public abstract class FloodFill {
 	
 	public PixelIslandList getIslandList() {
 		ensureIslandList();
-		fill();
+		if (!fill()) {
+			LOG.error("TOO_MANY_ISLANDS");
+		}
 		for (PixelIsland island : islandList) {
 			island.setDiagonal(diagonal);
 			island.setIslandList(islandList); // each island knows who made it
 		}
+		LOG.trace("created islandList");
 		islandList.setDiagonal(diagonal);
 		return islandList;
 	}
@@ -106,6 +115,14 @@ public abstract class FloodFill {
 
 	public void setDiagonal(boolean b) {
 		this.diagonal = b;
+	}
+
+	public int getMaxIslands() {
+		return maxIslands;
+	}
+
+	public void setMaxIslands(int maxIslands) {
+		this.maxIslands = maxIslands;
 	}
 
 }
