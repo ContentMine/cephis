@@ -81,12 +81,12 @@ public class MultisetUtil<T extends Object> {
 		return entries;
 	}
 
-	public static <T> List<Entry<T>> createListSortedByValue(Multiset<T> lengthSet) {
-		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByValue(lengthSet));
+	public static <T> List<Entry<T>> createListSortedByValue(Multiset<T> set) {
+		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByValue(set));
 	}
 
-	public static <T> List<Entry<T>> createListSortedByCount(Multiset<T> int2RangeSet) {
-		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByCount(int2RangeSet));
+	public static <T> List<Entry<T>> createListSortedByCount(Multiset<T> set) {
+		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByCount(set));
 	}
 
 	public static Map<Integer, Integer> createIntegerFrequencyMap(Multiset<Integer> set) {

@@ -162,8 +162,9 @@ public class DiagramAnalyzer {
 
 	}
 
-	public void setImage(BufferedImage img) {
-		this.imageProcessor.setImage(img);
+	public DiagramAnalyzer setImage(BufferedImage img) {
+		ensureImageProcessor().setImage(img);
+		return this;
 	}
 
 	public void debug() {
@@ -357,7 +358,7 @@ public class DiagramAnalyzer {
 
 	public MainPixelProcessor ensurePixelProcessor() {
 		MainPixelProcessor pixelProcessor = getImageProcessor()
-				.ensurePixelProcessor();
+				.ensureMainPixelProcessor();
 		LOG.trace("pp " + pixelProcessor.hashCode() + " "
 				+ pixelProcessor.getSelectedIslandIndex());
 		return pixelProcessor;
@@ -408,12 +409,12 @@ public class DiagramAnalyzer {
 	}
 
 	public void setMaxIsland(int maxIsland) {
-		this.getPixelProcessor().setMaxIsland(maxIsland);
+		this.getMainPixelProcessor().setMaxIsland(maxIsland);
 	}
 
-	public MainPixelProcessor getPixelProcessor() {
+	public MainPixelProcessor getMainPixelProcessor() {
 		ensureImageProcessor();
-		return imageProcessor.ensurePixelProcessor();
+		return imageProcessor.ensureMainPixelProcessor();
 	}
 
 	public PixelIslandList getOrCreatePixelIslandList() {
@@ -1691,5 +1692,8 @@ public class DiagramAnalyzer {
 		return intRangeArray;
 	}
 
+	public BufferedImage getBinarizedImage() {
+		return imageProcessor == null ? null : imageProcessor.getBinarizedImage();
+	}
 
 }

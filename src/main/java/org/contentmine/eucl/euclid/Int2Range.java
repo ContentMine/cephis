@@ -16,7 +16,6 @@
 
 package org.contentmine.eucl.euclid;
 
-
 /**
  * 
  * 2-D int limits
@@ -256,5 +255,8 @@ public class Int2Range implements EuclidConstants {
      */
 	public boolean touches(Int2Range bbox) {
 		return this.xrange.touches(bbox.xrange) || this.yrange.touches(bbox.yrange);
+	}
+	public Int2 getLimits() {
+		return new Int2(xrange.getRange(), yrange.getRange());
 	}
 }
