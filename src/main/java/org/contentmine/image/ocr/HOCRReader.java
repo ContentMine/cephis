@@ -177,6 +177,9 @@ public class HOCRReader extends InputReader {
 	}
 	
 	public void readHOCR(InputStream is) throws IOException {
+		if (is == null) {
+			throw new IOException("null input stream");
+		}
 		String s = IOUtils.toString(is, "UTF-8");
 		readHOCR(HtmlElement.create(XMLUtil.stripDTDAndParse(s)));
 		applyUniversalSubstitutions();

@@ -1,7 +1,11 @@
 package org.contentmine.image.pixel;
 
+import java.io.File;
+import java.util.Stack;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.graphics.svg.SVGSVG;
 /** a ring of pixels around another ring or point.
  * 
  * @author pm286
@@ -58,6 +62,47 @@ public class PixelRing extends PixelList {
 			}
 		}
 		return newRing;
+	}
+
+	public IslandRingList getIslandRings() {
+		IslandRingList islandRingList = new IslandRingList();
+		PixelSet pixelSet = new PixelSet(this);
+		PixelIsland pixelIsland = PixelIsland.createSeparateIslandWithClonedPixels(this, true);
+		SVGSVG.wrapAndWriteAsSVG(pixelIsland.createSVG(), new File("target/pixels/island.svg"));
+		while (pixelSet.size() > 0) {
+			Pixel pixel = pixelSet.next();
+			PixelRing island = createRing(pixel, pixelIsland);
+			islandRingList.add(island);
+			pixelSet.removeAll(island);
+		}
+		return islandRingList;
+	}
+
+	/** extracted next ring from pixelIsland and removes from island
+	 * not yet tested
+	 * 
+	 * @param seedPixel
+	 * @param pixelIsland
+	 * @return
+	 */
+	private PixelRing createRing(Pixel seedPixel, PixelIsland pixelIsland) {
+		PixelSet usedPixelSet = new PixelSet();
+		PixelRing pixelRing = new PixelRing();
+		Stack<Pixel> stack = new Stack<Pixel>();
+		stack.add(seedPixel);
+		while (!stack.empty()) {
+			PixelSet pixelSet = new PixelSet(pixelIsland.pixelList);
+			Pixel pixel = stack.pop();
+			pixelRing.add(pixel);
+			usedPixelSet.add(pixel);
+			PixelList neighbourList = pixel.getOrCreateNeighboursIn(pixelIsland, pixelSet);
+			for (Pixel neighbour : neighbourList) {
+				if (!usedPixelSet.contains(neighbour)) {
+					stack.add(neighbour);
+				}
+			}
+		}
+		return pixelRing;
 	}
 
 }

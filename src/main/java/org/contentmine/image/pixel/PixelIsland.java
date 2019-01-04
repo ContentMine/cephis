@@ -94,6 +94,8 @@ public class PixelIsland implements Iterable<Pixel> {
 	// plotting stuff
 	private PixelPlotter pixelPlotter;
 	private PixelIslandAnnotation islandAnnotation;
+
+	private List<IslandRingList> islandRingListList;
 	
 	
 	
@@ -311,7 +313,8 @@ public class PixelIsland implements Iterable<Pixel> {
 	 * 
 	 * @param pixel
 	 */
-	public void remove(Pixel pixel) {
+	public boolean remove(Pixel pixel) {
+		boolean remove = false;
 		if (pixelList.remove(pixel)) {
 			//Leaves int2range, real2range and leftmostCoord dirty
 			int2range = null;
@@ -321,8 +324,9 @@ public class PixelIsland implements Iterable<Pixel> {
 			pixelByCoordMap.remove(coord);
 			pixel.removeFromNeighbourNeighbourList(this);
 			pixel.clearNeighbours();
-			
+			remove = true;
 		}
+		return remove;
 	}
 
 	/**
@@ -1402,7 +1406,59 @@ public class PixelIsland implements Iterable<Pixel> {
 		if (pixelList != null) pixelList.sortYX();
 	}
 
-
+	/** get list of all the ringLists in an island.
+	 * 
+	 * Each ringList is the rings at a given "contour" pixel level, starting at 0.
+	 * 
+	 * @return list of IslandRingLists 
+	 */
+	public List<IslandRingList> getOrCreateIslandRingListList() {
+		if (islandRingListList == null) {
+			islandRingListList = new ArrayList<>();
+			PixelRingList pixelRings = getOrCreateInternalPixelRings();
+			LOG.debug("rings "+pixelRings.size());
+			for (int i = 0; i < pixelRings.size(); i++) {
+				IslandRingList islandRingList = pixelRings.get(i).getIslandRings();
+				LOG.debug("ring "+i+" "+islandRingList.size());
+				islandRingListList.add(islandRingList);
+			}
+		}
+		return islandRingListList;
+	}
+	
+	/** get initial level at which number of rings in ringList is largest.
+	 * 
+	 * @return
+	 */
+	public int getLevelForMaximumRingCount() {
+		List<IslandRingList> ringListList = getOrCreateIslandRingListList();
+		int minsize = -1;
+		int levelSize = ringListList.size();
+		int maxLevel = levelSize - 1;
+		for (int level = 0; level < levelSize; level++) {
+			IslandRingList ringList = ringListList.get(level);
+			int size = ringList.size();
+			if (size > minsize) {
+				minsize = size;
+			} else if (size < minsize) {
+				// started to decline, take previous ringList
+				maxLevel = level - 1;
+				break;
+			}
+		}
+		// FIXME - need to manage single symbol islands 
+		if (maxLevel == levelSize) maxLevel--;
+		// backtrack to first time maximum is reached
+		int level = maxLevel;
+		for (; level >= 0; level--) {
+			IslandRingList ringList = ringListList.get(level);
+			int size = ringList.size();
+			if (size < minsize) {
+				return level + 1;
+			}
+		}
+		return 0;
+	}
 
 //	/** create rings of pixels starting at the outside.
 //	 * 

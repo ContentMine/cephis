@@ -779,6 +779,14 @@ public class PixelList implements Iterable<Pixel> {
 		}
 	}
 	
+	public void removeAllNotIn(PixelSet pixelSet) {
+		for (Pixel pixel : this) {
+			if (!pixelSet.contains(pixel)) {
+				this.remove(pixel);
+			}
+		}
+	}
+	
 	/** curvature is radians per pixel.
 	 * 
 	 * @return

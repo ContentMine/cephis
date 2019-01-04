@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -59,11 +60,35 @@ public class Pixel {
 		return island;
 	}
 
+	/** tis can create neighbours even if not in PixelIsland.
+	 * maybe bug
+	 * @param island
+	 * @return
+	 */
 	public PixelList getOrCreateNeighbours(PixelIsland island) {
 		island.ensurePopulatedMapAndRanges();
 		this.island = island;
 		getOrCreateNeighbourList(island);
 		return neighbourList;
+	}
+
+	/** find neighbours actually in set 
+	 * messy
+	 * creates a neighbour list and then eliminates pixels not in set.
+	 * 
+	 * @param island
+	 * @param pixelSet
+	 * @return
+	 */
+	public PixelList getOrCreateNeighboursIn(PixelIsland island, PixelSet pixelSet) {
+		PixelList pixelList = getOrCreateNeighbours(island);
+		for (int i = pixelList.size() - 1; i >= 0; i--) {
+			Pixel pixel = pixelList.get(i);
+			if (!pixelSet.contains(pixel)) {
+				boolean ok = pixelList.remove(pixel);
+			}
+		}
+		return pixelList;
 	}
 
 	private void getOrCreateNeighbourList(PixelIsland island) {
@@ -305,7 +330,7 @@ public class Pixel {
 		}
 		return pixelList;
 	}
-
+	
 	boolean isConnectedAny(PixelIsland island, int neighbourCount) {
 		PixelList neighbours = getOrCreateNeighbours(island);
 		boolean connected = (neighbours.size() != neighbourCount) ? false : true;

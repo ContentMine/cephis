@@ -35,8 +35,8 @@ public class HOCRTitle {
 	private final static Pattern IMAGE_NAME_PATTERN = Pattern.compile("\\s*image\\s+\"(.*)\"\\s*");
 	private final static Pattern PPAGENO_PATTERN = Pattern.compile("\\s*ppageno\\s+(\\d+)\\s*");
 	private final static Pattern TEXTANGLE_PATTERN = Pattern.compile("\\s*textangle\\s+(-?\\d*\\.?\\d+)\\s*");
-	private final static Pattern X_ASCENDERS_PATTERN = Pattern.compile("\\s*x_ascenders\\s+(\\d+\\.?\\d*)\\s*");
-	private final static Pattern X_DESCENDERS_PATTERN = Pattern.compile("\\s*x_descenders\\s+(\\d+\\.?\\d*)\\s*");
+	private final static Pattern X_ASCENDERS_PATTERN = Pattern.compile("\\s*x_ascenders\\s+(\\-?\\d+\\.?\\d*)\\s*");
+	private final static Pattern X_DESCENDERS_PATTERN = Pattern.compile("\\s*x_descenders\\s+(\\-?\\d+\\.?\\d*)\\s*");
 	private final static Pattern X_SIZE_PATTERN = Pattern.compile("\\s*x_size\\s+(\\d+\\.?\\d*)\\s*");
 	private final static Pattern X_WCONF_PATTERN = Pattern.compile("\\s*x_wconf\\s+(\\d+)\\s*");
 
