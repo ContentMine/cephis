@@ -3,21 +3,31 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
+    <!-- 
+       <boofcv-io.version>0.32</boofcv-io.version>
+       <boofcv-feature.version>0.31</boofcv-feature.version>
+       <boofcv-visualize.version>0.26</boofcv-visualize.version>
+       <boofcv-core.version>0.32</boofcv-core.version>
+       <boofcv-ip.version>0.32</boofcv-ip.version>
+       -->
+       
        <boofcv-io.version>0.17</boofcv-io.version>
        <boofcv-feature.version>0.17</boofcv-feature.version>
        <boofcv-visualize.version>0.17</boofcv-visualize.version>
+       <!--  
+       <boofcv-core.version>0.32</boofcv-core.version>
+       <boofcv-ip.version>0.32</boofcv-ip.version>
+-->       
        <commons-io.version>2.5</commons-io.version>
        <commons-lang3.version>3.0</commons-lang3.version>
        <commons-math.version>2.2</commons-math.version>
 	   <commons-csv.version>1.2</commons-csv.version>
-       <commons-csv.version>1.2</commons-csv.version>
        <com.google.code.gson.version>2.3.1</com.google.code.gson.version>
        <gson.version>2.8.2</gson.version>
        <guava.version>18.0</guava.version>
        <htmlunit.version>2.15</htmlunit.version>
+       <httpclient.version>4.3.2</httpclient.version>
        <imgscalr-lib.version>4.2</imgscalr-lib.version>
-       <java.source.version>1.8</java.source.version>
-       <java.target.version>1.8</java.target.version>
 	   <joda-time.version>1.6.2</joda-time.version>
        <json-path.version>2.0.0</json-path.version>
        <jsoup.version>1.9.2</jsoup.version>
@@ -38,9 +48,8 @@
        	   <!-- if this is uncommented the tests are all skipped
         <skipTests>true</skipTests>
         -->
-        <!-- 
+        <!--  skip ITs by default -->
         <skipITs>true</skipITs>
-        -->
        
     </properties>
 
@@ -68,27 +77,25 @@
 
     <build>
         <plugins>
-	              <!-- -->
+        <!-- -->
 	      <plugin>
 	        <groupId>org.apache.maven.plugins</groupId>
 	        <artifactId>maven-compiler-plugin</artifactId>
 	        <version>3.8.0</version>
 	        <configuration>
-	          <source>${java.source.version}</source>
-	          <target>${java.source.version}</target>
+	          <source>1.8</source>
+	          <target>1.8</target>
 	        </configuration>
 	      </plugin>
-	      
-<!-- http://maven.apache.org/surefire/maven-failsafe-plugin/usage.html -->    
+	     <!-- -->
+      <!-- http://maven.apache.org/surefire/maven-failsafe-plugin/usage.html -->    
 	      <plugin>
 	        <groupId>org.apache.maven.plugins</groupId>
 	        <artifactId>maven-failsafe-plugin</artifactId>
 	        <version>2.21.0</version>
-	        <!-- 
 	        <configuration>
 	          <skipITs>${skipITs}</skipITs>
 	        </configuration>
-	        -->
 	        <executions>
 	          <execution>
 	            <goals>
@@ -104,10 +111,6 @@
 				<version>1.8.1</version>
 				<configuration>
 					<programs>
-						<program>
-							<mainClass>org.xmlcml.cproject.PMan</mainClass>
-							<id>pman</id>
-						</program>
                          <program>
                             <mainClass>org.contentmine.cproject.files.CProject</mainClass>
                             <id>cproject</id>
@@ -194,6 +197,20 @@
 			<version>${commons-csv.version}</version>
 		</dependency>
 
+<!-- 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+-->
+
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.6</version>
+</dependency>
+
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
@@ -248,11 +265,13 @@
 			<artifactId>json-path</artifactId>
 			<version>${json-path.version}</version>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
 			<version>${commons-csv.version}</version>
 		</dependency>
+		-->
 		<!--
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
@@ -268,12 +287,13 @@
         </dependency>
         <dependency>
             <groupId>org.boofcv</groupId>
-            <artifactId>io</artifactId>
+            <artifactId>boofcv-io</artifactId>
             <version>${boofcv-io.version}</version>
         </dependency>
+        
         <dependency>
             <groupId>org.boofcv</groupId>
-            <artifactId>feature</artifactId>
+            <artifactId>boofcv-feature</artifactId>
             <version>${boofcv-feature.version}</version>
         </dependency>
         <dependency>
@@ -281,6 +301,15 @@
             <artifactId>visualize</artifactId>
             <version>${boofcv-visualize.version}</version>
         </dependency>
+        
+        <!-- 
+        <dependency>
+		  <groupId>org.boofcv</groupId>
+		  <artifactId>boofcv-core</artifactId>
+		  <version>${boofcv-core.version}</version>
+		</dependency>
+		
+		-->
         <dependency>
             <groupId>org.imgscalr</groupId>
             <artifactId>imgscalr-lib</artifactId>
