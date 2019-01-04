@@ -192,4 +192,13 @@ public class PixelRingList implements Iterable<PixelRing> {
 		return ring;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("rings: "+ringList.size()+"\n");
+		for (PixelRing ring : this) {
+			sb.append(" "+ring.size()+"\n");
+		}
+		return sb.toString();
+	}
 }

@@ -32,6 +32,7 @@ import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
 
+import boofcv.alg.enhance.EnhanceImageOps;
 import boofcv.alg.filter.binary.ThresholdImageOps;
 import boofcv.core.image.ConvertBufferedImage;
 import boofcv.gui.binary.VisualizeBinaryData;
@@ -853,5 +854,19 @@ public class ImageUtil {
 			}
 		}
 		return newImage;
+	}
+	
+	/** from boofcv
+	 * 
+	 * 
+	 */
+	public static BufferedImage sharpen(BufferedImage buffered) {
+		return null;
+//		GrayU8 gray = ConvertBufferedImage.convertFrom(buffered,(GrayU8)null);
+//		GrayU8 adjusted = gray.createSameShape();
+//		EnhanceImageOps.sharpen8(gray, adjusted);
+//		BufferedImage sharpenedImage = ConvertBufferedImage.convertTo(adjusted,null);
+//		return sharpenedImage;
+		
 	}
 }
