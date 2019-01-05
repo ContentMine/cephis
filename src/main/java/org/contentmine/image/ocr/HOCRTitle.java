@@ -8,13 +8,17 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
+import org.contentmine.eucl.euclid.Util;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
+import org.contentmine.graphics.svg.SVGText;
 
 import nu.xom.Attribute;
 
 public class HOCRTitle {
 	
+	private static final double TEXT_SIZE_ANNOT = 7.0;
 	private static final Logger LOG = Logger.getLogger(HOCRTitle.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -64,24 +68,27 @@ public class HOCRTitle {
 				bbox = createBBox(field);
 			} else if (field.startsWith(IMAGE)) {
 				imageName = createImageName(field);
+				LOG.debug("IMAGE: "+imageName);
 			} else if (field.startsWith(X_WCONF)) {
 				xwconf = createXWConf(field);
+//				LOG.debug("XWCONFtt: "+xwconf+" : "+title);
 			} else if (field.startsWith(PPAGENO)) {
 				ppageno = createPPageNo(field);
+				LOG.debug("PAGENO: "+ppageno);
 			} else if (field.startsWith(BASELINE)) {
 				baseline = createBaseline(field);
 			} else if (field.startsWith(TEXTANGLE)) {
-				textangle = createTextangle(field);
+				textangle = Util.format(createTextangle(field), 1);
 			} else if (field.startsWith(X_ASCENDERS)) {
-				xAscenders = createXAscenders(field);
+				xAscenders = Util.format(createXAscenders(field), 1);
 			} else if (field.startsWith(X_DESCENDERS)) {
-				xDescenders = createXDescenders(field);
+				xDescenders = Util.format(createXDescenders(field), 1);
 			} else if (field.startsWith(X_SIZE)) {
-				xSize = createXSize(field);
+				xSize = Util.format(createXSize(field), 1);
 			} else {
 				LOG.warn("********** unknown title field: "+field+ " ************");
 			}
-		}
+		}		
 	}
 
 	private Double createTextangle(String field) {
@@ -198,11 +205,31 @@ public class HOCRTitle {
 		return textangle;
 	}
 
+	public Double getAscender() {
+		return xAscenders;
+	}
+
+	public Double getDescender() {
+		return xDescenders;
+	}
+
+	public Double getSize() {
+		return xSize;
+	}
+
 	public Real2 getBaseline() {
 		return baseline;
 	}
 
+	public String getImageName() {
+		return imageName;
+	}
+
+	/** get confidence estimation */
 	public Integer getWConf() {
+		if (xwconf != null) {
+//			LOG.debug("XWCONF "+xwconf);
+		}
 		return xwconf;
 	}
 
@@ -215,6 +242,30 @@ public class HOCRTitle {
 		}
 		if (xwconf != null) {
 			g.addAttribute(new Attribute(X_WCONF, String.valueOf(xwconf)));
+		}
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("textangle="+textangle+"; ");
+		sb.append("ascender="+xAscenders+"; ");
+		sb.append("descender="+xDescenders+"; ");
+		sb.append("size="+xSize+"; ");
+		sb.append("imageName="+imageName+"; ");
+		sb.append("conf="+xwconf+"; ");
+		return sb.toString();
+	}
+
+	void appendChild(SVGElement svgElement, Real2Range bbox) {
+		Double size = getSize();
+		if (size != null) {
+			SVGText text = new SVGText(bbox.getLLURCorners()[0], ""+size);
+			text.setFontSize(TEXT_SIZE_ANNOT);
+			svgElement.appendChild(text);
 		}
 	}
 
