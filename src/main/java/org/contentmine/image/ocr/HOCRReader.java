@@ -8,7 +8,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +21,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.eucl.euclid.util.MultisetUtil;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.html.HtmlBody;
@@ -46,6 +49,11 @@ import org.contentmine.graphics.svg.text.SVGWordPage;
 import org.contentmine.graphics.svg.text.SVGWordPageList;
 import org.contentmine.graphics.svg.text.SVGWordPara;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multiset;
+
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Elements;
@@ -56,6 +64,7 @@ import nu.xom.Elements;
  *
  */
 public class HOCRReader extends InputReader {
+
 
 
 	public static final Logger LOG = Logger.getLogger(HOCRReader.class);
@@ -72,7 +81,8 @@ public class HOCRReader extends InputReader {
 	private static final String HELVETICA = "helvetica";
 	private static final String LOW_CONF_COL = "red";
 	private static final String UNEDITED_COL = "green";
-	private static final String LINE_COL = "yellow";
+//	private static final String LINE_COL = "yellow";
+	private static final String LINE_COL = "orange";
 	
 	private static final double DEFAULT_FONT_SIZE = 10.0;
 	
@@ -81,6 +91,7 @@ public class HOCRReader extends InputReader {
 	private static final String ITALIC = "italic";
 	private static final String BOLD = "bold";
 
+	private static final String OCR_BLOCK = "block";
 	private static final String OCR_CAREA = "ocr_carea";
 	private static final String OCR_LINE = "ocr_line";
 	private static final String OCR_PAGE = "ocr_page";
@@ -121,6 +132,15 @@ public class HOCRReader extends InputReader {
 	
 	private List<SVGWordLine> wordLineList;
 	private List<SVGPhrase> allPhraseList;
+
+//	private Multimap<String, String> titleValuesByKey;
+
+	private Multiset<Double> textAngleSet;
+	private Multiset<Double> ascenderSet;
+	private Multiset<Double> descenderSet;
+	private Multiset<Double> sizeSet;
+	private Multiset<String> imageNameSet;
+	private Multiset<Integer> confSet;
 
 	// ignore until we refactor
 //	private SubstitutionEditor substitutionManager;
@@ -181,11 +201,41 @@ public class HOCRReader extends InputReader {
 			throw new IOException("null input stream");
 		}
 		String s = IOUtils.toString(is, "UTF-8");
+		clearMaps();
 		readHOCR(HtmlElement.create(XMLUtil.stripDTDAndParse(s)));
 		applyUniversalSubstitutions();
 		processHTMLAndCreateSVG();
+		listMaps();
 	}
 	
+	private void listMaps() {
+		if (textAngleSet.size() > 0) {
+			LOG.debug("angles:    "+MultisetUtil.createListSortedByCount(textAngleSet));
+			LOG.debug("           "+MultisetUtil.createListSortedByValue(textAngleSet));
+		}
+		LOG.debug("ascenders: "+MultisetUtil.createListSortedByCount(ascenderSet));
+		LOG.debug("           "+MultisetUtil.createListSortedByValue(ascenderSet));
+		LOG.debug("descenders:"+MultisetUtil.createListSortedByCount(descenderSet));
+		LOG.debug("           "+MultisetUtil.createListSortedByValue(descenderSet));
+		LOG.debug("size:      "+MultisetUtil.createListSortedByCount(sizeSet));
+		LOG.debug("           "+MultisetUtil.createListSortedByValue(sizeSet));
+		if (imageNameSet.size() > 0) {
+			LOG.debug("imageName: "+imageNameSet);
+		}
+//		LOG.debug("confidence: "+confSet);
+		
+	}
+
+	private void clearMaps() {
+		textAngleSet = HashMultiset.create();
+		ascenderSet = HashMultiset.create();
+		descenderSet = HashMultiset.create();
+		sizeSet = HashMultiset.create();
+		imageNameSet = HashMultiset.create();
+		confSet = HashMultiset.create();
+	}
+
+	/** currently a NOOP */
 	private void applyUniversalSubstitutions() {
 		ensureUniversalSubstitutions();
 	}
@@ -196,7 +246,16 @@ public class HOCRReader extends InputReader {
 
 	public void readHOCR(HtmlElement hocrElement) {
 		this.hocrHtmlElement = hocrElement;
-		rawHtml = (hocrElement instanceof HtmlHtml) ? (HtmlHtml) hocrElement : null;
+		// hocr seems to be body now
+		rawHtml = (this.hocrHtmlElement instanceof HtmlHtml) ? (HtmlHtml) hocrHtmlElement : null;
+		rawBody = (this.hocrHtmlElement instanceof HtmlBody) ? (HtmlBody) hocrHtmlElement : null;
+		if (rawHtml != null) {
+			LOG.trace("read htmlHtml");
+		} else if (rawBody != null) {
+			LOG.trace("read htmlBody");
+		} else {
+			System.err.println("null HTML, probably error");
+		}
 	}
 	
 	public HtmlElement getHocrElement() {
@@ -242,7 +301,10 @@ public class HOCRReader extends InputReader {
 	}
 	
 	private void processBody() {
-		rawBody = rawHtml.getBody();
+ 		rawBody = rawBody == null ? (rawHtml == null ? null : rawHtml.getBody()) : rawBody;
+		if (rawBody != null) {
+			// FIXME ??
+		}
 	}
 
 	public HtmlHead getHead() {
@@ -253,9 +315,11 @@ public class HOCRReader extends InputReader {
 	}
 	
 	public String getTesseractVersion() {
-		for (HtmlMeta meta : metaList) {
-			if ("ocr-system".equals(meta.getName())) {
-				return meta.getContent();
+		if (metaList != null) {
+			for (HtmlMeta meta : metaList) {
+				if ("ocr-system".equals(meta.getName())) {
+					return meta.getContent();
+				}
 			}
 		}
 		return null;
@@ -284,7 +348,8 @@ public class HOCRReader extends InputReader {
 		svgSvg.setFontSize(DEFAULT_FONT_SIZE);
 		newBody= new HtmlBody();
 		String tVersion = getTesseractVersion();
-		svgSvg.addAttribute(new Attribute("tesseractVersion", tVersion));
+		if (tVersion != null) svgSvg.addAttribute(new Attribute("tesseractVersion", tVersion));
+//		LOG.debug("raw "+rawBody.toXML());
 		Elements childs = rawBody.getChildElements();
 		if (childs.size() > 0) {
 			SVGWordPageList wordPageList = new SVGWordPageList();
@@ -298,7 +363,7 @@ public class HOCRReader extends InputReader {
 						wordPageList.appendChild(page.svg);
 						newBody.appendChild(page.html); 
 					} else {
-						throw new RuntimeException("unknown div "+htmlDiv.toXML());
+						throw new RuntimeException("unknown div, expected page"+htmlDiv.toXML());
 					}
 				} else {
 					throw new RuntimeException("unknown element "+child.toXML());
@@ -318,7 +383,8 @@ public class HOCRReader extends InputReader {
 			Element child = childs.get(i);
 			if (child instanceof HtmlDiv) {
 				HtmlDiv htmlDiv = (HtmlDiv) child;
-				if (OCR_CAREA.equals(htmlDiv.getClassAttribute())) {
+				String classAttribute = htmlDiv.getClassAttribute();
+				if (OCR_CAREA.equals(classAttribute) || OCR_BLOCK.equals(classAttribute)) {
 					HtmlSVG block = this.createBlockFromTesseract(htmlDiv);
 					svgPage.appendChild(block.svg);
 					htmlPage.appendChild(block.html);
@@ -389,11 +455,15 @@ public class HOCRReader extends InputReader {
 		HtmlSpan htmlLineSpan = new HtmlSpan();
 		XMLUtil.copyAttributes(lineSpan, htmlLineSpan);
 		HtmlSVG htmlSVG = new HtmlSVG(htmlLineSpan, svgLine);
-		HOCRTitle hocrTitle = new HOCRTitle(lineSpan.getTitle());
+		String title = lineSpan.getTitle();
+		HOCRTitle hocrTitle = new HOCRTitle(title);
+		addTitle(hocrTitle);
+		
 		Real2Range bbox = hocrTitle.getBoundingBox();
 		if (bbox.getXRange().getRange() > MIN_WIDTH && bbox.getYRange().getRange() > MIN_WIDTH) {
 			boolean largeText = false;
 			hocrTitle.addAttributes(svgLine);
+			hocrTitle.appendChild(svgLine, bbox);
 			SVGShape rect = SVGRect.createFromReal2Range(bbox);
 			rect.setFill(LINE_COL);
 			rect.setOpacity(RECT_OPACITY);
@@ -414,6 +484,8 @@ public class HOCRReader extends InputReader {
 					String classAttribute = htmlSpan1.getClassAttribute();
 					if (OCRX_WORD.equals(classAttribute)) {
 						addWord(svgLine, htmlLineSpan, largeText, htmlSpan1);
+					} else if (classAttribute == null) {
+						// ? error
 					} else {
 						LOG.debug("omitted attribute: "+classAttribute);
 					}
@@ -421,6 +493,37 @@ public class HOCRReader extends InputReader {
 			}
 		}
 		return htmlSVG;
+	}
+
+	private void addTitle(HOCRTitle hocrTitle) {
+		/*
+	private Real2 baseline;
+	private Real2Range bbox;
+	private String imageName;
+	private Integer ppageno;
+	private Double textangle;
+	private Double xAscenders;
+	private Double xDescenders;
+	private Double xSize;
+	private Integer xwconf;
+	*/
+//		LOG.debug(hocrTitle.getTitle());
+		Double textangle = hocrTitle.getTextangle();
+		if (textangle != null) textAngleSet.add(textangle);
+		Double ascender = hocrTitle.getAscender();
+		if (ascender != null) ascenderSet.add(ascender);
+		Double descender = hocrTitle.getDescender();
+		if (descender != null) descenderSet.add(descender);
+		Double size = hocrTitle.getSize();
+		if (size != null) sizeSet.add(size);
+		String imageName = hocrTitle.getImageName();
+		if (imageName != null) imageNameSet.add(imageName);
+		Integer conf = hocrTitle.getWConf();
+		if (conf != null) {
+//			LOG.debug("ADD WC "+conf);
+			confSet.add(conf);
+		}
+		
 	}
 
 	private void addWord(SVGWordLine svgLine, HtmlSpan htmlLineSpan,
@@ -489,6 +592,7 @@ public class HOCRReader extends InputReader {
 		HtmlSpan htmlSpan = new HtmlSpan(); 
 		HtmlSVG htmlSVG = new HtmlSVG(htmlSpan, svgWord);
 		HOCRTitle hocrTitle = new HOCRTitle(htmlSpan0.getTitle());
+		addTitle(hocrTitle);
 		ensureSubstitutionManager();
 		Real2Range bbox = hocrTitle.getBoundingBox();
 		if (bbox.getXRange().getRange() > MIN_WIDTH && bbox.getYRange().getRange() > MIN_WIDTH) {
@@ -499,6 +603,7 @@ public class HOCRReader extends InputReader {
 				SVGShape rect = SVGRect.createFromReal2Range(bbox);
 				rect.setFill(UNEDITED_COL);
 				rect.setOpacity(RECT_OPACITY);
+				hocrTitle.appendChild(svgWord, bbox);
 				svgWord.appendChild(rect);
 				svgWord.setSVGClassName(WORD);
 				Elements childs = htmlSpan0.getChildElements();
@@ -575,22 +680,39 @@ public class HOCRReader extends InputReader {
 		}
 	}
 	
-	public List<HtmlSpan> getNonEmptyLines() {
-		HtmlBody body = getOrCreateHtmlBody();
-//		try {
-//			XMLUtil.debug(body, new FileOutputStream("target/hocr/newBody.html"), 1);
-//		} catch (IOException e) {
-//			e.printStackTrace();
+//	/** typical span title is
+//	 * title="bbox 1605 1459 1629 2387; textangle 90; x_size 26.150335; x_descenders 6.5375838; x_ascenders 6.5375838"
+//	 * @return
+//	 */
+//	public List<HtmlSpan> getNonEmptyLines() {
+//		HtmlBody body = getOrCreateHtmlBody();
+//		List<Element> lines = XMLUtil.getQueryElements(body, ".//*[local-name()='span' and @class='" + OCR_LINE + "']");
+//		List<HtmlSpan> htmlLines = new ArrayList<HtmlSpan>();
+//		for (Element line : lines) {
+//			if (line.getValue().trim().length() != 0) {
+//				HtmlSpan lineSpan = (HtmlSpan)line;
+//				htmlLines.add(lineSpan);
+//				processSpanTitle(lineSpan.getTitle());
+//			}
 //		}
-		List<Element> lines = XMLUtil.getQueryElements(body, ".//*[local-name()='span' and @class='ocr_line']");
-		List<HtmlSpan> htmlLines = new ArrayList<HtmlSpan>();
-		for (Element line : lines) {
-			if (line.getValue().trim().length() != 0) {
-				htmlLines.add((HtmlSpan)line);
-			}
-		}
-		return htmlLines;
-	}
+//		return htmlLines;
+//	}
+
+//	private void processSpanTitle(String title) {
+//		if (title != null) {
+//			String[] kvArray = title.trim().split("\\s*;\\s*");
+//			for (String kv : kvArray) {
+//				String[] kv1 = kv.split("\\s+");
+//				if (kv1.length != 2) {
+//					LOG.warn("bad kv list "+kv1);
+//				} else {
+//					String key = kv1[0];
+//					String value = kv1[1];
+//					titleValuesByKey.put(key, value);
+//				}
+//			}
+//		}
+//	}
 
 	public void createHTMLandSVG(File imageDir, String imageSuffix, BufferedImage image, String id) throws Exception {
 		File pngFile = new File(imageDir, id+"."+imageSuffix);

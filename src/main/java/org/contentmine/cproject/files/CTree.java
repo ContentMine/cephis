@@ -1800,7 +1800,11 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public File getOrCreateDerivedImagesDir() {
 		File derivedImagesDir = new File(getExistingPDFImagesDir(), "derived/");
-		derivedImagesDir.mkdirs();
+//		if (!derivedImagesDir.exists()) {
+//			derivedImagesDir = null;
+//		} else {
+//			derivedImagesDir.mkdirs();
+//		}
 		return derivedImagesDir;
 	}
 

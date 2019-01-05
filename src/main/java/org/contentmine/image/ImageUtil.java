@@ -6,6 +6,8 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
+import java.awt.image.ConvolveOp;
+import java.awt.image.Kernel;
 import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,6 +16,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntArray;
@@ -32,15 +35,60 @@ import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
 
-import boofcv.alg.enhance.EnhanceImageOps;
 import boofcv.alg.filter.binary.ThresholdImageOps;
 import boofcv.core.image.ConvertBufferedImage;
 import boofcv.gui.binary.VisualizeBinaryData;
 import boofcv.struct.image.ImageUInt8;
 
 public class ImageUtil {
-	private final static Logger LOG = Logger.getLogger(ImageUtil.class);
+	private static final Logger LOG = Logger.getLogger(ImageUtil.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
 
+	/** rotates round vertical axis
+	 * rotations are ANTICLOCKWISE DEGREES
+	 * @author pm286
+	 *
+	 */
+	public enum Rotation {
+		ROT0(0, null),
+		ROT90(90, Scalr.Rotation.CW_90),
+		ROT180(180, Scalr.Rotation.CW_180),
+		ROT270(270, Scalr.Rotation.CW_270),
+		;
+		private int degrees;
+		private Scalr.Rotation scalrRotation;
+
+		private Rotation(int degrees, Scalr.Rotation scalrRot) {
+			this.degrees = degrees;
+			this.scalrRotation = scalrRot;
+		}
+		/**
+		 * 
+		 * @param angle
+		 * @return null if not 0/90/180/270/360
+		 */
+		public static Rotation getRotation(int angle) {
+			if (angle % 360 == 90) {
+				return ROT90;
+			}
+			if (angle % 360 == 180) {
+				return ROT180;
+			}
+			if (angle% 360 == 270) {
+				return ROT270;
+			}
+			if (angle %360 == 0 ) {
+				return ROT0;
+			}
+			return null;
+		}
+		public Scalr.Rotation getScalrRotation() {
+			return scalrRotation;
+		}
+	}
+	
 	public static final IntArray SMEAR_ARRAY = new IntArray(new int[]{1,3,6,10,20,10,6,3,1});
 	public static final IntArray DOUBLE_ARRAY = new IntArray(new int[]{1,2,1});
 	public static final IntArray IDENT_ARRAY = new IntArray(new int[]{1});
@@ -828,12 +876,13 @@ public class ImageUtil {
 	    }
 	};
 
-	/** creates a larger versio of the imgae.
+	/** creates a larger version of the image.
 	 * at present each pixel is replaced in a new image by 2*2 identical pixels. 
 	 * This might be expanded to have some interpolation
 	 * @param image
 	 * @return larger image
 	 */
+	@Deprecated //"Imgscalr allows interpolation"
 	public static BufferedImage scaleImage(BufferedImage image, int scalex, int scaley) {
 		if (image == null) return null;
 		int width = image.getWidth();
@@ -868,5 +917,58 @@ public class ImageUtil {
 //		BufferedImage sharpenedImage = ConvertBufferedImage.convertTo(adjusted,null);
 //		return sharpenedImage;
 		
+	}
+
+	/** from ImgScalr
+	 * 
+	 * 
+	 */
+	public static BufferedImage laplacianSharpen(BufferedImage image) {
+		Kernel kernel = new Kernel(3, 3, new float[]{
+			-1.0f, -1.0f, -1.0f,
+			-1.0f,  8.0f, -1.0f,
+			-1.0f, -1.0f, -1.0f,
+			});
+		ConvolveOp laplacian = new ConvolveOp(kernel);
+		image = Scalr.apply(image, laplacian);
+		return image;
+	}
+
+	public static BufferedImage scaleImage(Double scalefactor, BufferedImage image) {
+		if (image != null) {
+			int height = (int) (image.getHeight() * scalefactor);
+			int width = (int) (image.getWidth() * scalefactor);
+			image = scaleImage(width , height, image);
+		}
+		return image;
+	}
+
+	/** rotate an image
+	 * 
+	 * @param image
+	 * @param rotation (if 0, returns image unchanged)
+	 * @return
+	 */
+	public static BufferedImage getRotatedImage(BufferedImage image, int degrees) {
+		Rotation rotation = Rotation.getRotation(degrees);
+		return getRotatedImage(image, rotation);
+	}
+	
+	/** rotate an image
+	 * 
+	 * @param image
+	 * @param rotation (if 0, returns image unchanged)
+	 * @return
+	 */
+	public static BufferedImage getRotatedImage(BufferedImage image, Rotation rotation) {
+		BufferedImage newImage = null;
+		if (image == null) {
+		} else if (rotation == null || Rotation.ROT0.equals(rotation)) {
+			newImage = image;
+		} else {
+			Scalr.Rotation scalrRotation = rotation.getScalrRotation();
+			newImage = Scalr.rotate(image, scalrRotation);
+		}
+		return newImage;
 	}
 }
