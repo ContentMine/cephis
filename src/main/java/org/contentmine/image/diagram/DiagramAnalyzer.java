@@ -1,6 +1,7 @@
 package org.contentmine.image.diagram;
 
 import java.awt.image.BufferedImage;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;

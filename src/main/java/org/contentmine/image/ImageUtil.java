@@ -36,9 +36,8 @@ import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
 
 import boofcv.alg.filter.binary.ThresholdImageOps;
-import boofcv.core.image.ConvertBufferedImage;
-import boofcv.gui.binary.VisualizeBinaryData;
-import boofcv.struct.image.ImageUInt8;
+import boofcv.io.image.ConvertBufferedImage;
+import boofcv.struct.image.GrayU8;
 
 public class ImageUtil {
 	private static final Logger LOG = Logger.getLogger(ImageUtil.class);
@@ -121,12 +120,23 @@ public class ImageUtil {
 		return image;
 	}
 
+	/** thresholds an image
+	 * 
+	 * 
+	 * @param image
+	 * @param threshold
+	 * @return
+	 */
 	
+	/* WAS
+	 * 
+	 */
 	public static BufferedImage boofCVBinarization(BufferedImage image, int threshold) {
-		ImageUInt8 input = ConvertBufferedImage.convertFrom(image,(ImageUInt8)null);
-		ImageUInt8 binary = new ImageUInt8(input.getWidth(), input.getHeight());
+	
+		GrayU8 input = ConvertBufferedImage.convertFrom(image,(GrayU8)null);
+		GrayU8 binary = new GrayU8(input.getWidth(), input.getHeight());
 		ThresholdImageOps.threshold(input, binary, threshold, false);
-		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary,null);
+		BufferedImage outputImage = ConvertBufferedImage.extractBuffered(binary);
 		return outputImage;
 	}
 
