@@ -3,15 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-		<!-- current old boofcv -->
-		       <boofcv-io.version>0.17</boofcv-io.version>
-		       <boofcv-feature.version>0.17</boofcv-feature.version>
-		       <boofcv-visualize.version>0.17</boofcv-visualize.version>
+<!-- current old boofcv -->
+       <boofcv-io.version>0.17</boofcv-io.version>
+       <boofcv-feature.version>0.17</boofcv-feature.version>
+       <boofcv-visualize.version>0.17</boofcv-visualize.version>
 		
 <!-- will change to boofcv 0.32 -->
-			   <!--
+	   <!--
        <boofcv-core.version>0.32</boofcv-core.version>
-				   -->
+	   -->
        <commons-io.version>2.5</commons-io.version>
        <commons-lang3.version>3.0</commons-lang3.version>
        <commons-math.version>2.2</commons-math.version>
