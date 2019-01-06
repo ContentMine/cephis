@@ -5,40 +5,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
-import org.contentmine.eucl.euclid.Int2;
-import org.contentmine.eucl.euclid.Int2Range;
-import org.contentmine.eucl.euclid.Real2;
-import org.contentmine.eucl.euclid.Real2Array;
-import org.contentmine.eucl.xml.XMLUtil;
-import org.contentmine.graphics.svg.SVGG;
-import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ImageAnalysisFixtures;
 import org.contentmine.image.ImageProcessor;
-import org.contentmine.image.OutlineTester;
-import org.contentmine.image.diagram.DiagramAnalyzer;
-import org.contentmine.image.pixel.PixelEdge;
-import org.contentmine.image.pixel.PixelEdgeList;
-import org.contentmine.image.pixel.PixelGraph;
-import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
-import org.contentmine.image.pixel.PixelList;
-import org.contentmine.image.pixel.PixelListFloodFill;
-import org.contentmine.image.pixel.PixelNodeList;
-import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
-import org.contentmine.image.pixel.PixelSegmentList;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
-import boofcv.core.image.ConvertBufferedImage;
-import boofcv.gui.binary.VisualizeBinaryData;
 import boofcv.io.image.UtilImageIO;
-import boofcv.struct.image.ImageUInt8;
 
 public class PlotTestIT {
 

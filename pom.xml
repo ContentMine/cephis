@@ -271,6 +271,7 @@
             <artifactId>pdfbox</artifactId>
             <version>${pdfbox2.version}</version>
         </dependency>
+        <!-- 
         <dependency>
             <groupId>org.boofcv</groupId>
             <artifactId>io</artifactId>
@@ -285,6 +286,13 @@
             <groupId>org.boofcv</groupId>
             <artifactId>visualize</artifactId>
             <version>${boofcv-visualize.version}</version>
+        </dependency>
+        -->
+        <!--  move to v 0.32 -->
+        <dependency>
+            <groupId>org.boofcv</groupId>
+            <artifactId>boofcv-core</artifactId>
+            <version>${boofcv-core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.imgscalr</groupId>
