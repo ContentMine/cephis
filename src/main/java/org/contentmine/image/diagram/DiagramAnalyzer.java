@@ -1,7 +1,6 @@
 package org.contentmine.image.diagram;
 
 import java.awt.image.BufferedImage;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.math.stat.descriptive.moment.GeometricMean;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Angle.Units;
@@ -56,6 +54,7 @@ import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
 import org.contentmine.image.pixel.PixelSegment;
 import org.contentmine.image.pixel.PixelSegmentList;
+import org.contentmine.image.processing.PrincipalComponentAnalysis;
 import org.contentmine.image.processing.Thinning;
 import org.contentmine.image.processing.ZhangSuenThinning;
 
