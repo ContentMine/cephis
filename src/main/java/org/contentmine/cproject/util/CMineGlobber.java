@@ -336,7 +336,10 @@ public class CMineGlobber {
 	 * @return sorted list 
 	 */
 	public static List<File> listSortedChildFiles(File dir, String suffix) {
-		List<File> fileList = new ArrayList<File>(FileUtils.listFiles(dir, new String[] {suffix}, false));
+		List<File> fileList = new ArrayList<File>();
+		if (dir != null) {
+			fileList = new ArrayList<File>(FileUtils.listFiles(dir, new String[] {suffix}, false));
+		}
 		Collections.sort(fileList);
 		return fileList;
 	}

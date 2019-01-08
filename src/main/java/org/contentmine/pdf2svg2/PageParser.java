@@ -311,6 +311,14 @@ public class PageParser extends PageDrawer    {
 	}
 
 	private void createAndAddEmptyCurrentSVGText() {
+		/* from an email
+		 * I have tried the DrawPrintTextLocations.java
+> example on 3 PDFs, and I see that the best way to get the display font 
+> size for letters in any PDF is by using “text.getXScale()”. Am I right? ... Yes
+
+PMR have not yet looked into this.
+		 */
+		
 		drawRHMargin();
 		currentSVGText = new SVGText();
 		currentSVGText.setFontFamily(textParameters.getFontFamily());
@@ -320,8 +328,10 @@ public class PageParser extends PageDrawer    {
 		if (!currentSVGText.isBold()) {
 			addBoldFromFontWeight();
 		}
+		
 		Real2 scales = textParameters.getScales().format(3);
 		double yScale = scales.getY();
+		
 		currentSVGText.setFontSize(yScale);
 		RealArray xArray = new RealArray();
 		currentSVGText.setX(xArray);
