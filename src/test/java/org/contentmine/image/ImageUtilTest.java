@@ -100,7 +100,7 @@ public class ImageUtilTest {
 	}
 	
 	@Test
-	public void testScaleImage() throws IOException {
+	public void testScaleImagePMR() throws IOException {
 		File imageFile = new File(ImageAnalysisFixtures.TEST_DIAGRAM_PLOT_DIR, "plos/journal.pone.0094172/g002-2/figure.png");
 		Assert.assertEquals("size",  1460543, FileUtils.sizeOf(imageFile));
 		Assert.assertTrue("" + imageFile + " exists", imageFile.exists());
@@ -117,5 +117,6 @@ public class ImageUtilTest {
 		BufferedImage newImage1 = ImageUtil.readImage(outputFile);
 		Assert.assertEquals("width",  5952, newImage1.getWidth());
 	}
+	
 
 }

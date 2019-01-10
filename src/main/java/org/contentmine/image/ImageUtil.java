@@ -143,6 +143,14 @@ public class ImageUtil {
 		public String toString() {
 			return method;
 		}
+		public static SharpenMethod getMethod(String methodName) {
+			for (SharpenMethod sharpenMethod : values()) {
+				if (sharpenMethod.method.equals(methodName)) {
+					return sharpenMethod;
+				}
+			}
+			throw new IllegalArgumentException("unknown method: "+methodName);
+		}
 	}
 
 	
@@ -498,7 +506,7 @@ public class ImageUtil {
 	 * @param genImage
 	 * @return
 	 */
-	public static BufferedImage scaleImage(int width, int height,
+	public static BufferedImage scaleImageScalr(int width, int height,
 			BufferedImage genImage) {
 		BufferedImage scaledGenImage = Scalr.resize(genImage, Method.ULTRA_QUALITY, Mode.FIT_EXACT, width,
 		        height);
@@ -1044,11 +1052,19 @@ public class ImageUtil {
 		return image;
 	}
 
-	public static BufferedImage scaleImage(Double scalefactor, BufferedImage image) {
+	
+	// ============================= Scalr ======================
+	/** scale image with ImgScalr
+	 * 
+	 * @param scalefactor
+	 * @param image
+	 * @return
+	 */
+	public static BufferedImage scaleImageScalr(Double scalefactor, BufferedImage image) {
 		if (image != null) {
 			int height = (int) (image.getHeight() * scalefactor);
 			int width = (int) (image.getWidth() * scalefactor);
-			image = scaleImage(width , height, image);
+			image = scaleImageScalr(width , height, image);
 		}
 		return image;
 	}
@@ -1059,9 +1075,9 @@ public class ImageUtil {
 	 * @param rotation (if 0, returns image unchanged)
 	 * @return
 	 */
-	public static BufferedImage getRotatedImage(BufferedImage image, int degrees) {
+	public static BufferedImage getRotatedImageScalr(BufferedImage image, int degrees) {
 		Rotation rotation = Rotation.getRotation(degrees);
-		return getRotatedImage(image, rotation);
+		return getRotatedImageScalr(image, rotation);
 	}
 	
 	/** rotate an image
@@ -1071,7 +1087,7 @@ public class ImageUtil {
 	 * @param rotation (if 0, returns image unchanged)
 	 * @return
 	 */
-	public static BufferedImage getRotatedImage(BufferedImage image, Rotation rotation) {
+	public static BufferedImage getRotatedImageScalr(BufferedImage image, Rotation rotation) {
 		BufferedImage newImage = null;
 		if (image == null) {
 		} else if (rotation == null || Rotation.ROT0.equals(rotation)) {
@@ -1083,6 +1099,9 @@ public class ImageUtil {
 		return newImage;
 	}
 	
+	// ================= Boofcv ==================
+	
+	// this needs editing
 	public void rawBoofcv(BufferedImage image) {
 	// raw Boofcv code
 
@@ -1127,4 +1146,58 @@ public class ImageUtil {
 		ShowImages.showWindow(panel,"Binary Operations",true);
 	}
 
+	public static BufferedImage sharpenBoofcv(BufferedImage bufferedImage, SharpenMethod sharpen) {
+		GrayU8 gray = ConvertBufferedImage.convertFrom(bufferedImage,(GrayU8)null);
+		GrayU8 adjusted = gray.createSameShape();
+		
+		BufferedImage result = null;
+		switch (sharpen) {
+			case SHARPEN4: {
+				EnhanceImageOps.sharpen4(gray, adjusted);
+				result = ConvertBufferedImage.convertTo(adjusted,null);
+				break;
+			}
+			case SHARPEN8: {
+				EnhanceImageOps.sharpen8(gray, adjusted);
+				result = ConvertBufferedImage.convertTo(adjusted,null);
+				break;
+			}
+			default: {
+				throw new IllegalArgumentException("bad or unimplemented method for Boofcv: "+sharpen);
+			}
+		}
+		return result;
+	}
+	
+	/** computes a threshold using Otsu's method
+	 * 
+	 * @param image to threshold. should be grayscale? not overwritten
+	 * @param erodeDilate if true does an erode-dilate cycle (removes protruding bits)
+	 * @return new image
+	 */
+	public static BufferedImage thresholdBoofcv(BufferedImage image, boolean erodeDilate) {
+
+		// convert into a usable format
+		GrayF32 input = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+		GrayU8 binary = new GrayU8(input.width,input.height);
+	
+		// Select a global threshold using Otsu's method.
+		double threshold = GThresholdImageOps.computeOtsu(input, 0, 255);
+	
+		// Apply the threshold to create a binary image
+		ThresholdImageOps.threshold(input,binary,(float)threshold,true);
+	
+		// remove small blobs through erosion and dilation
+		// The null in the input indicates that it should internally declare the work image it needs
+		// this is less efficient, but easier to code.
+		if (erodeDilate) {
+			GrayU8 filtered = BinaryImageOps.erode8(binary, 1, null);
+			filtered = BinaryImageOps.dilate8(filtered, 1, null);
+			binary = filtered;
+		}
+		
+		BufferedImage resultImage = ConvertBufferedImage.convertTo(binary, null);
+		return resultImage;
+	}
+	
 }
