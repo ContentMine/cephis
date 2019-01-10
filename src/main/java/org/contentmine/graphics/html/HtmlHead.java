@@ -77,20 +77,22 @@ public class HtmlHead extends HtmlElement {
 		this.appendChild(title);
 	}
 
-	public void addCssStyle(String string) {
+	public HtmlStyle addCssStyle(String string) {
 		HtmlStyle style = new HtmlStyle();
 		this.appendChild(style);
 		style.setCssTypeDefault();
 		style.addCss(string);
+		return style;
 	}
 
-	public void addJavascriptLink(String src) {
+	public HtmlScript addJavascriptLink(String src) {
 		HtmlScript script = new HtmlScript();
 		script.setSrc(src);
 		script.setCharset(UTF_8);
 		script.setType(TEXT_JAVASCRIPT);
 		script.appendChild(" "); // bug in Chrome which doesnt like <script .../>
 		this.appendChild(script);
+		return script;
 	}
 
 	public void addScript(String content) {
