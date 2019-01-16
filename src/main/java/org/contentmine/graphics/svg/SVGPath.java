@@ -22,6 +22,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.PathIterator;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -75,6 +76,7 @@ public class SVGPath extends SVGShape {
 	private static final String Q = "Q";
 	private static final String L = "L";
 	private static final String M = "M";
+	public final static String MLQCZ = "MLQCZ"; // order of segTypes
 	private static final String BLUE = "blue";
 	public static final String MCCCC = "MCCCC";
 	public static final String MCCCCZ = "MCCCCZ";
@@ -643,32 +645,106 @@ public class SVGPath extends SVGShape {
 
 
 	public static String constructDString(GeneralPath generalPath) {
+		// should create a new Iterator
 		PathIterator pathIterator = generalPath.getPathIterator(new AffineTransform());
 		return getPathAsDString(pathIterator);
 	}
 
 	public static String getPathAsDString(PathIterator pathIterator) {
-		StringBuilder dd = new StringBuilder();
+		// if the iterator is constructed with isDone() = true something has gone wrong. 
+		// This kludge allows us to navigate to the first Z and hope
+		boolean kludgeIterate = pathIterator.isDone();
+		if (kludgeIterate) {System.err.print("!K");}
+		if (kludgeIterate) {
+			return createKludgedDString(pathIterator);
+		} else {
+			return createDString(pathIterator);
+		}
+	}
+
+	private static String createDString(PathIterator pathIterator) {
 		double[] coords = new double[6];
+		StringBuilder dd = new StringBuilder();
 		while (!pathIterator.isDone()) {
 			int segType = pathIterator.currentSegment(coords);
 			coords = normalizeSmallCoordsToZero(coords);
-			if (PathIterator.SEG_MOVETO == segType) {
+			if (PathIterator.SEG_MOVETO == segType) {        // 0
 				dd.append(SP+M+SP+coords[0]+SP+coords[1]);
-			} else if (PathIterator.SEG_LINETO == segType) {
+			} else if (PathIterator.SEG_LINETO == segType) { // 1
 				dd.append(SP+L+SP+coords[0]+SP+coords[1]);
-			} else if (PathIterator.SEG_QUADTO == segType) {
+			} else if (PathIterator.SEG_QUADTO == segType) { // 2
 				dd.append(SP+Q+SP+coords[0]+SP+coords[1]+SP+coords[2]+SP+coords[3]);
-			} else if (PathIterator.SEG_CUBICTO == segType) {
+			} else if (PathIterator.SEG_CUBICTO == segType) { // 3
 				dd.append(SP+C+SP+coords[0]+SP+coords[1]+SP+coords[2]+SP+coords[3]+SP+coords[4]+SP+coords[5]);
-			} else if (PathIterator.SEG_CLOSE == segType) {
+			} else if (PathIterator.SEG_CLOSE == segType) {  // 4
 				dd.append(SP+Z+SP);
 			} else {
+				LOG.debug("ST: "+segType);
 				throw new RuntimeException("UNKNOWN "+segType);
 			}
-			pathIterator.next();
+			try {
+				pathIterator.next();
+			} catch (ArrayIndexOutOfBoundsException aioobe) {
+				LOG.debug("AIOOBE in getPathAsDString()");
+				break;
+			}
 		}
 		return dd.toString();
+	}
+
+	private static String createKludgedDString(PathIterator pathIterator) {
+		double[] coords = new double[6];
+		StringBuilder dd = new StringBuilder();
+		while (true) {
+			int segType;			
+			// this is horrible but the only way of escaping from a zero-element iteration
+			try {
+				segType = pathIterator.currentSegment(coords);
+			} catch (ArrayIndexOutOfBoundsException aioobe) {
+				break;
+			}
+			coords = normalizeSmallCoordsToZero(coords);
+			if (PathIterator.SEG_MOVETO == segType) {        // 0
+				dd.append(SP+M+SP+coords[0]+SP+coords[1]);
+			} else if (PathIterator.SEG_LINETO == segType) { // 1
+				dd.append(SP+L+SP+coords[0]+SP+coords[1]);
+			} else if (PathIterator.SEG_QUADTO == segType) { // 2
+				dd.append(SP+Q+SP+coords[0]+SP+coords[1]+SP+coords[2]+SP+coords[3]);
+			} else if (PathIterator.SEG_CUBICTO == segType) { // 3
+				dd.append(SP+C+SP+coords[0]+SP+coords[1]+SP+coords[2]+SP+coords[3]+SP+coords[4]+SP+coords[5]);
+			} else if (PathIterator.SEG_CLOSE == segType) {  // 4
+				dd.append(SP+Z+SP);
+			} else {
+				LOG.debug("ST: "+segType);
+				throw new RuntimeException("UNKNOWN "+segType);
+			}
+			try {
+				pathIterator.next();
+			} catch (ArrayIndexOutOfBoundsException aioobe) {
+				break;
+			}
+		}
+		String dString = dd.toString().trim();
+		return stripTrailingMoves(dString);
+	}
+
+	private static String stripTrailingMoves(String d) {
+		// split and trim off trailing moves
+		List<String> dList = new ArrayList<String>(Arrays.asList(d.split("\\s+")));
+		int l = dList.size();
+		while (l >= 3) {
+			l -= 3;
+			if (!dList.get(l).equals(M)) {
+				l += 3;
+				break;
+			}
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < l; i++) {
+			sb.append(dList.get(i)+" ");
+		}
+		return sb.toString();
 	}
 
 	private static double[] normalizeSmallCoordsToZero(double[] coords) {
@@ -941,7 +1017,6 @@ public class SVGPath extends SVGShape {
 			primitiveList = PathPrimitiveList.createPrimitiveList(d);
 			String d1 = primitiveList.getDString();
 			this.setDString(d1);
-			LOG.trace(">path>"+this.toXML());
 		}
 	}
 
@@ -1022,9 +1097,57 @@ public class SVGPath extends SVGShape {
 		return newPathList;
 	}
 
+	/** remove paths with no primitives
+	 * some PDFs seems to contains paths with no primitives
+	 * and d=""
+	 * @param pathList unchanged
+	 * @return new list without emptypaths
+	 */
+	public static List<SVGPath> createPathsWithNoEmptyD(List<SVGPath> pathList) {
+		List<SVGPath> newPaths = new ArrayList<SVGPath>();
+		for (SVGPath path : pathList) {
+			if (!"".equals(path.getDString())) {
+				newPaths.add(path);
+			}
+		}
+		return newPaths;
+	}
+
+	/** remove paths with just a single "Move"
+	 * some PDFs seems to contains paths with just a move
+	 * @param pathList unchanged
+	 * @return new list without single moves
+	 */
+	public static List<SVGPath> createPathsWithNoNullMove(List<SVGPath> pathList) {
+		List<SVGPath> newPaths = new ArrayList<SVGPath>();
+		for (SVGPath path : pathList) {
+			PathPrimitiveList primitiveList = path.getOrCreatePathPrimitiveList();
+			if (primitiveList.size() != 1 || primitiveList.get(0) instanceof MovePrimitive) {
+				newPaths.add(path);
+			}
+		}
+		return newPaths;
+	}
+
+	/** remove paths without original"Move"
+	 * some PDFs seems to contains paths with CC etc.
+	 * @param pathList unchanged
+	 * @return new list without single moves
+	 */
+	public static List<SVGPath> createPathsWithNoMissingMove(List<SVGPath> pathList) {
+		List<SVGPath> newPaths = new ArrayList<SVGPath>();
+		for (SVGPath path : pathList) {
+			PathPrimitiveList primitiveList = path.getOrCreatePathPrimitiveList();
+			if (primitiveList.size() >0 && primitiveList.get(0) instanceof MovePrimitive) {
+				newPaths.add(path);
+			}
+		}
+		return newPaths;
+	}
+
 	/** paths outside y=0 are not part of the plot but confuse calculation of
 	 * bounding box 
-	 * @param pathList
+	 * @param new pathList
 	 * @return
 	 */
 	public static List<SVGPath> removePathsWithNegativeY(List<SVGPath> pathList) {

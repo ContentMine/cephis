@@ -432,7 +432,7 @@ public class ComponentCache extends AbstractCache {
 		for (int i = texts.size() - 1; i >= 0; i--) {
 			SVGText text = texts.get(i);
 			Real2 xy = text.getXY();
-			if (xy.getX() < 0.0 || xy.getY() < 0.0) {
+			if (xy != null && (xy.getX() < 0.0 || xy.getY() < 0.0)) {
 				texts.remove(i);
 				text.detach();
 			}
