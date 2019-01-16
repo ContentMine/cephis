@@ -431,6 +431,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private File abstractDir;
 	private File frontDir;
 	private PDFDocumentProcessor pdfDocumentProcessor;
+	private boolean forceMake = false;;
 
 	public CTree() {
 		super();
@@ -1704,7 +1705,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			return;
 		}
 		File svgDir = this.getExistingSVGDir();
-		if (svgDir != null && !CMFileUtil.shouldMake(svgDir, existingFulltextPDF)) {
+		if (svgDir != null && !CMFileUtil.shouldMake(forceMake, svgDir, existingFulltextPDF)) {
 //			DebugPrint.infoPrintln(debugLevel, "make is skipped: "+existingFulltextPDF);
 			System.out.print(" skipped ");
 			return;
@@ -1735,14 +1736,6 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		}
 	}
 
-//	public int getDeltaPages() {
-//		return deltaPages;
-//	}
-
-//	public void setDeltaPages(int deltaPages) {
-//		this.deltaPages = deltaPages;
-//	}
-
 	public void tidyImages() {
 		ImageManager imageManager = new ImageManager(this);
 		imageManager.tidyImages();
@@ -1758,8 +1751,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		documentProcessor.setCTree(this);
 		documentProcessor.setMinimumImageBox(100, 100);
 		File existingFulltextPDF = getExistingFulltextPDF();
-		if (CMFileUtil.shouldMake(documentProcessor.getOutputSVGDirectory(getDirectory()), existingFulltextPDF) ||
-		    CMFileUtil.shouldMake(documentProcessor.getOutputImagesDirectory(getDirectory()), existingFulltextPDF)) { 
+		if (CMFileUtil.shouldMake(forceMake, documentProcessor.getOutputSVGDirectory(getDirectory()), existingFulltextPDF) ||
+		    CMFileUtil.shouldMake(forceMake, documentProcessor.getOutputImagesDirectory(getDirectory()), existingFulltextPDF)) { 
 			documentProcessor.readAndProcess(existingFulltextPDF);
 			documentProcessor.writeSVGPages();
 			documentProcessor.writePDFImages();
@@ -1800,11 +1793,6 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public File getOrCreateDerivedImagesDir() {
 		File derivedImagesDir = new File(getExistingPDFImagesDir(), "derived/");
-//		if (!derivedImagesDir.exists()) {
-//			derivedImagesDir = null;
-//		} else {
-//			derivedImagesDir.mkdirs();
-//		}
 		return derivedImagesDir;
 	}
 
@@ -1813,8 +1801,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		SVGDocumentProcessor svgDocumentProcessor = new SVGDocumentProcessor();
 		svgDocumentProcessor.readSVGFilesIntoSortedPageList(svgFiles);
 		File htmlFile = new File(getDirectory(), CTree.SCHOLARLY_HTML);
-//		DebugPrint.debugPrint(Level.DEBUG, ">schol>"+htmlFile);
-		if (CMFileUtil.shouldMake(htmlFile, getExistingSVGDir())) {
+		if (CMFileUtil.shouldMake(forceMake, htmlFile, getExistingSVGDir())) {
 			LOG.debug("converting "+htmlFile);
 			HtmlHtml html = svgDocumentProcessor.readAndConvertToHtml(svgFiles);
 			try {
@@ -1936,6 +1923,14 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			pdfDocumentProcessor = new PDFDocumentProcessor();
 		}
 		return pdfDocumentProcessor;
+	}
+
+	public boolean isForceMake() {
+		return forceMake;
+	}
+
+	public void setForceMake(boolean forceMake) {
+		this.forceMake = forceMake;
 	}
 
 

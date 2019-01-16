@@ -84,6 +84,7 @@ public class DocumentParser extends PDFRenderer {
 		} catch (IOException e) {
 			LOG.error("fails to parse page " + e);
 		} catch (IndexOutOfBoundsException ioobe) {
+			ioobe.printStackTrace();
 			LOG.error("BUG! "+ioobe);
 		}
 	}

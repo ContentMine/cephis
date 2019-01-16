@@ -62,6 +62,7 @@ import org.contentmine.graphics.svg.path.CubicPrimitive;
 import org.contentmine.graphics.svg.path.LinePrimitive;
 import org.contentmine.graphics.svg.path.MovePrimitive;
 import org.contentmine.graphics.svg.path.PathPrimitiveList;
+import org.eclipse.jetty.util.log.Log;
 
 import nu.xom.Attribute;
 
@@ -379,9 +380,8 @@ PMR have not yet looked into this.
      */
     @Override
     public void fillPath(int windingRule) throws IOException {
-//    	System.out.println(" PATH ");
-    	
-    	super.fillPath(windingRule);
+    	// NEVER call this here - it leaves iterators unset (I think this is a bug)
+//    	super.fillPath(windingRule);
     	GeneralPath generalPath = getLinePath();
 		currentSvgPath = new SVGPath(generalPath);
 		addCurrentPathAttributes(currentSvgPath);
