@@ -1113,6 +1113,7 @@ public class DefaultArgProcessor {
 			try {
 				methodName = option.getMethodName(methodNameType);
 				if (methodName != null) {
+					LOG.debug("running method: "+methodName);
 					instantiateAndRunMethod(option, methodName);
 				}
 			} catch (IllegalArgumentException ee) {
@@ -1392,6 +1393,10 @@ public class DefaultArgProcessor {
 	public CTree getCTree() {
 		return currentCTree != null ? currentCTree : 
 			(cTreeList != null && cTreeList.size() == 1) ? cTreeList.get(0) : null;
+	}
+	
+	public void setCTree(CTree cTree) {
+		this.currentCTree = cTree;
 	}
 	
 	public CProject getCProject() {

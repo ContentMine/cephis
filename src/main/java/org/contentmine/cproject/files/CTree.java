@@ -1933,5 +1933,9 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		this.forceMake = forceMake;
 	}
 
+	public File getOrCreateScholarlyHtmlFile() {
+		return getDirectory() == null ? null : new File(getDirectory(), CTree.SCHOLARLY_HTML);
+	}
+
 
 }
