@@ -139,6 +139,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 
 
+	private static final String IMAGEDOT = "image.";
+
 	enum TableFormat {
 		ANNOT_PNG("table.annot.png"),
 		ANNOT_SVG("table.annot.svg"),
@@ -1935,6 +1937,18 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public File getOrCreateScholarlyHtmlFile() {
 		return getDirectory() == null ? null : new File(getDirectory(), CTree.SCHOLARLY_HTML);
+	}
+
+	public List<File> getPDFImagesImageDirectories() {
+		List<File> imageDirectories = new ArrayList<File>();
+		List<File> subDirectories = CMineGlobber.listSortedChildDirectories(new File(directory, PDF_IMAGES_DIR));
+		for (File subDir : subDirectories) {
+			String name = subDir.getName();
+			if (name.startsWith(IMAGEDOT)) {
+				imageDirectories.add(subDir);
+			}
+		}
+		return imageDirectories;
 	}
 
 

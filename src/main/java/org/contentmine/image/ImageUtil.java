@@ -19,6 +19,7 @@ import javax.imageio.ImageIO;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
@@ -210,11 +211,14 @@ public class ImageUtil {
 	NOT YET TESTED
 	 */
 	public static BufferedImage boofCVBinarization(BufferedImage image, int threshold) {
-	
 		GrayU8 input = ConvertBufferedImage.convertFrom(image,(GrayU8)null);
 		GrayU8 binary = new GrayU8(input.getWidth(), input.getHeight());
-		ThresholdImageOps.threshold(input, binary, threshold, false);
-		BufferedImage outputImage = ConvertBufferedImage.extractBuffered(binary);
+		boolean down = false;
+		ThresholdImageOps.threshold(input, binary, threshold, down);
+		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary, false, null);
+		// this didn't work - returned black
+//		BufferedImage outputImage = binary == null ? null : new BufferedImage(input.width, input.height, image.getType());
+//		/*outputImage = */ConvertBufferedImage.convertTo(binary, outputImage);
 		return outputImage;
 	}
 	
@@ -225,37 +229,44 @@ public class ImageUtil {
 		GrayF32 input = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
 		GrayU8 binary = new GrayU8(input.width,input.height);
 
-		BufferedImage binaryImage = null;
+//		BufferedImage binaryImage = null;
+		boolean down = false;
 		if (false) {
 		// Global Methods
 		} else if (method.equals(ThresholdMethod.GLOBAL_MEAN)) {
-			GThresholdImageOps.threshold(input, binary, ImageStatistics.mean(input), true);
+			GThresholdImageOps.threshold(input, binary, ImageStatistics.mean(input), down);
 		} else if (method.equals(ThresholdMethod.GLOBAL_OTSU)) {
-			GThresholdImageOps.threshold(input, binary, GThresholdImageOps.computeOtsu(input, 0, 255), true);
+			GThresholdImageOps.threshold(input, binary, GThresholdImageOps.computeOtsu(input, 0, 255), down);
 		} else if (method.equals(ThresholdMethod.GLOBAL_ENTROPY)) {
-			GThresholdImageOps.threshold(input, binary, GThresholdImageOps.computeEntropy(input, 0, 255), true);
+			GThresholdImageOps.threshold(input, binary, GThresholdImageOps.computeEntropy(input, 0, 255), down);
 
 		// Local method
 		} else if (method.equals(ThresholdMethod.LOCAL_MEAN)) {
-			GThresholdImageOps.localMean(input, binary, ConfigLength.fixed(57), 1.0, true, null, null);
+			GThresholdImageOps.localMean(input, binary, ConfigLength.fixed(57), 1.0, down, null, null);
 		} else if (method.equals(ThresholdMethod.BLOCK_MIN_MAX)) {
-			GThresholdImageOps.blockMinMax(input, binary, ConfigLength.fixed(21), 1.0, true, 15 );
+			GThresholdImageOps.blockMinMax(input, binary, ConfigLength.fixed(21), 1.0, down, 15 );
 		} else if (method.equals(ThresholdMethod.BLOCK_MEAN)) {
-			GThresholdImageOps.blockMean(input, binary, ConfigLength.fixed(21), 1.0, true );
+			GThresholdImageOps.blockMean(input, binary, ConfigLength.fixed(21), 1.0, down );
 		} else if (method.equals(ThresholdMethod.BLOCK_OTSU)) {
-			GThresholdImageOps.blockOtsu(input, binary, false,ConfigLength.fixed(21),0.5, 1.0, true );
+			GThresholdImageOps.blockOtsu(input, binary, false,ConfigLength.fixed(21),0.5, 1.0, down );
 		} else if (method.equals(ThresholdMethod.LOCAL_GAUSSIAN)) {
-			GThresholdImageOps.localGaussian(input, binary,  ConfigLength.fixed(85), 1.0, true, null, null);
+			GThresholdImageOps.localGaussian(input, binary,  ConfigLength.fixed(85), 1.0, down, null, null);
 		} else if (method.equals(ThresholdMethod.LOCAL_SAUVOLA)) {
-			GThresholdImageOps.localSauvola(input, binary,  ConfigLength.fixed(11), 0.30f, true);
+			GThresholdImageOps.localSauvola(input, binary,  ConfigLength.fixed(11), 0.30f, down);
 		} else if (method.equals(ThresholdMethod.LOCAL_NICK)) {
-			GThresholdImageOps.localNick(input, binary,  ConfigLength.fixed(11), -0.2f, true);
+			GThresholdImageOps.localNick(input, binary,  ConfigLength.fixed(11), -0.2f, down);
 		} else {
 			LOG.error("unknown ThresholdMethod: "+method);
 		}
 
-		binaryImage = binary == null ? null : new BufferedImage(input.width, input.height, image.getType());
-		return binaryImage == null ? null : ConvertBufferedImage.convertTo(binary, binaryImage);
+		boolean invert = false;
+		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary, invert, null);
+		// GThresh
+//		ImageUtil.invertImage(outputImage);
+//
+//		binaryImage = binary == null ? null : new BufferedImage(input.width, input.height, image.getType());
+//		return binaryImage == null ? null : ConvertBufferedImage.convertTo(binary, binaryImage);
+		return outputImage;
 	}
 
 
@@ -677,6 +688,24 @@ public class ImageUtil {
 		int flip = setRgb(255 - getRed(rgb), 255 - getGreen(rgb), 255 - getBlue(rgb));
 		return flip;
 	}
+	
+	/**
+	 * toggles a -> 255-a in all channels
+	 * 
+	 * @param image is altered
+	 */
+	public static void invertImage(BufferedImage image) {
+		int width = image.getWidth();
+		int height = image.getHeight();
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				int rgb = image.getRGB(x, y);
+				rgb = invertRgb(rgb);
+				image.setRGB(x, y, rgb);
+			}
+		}
+	}
+
 	
 	public static int[] getRGBChannels(int rgb) {
 		int red = getRed(rgb);
@@ -1199,5 +1228,67 @@ public class ImageUtil {
 		BufferedImage resultImage = ConvertBufferedImage.convertTo(binary, null);
 		return resultImage;
 	}
+	
+	// ======================= IO =====================
+	/** convenience wrapper for ImageIO
+	 * 
+	 * tests for existence (ImageIO throws opaque error)
+	 * 
+	 * @param inputBaseFile
+	 * @return
+	 */
+	public static BufferedImage readImageQuietly(File inputBaseFile) {
+		BufferedImage image = null;
+		try {
+			if (!inputBaseFile.exists()) {
+				LOG.debug("File does not exist: "+inputBaseFile);
+			}
+			image = ImageIO.read(inputBaseFile);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read image: "+inputBaseFile, e);
+		}
+		return image;
+	}
+	
+	/** convenience wrapper for ImageIO
+	 * 
+	 * @param image
+	 * @param outputPng
+	 */
+	public static void writeImageQuietly(BufferedImage image, File outputPng) {
+		try {
+			ImageIO.write(image, CTree.PNG, outputPng);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot write image: "+outputPng, e);
+		}
+	}
+
+    // =================  geometric scale ===============
+	/**
+	 * scale image to fit limits
+	 * returns smallest scale to fit image to both limits, i.e. new image will defintely fit
+	 * either if either parameter is null, uses the other
+	 * if both are null returns 1.0
+	 * 
+	 * @param image
+	 * @param maxWidth 
+	 * @param maxHeight
+	 * @return
+	 */
+	public static Double getScaleToFitImageToLimits(BufferedImage image, Integer maxWidth, Integer maxHeight) {
+		Double scale = 1.0;
+		if (maxWidth != null || maxHeight != null) {
+			int width = image.getWidth();
+			int height = image.getHeight();
+			if (maxWidth != null && width > maxWidth || maxHeight != null && height > maxHeight) {
+				double scalex = ((double) maxWidth / (double) width);
+				double scaley = ((double) maxHeight / (double) height);
+				scale = Math.max(scalex,  scaley);
+			}
+		};
+		return scale;
+	}
+
+
 	
 }
