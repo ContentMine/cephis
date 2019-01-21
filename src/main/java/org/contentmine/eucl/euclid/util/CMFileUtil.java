@@ -346,4 +346,60 @@ public class CMFileUtil {
 		return getOrCreateNewFileByOldFile().keySet();
 	}
 
+	/**
+	 * forces copying of file, if exists and deleting target if required
+	 * @param srcFile
+	 * @param destFile
+	 * @throws IOException
+	 */
+	public static void forceCopy(File srcFile, File destFile) throws IOException {
+		if (srcFile.exists()) {
+			forceDelete(destFile);
+			FileUtils.copyFile(srcFile, destFile);
+		}
+	}
+
+	/**
+	 * force delete, avoidng message and exceptions
+	 * @param file
+	 * @throws IOException
+	 */
+	public static void forceDelete(File file) throws IOException {
+		if (file.exists()) {
+			FileUtils.forceDelete(file);
+		}
+	}
+
+	/** force move, by testing for existence and copying/deleting
+	 * 
+	 * @param imageFile
+	 * @param newImgFile
+	 * @throws IOException
+	 */
+	public static void forceMove(File srcFile, File destFile) throws IOException {
+		System.out.println("S "+srcFile+ "=> "+destFile);
+		System.out.println("del "+destFile);
+		CMFileUtil.forceDelete(destFile);
+		System.out.println("CP "+srcFile+ "=> "+destFile);
+		CMFileUtil.forceCopy(srcFile, destFile);
+		System.out.println("del "+srcFile);
+		CMFileUtil.forceDelete(srcFile);
+	}
+
+	/** force move file to directory
+	 * predelete destFile if necessary
+	 * 
+	 * @param srcFile
+	 * @param destDir
+	 * @throws IOException
+	 */
+	public static void forceMoveFileToDirectory(File srcFile, File destDir) throws IOException {
+		if (srcFile.exists() && !srcFile.isDirectory()) {
+			File destFile = new File(destDir, srcFile.getName());
+			forceMove(srcFile, destFile);
+		}
+	}
+
+
+
 }
