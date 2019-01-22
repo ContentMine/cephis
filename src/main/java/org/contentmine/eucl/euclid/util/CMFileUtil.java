@@ -107,6 +107,7 @@ public class CMFileUtil {
 	 * returns true if fileToBeCreated is missing or is earlier than any existingEarlierFiles
 	 * if (fileToBeCreated is null throw RuntimeException)
 	 * 
+	 * @param forceMake forces return true
 	 * @param fileToBeCreated if null return true as process may create it
 	 * @param debug if true log progress
 	 * @param existingEarlierFiles if null throw exception
@@ -114,7 +115,10 @@ public class CMFileUtil {
 	 * @return whether file should be "maked"
 	 * @throws RuntimeException if existingEarlierFiles are null
 	 */
-	public static boolean shouldMake(File fileToBeCreated, boolean debug, File... existingEarlierFiles) {
+	public static boolean shouldMake(boolean forceMake, File fileToBeCreated, boolean debug, File... existingEarlierFiles) {
+		if (forceMake) {
+			return true;
+		}
 		if (existingEarlierFiles == null) {
 			throw new RuntimeException("Null files for make");
 		}
@@ -147,6 +151,25 @@ public class CMFileUtil {
 	 * 
 	 * no debug
 	 * 
+	 * @param forceMake override make logic (default false => rely on logic)
+	 * @param fileToBeCreated
+	 * @param existingEarlierFiles
+	 * @return whether file should be "maked"
+	 * @throws RuntimeException if arguments are null
+	 */
+	public static boolean shouldMake(boolean forceMake, File fileToBeCreated, File... existingEarlierFiles) {
+		boolean debug = false;
+		return shouldMake(forceMake, fileToBeCreated, debug, existingEarlierFiles);
+	}
+	
+	
+	/** "make" logic for file dependencies.
+	 * 
+	 * returns true if fileToBeCreated is missing or is earlier than any existingEarlierFiles
+	 * if (fileToBeCreated is null throw RuntimeException)
+	 * 
+	 * no debug
+	 * 
 	 * @param fileToBeCreated
 	 * @param existingEarlierFiles
 	 * @return whether file should be "maked"
@@ -154,8 +177,11 @@ public class CMFileUtil {
 	 */
 	public static boolean shouldMake(File fileToBeCreated, File... existingEarlierFiles) {
 		boolean debug = false;
-		return shouldMake(fileToBeCreated, debug, existingEarlierFiles);
+		boolean forceMake = false;
+		return shouldMake(forceMake, fileToBeCreated, debug, existingEarlierFiles);
 	}
+	
+	
 
 	public void add(List<File> fileList) {
 		this.fileList = fileList; 
@@ -319,5 +345,61 @@ public class CMFileUtil {
 	public Set<File> getOldKeySet() {
 		return getOrCreateNewFileByOldFile().keySet();
 	}
+
+	/**
+	 * forces copying of file, if exists and deleting target if required
+	 * @param srcFile
+	 * @param destFile
+	 * @throws IOException
+	 */
+	public static void forceCopy(File srcFile, File destFile) throws IOException {
+		if (srcFile.exists()) {
+			forceDelete(destFile);
+			FileUtils.copyFile(srcFile, destFile);
+		}
+	}
+
+	/**
+	 * force delete, avoidng message and exceptions
+	 * @param file
+	 * @throws IOException
+	 */
+	public static void forceDelete(File file) throws IOException {
+		if (file.exists()) {
+			FileUtils.forceDelete(file);
+		}
+	}
+
+	/** force move, by testing for existence and copying/deleting
+	 * 
+	 * @param imageFile
+	 * @param newImgFile
+	 * @throws IOException
+	 */
+	public static void forceMove(File srcFile, File destFile) throws IOException {
+		System.out.println("S "+srcFile+ "=> "+destFile);
+		System.out.println("del "+destFile);
+		CMFileUtil.forceDelete(destFile);
+		System.out.println("CP "+srcFile+ "=> "+destFile);
+		CMFileUtil.forceCopy(srcFile, destFile);
+		System.out.println("del "+srcFile);
+		CMFileUtil.forceDelete(srcFile);
+	}
+
+	/** force move file to directory
+	 * predelete destFile if necessary
+	 * 
+	 * @param srcFile
+	 * @param destDir
+	 * @throws IOException
+	 */
+	public static void forceMoveFileToDirectory(File srcFile, File destDir) throws IOException {
+		if (srcFile.exists() && !srcFile.isDirectory()) {
+			File destFile = new File(destDir, srcFile.getName());
+			forceMove(srcFile, destFile);
+		}
+	}
+
+
 
 }

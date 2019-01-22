@@ -421,7 +421,7 @@ treated as relative even though the initial moveto is interpreted as an absolute
 	}
 
 	private void checkExistingFirstXY(char t) {
-		if (firstPoint == null) {
+		if (firstPoint == null && !Character.isUpperCase(t)) {
 			LOG.error("M/m or absolute must be first in path; found "+t+" in "+d);
 		}
 	}

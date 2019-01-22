@@ -1245,5 +1245,9 @@ public class CProject extends CContainer {
 		return s;
 	}
 
+	public String getName() {
+		return directory == null ? null : directory.getName();
+	}
+
 
 }

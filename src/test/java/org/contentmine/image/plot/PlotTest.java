@@ -35,10 +35,9 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import boofcv.core.image.ConvertBufferedImage;
-import boofcv.gui.binary.VisualizeBinaryData;
+import boofcv.io.image.ConvertBufferedImage;
 import boofcv.io.image.UtilImageIO;
-import boofcv.struct.image.ImageUInt8;
+import boofcv.struct.image.GrayU8;
 
 public class PlotTest {
 
@@ -266,16 +265,17 @@ public class PlotTest {
 		ImageIOUtil.writeImageQuietly(imageProcessor.getImage(), new File(
 				"target/" + SHARK + "/defaultThinnedBinary.png"));
 		LOG.trace(g002);
-		ImageUInt8 inputImage = ConvertBufferedImage.convertFrom(image,
-				(ImageUInt8) null);
+		GrayU8 inputImage = ConvertBufferedImage.convertFrom(image,
+				(GrayU8) null);
 		UtilImageIO.saveImage(ConvertBufferedImage.convertTo(inputImage, null),
 				new File(PLOT_OUT_DIR, "plotEcho.png").toString());
 
-		ImageUInt8 binary = new ImageUInt8(inputImage.getWidth(),
+		GrayU8 binary = new GrayU8(inputImage.getWidth(),
 				inputImage.getHeight());
 		int threshold = 220; // axes are quite light gray
 		// ThresholdImageOps.threshold(inputImage, binary, threshold, false);
-		BufferedImage outImage = VisualizeBinaryData.renderBinary(binary, null);
+//		BufferedImage outImage = VisualizeBinaryData.renderBinary(binary, null);
+		BufferedImage outImage = ConvertBufferedImage.extractBuffered(binary);
 		UtilImageIO.saveImage(outImage,
 				new File(PLOT_OUT_DIR, "plotBinary.png").toString());
 

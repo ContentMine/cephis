@@ -23,6 +23,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.log4j.Level;
@@ -530,6 +531,7 @@ public class DefaultArgProcessor {
 		String output = getOutput();
 		if (currentCTree != null) {
 			outputFile = output == null ? null : new File(currentCTree.getDirectory(), output);
+			LOG.debug("outputFile "+outputFile.getParentFile().getName()+"/"+FilenameUtils.getName(outputFile.toString()));
 			if (currentCTree.getSnippetsTree() != null) {
 				outputSnippetsTree(outputFile);
 			} else if (currentCTree.getCTreeFiles() != null) {
@@ -790,6 +792,7 @@ public class DefaultArgProcessor {
 	private void filterCTree() {
 		FileXPathSearcher fileXPathSearcher = new FileXPathSearcher(filterExpression);
 		String xpath = fileXPathSearcher.getCurrentXPath();
+		LOG.debug("filterCTree "+filterExpression);
 		if (currentCTree != null) {
 			fileXPathSearcher = new FileXPathSearcher(currentCTree, filterExpression);
 			fileXPathSearcher.search();
@@ -1113,6 +1116,7 @@ public class DefaultArgProcessor {
 			try {
 				methodName = option.getMethodName(methodNameType);
 				if (methodName != null) {
+					LOG.debug("running method: "+methodName);
 					instantiateAndRunMethod(option, methodName);
 				}
 			} catch (IllegalArgumentException ee) {
@@ -1392,6 +1396,10 @@ public class DefaultArgProcessor {
 	public CTree getCTree() {
 		return currentCTree != null ? currentCTree : 
 			(cTreeList != null && cTreeList.size() == 1) ? cTreeList.get(0) : null;
+	}
+	
+	public void setCTree(CTree cTree) {
+		this.currentCTree = cTree;
 	}
 	
 	public CProject getCProject() {

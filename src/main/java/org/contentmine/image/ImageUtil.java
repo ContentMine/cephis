@@ -12,12 +12,14 @@ import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CTree;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
@@ -35,10 +37,21 @@ import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
 
+import boofcv.alg.enhance.EnhanceImageOps;
+import boofcv.alg.filter.binary.BinaryImageOps;
+import boofcv.alg.filter.binary.Contour;
+import boofcv.alg.filter.binary.GThresholdImageOps;
 import boofcv.alg.filter.binary.ThresholdImageOps;
-import boofcv.core.image.ConvertBufferedImage;
+import boofcv.alg.misc.ImageStatistics;
+import boofcv.gui.ListDisplayPanel;
 import boofcv.gui.binary.VisualizeBinaryData;
-import boofcv.struct.image.ImageUInt8;
+import boofcv.gui.image.ShowImages;
+import boofcv.io.image.ConvertBufferedImage;
+import boofcv.struct.ConfigLength;
+import boofcv.struct.ConnectRule;
+import boofcv.struct.image.GrayF32;
+import boofcv.struct.image.GrayS32;
+import boofcv.struct.image.GrayU8;
 
 public class ImageUtil {
 	private static final Logger LOG = Logger.getLogger(ImageUtil.class);
@@ -89,6 +102,59 @@ public class ImageUtil {
 		}
 	}
 	
+	public enum ThresholdMethod {
+		GLOBAL_MEAN("global_mean"),
+		GLOBAL_OTSU("global_otsu"),
+		GLOBAL_ENTROPY("entropy"),
+		LOCAL_MEAN("local_mean"),
+		BLOCK_MIN_MAX("min_max"),
+		BLOCK_MEAN("block_mean"),
+		BLOCK_OTSU("block_otsu"),
+		LOCAL_GAUSSIAN("gaussian"),
+		LOCAL_SAUVOLA("sauvola"),
+		LOCAL_NICK("nick"),
+		;
+		private String method;
+		private ThresholdMethod(String method) {
+			this.method = method;
+		}
+		public static ThresholdMethod getMethod(String binarize) {
+			for (ThresholdMethod thresholdMethod : values()) {
+				if (thresholdMethod.method.equals(binarize)) {
+					return thresholdMethod;
+				}
+			}
+			return null;
+		}
+		public String toString() {
+			return method;
+		}
+	}
+
+	public enum SharpenMethod {
+		LAPLACIAN("laplacian"),
+		SHARPEN4("sharpen4"),
+		SHARPEN8("sharpen8"),
+		;
+		private String method;
+
+		private SharpenMethod(String method) {
+			this.method = method;
+		}
+		public String toString() {
+			return method;
+		}
+		public static SharpenMethod getMethod(String methodName) {
+			for (SharpenMethod sharpenMethod : values()) {
+				if (sharpenMethod.method.equals(methodName)) {
+					return sharpenMethod;
+				}
+			}
+			throw new IllegalArgumentException("unknown method: "+methodName);
+		}
+	}
+
+	
 	public static final IntArray SMEAR_ARRAY = new IntArray(new int[]{1,3,6,10,20,10,6,3,1});
 	public static final IntArray DOUBLE_ARRAY = new IntArray(new int[]{1,2,1});
 	public static final IntArray IDENT_ARRAY = new IntArray(new int[]{1});
@@ -121,7 +187,16 @@ public class ImageUtil {
 		return image;
 	}
 
+	/** thresholds an image
+	 * uses BoofCV 0.32 or later
+	 * NOT YET TESTED
+	 * 
+	 * @param image
+	 * @param threshold 
+	 * @return thresholded BufferedImage
+	 */
 	
+	/* WAS Boofcv 0.17
 	public static BufferedImage boofCVBinarization(BufferedImage image, int threshold) {
 		ImageUInt8 input = ConvertBufferedImage.convertFrom(image,(ImageUInt8)null);
 		ImageUInt8 binary = new ImageUInt8(input.getWidth(), input.getHeight());
@@ -129,8 +204,106 @@ public class ImageUtil {
 		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary,null);
 		return outputImage;
 	}
+	The changes are ImageUInt8 => GrayU8 (etc.) 
+	VisualizeBinaryData.renderBinary(binary,null) => ConvertBufferedImage.extractBuffered(binary)
+	
+	It compiles - but haven't yet run it.
+	NOT YET TESTED
+	 */
+	public static BufferedImage boofCVBinarization(BufferedImage image, int threshold) {
+		GrayU8 input = ConvertBufferedImage.convertFrom(image,(GrayU8)null);
+		GrayU8 binary = new GrayU8(input.getWidth(), input.getHeight());
+		boolean down = false;
+		ThresholdImageOps.threshold(input, binary, threshold, down);
+		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary, false, null);
+		// this didn't work - returned black
+//		BufferedImage outputImage = binary == null ? null : new BufferedImage(input.width, input.height, image.getType());
+//		/*outputImage = */ConvertBufferedImage.convertTo(binary, outputImage);
+		return outputImage;
+	}
+	
+	public static BufferedImage boofCVThreshold(BufferedImage image, ThresholdMethod method) {
+		
+		if (image == null || method == null) return null;
+		// convert into a usable format
+		GrayF32 input = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+		GrayU8 binary = new GrayU8(input.width,input.height);
+
+//		BufferedImage binaryImage = null;
+		boolean down = false;
+		if (false) {
+		// Global Methods
+		} else if (method.equals(ThresholdMethod.GLOBAL_MEAN)) {
+			GThresholdImageOps.threshold(input, binary, ImageStatistics.mean(input), down);
+		} else if (method.equals(ThresholdMethod.GLOBAL_OTSU)) {
+			GThresholdImageOps.threshold(input, binary, GThresholdImageOps.computeOtsu(input, 0, 255), down);
+		} else if (method.equals(ThresholdMethod.GLOBAL_ENTROPY)) {
+			GThresholdImageOps.threshold(input, binary, GThresholdImageOps.computeEntropy(input, 0, 255), down);
+
+		// Local method
+		} else if (method.equals(ThresholdMethod.LOCAL_MEAN)) {
+			GThresholdImageOps.localMean(input, binary, ConfigLength.fixed(57), 1.0, down, null, null);
+		} else if (method.equals(ThresholdMethod.BLOCK_MIN_MAX)) {
+			GThresholdImageOps.blockMinMax(input, binary, ConfigLength.fixed(21), 1.0, down, 15 );
+		} else if (method.equals(ThresholdMethod.BLOCK_MEAN)) {
+			GThresholdImageOps.blockMean(input, binary, ConfigLength.fixed(21), 1.0, down );
+		} else if (method.equals(ThresholdMethod.BLOCK_OTSU)) {
+			GThresholdImageOps.blockOtsu(input, binary, false,ConfigLength.fixed(21),0.5, 1.0, down );
+		} else if (method.equals(ThresholdMethod.LOCAL_GAUSSIAN)) {
+			GThresholdImageOps.localGaussian(input, binary,  ConfigLength.fixed(85), 1.0, down, null, null);
+		} else if (method.equals(ThresholdMethod.LOCAL_SAUVOLA)) {
+			GThresholdImageOps.localSauvola(input, binary,  ConfigLength.fixed(11), 0.30f, down);
+		} else if (method.equals(ThresholdMethod.LOCAL_NICK)) {
+			GThresholdImageOps.localNick(input, binary,  ConfigLength.fixed(11), -0.2f, down);
+		} else {
+			LOG.error("unknown ThresholdMethod: "+method);
+		}
+
+		boolean invert = false;
+		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary, invert, null);
+		// GThresh
+//		ImageUtil.invertImage(outputImage);
+//
+//		binaryImage = binary == null ? null : new BufferedImage(input.width, input.height, image.getType());
+//		return binaryImage == null ? null : ConvertBufferedImage.convertTo(binary, binaryImage);
+		return outputImage;
+	}
 
 
+	/** Sharpens image
+	 * From Boofcv
+	 * When an image is sharpened the intensity of edges are made more extreme while flat regions remain unchanged.
+	 * @param image
+	 * @param method
+	 * @return converted image (or original if no action)
+	 */
+	public static BufferedImage sharpen(BufferedImage image, SharpenMethod method) {
+		
+		if (image == null || method == null) return null;
+		// convert into a usable format
+		GrayF32 input = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+		GrayU8 binary = new GrayU8(input.width,input.height);
+
+		GrayU8 gray = ConvertBufferedImage.convertFrom(image, (GrayU8)null);
+		GrayU8 adjusted = gray.createSameShape();
+		BufferedImage sharpenedImage = null;
+
+		if (false) {
+			
+		} else if (method.equals(SharpenMethod.SHARPEN4)) {
+			EnhanceImageOps.sharpen4(gray, adjusted);
+			sharpenedImage = ConvertBufferedImage.convertTo(adjusted,null);
+		} else if (method.equals(SharpenMethod.SHARPEN8)) {
+			EnhanceImageOps.sharpen8(gray, adjusted);
+			sharpenedImage = ConvertBufferedImage.convertTo(adjusted,null);
+		} else {
+			sharpenedImage = ConvertBufferedImage.convertTo(gray,null);
+		}
+
+		return sharpenedImage;
+	}
+
+	
 	/** extracts a subimage translated to 0,0.
 	 * 
 	 * clip to bounding box inclusive? or edge of image
@@ -337,29 +510,6 @@ public class ImageUtil {
 		return shiftedImage;
 	}
 
-//	/** makes parent directly if not exists.
-//	 * 
-//	 * selects type from extension; chooses ".png" if none 
-//	 * @param image
-//	 * @param file
-//	 */
-//	@Deprecated // use org.contentmine.image.ImageUtil
-//	private static void writeImageQuietlyX(BufferedImage image, File file) {
-//		if (image == null) {
-//			throw new RuntimeException("Cannot write null image: "+file);
-//		}
-//		try {
-//			// DON'T EDIT!
-//			String type = FilenameUtils.getExtension(file.getName());
-//			if (type == null || type.equals("")) {
-//				type ="png";
-//			}
-//			file.getParentFile().mkdirs();
-//			ImageIO.write(image, type, new FileOutputStream(file));
-//		} catch (Exception e) {
-//			throw new RuntimeException("cannot write image "+file, e);
-//		}
-//	}
 	/** uses Imgscalr to scale.
 	 * 
 	 * @param width
@@ -367,24 +517,12 @@ public class ImageUtil {
 	 * @param genImage
 	 * @return
 	 */
-	public static BufferedImage scaleImage(int width, int height,
+	public static BufferedImage scaleImageScalr(int width, int height,
 			BufferedImage genImage) {
 		BufferedImage scaledGenImage = Scalr.resize(genImage, Method.ULTRA_QUALITY, Mode.FIT_EXACT, width,
 		        height);
 		return scaledGenImage;
 	}
-
-//	/** writes file making dirs if required
-//	 * 
-//	 * @param image creates filetype from filename suffix
-//	 * @param filename
-//	 * @return
-//	 */
-//	public static File writeImageQuietlyXX(BufferedImage image, String filename) {
-//		File file = new File(filename);
-//		writeImageQuietlyX(image, file);
-//		return file;
-//	}
 
 	public static BufferedImage addBorders(BufferedImage image0, int xmargin, int ymargin, int color) {
 		if (image0 == null) {
@@ -550,6 +688,24 @@ public class ImageUtil {
 		int flip = setRgb(255 - getRed(rgb), 255 - getGreen(rgb), 255 - getBlue(rgb));
 		return flip;
 	}
+	
+	/**
+	 * toggles a -> 255-a in all channels
+	 * 
+	 * @param image is altered
+	 */
+	public static void invertImage(BufferedImage image) {
+		int width = image.getWidth();
+		int height = image.getHeight();
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				int rgb = image.getRGB(x, y);
+				rgb = invertRgb(rgb);
+				image.setRGB(x, y, rgb);
+			}
+		}
+	}
+
 	
 	public static int[] getRGBChannels(int rgb) {
 		int red = getRed(rgb);
@@ -905,40 +1061,39 @@ public class ImageUtil {
 		return newImage;
 	}
 	
-	/** from boofcv
-	 * 
-	 * 
-	 */
-	public static BufferedImage sharpen(BufferedImage buffered) {
-		return null;
-//		GrayU8 gray = ConvertBufferedImage.convertFrom(buffered,(GrayU8)null);
-//		GrayU8 adjusted = gray.createSameShape();
-//		EnhanceImageOps.sharpen8(gray, adjusted);
-//		BufferedImage sharpenedImage = ConvertBufferedImage.convertTo(adjusted,null);
-//		return sharpenedImage;
-		
-	}
-
 	/** from ImgScalr
 	 * 
 	 * 
 	 */
 	public static BufferedImage laplacianSharpen(BufferedImage image) {
+//		Kernel kernel = new Kernel(3, 3, new float[]{
+//				-1.0f, -1.0f, -1.0f,
+//				-1.0f,  8.0f, -1.0f,
+//				-1.0f, -1.0f, -1.0f,
+//				});
 		Kernel kernel = new Kernel(3, 3, new float[]{
-			-1.0f, -1.0f, -1.0f,
-			-1.0f,  8.0f, -1.0f,
-			-1.0f, -1.0f, -1.0f,
-			});
+				 1.0f,  1.0f,  1.0f,
+				 1.0f, -8.0f,  1.0f,
+				 1.0f,  1.0f,  1.0f,
+				});
 		ConvolveOp laplacian = new ConvolveOp(kernel);
 		image = Scalr.apply(image, laplacian);
 		return image;
 	}
 
-	public static BufferedImage scaleImage(Double scalefactor, BufferedImage image) {
+	
+	// ============================= Scalr ======================
+	/** scale image with ImgScalr
+	 * 
+	 * @param scalefactor
+	 * @param image
+	 * @return
+	 */
+	public static BufferedImage scaleImageScalr(Double scalefactor, BufferedImage image) {
 		if (image != null) {
 			int height = (int) (image.getHeight() * scalefactor);
 			int width = (int) (image.getWidth() * scalefactor);
-			image = scaleImage(width , height, image);
+			image = scaleImageScalr(width , height, image);
 		}
 		return image;
 	}
@@ -949,18 +1104,19 @@ public class ImageUtil {
 	 * @param rotation (if 0, returns image unchanged)
 	 * @return
 	 */
-	public static BufferedImage getRotatedImage(BufferedImage image, int degrees) {
+	public static BufferedImage getRotatedImageScalr(BufferedImage image, int degrees) {
 		Rotation rotation = Rotation.getRotation(degrees);
-		return getRotatedImage(image, rotation);
+		return getRotatedImageScalr(image, rotation);
 	}
 	
 	/** rotate an image
+	 * uses Scalr
 	 * 
 	 * @param image
 	 * @param rotation (if 0, returns image unchanged)
 	 * @return
 	 */
-	public static BufferedImage getRotatedImage(BufferedImage image, Rotation rotation) {
+	public static BufferedImage getRotatedImageScalr(BufferedImage image, Rotation rotation) {
 		BufferedImage newImage = null;
 		if (image == null) {
 		} else if (rotation == null || Rotation.ROT0.equals(rotation)) {
@@ -971,4 +1127,168 @@ public class ImageUtil {
 		}
 		return newImage;
 	}
+	
+	// ================= Boofcv ==================
+	
+	// this needs editing
+	public void rawBoofcv(BufferedImage image) {
+	// raw Boofcv code
+
+		// convert into a usable format
+		GrayF32 input32 = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+		int width = input32.width;
+		int height = input32.height;
+		GrayU8 binary8 = new GrayU8(width, height);
+		GrayS32 label32 = new GrayS32(width, height);
+	
+		// Select a global threshold using Otsu's method.
+		double threshold = GThresholdImageOps.computeOtsu(input32, 0, 255);
+	
+		// Apply the threshold to create a binary image
+		ThresholdImageOps.threshold(input32,binary8,(float)threshold,true);
+	
+		// remove small blobs through erosion and dilation
+		// The null in the input indicates that it should internally declare the work image it needs
+		// this is less efficient, but easier to code.
+		GrayU8 filtered8 = BinaryImageOps.erode8(binary8, 1, null);
+		filtered8 = BinaryImageOps.dilate8(filtered8, 1, null);
+	
+		// Detect blobs inside the image using an 8-connect rule
+		List<Contour> contours = BinaryImageOps.contour(filtered8, ConnectRule.EIGHT, label32);
+	
+		// colors of contours
+		int colorExternal = 0xFFFFFF;
+		int colorInternal = 0xFF2020;
+	
+		// display the results
+		BufferedImage visualBinary = VisualizeBinaryData.renderBinary(binary8, false, null);
+		BufferedImage visualFiltered = VisualizeBinaryData.renderBinary(filtered8, false, null);
+		BufferedImage visualLabel = VisualizeBinaryData.renderLabeledBG(label32, contours.size(), null);
+		BufferedImage visualContour = VisualizeBinaryData.renderContours(contours, colorExternal, colorInternal,
+				width, height, null);
+	
+		ListDisplayPanel panel = new ListDisplayPanel();
+		panel.addImage(visualBinary, "Binary Original");
+		panel.addImage(visualFiltered, "Binary Filtered");
+		panel.addImage(visualLabel, "Labeled Blobs");
+		panel.addImage(visualContour, "Contours");
+		ShowImages.showWindow(panel,"Binary Operations",true);
+	}
+
+	public static BufferedImage sharpenBoofcv(BufferedImage bufferedImage, SharpenMethod sharpen) {
+		GrayU8 gray = ConvertBufferedImage.convertFrom(bufferedImage,(GrayU8)null);
+		GrayU8 adjusted = gray.createSameShape();
+		
+		BufferedImage result = null;
+		switch (sharpen) {
+			case SHARPEN4: {
+				EnhanceImageOps.sharpen4(gray, adjusted);
+				result = ConvertBufferedImage.convertTo(adjusted,null);
+				break;
+			}
+			case SHARPEN8: {
+				EnhanceImageOps.sharpen8(gray, adjusted);
+				result = ConvertBufferedImage.convertTo(adjusted,null);
+				break;
+			}
+			default: {
+				throw new IllegalArgumentException("bad or unimplemented method for Boofcv: "+sharpen);
+			}
+		}
+		return result;
+	}
+	
+	/** computes a threshold using Otsu's method
+	 * 
+	 * @param image to threshold. should be grayscale? not overwritten
+	 * @param erodeDilate if true does an erode-dilate cycle (removes protruding bits)
+	 * @return new image
+	 */
+	public static BufferedImage thresholdBoofcv(BufferedImage image, boolean erodeDilate) {
+
+		// convert into a usable format
+		GrayF32 input = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+		GrayU8 binary = new GrayU8(input.width,input.height);
+	
+		// Select a global threshold using Otsu's method.
+		double threshold = GThresholdImageOps.computeOtsu(input, 0, 255);
+	
+		// Apply the threshold to create a binary image
+		ThresholdImageOps.threshold(input,binary,(float)threshold,true);
+	
+		// remove small blobs through erosion and dilation
+		// The null in the input indicates that it should internally declare the work image it needs
+		// this is less efficient, but easier to code.
+		if (erodeDilate) {
+			GrayU8 filtered = BinaryImageOps.erode8(binary, 1, null);
+			filtered = BinaryImageOps.dilate8(filtered, 1, null);
+			binary = filtered;
+		}
+		
+		BufferedImage resultImage = ConvertBufferedImage.convertTo(binary, null);
+		return resultImage;
+	}
+	
+	// ======================= IO =====================
+	/** convenience wrapper for ImageIO
+	 * 
+	 * tests for existence (ImageIO throws opaque error)
+	 * 
+	 * @param inputBaseFile
+	 * @return
+	 */
+	public static BufferedImage readImageQuietly(File inputBaseFile) {
+		BufferedImage image = null;
+		try {
+			if (!inputBaseFile.exists()) {
+				LOG.debug("File does not exist: "+inputBaseFile);
+			}
+			image = ImageIO.read(inputBaseFile);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read image: "+inputBaseFile, e);
+		}
+		return image;
+	}
+	
+	/** convenience wrapper for ImageIO
+	 * 
+	 * @param image
+	 * @param outputPng
+	 */
+	public static void writeImageQuietly(BufferedImage image, File outputPng) {
+		try {
+			ImageIO.write(image, CTree.PNG, outputPng);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot write image: "+outputPng, e);
+		}
+	}
+
+    // =================  geometric scale ===============
+	/**
+	 * scale image to fit limits
+	 * returns smallest scale to fit image to both limits, i.e. new image will defintely fit
+	 * either if either parameter is null, uses the other
+	 * if both are null returns 1.0
+	 * 
+	 * @param image
+	 * @param maxWidth 
+	 * @param maxHeight
+	 * @return
+	 */
+	public static Double getScaleToFitImageToLimits(BufferedImage image, Integer maxWidth, Integer maxHeight) {
+		Double scale = 1.0;
+		if (maxWidth != null || maxHeight != null) {
+			int width = image.getWidth();
+			int height = image.getHeight();
+			if (maxWidth != null && width > maxWidth || maxHeight != null && height > maxHeight) {
+				double scalex = ((double) maxWidth / (double) width);
+				double scaley = ((double) maxHeight / (double) height);
+				scale = Math.max(scalex,  scaley);
+			}
+		};
+		return scale;
+	}
+
+
+	
 }
