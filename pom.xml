@@ -3,14 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-       <boofcv-core.version>0.32</boofcv-core.version>
         <boofcv-core.version>0.32</boofcv-core.version>
         <boofcv-swing.version>0.32</boofcv-swing.version>
 		
-<!-- will change to boofcv 0.32 -->
-	   <!--
-       <boofcv-core.version>0.32</boofcv-core.version>
-	   -->
        <commons-io.version>2.5</commons-io.version>
        <commons-lang3.version>3.0</commons-lang3.version>
        <commons-math.version>2.2</commons-math.version>
