@@ -1793,10 +1793,10 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return "page" + pageImage.getX() + "." + pageImage.getY() + "." + CTree.SVG;
 	}
 
-	public File getOrCreateDerivedImagesDir() {
-		File derivedImagesDir = new File(getExistingPDFImagesDir(), "derived/");
-		return derivedImagesDir;
-	}
+//	public File getOrCreateDerivedImagesDir() {
+//		File derivedImagesDir = new File(getExistingPDFImagesDir(), "derived/");
+//		return derivedImagesDir;
+//	}
 
 	void createAndWriteScholorlyHtml() {
 		List<File> svgFiles = getExistingSVGFileList();
