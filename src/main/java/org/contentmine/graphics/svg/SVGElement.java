@@ -1929,4 +1929,28 @@ public class SVGElement extends GraphicsElement {
 			this.addAttribute(new Attribute(PARENT_ID, id));
 		}
 	}
+
+	/** adds copy of attribute to every element
+	 * 
+	 * @param list
+	 * @param attribute
+	 */
+	public static List<? extends SVGElement>  addAttribute(List<? extends SVGElement> elementList, Attribute attribute) {
+		for (SVGElement element : elementList) {
+			element.addAttribute(new Attribute(attribute));
+		}
+		return elementList;
+	}
+
+	/** adds copy of attributeList to every element
+	 * 
+	 * @param list
+	 * @param attribute
+	 */
+	public static List<? extends SVGElement> addAttributes(List<? extends SVGElement> elementList, Attribute ... attributeList) {
+		for (Attribute attribute : attributeList) {
+			addAttribute(elementList, attribute);
+		}
+		return elementList;
+	}
 }

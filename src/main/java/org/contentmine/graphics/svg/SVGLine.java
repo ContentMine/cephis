@@ -1011,5 +1011,14 @@ public class SVGLine extends SVGShape {
 		this.setParentID(originatingElement.getId());
 	}
 
+	public SVGLine copyStrokedLine(String stroke) {
+		SVGLine line1 = (SVGLine) copy();
+		line1.setStroke(stroke);
+		line1.setWidth(1.5);
+		line1.addAttribute(new Attribute("stroke-linecap", "round"));
+		line1.setOpacity(0.5);
+		return line1;
+	}
+
 
 }

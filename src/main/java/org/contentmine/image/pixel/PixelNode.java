@@ -1,7 +1,9 @@
 package org.contentmine.image.pixel;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.Int2;
+import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGG;
@@ -254,5 +256,38 @@ public class PixelNode implements Comparable<PixelNode> {
 	public void setInt2(Int2 newXY) {
 		this.getCentrePixel().setInt2(newXY);
 	}
+
+	/** snap coordinates to nearest point in array.
+	 * 
+	 * @param yArray
+	 */
+	public void snapToArray(IntArray array, Axis2 axis) {
+		boolean isx = Axis2.X.equals(axis);
+		Int2 xy = this.getInt2();
+		int xNode = xy.getX();
+		int yNode = xy.getY();
+		int idx = array.getIndexOfClosestElement(isx ? xNode : yNode);
+		int snapped = array.elementAt(idx);
+		int xnew = isx ? snapped : xNode;
+		int ynew = isx ? yNode : snapped;
+		Int2 newXY = new Int2(xnew, ynew);
+	}
+	
+//	/** snap coordinates to nearest point in array.
+//	 * 
+//	 * @param yArray
+//	 */
+//	public void snapToYArray(IntArray yArray) {
+//		Int2 xy = this.getInt2();
+//		int xNode = xy.getX();
+//		int yNode = xy.getY();
+//		int idx = yArray.getIndexOfClosestElement(yNode);
+//		int snappedY = yArray.elementAt(idx);
+//		Int2 newXY = new Int2(xNode, snappedY);
+//		if (!xy.equals(newXY)) {
+//			LOG.debug(xy + " => " + newXY);
+//			this.setInt2(newXY);
+//		}
+//	}
 	
 }

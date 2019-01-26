@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
@@ -24,6 +25,11 @@ import org.contentmine.graphics.svg.linestuff.AxialLineList;
 import org.contentmine.graphics.svg.linestuff.HorizontalLineComparator;
 import org.contentmine.graphics.svg.plot.AbstractPlotBox;
 import org.contentmine.graphics.svg.plot.AnnotatedAxis;
+import org.contentmine.image.pixel.PixelEdge;
+import org.contentmine.image.pixel.PixelEdgeList;
+import org.contentmine.image.pixel.PixelGraph;
+import org.contentmine.image.pixel.PixelGraphList;
+import org.contentmine.image.pixel.PixelSegmentList;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
@@ -65,15 +71,41 @@ public class LineCache extends AbstractCache {
 	private Double lineEps = 5.0; // to start with
 	// for display only
 	private double joinEps = 1.0; // tolerance for joining lines 
+	private double segmentTolerance = 1.0;
+	private IntArray gridXCoordinates;
+	private IntArray gridYCoordinates;
+
 	public LineCache(ComponentCache containingComponentCache) {
 		super(containingComponentCache);
-		siblingShapeCache = containingComponentCache.getOrCreateShapeCache();
-		lineList =  siblingShapeCache == null ? new ArrayList<SVGLine>() : siblingShapeCache.getLineList();
+		if (containingComponentCache != null) {
+			siblingShapeCache = containingComponentCache.getOrCreateShapeCache();
+			lineList =  siblingShapeCache == null ? new ArrayList<SVGLine>() : siblingShapeCache.getLineList();
+		}
 		init();
 	}
 	
 	private void init() {
 		// leave lists as null untill needed
+	}
+	
+	/** clears the internediate caaches such a horizontal lines
+	 * messy but necessary when repeatedly adding data.
+	 * don't know whether caching is worth it.
+	 */
+	public void clearLineCaches() {
+        horizontalLines = null;
+        verticalLines = null;
+        longHorizontalLineList = null;
+        shortHorizontalLineList = null;
+        horizontalSiblingsList = null;
+        topHorizontalLineList = null;
+        bottomHorizontalLineList = null;
+        horizontalLineStrokeWidthSet = null;
+        allLines = null;
+        longHorizontalEdgeLines = null;
+        longVerticalEdgeLines = null;
+        fullLineBox = null;
+        lineBbox = null;
 	}
 
 	/** the bounding box of the actual line components
@@ -90,7 +122,7 @@ public class LineCache extends AbstractCache {
 
 	public List<SVGLine> getOrCreateLineList() {
 		if (lineList == null) {
-			
+			lineList = new ArrayList<SVGLine>();
 		}
 		return lineList;
 	}
@@ -181,18 +213,17 @@ public class LineCache extends AbstractCache {
 			longHorizontalLineList = new SVGLineList();
 			getOrCreateHorizontalLineList();
 			Real2Range ownerBBox = getOrCreateComponentCacheBoundingBox();
-			if (ownerBBox == null) {
-				throw new RuntimeException("null ownerBBox");
-			}
-			RealRange xrange = ownerBBox.getRealRange(Direction.HORIZONTAL);
-			for (SVGLine line : horizontalLines) {
-				RealRange lineRange = line.getRealRange(Direction.HORIZONTAL);
-				if (RealRange.isEqual(xrange, lineRange, lineEps )) {
-					longHorizontalLineList.add(line);
+			if (ownerBBox != null) {
+				RealRange xrange = ownerBBox.getRealRange(Direction.HORIZONTAL);
+				for (SVGLine line : horizontalLines) {
+					RealRange lineRange = line.getRealRange(Direction.HORIZONTAL);
+					if (RealRange.isEqual(xrange, lineRange, lineEps )) {
+						longHorizontalLineList.add(line);
+					}
 				}
 			}
 		}
-		LOG.trace("poly2a "+ownerComponentCache.shapeCache.getPolylineList());
+//		LOG.trace("poly2a "+ownerComponentCache.shapeCache.getPolylineList());
 		return longHorizontalLineList;
 	}
 
@@ -200,13 +231,16 @@ public class LineCache extends AbstractCache {
 		if (shortHorizontalLineList == null) {
 			shortHorizontalLineList = new SVGLineList();
 			getOrCreateHorizontalLineList();
-			RealRange xrange = getOrCreateComponentCacheBoundingBox().getRealRange(Direction.HORIZONTAL);
-			for (SVGLine line : horizontalLines) {
-				if (line.getLength() < xrange.getRange() - lineEps ) {
-					shortHorizontalLineList.add(line);
+			Real2Range componentCacheBoundingBox = getOrCreateComponentCacheBoundingBox();
+			if (componentCacheBoundingBox != null) {
+				RealRange xrange = componentCacheBoundingBox.getRealRange(Direction.HORIZONTAL);
+				for (SVGLine line : horizontalLines) {
+					if (line.getLength() < xrange.getRange() - lineEps ) {
+						shortHorizontalLineList.add(line);
+					}
 				}
+				transferShortHorizontalLinesToSiblingLineLists();
 			}
-			transferShortHorizontalLinesToSiblingLineLists();
 			
 		}
 		return shortHorizontalLineList;
@@ -439,6 +473,78 @@ public class LineCache extends AbstractCache {
 
 	public void addLines(List<SVGLine> lineList) {
 		getOrCreateLineList().addAll(lineList);
+	}
+
+	/**
+	 * set tolerance for segmenting paths (e.g. Douglas-Peucker)
+	 * 
+	 * @param tolerance 
+	 */
+	public LineCache setSegmentTolerance(double tolerance) {
+		this.segmentTolerance  = tolerance;
+		return this;
+	}
+
+	public double getSegmentTolerance() {
+		return segmentTolerance;
+	}
+
+	public void addGraph(PixelGraph graph) {
+		PixelEdgeList edgeList = graph.getOrCreateEdgeList();
+		for (PixelEdge edge : edgeList) {
+			PixelSegmentList pixelSegmentList = edge.getOrCreateSegmentList(getSegmentTolerance());
+			List<SVGLine> lineList = pixelSegmentList.getSVGLineList();
+			addLines(lineList);
+		}
+		clearLineCaches();
+		
+		List<SVGLine> horLines = getOrCreateHorizontalLineList();
+		for (SVGLine line : horLines) {
+	//			gg.appendChild(copyLine(line, "black"));
+		}
+		List<SVGLine> vertLines = getOrCreateVerticalLineList();
+		for (SVGLine line : vertLines) {
+	//			gg.appendChild(copyLine(line, "red"));
+		}
+	//			lineCache.remove(vertLines);
+		System.out.println(horLines.size()+"/"+vertLines.size());
+	}
+
+	/** NYI */
+	public void snapToHorizontalGrid() {
+		IntArray xArray = getGridXCoordinates();
+	}
+
+	/** NYI */
+	public void snapToVerticalGrid() {
+		IntArray yArray = getGridYCoordinates();
+//		RealArithmeticProgression.createAP()
+	}
+
+	public IntArray getGridYCoordinates() {
+		List<SVGLine> horLines = this.getOrCreateHorizontalLineList();
+		Multiset<Integer> ySet = HashMultiset.create();
+		for (SVGLine horLine : horLines) {
+			ySet.add((int) (double) horLine.getBoundingBox().getYMin());
+		}
+		gridYCoordinates = IntArray.createSortedIntArray(ySet);
+		return gridYCoordinates;
+	}
+
+	public IntArray getGridXCoordinates() {
+		List<SVGLine> vertLines = this.getOrCreateVerticalLineList();
+		Multiset<Integer> xSet = HashMultiset.create();
+		for (SVGLine vertLine : vertLines) {
+			xSet.add((int) (double) vertLine.getBoundingBox().getXMin());
+		}
+		gridXCoordinates = IntArray.createSortedIntArray(xSet);
+		return gridXCoordinates;
+	}
+
+	public void addGraphList(PixelGraphList graphList) {
+		for (PixelGraph graph : graphList) {
+			addGraph(graph);
+		}
 	}
 
 

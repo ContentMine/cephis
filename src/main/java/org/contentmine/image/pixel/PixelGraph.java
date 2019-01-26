@@ -62,6 +62,7 @@ public class PixelGraph {
 	private double segmentCreationTolerance = DEFAULT_SEGMENT_CREATION_TOLERANCE;
 	private boolean hasBeenSegmented = false;
 	private PixelNucleusFactory nucleusFactory;
+	private ImageParameters imageParameters;
 		
 	private PixelGraph() {
 		
@@ -420,7 +421,13 @@ public class PixelGraph {
 		}
 	}
 
+	public SVGG drawEdgesAndNodes() {
+		String[] colours = {"red", "green", "blue", "yellow", "pink", "gray", "brown", "orange"};
+		return drawEdgesAndNodes(colours);
+	}
+	
 	public SVGG drawEdgesAndNodes(String[] colours) {
+		getOrCreateEdgeList();
 		SVGG g = new SVGG();
 		SVGG rawPixelG = pixelList.plotPixels("magenta");
 		g.appendChild(rawPixelG);
@@ -431,13 +438,16 @@ public class PixelGraph {
 
 	public void drawNodes(String[] colours, SVGG g) {
 		ensureNodeList();
+		if (nodeList.size() == 0) {
+			LOG.warn("No nodes in graph");
+		}
 		for (int i = 0; i < nodeList.size(); i++) {
 			String col = colours[i % colours.length];
 			PixelNode node = nodeList.get(i);
 			if (node != null) {
 				SVGG nodeG = node.createSVG(1.0);
 				nodeG.setStroke(col);
-				nodeG.setStrokeWidth(0.1);
+				nodeG.setStrokeWidth(0.3);
 				nodeG.setOpacity(0.5);
 				nodeG.setFill("none");
 				g.appendChild(nodeG);
@@ -477,7 +487,7 @@ public class PixelGraph {
 	}
 
 	public ImageParameters getParameters() {
-		return getIsland().getParameters();
+		return getIsland() == null ? getDefaultParameters() : getIsland().getParameters();
 	}
 
 	private PixelIsland getIsland() {
@@ -492,10 +502,11 @@ public class PixelGraph {
 	 *  uses parameters to 
 	 * @return
 	 */
-	public SVGG createSegmentedEdges() {
+	public SVGG createSegmentedEdgesSVG() {
 		SVGG g = new SVGG();
 		for (PixelEdge edge: edgeList) {
-			PixelSegmentList pixelSegmentList = edge.getOrCreateSegmentList(getParameters().getSegmentTolerance());
+			double segmentTolerance = getParameters().getSegmentTolerance();
+			PixelSegmentList pixelSegmentList = edge.getOrCreateSegmentList(segmentTolerance);
 			pixelSegmentList.setStroke(getParameters().getStroke());
 			pixelSegmentList.setWidth(getParameters().getLineWidth());
 			pixelSegmentList.setFill(getParameters().getFill());
@@ -1204,11 +1215,21 @@ public class PixelGraph {
 		}
 		
 	}
-	/** merge nodes closer than a given distance.
-	 * exploratory! 
-	 * @param d
-	 */
+	
 	public void mergeNodesCloserThan(double d) {
+		boolean omit1connected = false;
+		mergeNodesCloserThan(d, omit1connected);
+	}
+
+	/** merge nodes closer than a given distance.
+	 * nodes must be already connected by an edge
+	 * option to omit nodes which are 1-connected 
+	 * exploratory! 
+	 * @param d 
+	 * @param omit1connected if true do not use 1-connected nodea as this trims the branches
+	 * 
+	 */
+	public void mergeNodesCloserThan(double d, boolean omit1connected) {
 		getOrCreateEdgeList();
 //		getOrCreateNodeList();
 		boolean change = true;
@@ -1218,8 +1239,12 @@ public class PixelGraph {
 				PixelEdge edge = edgeList.get(i);
 				if (edge.getLength() < d) {
 					change = true;
-					condenseEdgeAndRemoveOneNode(edge);
-
+					PixelNode node0 = edge.getPixelNode(0);
+					PixelNode node1 = edge.getPixelNode(1);
+					if (!omit1connected || 
+							(node0.getEdges().size() > 1 && node1.getEdges().size() > 1)) {
+						condenseEdgeAndRemoveOneNode(edge);
+					}
 				}
 			}
 		}
@@ -1257,6 +1282,13 @@ public class PixelGraph {
 				}
 			}
 		}
+	}
+
+	private ImageParameters getDefaultParameters() {
+		if (imageParameters == null) {
+			imageParameters = new ImageParameters();
+		}
+		return imageParameters;
 	}
 
 

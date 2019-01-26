@@ -49,7 +49,7 @@ public class SpectraIT {
 //		LOG.debug("pg "+largestGraph);
 		largestGraph.doEdgeSegmentation();
 		largestGraph.setSegmentCreationTolerance(0.2);
-		SVGG segments = largestGraph.createSegmentedEdges();
+		SVGG segments = largestGraph.createSegmentedEdgesSVG();
 //		segments = new SVGG();
 		File segmentsFile = new File(targetDir, "segments.svg");
 		largestGraph.drawNodes(new String[] {"red"}, segments);

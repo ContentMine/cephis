@@ -433,7 +433,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private File abstractDir;
 	private File frontDir;
 	private PDFDocumentProcessor pdfDocumentProcessor;
-	private boolean forceMake = false;;
+	private boolean forceMake = false;
+	private TreeImageManager pdfImageManager;;
 
 	public CTree() {
 		super();
@@ -1941,7 +1942,9 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public List<File> getPDFImagesImageDirectories() {
 		List<File> imageDirectories = new ArrayList<File>();
-		List<File> subDirectories = CMineGlobber.listSortedChildDirectories(new File(directory, PDF_IMAGES_DIR));
+		File dir = getExistingPDFImagesDir();
+//		File dir = new File(directory, PDF_IMAGES_DIR);
+		List<File> subDirectories = CMineGlobber.listSortedChildDirectories(dir);
 		for (File subDir : subDirectories) {
 			String name = subDir.getName();
 			if (name.startsWith(IMAGEDOT)) {
@@ -1949,6 +1952,14 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			}
 		}
 		return imageDirectories;
+	}
+
+
+	public TreeImageManager getOrCreatePDFImageManager() {
+		if (pdfImageManager == null) {
+			pdfImageManager = TreeImageManager.createTreeImageManager(this, this.getExistingPDFImagesDir());
+		}
+		return pdfImageManager;
 	}
 
 

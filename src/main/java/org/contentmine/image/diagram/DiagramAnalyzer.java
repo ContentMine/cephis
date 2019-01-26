@@ -45,6 +45,7 @@ import org.contentmine.image.pixel.Pixel;
 import org.contentmine.image.pixel.PixelEdge;
 import org.contentmine.image.pixel.PixelEdgeList;
 import org.contentmine.image.pixel.PixelGraph;
+import org.contentmine.image.pixel.PixelGraphList;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
 import org.contentmine.image.pixel.PixelList;
@@ -118,7 +119,7 @@ public class DiagramAnalyzer {
 	private SVGParameters svgParameters;
 
 	private SVGG svgg;
-	protected List<PixelGraph> pixelGraphList;
+	protected PixelGraphList pixelGraphList;
 	private String logFile;
 
 	private File inputDir;
@@ -282,7 +283,7 @@ public class DiagramAnalyzer {
 		svgg = new SVGG();
 		ensureImageProcessor();
 		PixelIslandList pixelIslandList = imageProcessor.getOrCreatePixelIslandList();
-		List<PixelGraph> graphList = pixelIslandList.getOrCreateGraphList();
+		PixelGraphList graphList = pixelIslandList.getOrCreateGraphList();
 		LOG.trace("graphs: "+graphList.size());
 		if (svgParameters.isDrawPixels()) {
 			svgg.appendChild(pixelIslandList.getOrCreateSVGG());
@@ -470,7 +471,7 @@ public class DiagramAnalyzer {
 //		}
 	}
 
-	public List<PixelGraph> getOrCreateGraphList() {
+	public PixelGraphList getOrCreateGraphList() {
 		// this is required because the commands are now obsolete and we have to load the image
 		if (pixelGraphList == null) {
 			getOrCreateImageProcessorFromInputFile();
@@ -499,7 +500,7 @@ public class DiagramAnalyzer {
 		PixelIslandList thinnedPixelIslandList = getOrCreatePixelIslandList();
 		thinnedPixelIslandList.setDiagonal(true);
 		pixelGraphList = thinnedPixelIslandList.getOrCreateGraphList();
-		List<PixelGraph> graphs =  pixelGraphList;
+		PixelGraphList graphs =  pixelGraphList;
 		imageProcessor = new ImageProcessor();
 		imageProcessor.setThinning(null);
 		imageProcessor.processImageFile(inputFile);
@@ -584,7 +585,7 @@ public class DiagramAnalyzer {
 		}
 	}
 
-	private void getSegments(SVGSVG svg, List<PixelGraph> graphs, Set<Integer> used, List<Integer> ringsForShapes,
+	private void getSegments(SVGSVG svg, PixelGraphList graphs, Set<Integer> used, List<Integer> ringsForShapes,
 			List<PixelRingList> ringLists, List<List<SVGPolygon>> polygonListList) {
 		for (int i = 0; i < ringLists.size(); i++) {
 			if (used.contains(i)) {
@@ -1031,7 +1032,7 @@ public class DiagramAnalyzer {
 //		return largestHeight;
 //	}
 
-	private Map<PixelIsland, SVGLine> handleSingleLines(List<PixelGraph> graphs, PixelIslandList nonThinnedPixelIslandList, Set<Integer> used) {
+	private Map<PixelIsland, SVGLine> handleSingleLines(PixelGraphList graphs, PixelIslandList nonThinnedPixelIslandList, Set<Integer> used) {
 		List<PixelIsland> difficultLines = new ArrayList<PixelIsland>();
 		Map<PixelIsland, SVGLine> linesThatMayBeText = new HashMap<PixelIsland, SVGLine>();
 		for (int i = 0; i < graphs.size(); i++) {
@@ -1395,7 +1396,7 @@ public class DiagramAnalyzer {
 		}
 	}
 	
-	public List<PixelGraph> getOrCreateGraphList(File inputFile) {
+	public PixelGraphList getOrCreateGraphList(File inputFile) {
 		this.setInputFile(inputFile);
 		return this.getOrCreateGraphList();
 	}

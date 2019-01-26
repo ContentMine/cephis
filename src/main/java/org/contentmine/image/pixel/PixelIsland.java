@@ -96,6 +96,8 @@ public class PixelIsland implements Iterable<Pixel> {
 	private PixelIslandAnnotation islandAnnotation;
 
 	private List<IslandRingList> islandRingListList;
+
+	private ImageParameters imageParameters;
 	
 	
 	
@@ -1131,12 +1133,19 @@ public class PixelIsland implements Iterable<Pixel> {
 
 	public ImageParameters getParameters() {
 		getIslandList();
-		return islandList.getParameters();
+		return islandList == null ? getDefaultParameters() : islandList.getParameters();
+	}
+
+	private ImageParameters getDefaultParameters() {
+		if (imageParameters == null) {
+			imageParameters = new ImageParameters();
+		}
+		return imageParameters;
 	}
 
 	PixelIslandList getIslandList() {
 		if (islandList == null) {
-			throw new RuntimeException("Island must have IslandList");
+			LOG.trace("Island does not have IslandList");
 		}
 		return islandList;
 	}

@@ -55,7 +55,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	private boolean debug = false;
 	private MainPixelProcessor mainProcessor;
 	private boolean diagonal;
-	private List<PixelGraph> graphList;
+	private PixelGraphList graphList;
 	private List<PixelList> outlineList;
 	private List<String> defaultColorList;
 	private Real2RangeList bboxList;
@@ -519,8 +519,8 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	}
 
 //	@Deprecated
-//	public List<PixelGraph> analyzeEdgesAndPlot() throws IOException {
-//		List<PixelGraph> pixelGraphList = new ArrayList<PixelGraph>();
+//	public PixelGraphList analyzeEdgesAndPlot() throws IOException {
+//		PixelGraphList pixelGraphList = new PixelGraphList();
 //		thinThickStepsOld();
 //		File outputDir = pixelProcessor.getOutputDir();
 //		outputDir.mkdirs();
@@ -549,10 +549,10 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 //		return pixelGraphList;
 //	}
 
-	public List<PixelGraph> getOrCreateGraphList() {
+	public PixelGraphList getOrCreateGraphList() {
 //		this.debugIslands();
 		if (graphList == null) {
-			graphList = new ArrayList<PixelGraph>();
+			graphList = new PixelGraphList();
 			doSuperThinning();
 			// main tree
 			for (int i = 0; i < Math.min(size(), mainProcessor.getMaxIsland()); i++) {
@@ -667,9 +667,9 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		return island;
 	}
 
-	public List<PixelGraph> analyzeEdgesAndPlot() {
+	public PixelGraphList analyzeEdgesAndPlot() {
 		LOG.error("NYI");
-		return new ArrayList<PixelGraph>();
+		return new PixelGraphList();
 	}
 
 	public void setParentIslandList(MainPixelProcessor mainPixelProcessor) {

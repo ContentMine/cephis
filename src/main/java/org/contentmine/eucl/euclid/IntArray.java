@@ -25,6 +25,8 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
+import com.google.common.collect.Multiset;
+
 /**
  * array of ints
  * 
@@ -327,7 +329,19 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
     public IntArray(String string) throws NumberFormatException {
         this(string.split(S_WHITEREGEX));
     }
-    /**
+
+    /** creates a sorted IntArray of the unique values.
+     * 
+     */
+    public static IntArray createSortedIntArray(Multiset<Integer> set) {
+    	IntArray intArray = new IntArray();
+    	for (Integer i : set.elementSet()) {
+    		intArray.addElement(i); 
+    	}
+    	intArray.sortAscending();
+    	return intArray;
+	}
+	/**
      * contracts internal array to be of same length as number of elements.
      * 
      * should be used if the array will be used elsewhere with a fixed length.
@@ -1526,6 +1540,24 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
 	public void subtractMean() {
 		int m = getMean();
 		this.addConstant(-m);
+	}
+
+	/** gets index of element closest to val.
+	 * if equidistant takes first found.
+	 * @param val target value
+	 * @return index of closest element (-1 if not found (zero length array))
+	 */
+	public int getIndexOfClosestElement(int val) {
+		int idx = -1;
+		int delta = Integer.MAX_VALUE;
+		for (int i = 0; i < nelem; i++) {
+			int abs = Math.abs(array[i] - val);
+			if (abs < delta) {
+				idx = i;
+				delta = abs;
+			}
+		}
+		return idx;
 	}
 	
 }

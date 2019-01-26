@@ -147,7 +147,17 @@ public abstract class AbstractCache {
 		boolean remove = elementList.remove(element);
 		if (remove) {
 			this.clearBoundingBoxToNull();
-			ownerComponentCache.clearBoundingBoxToNull();
+			if (ownerComponentCache != null) {
+				ownerComponentCache.clearBoundingBoxToNull();
+			}
+		}
+		return remove;
+	}
+	
+	public boolean remove(List<? extends AbstractCMElement> elementList) {
+		boolean remove = false;
+		for (AbstractCMElement element : elementList) {
+			remove |= remove(element);
 		}
 		return remove;
 	}
