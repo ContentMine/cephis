@@ -61,7 +61,7 @@ public class ImageProcessor {
 	private static final String THINNED_PNG = "thinned.png";
 
 	private boolean binarize;
-	private boolean debug = true;
+	private boolean debug = false;
 	private BufferedImage image;
 	private Thinning thinning;
 	private int threshold;
@@ -127,16 +127,18 @@ public class ImageProcessor {
 		return binarize;
 	}
 
-	public void setDebug(boolean debug) {
+	public ImageProcessor setDebug(boolean debug) {
 		this.debug = debug;
+		return this;
 	}
 
 	public boolean getDebug() {
 		return debug;
 	}
 
-	public void setImage(BufferedImage img) {
+	public ImageProcessor setImage(BufferedImage img) {
 		this.image = img;
+		return this;
 	}
 
 	public BufferedImage getImage() {
@@ -310,6 +312,10 @@ public class ImageProcessor {
 
 	private static int getDefaultThreshold() {
 		return DEFAULT_THRESHOLD;
+	}
+
+	public void readAndProcessFile() {
+		readAndProcessFile(inputFile);
 	}
 
 	public void readAndProcessFile(File file) {

@@ -254,7 +254,7 @@ public class SimpleBuilder {
 	}
 
 	private void removeZeroLengthLinesAndEmptyPaths() {
-		List<SVGLine> lineList = lineCache.getOrCreateLineList();
+		List<SVGLine> lineList = lineCache.getOrCreateLineList().getLineList();
 		for (int i = lineList.size() - 1; i >= 0; i--) {
 			SVGLine line = lineList.get(i);
 			if (Real.isZero(line.getLength(), Real.getEpsilon())) {
@@ -287,12 +287,12 @@ public class SimpleBuilder {
 	}
 
 	protected void sewTogetherCutLines() {
-		List<SVGLine> allLines = new ArrayList<SVGLine>(lineCache.getOrCreateLineList());
+		List<SVGLine> allLines = new ArrayList<SVGLine>(lineCache.getOrCreateLineList().getLineList());
 		for (SVGPolygon polygon : shapeCache.getPolygonList()) {
 			allLines.addAll(polygon.createLineList(true));
 		}
 		
-		List<SVGLine> lines1 = lineCache.getOrCreateLineList();
+		List<SVGLine> lines1 = lineCache.getOrCreateLineList().getLineList();
 		for (int iLine1 = 0; iLine1 < lines1.size() - 1; iLine1--) {
 			SVGLine line1 = lines1.get(iLine1);
 			line2: for (SVGLine line2: lineCache.getOrCreateLineList()) {
@@ -458,7 +458,7 @@ public class SimpleBuilder {
 				if (testFirstPairOfLines && testSecondPairOfLines) {
 					boolean linesDoNotIntersect = (intersection == null || (joiningLines.get(0).getLambda(intersection) < 0 || joiningLines.get(0).getLambda(intersection) > 1) && (joiningLines.get(1).getLambda(intersection) < 0 || joiningLines.get(1).getLambda(intersection) > 1));
 					if (linesDoNotIntersect) {
-						List<SVGLine> allLines = new ArrayList<SVGLine>(lineCache.getOrCreateLineList());
+						List<SVGLine> allLines = new ArrayList<SVGLine>(lineCache.getOrCreateLineList().getLineList());
 						for (SVGPolygon polygon : shapeCache.getPolygonList()) {
 							if (polygon != polygon1 && polygon != polygon2) {
 								allLines.addAll(polygon.createLineList(true));

@@ -17,8 +17,10 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
 import org.contentmine.eucl.euclid.Angle.Units;
+import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.Int2Range;
+import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntRangeArray;
 import org.contentmine.eucl.euclid.Line2;
@@ -30,10 +32,14 @@ import org.contentmine.eucl.euclid.Transform2;
 import org.contentmine.eucl.euclid.Vector2;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
+import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGPolygon;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGUtil;
 import org.contentmine.graphics.svg.builder.SimpleBuilder;
+import org.contentmine.graphics.svg.cache.ComponentCache;
+import org.contentmine.graphics.svg.cache.LineCache;
+import org.contentmine.graphics.svg.linestuff.LineMerger.MergeMethod;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ArgIterator;
 import org.contentmine.image.ImageProcessor;
@@ -1505,25 +1511,52 @@ public class DiagramAnalyzer {
 	}
 
 	/** convenience routine for creating binary pixel rings.
+	 * aggrgates pixel rings - may be poor idea
+	 * @param imageFile
+	 * @return
+	 */
+	public PixelRingList createDefaultPixelRings() {
+		PixelIslandList pixelIslandList = createDefaultPixelIslandList1();
+		PixelRingList pixelRingList = null;
+		pixelRingList = pixelIslandList.createAggregatedInternalPixelRingList();
+// alternative method		
+		PixelIsland pixelIsland0 = pixelIslandList.get(0);
+//		pixelRingList = pixelIsland0 == null ? new PixelRingList() : pixelIsland0.getOrCreateInternalPixelRings();
+		return pixelRingList;
+	}
+
+	/** convenience routine for creating binary pixel rings.
 	 * 
 	 * @param imageFile
 	 * @return
 	 */
-	public PixelRingList createDefaultPixelRings(File imageFile) {
+	public List<PixelRingList> createDefaultPixelRingListList() {
+		PixelIslandList pixelIslandList = createDefaultPixelIslandList1();
+		List<PixelRingList> pixelRingListList = null;
+		pixelRingListList = pixelIslandList.createInternalPixelRingListList();
+		return pixelRingListList;
+	}
+
+	/** default image processing .
+	 * threshold 180 and removal of all islands < 10*10 
+	 * mainly for testing
+	 * 
+	 * @param imageFile
+	 * @return
+	 */
+	public PixelIslandList createDefaultPixelIslandList1() {
 		ImageProcessor imageProcessor = getImageProcessor();
 		imageProcessor.setBinarize(true);
 		imageProcessor.setThreshold(180); // turns blue to black
 		imageProcessor.setThinning(null);
-		imageProcessor.setDebug(true);
-		imageProcessor.readAndProcessFile(imageFile);
+		imageProcessor.setDebug(false);
+		imageProcessor.readAndProcessFile();
 		PixelIslandList pixelIslandList = getOrCreatePixelIslandList();
 		pixelIslandList.removeIslandsWithBBoxesLessThan(new Real2Range(new RealRange(0, 10), new RealRange(0, 10)));
 		pixelIslandList.sortBySizeDescending();
-		PixelIsland mainTrace = pixelIslandList.get(0);
-		PixelRingList pixelRingList = mainTrace == null ? new PixelRingList() : mainTrace.getOrCreateInternalPixelRings();
-		return pixelRingList;
+		return pixelIslandList;
 	}
-
+	
 	/** convenience routine for creating binary pixel rings.
 	 * 
 	 * @param imageFile
@@ -1623,8 +1656,9 @@ public class DiagramAnalyzer {
 		}
 	}
 
-	private void setDebug(boolean b) {
+	public DiagramAnalyzer setDebug(boolean b) {
 		ensureImageProcessor().setDebug(b);
+		return this;
 	}
 
 	/** requires an image.
@@ -1695,6 +1729,37 @@ public class DiagramAnalyzer {
 
 	public BufferedImage getBinarizedImage() {
 		return imageProcessor == null ? null : imageProcessor.getBinarizedImage();
+	}
+
+	public Real2Array extractLocalSummitCoordinates(int minNestedRings) {
+		setThinning(null);
+		readAndProcessInputFile();
+		// list of pixelRings by island
+		List<PixelRingList> pixelRingListList = createDefaultPixelRingListList();
+		return PixelRingList.extractLocalSummits(pixelRingListList, minNestedRings);
+	}
+
+	public SVGLineList extractHorizontalLines() {
+		setThinning(new ZhangSuenThinning()).readAndProcessInputFile();
+		PixelIslandList pixelIslandList = getImageProcessor().getOrCreatePixelIslandList();
+		pixelIslandList.removeIslandsWithBBoxesLessThan(new Int2(10,10)); //<<<
+		PixelGraphList graphList = getOrCreateGraphList();
+		graphList.mergeNodesCloserThan(3.0);                            
+		
+		LineCache lineCache = new LineCache(new ComponentCache()).setSegmentTolerance(1.0);
+		lineCache.addGraphList(graphList);
+		
+		IntArray yArray = lineCache.getGridYCoordinates();
+		graphList.snapNodesToArray(yArray, Axis2.Y, 1);
+		/** recreate cache to clear old values */
+		
+		lineCache = new LineCache(new ComponentCache());
+		SVGLineList edgeLines = graphList.createLinesFromEdges();
+		lineCache.addLines(edgeLines.getLineList());
+		SVGLineList horSVGLineList = lineCache.getOrCreateHorizontalSVGLineList();
+		horSVGLineList.mergeLines(1.0, MergeMethod.OVERLAP);
+		return horSVGLineList;
+		
 	}
 
 }

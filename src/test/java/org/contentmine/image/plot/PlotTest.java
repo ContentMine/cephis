@@ -572,7 +572,7 @@ public class PlotTest {
 					PixelRing list1 = pixelRingList.get(ring1);
 					PixelRing outline = list1.getPixelsTouching(list0);
 					PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(outline);
-					pixelListFloodFill.fill();
+					pixelListFloodFill.fillIslands();
 					PixelIslandList pixelIslandList1 = pixelListFloodFill.getIslandList();
 					List<PixelIsland> outlineList = pixelIslandList1.getList();
 					for (PixelIsland outline1 : outlineList) {

@@ -19,6 +19,7 @@ import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
+import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGPoly;
 import org.contentmine.image.ImageParameters;
 import org.contentmine.image.pixel.PixelComparator.ComparatorType;
@@ -1289,6 +1290,24 @@ public class PixelGraph {
 			imageParameters = new ImageParameters();
 		}
 		return imageParameters;
+	}
+
+	/** creates a new line using coordinates of edge.
+	 * 
+	 * @return
+	 */
+	public SVGLineList createLinesFromEdges() {
+		SVGLineList lineList = new SVGLineList();
+		for (PixelEdge edge : edgeList) {
+			PixelNode node0 = edge.getPixelNode(0);
+			Int2 xy0 = node0.getInt2();
+			PixelNode node1 = edge.getPixelNode(1);
+			Int2 xy1 = node1.getInt2();
+			SVGLine line = new SVGLine(new Real2(xy0), new Real2(xy1));
+			line.setStrokeWidth(1.0);
+			lineList.add(line);
+		}
+		return lineList;
 	}
 
 

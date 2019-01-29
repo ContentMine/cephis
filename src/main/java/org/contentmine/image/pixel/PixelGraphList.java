@@ -8,8 +8,11 @@ import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.graphics.svg.SVGG;
+import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.cache.GenericAbstractList;
+
+import net.sourceforge.htmlunit.corejs.javascript.NativeGenerator.GeneratorClosedException;
 
 public class PixelGraphList extends GenericAbstractList<PixelGraph> {
 	private static final Logger LOG = Logger.getLogger(PixelGraphList.class);
@@ -51,11 +54,22 @@ public class PixelGraphList extends GenericAbstractList<PixelGraph> {
 			PixelNodeList nodeList = graph.getOrCreateNodeList();
 			for (PixelNode node : nodeList) {
 				if (node.getEdges().size() > minEdgeCount) {
-					LOG.debug("N>1 "+node);
 					node.snapToArray(xArray, axis);
 				}
 			}
 		}
+	}
+
+	/** creates SVGLines for edges but does not use pixels.
+	 * This is to allow for redefinition pf precise positions
+	 */
+	public SVGLineList createLinesFromEdges() {
+		SVGLineList lineList = new SVGLineList();
+		for (PixelGraph graph : this) {
+			SVGLineList graphLineList = graph.createLinesFromEdges();
+			lineList.addAll(graphLineList);
+		}
+		return lineList;
 	}
 	
 	

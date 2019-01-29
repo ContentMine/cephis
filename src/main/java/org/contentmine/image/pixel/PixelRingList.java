@@ -6,9 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Real2;
+import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.graphics.svg.SVGG;
 
-/** a list if (generally nested) PixelRings
+/** a list of (generally nested) PixelRings
  * generally created elsewhere (PixelIsland)
  * 
  * @author pm286
@@ -201,4 +203,58 @@ public class PixelRingList implements Iterable<PixelRing> {
 		}
 		return sb.toString();
 	}
+
+	public PixelRing getInnermostRing() {
+		return ringList.get(ringList.size() - 1);
+	}
+
+	/**
+	 * 
+	 * @return mean of coordinates of innermost ring.
+	 * 
+	 */
+	public Real2 getInnermostCentreCoordinate() {
+		PixelRing innermostRing = getInnermostRing();
+		return innermostRing == null ? null : innermostRing.getCentreCoordinate();
+	}
+	
+	/** create local summits from pixelRings
+	 * The normal pixelRing extraction is essetially the whole "shoreline" of the
+	 * contour. This method finds the centroids of the new islands at this contour level,
+	 * 
+	 * @param pixelRingListList list of PixelRingLists from different islands
+	 * @param minNestedRings lower limit for creating local summits
+	 * @return
+	 */
+
+	public static Real2Array extractLocalSummits(List<PixelRingList> pixelRingListList, int minNestedRings) {
+		Real2Array localSummitCoordinates = new Real2Array();
+		for (PixelRingList pixelRingListIsland : pixelRingListList) {
+			int nestedRings = pixelRingListIsland.size();
+			if (nestedRings > minNestedRings) {
+				Real2Array coordinateArray = null;
+				for (int iring = 0; iring < nestedRings; iring++) {
+					PixelRing pixelRing = pixelRingListIsland.get(iring);
+					// lower nesting likely to contain isolated points
+					if (iring == minNestedRings - 1) {
+						coordinateArray = processLowestSignificantRing( pixelRing);
+						localSummitCoordinates.addAll(coordinateArray);
+					}
+				}
+			}
+		}
+		return localSummitCoordinates;
+	}
+
+	private static Real2Array processLowestSignificantRing(PixelRing pixelRing) {
+		Real2Array coordinateArray = new Real2Array();
+		IslandRingList islandRingList = IslandRingList.createFromPixelRing(pixelRing, null);
+		for (PixelRing islandRing : islandRingList) {
+			Real2 centreCoordinate = islandRing.getCentreCoordinate();
+			coordinateArray.addElement(centreCoordinate);
+		}
+		return coordinateArray;
+	}
+	
+
 }

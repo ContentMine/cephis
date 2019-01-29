@@ -66,8 +66,10 @@ public class Pixel {
 	 * @return
 	 */
 	public PixelList getOrCreateNeighbours(PixelIsland island) {
-		island.ensurePopulatedMapAndRanges();
-		this.island = island;
+		if (island != null) {
+			island.ensurePopulatedMapAndRanges();
+			this.island = island;
+		}
 		getOrCreateNeighbourList(island);
 		return neighbourList;
 	}
@@ -153,8 +155,14 @@ public class Pixel {
 		return coordList;
 	}
 
+	/** calculate neighbours
+	 * 
+	 * @param island if null use diagonal, else use value in island
+	 * @return
+	 */
 	public List<Int2> calculateNeighbourCoordList(PixelIsland island) {
-		return calculateNeighbourCoordList(island.getDiagonal());
+		boolean diagonal = island == null ? true : island.getDiagonal();
+		return calculateNeighbourCoordList(diagonal);
 	}
 
 	public void setIsland(PixelIsland island) {

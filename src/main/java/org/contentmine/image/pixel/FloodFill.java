@@ -30,7 +30,7 @@ public abstract class FloodFill {
 	
 	protected abstract boolean isBlack(int posX, int posY);
 	
-	public boolean fill() {
+	public boolean fillIslands() {
 		painted = new boolean[height][width];
 
 		for (int i = 0; i < height; i++) {
@@ -84,8 +84,8 @@ public abstract class FloodFill {
 	
 	public PixelIslandList getIslandList() {
 		ensureIslandList();
-		if (!fill()) {
-			LOG.error("TOO_MANY_ISLANDS");
+		if (!fillIslands()) {
+			LOG.error("TOO_MANY_ISLANDS > "+maxIslands+" maybe requires imageprocessing?");
 		}
 		for (PixelIsland island : islandList) {
 			island.setDiagonal(diagonal);

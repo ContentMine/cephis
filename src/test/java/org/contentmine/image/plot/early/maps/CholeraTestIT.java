@@ -84,7 +84,7 @@ public class CholeraTestIT {
 		gg = ring4.getOrCreateSVG();
 		SVGSVG.wrapAndWriteAsSVG(gg, new File(targetDir, "pixelRings4"+".svg"));
 		PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(ring4);
-		pixelListFloodFill.fill();
+		pixelListFloodFill.fillIslands();
 		PixelIslandList separatedIslandList = pixelListFloodFill.getIslandList();
 		separatedIslandList.sortBySizeDescending();
 		// this doesn't work anymore

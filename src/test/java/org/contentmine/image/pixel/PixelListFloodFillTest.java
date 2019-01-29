@@ -54,7 +54,7 @@ public class PixelListFloodFillTest {
 		PixelList pixelList = PixelList.createPixelList(pixelListString, island);
 		Assert.assertEquals(774, pixelList.size());
 		PixelListFloodFill pixelListFloodFill = new PixelListFloodFill(pixelList);
-		pixelListFloodFill.fill();
+		pixelListFloodFill.fillIslands();
 		PixelIslandList pixelIslandList = pixelListFloodFill.getIslandList();
 		pixelIslandList.sortBySizeDescending();
 		Assert.assertEquals(110, pixelIslandList.size());

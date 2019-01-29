@@ -124,7 +124,7 @@ public class PixelIslandTest {
 		BufferedImage image = ImageIO.read(ImageAnalysisFixtures.MALTORYZINE_THINNED_PNG);
 		FloodFill floodFill = new ImageFloodFill(image);
 		floodFill.setDiagonal(true);
-		floodFill.fill();
+		floodFill.fillIslands();
 		PixelIsland island = floodFill.getIslandList().get(1);
 		Assert.assertEquals("size", 33, island.size());
 		// island.cleanChains();
@@ -136,7 +136,7 @@ public class PixelIslandTest {
 		BufferedImage image = ImageIO.read(ImageAnalysisFixtures.MALTORYZINE_THINNED_PNG);
 		FloodFill floodFill = new ImageFloodFill(image);
 		floodFill.setDiagonal(true);
-		floodFill.fill();
+		floodFill.fillIslands();
 		PixelIsland island = floodFill.getIslandList().get(0);
 		Assert.assertEquals("size", 492, island.size());
 		// island.cleanChains();

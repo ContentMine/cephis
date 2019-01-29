@@ -21,6 +21,7 @@ import org.contentmine.graphics.svg.SVGCircle;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGLine;
+import org.contentmine.graphics.svg.SVGLineList;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.cache.ComponentCache;
@@ -77,7 +78,7 @@ public class MoleculeBuilder {
 		XPlotBox xPlotBox = new XPlotBox();
 		ComponentCache componentCache = new ComponentCache(xPlotBox); 
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
-		List<SVGLine> lineList = componentCache.getOrCreateLineCache().getOrCreateLineList();
+		SVGLineList lineList = componentCache.getOrCreateLineCache().getOrCreateLineList();
 		bondList = createBondList(lineList);
 		List<SVGText> textList = componentCache.getOrCreateTextCache().getOrCreateOriginalTextList();
 		// make nodes from all texts
@@ -229,7 +230,7 @@ public class MoleculeBuilder {
 		return g;
 	}
 
-	private List<SVGBond> createBondList(List<SVGLine> lineList) {
+	private List<SVGBond> createBondList(SVGLineList lineList) {
 		bondList = new ArrayList<SVGBond>();
 		for (int i = 0; i < lineList.size(); i++) {
 			SVGElement line = lineList.get(i);

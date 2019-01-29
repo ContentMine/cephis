@@ -594,7 +594,7 @@ public class PixelList implements Iterable<Pixel> {
 		return centrePixel;
 	}
 
-	private Real2 getCentreCoordinate() {
+	public Real2 getCentreCoordinate() {
 		return size() == 0 ? null : getOrCreateReal2Array().getMean();
 	}
 

@@ -67,7 +67,7 @@ public class MainPixelProcessor {
 	}
 
 	private int getDefaultMaxIsland() {
-		return 30;
+		return 100;
 	}
 
 	public BufferedImage getImage() {

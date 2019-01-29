@@ -30,7 +30,7 @@ public class ImageFloodFill extends FloodFill {
 		String filename = args[0];
 		BufferedImage image = ImageIO.read(new File(filename));
 		FloodFill floodFill = new ImageFloodFill(image);
-		floodFill.fill();
+		floodFill.fillIslands();
 	}
 	
 	@Override

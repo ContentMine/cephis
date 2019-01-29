@@ -645,6 +645,14 @@ public class Real2Array implements EuclidConstants ,  Iterable<Real2>  {
 		return curvature;
 	}
 	
+	public void addAll(Real2Array coordinateArray) {
+		if (coordinateArray != null) {
+			for (Real2 coord : coordinateArray) {
+				this.addElement(coord);
+			}
+		}
+	}
+	
 	
 }
 class Real2Iterator implements Iterator<Real2> {

@@ -177,7 +177,7 @@ public class TimecourseTest {
 		File file = new File(sourceDir, "svg/dosagec.svg"); 
 		ComponentCache componentCache = ComponentCache.createComponentCache(file);
 		List<SVGRect> rectList = componentCache.getOrCreateRectCache().getOrCreateRectList();
-		List<SVGLine> lineList = componentCache.getOrCreateLineCache().getOrCreateLineList();
+		List<SVGLine> lineList = componentCache.getOrCreateLineCache().getOrCreateLineList().getLineList();
 //		LOG.debug("line "+lineList.size());
 		SVGSVG.wrapAndWriteAsSVG(lineList, new File(targetDir, "lines.svg"));
 //		LOG.debug("short hor line "+componentCache.getOrCreateLineCache().getOrCreateShortHorizontalLineList().size());

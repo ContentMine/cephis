@@ -776,6 +776,20 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 		return bboxList;
 	}
 
+	/** create List of PixelRingLists for each PixelIsland.
+	 * 
+	 * @return
+	 */
+	public List<PixelRingList> createInternalPixelRingListList() {
+		List<PixelRingList> pixelRingListList = new ArrayList<PixelRingList>();
+		sortBySizeDescending();
+		for (PixelIsland pixelIsland : this) {
+			PixelRingList pixelRingList = pixelIsland.getOrCreateInternalPixelRings();
+			pixelRingListList.add(pixelRingList);
+		}
+		return pixelRingListList;
+	}
+
 	public static PixelIslandList createPixelIslandList(PixelList pixelList) {
 		PixelIslandList islandList = new PixelIslandList();
 		if (pixelList != null) { 
@@ -785,6 +799,19 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 			LOG.debug("PL "+diagramAnalyzer.getPixelList());
 		}
 		return islandList;
+	}
+
+	/** create PixelRingList aggregated over all PixelIslands.
+	 * 
+	 * @return
+	 */
+	public PixelRingList createAggregatedInternalPixelRingList() {
+		List<PixelRingList> pixelRingListList = createInternalPixelRingListList();
+		PixelRingList aggregatedPixelRingList = new PixelRingList();
+		for (PixelRingList pixelRingList : pixelRingListList) {
+			aggregatedPixelRingList.addAll(pixelRingList);
+		}
+		return aggregatedPixelRingList;
 	}
 
 }

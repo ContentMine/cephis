@@ -55,7 +55,7 @@ public class GlyphTest {
 //		LOG.debug("CC"+componentCache);
 		List<SVGRect> rects = componentCache.getOrCreateRectCache().getOrCreateRectList();
 		SVGSVG.wrapAndWriteAsSVG(rects, new File(outputDir, fileroot+"/"+"rects.svg"));
-		List<SVGLine> lines = componentCache.getOrCreateLineCache().getOrCreateLineList();
+		List<SVGLine> lines = componentCache.getOrCreateLineCache().getOrCreateLineList().getLineList();
 		SVGSVG.wrapAndWriteAsSVG(lines, new File(outputDir, fileroot+"/"+"lines.svg"));
 //		List<SVGPolyline> polylines = componentCache.getOrCreatePolylineCache().getOrCreatePolylineList();
 		List<SVGPolyline> polylines = componentCache.getOrCreateShapeCache().getPolylineList();
@@ -193,7 +193,7 @@ public class GlyphTest {
 		componentCache.readGraphicsComponentsAndMakeCaches(svgElement);
 		
 		SVGG g = new SVGG();
-		List<SVGLine> lines = componentCache.getOrCreateLineCache().getOrCreateLineList();
+		List<SVGLine> lines = componentCache.getOrCreateLineCache().getOrCreateLineList().getLineList();
 		for (SVGLine line : lines) {
 			line.setStrokeWidth(0.3);
 			g.appendChild(line.copy());

@@ -417,7 +417,7 @@ public abstract class AbstractPlotBox {
 
 	private List<SVGLine> getOrCreateAllLineList() {
 		if (allLines == null) {
-			allLines = getOrCreateLineCache().getOrCreateLineList();
+			allLines = getOrCreateLineCache().getOrCreateLineList().getLineList();
 		}
 		return allLines;
 	}
@@ -494,7 +494,7 @@ public abstract class AbstractPlotBox {
 	protected List<SVGLine> getOrCreateLineList() {
 		if (allLines == null) {
 			getOrCreateLineCache();
-			allLines = lineCache.getOrCreateLineList();
+			allLines = lineCache.getOrCreateLineList().getLineList();
 		}
 		return allLines;
 	}

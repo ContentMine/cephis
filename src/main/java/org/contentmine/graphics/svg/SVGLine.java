@@ -485,6 +485,8 @@ public class SVGLine extends SVGShape {
 			if ((direction.isHorizontal() && line.isHorizontal(eps)) ||
 			    (direction.isVertical() && line.isVertical(eps))) {
 				lineList.add(line);
+			} else {
+				LOG.trace("reject: "+line+" /LV? "+line.isVertical(eps)+"/DV?"+direction.isVertical());
 			}
 		}
 		return lineList;

@@ -685,7 +685,7 @@ public class PixelIsland implements Iterable<Pixel> {
 	 * @return
 	 */
 	public PixelRingList getOrCreateInternalPixelRings() {
-		if (internalPixelRings == null) {
+//		if (internalPixelRings == null) {
 			internalPixelRings = new PixelRingList();
 			internalPixelRings.setIsland(this);
 			setDiagonal(true);
@@ -696,7 +696,7 @@ public class PixelIsland implements Iterable<Pixel> {
 				internalPixelRings.add(new PixelRing(pixelList));
 				pixelList = growFrom(pixelList, ring++);
 			}
-		}
+//		}
 		return internalPixelRings;
 	}
 

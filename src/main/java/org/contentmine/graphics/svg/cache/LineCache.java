@@ -50,7 +50,7 @@ public class LineCache extends AbstractCache {
 	private List<SVGLine> horizontalLines;
 	private List<SVGLine> verticalLines;
 
-	private List<SVGLine> lineList;
+	private SVGLineList lineList;
 	private SVGLineList longHorizontalLineList;
 	// where possible short horizontal lines will be contained within sibling tuples
 	private SVGLineList shortHorizontalLineList;
@@ -79,7 +79,8 @@ public class LineCache extends AbstractCache {
 		super(containingComponentCache);
 		if (containingComponentCache != null) {
 			siblingShapeCache = containingComponentCache.getOrCreateShapeCache();
-			lineList =  siblingShapeCache == null ? new ArrayList<SVGLine>() : siblingShapeCache.getLineList();
+			lineList =  siblingShapeCache == null ? new SVGLineList() : new SVGLineList(siblingShapeCache.getLineList());
+			lineList = lineList == null ? new SVGLineList() : lineList;
 		}
 		init();
 	}
@@ -113,16 +114,16 @@ public class LineCache extends AbstractCache {
 	 * @return the bounding box of the contained lines
 	 */
 	public Real2Range getBoundingBox() {
-		return getOrCreateBoundingBox(lineList);
+		return getOrCreateBoundingBox(lineList.getLineList());
 	}
 
 	public List<? extends SVGElement> getOrCreateElementList() {
-		return lineList;
+		return getOrCreateLineList().getLineList();
 	}
 
-	public List<SVGLine> getOrCreateLineList() {
+	public SVGLineList getOrCreateLineList() {
 		if (lineList == null) {
-			lineList = new ArrayList<SVGLine>();
+			lineList = new SVGLineList();
 		}
 		return lineList;
 	}
@@ -130,7 +131,7 @@ public class LineCache extends AbstractCache {
 	public void makeLongHorizontalAndVerticalEdges() {
 		
 		if (lineList != null && lineList.size() > 0) {
-			lineBbox = SVGElement.createBoundingBox(lineList);
+			lineBbox = SVGElement.createBoundingBox(lineList.getLineList());
 			getOrCreateLongHorizontalEdgeLines();
 			getOrCreateLongVerticalEdgeLines();
 		}
@@ -299,7 +300,7 @@ public class LineCache extends AbstractCache {
 
 	public List<SVGLine> getOrCreateVerticalLineList() {
 		if (verticalLines == null) {
-			verticalLines = SVGLine.findHorizontalOrVerticalLines(lineList, LineDirection.VERTICAL, AnnotatedAxis.EPS);
+			verticalLines = SVGLine.findHorizontalOrVerticalLines(lineList.getLineList(), LineDirection.VERTICAL, AnnotatedAxis.EPS);
 			verticalLines = SVGLine.mergeParallelLines(verticalLines, joinEps);
 		}
 		return verticalLines;
@@ -307,7 +308,7 @@ public class LineCache extends AbstractCache {
 
 	public List<SVGLine> getOrCreateHorizontalLineList() {
 		if (horizontalLines == null) {
-			List<SVGLine> horizontalLines0 = SVGLine.findHorizontalOrVerticalLines(lineList, LineDirection.HORIZONTAL, AnnotatedAxis.EPS);
+			List<SVGLine> horizontalLines0 = SVGLine.findHorizontalOrVerticalLines(lineList.getLineList(), LineDirection.HORIZONTAL, AnnotatedAxis.EPS);
 			horizontalLines = SVGLine.mergeParallelLines(horizontalLines0, joinEps );
 			if (horizontalLines0.size() != horizontalLines.size()) {
 				LOG.trace("merged horizontal lines: ");
@@ -497,28 +498,6 @@ public class LineCache extends AbstractCache {
 			addLines(lineList);
 		}
 		clearLineCaches();
-		
-		List<SVGLine> horLines = getOrCreateHorizontalLineList();
-		for (SVGLine line : horLines) {
-	//			gg.appendChild(copyLine(line, "black"));
-		}
-		List<SVGLine> vertLines = getOrCreateVerticalLineList();
-		for (SVGLine line : vertLines) {
-	//			gg.appendChild(copyLine(line, "red"));
-		}
-	//			lineCache.remove(vertLines);
-		System.out.println(horLines.size()+"/"+vertLines.size());
-	}
-
-	/** NYI */
-	public void snapToHorizontalGrid() {
-		IntArray xArray = getGridXCoordinates();
-	}
-
-	/** NYI */
-	public void snapToVerticalGrid() {
-		IntArray yArray = getGridYCoordinates();
-//		RealArithmeticProgression.createAP()
 	}
 
 	public IntArray getGridYCoordinates() {
@@ -545,6 +524,14 @@ public class LineCache extends AbstractCache {
 		for (PixelGraph graph : graphList) {
 			addGraph(graph);
 		}
+	}
+
+	public SVGLineList getOrCreateHorizontalSVGLineList() {
+		return new SVGLineList(getOrCreateHorizontalLineList());
+	}
+
+	public SVGLineList getOrCreateVerticalSVGLineList() {
+		return new SVGLineList(getOrCreateVerticalLineList());
 	}
 
 

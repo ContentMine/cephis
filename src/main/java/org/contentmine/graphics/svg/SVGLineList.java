@@ -10,6 +10,8 @@ import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.AbstractCMElement;
+import org.contentmine.graphics.svg.linestuff.LineMerger;
+import org.contentmine.graphics.svg.linestuff.LineMerger.MergeMethod;
 
 public class SVGLineList extends SVGG implements Iterable<SVGLine> {
 	
@@ -24,7 +26,7 @@ public class SVGLineList extends SVGG implements Iterable<SVGLine> {
 	}
 
 	private double siblingEps = 0.2; // difference in common coordinate
-	protected ArrayList<SVGLine> lineList;
+	protected List<SVGLine> lineList;
 	private SiblingType type;
 
 	public SVGLineList() {
@@ -152,5 +154,36 @@ public class SVGLineList extends SVGG implements Iterable<SVGLine> {
 			points.addElement(line.getMidPoint());
 		}
 		return points;
+	}
+
+	public void addAll(List<SVGLine> lines) {
+		ensureLines();
+		lineList.addAll(lines);
+	}
+
+	public void addAll(SVGLineList lines) {
+		ensureLines();
+		lineList.addAll(lines.getLineList());
+	}
+	
+	public SVGG createSVGElement() {
+		SVGG g = new SVGG();
+		for (SVGLine line : this) {
+			SVGLine line1 = new SVGLine(line);
+			line1.setStrokeWidth(1.0);
+			line1.setStroke("black");
+			g.appendChild(line1);
+		}
+		return g;
+	}
+
+	/** merges lines (H or V).
+	 * See LineMerger
+	 * 
+	 * @param eps
+	 * @param mergeMethod
+	 */
+	public void mergeLines(double eps, MergeMethod mergeMethod) {
+		lineList = LineMerger.mergeLines(lineList, eps, mergeMethod);
 	}
 }
