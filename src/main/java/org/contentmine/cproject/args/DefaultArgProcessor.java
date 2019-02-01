@@ -162,7 +162,7 @@ public class DefaultArgProcessor {
 			if (allowed.contains(method)) {
 				chosenTokens.add(method);
 			} else {
-				LOG.error("Unknown token: "+method);
+				LOG.error("Unknown token: "+method+"; allowed are: "+allowed);
 			}
 		}
 		return chosenTokens;

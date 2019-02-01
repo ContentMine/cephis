@@ -65,12 +65,13 @@ public class RealArithmeticProgression {
 	 */
 	public static RealArithmeticProgression createAP(RealArray realArray, double epsilon) {
 		RealArithmeticProgression arithmeticProgression = null;
-		if (realArray.size() >= 2) {
+		if (realArray != null && realArray.size() >= 2) {
 			RealArray differenceArray = realArray.calculateDifferences();
 			double delta = differenceArray.getMean();
 			for (int i = 1; i < realArray.size(); i++) {
 				double delta1 = realArray.get(i) - realArray.get(i - 1);
 				if (Math.abs(delta1 - delta) > epsilon) {
+					LOG.debug("no convergence in ArithProg");
 					return arithmeticProgression;
 				}
 			}
@@ -115,6 +116,11 @@ public class RealArithmeticProgression {
 	
 	public RealArray getRealArray() {
 		return new RealArray(size, start, delta);
+	}
+	
+	public IntArray getIntArray() {
+		RealArray realArray = getRealArray();
+		return realArray == null ? null : realArray.createRoundIntArray();
 	}
 	
 	public String toString() {

@@ -16,6 +16,9 @@
 
 package org.contentmine.eucl.euclid;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -23,6 +26,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
 
@@ -650,6 +654,19 @@ public class Real2Array implements EuclidConstants ,  Iterable<Real2>  {
 			for (Real2 coord : coordinateArray) {
 				this.addElement(coord);
 			}
+		}
+	}
+	public void writeArrayToCSVAsNumberedRows(String xTitle, String yTitle, File meanCsv) {
+		try {
+			FileOutputStream fos = new FileOutputStream(meanCsv);
+			IOUtils.write("row, " + xTitle + ", " + yTitle + ", \n", fos, "UTF-8");
+			for (int i = 0; i < size(); i++) {
+				Real2 xy = get(i);
+				IOUtils.write((i+1) + "," + xy.getX() + "," + xy.getY() + "," + "\n", fos, "UTF-8");
+			}
+			fos.close();
+		} catch (IOException ioe) {
+			throw new RuntimeException("cannot write mean", ioe);
 		}
 	}
 	

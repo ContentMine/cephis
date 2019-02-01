@@ -227,7 +227,7 @@ public class PixelRingList implements Iterable<PixelRing> {
 	 * @return
 	 */
 
-	public static Real2Array extractLocalSummits(List<PixelRingList> pixelRingListList, int minNestedRings) {
+	public Real2Array extractLocalSummits1(LocalSummitList pixelRingListList, int minNestedRings) {
 		Real2Array localSummitCoordinates = new Real2Array();
 		for (PixelRingList pixelRingListIsland : pixelRingListList) {
 			int nestedRings = pixelRingListIsland.size();

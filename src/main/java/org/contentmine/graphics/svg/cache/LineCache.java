@@ -75,6 +75,10 @@ public class LineCache extends AbstractCache {
 	private IntArray gridXCoordinates;
 	private IntArray gridYCoordinates;
 
+	public LineCache() {
+		this(new ComponentCache());
+	}
+	
 	public LineCache(ComponentCache containingComponentCache) {
 		super(containingComponentCache);
 		if (containingComponentCache != null) {
@@ -96,6 +100,7 @@ public class LineCache extends AbstractCache {
 	public void clearLineCaches() {
         horizontalLines = null;
         verticalLines = null;
+        lineList = null;
         longHorizontalLineList = null;
         shortHorizontalLineList = null;
         horizontalSiblingsList = null;
@@ -299,6 +304,7 @@ public class LineCache extends AbstractCache {
 	}
 
 	public List<SVGLine> getOrCreateVerticalLineList() {
+		getOrCreateLineList();
 		if (verticalLines == null) {
 			verticalLines = SVGLine.findHorizontalOrVerticalLines(lineList.getLineList(), LineDirection.VERTICAL, AnnotatedAxis.EPS);
 			verticalLines = SVGLine.mergeParallelLines(verticalLines, joinEps);
@@ -307,6 +313,7 @@ public class LineCache extends AbstractCache {
 	}
 
 	public List<SVGLine> getOrCreateHorizontalLineList() {
+		getOrCreateLineList();
 		if (horizontalLines == null) {
 			List<SVGLine> horizontalLines0 = SVGLine.findHorizontalOrVerticalLines(lineList.getLineList(), LineDirection.HORIZONTAL, AnnotatedAxis.EPS);
 			horizontalLines = SVGLine.mergeParallelLines(horizontalLines0, joinEps );
@@ -497,7 +504,7 @@ public class LineCache extends AbstractCache {
 			List<SVGLine> lineList = pixelSegmentList.getSVGLineList();
 			addLines(lineList);
 		}
-		clearLineCaches();
+//		clearLineCaches();
 	}
 
 	public IntArray getGridYCoordinates() {
@@ -520,10 +527,11 @@ public class LineCache extends AbstractCache {
 		return gridXCoordinates;
 	}
 
-	public void addGraphList(PixelGraphList graphList) {
+	public LineCache addGraphList(PixelGraphList graphList) {
 		for (PixelGraph graph : graphList) {
 			addGraph(graph);
 		}
+		return this;
 	}
 
 	public SVGLineList getOrCreateHorizontalSVGLineList() {
@@ -532,6 +540,12 @@ public class LineCache extends AbstractCache {
 
 	public SVGLineList getOrCreateVerticalSVGLineList() {
 		return new SVGLineList(getOrCreateVerticalLineList());
+	}
+
+	public void addLines(SVGLineList svgLineList) {
+		if (lineList != null) {
+			this.addLines(svgLineList.getLineList());
+		}
 	}
 
 

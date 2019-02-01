@@ -59,6 +59,7 @@ import org.contentmine.image.pixel.PixelListFloodFill;
 import org.contentmine.image.pixel.PixelOutliner;
 import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
+import org.contentmine.image.pixel.LocalSummitList;
 import org.contentmine.image.pixel.PixelSegment;
 import org.contentmine.image.pixel.PixelSegmentList;
 import org.contentmine.image.processing.PrincipalComponentAnalysis;
@@ -1530,9 +1531,9 @@ public class DiagramAnalyzer {
 	 * @param imageFile
 	 * @return
 	 */
-	public List<PixelRingList> createDefaultPixelRingListList() {
+	public LocalSummitList createDefaultPixelRingListList() {
 		PixelIslandList pixelIslandList = createDefaultPixelIslandList1();
-		List<PixelRingList> pixelRingListList = null;
+		LocalSummitList pixelRingListList = null;
 		pixelRingListList = pixelIslandList.createInternalPixelRingListList();
 		return pixelRingListList;
 	}
@@ -1572,8 +1573,8 @@ public class DiagramAnalyzer {
 		PixelIslandList pixelIslandList = getOrCreatePixelIslandList();
 		pixelIslandList.removeIslandsWithBBoxesLessThan(new Real2Range(new RealRange(0, 10), new RealRange(0, 10)));
 		pixelIslandList.sortBySizeDescending();
-		PixelIsland mainTrace = pixelIslandList.get(0);
-		PixelRingList pixelRingList = mainTrace.getOrCreateInternalPixelRings();
+		PixelIsland island0 = pixelIslandList.get(0);
+		PixelRingList pixelRingList = island0.getOrCreateInternalPixelRings();
 		return pixelRingList;
 	}
 
@@ -1735,8 +1736,9 @@ public class DiagramAnalyzer {
 		setThinning(null);
 		readAndProcessInputFile();
 		// list of pixelRings by island
-		List<PixelRingList> pixelRingListList = createDefaultPixelRingListList();
-		return PixelRingList.extractLocalSummits(pixelRingListList, minNestedRings);
+		LocalSummitList localSummitList = createDefaultPixelRingListList();
+		/*PixelRingList summitList = */ localSummitList.extractLocalSummits(minNestedRings);
+		return localSummitList.getCentreArray();
 	}
 
 	public SVGLineList extractHorizontalLines() {
@@ -1760,6 +1762,16 @@ public class DiagramAnalyzer {
 		horSVGLineList.mergeLines(1.0, MergeMethod.OVERLAP);
 		return horSVGLineList;
 		
+	}
+
+	public PixelRingList extractLocalSummits(int minNestedRings) {
+		return createDefaultPixelRingListList().extractLocalSummits(minNestedRings);
+	}
+
+	public Real2Array getCentreArray(int minNestedRings) {
+		LocalSummitList summitList = createDefaultPixelRingListList();
+		summitList.extractLocalSummits(minNestedRings);
+		return summitList.getCentreArray();
 	}
 
 }

@@ -1693,11 +1693,12 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
     /**
      * sorts array into ascending order. MODIFIES this
      */
-    public void sortAscending() {
+    public RealArray sortAscending() {
         if (nelem <= 0)
-            return;
+            return null;
         iqsort(0, nelem - 1);
         inssort(0, nelem - 1);
+        return this;
     }
     /**
      * sorts array into descending order. MODIFIES this

@@ -780,8 +780,8 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	 * 
 	 * @return
 	 */
-	public List<PixelRingList> createInternalPixelRingListList() {
-		List<PixelRingList> pixelRingListList = new ArrayList<PixelRingList>();
+	public LocalSummitList createInternalPixelRingListList() {
+		LocalSummitList pixelRingListList = new LocalSummitList();
 		sortBySizeDescending();
 		for (PixelIsland pixelIsland : this) {
 			PixelRingList pixelRingList = pixelIsland.getOrCreateInternalPixelRings();
@@ -806,7 +806,7 @@ public class PixelIslandList implements Iterable<PixelIsland> {
 	 * @return
 	 */
 	public PixelRingList createAggregatedInternalPixelRingList() {
-		List<PixelRingList> pixelRingListList = createInternalPixelRingListList();
+		LocalSummitList pixelRingListList = createInternalPixelRingListList();
 		PixelRingList aggregatedPixelRingList = new PixelRingList();
 		for (PixelRingList pixelRingList : pixelRingListList) {
 			aggregatedPixelRingList.addAll(pixelRingList);

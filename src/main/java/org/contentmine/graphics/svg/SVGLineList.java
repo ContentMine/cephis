@@ -1,14 +1,21 @@
 package org.contentmine.graphics.svg;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real;
+import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Array;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.eucl.euclid.RealArray;
+import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.graphics.AbstractCMElement;
 import org.contentmine.graphics.svg.linestuff.LineMerger;
 import org.contentmine.graphics.svg.linestuff.LineMerger.MergeMethod;
@@ -179,11 +186,65 @@ public class SVGLineList extends SVGG implements Iterable<SVGLine> {
 
 	/** merges lines (H or V).
 	 * See LineMerger
+	 * modifies 'this'
 	 * 
 	 * @param eps
 	 * @param mergeMethod
+	 * @return 
 	 */
-	public void mergeLines(double eps, MergeMethod mergeMethod) {
+	public List<SVGLine> mergeLines(double eps, MergeMethod mergeMethod) {
 		lineList = LineMerger.mergeLines(lineList, eps, mergeMethod);
+		return lineList;
 	}
+
+	public RealArray getLowXArray() {
+		return getLowArray(Axis2.X);
+	}
+	public RealArray getHighXArray() {
+		return getHighArray(Axis2.X);
+	}
+	public RealArray getLowYArray() {
+		return getLowArray(Axis2.Y);
+	}
+	public RealArray getHighYArray() {
+		return getHighArray(Axis2.Y);
+	}
+
+	public RealArray getLowArray(Axis2 axis) {
+		ensureLines();
+		RealArray array = new RealArray();
+		for (SVGLine line : lineList) {
+			double coord0 = Axis2.X.equals(axis) ? line.getXY(0).getX() : line.getXY(0).getY();
+			double coord1 = Axis2.X.equals(axis) ? line.getXY(1).getX() : line.getXY(1).getY();
+			array.addElement(Math.min(coord0, coord1));
+		}
+		return array;
+	}
+	public RealArray getHighArray(Axis2 axis) {
+		ensureLines();
+		RealArray array = new RealArray();
+		for (SVGLine line : lineList) {
+			double coord0 = Axis2.X.equals(axis) ? line.getXY(0).getX() : line.getXY(0).getY();
+			double coord1 = Axis2.X.equals(axis) ? line.getXY(1).getX() : line.getXY(1).getY();
+			array.addElement(Math.max(coord0, coord1));
+		}
+		return array;
+	}
+
+	public void writeLineEndsAsCSV(File file) {
+		RealArray lowXArray = getLowArray(Axis2.X).format(2);
+		RealArray highXArray = getHighArray(Axis2.X).format(2);
+		try {
+			FileOutputStream fos = new FileOutputStream(file);
+			IOUtils.write("row, /*y, */low, high\n", fos, "UTF-8");
+			for (int i = 0; i < lowXArray.size(); i++) {
+				String row = (i+1)+","/*+yArray.elementAt(i)+","*/+lowXArray.elementAt(i)+","+highXArray.elementAt(i)+"\n";
+				IOUtils.write(row, fos, "UTF-8");
+			}
+			fos.close();
+		} catch (IOException ioe) {
+			throw new RuntimeException("cannot write CSV", ioe);
+		}
+	}
+
 }

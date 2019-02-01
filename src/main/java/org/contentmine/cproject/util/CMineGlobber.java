@@ -316,6 +316,9 @@ public class CMineGlobber {
 	 * @return sorted list 
 	 */
 	public static List<File> listSortedChildDirectories(File dir) {
+		if (dir == null) {
+			throw new RuntimeException("Null dir: ");
+		}
 		List<File> sortedDirList = new ArrayList<File>();
 		File[] fileList = dir.listFiles();
 		if (fileList != null) {

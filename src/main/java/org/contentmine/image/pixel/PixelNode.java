@@ -267,10 +267,12 @@ public class PixelNode implements Comparable<PixelNode> {
 		int xNode = xy.getX();
 		int yNode = xy.getY();
 		int idx = array.getIndexOfClosestElement(isx ? xNode : yNode);
-		int snapped = array.elementAt(idx);
-		int xnew = isx ? snapped : xNode;
-		int ynew = isx ? yNode : snapped;
-		Int2 newXY = new Int2(xnew, ynew);
+		if (idx != -1) {
+			int snapped = array.elementAt(idx);
+			int xnew = isx ? snapped : xNode;
+			int ynew = isx ? yNode : snapped;
+			Int2 newXY = new Int2(xnew, ynew);
+		}
 	}
 	
 //	/** snap coordinates to nearest point in array.
