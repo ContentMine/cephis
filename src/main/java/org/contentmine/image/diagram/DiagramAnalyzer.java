@@ -46,6 +46,7 @@ import org.contentmine.image.ImageProcessor;
 import org.contentmine.image.ImageUtil;
 import org.contentmine.image.colour.ColorUtilities;
 import org.contentmine.image.pixel.AxialPixelFrequencies;
+import org.contentmine.image.pixel.LocalSummitList;
 import org.contentmine.image.pixel.MainPixelProcessor;
 import org.contentmine.image.pixel.Pixel;
 import org.contentmine.image.pixel.PixelEdge;
@@ -59,7 +60,6 @@ import org.contentmine.image.pixel.PixelListFloodFill;
 import org.contentmine.image.pixel.PixelOutliner;
 import org.contentmine.image.pixel.PixelRing;
 import org.contentmine.image.pixel.PixelRingList;
-import org.contentmine.image.pixel.LocalSummitList;
 import org.contentmine.image.pixel.PixelSegment;
 import org.contentmine.image.pixel.PixelSegmentList;
 import org.contentmine.image.processing.PrincipalComponentAnalysis;
@@ -1464,7 +1464,7 @@ public class DiagramAnalyzer {
 					inputFile = new File(imageProcessor.getInputDir(), imageProcessor.getBase() +
 					imageProcessor.getInputSuffix());
 			} else {
-				throw new RuntimeException("Cannot create default input file");
+				throw new RuntimeException("no image file read; Cannot create default input file");
 			}
 		}
 		readAndProcessInputFile(inputFile);
@@ -1732,13 +1732,15 @@ public class DiagramAnalyzer {
 		return imageProcessor == null ? null : imageProcessor.getBinarizedImage();
 	}
 
-	public Real2Array extractLocalSummitCoordinates(int minNestedRings) {
+	public Real2Array extractLocalSummitCoordinates(int minNestedRings, int axis) {
 		setThinning(null);
 		readAndProcessInputFile();
 		// list of pixelRings by island
 		LocalSummitList localSummitList = createDefaultPixelRingListList();
 		/*PixelRingList summitList = */ localSummitList.extractLocalSummits(minNestedRings);
-		return localSummitList.getCentreArray();
+		Real2Array centreArray = localSummitList.getCentreArray();
+		centreArray.sortAscending(axis);
+		return centreArray;
 	}
 
 	public SVGLineList extractHorizontalLines() {
@@ -1772,6 +1774,41 @@ public class DiagramAnalyzer {
 		LocalSummitList summitList = createDefaultPixelRingListList();
 		summitList.extractLocalSummits(minNestedRings);
 		return summitList.getCentreArray();
+	}
+
+	public SVGLineList extractHorizontalLines(File imageFile, File pngDir) {
+		setThinning(new ZhangSuenThinning());
+		readAndProcessInputFile(imageFile);
+		ImageProcessor imageProcessor = getImageProcessor();
+		PixelIslandList pixelIslandList = imageProcessor.getOrCreatePixelIslandList();
+		pixelIslandList.removeIslandsWithBBoxesLessThan(new Int2(10,10)); 
+		
+		PixelGraphList graphList = getOrCreateGraphList();
+		graphList.mergeNodesCloserThan(3.0);                            
+	
+		LineCache lineCache = new LineCache().setSegmentTolerance(1.0).addGraphList(graphList);
+		
+		IntArray xArray = lineCache.getGridXCoordinates();
+		graphList.snapNodesToArray(xArray, Axis2.X, 2);
+		IntArray yArray = lineCache.getGridYCoordinates();
+		graphList.snapNodesToArray(yArray, Axis2.Y, 1);
+		lineCache = new LineCache(new ComponentCache());
+		
+		lineCache.addLines(graphList.createLinesFromEdges());
+		SVGLineList horSVGLineList = lineCache.getOrCreateHorizontalSVGLineList();
+		
+		horSVGLineList.mergeLines(1.0, MergeMethod.OVERLAP);
+		return horSVGLineList;
+	}
+
+	public void extractLocalSummits(int minNestedRings, File imageFile, File pngDir) {
+		setThinning(null);
+		readAndProcessInputFile(imageFile);
+		BufferedImage image = getImage();
+		if (image != null && image.getWidth() * image.getHeight() < 1000000) {
+			PixelRingList localSummits = extractLocalSummits(minNestedRings);
+			Real2Array centreArray = getCentreArray(minNestedRings);
+		}
 	}
 
 }

@@ -656,18 +656,14 @@ public class Real2Array implements EuclidConstants ,  Iterable<Real2>  {
 			}
 		}
 	}
-	public void writeArrayToCSVAsNumberedRows(String xTitle, String yTitle, File meanCsv) {
-		try {
-			FileOutputStream fos = new FileOutputStream(meanCsv);
-			IOUtils.write("row, " + xTitle + ", " + yTitle + ", \n", fos, "UTF-8");
-			for (int i = 0; i < size(); i++) {
-				Real2 xy = get(i);
-				IOUtils.write((i+1) + "," + xy.getX() + "," + xy.getY() + "," + "\n", fos, "UTF-8");
-			}
-			fos.close();
-		} catch (IOException ioe) {
-			throw new RuntimeException("cannot write mean", ioe);
+	public List<String> createCSVRows(String xTitle, String yTitle) {
+		List<String> rowList = new ArrayList<String>();
+		rowList.add("row, " + xTitle + ", " + yTitle + ", \n");
+		for (int i = 0; i < size(); i++) {
+			Real2 xy = get(i);
+			rowList.add((i+1) + "," + xy.getX() + "," + xy.getY() + "," + "\n");
 		}
+		return rowList;
 	}
 	
 	

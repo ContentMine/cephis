@@ -10,7 +10,7 @@ public class PluginOption implements Comparable<PluginOption> {
 	public String optionName;
 	protected String plugin;
 	protected List<String> options;
-	protected List<String> flags;
+//	protected List<String> flags;
 	protected File projectDir;
 	protected String optionString;
 	protected String resultXPathAttribute;

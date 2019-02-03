@@ -231,20 +231,17 @@ public class SVGLineList extends SVGG implements Iterable<SVGLine> {
 		return array;
 	}
 
-	public void writeLineEndsAsCSV(File file) {
+	public List<String> writeLineEndsAsCSVRow() {
+		RealArray yArray = getLowArray(Axis2.Y).format(2);
 		RealArray lowXArray = getLowArray(Axis2.X).format(2);
 		RealArray highXArray = getHighArray(Axis2.X).format(2);
-		try {
-			FileOutputStream fos = new FileOutputStream(file);
-			IOUtils.write("row, /*y, */low, high\n", fos, "UTF-8");
-			for (int i = 0; i < lowXArray.size(); i++) {
-				String row = (i+1)+","/*+yArray.elementAt(i)+","*/+lowXArray.elementAt(i)+","+highXArray.elementAt(i)+"\n";
-				IOUtils.write(row, fos, "UTF-8");
-			}
-			fos.close();
-		} catch (IOException ioe) {
-			throw new RuntimeException("cannot write CSV", ioe);
+		List<String> rowList = new ArrayList<String>();
+		rowList.add("row, y, low, high\n");
+		for (int i = 0; i < lowXArray.size(); i++) {
+			String row = (i+1)+","+yArray.elementAt(i)+","+lowXArray.elementAt(i)+","+highXArray.elementAt(i)+"\n";
+			rowList.add(row);
 		}
+		return rowList;
 	}
 
 }
