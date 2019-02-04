@@ -531,7 +531,7 @@ public class DefaultArgProcessor {
 		String output = getOutput();
 		if (currentCTree != null) {
 			outputFile = output == null ? null : new File(currentCTree.getDirectory(), output);
-			LOG.debug("outputFile "+outputFile.getParentFile().getName()+"/"+FilenameUtils.getName(outputFile.toString()));
+			LOG.trace("DBG outputFile "+outputFile.getParentFile().getName()+"/"+FilenameUtils.getName(outputFile.toString()));
 			if (currentCTree.getSnippetsTree() != null) {
 				outputSnippetsTree(outputFile);
 			} else if (currentCTree.getCTreeFiles() != null) {
@@ -792,7 +792,7 @@ public class DefaultArgProcessor {
 	private void filterCTree() {
 		FileXPathSearcher fileXPathSearcher = new FileXPathSearcher(filterExpression);
 		String xpath = fileXPathSearcher.getCurrentXPath();
-		LOG.debug("filterCTree "+filterExpression);
+		LOG.trace("DBG filterCTree "+filterExpression);
 		if (currentCTree != null) {
 			fileXPathSearcher = new FileXPathSearcher(currentCTree, filterExpression);
 			fileXPathSearcher.search();
@@ -1116,7 +1116,7 @@ public class DefaultArgProcessor {
 			try {
 				methodName = option.getMethodName(methodNameType);
 				if (methodName != null) {
-					LOG.debug("running method: "+methodName);
+					LOG.trace("DBG running method: "+methodName);
 					instantiateAndRunMethod(option, methodName);
 				}
 			} catch (IllegalArgumentException ee) {
