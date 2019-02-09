@@ -272,6 +272,7 @@ public abstract class HtmlElement extends AbstractCMElement {
 	 * @return
 	 */
 	@Deprecated // use HtmlFactory
+	// think it can still be used
 	public static HtmlElement create(Element element) {
 		// changed to ignoreNamespaces = true
 		return HtmlElement.create(element, false, true);
