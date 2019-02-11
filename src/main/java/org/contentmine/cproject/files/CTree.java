@@ -1822,7 +1822,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	 * @param filename relative to CTree directory
 	 * @return
 	 */
-	public boolean clean(String filename) {
+	public boolean cleanFileOrDirs(String filename) {
 		File file = new File(this.getDirectory(), filename);
 		boolean status = false;
 		if (filename.endsWith("/") || file.isDirectory()) {

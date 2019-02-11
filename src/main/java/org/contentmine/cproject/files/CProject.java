@@ -1205,9 +1205,9 @@ public class CProject extends CContainer {
 	 * 
 	 * @param arg
 	 */
-	public void clean(String arg) {
+	public void cleanTrees(String filename) {
 		for (CTree cTree : this.getOrCreateCTreeList()) {
-			cTree.clean(arg);
+			cTree.cleanFileOrDirs(filename);
 		}
 	}
 
