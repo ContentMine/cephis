@@ -1,10 +1,18 @@
 package org.contentmine.cproject.util;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.cproject.files.CProject;
+import org.contentmine.cproject.metadata.AbstractMetadata;
+import org.contentmine.cproject.util.ResultsAnalysis.SummaryType;
+import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlA;
 import org.contentmine.graphics.html.HtmlBody;
 import org.contentmine.graphics.html.HtmlButton;
@@ -50,6 +58,8 @@ public class DataTablesTool {
 	
 	private static final String RESULTS = "results";
 	public static final String ARTICLES = "articles";
+	public static final String BIBLIOGRAPHY = "bibliography";
+	
 	private static final String DEFAULTS = 
 			    DataTablesTool.TABLE+
 			" "+DataTablesTool.TABLE_STRIPED+
@@ -71,15 +81,20 @@ public class DataTablesTool {
 	private List<HtmlTd> footerCells;
 	private HtmlTd footerCaption;
 	private String rowLabelId;
+	private File projectDir;
+	private ResultsAnalysis resultsAnalysis;
+	private String bibliographyId;
+	private Map<String, AbstractMetadata> metadataByCTreename;
 
 	public DataTablesTool() {
 		this.setTableId(RESULTS);
 		setDefaults();
 	}
 
-	public DataTablesTool(String rowLabelId) {
+	public DataTablesTool(String rowLabelId, String bibliographyId) {
 		this();
 		this.setRowLabelId(rowLabelId);
+		this.setBibliographyId(bibliographyId);
 	}
 
 	private void setDefaults() {
@@ -108,19 +123,13 @@ public class DataTablesTool {
 		head.addJavascript(script);
 	}
 
-	public HtmlTd createHyperlinkedCell(String remoteHref, String localHref, String aValue) {
-		HtmlTd htmlTd = new HtmlTd();
-		createA(remoteHref, aValue, htmlTd);
-		createA(localHref, "local", htmlTd);
-		return htmlTd;
-	}
-
-	private void createA(String href, String aValue, HtmlTd htmlTd) {
+	private void createA(String href, String aValue, HtmlTd htmlTd, String title) {
 		if (href != null && href.trim().length() > 0) {
 			HtmlA htmlA = new HtmlA();
 			htmlA.appendChild(aValue);
 			htmlA.setHref(href);
 			htmlA.setTarget(Target.separate);
+			if (title != null) htmlA.setTitle(title);
 			htmlTd.appendChild(htmlA);
 		}
 	}
@@ -129,7 +138,9 @@ public class DataTablesTool {
 		HtmlThead htmlThead = new HtmlThead();
 		HtmlTr htmlTr = new HtmlTr();
 		htmlThead.appendChild(htmlTr);
+		// normally "articles"
 		htmlTr.appendChild(createColumnHeading(this.getRowLabelId()));
+		htmlTr.appendChild(createColumnHeading(this.getBibliographyId()));
 		addRemainingColumnHeadings(htmlTr);
 		return htmlThead;
 	}
@@ -146,7 +157,6 @@ public class DataTablesTool {
 			if (renderer.isVisible()) {
 				HtmlTh htmlTh = new HtmlTh();
 				htmlTr.appendChild(htmlTh);
-//				htmlTh.appendChild(renderer.getHtmlElement());
 				htmlTh.appendChild(renderer.getFlag());
 			}
 		}
@@ -198,14 +208,43 @@ public class DataTablesTool {
 			String rowHeading = rowHeadingList.get(iRow);
 			HtmlTr htmlTr = new HtmlTr();
 			htmlTbody.appendChild(htmlTr);
-			String remoteHref = ((remoteLink0 == null) ? "" : remoteLink0) + rowHeading + ((remoteLink1 == null) ? "" : remoteLink1);
-			String localHref = ((localLink0 == null) ? "" : localLink0) + rowHeading + ((localLink1 == null) ? "" : localLink1);
-			HtmlTd htmlTd = createHyperlinkedCell(remoteHref, localHref, rowHeading);
-			htmlTd.setTitle("foo");
+			String title = "fixme";
 			
+			HtmlTd htmlTd = createBibliographicRefCell(rowHeading, "remote PDF on server", title, "HTML on local server");
 			htmlTr.appendChild(htmlTd);
+			htmlTd = createBibliographicDataCell(rowHeading);
+			htmlTr.appendChild(htmlTd);
+			
 			cellCalculator.addCellValues(cellRendererList, htmlTr, iRow);
 		}
+	}
+
+	private HtmlTd createBibliographicRefCell(String rowHeading, String rowHeadingTitle, String title, String titleTitle) {
+		String remoteHref = createHref(remoteLink0, rowHeading, remoteLink1);
+		String localHref = createHref(localLink0, rowHeading, localLink1);
+		
+		HtmlTd htmlTd1 = new HtmlTd();
+		createA(remoteHref, rowHeading, htmlTd1, rowHeadingTitle);
+		createA(localHref, "local", htmlTd1, titleTitle);
+		HtmlTd htmlTd = htmlTd1;
+		htmlTd.setTitle(title);
+		
+		return htmlTd;
+	}
+
+	private HtmlTd createBibliographicDataCell(String rowHeading) {
+		HtmlTd td = new HtmlTd();
+		AbstractMetadata abstractMetadata = metadataByCTreename.get(rowHeading);
+//		LOG.debug("AM "+abstractMetadata);
+		HtmlDiv div = abstractMetadata.createSimpleHtml();
+		td.appendChild(div);
+		return td;
+	}
+
+	private String createHref(String link0, String rowHeading, String link1) {
+		String href = ((link0 == null) ? "" : link0) 
+				+ rowHeading + ((link1 == null) ? "" : link1);
+		return href;
 	}
 
 	public void addCellValuesToRow(HtmlTr htmlTr, int iRow) {
@@ -230,12 +269,17 @@ public class DataTablesTool {
 		return htmlTable;
 	}
 
+	/** footer contains counts, I think.
+	 * 
+	 * @param htmlTable
+	 * @return
+	 */
 	private HtmlTfoot addFooter(HtmlTable htmlTable) {
 		HtmlTfoot htmlTfoot = new HtmlTfoot();
 		if (footerCaption == null || footerCells == null) {
 			LOG.trace(""
 					+ ""
-					+ "aption or cells");
+					+ "caption or cells");
 		} else if (footerCells.size() != cellRendererList.size()) {
 			LOG.error("Wrong number of footer cells: "+footerCells.size()+" != "+cellRendererList.size());
 			return null;
@@ -340,8 +384,73 @@ public class DataTablesTool {
 		return rowLabelId;
 	}
 
+	public String getBibliographyId() {
+		return bibliographyId;
+	}
+
 	public void setRowLabelId(String rowLabelId) {
 		this.rowLabelId = rowLabelId;
+	}
+
+	public void setBibliographyId(String bibliographyId) {
+		this.bibliographyId = bibliographyId;
+	}
+
+	public void setProjectDir(File projectDir) {
+		this.projectDir = projectDir;
+	}
+
+	public File getProjectDir() {
+		return projectDir;
+	}
+
+	public void createTableComponents(ResultsAnalysis resultsAnalysis) throws IOException {
+		String project = FilenameUtils.getBaseName(this.projectDir.toString());
+		setTitle(project);
+		this.resultsAnalysis = resultsAnalysis;
+
+		// several different table types (count, summary, etc.)
+		this.createAndWriteResultsTableForSummaryTypes();
+		
+		LOG.trace(cellRendererList);
+		
+		addTableFooter();
+	}
+
+	private void addTableFooter() {
+		List<HtmlTd> footerList = this.createFooterList();
+		HtmlTd caption = new HtmlTd();
+		caption.appendChild("counts");
+		setFooterCaption(caption);
+		setFooterCells(footerList);
+	}
+
+	public List<HtmlTd> createFooterList() {
+		List<HtmlTd> footerList = new ArrayList<HtmlTd>();
+		for (CellRenderer cellRenderer : cellRendererList) {
+			HtmlTd td = new HtmlTd();
+			td.appendChild(cellRenderer.getHeading());
+			footerList.add(td);
+		}
+		return footerList;
+	}
+
+	private void createAndWriteResultsTableForSummaryTypes() throws IOException {
+		for (SummaryType summaryType : ResultsAnalysis.SUMMARY_TYPES) {
+			resultsAnalysis.setSummaryType(summaryType);
+			HtmlTable table = resultsAnalysis.makeHtmlDataTable();
+			HtmlHtml html = createHtmlWithDataTable(table);
+			File outfile = new File(projectDir, summaryType.toString()+"."+CProject.DATA_TABLES_HTML);
+			XMLUtil.debug(html, outfile, 1);
+		}
+	}
+
+	public static DataTablesTool createBiblioEnabledTable() {
+		return new DataTablesTool(ARTICLES, BIBLIOGRAPHY);
+	}
+
+	public void setMetadataByTreename(Map<String, AbstractMetadata> metadataByCTreename) {
+		this.metadataByCTreename = metadataByCTreename;
 	}
 
 }

@@ -20,7 +20,10 @@ import org.contentmine.cproject.metadata.epmc.EpmcMD;
 import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineUtil;
 import org.contentmine.eucl.xml.XMLUtil;
+import org.contentmine.graphics.html.HtmlBr;
+import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlSpan;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;
@@ -40,7 +43,7 @@ import net.minidev.json.JSONArray;
  * @author pm286
  *
  */
-public abstract class AbstractMetadata {
+public abstract class AbstractMetadata /*implements MetadataEntry*/ {
 
 	private static final String DEFAULT_VERSION = "default";
 	/** fields for tables
@@ -142,7 +145,7 @@ public abstract class AbstractMetadata {
 			List<JsonElement> elementList2 = JsonUtils.getListFromFile(file2);
 			Set<JsonElement> thisSet = new HashSet<JsonElement>(elementList);
 			
-			JsonArray array = (JsonArray) new JsonParser().parse(FileUtils.readFileToString(file, Charset.forName("UTF-8")));
+			JsonArray array = (JsonArray) JsonUtils.parseJson(file);
 			
 			for (JsonElement element2 : elementList2) {
 				if (!thisSet.contains(element2)) {
@@ -551,7 +554,7 @@ public abstract class AbstractMetadata {
 			
 	
 		/** terms in current scrapers */
-		public static final String ABSTRACT         = "abstract";
+	public static final String ABSTRACT         = "abstract";
 	public static final String ABSTRACT_HTML    = "abstract_html";
 	public static final String AUTHOR           = "author";
 	public static final String AUTHOR_INSTITUTION   = "author_institution";
@@ -659,6 +662,11 @@ ARRAY translator; [{"affiliation":[],"family":"Munder","given":"Marc"},{"affilia
 		String value = null;
 		if (jsonPath != null && jsonElement != null) {
 			value = CMineUtil.getStringForJsonPath(jsonElement.toString(), jsonPath);
+			// in case this is a 1-element array
+			if (value == null) {
+				JSONArray array = (JSONArray) CMineUtil.getObjectForJsonPath(jsonElement.toString(), jsonPath);
+				value = array == null || array.size() == 0 ? null : String.valueOf(array.get(0));
+			}
 		}
 		return value;
 	}
@@ -981,6 +989,7 @@ ARRAY translator; [{"affiliation":[],"family":"Munder","given":"Marc"},{"affilia
 	/**
 	citation_reference x 1349
 	 */
+	public String getAuthorString() {return "";}
 	/**
 	citation_author_email x 191
 	*/
@@ -1203,6 +1212,30 @@ ARRAY translator; [{"affiliation":[],"family":"Munder","given":"Marc"},{"affilia
 
 	public void setVersion(String version) {
 		this.version = version;
+	}
+
+	public HtmlDiv createSimpleHtml() {
+		HtmlDiv div = new HtmlDiv();
+		div.appendChild(createSpan("title", this.getTitle(), 30));
+		div.appendChild(new HtmlBr());
+		div.appendChild(createSpan("jour", this.getJournal(), 15));
+//		div.appendChild(createSpan("auth", String.valueOf(this.getAuthorListAsStrings()), 15));
+		div.appendChild(createSpan("auth", String.valueOf(this.getAuthorString()), 15));
+		div.appendChild(createSpan("date", String.valueOf(this.getDate()), 6));
+		div.appendChild(new HtmlBr());
+		div.appendChild(createSpan("abst", String.valueOf(this.getAbstract()), 30));
+		
+		return div;
+	}
+
+	private HtmlSpan createSpan(String name, String value, int maxLen) {
+		HtmlSpan titleSpan = new HtmlSpan();
+		if (value != null) {
+			name = /*name + ": " + */value.substring(0, Math.min(maxLen,  value.length()));
+		}
+		titleSpan.appendChild(name);
+		titleSpan.setTitle(value);
+		return titleSpan;
 	}
 
 

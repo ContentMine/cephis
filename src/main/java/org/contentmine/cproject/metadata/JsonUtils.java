@@ -118,6 +118,10 @@ public class JsonUtils {
 		return elements;
 	}
 	
+	public static JsonElement parseJson(File file) throws IOException {
+		return new JsonParser().parse(FileUtils.readFileToString(file, Charset.forName("UTF-8")));
+	}
+
 
 
 

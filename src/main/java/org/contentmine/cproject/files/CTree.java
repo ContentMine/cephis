@@ -26,6 +26,7 @@ import org.contentmine.cproject.args.log.AbstractLogElement;
 import org.contentmine.cproject.args.log.CMineLog;
 import org.contentmine.cproject.metadata.AbstractMetadata;
 import org.contentmine.cproject.metadata.AbstractMetadata.Type;
+import org.contentmine.cproject.metadata.MetadataReader;
 import org.contentmine.cproject.metadata.quickscrape.QuickscrapeMD;
 import org.contentmine.cproject.util.CMineGlobber;
 import org.contentmine.cproject.util.CMineUtil;
@@ -201,25 +202,27 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public static final String XSL      = "xsl";
 
-	public static final String ABSTRACT  = "abstract";
-	public static final String BODY      = "body";
-	public static final String BACK      = "back";
-	public static final String CROSSREF  = "crossref";
-	public static final String EMPTY     = "empty";
-	public static final String FRONT     = "front";
-	public static final String FULLTEXT  = "fulltext";
-	public static final String IMAGE     = "image";
-	public static final String METHOD    = "method";
-	public static final String LOG1      = "log";
-	public static final String PAGE      = "page";
-	public static final String PAGES     = "pages";
-	public static final String RESULT    = "result";
-	public static final String RESULTS   = "results";
-	public static final String SCHOLARLY = "scholarly";
-	public static final String DERIVED   = "derived/";
+	public static final String ABSTRACT     = "abstract";
+	public static final String BODY         = "body";
+	public static final String BACK         = "back";
+	public static final String CROSSREF     = "crossref";
+	public static final String EMPTY        = "empty";
+	public static final String EUPMC_RESULT = "eupmc_result";
+	public static final String FRONT        = "front";
+	public static final String FULLTEXT     = "fulltext";
+	public static final String IMAGE        = "image";
+	public static final String METHOD       = "method";
+	public static final String LOG1         = "log";
+	public static final String PAGE         = "page";
+	public static final String PAGES        = "pages";
+	public static final String RESULT       = "result";
+	public static final String RESULTS      = "results";
+	public static final String SCHOLARLY    = "scholarly";
+	public static final String DERIVED      = "derived/";
 	
 //	public static final String ABSTRACT_HTML      = ABSTRACT+DOT+HTML;
 	public static final String EMPTY_XML          = EMPTY+DOT+XML;
+	public static final String EUPMC_RESULT_JSON  = EUPMC_RESULT+DOT+JSON;
 	public static final String FULLTEXT_DOCX      = FULLTEXT+DOT+DOCX;
 	public static final String FULLTEXT_HTML      = FULLTEXT+DOT+HTML;
 	public static final String FULLTEXT_PAGE      = FULLTEXT+MINUS+PAGE;
@@ -1960,6 +1963,17 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			pdfImageManager = TreeImageManager.createTreeImageManager(this, this.getExistingPDFImagesDir());
 		}
 		return pdfImageManager;
+	}
+
+	
+	public AbstractMetadata readMetadata(MetadataReader metadataReader, File metadataFile) {
+		AbstractMetadata metadataEntry = null;
+		try {
+			metadataEntry = metadataReader.readEntry(metadataFile);
+		} catch (IOException e) {
+			throw new RuntimeException("cannot parse metadata :"+metadataFile, e);
+		}
+		return metadataEntry;
 	}
 
 

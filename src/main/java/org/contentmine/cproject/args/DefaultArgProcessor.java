@@ -1278,7 +1278,6 @@ public class DefaultArgProcessor {
 			}
 		
 			if (output == null) {
-//				throw new RuntimeException("no --output given");
 				LOG.warn("no --output given");
 			} else {
 			}

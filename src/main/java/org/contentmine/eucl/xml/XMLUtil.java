@@ -298,6 +298,9 @@ public abstract class XMLUtil implements XMLConstants {
 		if (file == null) {
 			throw new RuntimeException("null file");
 		}
+		if (el == null) {
+			throw new RuntimeException("null element");
+		}
 		if (file.isDirectory()) {
 			file.mkdirs();
 		} else {
