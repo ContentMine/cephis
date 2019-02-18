@@ -29,6 +29,7 @@ import com.google.common.collect.Multiset;
  */
 public class CTreeList extends GenericAbstractList<CTree> {
 	
+	public static final String FORBIDDEN_PREFIX = "__";
 	private static final Logger LOG = Logger.getLogger(CTreeList.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -85,12 +86,20 @@ public class CTreeList extends GenericAbstractList<CTree> {
 	 */
 	public boolean add(CTree cTree) {
 		ensureCTreeList();
-		boolean added = genericList.add(cTree);
-		ensureCTreeByName();
-		cTreeByName.put(cTree.getDirectory().getName(), cTree);
+		boolean added = false;
+		if (isValidCTreename(cTree)) {
+			added = genericList.add(cTree);
+			ensureCTreeByName();
+			cTreeByName.put(cTree.getDirectory().getName(), cTree);
+		}
 		return added;
 	}
 	
+	private boolean isValidCTreename(CTree cTree) {
+		String cTreename = cTree == null ? null : cTree.getName();
+		return cTreename != null && !cTreename.startsWith(FORBIDDEN_PREFIX);
+	}
+
 	private void ensureCTreeByName() {
 		if (cTreeByName == null) {
 			cTreeByName = new HashMap<String, CTree>();

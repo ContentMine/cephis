@@ -236,7 +236,7 @@ public class DataTablesTool {
 	private HtmlTd createBibliographicDataCell(String rowHeading) {
 		HtmlTd td = new HtmlTd();
 		HtmlDiv div = null;
-		if (metadataByCTreename == null) {
+		if (metadataByCTreename != null) {
 			AbstractMetadata abstractMetadata = metadataByCTreename.get(rowHeading);
 			if (abstractMetadata != null) {
 				div = abstractMetadata.createSimpleHtml();
