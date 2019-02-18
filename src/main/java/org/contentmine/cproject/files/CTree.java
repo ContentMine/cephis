@@ -1968,10 +1968,13 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	
 	public AbstractMetadata readMetadata(MetadataReader metadataReader, File metadataFile) {
 		AbstractMetadata metadataEntry = null;
-		try {
-			metadataEntry = metadataReader.readEntry(metadataFile);
-		} catch (IOException e) {
-			throw new RuntimeException("cannot parse metadata :"+metadataFile, e);
+		if (metadataFile != null) {
+			try {
+				
+				metadataEntry = metadataReader.readEntry(metadataFile);
+			} catch (IOException e) {
+				throw new RuntimeException("cannot parse metadata :"+metadataFile, e);
+			}
 		}
 		return metadataEntry;
 	}
