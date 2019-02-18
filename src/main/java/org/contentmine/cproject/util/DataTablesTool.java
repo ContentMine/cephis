@@ -22,6 +22,7 @@ import org.contentmine.graphics.html.HtmlElement.Target;
 import org.contentmine.graphics.html.HtmlHead;
 import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.html.HtmlScript;
+import org.contentmine.graphics.html.HtmlSpan;
 import org.contentmine.graphics.html.HtmlTable;
 import org.contentmine.graphics.html.HtmlTbody;
 import org.contentmine.graphics.html.HtmlTd;
@@ -234,9 +235,17 @@ public class DataTablesTool {
 
 	private HtmlTd createBibliographicDataCell(String rowHeading) {
 		HtmlTd td = new HtmlTd();
-		AbstractMetadata abstractMetadata = metadataByCTreename.get(rowHeading);
-//		LOG.debug("AM "+abstractMetadata);
-		HtmlDiv div = abstractMetadata.createSimpleHtml();
+		HtmlDiv div = null;
+		if (metadataByCTreename == null) {
+			AbstractMetadata abstractMetadata = metadataByCTreename.get(rowHeading);
+			if (abstractMetadata != null) {
+				div = abstractMetadata.createSimpleHtml();
+			}
+		} 
+		if (div == null) {
+			div = new HtmlDiv();
+			div.appendChild(HtmlSpan.createSpanWithContent("no bibliographic metadata supplied"));
+		}
 		td.appendChild(div);
 		return td;
 	}
@@ -450,6 +459,9 @@ public class DataTablesTool {
 	}
 
 	public void setMetadataByTreename(Map<String, AbstractMetadata> metadataByCTreename) {
+		if (metadataByCTreename == null) {
+			throw new RuntimeException("Null metadataByTreename");
+		}
 		this.metadataByCTreename = metadataByCTreename;
 	}
 
