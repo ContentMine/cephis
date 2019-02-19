@@ -23,6 +23,7 @@ import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlBr;
 import org.contentmine.graphics.html.HtmlDiv;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlI;
 import org.contentmine.graphics.html.HtmlSpan;
 
 import com.google.common.collect.ArrayListMultimap;
@@ -1216,26 +1217,35 @@ ARRAY translator; [{"affiliation":[],"family":"Munder","given":"Marc"},{"affilia
 
 	public HtmlDiv createSimpleHtml() {
 		HtmlDiv div = new HtmlDiv();
-		div.appendChild(createSpan("title", this.getTitle(), 30));
+		div.appendChild(createSpan("titl", this.getTitle(), 30));
 		div.appendChild(new HtmlBr());
-		div.appendChild(createSpan("jour", this.getJournal(), 15));
-//		div.appendChild(createSpan("auth", String.valueOf(this.getAuthorListAsStrings()), 15));
+//		div.appendChild(createSpan("jour", this.getJournal(), 15));
 		div.appendChild(createSpan("auth", String.valueOf(this.getAuthorString()), 15));
-		div.appendChild(createSpan("date", String.valueOf(this.getDate()), 6));
+//		div.appendChild(createSpan("date", String.valueOf(this.getDate()), 6));
 		div.appendChild(new HtmlBr());
 		div.appendChild(createSpan("abst", String.valueOf(this.getAbstract()), 30));
 		
 		return div;
 	}
 
-	private HtmlSpan createSpan(String name, String value, int maxLen) {
-		HtmlSpan titleSpan = new HtmlSpan();
+	private HtmlSpan createSpan(String name, String value0, int maxLen) {
+		HtmlSpan biblioSpan = new HtmlSpan();
+		HtmlI iElement = new HtmlI();
+		String value = value0;
 		if (value != null) {
-			name = /*name + ": " + */value.substring(0, Math.min(maxLen,  value.length()));
+			if (value.length() > maxLen) {
+				value = value.substring(0, maxLen);
+				value += " ...";
+			}
 		}
-		titleSpan.appendChild(name);
-		titleSpan.setTitle(value);
-		return titleSpan;
+		iElement.appendChild(name + ": ");
+//		HtmlSpan typeSpan = HtmlSpan.createSpanWithContent();
+//		biblioSpan.appendChild(typeSpan);
+		biblioSpan.appendChild(iElement);
+		biblioSpan.setClassAttribute(name);
+		biblioSpan.appendChild(value);
+		biblioSpan.setTitle(value0);
+		return biblioSpan;
 	}
 
 
