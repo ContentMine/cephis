@@ -11,6 +11,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CProject;
 import org.contentmine.cproject.metadata.AbstractMetadata;
+import org.contentmine.cproject.metadata.DataTableLookup;
 import org.contentmine.cproject.util.ResultsAnalysis.SummaryType;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.html.HtmlA;
@@ -30,6 +31,8 @@ import org.contentmine.graphics.html.HtmlTfoot;
 import org.contentmine.graphics.html.HtmlTh;
 import org.contentmine.graphics.html.HtmlThead;
 import org.contentmine.graphics.html.HtmlTr;
+
+import nu.xom.Element;
 
 public class DataTablesTool {
 
@@ -86,6 +89,7 @@ public class DataTablesTool {
 	private ResultsAnalysis resultsAnalysis;
 	private String bibliographyId;
 	private Map<String, AbstractMetadata> metadataByCTreename;
+	private DataTableLookup dataTableLookup;
 
 	public DataTablesTool() {
 		this.setTableId(RESULTS);
@@ -206,6 +210,7 @@ public class DataTablesTool {
 	 */
 	public void addRows(HtmlTbody htmlTbody) {
 		for (int iRow = 0; iRow < rowHeadingList.size(); iRow++) {
+			if (iRow % 10 == 0) System.out.print("r");
 			String rowHeading = rowHeadingList.get(iRow);
 			HtmlTr htmlTr = new HtmlTr();
 			htmlTbody.appendChild(htmlTr);
@@ -220,17 +225,50 @@ public class DataTablesTool {
 		}
 	}
 
-	private HtmlTd createBibliographicRefCell(String rowHeading, String rowHeadingTitle, String title, String titleTitle) {
-		String remoteHref = createHref(remoteLink0, rowHeading, remoteLink1);
-		String localHref = createHref(localLink0, rowHeading, localLink1);
+	private HtmlTd createBibliographicRefCell(String rowId, String rowHeadingTitle, String title, String titleTitle) {
+		String remoteHref = createHref(remoteLink0, rowId, remoteLink1);
+		String localHref = createHref(localLink0, rowId, localLink1);
 		
 		HtmlTd htmlTd1 = new HtmlTd();
-		createA(remoteHref, rowHeading, htmlTd1, rowHeadingTitle);
+		createA(remoteHref, rowId, htmlTd1, rowHeadingTitle);
 		createA(localHref, "local", htmlTd1, titleTitle);
+		String qid = getQIDForPMC(rowId);
+		if (qid != null) {
+			createA("https://www.wikidata.org/wiki/"+qid, "wd:"+qid, htmlTd1, "wikidata");
+		}
 		HtmlTd htmlTd = htmlTd1;
 		htmlTd.setTitle(title);
 		
 		return htmlTd;
+	}
+
+	private String getQIDForPMC(String rowId) {
+		String PMCID = "P932";
+		// remove leading PMC
+		rowId = rowId.replace("PMC", "");
+		String query =
+				"SELECT ?item " + "WHERE {" +
+                "  ?item wdt:" + PMCID + " " + "\"" + rowId + "\"" + " ." +
+                "}";
+		Element element = null;
+		try {
+			element = dataTableLookup.createSparqlLookup(query);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot query for QID", e);
+		}
+		/**
+		<result>
+			<binding name="item">
+				<uri>http://www.wikidata.org/entity/Q25257418</uri>
+			</binding>
+		</result>
+		 */
+//		LOG.debug("el "+element.toXML());
+		String qidString = XMLUtil.getSingleValue(element, ".//*[local-name()='binding' and @name='item']/*[local-name()='uri']");
+		String[] fields = qidString == null ? null : qidString.split("/");
+		String qid = fields == null ? null : fields[fields.length - 1];
+//		LOG.debug("qid "+qid);
+		return qid;
 	}
 
 	private HtmlTd createBibliographicDataCell(String rowHeading) {
@@ -463,6 +501,10 @@ public class DataTablesTool {
 			throw new RuntimeException("Null metadataByTreename");
 		}
 		this.metadataByCTreename = metadataByCTreename;
+	}
+
+	public void setLookup(DataTableLookup dataTableLookup) {
+		this.dataTableLookup = dataTableLookup;
 	}
 
 }
