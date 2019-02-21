@@ -90,6 +90,7 @@ public class DataTablesTool {
 	private String bibliographyId;
 	private Map<String, AbstractMetadata> metadataByCTreename;
 	private DataTableLookup dataTableLookup;
+	private boolean addWikidataBiblio;
 
 	public DataTablesTool() {
 		this.setTableId(RESULTS);
@@ -107,6 +108,7 @@ public class DataTablesTool {
 		remoteLink1 = "";
 		localLink0 = "";
 		localLink1 = "/scholarly.html";
+		addWikidataBiblio = false;
 	}
 
 	public DataTablesTool(CellCalculator cellCalculator) {
@@ -232,9 +234,11 @@ public class DataTablesTool {
 		HtmlTd htmlTd1 = new HtmlTd();
 		createA(remoteHref, rowId, htmlTd1, rowHeadingTitle);
 		createA(localHref, "local", htmlTd1, titleTitle);
-		String qid = getQIDForPMC(rowId);
-		if (qid != null) {
-			createA("https://www.wikidata.org/wiki/"+qid, "wd:"+qid, htmlTd1, "wikidata");
+		if (addWikidataBiblio) {
+			String qid = getQIDForPMC(rowId);
+			if (qid != null) {
+				createA("https://www.wikidata.org/wiki/"+qid, "wd:"+qid, htmlTd1, "wikidata");
+			}
 		}
 		HtmlTd htmlTd = htmlTd1;
 		htmlTd.setTitle(title);
@@ -505,6 +509,14 @@ public class DataTablesTool {
 
 	public void setLookup(DataTableLookup dataTableLookup) {
 		this.dataTableLookup = dataTableLookup;
+	}
+
+	public boolean isAddWikidataBiblio() {
+		return addWikidataBiblio;
+	}
+
+	public void setAddWikidataBiblio(boolean addWikidataBiblio) {
+		this.addWikidataBiblio = addWikidataBiblio;
 	}
 
 }
