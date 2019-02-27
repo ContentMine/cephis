@@ -212,6 +212,7 @@ public class DefaultArgProcessor {
 	private IOFileFilter ioFileFilter;
 	public String outputFileRegex;
 	protected CHESRunner runner;
+	private boolean debug;
 
 	protected List<ArgumentOption> getArgumentOptionList() {
 		return argumentOptionList;
@@ -1286,6 +1287,7 @@ public class DefaultArgProcessor {
 		} else {
 			for (int i = 0; i < cTreeList.size(); i++) {
 				currentCTree = cTreeList.get(i);
+				if (debug) System.err.print(currentCTree.getName()+" "); 
 				LOG.trace("running: "+currentCTree.getDirectory());
 				cTreeLog = currentCTree.getOrCreateCTreeLog(this, logfileName);
 				if (cTreeLog != null) cTreeLog.setLevel(LogLevel.ERROR);
@@ -1562,6 +1564,14 @@ public class DefaultArgProcessor {
 
 	public CHESRunner getRunner() {
 		return this.runner;
+	}
+
+	public boolean isDebug() {
+		return debug;
+	}
+
+	public void setDebug(boolean debug) {
+		this.debug = debug;
 	}
 
 }

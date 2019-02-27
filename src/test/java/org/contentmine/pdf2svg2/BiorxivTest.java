@@ -24,6 +24,7 @@ public class BiorxivTest {
 		CMineTestFixtures.cleanAndCopyDir(sourceDir, targetDir);
 		String fileroot = "103861";
 		File file = new File(targetDir, fileroot+".full.pdf");
+		LOG.debug(file);
 		Assert.assertTrue("target pdf "+targetDir, file.exists());
 	    PDFDocumentProcessor documentProcessor = new PDFDocumentProcessor();
 	    documentProcessor.readAndProcess(file);
