@@ -1476,6 +1476,13 @@ public abstract class XMLUtil implements XMLConstants {
 		return sb.toString();
 	}
 
-	
+	/** create xpath for local-name()
+	 * creates *[local-name()='foo']
+	 * @param result
+	 * @return
+	 */
+	public static String localNameXPath(String localName) {
+		return "*[local-name()='" + localName + "']";
+	}
 
 }

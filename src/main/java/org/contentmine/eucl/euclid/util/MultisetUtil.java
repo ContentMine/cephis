@@ -8,10 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.xml.XMLUtil;
 
 import com.google.common.collect.HashMultiset;
+import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.ImmutableSortedMultiset;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multiset.Entry;
@@ -27,13 +30,23 @@ import nu.xom.Node;
  *
  */
 public class MultisetUtil<T extends Object> {
+	private static final Logger LOG = Logger.getLogger(MultisetUtil.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
 
 	public static <T> Iterable<Entry<T>> getEntriesSortedByValue(Multiset<T> set) {
 		return  ImmutableSortedMultiset.copyOf(set).entrySet();		
 	}
 	
 	public static <T> Iterable<Multiset.Entry<T>> getEntriesSortedByCount(Multiset<T> objectSet) {
-		return Multisets.copyHighestCountFirst(objectSet).entrySet();
+		ImmutableMultiset<T> copyHighestCountFirst = null;
+		try {
+			copyHighestCountFirst = Multisets.copyHighestCountFirst(objectSet);
+		} catch (NullPointerException npe) {
+//			LOG.error("NPE: "+npe);
+		}
+		return copyHighestCountFirst == null ? null : copyHighestCountFirst.entrySet();
 	}
 
 	/** extracts a list of attribute values.
@@ -75,8 +88,10 @@ public class MultisetUtil<T extends Object> {
 
 	public static <T> List<Entry<T>> createEntryList(Iterable<Entry<T>> iterable) {
 		List<Entry<T>> entries = new ArrayList<Entry<T>>();
-		for (Entry<T> entry : iterable) {
-			entries.add(entry);
+		if (iterable != null) {
+			for (Entry<T> entry : iterable) {
+				entries.add(entry);
+			}
 		}
 		return entries;
 	}
