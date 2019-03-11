@@ -46,6 +46,7 @@ public class DebugPrint {
 	private static void println(Level level, String msg, Level refLevel) {
 		if (level != null && refLevel != null && refLevel.isGreaterOrEqual(level)) {
 			System.out.println(">"+level+": "+msg);
+//			addLoggingLevel(level, msg);
 		}
 	}
 
