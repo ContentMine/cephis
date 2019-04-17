@@ -46,6 +46,12 @@ import junit.framework.Assert;
  * @author pm286
  *
  */
+/** takes far too long
+ * 
+ * @author pm286
+ *
+ */
+@Ignore
 public class PlotImageIT {
 	private static final Logger LOG = Logger.getLogger(PlotImageIT.class);
 	static {

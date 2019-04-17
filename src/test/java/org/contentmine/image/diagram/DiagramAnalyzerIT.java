@@ -16,11 +16,18 @@ import org.contentmine.image.colour.RGBColor;
 import org.contentmine.image.pixel.PixelGraph;
 import org.contentmine.image.pixel.PixelIsland;
 import org.contentmine.image.pixel.PixelIslandList;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import boofcv.io.image.UtilImageIO;
 import junit.framework.Assert;
 
+/** takes far too long
+ * 
+ * @author pm286
+ *
+ */
+@Ignore
 public class DiagramAnalyzerIT {
 	private static final Logger LOG = Logger.getLogger(DiagramAnalyzerIT.class);
 	static {

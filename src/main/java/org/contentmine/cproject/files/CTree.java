@@ -841,6 +841,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return new CTree(ctreeFile).getExistingImageDir();
 	}
 
+	/** uses rawimage/ child directory*/
 	public File getExistingImageDir() {
 		return getExistingReservedDirectory(RAW_IMAGES_DIR, false);
 	}

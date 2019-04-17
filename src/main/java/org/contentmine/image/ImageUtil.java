@@ -242,7 +242,7 @@ public class ImageUtil {
 
 		// Local method
 		} else if (method.equals(ThresholdMethod.LOCAL_MEAN)) {
-			GThresholdImageOps.localMean(input, binary, ConfigLength.fixed(57), 1.0, down, null, null);
+			GThresholdImageOps.localMean(input, binary, ConfigLength.fixed(57), 1.0, down, null, null, null);
 		} else if (method.equals(ThresholdMethod.BLOCK_MIN_MAX)) {
 			GThresholdImageOps.blockMinMax(input, binary, ConfigLength.fixed(21), 1.0, down, 15 );
 		} else if (method.equals(ThresholdMethod.BLOCK_MEAN)) {
@@ -674,10 +674,17 @@ public class ImageUtil {
 	}
 
 	public static int setRgb(int red, int green, int blue) {
-		int rgb = red * 256 * 256 + green * 256 + blue;
-//		LOG.debug(red+", "+green+", "+blue+"//"+Integer.toHexString(rgb)+"/"+ImageUtil.debugRGB(rgb));
+		int rgb = red * (256 * 256) + green * 256 + blue;
 		return rgb;
 	}
+
+	public static int setRgb(float[] rgbf) {
+		int rf = (int)rgbf[0];
+		int gf = (int)rgbf[1];
+		int bf = (int)rgbf[2];
+		return ImageUtil.setRgb(rf, gf, bf);
+	}
+
 
 	/** flip to (255-r), (255.g), (255,b)
 	 * 

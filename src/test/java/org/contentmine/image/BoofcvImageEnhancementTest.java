@@ -44,7 +44,8 @@ public class BoofcvImageEnhancementTest {
 		GrayU8 gray = ConvertBufferedImage.convertFrom(buffered,(GrayU8)null);
 		GrayU8 adjusted = gray.createSameShape();
 
-		int histogram[] = new int[256];
+		int size = 256;
+		int histogram[] = new int[size];
 		int transform[] = new int[256];
 
 		ListDisplayPanel panel = new ListDisplayPanel();
@@ -54,7 +55,7 @@ public class BoofcvImageEnhancementTest {
 		EnhanceImageOps.applyTransform(gray, transform, adjusted);
 		panel.addImage(ConvertBufferedImage.convertTo(adjusted, null), "Global");
 
-		EnhanceImageOps.equalizeLocal(gray, 50, adjusted, histogram, transform);
+		EnhanceImageOps.equalizeLocal(gray, 50, adjusted, size, null);
 		panel.addImage(ConvertBufferedImage.convertTo(adjusted,null),"Local");
 
 		panel.addImage(ConvertBufferedImage.convertTo(gray, null), "Original");

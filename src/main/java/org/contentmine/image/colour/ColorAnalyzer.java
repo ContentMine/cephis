@@ -17,6 +17,7 @@ import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.IntSet;
 import org.contentmine.eucl.euclid.RealArray;
+import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.euclid.RealArray.Filter;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGSVG;
@@ -29,6 +30,7 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multiset.Entry;
 
+import boofcv.alg.color.ColorHsv;
 import boofcv.io.image.UtilImageIO;
 
 /** analyzes images for colours.
@@ -46,6 +48,47 @@ https://en.wikipedia.org/wiki/Color_quantization
 
  * 
  * @author pm286
+ *
+ */
+
+/**
+ * from Boofcv
+ * 
+ * public class ColorHsv
+extends java.lang.Object
+
+Color conversion between RGB and HSV color spaces. HSV stands for Hue-Saturation-Value. "Hue" has a range of [0,2*PI] and "Saturation" has a range of [0,1], the two together represent the color. While "Value" has the same range as the input pixels and represents how light/dark the color is. Original algorithm taken from [1] and modified slightly.
+
+NOTE: The hue is represented in radians instead of degrees, as is often done.
+NOTE: Hue will be set to NaN if it is undefined. It is undefined when chroma is zero, which happens when the input color is a pure gray (e.g. same value across all color bands).
+
+RGB to HSV:
+
+ min = min(r,g,b)
+ max = max(r,g,b)
+ delta = max-min  // this is the chroma
+ value = max
+
+ if( max != 0 )
+   saturation = delta/max
+ else
+   saturation = 0;
+   hue = NaN
+
+ if( r == max )
+   hue = (g-b)/delta
+ else if( g == max )
+   hue = 2 + (b-r)/delta
+ else
+   hue = 4 + (r-g)/delta
+
+ hue *= 60.0*PI/180.0
+ if( hue < 0 )
+   hue += 2.0*PI
+
+ 
+
+[1] http://www.cs.rit.edu/~ncs/color/t_convert.html 
  *
  */
 public class ColorAnalyzer {
@@ -85,6 +128,79 @@ public class ColorAnalyzer {
 	private Multiset<RGBColor> colorSet;
 	private RGBNeighbourMap rgbNeighbourMap;
 	private ColorFrequenciesMap colorFrequenciesMap;
+	private BufferedImage saturateImage;
+	private int minChroma;
+	private boolean saturate;
+	private String outputImageFilename;
+	private int minGray;
+	private int maxGray;
+	private int maxGrayChroma;
+	private boolean includeGray;
+	private BufferedImage grayImage;
+
+	public int getMinGray() {
+		return minGray;
+	}
+
+	public ColorAnalyzer setMinGray(int minGray) {
+		this.minGray = minGray;
+		return this;
+	}
+
+	public int getMaxGray() {
+		return maxGray;
+	}
+
+	public ColorAnalyzer setMaxGray(int maxGray) {
+		this.maxGray = maxGray;
+		return this;
+	}
+
+	public int getMaxGrayChroma() {
+		return maxGrayChroma;
+	}
+
+	public ColorAnalyzer setMaxGrayChroma(int maxGrayChroma) {
+		this.maxGrayChroma = maxGrayChroma;
+		return this;
+	}
+
+	public boolean isIncludeGray() {
+		return includeGray;
+	}
+
+	public ColorAnalyzer setIncludeGray(boolean includeGray) {
+		this.includeGray = includeGray;
+		return this;
+	}
+
+	public ColorAnalyzer() {
+		setDefaults();
+	}
+	
+	private void setDefaults() {
+		// pixel-svg options 
+		// flattening
+		this.setStartPlot(1);
+		this.setMaxPixelSize(1000000);
+		this.setIntervalCount(4);
+		this.setEndPlot(15);
+		this.setMinPixelSize(300);
+		// saturate/gray
+		this.setMinGray(32);
+		this.setMaxGray(224);
+		this.setMaxGrayChroma(32);
+
+	}
+
+	public int getMinChroma() {
+		return minChroma;
+	}
+
+	public ColorAnalyzer setMinChroma(int minChroma) {
+		this.minChroma = minChroma;
+		return this;
+	}
 
 /**
  * 	
@@ -100,8 +216,18 @@ public class ColorAnalyzer {
 //		colorAnalyzer.analyzeFlattenedColours();
  */
 	public ColorAnalyzer(BufferedImage image) {
+		this();
 		readImage(image);
 	}
+
+	public boolean isSaturate() {
+	return saturate;
+}
+
+public ColorAnalyzer setSaturate(boolean saturate) {
+	this.saturate = saturate;
+	return this;
+}
 
 	/** read and deep copy and process image.
 	 * deep copy so image will not be modified
@@ -146,14 +272,12 @@ public class ColorAnalyzer {
 		colorFrequenciesMap = null;
 	}
 
-	public void setInputImage(Image image) {
+	public ColorAnalyzer setInputImage(Image image) {
 		this.inputImage = (BufferedImage) image;
 		this.currentImage = inputImage;
+		return this;
 	}
 	
-	public ColorAnalyzer() {
-	}
-
 	public Multiset<RGBColor> getOrCreateColorSet() {
 		if (colorSet == null || colorSet.size() == 0) {
 			this.colorSet = HashMultiset.create();
@@ -187,27 +311,32 @@ public class ColorAnalyzer {
 		return width;
 	}
 
-	public void setXYRange(Int2Range xyRange) {
+	public ColorAnalyzer setXYRange(Int2Range xyRange) {
 		this.xyRange = xyRange;
+		return this;
 	}
 
-	public void setStartPlot(int start) {
+	public ColorAnalyzer setStartPlot(int start) {
 		this.startPlot = start;
+		return this;
 	}
 
-	public void setEndPlot(int end) {
+	public ColorAnalyzer setEndPlot(int end) {
 		this.endPlot = end;
+		return this;
 	}
 	
-	public void setMinPixelSize(int minPixel) {
+	public ColorAnalyzer setMinPixelSize(int minPixel) {
 		this.minPixelSize = minPixel;
+		return this;
 	}
 
-	public void setMaxPixelSize(int maxPixel) {
+	public ColorAnalyzer setMaxPixelSize(int maxPixel) {
 		this.maxPixelSize = maxPixel;
+		return this;
 	}
 
-	public void readImage(File file) throws IOException {
+	public BufferedImage readImage(File file) throws IOException {
 		this.inputFile = file;
 		if (!file.exists()) {
 			throw new IOException("Image file does not exist: "+inputFile);
@@ -217,14 +346,17 @@ public class ColorAnalyzer {
 			throw new RuntimeException("Image file could not be read: "+inputFile);
 		}
 		currentImage = inputImage;
+		return currentImage;
+		
 	}
 	
 	public File getInputFile() {
 		return inputFile;
 	}
 
-	public void setIntervalCount(int nvals) {
+	public ColorAnalyzer setIntervalCount(int nvals) {
 		this.intervalCount = nvals;
+		return this;
 	}
 	
 	public BufferedImage sharpenImage(BufferedImage image) {
@@ -245,9 +377,14 @@ public class ColorAnalyzer {
 		getOrCreateColorSet();
 		createSortedFrequencies();
 		createPixelListsFromColorValues();
+		writeSVGAndPNG();
+	}
+
+	private void writeSVGAndPNG() {
 		if (outputDirectory != null) {
 			writePixelListsAsSVG();
-			writeMainImage("main.png");
+			outputImageFilename = "main.png";
+			writeMainImage(outputImageFilename);
 		}
 	}
 
@@ -302,15 +439,16 @@ public class ColorAnalyzer {
 		colorValues = colorValues.getReorderedArray(sortedFrequencyIndex);
 	}
 
-	public void setOutputDirectory(File file) {
+	public ColorAnalyzer setOutputDirectory(File file) {
 		this.outputDirectory = file;
 		outputDirectory.mkdirs();
+		return this;
 		
 	}
 	
 	
 
-	public void defaultPosterize() {
+	public ColorAnalyzer defaultPosterize() {
 		setStartPlot(1);
 		setMaxPixelSize(1000000);
 		setIntervalCount(4);
@@ -318,6 +456,7 @@ public class ColorAnalyzer {
 		setMinPixelSize(300);
 		flattenImage();
 		analyzeFlattenedColours();
+		return this;
 	}
 
 	public void parse(List<String> values) {
@@ -541,5 +680,139 @@ public class ColorAnalyzer {
 		}
 		return getInputImage();
 	}
+
+	/**
+	 * convert rgb to HSV.
+	 */
+	public static float[] rgb2hsv( int rgb ) {
+		// remove alpha
+		rgb &= 0x00ffffff;
+		float[] hsv = new float[3];
+		int r = (rgb >> 16) & 0xFF;
+		int g = (rgb >> 8) & 0xFF;
+		int b = rgb & 0xFF;
+//		int rgbnew = ImageUtil.setRgb(r, g, b);
+//		if(rgb != rgbnew) {
+//			System.out.println(Integer.toHexString(rgb)+" != "+Integer.toHexString(rgbnew));
+//		}
+		ColorHsv.rgbToHsv(r, g, b, hsv);
+		float[] rgbf = new float[3];
+		ColorHsv.hsvToRgb(hsv[0], hsv[1], hsv[2], rgbf);
+		ImageUtil.setRgb(rgbf);
+		return hsv;
+
+	}
+
+	/**
+	 * gets chroma as max(r,g,b) - min(r,g,b)
+	 */
+	public static int getChroma( int rgb ) {
+		rgb &= 0x00FFFFFF;
+		int r = (rgb >> 16) & 0xFF;
+		int g = (rgb >> 8)  & 0xFF;
+		int b = rgb & 0xFF;
+		int max = Math.max(r, Math.max(g, b));
+		int min = Math.min(r, Math.min(g, b));
+		int chroma = max - min;
+		return chroma;
+
+	}
+	
+	public void isGray(int rgb) {
+		
+	}
+
+	/** finds non-gray colouyrs and optionally saturates them
+	 * requires setSaturate and setMinChroma to select appropriate values
+	 * calculates HSV from RGB and sets them to saturated if > minChroma
+	 * Still being developed
+	 * @return new coloured image
+	 */
+	public BufferedImage applySaturation() {
+		int width = currentImage.getWidth();
+		int height = currentImage.getHeight();
+		saturateImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		float[] rgbf = new float[3];
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				int rgb = currentImage.getRGB(x, y) & 0x00FFFFFF; // remove alpha
+				float[] hsvpoint = ColorAnalyzer.rgb2hsv(rgb);
+				int chroma = ColorAnalyzer.getChroma(rgb);
+				if (chroma > minChroma) {
+					// is non-gray
+					// maximum saturation
+					if (saturate) {
+						hsvpoint[1] = 1.0f;
+					}
+				} else {
+					// white? seems to work
+					hsvpoint[0] = 0.0f;
+					hsvpoint[1] = 0.0f;
+//					hsvpoint[2] = 1.0f; //???
+				}
+				ColorHsv.hsvToRgb(hsvpoint[0], hsvpoint[1], hsvpoint[2], rgbf);
+				int rgbnew = ImageUtil.setRgb(rgbf);
+				if (rgb != rgbnew) {
+//					System.out.println(Integer.toHexString(rgb)+" "+Integer.toHexString(rgbnew));
+				}
+				saturateImage.setRGB(x, y, rgbnew);
+			}
+		}
+		return saturateImage;
+	}
+
+	public void writeSaturateImage(File outfile) {
+		if (saturateImage != null) {
+			ImageIOUtil.writeImageQuietly(saturateImage, outfile);
+			LOG.debug("wrote: "+outfile);
+		}
+	}
+
+	public BufferedImage applyGray() {
+		int width = currentImage.getWidth();
+		int height = currentImage.getHeight();
+		grayImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		float[] rgbf = new float[3];
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				boolean usedHsv = true;
+				int rgb = currentImage.getRGB(x, y) & 0x00FFFFFF; // remove alpha
+				float[] hsvpoint = ColorAnalyzer.rgb2hsv(rgb);
+				int chroma = ColorAnalyzer.getChroma(rgb);
+				// this gives a BLACK background?
+				if ((chroma < maxGrayChroma && includeGray) || 
+					(chroma > maxGrayChroma && !includeGray)) {
+					// include pixel as-is else
+					if (saturate) {
+						hsvpoint[1] = 1.0f;
+					}
+				} else {
+//					// set to white? seems to work
+//					hsvpoint[0] = 0.0f; // arbitrary H
+//					hsvpoint[1] = 0.0f; // saturation S=0, so white?
+////					hsvpoint[2] = 0.5f; // not sure what it does, both 0 and 1 
+										// create black
+					usedHsv = false;
+				}
+				int rgbnew = 0x00ffffff;
+				if (usedHsv) {
+					ColorHsv.hsvToRgb(hsvpoint[0], hsvpoint[1], hsvpoint[2], rgbf);
+					rgbnew = ImageUtil.setRgb(rgbf);
+				}
+				grayImage.setRGB(x, y, rgbnew);
+			}
+		}
+		return grayImage;
+	}
+
+	public void writeGrayImage(File outfile) {
+		if (grayImage != null) {
+			ImageIOUtil.writeImageQuietly(grayImage, outfile);
+			LOG.debug("wrote: "+outfile);
+		}
+	}
+
+
+
 
 }
