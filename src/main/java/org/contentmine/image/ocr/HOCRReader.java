@@ -205,7 +205,7 @@ public class HOCRReader extends InputReader {
 		readHOCR(HtmlElement.create(XMLUtil.stripDTDAndParse(s)));
 		applyUniversalSubstitutions();
 		processHTMLAndCreateSVG();
-		listMaps();
+//		listMaps();
 	}
 	
 	private void listMaps() {
