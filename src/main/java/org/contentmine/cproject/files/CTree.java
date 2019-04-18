@@ -1944,11 +1944,19 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getDirectory() == null ? null : new File(getDirectory(), CTree.SCHOLARLY_HTML);
 	}
 
+	/** assumes a set of child directories, each with an image
+	 * 
+	 * @return
+	 */
 	public List<File> getPDFImagesImageDirectories() {
 		List<File> imageDirectories = new ArrayList<File>();
 		File dir = getExistingPDFImagesDir();
 //		File dir = new File(directory, PDF_IMAGES_DIR);
+		List<File> images = CMineGlobber.listSortedChildFiles(dir, CTree.PNG);
 		List<File> subDirectories = CMineGlobber.listSortedChildDirectories(dir);
+		if (images.size() > 0 && subDirectories.size() == 0) {
+			subDirectories = convertImagesToSubDirectories(images);
+		}
 		for (File subDir : subDirectories) {
 			String name = subDir.getName();
 			if (name.startsWith(IMAGEDOT)) {
@@ -1958,6 +1966,26 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return imageDirectories;
 	}
 
+
+	private List<File> convertImagesToSubDirectories(List<File> imageFiles) {
+		LOG.debug("converting to subdirectories: "+imageFiles.size());
+		List<File> subDirectories = new ArrayList<File>();
+		for (File imageFile : imageFiles) {
+			String root = FilenameUtils.getBaseName(imageFile.toString());
+			LOG.debug("converting: "+imageFile+" to "+root+"/");
+			File subDir = new File(imageFile.getParentFile(), root);
+			subDir.mkdirs();
+			File imageFile1 = new File(subDir, "raw.png");
+			try {
+				FileUtils.moveFile(imageFile, imageFile1);
+				LOG.debug("made "+imageFile1.getAbsolutePath());
+				subDirectories.add(subDir);
+			} catch (IOException e) {
+				LOG.error("Cannot rename: "+imageFile+" to "+imageFile1+" "+ e);
+			}
+		}
+		return subDirectories;
+	}
 
 	public TreeImageManager getOrCreatePDFImageManager() {
 		if (pdfImageManager == null) {

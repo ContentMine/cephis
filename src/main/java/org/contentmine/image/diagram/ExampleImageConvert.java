@@ -18,10 +18,8 @@ import boofcv.alg.misc.GPixelMath;
 import boofcv.alg.misc.ImageStatistics;
 import boofcv.core.image.ConvertImage;
 import boofcv.core.image.GeneralizedImageOps;
-import boofcv.gui.ListDisplayPanel;
-import boofcv.gui.image.ShowImages;
+import boofcv.core.image.border.BorderType;
 import boofcv.io.image.ConvertBufferedImage;
-import boofcv.struct.border.BorderType;
 import boofcv.struct.image.GrayF32;
 import boofcv.struct.image.GrayS16;
 import boofcv.struct.image.GrayU8;
@@ -39,7 +37,7 @@ public class ExampleImageConvert {
 	GrayU8 gray;
 	// Derivative of gray image.  Elements are 16-bit signed integers
 	GrayS16 derivX,derivY;
-	private ListDisplayPanel panel;
+//	private ListDisplayPanel panel;
 	private File root;
 
 	public ExampleImageConvert() {
@@ -47,8 +45,8 @@ public class ExampleImageConvert {
 	}
 	
 	void createPanel() {
-		panel = new ListDisplayPanel();
-		root = new File("/Users/pm286/workspace/uclforest/forestplots/campbell/pdfimages");
+//		panel = new ListDisplayPanel();
+//		root = new File("/Users/pm286/workspace/uclforest/forestplots/campbell/pdfimages");
 
 	}
 	
@@ -98,8 +96,8 @@ public class ExampleImageConvert {
 //		BufferedImage outScaled = new BufferedImage(imageBad.width,imageBad.height,BufferedImage.TYPE_INT_RGB);
 
 //		panel.addImage(ConvertBufferedImage.convertTo(scaledAbs,outScaled),"Scaled");
-		panel.addImage(gray,"gray"+imageName);
-		panel.addImage(imageOut,"bin"+imageName);
+//		panel.addImage(gray,"gray"+imageName);
+//		panel.addImage(imageOut,"bin"+imageName);
 //		panel.addImage(colorX,"Col"+imageName);
 //		panel.addImage(ConvertBufferedImage.convertTo(imageBad,outBad),"Bad");
 	}
@@ -137,7 +135,7 @@ public class ExampleImageConvert {
 			this.createImages(imageName);
 			this.convert(imageName);
 		}
-		ShowImages.showWindow(panel,"Image Convert",true);
+//		ShowImages.showWindow(panel,"Image Convert",true);
 
 	}
 }

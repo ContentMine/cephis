@@ -1,6 +1,5 @@
 package org.contentmine.image;
 
-import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -9,15 +8,10 @@ import javax.imageio.ImageIO;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.jetty.util.log.Log;
 
 import boofcv.alg.enhance.EnhanceImageOps;
 import boofcv.alg.misc.ImageStatistics;
-import boofcv.gui.ListDisplayPanel;
-import boofcv.gui.image.ShowImages;
-import boofcv.io.UtilIO;
 import boofcv.io.image.ConvertBufferedImage;
-import boofcv.io.image.UtilImageIO;
 import boofcv.struct.image.GrayU8;
 
 public class BoofcvImageEnhancementTest {
@@ -39,6 +33,7 @@ public class BoofcvImageEnhancementTest {
 	 * Histogram adjustment algorithms aim to spread out pixel intensity values uniformly across the allowed range.
 	 * This if an image is dark, it will have greater contrast and be brighter.
 	 */
+	// NOT TESTED
 	public static void histogram(BufferedImage buffered) {
 //			BufferedImage buffered = UtilImageIO.loadImage(UtilIO.pathExample(imagePath));
 		GrayU8 gray = ConvertBufferedImage.convertFrom(buffered,(GrayU8)null);
@@ -47,18 +42,18 @@ public class BoofcvImageEnhancementTest {
 		int size = 256;
 		int histogram[] = new int[size];
 		int transform[] = new int[256];
-
-		ListDisplayPanel panel = new ListDisplayPanel();
+//
+//		ListDisplayPanel panel = new ListDisplayPanel();
 
 		ImageStatistics.histogram(gray,0, histogram);
 		EnhanceImageOps.equalize(histogram, transform);
 		EnhanceImageOps.applyTransform(gray, transform, adjusted);
-		panel.addImage(ConvertBufferedImage.convertTo(adjusted, null), "Global");
+//		panel.addImage(ConvertBufferedImage.convertTo(adjusted, null), "Global");
 
-		EnhanceImageOps.equalizeLocal(gray, 50, adjusted, size, null);
-		panel.addImage(ConvertBufferedImage.convertTo(adjusted,null),"Local");
+		EnhanceImageOps.equalizeLocal(gray, 50, adjusted, /*size,*/ histogram, new int[0]);
+//		panel.addImage(ConvertBufferedImage.convertTo(adjusted,null),"Local");
 
-		panel.addImage(ConvertBufferedImage.convertTo(gray, null), "Original");
+//		panel.addImage(ConvertBufferedImage.convertTo(gray, null), "Original");
 
 	}
 
@@ -73,7 +68,7 @@ public class BoofcvImageEnhancementTest {
 		GrayU8 adjusted = gray.createSameShape();
 
 
-		ListDisplayPanel panel = new ListDisplayPanel();
+//		ListDisplayPanel panel = new ListDisplayPanel();
 
 		EnhanceImageOps.sharpen4(gray, adjusted);
 		BufferedImage sharpen4 = ConvertBufferedImage.convertTo(adjusted,null);
@@ -87,7 +82,7 @@ public class BoofcvImageEnhancementTest {
 
 		BufferedImage grayImage = ConvertBufferedImage.convertTo(gray,null);
 		ImageIO.write(grayImage, "png", new File(outdir, "original.png"));
-		panel.addImage(gray,"Original");
+//		panel.addImage(gray,"Original");
 
 //			panel.setPreferredSize(new Dimension(gray.width,gray.height));
 //			mainPanel.addItem(panel, "Sharpen");

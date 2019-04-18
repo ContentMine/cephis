@@ -180,7 +180,8 @@ public class ColorAnalyzerIT {
 		Planar<GrayF32> hsv = input.createSameShape();
 
 		// Convert into HSV
-		ColorHsv.rgbToHsv(input,hsv);
+//		ColorHsv.rgbToHsv(input,hsv);
+		if (true) throw new RuntimeException("showSelectedColor probably obsolete");
 		selectHSVPixels(image, hue, saturation, input, hsv);
 
 	}

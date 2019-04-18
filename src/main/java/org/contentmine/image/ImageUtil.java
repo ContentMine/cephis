@@ -43,9 +43,9 @@ import boofcv.alg.filter.binary.Contour;
 import boofcv.alg.filter.binary.GThresholdImageOps;
 import boofcv.alg.filter.binary.ThresholdImageOps;
 import boofcv.alg.misc.ImageStatistics;
-import boofcv.gui.ListDisplayPanel;
-import boofcv.gui.binary.VisualizeBinaryData;
-import boofcv.gui.image.ShowImages;
+//import boofcv.gui.ListDisplayPanel;
+//import boofcv.gui.binary.VisualizeBinaryData;
+//import boofcv.gui.image.ShowImages;
 import boofcv.io.image.ConvertBufferedImage;
 import boofcv.struct.ConfigLength;
 import boofcv.struct.ConnectRule;
@@ -215,7 +215,8 @@ public class ImageUtil {
 		GrayU8 binary = new GrayU8(input.getWidth(), input.getHeight());
 		boolean down = false;
 		ThresholdImageOps.threshold(input, binary, threshold, down);
-		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary, false, null);
+		BufferedImage outputImage = /*VisualizeBinaryData.renderBinary(binary, false, null);*/
+				ConvertBufferedImage.convertTo(binary, null);
 		// this didn't work - returned black
 //		BufferedImage outputImage = binary == null ? null : new BufferedImage(input.width, input.height, image.getType());
 //		/*outputImage = */ConvertBufferedImage.convertTo(binary, outputImage);
@@ -241,8 +242,8 @@ public class ImageUtil {
 			GThresholdImageOps.threshold(input, binary, GThresholdImageOps.computeEntropy(input, 0, 255), down);
 
 		// Local method
-		} else if (method.equals(ThresholdMethod.LOCAL_MEAN)) {
-			GThresholdImageOps.localMean(input, binary, ConfigLength.fixed(57), 1.0, down, null, null, null);
+//		} else if (method.equals(ThresholdMethod.LOCAL_MEAN)) {
+//			GThresholdImageOps.localMean(input, binary, ConfigLength.fixed(57), 1.0, down, null, null, null);
 		} else if (method.equals(ThresholdMethod.BLOCK_MIN_MAX)) {
 			GThresholdImageOps.blockMinMax(input, binary, ConfigLength.fixed(21), 1.0, down, 15 );
 		} else if (method.equals(ThresholdMethod.BLOCK_MEAN)) {
@@ -260,7 +261,9 @@ public class ImageUtil {
 		}
 
 		boolean invert = false;
-		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary, invert, null);
+//		BufferedImage outputImage = VisualizeBinaryData.renderBinary(binary, invert, null);
+		BufferedImage outputImage = /*VisualizeBinaryData.renderBinary(binary, false, null);*/
+		ConvertBufferedImage.convertTo(binary, null);
 		// GThresh
 //		ImageUtil.invertImage(outputImage);
 //
@@ -1168,18 +1171,12 @@ public class ImageUtil {
 		int colorInternal = 0xFF2020;
 	
 		// display the results
-		BufferedImage visualBinary = VisualizeBinaryData.renderBinary(binary8, false, null);
-		BufferedImage visualFiltered = VisualizeBinaryData.renderBinary(filtered8, false, null);
-		BufferedImage visualLabel = VisualizeBinaryData.renderLabeledBG(label32, contours.size(), null);
-		BufferedImage visualContour = VisualizeBinaryData.renderContours(contours, colorExternal, colorInternal,
-				width, height, null);
+//		BufferedImage visualBinary = VisualizeBinaryData.renderBinary(binary8, false, null);
+//		BufferedImage visualFiltered = VisualizeBinaryData.renderBinary(filtered8, false, null);
+//		BufferedImage visualLabel = VisualizeBinaryData.renderLabeledBG(label32, contours.size(), null);
+//		BufferedImage visualContour = VisualizeBinaryData.renderContours(contours, colorExternal, colorInternal,
+//				width, height, null);
 	
-		ListDisplayPanel panel = new ListDisplayPanel();
-		panel.addImage(visualBinary, "Binary Original");
-		panel.addImage(visualFiltered, "Binary Filtered");
-		panel.addImage(visualLabel, "Labeled Blobs");
-		panel.addImage(visualContour, "Contours");
-		ShowImages.showWindow(panel,"Binary Operations",true);
 	}
 
 	public static BufferedImage sharpenBoofcv(BufferedImage bufferedImage, SharpenMethod sharpen) {
