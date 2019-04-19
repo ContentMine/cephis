@@ -1951,16 +1951,17 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	public List<File> getPDFImagesImageDirectories() {
 		List<File> imageDirectories = new ArrayList<File>();
 		File dir = getExistingPDFImagesDir();
-//		File dir = new File(directory, PDF_IMAGES_DIR);
-		List<File> images = CMineGlobber.listSortedChildFiles(dir, CTree.PNG);
-		List<File> subDirectories = CMineGlobber.listSortedChildDirectories(dir);
-		if (images.size() > 0 && subDirectories.size() == 0) {
-			subDirectories = convertImagesToSubDirectories(images);
-		}
-		for (File subDir : subDirectories) {
-			String name = subDir.getName();
-			if (name.startsWith(IMAGEDOT)) {
-				imageDirectories.add(subDir);
+		if (dir != null) {
+			List<File> images = CMineGlobber.listSortedChildFiles(dir, CTree.PNG);
+			List<File> subDirectories = CMineGlobber.listSortedChildDirectories(dir);
+			if (images.size() > 0 && subDirectories.size() == 0) {
+				subDirectories = convertImagesToSubDirectories(images);
+			}
+			for (File subDir : subDirectories) {
+				String name = subDir.getName();
+				if (name.startsWith(IMAGEDOT)) {
+					imageDirectories.add(subDir);
+				}
 			}
 		}
 		return imageDirectories;

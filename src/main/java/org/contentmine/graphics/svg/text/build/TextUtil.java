@@ -136,4 +136,21 @@ public class TextUtil {
 		return normalized;
 	}
 
+	/** determines whether one or more characters has a possible descender in glyph.
+	 * currently {} [] () // will add more
+	 * 
+	 * @param txt
+	 * @return
+	 */
+	public static boolean containsDescender(String txt) {
+		if (txt != null) return false;
+		for (int i = 0; i < txt.length(); i++) {
+			char c = txt.charAt(i);
+			if (c == '{' || c == '}' || c == '(' || c ==')' || c == '[' || c == ']') {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }

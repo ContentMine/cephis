@@ -16,6 +16,8 @@ import org.contentmine.graphics.svg.cache.GenericAbstractList;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 
+import georegression.struct.curve.ParabolaGeneral_F32;
+
 /** an array of multisets representing bins
  * supports an array of Multiset<Integer> created
  * from a single Multiset<Integer>, i.e.
@@ -24,7 +26,7 @@ import com.google.common.collect.Multiset;
  * @author pm286
  *
  */
-public class IntegerMultisetList extends GenericAbstractList<Multiset<Integer>> {
+public class IntegerMultisetList extends GenericAbstractList<IntegerMultiset> {
 	private static final Logger LOG = Logger.getLogger(IntegerMultisetList.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -34,134 +36,12 @@ public class IntegerMultisetList extends GenericAbstractList<Multiset<Integer>> 
 	public int minval;
 	public int maxval;
 	public int binCount;
-//	private List<Multiset<Integer>> binList;
 	private int startValue;
 	private Multiset<Integer> rawSet;
 	
 	public IntegerMultisetList()  {
 	}
 	
-//	public List<Multiset<Integer>> getOrCreateBinList() {
-//		if (binList == null) {
-//			binList = new ArrayList<Multiset<Integer>>();
-//		}
-//		return binList;
-//	}
-
-//	@Override
-//	public int size() {
-//		return getOrCreateBinList().size();
-//	}
-//
-//	@Override
-//	public boolean isEmpty() {
-//		return getOrCreateBinList().isEmpty();
-//	}
-//
-//	@Override
-//	public boolean contains(Object o) {
-//		return getOrCreateBinList().contains(o);
-//	}
-//
-//	@Override
-//	public Iterator<Multiset<Integer>> iterator() {
-//		return getOrCreateBinList().iterator();
-//	}
-//
-//	@Override
-//	public Object[] toArray() {
-//		return getOrCreateBinList().toArray();
-//	}
-//
-//	@Override
-//	public <T> T[] toArray(T[] a) {
-//		return getOrCreateBinList().toArray(a);
-//	}
-//
-//	@Override
-//	public boolean add(Multiset<Integer> e) {
-//		return getOrCreateBinList().add(e);
-//	}
-//
-//	@Override
-//	public boolean remove(Object o) {
-//		return getOrCreateBinList().remove(o);
-//	}
-//
-//	@Override
-//	public boolean containsAll(Collection<?> c) {
-//		return getOrCreateBinList().contains(c);
-//	}
-//
-//	@Override
-//	public boolean addAll(Collection<? extends Multiset<Integer>> c) {
-//		return getOrCreateBinList().addAll(c);
-//	}
-//
-//	@Override
-//	public boolean addAll(int index, Collection<? extends Multiset<Integer>> c) {
-//		return getOrCreateBinList().addAll(index, c);
-//	}
-//
-//	@Override
-//	public boolean removeAll(Collection<?> c) {
-//		return getOrCreateBinList().removeAll(c);
-//	}
-//
-//	@Override
-//	public boolean retainAll(Collection<?> c) {
-//		return getOrCreateBinList().retainAll(c);
-//	}
-//
-//	@Override
-//	public void clear() {
-//		getOrCreateBinList().clear();
-//	}
-//
-//	@Override
-//	public Multiset<Integer> get(int index) {
-//		return getOrCreateBinList().get(index);
-//	}
-//
-//	@Override
-//	public Multiset<Integer> set(int index, Multiset<Integer> element) {
-//		return getOrCreateBinList().set(index, element);
-//	}
-//
-//	@Override
-//	public void add(int index, Multiset<Integer> element) {
-//		getOrCreateBinList().add(index, element);
-//	}
-//
-//	@Override
-//	public Multiset<Integer> remove(int index) {
-//		return getOrCreateBinList().remove(index);
-//	}
-//
-//	@Override
-//	public int indexOf(Object o) {
-//		return getOrCreateBinList().indexOf(o);
-//	}
-//
-//	@Override
-//	public int lastIndexOf(Object o) {
-//		return getOrCreateBinList().lastIndexOf(o);
-//	}
-//
-//	@Override
-//	public ListIterator<Multiset<Integer>> listIterator() {
-//		return getOrCreateBinList().listIterator();
-//	}
-//
-//	@Override
-//	public ListIterator<Multiset<Integer>> listIterator(int index) {
-//		return getOrCreateBinList().listIterator(index);
-//	}
-//
-//	@Override
-//	public List<Multiset<Integer>> subList(int fromIndex, int toIndex) {
-//		return getOrCreateBinList().subList(fromIndex, toIndex);
-//	}
 	
 	/** create a set of bins, each of which is a multiset.
 	 * because these are integers, the bins do not lose info
@@ -170,20 +50,22 @@ public class IntegerMultisetList extends GenericAbstractList<Multiset<Integer>> 
 	 * @param binsize size of bins
 	 * @return list of bins (each is a multiset)
 	 */
-	public List<Multiset<Integer>> createBins(IntArray array, int binsize) {
+	public List<IntegerMultiset> createBins(IntArray array, int binsize) {
 		this.binsize = binsize;
 		createLimits(array, binsize);
 		ensureGenericList();
 //		genericList = new ArrayList<Multiset<Integer>>();
 		for (int i = 0; i < binCount; i++) {
-			Multiset<Integer> bin = HashMultiset.create();
+			IntRange intRange = new IntRange(minval + i * binsize, minval + (i+1) * binsize);
+			IntegerMultiset bin = new IntegerMultiset(intRange);
 			genericList.add(bin);
 		}
 		
 		List<Integer> rawList = new ArrayList<Integer>(rawSet);
 		for (int i = 0; i < rawList.size(); i++) {
 			Integer ii = rawList.get(i);
-			int ibin = (ii - minval + 1) / this.binsize;
+//			int ibin = (ii - minval + 1) / this.binsize;
+			int ibin = (ii - minval) / this.binsize;
 			genericList.get(ibin).add(ii);
 		}
 		return genericList;
@@ -195,6 +77,10 @@ public class IntegerMultisetList extends GenericAbstractList<Multiset<Integer>> 
 		rawSet.addAll(array.getIntegerList());
 		List<Multiset.Entry<Integer>> entriesSortedByValue = MultisetUtil.createEntryList(
 			MultisetUtil.getEntriesSortedByValue(rawSet));
+		if (entriesSortedByValue.size() == 0) {
+//			LOG.debug("empty sets");
+			return;
+		}
 		minval = entriesSortedByValue.get(0).getElement();
 		maxval = entriesSortedByValue.get(entriesSortedByValue.size() - 1).getElement();
 		startValue = getStartValue();
@@ -210,42 +96,6 @@ public class IntegerMultisetList extends GenericAbstractList<Multiset<Integer>> 
 		startValue = (minval / binsize ) * binsize; // use delta granularity
 		return startValue;
 	}
-
-//	public void forEach(Consumer<? super Multiset<Integer>> action) {
-//		getOrCreateBinList().forEach(action);
-//	}
-//
-//	public void replaceAll(UnaryOperator<Multiset<Integer>> operator) {
-//		getOrCreateBinList().replaceAll(operator);
-//	}
-//
-//	public boolean removeIf(Predicate<? super Multiset<Integer>> filter) {
-//		return getOrCreateBinList().removeIf(filter);
-//	}
-//
-//	public void sort(Comparator<? super Multiset<Integer>> c) {
-//		getOrCreateBinList().sort(c);
-//	}
-//
-//	public boolean equals(Object o) {
-//		return getOrCreateBinList().equals(o);
-//	}
-//
-//	public int hashCode() {
-//		return getOrCreateBinList().hashCode();
-//	}
-//
-//	public Stream<Multiset<Integer>> stream() {
-//		return getOrCreateBinList().stream();
-//	}
-//
-//	public Stream<Multiset<Integer>> parallelStream() {
-//		return getOrCreateBinList().parallelStream();
-//	}
-//
-//	public Spliterator<Multiset<Integer>> spliterator() {
-//		return getOrCreateBinList().spliterator();
-//	}
 
 	public int getBinsize() {
 		return binsize;
@@ -269,6 +119,52 @@ public class IntegerMultisetList extends GenericAbstractList<Multiset<Integer>> 
 
 	public void setBinCount(int binCount) {
 		this.binCount = binCount;
+	}
+
+	/** iterates through bins to see if any neighbours can be transferred.
+	 * 
+	 * if bin[i] contains values within bounds of bin[i+1] and count(bin[i] < count(bin[i+1])
+	 * transfers those from bin[i] to bin[i+1]
+	 * if bin[i+1] contains values within bounds of bin[i] and count(bin[i+1] < count(bin[i])
+	 * transfers those from bin[i+1] to bin[i]
+	 * 
+	 * This is empirical and could be unstable. delta should be "much less" than
+	 * bin width
+	 * 
+	 * @param delta max value inclusive for transferring
+	 * 
+	 */
+	public void mergeNeighbouringBins(int delta) {
+		for (int i = 0; i < genericList.size() - 1; i++) {
+			IntegerMultiset bini = genericList.get(i);
+			IntegerMultiset binii = genericList.get(i + 1);
+			Multiset<Integer> highValsi = bini.getHighValues(delta);
+			Multiset<Integer> lowValsii = binii.getLowValues(delta);
+			if (highValsi.size() > 0 && lowValsii.size() > 0) {
+				if (highValsi.size() < lowValsii.size()) {
+//					LOG.debug("move high " + highValsi + " from " + bini + " up to " + binii);
+					moveValsFromTo(highValsi, bini, binii);
+				} else {
+//					LOG.debug("move low " + lowValsii + "from " + binii + " down to " + bini);
+					moveValsFromTo(lowValsii, binii, bini);
+				}
+			}
+		}
+	}
+
+	private void moveValsFromTo(Multiset<Integer> values, IntegerMultiset fromSet, IntegerMultiset toSet) {
+		toSet.add(values);
+		fromSet.removeAll(values);
+		IntRange intRange = new IntRange();
+		for (Integer value : values) {
+			intRange.add(value);
+		}
+		fromSet.resetIntRange(intRange);
+	}
+
+
+	public List<IntegerMultiset> getBins() {
+		return genericList;
 	}
 		
 

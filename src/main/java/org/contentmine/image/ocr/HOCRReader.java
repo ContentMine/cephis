@@ -559,6 +559,7 @@ public class HOCRReader extends InputReader {
 		if (bbox1 != null) {
 			Real2 xy = bbox1.getLLURCorners()[0];
 			SVGText text = new SVGText(xy, "SPACE");
+			AbstractCMElement.setClassAttributeValue(text, "space");
 			text.setFontSize(15.);
 			word.svg.appendChild(text);
 			LOG.trace(word.svg.toXML());
@@ -663,7 +664,9 @@ public class HOCRReader extends InputReader {
 		Real2 xy = bbox.getLLURCorners()[0];
 		xy = xy.plus(new Real2(0., height * (1 - yOffset))); // to offset the y-direction 
 		text.setXY(xy);
+		AbstractCMElement.setClassAttributeValue(text, "text");
 		text.appendChild(word);
+//		LOG.debug("word: "+word);
 		return text;
 	}
 

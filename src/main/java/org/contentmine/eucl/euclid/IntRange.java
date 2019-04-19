@@ -487,4 +487,18 @@ public class IntRange implements EuclidConstants, Comparable<IntRange> {
 		return intArray;
 		
 	}
+	/** alters this
+	 * 
+	 * @param intRange2
+	 * @return
+	 */
+	public IntRange not(IntRange intRange2) {
+		if (this.maxval > intRange2.minval) {
+			this.maxval = Math.max(minval, Math.min(this.maxval, intRange2.minval));
+		}
+		if (this.minval < intRange2.maxval) {
+			this.minval = Math.min(maxval, Math.max(this.minval, intRange2.maxval));
+		}
+		return this;
+	}
 }
