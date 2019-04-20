@@ -1,7 +1,12 @@
 package org.contentmine.eucl.euclid;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.contentmine.graphics.svg.SVGText;
+
 import com.google.common.collect.BoundType;
-import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.SortedMultiset;
 import com.google.common.collect.TreeMultiset;
@@ -13,7 +18,7 @@ import com.google.common.collect.TreeMultiset;
  * @author pm286
  *
  */
-public class IntegerMultiset {
+public class IntegerMultiset implements Comparable<IntegerMultiset> {
 
 	private TreeMultiset<Integer> multiset;
 	private IntRange intRange;
@@ -87,4 +92,28 @@ public class IntegerMultiset {
 	public void add(Integer ii) {
 		multiset.add(ii);
 	}
+
+	public Multiset<Integer> getMultiset() {
+		return multiset;
+	}
+
+	/** compares IntegerMultizset based on minimum of intRanges
+	 * 
+	 * @param im
+	 * @return
+	 */
+	@Override
+	public int compareTo(IntegerMultiset im) {
+		if (im == null) return 0;
+		return this.intRange.minval - im.intRange.minval;
+	}
+	
+	public Set<Integer> elementSet() {
+		return multiset.elementSet();
+	}
+	
+	public List<Integer> getSortedValues() {
+		return new ArrayList<Integer>(multiset.elementSet());
+	}
+
 }

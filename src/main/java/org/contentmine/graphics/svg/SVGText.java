@@ -9,6 +9,8 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -1553,7 +1555,33 @@ public class SVGText extends SVGElement {
 			this.setText(sb.toString());
 		}
 	}
+
+	/** gets the string contents as text
+	 * 
+	 * @param texts
+	 * @return list of string content
+	 */
+	public static List<String> getTextStrings(List<SVGText> texts) {
+		List<String> textList = new ArrayList<String>();
+		for (SVGText text : texts) {
+			textList.add(text.getText());
+		}
+		return textList;
+		
+	}
+
+	public static void sortByX(List<SVGText> textList) {
+		Collections.sort(textList, new XComparator());
+	}
 	
 
 
+}
+class XComparator implements Comparator<SVGText> {
+
+	@Override
+	public int compare(SVGText t1, SVGText t2) {
+		if (t1 == null || t2 == null) return 0;
+		return (int)(t1.getX() - t2.getX());
+	}
 }

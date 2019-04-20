@@ -50,7 +50,7 @@ public class IntegerMultisetList extends GenericAbstractList<IntegerMultiset> {
 	 * @param binsize size of bins
 	 * @return list of bins (each is a multiset)
 	 */
-	public List<IntegerMultiset> createBins(IntArray array, int binsize) {
+	public IntegerMultisetList createBins(IntArray array, int binsize) {
 		this.binsize = binsize;
 		createLimits(array, binsize);
 		ensureGenericList();
@@ -68,7 +68,7 @@ public class IntegerMultisetList extends GenericAbstractList<IntegerMultiset> {
 			int ibin = (ii - minval) / this.binsize;
 			genericList.get(ibin).add(ii);
 		}
-		return genericList;
+		return this;
 
 	}
 
@@ -163,8 +163,17 @@ public class IntegerMultisetList extends GenericAbstractList<IntegerMultiset> {
 	}
 
 
-	public List<IntegerMultiset> getBins() {
+	public List<IntegerMultiset> getList() {
 		return genericList;
+	}
+
+	public void removeEmptyBins() {
+		for (int i = genericList.size() - 1; i >= 0; i--) {
+			IntegerMultiset bin = genericList.get(i);
+			if (bin.size() == 0) {
+				genericList.remove(i);
+			}
+		}
 	}
 		
 

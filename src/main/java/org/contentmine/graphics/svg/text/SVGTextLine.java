@@ -350,4 +350,13 @@ public class SVGTextLine extends SVGG implements List<SVGText> {
 		}
 		return span;
 	}
+
+	/** gets the texts as the strihng representation of a list.
+	 * 
+	 * @return
+	 */
+	public String getText() {
+		List<String> textList = SVGText.extractStrings(this.lineTexts);
+		return textList.toString();
+	}
 }

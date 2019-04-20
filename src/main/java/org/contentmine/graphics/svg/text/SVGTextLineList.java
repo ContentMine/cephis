@@ -188,4 +188,13 @@ public class SVGTextLineList extends SVGG implements List<SVGTextLine> {
 			}
 		}
 	}
+
+	public String getText() {
+		StringBuilder sb = new StringBuilder();
+		for (SVGTextLine textLine : this) {
+			sb.append("\n");
+			sb.append(textLine.getText());
+		}
+		return sb.toString();
+	}
 }
