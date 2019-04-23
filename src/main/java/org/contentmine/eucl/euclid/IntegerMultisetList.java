@@ -50,7 +50,7 @@ public class IntegerMultisetList extends GenericAbstractList<IntegerMultiset> {
 	 * @param binsize size of bins
 	 * @return list of bins (each is a multiset)
 	 */
-	public IntegerMultisetList createBins(IntArray array, int binsize) {
+	public IntegerMultisetList createMultisets(IntArray array, int binsize) {
 		this.binsize = binsize;
 		createLimits(array, binsize);
 		ensureGenericList();
@@ -134,7 +134,7 @@ public class IntegerMultisetList extends GenericAbstractList<IntegerMultiset> {
 	 * @param delta max value inclusive for transferring
 	 * 
 	 */
-	public void mergeNeighbouringBins(int delta) {
+	public void mergeNeighbouringMultisets(int delta) {
 		for (int i = 0; i < genericList.size() - 1; i++) {
 			IntegerMultiset bini = genericList.get(i);
 			IntegerMultiset binii = genericList.get(i + 1);
@@ -167,11 +167,27 @@ public class IntegerMultisetList extends GenericAbstractList<IntegerMultiset> {
 		return genericList;
 	}
 
-	public void removeEmptyBins() {
+	public void removeEmptyMultisets() {
 		for (int i = genericList.size() - 1; i >= 0; i--) {
 			IntegerMultiset bin = genericList.get(i);
 			if (bin.size() == 0) {
 				genericList.remove(i);
+			}
+		}
+	}
+
+	/** split multisets into 2 if a gap in middle */
+	
+	public void splitMultisets(int gap) {
+		for (int i = genericList.size() - 1; i >= 0; i--) {
+			IntegerMultiset bin = genericList.get(i);
+			List<IntegerMultiset> splitBins = bin.splitAtGaps(gap);
+			if (splitBins.size() > 1) {
+				genericList.remove(i);
+				// insert new bins
+				for (int j = splitBins.size() - 1; j >= 0; j--) {
+					genericList.add(i, splitBins.get(j));
+				}
 			}
 		}
 	}

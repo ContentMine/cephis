@@ -11,7 +11,10 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealArray;
+import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
+import org.contentmine.graphics.svg.SVGText;
+import org.contentmine.graphics.svg.SVGUtil;
 
 public class SVGTextLineList extends SVGG implements List<SVGTextLine> {
 	private static final Logger LOG = Logger.getLogger(SVGTextLineList.class);
@@ -197,4 +200,46 @@ public class SVGTextLineList extends SVGG implements List<SVGTextLine> {
 		}
 		return sb.toString();
 	}
+
+	/** annotate with type of word
+	 * @return 
+	 * 
+	 */
+	public List<String> getOrCreateTypeAnnotations() {
+		List<String> typeAnnotations = new ArrayList<>();
+		for (SVGTextLine textLine : this) {
+			typeAnnotations.add(textLine.getOrCreateTypeAnnotatedString());
+		}
+		return typeAnnotations;
+	}
+	
+	/** re-reads textLines 
+	 *   Finds all g's of form
+	 *   <g class="textLine">
+	 *      <text x="14.0" y="56.0" class="text" style="font-size:13.0px;">Kuklo</text>
+	 *   </g>
+
+	 * @param svgElement
+	 * @return
+	 */
+	public static SVGTextLineList createSVGTextLineList(SVGElement svgElement) {
+		String xpath = ".//*[local-name()='"+SVGG.TAG+"' and @class='"+SVGTextLine.TAG+"' and *[local-name()='"+SVGText.TAG+"']]";
+		List<SVGElement> textLines = SVGUtil.getQuerySVGElements(svgElement, 
+				xpath);
+//		LOG.debug(xpath + "//" + textLineList.size());
+		SVGTextLineList textLineList = new SVGTextLineList();
+		for (SVGElement tl : textLines) {
+			SVGTextLine textLine = SVGTextLine.createSVGTextLine(tl);
+//			LOG.debug(">>"+textLine.getOrCreateTypeAnnotatedString());
+			textLineList.add(textLine);
+		}
+		return textLineList;
+	}
+	
+	public void splitAtCharacters(String splitters) {
+		for (SVGTextLine textLine : this) {
+			textLine.splitAtCharacters(splitters);
+		}
+	}
+
 }

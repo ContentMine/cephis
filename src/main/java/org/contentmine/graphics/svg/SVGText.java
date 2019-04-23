@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -102,6 +103,78 @@ public class SVGText extends SVGElement {
 	public final static Double DEFAULT_SPACE_FACTOR = 0.05;
 	private static final double MIN_FONT_SIZE = 0.01;
 	private static final Double DEFAULT_CHARACTER_WIDTH = 500.0;
+
+	/** categorizes text strings as common types
+	 * 
+	 * @author pm286
+	 *
+	 */
+	public enum TextType {
+		ALPHA("A", "[A-Za-z_]+"),
+		BRACK("B", "[\\(\\{\\[\\<]"),
+		EMPTY("0", ""),
+		END_BRACK("C", "[\\)\\}\\]\\>]"),
+		EQUALS("E", "\\="),
+		FLOAT("F", "\\-?\\d+\\.\\d+"),
+		// assumes leading and trailing digits (e.g. not .3 or 2.)
+		INTEGER("I", "\\-?\\d+"),
+		PERCENT("%", "\\-?\\d+(\\.\\d+)?\\%"),
+		PUNCT("P", "[\\!\\@\\#\\$\\^\\&\\*\\:\\;\\,]"),
+		QUOTE("Q", "[\\\"\\']"),
+		SPACE(" ", "\\s+"),
+		// anything else
+		STRING("S", "[^\\s]+"),
+		UNKNOWN("?", ".*"),
+		;
+		private String abbrev;
+		private Pattern pattern;
+
+		private TextType(String abbrev, String regex) {
+			this.abbrev = abbrev;
+			this.pattern = Pattern.compile(regex);
+		}
+		public Pattern getPattern() {
+			return pattern;
+		}
+		public String getAbbrev() {
+			return abbrev;
+		}
+		
+		public static TextType getType(String text) {
+			if (text == null) return null;
+			if (text.length() == 0) {
+				return EMPTY;
+			}
+			if (text.trim().length() == 0) {
+				return SPACE;
+			}
+			if (text.length() == 1) {
+				for (TextType type : new TextType[] {BRACK, END_BRACK, EQUALS, PERCENT, PUNCT, QUOTE}) {
+					if (type.pattern.matcher(text).matches()) {
+						return type;
+					}
+				}
+			}
+			if (INTEGER.pattern.matcher(text).matches()) {
+				return INTEGER;
+			}
+			if (FLOAT.pattern.matcher(text).matches()) {
+				return FLOAT;
+			}
+			if (PERCENT.pattern.matcher(text).matches()) {
+				return PERCENT;
+			}
+			if (ALPHA.pattern.matcher(text).matches()) {
+				return ALPHA;
+			}
+			if (STRING.pattern.matcher(text).matches()) {
+				return STRING;
+			}
+			LOG.error("Cannot match: "+text);
+			return UNKNOWN;
+			
+		}
+	};
 
 	public Angle ROT90 = new Angle(Math.PI/2.0, Units.RADIANS);
 	public double ANGLE_EPS = 0.01;

@@ -3234,6 +3234,30 @@ public class Util implements EuclidConstants {
 	    return prettyJson;
 	}
 
+	public static List<String> createSplitStrings(String characterString, String text) {
+		List<String> splitTexts = new ArrayList<>();
+		int last = 0;
+		for (int j = 0; j < text.length(); j++) {
+			String s = text.substring(j,  j+1); // probably inefficent
+			if (characterString.contains(s)) {
+				if (j > 0) {
+//					LOG.debug(last+":"+j);
+					String prev = text.substring(last, j);
+					splitTexts.add(prev);
+				}
+				String character = text.substring(j, j+1);
+				splitTexts.add(character);
+//				LOG.debug(j+":"+character);
+				last = j + 1;
+			}
+		}
+		if (last > 0 && last < text.length()) {
+			splitTexts.add(text.substring(last));
+		}
+		return  splitTexts;
+	}
+
+
 }
 
 
@@ -3284,5 +3308,6 @@ class StringIntegerComparator implements Comparator<Object> {
 		fw.close();
 		br.close();
 	}
+	
 	
  }

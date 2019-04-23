@@ -859,4 +859,18 @@ public class UtilTest {
 		Assert.assertEquals("null abc", 0, Util.indexOfFirstDiferentChar("", "abc"));
 
 	}
+	
+	@Test 
+	public void testCreateSplitStrings() {
+		List<String> strings = Util.createSplitStrings("[", "abc");
+		Assert.assertEquals(0, strings.size());
+		strings = Util.createSplitStrings("[", "[abc");
+		Assert.assertEquals(2, strings.size());
+		strings = Util.createSplitStrings("[]", "[abc]");
+		Assert.assertEquals(3, strings.size());
+		strings = Util.createSplitStrings("[]", "[ab]c");
+		Assert.assertEquals(4, strings.size());
+		strings = Util.createSplitStrings("[]", "[ab]c]");
+		Assert.assertEquals(5, strings.size());
+	}
 }

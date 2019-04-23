@@ -94,7 +94,7 @@ public abstract class AbstractCMElement extends Element implements XMLConstants 
 	 * @param element
 	 * @return null if element is null.
 	 */
-	protected static String getClassAttributeValue(Element element) {
+	public static String getClassAttributeValue(Element element) {
 		return element == null ? null : element.getAttributeValue(CLASS);
 	}
 

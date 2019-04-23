@@ -208,9 +208,9 @@ public class PlotImageIT {
 		int deltaX = 20;
 		int deltaY = 20;
 		IntegerMultisetList xBinList = new IntegerMultisetList();
-		xBinList.createBins(nodeList.getXArray(), deltaX);
+		xBinList.createMultisets(nodeList.getXArray(), deltaX);
 		IntegerMultisetList yBinList = new IntegerMultisetList();
-		yBinList.createBins(nodeList.getYArray(), deltaY);
+		yBinList.createMultisets(nodeList.getYArray(), deltaY);
 		
 		for (PixelNode node : nodeList) {
 			Int2 xy = node.getInt2();

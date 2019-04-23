@@ -1,10 +1,13 @@
 package org.contentmine.eucl.euclid;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import org.contentmine.graphics.svg.SVGText;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.eclipse.jetty.util.log.Log;
 
 import com.google.common.collect.BoundType;
 import com.google.common.collect.Multiset;
@@ -19,6 +22,12 @@ import com.google.common.collect.TreeMultiset;
  *
  */
 public class IntegerMultiset implements Comparable<IntegerMultiset> {
+
+
+	private static final Logger LOG = Logger.getLogger(IntegerMultiset.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
 
 	private TreeMultiset<Integer> multiset;
 	private IntRange intRange;
@@ -114,6 +123,36 @@ public class IntegerMultiset implements Comparable<IntegerMultiset> {
 	
 	public List<Integer> getSortedValues() {
 		return new ArrayList<Integer>(multiset.elementSet());
+	}
+
+	public List<IntegerMultiset> splitAtGaps(int gap) {
+		List<IntegerMultiset> splitSets = new ArrayList<>();
+		List<Integer> gapStartList = findGaps(gap);
+		if (gapStartList.size() > 0) {
+			LOG.debug("gaps in bin (split NYI): "+gapStartList);
+		}
+		return splitSets;
+	}
+
+	/** finds gaps within the values >= gap
+	 * 
+	 * @param gap
+	 * @return lists of values ate start of gaps
+	 */
+	private List<Integer> findGaps(int gap) {
+		Integer last = null;
+		List<Integer> gapStartList = new ArrayList<Integer>();
+		Iterator<Integer> iterator = multiset.iterator();
+		while (iterator.hasNext()) {
+			Integer value = iterator.next();
+			if (last != null) {
+				if (value - last >= gap) {
+					gapStartList.add(last);
+				}
+			}
+			last = value;
+		}
+		return gapStartList;
 	}
 
 }

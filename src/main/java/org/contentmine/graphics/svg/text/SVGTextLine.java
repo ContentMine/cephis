@@ -10,12 +10,17 @@ import java.util.ListIterator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real;
+import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
+import org.contentmine.eucl.euclid.RealRange;
+import org.contentmine.eucl.euclid.Util;
 import org.contentmine.graphics.html.HtmlSpan;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.SVGG;
 import org.contentmine.graphics.svg.SVGText;
+import org.contentmine.graphics.svg.SVGText.TextType;
 import org.contentmine.graphics.svg.SVGTextComparator;
+import org.contentmine.graphics.svg.SVGUtil;
 
 import nu.xom.Element;
 import nu.xom.Elements;
@@ -34,7 +39,7 @@ public class SVGTextLine extends SVGG implements List<SVGText> {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
-	private final static String TAG = "textLine";
+	public final static String TAG = "textLine";
 	private final static double YEPS = 0.0001;
 	private static final double FONT_EPS = 0.1;
 	private static final double SUS_EPS = 0.1;
@@ -43,6 +48,7 @@ public class SVGTextLine extends SVGG implements List<SVGText> {
 	private List<SVGText> lineTexts;
 	private Double fontSize;
 	private String fontName;
+	private String abbrevString;
 
 	public SVGTextLine() {
 		super(TAG);
@@ -359,4 +365,109 @@ public class SVGTextLine extends SVGG implements List<SVGText> {
 		List<String> textList = SVGText.extractStrings(this.lineTexts);
 		return textList.toString();
 	}
+
+	/** annotate components with type of field
+	 * @return 
+	 * 
+	 */
+	public String getOrCreateTypeAnnotatedString() {
+		if (abbrevString == null) {
+			StringBuilder sb = new StringBuilder();
+			for (SVGText lineText : this) {
+				String text = lineText.getText();
+				TextType textType = TextType.getType(text);
+				if (textType == null) {
+					LOG.debug("cannot find rtype for text "+text);
+					sb.append("!");
+				} else {
+					String abbrev = textType.getAbbrev();
+					sb.append(abbrev);
+				}
+			}
+			this.abbrevString = sb.toString();
+//			LOG.debug("abb "+abbrevString);
+		}
+		return abbrevString;
+	}
+	
+	/** re-reads a textLine 
+	 *   
+	 *   <g class="textLine">
+	 *      <text x="14.0" y="56.0" class="text" style="font-size:13.0px;">Kuklo</text>
+	 *   </g>
+
+	 * @param svgElement
+	 * @return
+	 */
+	public static SVGTextLine createSVGTextLine(SVGElement svgElement) {
+		SVGTextLine textLine = null;
+		if (svgElement != null) {
+			textLine = new SVGTextLine();
+			if (TAG.equals(SVGElement.getClassAttributeValue(svgElement))) {
+				List<SVGElement> texts = SVGUtil.getQuerySVGElements(svgElement, "./*[local-name()='"+SVGText.TAG+"']");
+				for (SVGElement text : texts) {
+					textLine.add((SVGText) text.copy());
+				}
+			}
+		}
+		return textLine;
+	}
+
+	/** splits each SVGText chunk if it contains any characters in characterString
+	 * and replaces unsplit string.
+	 * Thus <text x="10" y="20">[abc]</text>
+	 * with splitters = "[]"
+	 * will create 3 new SVGTexts 
+	 * Thus <text x="10" y="20">[</text>
+	 * Thus <text x="11" y="20">abc</text>
+	 * Thus <text x="14" y="20">]</text>
+	 * 
+	 * The x values are calculated from the bounding box and interpolated.
+	 * VERY approximate
+	 * The new values replace the chunk in the list
+	 * 
+	 * @param splittersString
+	 */
+	public void splitAtCharacters(String splittersString) {
+		for (int i = lineTexts.size() - 1; i >= 0; i--) {
+			SVGText svgText = lineTexts.get(i);
+			String text = svgText.getText();
+			List<String> splitStrings = Util.createSplitStrings(splittersString, text);
+			if (splitStrings.size() == 0) {
+			} else {
+				List<SVGText> splitTexts = createSplitSVGTexts(svgText, text, splitStrings);
+//				LOG.debug("replace "+text+" by "+splitTexts);
+				int idx = lineTexts.indexOf(svgText);
+				lineTexts.remove(idx);
+				for (int j = splitTexts.size() -1; j >= 0; j--) {
+					lineTexts.add(idx, splitTexts.get(j));
+				}
+			}
+			
+		}
+	}
+
+	private List<SVGText> createSplitSVGTexts(SVGText svgText, String text, List<String> splitStrings) {
+		List<SVGText> textList = new ArrayList<SVGText>();
+		double x = svgText.getX();
+		double y = svgText.getY();
+		String style = svgText.getStyle();
+		RealRange xRange = svgText.getBoundingBox().getXRange().format(2);
+		double xlen = xRange.getRange();
+		int chars = 0;
+		double length = (double) text.length();
+		for (int iString = 0; iString < splitStrings.size(); iString++) {
+			String string = splitStrings.get(iString);
+			String clazz = SVGText.getClassAttributeValue(svgText);
+			double offset = (double) chars / length * xlen;
+			double xx = x + offset;
+			SVGText splitText = new SVGText(new Real2(xx, y), string);
+			splitText.setCSSStyle(style);
+			SVGText.setClassAttributeValue(splitText, clazz);
+			textList.add(splitText);
+			chars += string.length();
+		}
+		return textList;
+	}
+
 }

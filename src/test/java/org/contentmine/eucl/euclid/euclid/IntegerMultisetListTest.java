@@ -22,7 +22,7 @@ public class IntegerMultisetListTest {
 				4, 5, 6
 		});
 		IntegerMultisetList intMultisetList = new IntegerMultisetList();
-		intMultisetList.createBins(intArray, 3);
+		intMultisetList.createMultisets(intArray, 3);
 		Assert.assertEquals("bins", 
 			"[[4 x 3, 5 x 2], [6 x 2, 7, 8], [9], [12 x 2], [17, 15], [], [23], [24 x 2, 25]]",
 			intMultisetList.toString());
