@@ -3,9 +3,12 @@ package org.contentmine.graphics.svg.text;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -39,16 +42,27 @@ public class SVGTextLine extends SVGG implements List<SVGText> {
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
+	
+	
 	public final static String TAG = "textLine";
 	private final static double YEPS = 0.0001;
 	private static final double FONT_EPS = 0.1;
 	private static final double SUS_EPS = 0.1;
 	public static final String COLUMN_SPAN = "columnSpan";
+	public final static Map<String, String> regexMap = new HashMap<>();
+	static {
+		regexMap.put("%D", "\\d{4}");
+		regexMap.put("%I", "\\-?\\d+");
+		regexMap.put("%A", "[A-Za-z_]+");
+		regexMap.put("%F", "\\-?((\\d*\\.?\\d+)|(\\d+\\.?\\d*))");
+		regexMap.put("%%", "\\-?((\\d*\\.?\\d+)|(\\d+\\.?\\d*))\\%");
+	}
 
 	private List<SVGText> lineTexts;
 	private Double fontSize;
 	private String fontName;
 	private String abbrevString;
+	private List<String> textStrings;
 
 	public SVGTextLine() {
 		super(TAG);
@@ -468,6 +482,55 @@ public class SVGTextLine extends SVGG implements List<SVGText> {
 			chars += string.length();
 		}
 		return textList;
+	}
+
+	public List<SVGPhrase> createPhraseList() {
+		ArrayList<SVGPhrase> phraseList = new ArrayList<>();
+		textStrings = new ArrayList<>();
+		for (SVGText text : this) {
+			textStrings.add(text.getText());
+		}
+		System.out.println(textStrings);
+		return phraseList;
+	}
+
+	public void annotateWith(List<List<String>> phraseListList) {
+		for (List<String> phraseList : phraseListList) {
+//			LOG.debug(phraseList.get(0));
+//			if (textStrings.get(0).equals(phraseList.get(0))) {
+			boolean matched = true;
+//			System.out.println("matched first "+textStrings+" / "+phraseList);
+			for (int i = 0; i < Math.min(phraseList.size(), textStrings.size()); i++) {
+				String textString = textStrings.get(i);
+				String phraseString = (phraseList.size() <=1) ? null : phraseList.get(i);
+				if (!SVGTextLine.match(textString, phraseString)) {
+					if (i > 0) LOG.debug("failed match at "+textString+"//"+phraseString);
+					matched = false;
+					break;
+				}
+			}
+			if (matched) {
+				LOG.debug("MATCHED "+textStrings+" VS "+phraseList);
+			}
+		}
+//		}
+	}
+
+	private static boolean match(String textString, String phraseString) {
+		if (textString.contentEquals(phraseString)) return true;
+		if (phraseString == null) return true;
+		if (phraseString.startsWith("%") && phraseString.length() == 2) {
+			phraseString = regexMap.get(phraseString);
+		}
+//		System.out.println("PS "+phraseString);
+		return SVGTextLine.matchRegex(textString, phraseString);
+	}
+
+	private static boolean matchRegex(String textString, String phraseRegex) {
+		if (textString == null) return false;
+		if (phraseRegex == null) return true;
+		Pattern pattern = Pattern.compile(phraseRegex);
+		return pattern.matcher(textString).matches();
 	}
 
 }
