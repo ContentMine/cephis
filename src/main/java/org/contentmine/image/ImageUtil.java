@@ -12,6 +12,8 @@ import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -36,6 +38,9 @@ import org.contentmine.image.processing.ZhangSuenThinning;
 import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
+
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
 
 import boofcv.alg.enhance.EnhanceImageOps;
 import boofcv.alg.filter.binary.BinaryImageOps;
@@ -210,16 +215,40 @@ public class ImageUtil {
 	It compiles - but haven't yet run it.
 	NOT YET TESTED
 	 */
-	public static BufferedImage boofCVBinarization(BufferedImage image, int threshold) {
-		GrayU8 input = ConvertBufferedImage.convertFrom(image,(GrayU8)null);
-		GrayU8 binary = new GrayU8(input.getWidth(), input.getHeight());
+	public static BufferedImage PMRBinarization(BufferedImage image, int threshold) {
+		GrayU8 input8 = ConvertBufferedImage.convertFrom(image,(GrayU8)null);
+//		GrayF32 input32 = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+		GrayU8 binary8 = new GrayU8(input8.getWidth(), input8.getHeight());
+		GrayF32 binary32 = new GrayF32(input8.getWidth(), input8.getHeight());
+		boolean down =false;
+		ThresholdImageOps.threshold(input8, binary8, threshold, down);
+//		GThresholdImageOps.threshold(input32, binary8, threshold, down);
+		BufferedImage outputImage =	ConvertBufferedImage.convertTo(binary32, null);
+		return outputImage;
+	}
+	
+	/** This does NOT get the correct result and rerquires a kludge which could fail anytime
+	 * 
+	 * @param image
+	 * @param threshold
+	 * @return
+	 */
+	public static BufferedImage boofCVBinarizationKludged(BufferedImage image, int threshold) {
+		GrayU8 input8 = ConvertBufferedImage.convertFrom(image,(GrayU8)null);
+		GrayF32 input32 = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+		GrayU8 binary8 = new GrayU8(input8.getWidth(), input8.getHeight());
+//		GrayF32 binary32 = new GrayF32(input8.getWidth(), input8.getHeight());
 		boolean down = false;
-		ThresholdImageOps.threshold(input, binary, threshold, down);
-		BufferedImage outputImage = /*VisualizeBinaryData.renderBinary(binary, false, null);*/
-				ConvertBufferedImage.convertTo(binary, null);
-		// this didn't work - returned black
-//		BufferedImage outputImage = binary == null ? null : new BufferedImage(input.width, input.height, image.getType());
-//		/*outputImage = */ConvertBufferedImage.convertTo(binary, outputImage);
+		ThresholdImageOps.threshold(input8, binary8, threshold, down);
+//		GThresholdImageOps.threshold(input32, binary8, threshold, down);
+		
+		BufferedImage outputImage = null;
+		// the "white" pixels should be "0xFFFFFFFF"  but are "0xFF0D0D0D" ????
+		outputImage =	ConvertBufferedImage.convertTo(binary8, null);
+		// 
+		outputImage = ImageUtil.removeAlpha(outputImage);
+		outputImage = ImageUtil.convertRGB(outputImage, 
+				new int[] {0x0d0d0d}, new int[] {0xffffff});
 		return outputImage;
 	}
 	
@@ -284,8 +313,8 @@ public class ImageUtil {
 		
 		if (image == null || method == null) return null;
 		// convert into a usable format
-		GrayF32 input = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
-		GrayU8 binary = new GrayU8(input.width,input.height);
+//		GrayF32 input = ConvertBufferedImage.convertFromSingle(image, null, GrayF32.class);
+//		GrayU8 binary = new GrayU8(input.width,input.height);
 
 		GrayU8 gray = ConvertBufferedImage.convertFrom(image, (GrayU8)null);
 		GrayU8 adjusted = gray.createSameShape();
@@ -1293,6 +1322,103 @@ public class ImageUtil {
 		return scale;
 	}
 
+	public static Multiset<Integer> createMultiset(BufferedImage image) {
+		Multiset<Integer> multiset = HashMultiset.create();
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j < image.getHeight(); j++) {
+				Integer color = image.getRGB(i, j);
+				multiset.add(color);
+			}
+		}
+		return multiset;
+	}
 
+
+	public static Multiset<String> createHexMultiset(BufferedImage image) {
+		Multiset<String> multiset = HashMultiset.create();
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j < image.getHeight(); j++) {
+				Integer color = image.getRGB(i, j);
+				multiset.add(Integer.toHexString(color));
+			}
+		}
+		return multiset;
+	}
+	
+	/** replaces old value with new value.
+	 * 
+	 * @param image
+	 * @param oldRGB array of old values
+	 * @param newRGB array of new values
+	 * @return
+	 */
+	public static BufferedImage convertRGB(BufferedImage image, int[] oldRGB, int[] newRGB) {
+		BufferedImage newImage = new BufferedImage(image.getWidth(),  image.getHeight(),
+				image.getType());
+		if (oldRGB.length != newRGB.length) {
+			throw new RuntimeException("Unequal lengths for old "+oldRGB.length+" and new "+newRGB.length);
+		}
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j < image.getHeight(); j++) {
+				int color = image.getRGB(i, j) & 0x00FFFFFF;
+				for (int ii = 0; ii < oldRGB.length; ii++) {
+					color = (color == oldRGB[ii]) ? newRGB[ii] : color;
+				}
+				newImage.setRGB(i, j, color);
+			}
+		}
+		return newImage;
+		
+	}
+
+	
+	/** replaces old value with new value.
+	 * 
+	 * @param image
+	 * @param o
+	 * @return
+	 */
+	public static BufferedImage removeAlpha(BufferedImage image) {
+		BufferedImage newImage = new BufferedImage(image.getWidth(),  image.getHeight(),
+				image.getType());
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j < image.getHeight(); j++) {
+				int color = image.getRGB(i, j);
+				color &= 0x00ffffff;
+				if (color != 0) {
+//					System.out.println("col: "+Integer.toHexString(color));
+				}
+				newImage.setRGB(i, j, color);
+			}
+		}
+		return newImage;
+		
+	}
+
+	/** replaces non-zero value with white.
+	 * 
+	 * @param image
+	 * @param o
+	 * @return
+	 */
+	public static BufferedImage magnifyToWhite(BufferedImage image) {
+		BufferedImage newImage = new BufferedImage(image.getWidth(),  image.getHeight(),
+				image.getType());
+		for (int i = 0; i < image.getWidth(); i++) {
+			for (int j = 0; j < image.getHeight(); j++) {
+				int color = image.getRGB(i, j);
+				color &= 0x00ffffff;
+				if (color != 0) {
+					color = 0x00ffffff;
+				}
+				newImage.setRGB(i, j, color);
+			}
+		}
+		return newImage;
+		
+	}
+
+
+	
 	
 }

@@ -19,6 +19,8 @@ import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.google.common.collect.Multiset;
+
 public class ImageUtilTest {
 	private static final Logger LOG = Logger.getLogger(ImageUtilTest.class);
 	static {
@@ -116,6 +118,18 @@ public class ImageUtilTest {
 		Assert.assertEquals("size",  1705925, FileUtils.sizeOf(outputFile));
 		BufferedImage newImage1 = ImageUtil.readImage(outputFile);
 		Assert.assertEquals("width",  5952, newImage1.getWidth());
+	}
+	
+	@Test
+	public void testBinarize() {
+		File imageFile = new File(ImageAnalysisFixtures.TEST_DIAGRAM_PLOT_DIR, "plos/journal.pone.0094172/g002-2/figure.png");
+		BufferedImage image = ImageUtil.readImage(imageFile);
+		Multiset<String> hexMultiset = ImageUtil.createHexMultiset(image);
+		LOG.debug("pre-binarized: "+hexMultiset);
+		BufferedImage newImage = ImageUtil.boofCVBinarizationKludged(image, 180);
+		hexMultiset = ImageUtil.createHexMultiset(newImage);
+		LOG.debug("binarized: "+hexMultiset);
+		ImageUtil.writePngQuietly(newImage, new File("target/binarized.png"));
 	}
 	
 
