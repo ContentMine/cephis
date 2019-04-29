@@ -18,9 +18,12 @@ package org.contentmine.eucl.euclid;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -1559,6 +1562,42 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
 		}
 		return idx;
 	}
+	
+	/** create an indexof values over given value
+	 * 
+	 * @param min include if greater than this
+	 * @return
+	 */
+	public Map<Integer, Integer> getMapOfValuesOver(int min) {
+		Map<Integer, Integer> valueByIndex = new HashMap<>();
+		for (int index = 0; index < this.nelem; index++) {
+			int currentValue = this.elementAt(index);
+			if (currentValue > min) {
+				valueByIndex.put(index, currentValue);
+			}
+		}
+		return valueByIndex;
+	}
+	/** messy - hopefully will be removed
+	 * 
+	 * @param valuesByIndex
+	 * @return
+	 */
+	public static void createSingleElementBins(Map<Integer, Integer> valuesByIndex) {
+		List<Integer> keys = new ArrayList<>(valuesByIndex.keySet());
+		Collections.sort(keys);
+		for (int i = 1; i < keys.size(); i++) {
+			Integer lastIndex = keys.get(i - 1);
+			Integer currentIndex = keys.get(i);
+			if (lastIndex == currentIndex - 1) {
+				int lastValue = valuesByIndex.get(lastIndex);
+				int currentValue = valuesByIndex.get(currentIndex);
+				valuesByIndex.remove((lastValue >= currentValue) ? currentIndex : lastIndex);
+			}
+		}
+	}
+	
+	
 	
 }
 class IntegerIterator implements Iterator<Integer> {

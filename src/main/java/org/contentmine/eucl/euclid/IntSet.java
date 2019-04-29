@@ -506,4 +506,13 @@ public class IntSet implements EuclidConstants {
 		return true;
 	}
 
+	/** gets previous entry.
+	 * if no previous entry returns null
+	 * 
+	 * @return
+	 */
+	public Integer getLast() {
+		return (nelem == 0) ? null : array[nelem - 1];
+	}
+
 }

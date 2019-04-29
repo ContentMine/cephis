@@ -13,8 +13,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 
@@ -22,6 +23,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CTree;
+import org.contentmine.eucl.euclid.Axis.Axis2;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
@@ -48,9 +50,6 @@ import boofcv.alg.filter.binary.Contour;
 import boofcv.alg.filter.binary.GThresholdImageOps;
 import boofcv.alg.filter.binary.ThresholdImageOps;
 import boofcv.alg.misc.ImageStatistics;
-//import boofcv.gui.ListDisplayPanel;
-//import boofcv.gui.binary.VisualizeBinaryData;
-//import boofcv.gui.image.ShowImages;
 import boofcv.io.image.ConvertBufferedImage;
 import boofcv.struct.ConfigLength;
 import boofcv.struct.ConnectRule;
@@ -1092,7 +1091,7 @@ public class ImageUtil {
 				int newy = scaley * y;
 				for (int dx = 0; dx < scalex; dx++) {
 					for (int dy = 0; dy < scaley; dy++) {
-						newImage.setRGB(x + dx, y + dy, rgb);
+						newImage.setRGB(newx + dx, newy + dy, rgb);
 					}
 				}
 			}
@@ -1259,6 +1258,9 @@ public class ImageUtil {
 		}
 		
 		BufferedImage resultImage = ConvertBufferedImage.convertTo(binary, null);
+		resultImage = ImageUtil.convertRGB(
+				resultImage, new int[] {0xd0d0d, 0xff0d0d0d}, new int[] {0xffffff, 0xffffff});
+		ImageUtil.invertImage(resultImage);
 		return resultImage;
 	}
 	
@@ -1408,17 +1410,195 @@ public class ImageUtil {
 			for (int j = 0; j < image.getHeight(); j++) {
 				int color = image.getRGB(i, j);
 				color &= 0x00ffffff;
-				if (color != 0) {
-					color = 0x00ffffff;
-				}
+				color = (color != 0) ? 0x00ffffff : color;
 				newImage.setRGB(i, j, color);
 			}
 		}
 		return newImage;
 		
 	}
-
-
 	
+	/** project ONTO given axis pixel by pixel
+	 * 
+	 * @param image
+	 * @param axis
+	 * @param color
+	 * @return
+	 */
+	public static IntArray projectColor(BufferedImage image, Axis2 axis0, int color) {
+		IntArray colorArray = new IntArray();
+		int extent0 = Axis2.X.equals(axis0) ? image.getWidth() : image.getHeight();
+		int extent1 = Axis2.X.equals(axis0) ? image.getHeight() : image.getWidth();
+		Axis2 axis1 = Axis2.X.equals(axis0) ? Axis2.Y : Axis2.X;
+		for (int v = 0; v < extent0; v++) {
+			int[] vector = getRGBVector(image, axis1, v);
+			colorArray.addElement(countColor(vector, color));
+		}
+		return colorArray;
+	}
+	
+	/** counts pixels of given color in vector.
+	 * alpha channel is removed in all comparisons
+	 * @param vector normally row or column of image
+	 * @param color 
+	 * @return
+	 */
+	public static int countColor(int[] vector, int color) {
+		int sum = 0;
+		for (int i = 0; i < vector.length; i++) {
+			int rgb = vector[i] & 0x00ffffff;
+			if (rgb == color) {
+				sum++;
+			}
+		}
+		return sum;
+	}
+
+	/** extracts a vector (row or col) from an image.
+	 * 
+	 * @param image
+	 * @param axis Axis2.X selects row-based, Axis2.Y col-based 
+	 * @param rowcol serial of row or column
+	 * @return
+	 */
+	public static int[] getRGBVector(BufferedImage image, Axis2 axis, int rowcol) {
+		int extent0 = Axis2.X.equals(axis) ? image.getWidth() : image.getHeight();
+		int extent1 = Axis2.X.equals(axis) ? image.getHeight() : image.getWidth();
+		if (rowcol < 0 || rowcol >= extent1) {
+			throw new RuntimeException("rowcol "+rowcol+" on axis: "+axis+" out of range ");
+		}
+		int[] vector = new int[extent0];
+		for (int i = 0; i < extent0; i++) {
+			int rgb = Axis2.X.equals(axis) ? image.getRGB(i, rowcol) : image.getRGB(rowcol, i);
+			vector[i] = rgb;
+		}
+		return vector;
+	}
+
+//	public static int[] getRGBColumn(BufferedImage image, int extent, int jcol) {
+//		int height = image.getHeight();
+//		int[] col = new int[height];
+//		for (int j = 0; j < height; j++) {
+//			col[j] = image.getRGB(jcol, j);
+//		}
+//		return col;
+//	}
+//
+//	public static int[] getRGBRow(BufferedImage image, int irow) {
+//		int width = image.getWidth();
+//		int[] row = new int[width];
+//		for (int i = 0; i < width; i++) {
+//			row[i] = image.getRGB(i, irow);
+//		}
+//		return row;
+//	}
+
+	/** images welded bottom to top in current order.
+	 * i.e. image[i].bottom == image[i+1].top
+	 * 
+	 * @param imageList
+	 * @return null if no input or adjacent images vary in width or type
+	 */
+	public static BufferedImage joinImagesVertically(List<BufferedImage> imageList) {
+		BufferedImage resultImage = null;
+		if (imageList.size() == 0) {
+			return null;
+		} else if (imageList.size() == 1) {
+			return imageList.get(0);
+		}
+		int totalHeight = 0;
+		int currentWidth = -1;
+		int currentType = -Integer.MIN_VALUE;
+		// check width and type and create height
+		for (BufferedImage image : imageList) {
+			int width = image.getWidth();
+			if (currentWidth == -1) {
+				currentWidth = width;
+			} else if (currentWidth != width) {
+				LOG.error("variable width; cannot join "+width+" to "+currentWidth);
+				return null;
+			}
+			int type = image.getType();
+			if (currentType == -Integer.MIN_VALUE) {
+				currentType = type;
+			} else if (currentType != type) {
+				LOG.error("variable type; cannot join "+type+" to "+currentType);
+				return null;
+			}
+			totalHeight += image.getHeight();
+		}
+		// create stitched
+		resultImage = new BufferedImage(currentWidth, totalHeight, currentType);
+		int currentY = 0;
+		for (int img = 0; img < imageList.size(); img++) {
+			BufferedImage image = imageList.get(img);
+			for (int i = 0; i < currentWidth; i++) {
+				for (int j = 0; j < image.getHeight(); j++) {
+					int rgb = image.getRGB(i, j);
+					resultImage.setRGB(i, j + currentY, rgb);
+				}
+			}
+			currentY += image.getHeight();
+		}
+		return resultImage;
+	}
+
+	public static void editLines(
+			BufferedImage image, Axis2 axis, IntArray rowcols, int newColor) {
+		for (int rowcol : rowcols) {
+			editLine(image, axis, rowcol, newColor);
+		}
+	}
+
+	/** remove pixels in given line.
+	 * only remove for chunks longer than given length
+	 * this should leave some local detail (experimental)
+	 * @param image
+	 * @param axis
+	 * @param rowcol
+	 * @param origColor
+	 * @param newColor
+	 * @return 
+	 */
+	public static void editLine(BufferedImage image, Axis2 axis, int rowcol, int newColor) {
+		int extent0 = Axis2.X.equals(axis) ? image.getWidth() : image.getHeight();
+		int extent1 = Axis2.X.equals(axis) ? image.getHeight() : image.getWidth();
+		if (rowcol < 0 || rowcol >= extent1) {
+			throw new RuntimeException("rowcol "+rowcol+" on axis: "+axis+" out of range ");
+		}
+		for (int i = 0; i < extent0; i++) {
+			int x = Axis2.X.equals(axis) ? i : rowcol;
+			int y = Axis2.X.equals(axis) ? rowcol : i;
+			image.setRGB(x, y, newColor);
+		}
+	}
+
+	public static List<BufferedImage> splitImage(BufferedImage image, Axis2 axis, List<Integer> borders0) {
+		List<BufferedImage> imageList = new ArrayList<>();
+		if (borders0.size() == 0) {
+			imageList.add(image);
+			return imageList;
+		}
+		List<Integer> borders = new ArrayList<Integer>(borders0);
+		Collections.sort(borders);
+		int extent0 = Axis2.X.equals(axis) ? image.getWidth() : image.getHeight();
+		int extent1 = Axis2.X.equals(axis) ? image.getHeight() : image.getWidth();
+		if (borders.get(0) < 0 || borders.get(borders.size() - 1) >= extent1) {
+			throw new RuntimeException("section lines out of range");
+		}
+		for (int i = 0; i <= borders.size(); i++) {
+			int min = (i == 0) ? 0 : borders.get(i - 1);
+			int max = (i == borders.size()) ? extent1 : borders.get(i);
+			IntRange intRange0 = new IntRange(0, extent0);
+			IntRange intRange1 = new IntRange(min, max);
+			Int2Range boundingBox = Axis2.X.equals(axis) ?  new Int2Range(intRange0, intRange1) :
+				new Int2Range(intRange1, intRange0);
+			BufferedImage subImage = ImageUtil.clipSubImage(image, boundingBox);
+			imageList.add(subImage);
+		}
+		return imageList;
+		
+	}
+
 	
 }

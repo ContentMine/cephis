@@ -14,6 +14,7 @@ public class ImageAnalysisFixtures {
 	public final static File TEST_CONTENTMINE_DIR = new File(TEST_RESOURCE_DIR, "org/contentmine");
 	public final static File TEST_IMAGE_DIR = new File(TEST_CONTENTMINE_DIR, "image");
 	public final static File TEST_DIAGRAM_DIR = new File(TEST_IMAGE_DIR, "diagrams");
+	public final static File TEST_DIAGRAM_FOREST_DIR = new File(TEST_DIAGRAM_DIR, "forest");
 	public final static File TEST_DIAGRAM_PLOT_DIR = new File(TEST_DIAGRAM_DIR, "plot");
 	public final static File TEST_DIAGRAM_PLOT_MISC_DIR = new File(TEST_DIAGRAM_PLOT_DIR, "misc");
 	public final static File TARGET_DIR = new File("target/");
