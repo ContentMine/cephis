@@ -55,6 +55,14 @@ public class Axis {
             this.axis = axis;
             this.value = value;
         }
+
+        /** gets the other axis.
+         * 
+         * @return Axis2.X if this.equals(Axis2.Y) and vice versa
+         */
+		public Axis2 otherAxis() {
+			return this.equals(Axis2.X) ? Axis2.Y : Axis2.X;
+		}
     }
 
     /** 3d axes */

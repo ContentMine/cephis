@@ -220,7 +220,7 @@ public class ImageProcessor {
 		}
 		if (this.binarize) {
 			ColorUtilities.convertTransparentToWhite(image);
-			this.image = ImageUtil.boofCVBinarizationKludged(this.image, threshold);
+			this.image = ImageUtil.boofCVBinarization(this.image, threshold);
 			if (debug) LOG.debug("binarized "+ImageUtil.createString(image));
 			this.binarizedImage = this.image;
 			if (debug) {

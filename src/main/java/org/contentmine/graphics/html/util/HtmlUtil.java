@@ -115,6 +115,16 @@ public class HtmlUtil {
 		}
 	}
 
+	public static HtmlElement readAndCreateElementQuietly(File file) {
+		HtmlElement element = null;
+		try {
+			element = readAndCreateElement(file);
+		} catch (Exception e) {
+			throw new RuntimeException("Cannot read HOCR file: "+file, e);
+		}
+		return element;
+	}
+
 	/** read file and subclass elements to HtmlElement.
 	 * 
 	 * @param file

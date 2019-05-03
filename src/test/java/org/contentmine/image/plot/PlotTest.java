@@ -35,6 +35,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import boofcv.gui.binary.VisualizeBinaryData;
 import boofcv.io.image.ConvertBufferedImage;
 import boofcv.io.image.UtilImageIO;
 import boofcv.struct.image.GrayU8;
@@ -274,8 +275,8 @@ public class PlotTest {
 				inputImage.getHeight());
 		int threshold = 220; // axes are quite light gray
 		// ThresholdImageOps.threshold(inputImage, binary, threshold, false);
-//		BufferedImage outImage = VisualizeBinaryData.renderBinary(binary, null);
-		BufferedImage outImage = ConvertBufferedImage.extractBuffered(binary);
+		BufferedImage outImage = VisualizeBinaryData.renderBinary(binary, false, null);
+//		BufferedImage outImage = ConvertBufferedImage.extractBuffered(binary);
 		UtilImageIO.saveImage(outImage,
 				new File(PLOT_OUT_DIR, "plotBinary.png").toString());
 

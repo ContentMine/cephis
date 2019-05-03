@@ -1191,6 +1191,13 @@ public abstract class XMLUtil implements XMLConstants {
 		return document;
 	}
 	
+	/**
+	 * WARNING - if DTD present may take ages
+	 * consider parseQuietlyToDocumentWithoutDTD
+	 * @param xmlFile
+	 * @return
+	 */
+	@Deprecated
 	public static Document parseQuietlyToDocument(File xmlFile) {
 		Document document = null;
 		try {

@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -134,7 +133,7 @@ public class ImageUtilTest {
 		BufferedImage image = ImageUtil.readImage(imageFile);
 		Multiset<String> hexMultiset = ImageUtil.createHexMultiset(image);
 //		LOG.debug("pre-binarized: "+hexMultiset);
-		BufferedImage newImage = ImageUtil.boofCVBinarizationKludged(image, 180);
+		BufferedImage newImage = ImageUtil.boofCVBinarization(image, 180);
 		hexMultiset = ImageUtil.createHexMultiset(newImage);
 //		LOG.debug("binarized: "+hexMultiset);
 //		ImageUtil.writePngQuietly(newImage, new File("target/binarized.png"));
@@ -144,10 +143,11 @@ public class ImageUtilTest {
 	public void testGetProjections() {
 		File imageFile = new File(ImageAnalysisFixtures.TEST_DIAGRAM_FOREST_DIR, "PMC5502154.png");
 		BufferedImage image = ImageUtil.readImage(imageFile);
-		IntArray blackArray = ImageUtil.projectColor(image, Axis2.X, 0);
+		ImageLineAnalyzer lineAnalyzer = new ImageLineAnalyzer(image);
+		IntArray blackArray = lineAnalyzer.projectOnto(Axis2.X, 0);
 		LOG.debug(blackArray.getSubArray(990, 1010));
 		LOG.debug(blackArray.getSubArray(670, 700));
-		blackArray = ImageUtil.projectColor(image, Axis2.Y, 0);
+		blackArray = lineAnalyzer.projectOnto(Axis2.Y, 0);
 		LOG.debug(blackArray.getSubArray(0, 150));
 	}
 
@@ -155,10 +155,11 @@ public class ImageUtilTest {
 	public void testGetDividers() {
 		File imageFile = new File(ImageAnalysisFixtures.TEST_DIAGRAM_FOREST_DIR, "PMC5502154.png");
 		BufferedImage image = ImageUtil.readImage(imageFile);
-		IntArray blackVertical = ImageUtil.projectColor(image, Axis2.X, 0);
+		ImageLineAnalyzer lineAnalyzer = new ImageLineAnalyzer(image);
+		IntArray blackVertical = lineAnalyzer.projectOnto(Axis2.X, 0);
 		Map<Integer, Integer> largeVertical = blackVertical.getMapOfValuesOver((int)(0.8*image.getHeight()));
 		LOG.debug("vertical:" +largeVertical );
-		IntArray blackHorizontal = ImageUtil.projectColor(image, Axis2.Y, 0);
+		IntArray blackHorizontal = lineAnalyzer.projectOnto(Axis2.Y, 0);
 		double PLOT_SCALE_FRACT = 0.25;
 		Map<Integer, Integer> largeHorizontal = blackHorizontal.getMapOfValuesOver((int)(PLOT_SCALE_FRACT*image.getWidth()));
 		LOG.debug("horizontal:" +largeHorizontal );
@@ -169,10 +170,11 @@ public class ImageUtilTest {
 		File imageFile = new File(ImageAnalysisFixtures.TEST_DIAGRAM_FOREST_DIR, "PMC5502154.png");
 		BufferedImage image = ImageUtil.readImage(imageFile);
 		IntArray intArray = new IntArray(new int[] {33,34});
-		ImageUtil.editLines(image, Axis2.X, intArray, 0x00ffffff);
+		ImageLineAnalyzer lineAnalyzer = new ImageLineAnalyzer(image);
+		lineAnalyzer.replaceRow(intArray);
 		ImageUtil.writeImageQuietly(image, new File("target/removeLines.png"));
 	}
-	
+
 	@Test
 	public void testJoinVerticalImages() {
 		File imageFile0 = new File(ImageAnalysisFixtures.TEST_DIAGRAM_FOREST_DIR, "image.13.1.84_525.183_302.png");
@@ -190,7 +192,8 @@ public class ImageUtilTest {
 		BufferedImage image = ImageUtil.readImage(imageFile);
 		// split into Top and Bottom
 		List<Integer> borders = Arrays.asList(new Integer[] {34});
-		List<BufferedImage> imageList = ImageUtil.splitImage(image, Axis2.X, borders);
+		ImageLineAnalyzer lineAnalyzer = new ImageLineAnalyzer(image);
+		List<BufferedImage> imageList = lineAnalyzer.splitImageAlong(Axis2.X, borders);
 		int nimage = 0;
 		for (BufferedImage img : imageList) {
 			ImageUtil.writeImageQuietly(img, new File("target/splitImages"+(nimage++)+".png"));
@@ -198,7 +201,8 @@ public class ImageUtilTest {
 		// split bottom into L and R
 		borders = Arrays.asList(new Integer[] {750});
 		BufferedImage bottomImage = imageList.get(1);
-		List<BufferedImage> imageList1 = ImageUtil.splitImage(bottomImage, Axis2.Y, borders);
+		lineAnalyzer.setImage(bottomImage);
+		List<BufferedImage> imageList1 = lineAnalyzer.splitImageAlong(Axis2.Y, borders);
 		LOG.debug(imageList1.size()+"//"+imageList1.get(0)+"//"+imageList1.get(1));
 		for (BufferedImage img : imageList1) {
 			ImageUtil.writeImageQuietly(img, new File("target/splitImages"+(nimage++)+".png"));
@@ -211,21 +215,11 @@ public class ImageUtilTest {
 	public void testMultipleVerticalImages() {
 		BufferedImage image = ImageUtil.readImage(
 				new File(ImageAnalysisFixtures.TEST_DIAGRAM_FOREST_DIR, "PMC6397911_multiple.png"));
-		image = ImageUtil.boofCVBinarizationKludged(image, 160);
-		IntArray blackHorizontal = ImageUtil.projectColor(image, Axis2.Y, 0);
+		image = ImageUtil.boofCVBinarization(image, 160);
 		double FOREST_SCALE_FRACT = 0.90;
 		int HEADER_SIZE = 50;
-		Map<Integer, Integer> largeHorizontal = 
-				blackHorizontal.getMapOfValuesOver((int)(FOREST_SCALE_FRACT*image.getWidth()));
-		IntArray.createSingleElementBins(largeHorizontal);
-		LOG.debug("horizontal:" +largeHorizontal);
-		List<Integer>borders = new ArrayList<>(largeHorizontal.keySet());
-		Collections.sort(borders);
-		for (int i = 0; i < borders.size(); i++) {
-			borders.set(i, Math.max(0, borders.get(i) - HEADER_SIZE));
-		}
-		// image 0 is zero height so skip
-		List<BufferedImage> imageList1 = ImageUtil.splitImage(image, Axis2.X, borders);
+		ImageLineAnalyzer lineAnalyzer = new ImageLineAnalyzer(image);
+		List<BufferedImage> imageList1 = lineAnalyzer.splitAtMajorLines(Axis2.X, FOREST_SCALE_FRACT, HEADER_SIZE);
 		LOG.debug(imageList1.size()+"//"+imageList1.get(0)+"//"+imageList1.get(1));
 		for (int i = 1; i < imageList1.size(); i++) {
 			BufferedImage img = imageList1.get(i);
@@ -233,5 +227,24 @@ public class ImageUtilTest {
 		}
 		
 	}
+
+	@Test
+	public void testVerticalSplit() {
+		BufferedImage image = ImageUtil.readImage(
+				new File(ImageAnalysisFixtures.TEST_DIAGRAM_FOREST_DIR, "PMC5502154.png"));
+		int colour = 0; // black
+		int offset = -10;
+		Axis2 axis = Axis2.X;
+		int minLength = 300;
+		
+		ImageLineAnalyzer lineAnalyzer = new ImageLineAnalyzer(image);
+		List<BufferedImage> imageList = lineAnalyzer.splitAtLeftOfBottomLine(colour, minLength, offset, axis);
+		
+		int i = 0;
+		for (BufferedImage splitImage : imageList) {
+			ImageUtil.writeImageQuietly(splitImage, new File("target/splitImagesY_"+(i++)+".png"));
+		}
+	}
+
 
 }

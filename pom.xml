@@ -6,6 +6,7 @@
         <boofcv-all.version>0.33.1</boofcv-all.version>
         <boofcv-core.version>0.32</boofcv-core.version>
         <boofcv-swing.version>0.32</boofcv-swing.version>
+		<boofcv-visualize.version>0.26</boofcv-visualize.version>
        <commons-io.version>2.5</commons-io.version>
        <commons-lang3.version>3.0</commons-lang3.version>
        <commons-math.version>2.2</commons-math.version>
@@ -267,7 +268,12 @@
             <version>${boofcv-core.version}</version>
             
         </dependency>
-       
+       <!-- https://mvnrepository.com/artifact/org.boofcv/visualize -->
+	<dependency>
+	    <groupId>org.boofcv</groupId>
+	    <artifactId>visualize</artifactId>
+	    <version>${boofcv-visualize.version}</version>
+	</dependency>
 <!-- https://mvnrepository.com/artifact/org.boofcv/boofcv-all -->
 <!--  
 <dependency>

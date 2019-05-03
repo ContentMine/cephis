@@ -8,9 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +17,9 @@ import javax.imageio.ImageIO;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.Int2Range;
+import org.contentmine.eucl.euclid.IntArray;
+import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.util.MultisetUtil;
@@ -49,9 +50,7 @@ import org.contentmine.graphics.svg.text.SVGWordPage;
 import org.contentmine.graphics.svg.text.SVGWordPageList;
 import org.contentmine.graphics.svg.text.SVGWordPara;
 
-import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultiset;
-import com.google.common.collect.Multimap;
 import com.google.common.collect.Multiset;
 
 import nu.xom.Attribute;
@@ -982,6 +981,26 @@ public class HOCRReader extends InputReader {
 			allPhraseList.addAll(phrases);
 		}
 		return allPhraseList;
+	}
+
+	public static Int2Range getBboxFromTitle(String title) {
+		Int2Range bbox = null;
+		if (title != null) {
+			Pattern pattern = Pattern.compile("bbox\\s*(\\d+\\s+\\d+\\s+\\d+\\s+\\d+)\\s*\\;.*");
+			Matcher matcher = pattern.matcher(title);
+			if (matcher.matches()) {
+				String bboxS = matcher.group(1).trim();
+				String[] ss =bboxS.split("\\s+");
+				IntArray ii = new IntArray(ss);
+				if (ii.size() == 4) {
+					bbox= new Int2Range(
+						new IntRange(ii.elementAt(0), ii.elementAt(2)),
+						new IntRange(ii.elementAt(1), ii.elementAt(3))
+						);
+				}
+			}
+		}
+		return bbox;
 	}
 
 }
