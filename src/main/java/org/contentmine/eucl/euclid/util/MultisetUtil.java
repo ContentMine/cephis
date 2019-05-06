@@ -3,6 +3,8 @@ package org.contentmine.eucl.euclid.util;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +12,7 @@ import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.xml.XMLUtil;
 
@@ -104,6 +107,30 @@ public class MultisetUtil<T extends Object> {
 		return MultisetUtil.createEntryList(MultisetUtil.getEntriesSortedByCount(set));
 	}
 
+	/** this has unchecked Comparator ... needs fixing.
+	 * 
+	 * @param entryList
+	 */
+	public static <T extends Comparable> void sortListByValue(List<Entry<T>> entryList) {
+		Collections.sort(entryList, new Comparator() {
+			public int compare(Object o1, Object o2) {
+				if (o1 == null || o2 == null ) return 0;
+				if (!(o1 instanceof Entry<?>)) return 0;
+				if (!(o2 instanceof Entry<?>)) return 0;
+				Entry<?> e1 = (Entry<?>) o1;
+				Entry<?> e2 = (Entry<?>) o2;
+				Object j1 = e1.getElement();
+				Object j2 = e2.getElement();
+				if (!(j1 instanceof Comparable) || !(j2 instanceof Comparable)) {
+					return 0;
+				}
+				return (((Comparable)j1).compareTo((Comparable)j2));
+			}
+			
+		});
+		
+	}
+
 	public static Map<Integer, Integer> createIntegerFrequencyMap(Multiset<Integer> set) {
 		Map<Integer, Integer> countByInteger = new HashMap<Integer, Integer>();
 		for (Entry<Integer> entry : set.entrySet()) {
@@ -172,6 +199,89 @@ public class MultisetUtil<T extends Object> {
 	 */
 	public static void writeCSV(File csvFile, List<Entry<String>> entryList) throws IOException {
 		writeCSV(csvFile, entryList, null);
+	}
+
+	/** gets the most frequent count in the list.
+	 * 
+	 * @param valueList
+	 * @return
+	 */
+	public static <T> int getMaximumCount(List<Entry<T>> valueList) {
+		int countMax = 0;
+		for (Entry<T> yMin : valueList) {
+			if (yMin.getCount() > countMax) {
+				countMax = yMin.getCount();
+			}
+		}
+		return countMax;
+	}
+
+	/** gets subList with values with frequencies over given fraction of maximum.
+	 * 
+	 * @param valueList
+	 * @param cutOff
+	 * @return
+	 */
+	public static <T> List<Entry<T>> getMostFrequentValues(List<Entry<T>> valueList, int minCount) {
+		List<Entry<T>> newList = new ArrayList<Entry<T>>();
+		for (int i = valueList.size() - 1; i >= 0; i--) {
+			Entry<T> entry = valueList.get(i);
+			if (entry.getCount() >= minCount) {
+				newList.add(entry);
+			}
+		}
+		return newList;
+	}
+
+	/** start with sorted list of Entry<Integer>
+	 * 
+	 * @param sortedByValueList
+	 * @param minValue
+	 * @return
+	 */
+	public static IntArray extractSortedArrayOfValues(List<Entry<Integer>> sortedByValueList, int minValue) {
+		List<Entry<Integer>> mostFrequentValues = 
+				MultisetUtil.getMostFrequentValues(sortedByValueList, minValue);
+		MultisetUtil.sortListByValue(mostFrequentValues);
+		IntArray valueArray = new IntArray();
+		for (Entry<Integer> entry : mostFrequentValues) {
+			Integer value = entry.getElement();
+			valueArray.addElement(value);
+		}
+		return valueArray;
+	}
+
+	/** coalesce close values.
+	 * 
+	 * @param sortedByValueList
+	 * @param tolerance
+	 * @return
+	 */
+	public static List<Entry<Integer>> bundleCounts(List<Entry<Integer>> sortedByValueList, int tolerance) {
+		Multiset.Entry<Integer> lastEntry = null;
+		Multiset<Integer> countSet = HashMultiset.create();
+		for (Multiset.Entry<Integer> entry : sortedByValueList) {
+			Integer thisCount = entry.getCount();
+			Integer thisValue = entry.getElement();
+			Integer lastCount = lastEntry == null ? null : lastEntry.getCount();
+			Integer lastValue = lastEntry == null ? null : lastEntry.getElement();
+			// neighbours?
+			if (lastValue != null && lastValue >= thisValue - tolerance) {
+				if (lastCount > thisCount) {
+					// increment last, dont add this
+					countSet.add(lastValue, thisCount);
+				} else {
+					// transfer lastCount to this, delete last
+					countSet.add(thisValue, thisCount + lastCount);
+					countSet.remove(lastValue);
+				}
+			} else {
+				countSet.add(thisValue, thisCount);
+			}
+			lastEntry = entry;
+		}
+		List<Entry<Integer>> countList = MultisetUtil.createListSortedByValue(countSet);
+		return countList;
 	}
 
 

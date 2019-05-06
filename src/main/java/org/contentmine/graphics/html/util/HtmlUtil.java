@@ -418,6 +418,13 @@ public class HtmlUtil {
 		}
 		return resultList;
 	}
+
+	public static HtmlElement parseQuietlyToHtmlElementWithoutDTD(File htmlFile) {
+		Element rootElement = XMLUtil.parseQuietlyToDocumentWithoutDTD(htmlFile).getRootElement();
+		HtmlElement hocrElement = HtmlElement.create(rootElement);
+		return hocrElement;
+	}
+
 	
 
 //	@Deprecated

@@ -27,8 +27,11 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.contentmine.eucl.euclid.util.MultisetUtil;
 
+import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
+import com.google.common.collect.Multiset.Entry;
 
 /**
  * array of ints
@@ -1595,6 +1598,68 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
 				valuesByIndex.remove((lastValue >= currentValue) ? currentIndex : lastIndex);
 			}
 		}
+	}
+	public IntArray getDifferences() {
+		IntArray intArray = new IntArray();
+		if (this.nelem > 1) {
+			for (int i = 1; i < nelem; i++) {
+				intArray.addElement(this.array[i] - this.array[i - 1]);
+			}
+		}
+		return intArray;
+	}
+
+	/** creates multiset of values */
+	public Multiset<Integer> getMultiset() {
+		Multiset<Integer> multiset = HashMultiset.create();
+		for (int i = 0; i < nelem; i++) {
+			multiset.add((Integer)array[i]);
+		}
+		return multiset;
+	}
+	public IntArray mapOntoTemplateDiffs(int delta, List<Double> separation, int tol, int smallStep, int start) {
+		List<Integer> intValues = getIntegerList();
+		IntArray newValues = new IntArray();
+		int separationPointer = 0; 
+		int last = -999;
+		int templateDiff = (int) (separation.get(separationPointer) * delta);
+		for (int i = 0; i < intValues.size(); i++) {
+			Integer val = intValues.get(i);
+			if (val < start) {
+				continue;
+			} 
+			if (last < 0) {
+				last = val;
+			} else {
+				int diff = val - last;
+				if (Math.abs(diff - templateDiff) < tol) {
+					last = val;
+				} else if (diff < smallStep) {
+					val = null;
+				} else {
+					if (++separationPointer  >= separation.size()) {
+						throw new RuntimeException("separation count "+separationPointer+ " overflows separationTemplate");
+					}
+					templateDiff = (int) (separation.get(separationPointer) * delta);
+					if (Math.abs(diff - templateDiff) < tol) {
+					} else {
+					}
+					last = val;
+				}
+			}
+			if (val != null) {
+				newValues.addElement(val);
+			}
+			
+		}
+		return newValues;
+	}
+	public int getCommonestDiff() {
+		IntArray diffs = getDifferences();
+		Multiset<Integer> diffSet = diffs.getMultiset();
+		List<Entry<Integer>> commonest = MultisetUtil.createListSortedByCount(diffSet);
+		int delta = commonest.get(0).getElement();
+		return delta;
 	}
 	
 	

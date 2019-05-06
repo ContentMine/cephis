@@ -8,6 +8,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -106,6 +108,11 @@ public class HOCRReader extends InputReader {
 	private static final double RECT_OPACITY = 0.2;
 	private static final Double LOW_CONF_WIDTH = 3.0;
 	private static final double MAX_FONT_SIZE = 30;
+
+	private static final int MAX_WORD_HEIGHT = 20;
+	private static final double ASCENDER1 = 0.4;
+	private static final double ASCENDER2 = 0.3;
+	private static final double ASCENDER3 = 0.2;
 
 	private HtmlElement hocrHtmlElement;
 	private SVGSVG svgSvg;
@@ -983,24 +990,112 @@ public class HOCRReader extends InputReader {
 		return allPhraseList;
 	}
 
-	public static Int2Range getBboxFromTitle(String title) {
+	public static Int2Range getRawBboxFromTitle(String title) {
 		Int2Range bbox = null;
 		if (title != null) {
 			Pattern pattern = Pattern.compile("bbox\\s*(\\d+\\s+\\d+\\s+\\d+\\s+\\d+)\\s*\\;.*");
 			Matcher matcher = pattern.matcher(title);
 			if (matcher.matches()) {
 				String bboxS = matcher.group(1).trim();
-				String[] ss =bboxS.split("\\s+");
+				String[] ss = bboxS.split("\\s+");
 				IntArray ii = new IntArray(ss);
 				if (ii.size() == 4) {
-					bbox= new Int2Range(
-						new IntRange(ii.elementAt(0), ii.elementAt(2)),
-						new IntRange(ii.elementAt(1), ii.elementAt(3))
-						);
+					IntRange xr = new IntRange(ii.elementAt(0), ii.elementAt(2));
+					IntRange yr = new IntRange(ii.elementAt(1), ii.elementAt(3));
+					bbox= new Int2Range(xr, yr);
 				}
 			}
 		}
 		return bbox;
+	}
+	
+	public static boolean hasAscender(String s) {
+		for (int i = 0 ; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (hasAscender(c) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static boolean hasAscender(char c) {
+		return (Character.isUpperCase(c)) || 
+				(Character.isDigit(c)) || 
+				("bdfhklt$%^&|\\?/!(){}[]").indexOf(c) != -1;
+	}
+
+	public static boolean hasDescender(String s) {
+		for (int i = 0 ; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (hasDescender(c) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static boolean hasDescender(char c) {
+		return "gjpqy\\(\\)\\{\\}\\[]]]".indexOf(c) != -1;
+	}
+
+	public static Int2Range getBboxFromTitle(HtmlSpan wordSpan) {
+		String title = wordSpan == null ? null : wordSpan.getTitle();
+		Int2Range bbox = getRawBboxFromTitle(title);
+		bbox = correctForCenders(bbox, wordSpan.getValue());
+		return bbox;
+	}
+
+	private static Int2Range correctForCenders(Int2Range bbox, String words) {
+		int ymin = bbox.getYRange().getMin();
+		int ymax = bbox.getYRange().getMax();
+		int height = ymax - ymin;
+		boolean change = true;
+		boolean hasAscender = hasAscender(words);
+		boolean hasDescender = hasDescender(words);
+		if (height > MAX_WORD_HEIGHT) {
+			change = false;
+		} else if (!hasAscender && !hasDescender) { // e.g. oax
+			ymin = ymin - (int)(height * ASCENDER1);
+		} else if (!hasAscender && hasDescender) { // e.g. gy
+			ymin = ymin- (int)(height * ASCENDER2);
+			ymax = ymax - (int)(height * ASCENDER2);
+		} else if (hasAscender && hasDescender) { // e.g. ()
+			ymax = ymax - (int)(height * ASCENDER3);
+		} else {
+			change = false;
+		}
+		if (change) {
+//			System.out.println(">"+words+">"+bbox+" / "+ymin + " / "+ymax);
+		}
+		IntRange yr = new IntRange(ymin, ymax);
+
+		// TODO Auto-generated method stub
+		return bbox;
+	}
+
+	public static Int2Range adjustForADescenders(Int2Range bbox) {
+		
+		return null;
+	}
+
+	public static void sortWordSpansByX(List<HtmlSpan> wordSpanList) {
+		Collections.sort(wordSpanList, new Comparator<HtmlSpan>() {
+			public int compare(HtmlSpan o1, HtmlSpan o2) {
+				if (o1 == null || o2 == null || !(o1 instanceof HtmlSpan) || !(o2 instanceof HtmlSpan)) {
+					return 0;
+				}
+				Int2Range bb1 = HOCRReader.getBboxFromTitle((HtmlSpan) o1);
+				int y1 = bb1.getYRange().getMin();
+				Int2Range bb2 = HOCRReader.getBboxFromTitle((HtmlSpan) o1);
+				int y2 = bb2.getYRange().getMin();
+				int diff = y1 - y2;
+				if (diff != 0) {
+					diff = diff / Math.abs(diff);
+				}
+				return diff;		
+			}
+		});
 	}
 
 }

@@ -82,6 +82,17 @@ public class HtmlSpan extends HtmlElement {
 		return span;
 	}
 
+	public static String toString(List<HtmlSpan> spanList) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < spanList.size(); i++) {
+			HtmlSpan span = spanList.get(i);
+//			sb.append(" ["+span.getXY().getX()+"]");
+			sb.append(" | ");
+			sb.append(span.getValue());
+		}
+		return sb.toString();
+	}
+
 
 
 }
