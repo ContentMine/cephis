@@ -36,11 +36,11 @@ public class Jigsaw {
 	}
 
 	private static void test1(Jigsaw jigsaw) {
-		jigsaw.setRows(10);
-		jigsaw.setCols(10);
-		jigsaw.setWidth(400);
-		jigsaw.setHeight(400);
-		jigsaw.setTol(5);
+		jigsaw.setRows(12);
+		jigsaw.setCols(12);
+		jigsaw.setWidth(1600);
+		jigsaw.setHeight(1200);
+		jigsaw.setTol(10);
 		SVGG g = jigsaw.draw();
 		SVGSVG.wrapAndWriteAsSVG(g, new File("target/jigsaw.svg"));
 	}
