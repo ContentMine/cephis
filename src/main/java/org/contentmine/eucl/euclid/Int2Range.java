@@ -240,7 +240,8 @@ public class Int2Range implements EuclidConstants {
      * @return string
      */
     public String toString() {
-        return EC.S_LBRAK + xrange.toString() + EC.S_COMMA + yrange.toString() + EC.S_RBRAK;
+        return EC.S_LBRAK + (xrange == null ? "null" : xrange.toString()) 
+        		+ EC.S_COMMA + (yrange == null ? "null" : yrange.toString()) + EC.S_RBRAK;
     }
     
     /** do two boxes touch?

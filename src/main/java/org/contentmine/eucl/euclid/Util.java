@@ -3257,6 +3257,25 @@ public class Util implements EuclidConstants {
 		return  splitTexts;
 	}
 
+	/** creates a String representation  of a list, using only whitespace separators
+	 *  not protected if elements contain whitespace.
+	 *  e.g. [a, b, c] is returned as "a b c"
+	 *  
+	 * @param list 
+	 * @return "" if null or zero length
+	 */
+	public static String createWhitespaceSeparatedTokens(List<? extends Object> list) {
+		StringBuilder sb = new StringBuilder();
+		if (list != null) {
+			for (int i = 0; i < list.size(); i++) {
+				String s = list.get(i).toString();
+				if (i > 0) sb.append(" ");
+				sb.append(s);
+			}
+		}
+		return sb.toString();	
+	}
+
 
 }
 

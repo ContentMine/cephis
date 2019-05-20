@@ -65,8 +65,9 @@ public class HtmlP extends HtmlElement {
 	 * @param htmlElement
 	 * @return
 	 */
-	public static List<HtmlP> extractSelfAndDescendantIs(HtmlElement htmlElement) {
-		return HtmlP.extractPs(HtmlUtil.getQueryHtmlElements(htmlElement, ALL_P_XPATH));
+	public static List<HtmlP> extractSelfAndDescendantPs(HtmlElement htmlElement) {
+		List<HtmlP> ps = HtmlP.extractPs(HtmlUtil.getQueryHtmlElements(htmlElement, ALL_P_XPATH));
+		return ps;
 	}
 
 	public List<HtmlSpan> getSpanList() {

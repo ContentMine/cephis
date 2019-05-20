@@ -1112,7 +1112,7 @@ public class DefaultArgProcessor {
 	protected void runMethodsOfType(String methodNameType) {
 		List<ArgumentOption> optionList = getOptionsWithMethod(methodNameType);
 		for (ArgumentOption option : optionList) {
-			LOG.trace("option "+option+" "+this.getClass());
+			LOG.debug("option "+option+" "+this.getClass());
 			String methodName = null;
 			try {
 				methodName = option.getMethodName(methodNameType);
@@ -1364,8 +1364,8 @@ public class DefaultArgProcessor {
 	public List<? extends Element> extractPSectionElements(CTree cTree) {
 		List<? extends Element> elements = null;
 		if (cTree != null) {
-			cTree.ensureScholarlyHtmlElement();
-			elements = HtmlP.extractSelfAndDescendantIs(cTree.getHtmlElement());
+			HtmlElement htmlElement = cTree.ensureScholarlyHtmlElement();
+			elements = HtmlP.extractSelfAndDescendantPs(htmlElement);
 		}
 		return elements;
 	}

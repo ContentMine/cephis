@@ -16,7 +16,9 @@ import com.google.common.collect.TreeMultiset;
 
 /** represents a single bin with multiple integers
  * 
- * has a range (IntRange) which must initially be set but can be readjusted later
+ * has a range (IntRange) which must initially be set but can be readjusted later.
+ * 
+ * Typical example is pixels projected onto an axis
  * 
  * @author pm286
  *
@@ -129,24 +131,24 @@ public class IntegerMultiset implements Comparable<IntegerMultiset> {
 		List<IntegerMultiset> splitSets = new ArrayList<>();
 		List<Integer> gapStartList = findGaps(gap);
 		if (gapStartList.size() > 0) {
-			LOG.debug("gaps in bin (split NYI): "+gapStartList);
+			LOG.debug("splitAtGaps NYI fully): "+gapStartList);
 		}
 		return splitSets;
 	}
 
 	/** finds gaps within the values >= gap
 	 * 
-	 * @param gap
-	 * @return lists of values ate start of gaps
+	 * @param gapWidth inclusive
+	 * @return lists of values at start of gaps
 	 */
-	private List<Integer> findGaps(int gap) {
+	private List<Integer> findGaps(int gapWidth) {
 		Integer last = null;
 		List<Integer> gapStartList = new ArrayList<Integer>();
 		Iterator<Integer> iterator = multiset.iterator();
 		while (iterator.hasNext()) {
 			Integer value = iterator.next();
 			if (last != null) {
-				if (value - last >= gap) {
+				if (value - last >= gapWidth) {
 					gapStartList.add(last);
 				}
 			}

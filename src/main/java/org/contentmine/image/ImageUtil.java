@@ -348,7 +348,7 @@ public class ImageUtil {
 		IntRange xRange = boundingBox.getXRange();
 		IntRange yRange = boundingBox.getYRange();
 		if (xRange == null || yRange == null) {
-			throw new IllegalArgumentException("invalid bbox range/s");
+			throw new IllegalArgumentException("invalid boundingBox: "+String.valueOf(boundingBox));
 		}
 		int imageWidth = image.getWidth();
 		int imageHeight = image.getHeight();
@@ -372,7 +372,15 @@ public class ImageUtil {
 		return subImage;
 	}
 
-	public static double correlateGray(BufferedImage image,
+	/** correlation includes plotting
+	 * horribly messy
+	 * 
+	 * @param image
+	 * @param image2
+	 * @param title
+	 * @return
+	 */
+	public static double correlateGrayAndPlot(BufferedImage image,
 			BufferedImage image2, String title) {
 		double cor = 0.0;
 		int xrange = Math.min(image.getWidth(), image2.getWidth());
@@ -396,16 +404,12 @@ public class ImageUtil {
 				total += max;
 				int score = max - 2 * diff;
 				sum += score;
-				SVGRect rect = new SVGRect((double)i, (double)j, 1.0, 1.0);
-				Color color = new Color(255-gray, 0, 255-gray2);
-				String colorS = "#"+Integer.toHexString(color.getRGB()).substring(2);
-				rect.setFill(colorS);
-				rect.setStroke("none");
-				g.appendChild(rect);
 				centre.plusEquals(new Real2(i * gray, j * gray));
 				sumGray += gray;
 				centre2.plusEquals(new Real2(i * gray2, j * gray2));
 				sumGray2 += gray2;
+				SVGRect rect = createRedVsBlueRect(i, j, gray, gray2);
+				g.appendChild(rect);
 			}
 		}
 //		double scale = 1./(double)(xrange * yrange);
@@ -419,6 +423,47 @@ public class ImageUtil {
 		}
 		cor = sum / total;
 		return cor;
+	}
+
+	/** correlation includes plotting
+	 * messy
+	 * 
+	 * @param image
+	 * @param image2
+	 * @param title
+	 * @return
+	 */
+	public static double correlateGray(BufferedImage image, BufferedImage image2) {
+		double cor = 0.0;
+		int xrange = Math.min(image.getWidth(), image2.getWidth());
+		int yrange = Math.min(image.getHeight(), image2.getHeight());
+		double total = 0;
+		double sum = 0;
+		for (int i = 0; i < xrange; i++) {
+			for (int j = 0; j < yrange; j++) {
+				int gray = getGray(image, i,j);
+				int gray2 = getGray(image2, i,j);
+				if (gray < 0 || gray2 < 0) {
+					throw new RuntimeException("bad gray value "+Integer.toHexString(gray)+" "+Integer.toHexString(gray2));
+				}
+				int diff = Math.abs(gray - gray2);
+				int max = Math.max(gray, gray2);
+				total += max;
+				int score = max - 2 * diff;
+				sum += score;
+			}
+		}
+		cor = sum / total;
+		return cor;
+	}
+
+	private static SVGRect createRedVsBlueRect(int i, int j, int gray, int gray2) {
+		SVGRect rect = new SVGRect((double)i, (double)j, 1.0, 1.0);
+		Color color = new Color(255-gray, 0, 255-gray2);
+		String colorS = "#"+Integer.toHexString(color.getRGB()).substring(2);
+		rect.setFill(colorS);
+		rect.setStroke("none");
+		return rect;
 	}
 
 	/** gets gray value.

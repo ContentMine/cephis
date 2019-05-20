@@ -517,6 +517,7 @@ public class SVGTextLine extends SVGG implements List<SVGText> {
 	}
 
 	private static boolean match(String textString, String phraseString) {
+		if (textString == null) return false;
 		if (textString.contentEquals(phraseString)) return true;
 		if (phraseString == null) return true;
 		if (phraseString.startsWith("%") && phraseString.length() == 2) {

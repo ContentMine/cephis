@@ -740,7 +740,7 @@ public class PixelIslandTest {
 		for (int i = 0; i < nchar; i++) {
 			for (int j = 0; j <= i; j++) {
 				double cor = Util.format(org.contentmine.image.ImageUtil
-						.correlateGray(subImageList.get(i),
+						.correlateGrayAndPlot(subImageList.get(i),
 								subImageList.get(j), "charsA/" + i + "__" + j),
 						2);
 				// System.out.print(i+"-"+j+": "+cor+" ");
@@ -958,7 +958,7 @@ public class PixelIslandTest {
 		for (PixelIsland characterIsland : charactersOfCorrectSize) {
 			BufferedImage subImage = characterIsland.clipSubimage(rawImage);
 			// if charname is not null saves overlaid images (arrgh!)
-			double corr = ImageUtil.correlateGray(characterImage, subImage,
+			double corr = ImageUtil.correlateGrayAndPlot(characterImage, subImage,
 					null /** "charACorr/"+charname+"/"+i */
 			);
 			if (corr > correlationCutoff) {
