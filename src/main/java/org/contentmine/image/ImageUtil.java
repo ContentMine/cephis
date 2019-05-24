@@ -20,6 +20,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.cproject.files.CTree;
+import org.contentmine.eucl.euclid.Int2;
 import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntMatrix;
@@ -55,6 +56,7 @@ import boofcv.struct.image.GrayS32;
 import boofcv.struct.image.GrayU8;
 
 public class ImageUtil {
+	private static final double NO_CORRELATION = -0.01;
 	private static final Logger LOG = Logger.getLogger(ImageUtil.class);
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -952,18 +954,30 @@ public class ImageUtil {
 	 * @param image
 	 * @param file
 	 */
-	public static void writePngQuietly(BufferedImage image, File file) {
+	public static boolean writeImageQuietly(BufferedImage image, File file, String format) {
 		if (file == null) {
 			throw new RuntimeException("file is null");
 		}
 		if (!file.exists()) {
 			file.getParentFile().mkdirs();
 		}
+		boolean wrote = false;
 		try {
-			ImageIO.write(image, "png", file);
+			wrote = ImageIO.write(image, format, file);
+//			LOG.debug("wrote "+wrote);
 		} catch (IOException e) {
 			throw new RuntimeException("cannot write image: " + file, e);
 		}
+		return wrote;
+	}
+
+	/** convenience wrapper
+	 * 
+	 * @param image
+	 * @param file
+	 */
+	public static boolean writePngQuietly(BufferedImage image, File file) {
+		return writeImageQuietly(image, file, "png");
 	}
 
 	public static Integer getSingleColor(BufferedImage image) {
@@ -1340,6 +1354,10 @@ public class ImageUtil {
 	 * @param outputPng
 	 */
 	public static void writeImageQuietly(BufferedImage image, File outputPng) {
+		if (image == null) {
+			LOG.error("Cannot write null image");
+			return;
+		}
 		try {
 			ImageIO.write(image, CTree.PNG, outputPng);
 		} catch (IOException e) {
@@ -1532,6 +1550,102 @@ public class ImageUtil {
 			currentY += image.getHeight();
 		}
 		return resultImage;
+	}
+
+	/**  correlates binary images.
+	 * includes heuristics 
+	 * translates to common c of g
+	 * correlation is 2 * hit / miss // since a miss scores twice
+	 * if heights or widths differ by more than 2, return -0.99
+	 * 
+	 * 
+	 * 
+	 * @param imagei
+	 * @param imagej
+	 * @return
+	 */
+	public static double correlateBlack(BufferedImage imagei, BufferedImage imagej) {
+		int MAXDH = 2;
+		int MAXDW = 2;
+		int heighti = imagei.getHeight();
+		int heightj = imagej.getHeight();
+		int dh = Math.abs(heighti - heightj);
+		int widthi = imagei.getWidth();
+		int widthj = imagej.getWidth();
+		int dw = Math.abs(widthi - widthj);
+		if (dw > MAXDW || dh > MAXDH) return NO_CORRELATION;
+		Int2 delta = deltaCofG(imagei, imagej);
+		int black = 0;
+		int white = 0;
+		int miss = 0;
+		for (int xi = 0; xi < imagei.getWidth(); xi++) {
+			int xj = xi + delta.getX();
+			if (xj < 0 || xj >= imagej.getWidth()) continue;
+			for (int yi = 0; yi < imagei.getHeight(); yi++) {
+				int yj = yi + delta.getY();
+				if (yj < 0 || yj >= imagej.getHeight()) continue;
+				boolean blacki = ImageUtil.isBlack(imagei, xi, yi);
+				boolean blackj = ImageUtil.isBlack(imagej, xj, yj);
+				if (!blacki && !blackj) {
+					white++;
+				} else if (blacki && blackj) {
+					black++;
+				} else {
+					miss++;
+				}
+			}
+		}
+		return (double) 2* black / (double) (2 * black + miss);
+	}
+
+	public static Int2 deltaCofG(BufferedImage imagei, BufferedImage imagej) {
+		Int2 cgi = ImageUtil.getCofGBlack(imagei);
+		Int2 cgj = ImageUtil.getCofGBlack(imagej);
+		Int2 delta = cgi.subtract(cgj);
+		return delta;
+	}
+
+	private static Int2 getCofGBlack(BufferedImage image) {
+		Real2 cg = new Real2(0,0);
+		int count = 0;
+		for (int y = 0; y < image.getHeight(); y++) {
+			for (int x = 0; x < image.getWidth(); x++) {
+				if (isBlack(image, x, y)) {
+					cg = cg.plus(new Real2(x, y));
+					count++;
+				}
+			}
+		}
+		if (count == 0) return null;
+		double f = 1. / (double) count;
+		cg = cg.multiplyBy(f);
+		Int2 cgi = new Int2((int)cg.getX(), (int)cg.getY());
+		return cgi;
+	}
+
+	/** is given pixel black?
+	 * 
+	 * @param image
+	 * @param ix
+	 * @param jy
+	 * @return
+	 */
+	public static boolean isBlack(BufferedImage image, int x, int y) {
+		if (!isInside(image, x, y)) {
+			throw new RuntimeException(x+"/"+y+" outside "+image.getWidth()+","+image.getHeight());
+		}
+		return (image.getRGB(x, y) & 0x00ffffff) == 0;
+	}
+
+	/** is point inside image?
+	 * 
+	 * @param image
+	 * @param x
+	 * @param y
+	 * @return
+	 */
+	private static boolean isInside(BufferedImage image, int x, int y) {
+		return x >= 0 && x < image.getWidth() && y >= 0 && y < image.getHeight();
 	}
 
 	

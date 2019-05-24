@@ -39,6 +39,7 @@ import javax.imageio.stream.ImageOutputStream;
 
 import org.apache.log4j.Logger;
 import org.apache.xerces.impl.dv.util.Base64;
+import org.contentmine.eucl.euclid.Int2Range;
 import org.contentmine.eucl.euclid.Real;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
@@ -134,13 +135,15 @@ public class SVGImage extends SVGShape {
 			Real2 xy = this.getXY();
 			Double width = getWidth();
 			Double height = getHeight();
-			boundingBox = new Real2Range(xy, xy.plus(new Real2(width, height)));
-			LOG.trace("BB0 "+boundingBox);
-			Transform2 t2 = this.getTransform2FromAttribute();
-			LOG.trace("T "+t2);
-			boundingBox = boundingBox.getTranformedRange(t2);
-			LOG.trace("BB1 "+boundingBox);
-			this.setBoundingBoxAttribute(3);
+			if (xy != null && width != null && height != null) {
+				boundingBox = new Real2Range(xy, xy.plus(new Real2(width, height)));
+				LOG.trace("BB0 "+boundingBox);
+				Transform2 t2 = this.getTransform2FromAttribute();
+				LOG.trace("T "+t2);
+				boundingBox = boundingBox.getTranformedRange(t2);
+				LOG.trace("BB1 "+boundingBox);
+				this.setBoundingBoxAttribute(3);
+			}
 		}
 		return boundingBox;
 	}
@@ -472,9 +475,9 @@ public class SVGImage extends SVGShape {
 		}
 	}
 
-private void addXlinkHref(String href) {
-	this.addAttribute(new Attribute(XLINK_PREF+":"+HREF, XLINK_NS, href));
-}
+	private void addXlinkHref(String href) {
+		this.addAttribute(new Attribute(XLINK_PREF+":"+HREF, XLINK_NS, href));
+	}
 	
 	/** creates an SVGImage from file.
 	 * 
@@ -489,13 +492,18 @@ private void addXlinkHref(String href) {
 		if (imageFile == null || !imageFile.exists() || imageFile.isDirectory()) {
 			throw new RuntimeException("Image file does not exist: "+imageFile);
 		}
-		SVGImage svgImage = null;
 		BufferedImage bufferedImage = null;
 		try {
 			bufferedImage = ImageIO.read(imageFile);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+		SVGImage svgImage = createImage(imageType, bufferedImage);
+		return svgImage;
+	}
+
+	public static SVGImage createImage(String imageType, BufferedImage bufferedImage) {
+		SVGImage svgImage = null;
 		String format = SVGImage.getFormatFromMimeType(imageType);
 		if (format == null) {
 			throw new RuntimeException("Unsupported mime type: "+imageType);
@@ -613,6 +621,21 @@ private void addXlinkHref(String href) {
 	protected boolean isGeometricallyEqualTo(SVGElement shape, double epsilon) {
 		return false;
 	}
+
+	/** clips a subImage into an SBGImage
+	 * 
+	 * @param image
+	 * @param boundingBox
+	 * @return
+	 */
+	public static SVGImage createSVGSubImage(BufferedImage image, Int2Range boundingBox) {
+		BufferedImage subImage = ImageUtil.clipSubImage(image, boundingBox);
+		SVGImage svgImage = SVGImage.createImage(SVGImage.IMAGE_PNG, subImage);
+		svgImage.setX(boundingBox.getXRange().getMin());
+		svgImage.setY(boundingBox.getYRange().getMin());
+		return svgImage;
+	}
+
 
 
 }

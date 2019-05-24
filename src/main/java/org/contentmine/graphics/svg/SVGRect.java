@@ -17,6 +17,7 @@
 package org.contentmine.graphics.svg;
 
 import java.awt.Graphics2D;
+
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Angle;
+import org.contentmine.eucl.euclid.Int2Range;
+import org.contentmine.eucl.euclid.IntRange;
 import org.contentmine.eucl.euclid.Real2;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.eucl.euclid.RealRange;
@@ -49,10 +52,10 @@ public class SVGRect extends SVGShape {
 
 	public final static String ALL_RECT_XPATH = ".//svg:rect";
 
-	private static final String HEIGHT = "height";
-	private static final String WIDTH = "width";
-	private static final String Y = "y";
-	private static final String X = "x";
+	public static final String HEIGHT = "height";
+	public static final String WIDTH = "width";
+	public static final String Y = "y";
+	public static final String X = "x";
 
 	private static double MIN_WIDTH = 0.01;
 	private static double MIN_HEIGHT = 0.01;
@@ -362,6 +365,17 @@ public class SVGRect extends SVGShape {
 
 	public Real2 getXY() {
 		return new Real2(getX(), getY());
+	}
+
+	public Int2Range createIntBoundingBox() {
+		int x = (int)(double)(new Double(getAttributeValue(X)));
+		int y = (int)(double)(new Double(getAttributeValue(Y)));
+		String dxs = getAttributeValue(SVGRect.WIDTH);
+		Integer dx = (int)(double)(Double.valueOf(dxs));
+		String dys = getAttributeValue(SVGRect.HEIGHT);
+		Integer dy = (int)(double)(Double.valueOf(dys));
+		Int2Range boundingBox = new Int2Range(new IntRange(x, x + dx), new IntRange(y, y + dy));
+		return boundingBox;
 	}
 
 	/** rects outside y=0 are not part of the plot but confuse calculation of

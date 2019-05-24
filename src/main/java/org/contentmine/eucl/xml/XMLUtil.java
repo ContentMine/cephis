@@ -1166,11 +1166,11 @@ public abstract class XMLUtil implements XMLConstants {
 	public static Element parseQuietlyToRootElement(File file) {
 		Document doc = null;
 		try {
-			if (file != null && file.exists()) { 
+			if (file != null /*&& file.exists()*/) { 
 				doc = parseQuietlyToDocument(new FileInputStream(file));
 			}
 		} catch (FileNotFoundException e) {
-			// impossible?
+			throw new RuntimeException("cannot read file: "+file, e);
 		}
 		return doc == null ? null : doc.getRootElement();
 	}
