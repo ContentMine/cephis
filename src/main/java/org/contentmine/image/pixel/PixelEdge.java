@@ -351,7 +351,7 @@ public class PixelEdge {
 	SVGLine createLine(double maxMeanDeviation) {
 		SVGLine line = new SVGLine();
 		PixelSegmentList segmentList = getOrCreateSegmentList(maxMeanDeviation);
-//		PixelGraph.LOG.debug("segmentList: "+segmentList);
+//		LOG.debug("segmentList: "+segmentList);
 		line = new SVGLine(segmentList.get(0).getPoint(0), segmentList.getLast().getPoint(1));
 		return line;
 	}

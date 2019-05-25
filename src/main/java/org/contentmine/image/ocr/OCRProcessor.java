@@ -20,7 +20,7 @@ public class OCRProcessor {
 		LOG.setLevel(Level.DEBUG);
 	}
 	
-	private ImageToHOCRConverter imageToHOCRConverter;
+	private ImageToHOCRConverterOLD imageToHOCRConverter;
 	
 	public OCRProcessor() {
 		
@@ -37,7 +37,7 @@ public class OCRProcessor {
 	 * @throws IOException
 	 */
 	public HOCRReader createHOCRReaderAndProcess(File imageFile, File hocrOutfile) throws IOException {
-		ImageToHOCRConverter imageToHOCRConverter = this.getOrCreateImageToHOCRConverter();
+		ImageToHOCRConverterOLD imageToHOCRConverter = this.getOrCreateImageToHOCRConverter();
 		File htmlFile = imageToHOCRConverter.convertImageToHOCR(imageFile, hocrOutfile);
 		if (htmlFile == null || !htmlFile.exists()) {
 			LOG.error("cannot run tesseract");
@@ -52,10 +52,10 @@ public class OCRProcessor {
 	 * 
 	 * @return
 	 */
-	public ImageToHOCRConverter getOrCreateImageToHOCRConverter() {
+	public ImageToHOCRConverterOLD getOrCreateImageToHOCRConverter() {
 		if (imageToHOCRConverter == null) {
-			imageToHOCRConverter = new ImageToHOCRConverter();
-			imageToHOCRConverter.setTryCount(ImageToHOCRConverter.DEFAULT_RETRIES_FOR_TESSERACT_EXIT);
+			imageToHOCRConverter = new ImageToHOCRConverterOLD();
+			imageToHOCRConverter.setTryCount(ImageToHOCRConverterOLD.DEFAULT_RETRIES_FOR_TESSERACT_EXIT);
 		}
 		return imageToHOCRConverter;
 	}

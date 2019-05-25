@@ -3,11 +3,18 @@ package org.contentmine.graphics.svg.cache;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Real2Range;
 import org.contentmine.graphics.svg.text.SVGTextLine;
 import org.contentmine.graphics.svg.text.SVGTextLineList;
 
 public class SuscriptFormatter {
+
+	private static final Logger LOG = Logger.getLogger(SuscriptFormatter.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
 
 	/** merges lines to create subscripted lines
 	 * removes any lines merged as suscripts
@@ -41,7 +48,7 @@ public class SuscriptFormatter {
 				largeBBox = lineLarge.getBoundingBox().format(1);
 			} else {
 				if (lineLarge.compareTo(lineAll) == 0) {
-					TextCache.LOG.trace("SKIPPED DUPLICATE");
+					LOG.trace("SKIPPED DUPLICATE");
 				} else {
 					lineLarge.mergeLine(lineAll);
 					removedLines.add(lineAll);

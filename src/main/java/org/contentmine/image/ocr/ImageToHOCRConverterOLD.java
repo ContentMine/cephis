@@ -17,13 +17,13 @@ import org.contentmine.eucl.euclid.RealRange;
  *
  */
 @Deprecated
-public class ImageToHOCRConverter {
+public class ImageToHOCRConverterOLD {
 
 	private static final int TESSERACT_TIMEOUT_STEP = 100;
 
 	private static final int NTRIES = 20;
 
-	private final static Logger LOG = Logger.getLogger(ImageToHOCRConverter.class);
+	private final static Logger LOG = Logger.getLogger(ImageToHOCRConverterOLD.class);
 	static {LOG.setLevel(Level.DEBUG);}
 
 	private static final String HOCR = "hocr";
@@ -42,7 +42,7 @@ public class ImageToHOCRConverter {
 	private int tryCount;
 	private File outputHtmlFile;
 	
-	public ImageToHOCRConverter() {
+	public ImageToHOCRConverterOLD() {
 		setDefaults();
 	}
 	
@@ -145,24 +145,4 @@ public class ImageToHOCRConverter {
 		return new File(filename);
 	}
 
-    
-//    public class ProcMon implements Runnable {
-//
-//    	  private final Process _proc;
-//    	  private volatile boolean _complete;
-//
-//    	  public boolean isComplete() { return _complete; }
-//
-//    	  public void run() {
-//    	    _proc.waitFor();
-//    	    _complete = true;
-//    	  }
-//
-//    	  public static ProcMon create(Process proc) {
-//    	    ProcMon procMon = new ProcMon(proc);
-//    	    Thread t = new Thread(procMon);
-//    	    t.start();
-//    	    return procMon;
-//    	  }
-//    	}
 }

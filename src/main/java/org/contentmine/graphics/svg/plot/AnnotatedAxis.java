@@ -333,7 +333,7 @@ public class AnnotatedAxis {
 				axisTickBox.extractIntersectingLines(horizontalLines, verticalLines);
 			}
 		} else {
-			AxisTickBox.LOG.trace("no single line for "+this);
+			LOG.trace("no single line for "+this);
 		}
 		return axisTickBox;
 	}

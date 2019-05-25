@@ -739,7 +739,7 @@ public class HOCRReader extends InputReader {
 	private void createHTMLandSVG(File imageDir, String imageSuffix, BufferedImage rawImage0, String id, File pngFile) throws Exception {
 		BufferedImage expandedImage = addMargins(rawImage0);
 		ImageIO.write(expandedImage, imageSuffix, new FileOutputStream(pngFile));
-		ImageToHOCRConverter converter = new ImageToHOCRConverter();
+		ImageToHOCRConverterOLD converter = new ImageToHOCRConverterOLD();
 		File outfileRoot = new File(imageDir, id+HOCRReader.HOCR);
 		File outputHtml = converter.convertImageToHOCR(pngFile, outfileRoot);
 		if (outputHtml == null) {
@@ -865,22 +865,6 @@ public class HOCRReader extends InputReader {
 			svgElement.appendChild(rect);
 		}
 	}
-
-//	private void setTesseractSleep(long tesseractSleep) {
-//		this.tesseractSleep = tesseractSleep;
-//	}
-//
-//	private void setTesseractTries(int tesseractTries) {
-//		this.tesseractTries = tesseractTries;
-//	}
-//
-//	private long getTesseractSleep() {
-//		return tesseractSleep;
-//	}
-//
-//	private int getTesseractTries() {
-//		return tesseractTries;
-//	}
 
 	public static List<HtmlSpan> getWords(HtmlSpan line) {
 		List<HtmlSpan> wordList = new ArrayList<HtmlSpan>();
