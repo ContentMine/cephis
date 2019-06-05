@@ -260,4 +260,20 @@ public class Int2Range implements EuclidConstants {
 	public Int2 getLimits() {
 		return new Int2(xrange.getRange(), yrange.getRange());
 	}
+	
+	public Integer getXMin() {
+		return xrange == null ? null : xrange.getMin();
+	}
+	
+	public Integer getXMax() {
+		return xrange == null ? null : xrange.getMax();
+	}
+	
+	public Integer getYMin() {
+		return yrange == null ? null : yrange.getMin();
+	}
+	
+	public Integer getYMax() {
+		return yrange == null ? null : yrange.getMax();
+	}
 }

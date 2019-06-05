@@ -2478,6 +2478,26 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
 			this.setElementAt(i, Math.min(range.getMax(), Math.max(range.getMin(), this.elementAt(i))));
 		}
 	}
+	
+	/** gets indexes of elements within range 
+	 * if array is [1., 20., 23., 3., 40.]
+	 * and range is (15., 25.)
+	 * returns [1, 2]
+	 * 
+	 * @param intRange
+	 * @return indexes
+	 */
+	
+	public IntArray getIndexesWithinRange(RealRange range) {
+		IntArray intArray = new IntArray();
+		for (int i = 0; i < nelem; i++) {
+			if (range.includes(array[i])) {
+				intArray.addElement(i);
+			}
+		}
+		return intArray;
+	}
+	
 
 
 }

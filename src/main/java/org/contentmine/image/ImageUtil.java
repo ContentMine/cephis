@@ -137,6 +137,7 @@ public class ImageUtil {
 	public enum SharpenMethod {
 		LAPLACIAN("laplacian"),
 		SHARPEN4("sharpen4"),
+		NONE("none"),
 		SHARPEN8("sharpen8"),
 		;
 		private String method;
@@ -1637,6 +1638,20 @@ public class ImageUtil {
 		return (image.getRGB(x, y) & 0x00ffffff) == 0;
 	}
 
+	/** is given pixel black or outside?
+	 * 
+	 * @param image
+	 * @param ix
+	 * @param jy
+	 * @return
+	 */
+	public static boolean isBlackOrOutside(BufferedImage image, int x, int y) {
+		if (!isInside(image, x, y)) {
+			return true;
+		}
+		return (image.getRGB(x, y) & 0x00ffffff) == 0;
+	}
+
 	/** is point inside image?
 	 * 
 	 * @param image
@@ -1646,6 +1661,80 @@ public class ImageUtil {
 	 */
 	private static boolean isInside(BufferedImage image, int x, int y) {
 		return x >= 0 && x < image.getWidth() && y >= 0 && y < image.getHeight();
+	}
+
+	public static BufferedImage despeckle(BufferedImage image) {
+		BufferedImage newImage = new BufferedImage(image.getWidth(),  image.getHeight(),
+				image.getType());
+		int i = 0;
+		int j = 0;
+		// completely internal pixels
+		for (i = 1; i < image.getWidth() - 1 ; i++) {
+			for (j = 1; j < image.getHeight() - 1; j++) {
+				int color = image.getRGB(i, j) & 0x00ffffff;
+				if (isSpeckleCentre(image, i, j)) {
+					newImage.setRGB(i, j, 0x00ffffff); // set white
+				} else {
+					newImage.setRGB(i, j, color); // transcribe
+				}
+			}
+		}
+		j = 0;
+		for (i = 0; i < image.getWidth(); i++) {
+			despeckleEdge(image, newImage, i, j);
+		}
+		j = image.getHeight() - 1;
+		for (i = 0; i < image.getWidth(); i++) {
+			despeckleEdge(image, newImage, i, j);
+		}
+		i = 0;
+		for (j = 0; j < image.getHeight(); j++) {
+			despeckleEdge(image, newImage, i, j);
+		}
+		i = image.getWidth() - 1;
+		for (j = 0; j < image.getHeight(); j++) {
+			despeckleEdge(image, newImage, i, j);
+		}
+		return newImage;
+	}
+
+	private static void despeckleEdge(BufferedImage image, BufferedImage newImage, int i, int j) {
+		int color = image.getRGB(i, j) & 0x00ffffff;
+		if (isSpeckleEdge(image, i, j)) {
+			newImage.setRGB(i, j, 0x00ffffff); // set white
+		} else {
+			newImage.setRGB(i, j, color); // transcribe
+		}
+	}
+
+	private static boolean isSpeckleEdge(BufferedImage image, int i, int j) {
+		if (!isBlack(image, i, j)) return false;
+		
+		if (isBlackOrOutside(image, i - 1, j - 1)) return false;
+		if (isBlackOrOutside(image, i - 1, j)) return false;
+		if (isBlackOrOutside(image, i - 1, j + 1)) return false;
+		if (isBlackOrOutside(image, i, j - 1)) return false;
+		if (isBlackOrOutside(image, i, j + 1)) return false;
+		if (isBlackOrOutside(image, i +1, j - 1)) return false;
+		if (isBlackOrOutside(image, i + 1, j)) return false;
+		if (isBlackOrOutside(image, i + 1, j + 1)) return false;
+		
+		return true;
+	}
+
+	private static boolean isSpeckleCentre(BufferedImage image, int i, int j) {
+		if (!isBlack(image, i, j)) return false;
+		
+		if (isBlack(image, i - 1, j - 1)) return false;
+		if (isBlack(image, i - 1, j)) return false;
+		if (isBlack(image, i - 1, j + 1)) return false;
+		if (isBlack(image, i, j - 1)) return false;
+		if (isBlack(image, i, j + 1)) return false;
+		if (isBlack(image, i +1, j - 1)) return false;
+		if (isBlack(image, i + 1, j)) return false;
+		if (isBlack(image, i + 1, j + 1)) return false;
+		
+		return true;
 	}
 
 	

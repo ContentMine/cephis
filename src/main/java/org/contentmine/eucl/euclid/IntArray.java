@@ -1539,13 +1539,15 @@ public class IntArray extends ArrayBase implements Iterable<Integer> {
 	/** mean rounded down.
 	 * 
 	 */
-	public int getMean() {
-		return sumAllElements()/nelem;
+	public Integer getMean() {
+		return nelem == 0 ? null : sumAllElements()/nelem;
 	}
 	
 	public void subtractMean() {
-		int m = getMean();
-		this.addConstant(-m);
+		if (nelem > 0) {
+			int m = getMean();
+			this.addConstant(-m);
+		}
 	}
 
 	/** gets index of element closest to val.
