@@ -341,7 +341,7 @@ public ColorAnalyzer setSaturate(boolean saturate) {
 		if (!file.exists()) {
 			throw new IOException("Image file does not exist: "+inputFile);
 		}
-		inputImage = ImageIO.read(inputFile);
+		inputImage = ImageUtil.readImage(inputFile);
 		if (inputImage == null) {
 			throw new RuntimeException("Image file could not be read: "+inputFile);
 		}

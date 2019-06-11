@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 import org.apache.commons.io.FilenameUtils;
 import org.contentmine.cproject.files.CTree;
 import org.contentmine.cproject.util.CMineGlobber;
+import org.contentmine.image.ImageUtil;
 
 import boofcv.alg.filter.binary.ThresholdImageOps;
 import boofcv.alg.filter.derivative.DerivativeType;
@@ -108,9 +109,8 @@ public class ExampleImageConvert {
 	public void createImages(String imageName) {
 //		image = UtilImageIO.loadImage(UtilIO.pathExample("standard/barbara.jpg"));
 		try {
-			image = ImageIO.read(new File(root, imageName));
-		} catch (IOException e) {
-			e.printStackTrace();
+			image = ImageUtil.readImage(new File(root, imageName));
+		} catch (RuntimeException e) {
 			return;
 		}
 

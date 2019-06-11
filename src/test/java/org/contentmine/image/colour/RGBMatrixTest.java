@@ -30,7 +30,7 @@ public class RGBMatrixTest {
 	 */
 	public void testRGB() throws IOException {
 		/**
-		BufferedImage  image = ImageIO.read(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png"));
+		BufferedImage  image = ImageUtil.readImage(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png"));
 		RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
 		IntMatrix redMatrix = rgbMatrix.getMatrix(ImageUtil.RED);
 		RGBImageMatrix redImageMatrix = new RGBImageMatrix();
@@ -59,7 +59,7 @@ public class RGBMatrixTest {
 //		array = ImageUtil.DOUBLE_ARRAY;
 //		array = ImageUtil.SMEAR_ARRAY;
 //		array = ImageUtil.EDGE_ARRAY;
-		BufferedImage  image = ImageIO.read(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png"));
+		BufferedImage  image = ImageUtil.readImage(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png"));
 		if (image != null) {
 			Assert.assertEquals(13, image.getType());
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
@@ -77,7 +77,7 @@ public class RGBMatrixTest {
 	public void testSharpenImageNew() throws IOException {
 		BufferedImage newImage = null;
 		IntArray array = new IntArray(new int[]{-1, 3, -1});
-		BufferedImage  image = ImageIO.read(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png"));
+		BufferedImage  image = ImageUtil.readImage(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png"));
 		if (image != null) {
 			Assert.assertEquals(13, image.getType());
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
@@ -96,7 +96,7 @@ public class RGBMatrixTest {
 //		IntArray array = new IntArray(new int[]{-1, 3, -1});
 		IntArray array = new IntArray(new int[]{-1, -3, 0, 2, 5, 2, 0, -3, -1});
 		array = new IntArray(new int[]{0, 1, 0});
-		BufferedImage  image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		BufferedImage  image = ImageUtil.readImage(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
 		if (image != null) {
 			Assert.assertEquals(6, image.getType());
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
@@ -123,7 +123,7 @@ public class RGBMatrixTest {
 					new double[] {-1./9.,-1./9.,-1./9.,}, 
 				}
 				);
-		BufferedImage  image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		BufferedImage  image = ImageUtil.readImage(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
 		if (image != null) {
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
 			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(filter);
@@ -141,7 +141,7 @@ public class RGBMatrixTest {
 					new double[] {1.0}, 
 				}
 				);
-		BufferedImage  image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		BufferedImage  image = ImageUtil.readImage(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
 		if (image != null) {
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
 			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(filter);
@@ -161,7 +161,7 @@ public class RGBMatrixTest {
 					new double[] {1.0, 0.0, -1.0}, 
 				}
 				);
-		BufferedImage  image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
+		BufferedImage  image = ImageUtil.readImage(new File(SVGHTMLFixtures.EARLY_CHEM_DIR, "adrenaline0.png"));
 		if (image != null) {
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
 			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(filter);

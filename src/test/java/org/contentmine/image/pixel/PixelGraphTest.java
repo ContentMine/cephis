@@ -202,8 +202,8 @@ public class PixelGraphTest {
 	
 	@Test
 	@Ignore // out of memory on Jenkins
-	public void testExtremeEdge() throws IOException {
-		BufferedImage image = ImageIO.read(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0094172.g002-2.png"));
+	public void testExtremeEdge() {
+		BufferedImage image = ImageUtil.readImage(new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0094172.g002-2.png"));
 		image = ImageUtil.boofCVBinarization(image, 160);
 		image = ImageUtil.thin(image, new ZhangSuenThinning());
 		ImageIOUtil.writeImageQuietly(image, new File("target/edge/0094172.png"));

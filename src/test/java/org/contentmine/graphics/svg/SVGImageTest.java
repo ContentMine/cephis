@@ -69,8 +69,8 @@ public class SVGImageTest {
 	}
 
 	@Test
-	public void testPNGWrite() throws Exception {
-		BufferedImage bufferedImage = ImageIO.read(SVGHTMLFixtures.IMAGE_TEST_PNG);
+	public void testPNGWrite() {
+		BufferedImage bufferedImage = ImageUtil.readImage(SVGHTMLFixtures.IMAGE_TEST_PNG);
 		SVGImage svgImage = new SVGImage();
 		svgImage.readImageDataIntoSrcValue(bufferedImage, SVGImage.IMAGE_PNG);
 	}
@@ -339,9 +339,9 @@ public class SVGImageTest {
 		return bufferedImage;
 	}
 
-	private BufferedImage readBufferedImage(File imgFile) throws IOException {
+	private BufferedImage readBufferedImage(File imgFile) {
 		BufferedImage bufferedImage;
-		bufferedImage = ImageIO.read(imgFile);
+		bufferedImage = ImageUtil.readImage(imgFile);
 		return bufferedImage;
 	}
 

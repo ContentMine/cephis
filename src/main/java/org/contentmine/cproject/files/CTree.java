@@ -14,8 +14,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.imageio.ImageIO;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
@@ -43,6 +41,7 @@ import org.contentmine.graphics.html.HtmlHtml;
 import org.contentmine.graphics.layout.SuperPixelArrayManager;
 import org.contentmine.graphics.svg.SVGElement;
 import org.contentmine.graphics.svg.cache.DocumentCache;
+import org.contentmine.image.ImageUtil;
 import org.contentmine.pdf2svg2.PDFDocumentProcessor;
 import org.contentmine.pdf2svg2.PageIncluder;
 import org.contentmine.svg2xml.pdf.SVGDocumentProcessor;
@@ -1785,12 +1784,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 	public BufferedImage getPDFImage(Int2 pageImage) {
 		File imageFile = this.getImageFile(pageImage);
-		BufferedImage image = null;
-		try {
-			image = imageFile == null ? null : ImageIO.read(imageFile);
-		} catch (IOException e) {
-			throw new RuntimeException("cannot create image", e);
-		}
+		BufferedImage image = imageFile == null ? null : ImageUtil.readImage(imageFile);
 		return image;
  	}
 

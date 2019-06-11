@@ -92,7 +92,7 @@ public class BoofcvImageEnhancementTest {
 	{
 		outdir.mkdirs();
 		File imageFile = new File(ImageAnalysisFixtures.TEST_DIAGRAM_PLOT_DIR, "plos/journal.pone.0094172/g002-2/figure.png");
-		BufferedImage bufferedImage = ImageIO.read(imageFile);
+		BufferedImage bufferedImage = ImageUtil.readImage(imageFile);
 		histogram(bufferedImage);
 		LOG.debug("histogram computed");
 		sharpen(bufferedImage);

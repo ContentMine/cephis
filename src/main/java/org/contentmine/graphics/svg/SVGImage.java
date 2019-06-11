@@ -494,7 +494,7 @@ public class SVGImage extends SVGShape {
 		}
 		BufferedImage bufferedImage = null;
 		try {
-			bufferedImage = ImageIO.read(imageFile);
+			bufferedImage = ImageUtil.readImage(imageFile);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

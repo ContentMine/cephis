@@ -2498,6 +2498,31 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
 		return intArray;
 	}
 	
+	/** creates array of index ranges for "peaks" in array
+	 * ex: 1.,3.3,4.1,5.,1.,1.,99.,3.,32.,11. and limit of 1.9
+	 * (2,4),(7,10)
+	 * @param limit
+	 * @return
+	 */
+	public List<IntRange> createMaskArray(double limit) {
+		List<IntRange> rangeArray = new ArrayList<IntRange>();
+		IntRange range = null;
+		for (int i = 0; i < nelem; i++) {
+			double value = array[i];
+			if (value >= limit) {
+				if (range == null) {
+					range = new IntRange(i, i);
+					rangeArray.add(range);
+				 }
+				range.setMax(i);
+			} else {
+				range = null;
+			}
+		}
+		return rangeArray;
+		
+	}
+	
 
 
 }

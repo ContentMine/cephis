@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+
+import org.contentmine.image.ImageUtil;
  
 /**
  *
@@ -161,7 +163,7 @@ public class ThinningService {
     */
    public static void main(String[] args) throws IOException {
     
-       BufferedImage image = ImageIO.read(new File("/home/nayef/Desktop/bw.jpg"));
+       BufferedImage image = ImageUtil.readImage(new File("/home/nayef/Desktop/bw.jpg"));
 
        int[][] imageData = new int[image.getHeight()][image.getWidth()];
        Color c;

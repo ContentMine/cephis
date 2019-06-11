@@ -5,6 +5,8 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
+import org.contentmine.image.ImageUtil;
+
 public class ImageFloodFill extends FloodFill {
 
 	private BufferedImage image;
@@ -28,7 +30,7 @@ public class ImageFloodFill extends FloodFill {
 			return;
 		}
 		String filename = args[0];
-		BufferedImage image = ImageIO.read(new File(filename));
+		BufferedImage image = ImageUtil.readImage(new File(filename));
 		FloodFill floodFill = new ImageFloodFill(image);
 		floodFill.fillIslands();
 	}

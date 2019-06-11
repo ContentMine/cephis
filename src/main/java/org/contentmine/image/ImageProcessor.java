@@ -191,7 +191,7 @@ public class ImageProcessor {
 		}
 		try {
 			inputFile = file;
-			image = ImageIO.read(file);
+			image =ImageUtil.readImage(file);
 			LOG.trace("read image: "+image);
 			if (debug) ImageIO.write(image, "png", new File("target/imageTest.png"));
 			image = processImage(image);
@@ -295,7 +295,7 @@ public class ImageProcessor {
 			throw new RuntimeException("File is directory " + imageFile);
 		} else {
 			try {
-				return ImageProcessor.createDefaultProcessorAndProcess(ImageIO.read(imageFile));
+				return ImageProcessor.createDefaultProcessorAndProcess(ImageUtil.readImage(imageFile));
 			} catch (Exception e) {
 				throw new RuntimeException("image file exists but cannot read as image: "
 						+ imageFile, e);
@@ -356,13 +356,8 @@ public class ImageProcessor {
 			if (getBase() == null) {
 				setBase(FilenameUtils.getBaseName(inputFile.toString()));
 			}
-			try {
-				image = ImageIO.read(inputFile);
+				image = ImageUtil.readImage(inputFile);
 				LOG.trace("read image " + image);
-			} catch (Exception e) {
-				throw new RuntimeException("Cannot find/read imagefile: "
-						+ inputFile, e);
-			}
 		}
 	}
 
@@ -398,7 +393,8 @@ public class ImageProcessor {
 			// this is messy - the super thinning should have been done earlier
 			islandList = mainProcessor.getOrCreatePixelIslandList(thinning != null);
 			if (islandList == null) {
-				LOG.trace("ERROR Could not create islandList");
+				LOG.debug("ERROR Could not create islandList");
+				islandList = new PixelIslandList();
 			} else {
 				islandList.setMainProcessor(mainProcessor);
 			}

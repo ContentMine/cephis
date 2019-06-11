@@ -122,14 +122,14 @@ public class ColorAnalyzerIT {
 	}
 
 	@Test
-	public void testPosterizeSeveralWithHSV() throws IOException {
+	public void testPosterizeSeveralWithHSV() {
 		int minChroma = 128;
 		boolean saturate = false;
 
 		for (int x = 0; x < 2; x++) {
 			for (int y = 0; y < 2; y++) {
 				String panel = "panel"+x+"_"+y;
-				BufferedImage image = ImageIO.read(new File(ImageAnalysisFixtures.COMPOUND_DIR,  panel + ".png"));
+				BufferedImage image = ImageUtil.readImage(new File(ImageAnalysisFixtures.COMPOUND_DIR,  panel + ".png"));
 				ColorAnalyzer colorAnalyzer = new ColorAnalyzer(image)
 						.setMinChroma(minChroma)
 						.setSaturate(saturate);
@@ -154,7 +154,7 @@ public class ColorAnalyzerIT {
 				for (int ph = 0; ph < 2; ph++) {
 					for (int pv = 0; pv < 2; pv++) {
 						String panel = "panel"+ph+"_"+pv;
-						BufferedImage image = ImageIO.read(new File(ImageAnalysisFixtures.COMPOUND_DIR,  panel + ".png"));
+						BufferedImage image = ImageUtil.readImage(new File(ImageAnalysisFixtures.COMPOUND_DIR,  panel + ".png"));
 						ColorAnalyzer colorAnalyzer = new ColorAnalyzer(image);
 						colorAnalyzer.setSaturate(saturate)
 								.setMinChroma(minChroma)

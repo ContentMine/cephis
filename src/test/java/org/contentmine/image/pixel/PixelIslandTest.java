@@ -121,7 +121,7 @@ public class PixelIslandTest {
 
 	@Test
 	public void testgetTerminalMaltoryzine1() throws Exception {
-		BufferedImage image = ImageIO.read(ImageAnalysisFixtures.MALTORYZINE_THINNED_PNG);
+		BufferedImage image = ImageUtil.readImage(ImageAnalysisFixtures.MALTORYZINE_THINNED_PNG);
 		FloodFill floodFill = new ImageFloodFill(image);
 		floodFill.setDiagonal(true);
 		floodFill.fillIslands();
@@ -133,7 +133,7 @@ public class PixelIslandTest {
 
 	@Test
 	public void testgetTerminalMaltoryzine0() throws Exception {
-		BufferedImage image = ImageIO.read(ImageAnalysisFixtures.MALTORYZINE_THINNED_PNG);
+		BufferedImage image = ImageUtil.readImage(ImageAnalysisFixtures.MALTORYZINE_THINNED_PNG);
 		FloodFill floodFill = new ImageFloodFill(image);
 		floodFill.setDiagonal(true);
 		floodFill.fillIslands();
@@ -146,7 +146,7 @@ public class PixelIslandTest {
 //	@Test
 //	@Ignore
 //	public void testCreatePixelIslandsAndSegments() throws IOException {
-//		BufferedImage image = ImageIO.read(Fixtures.MALTORYZINE_THINNED_PNG);
+//		BufferedImage image = ImageUtil.readImage(Fixtures.MALTORYZINE_THINNED_PNG);
 //		FloodFill floodFill = new FloodFill(image);
 //		floodFill.setDiagonal(true);
 //		floodFill.fill();
@@ -270,27 +270,27 @@ public class PixelIslandTest {
 //		SVGSVG.wrapAndWriteAsSVG(gg, file);
 //	}
 
-	private BufferedImage createImage(String filename) {
-		BufferedImage image0 = null;
-		File file = null;
-		try {
-			file = new File(filename);
-			image0 = ImageIO.read(file);
-		} catch (IIOException ioe) {
-			// some are missing
-			if (file.exists()) {
-				LOG.debug("cannot create image, file exists: " + filename + ioe);
-			} else {
-				return null;
-			}
-		} catch (Exception e) {
-			LOG.debug("cannot create image: " + filename + e);
-			return image0;
-		}
-		image0 = ImageUtil.addBorders(image0, 1, 1, 0x00ffffff);
-//		image0 = ImageUtil.binarize(image0);
-		return image0;
-	}
+//	private BufferedImage createImage(String filename) {
+//		BufferedImage image0 = null;
+//		File file = null;
+//		try {
+//			file = new File(filename);
+//			image0 = ImageIO.read(file);
+//		} catch (IIOException ioe) {
+//			// some are missing
+//			if (file.exists()) {
+//				LOG.debug("cannot create image, file exists: " + filename + ioe);
+//			} else {
+//				return null;
+//			}
+//		} catch (Exception e) {
+//			LOG.debug("cannot create image: " + filename + e);
+//			return image0;
+//		}
+//		image0 = ImageUtil.addBorders(image0, 1, 1, 0x00ffffff);
+////		image0 = ImageUtil.binarize(image0);
+//		return image0;
+//	}
 
 	// private SVGG plotPixels(Transform2 t2, PixelIslandList islandList, String
 	// color) {
@@ -310,7 +310,7 @@ public class PixelIslandTest {
 //		BufferedImage image0 = UtilImageIO
 //				.loadImage("src/test/resources/org/contentmine/image/trec/images/US06335364-20020101-C00020.TIF");
 //
-//		// BufferedImage image0 = ImageIO.read(new
+//		// BufferedImage image0 = ImageUtil.readImage(new
 //		// File("src/test/resources/org/contentmine/image/trec/images/US06335364-20020101-C00020.TIF"));
 //		Assert.assertNotNull(image0);
 //		ImageIOUtil.writeImageQuietly(image0, new File(
@@ -492,7 +492,7 @@ public class PixelIslandTest {
 
 	@Test
 	public void testBoundingBoxes() throws IOException {
-		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageIO.read(ImageAnalysisFixtures.MALTORYZINE_PNG));
+		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageUtil.readImage(ImageAnalysisFixtures.MALTORYZINE_PNG));
 		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 		Assert.assertEquals("islands", 5, islands.size());
 		for (PixelIsland island : islands) {
@@ -519,7 +519,7 @@ public class PixelIslandTest {
 				333, // boxes 0-9
 				112, 35, 8, 11, 12, 9, 5, 0, 2, 8, // 10-19
 				1, 3, 2, 1, 1, 1 };
-		ImageProcessor imageProcessor = ImageProcessor.createDefaultProcessorAndProcess(ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
+		ImageProcessor imageProcessor = ImageProcessor.createDefaultProcessorAndProcess(ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
 		PixelIslandList islands = imageProcessor.getOrCreatePixelIslandList();
 		PixelIslandList characters = islands.isContainedIn(new RealRange(0.,
 				25.), new RealRange(0., 25.));
@@ -548,7 +548,7 @@ public class PixelIslandTest {
 	 */
 	@Ignore // null pointer
 	public void testInterboxCorrelations() throws IOException {
-		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
+		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
 		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 		PixelIslandList characters = islands.isContainedIn(new RealRange(0.,
 				5.), new RealRange(20., 25.));
@@ -588,7 +588,7 @@ public class PixelIslandTest {
 //		double correlation = 0.75;
 //		String colors[] = { "red", "blue", "green", "yellow", "purple", "cyan",
 //				"brown", "pink", "lime", "orange" };
-//		PixelProcessor pixelProcessor = new PixelProcessor(ImageIO.read(Fixtures.LARGE_PHYLO_JPG));
+//		PixelProcessor pixelProcessor = new PixelProcessor(ImageUtil.readImage(Fixtures.LARGE_PHYLO_JPG));
 //		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 //		PixelIslandList characters = islands.isContainedIn(new RealRange(0.,
 //				15.), new RealRange(0., 12.));
@@ -661,7 +661,7 @@ public class PixelIslandTest {
 		// "A"s selected manually
 		int[] charsA = { 90, 274, 97, 98, 133, 202, 283, 136, 143, 1, 2 // dummies
 		};
-		BufferedImage rawImage = ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
+		BufferedImage rawImage = ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
 		MainPixelProcessor pixelProcessor = new MainPixelProcessor(rawImage);
 		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 		PixelIslandList characters = islands.isContainedIn(new RealRange(0.,
@@ -720,7 +720,7 @@ public class PixelIslandTest {
 		int[] charsA = { 90, 274, 97, 98, 133, 202, 283, 136, 143,
 		// 1,2 // dummies
 		};
-		BufferedImage rawImage = ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
+		BufferedImage rawImage = ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
 		Assert.assertNotNull("rawImage not null", rawImage);
 		PixelIslandList islandsA = createAs(charsA);
 		List<BufferedImage> subImageList = new ArrayList<BufferedImage>();
@@ -754,7 +754,7 @@ public class PixelIslandTest {
 	 * 
 	 */
 	public void testFindCharsA() throws IOException {
-		BufferedImage rawImage = ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
+		BufferedImage rawImage = ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
 		MainPixelProcessor pixelProcessor = new MainPixelProcessor(rawImage);
 		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 		extractCharactersAndCorrelate(rawImage, islands, "65", 0.27);
@@ -765,7 +765,7 @@ public class PixelIslandTest {
 	 * 
 	 */
 	public void testFindCharsAny() throws IOException {
-		BufferedImage rawImage = ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
+		BufferedImage rawImage = ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
 		MainPixelProcessor pixelProcessor = new MainPixelProcessor(rawImage);
 		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 		extractCharactersAndCorrelate(rawImage, islands, "65", 0.30);
@@ -798,8 +798,8 @@ public class PixelIslandTest {
 	@Test
 	@Ignore // this takes a long time
 	public void extractCharsToImages() throws IOException {
-		BufferedImage rawImage = ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
-		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
+		BufferedImage rawImage = ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG);
+		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
 		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 		for (int h = 5; h < 10; h++) {
 			PixelIslandList characters = islands.isContainedIn(new RealRange(
@@ -937,7 +937,7 @@ public class PixelIslandTest {
 			PixelIslandList islands, String charname, double correlationCutoff)
 			throws IOException {
 		LOG.trace("charname " + charname);
-		BufferedImage image = ImageIO.read(new File(
+		BufferedImage image = ImageUtil.readImage(new File(
 				"src/test/resources/org/contentmine/image/text/chars/" + charname
 						+ ".png"));
 		int w = image.getWidth();
@@ -971,7 +971,7 @@ public class PixelIslandTest {
 	}
 
 	private PixelIslandList createAs(int[] charsA) throws IOException {
-		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageIO.read(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
+		MainPixelProcessor pixelProcessor = new MainPixelProcessor(ImageUtil.readImage(ImageAnalysisFixtures.LARGE_PHYLO_JPG));
 		PixelIslandList islands = pixelProcessor.getOrCreatePixelIslandList();
 		PixelIslandList characters = islands.isContainedIn(new RealRange(0.,
 				15.), new RealRange(0., 12.));

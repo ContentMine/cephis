@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 import org.contentmine.eucl.euclid.RealMatrix;
 import org.contentmine.image.ImageAnalysisFixtures;
+import org.contentmine.image.ImageUtil;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -32,7 +33,7 @@ public class SharpenerTest {
 	public void testSharpenImage() throws IOException {
 		BufferedImage newImage = null;
 		File colourFile = new File(ImageAnalysisFixtures.COMPOUND_DIR, "journal.pone.0095816.g002.png");
-		BufferedImage  image = ImageIO.read(colourFile);
+		BufferedImage  image = ImageUtil.readImage(colourFile);
 		if (image == null) {
 			throw new RuntimeException("Cannot find / read file:"+colourFile);
 		}

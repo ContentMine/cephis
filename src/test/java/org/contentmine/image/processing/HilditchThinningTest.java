@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 import org.contentmine.graphics.svg.util.ImageIOUtil;
 import org.contentmine.image.ImageAnalysisFixtures;
+import org.contentmine.image.ImageUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class HilditchThinningTest {
 
 	@Test
 	public void testMolecule() throws IOException {
-	       BufferedImage image = ImageIO.read(ImageAnalysisFixtures.MALTORYZINE_BINARY_PNG);
+	       BufferedImage image = ImageUtil.readImage(ImageAnalysisFixtures.MALTORYZINE_BINARY_PNG);
 	       Thinning thinningService = new HilditchThinning(image);
 	       thinningService.doThinning();
 	       image = thinningService.getThinnedImage();

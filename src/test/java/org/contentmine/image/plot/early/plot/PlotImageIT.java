@@ -23,6 +23,7 @@ import org.contentmine.graphics.svg.SVGLine;
 import org.contentmine.graphics.svg.SVGSVG;
 import org.contentmine.graphics.svg.SVGText;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
+import org.contentmine.image.ImageUtil;
 import org.contentmine.image.colour.ColorAnalyzer;
 import org.contentmine.image.diagram.DiagramAnalyzer;
 import org.contentmine.image.pixel.PixelEdge;
@@ -257,7 +258,7 @@ public class PlotImageIT {
 	public void testCharacters() throws IOException {
 		String base = "brominePlot";
 		File targetDir = SVGHTMLFixtures.EARLY_PLOT_TARGET_DIR;
-		BufferedImage image = ImageIO.read(new File(SVGHTMLFixtures.EARLY_PLOT_DIR, base+".png"));
+		BufferedImage image = ImageUtil.readImage(new File(SVGHTMLFixtures.EARLY_PLOT_DIR, base+".png"));
 		ColorAnalyzer colorAnalyzer = new ColorAnalyzer(image);
 		//fails (I think wrong image type)
 		BufferedImage grayImage = colorAnalyzer.getGrayscaleImage();

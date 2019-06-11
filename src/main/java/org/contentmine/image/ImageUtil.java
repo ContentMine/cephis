@@ -931,21 +931,27 @@ public class ImageUtil {
 	}
 
 	/** convenience wrapper to throw quietly and announce file name.
+	 * traps things that ImageIO does not
+	 * (non-existence, wrong sort of file, etc..)
 	 * 
 	 * @param sourceFile
 	 * @return
 	 */
 	public static BufferedImage readImage(File file) {
 		BufferedImage image = null;
+		if (file == null) {
+			throw new RuntimeException("null file");
+		}
+		if (!file.exists()) {
+			throw new RuntimeException("image file does not exist: "+file);
+		}
+		if (file.isDirectory()) {
+			throw new RuntimeException("cannot read directory: "+file);
+		}
 		try {
 			image = ImageIO.read(file);
-		} catch (FileNotFoundException e) {
-			throw new RuntimeException("cannot find: "+file, e);
-		} catch (IOException ioe) {
-			if (file.isDirectory()) {
-				throw new RuntimeException("cannot use directory: "+file, ioe);
-			}
-			throw new RuntimeException("IOException: "+file.getAbsolutePath() + "; size: "+FileUtils.sizeOf(file), ioe);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read image: "+file);
 		}
 		return image;
 	}
@@ -1338,14 +1344,7 @@ public class ImageUtil {
 	 */
 	public static BufferedImage readImageQuietly(File inputBaseFile) {
 		BufferedImage image = null;
-		try {
-			if (!inputBaseFile.exists()) {
-				LOG.debug("File does not exist: "+inputBaseFile);
-			}
-			image = ImageIO.read(inputBaseFile);
-		} catch (IOException e) {
-			throw new RuntimeException("Cannot read image: "+inputBaseFile, e);
-		}
+		image = ImageUtil.readImage(inputBaseFile);
 		return image;
 	}
 	

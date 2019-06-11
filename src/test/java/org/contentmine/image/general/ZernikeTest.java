@@ -1,6 +1,7 @@
 package org.contentmine.image.general;
 
 import org.apache.log4j.Logger;
+import org.contentmine.image.ImageUtil;
 
 public class ZernikeTest {
 
@@ -37,7 +38,7 @@ public class ZernikeTest {
 //	}
 //	
 //	private ZernikeMomentsOrig.Complex[] calculateComplex(int order, File imageFile) throws IOException {
-//		BufferedImage image = ImageIO.read(imageFile);
+//		BufferedImage image = ImageUtil.readImage(imageFile);
 //		PixelProcessor pixelProcessor = new PixelProcessor(image);
 //		PixelIslandList pixelIslandList = pixelProcessor.getOrCreatePixelIslandList();
 //		PixelList pixelList = pixelIslandList.getPixelList();

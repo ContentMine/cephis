@@ -432,7 +432,8 @@ public class DiagramAnalyzer {
 
 	public PixelIslandList getOrCreateSortedPixelIslandList() {
 		ensureImageProcessor();
-		return imageProcessor.getOrCreatePixelIslandList().sortBySizeDescending();
+		PixelIslandList orCreatePixelIslandList = imageProcessor.getOrCreatePixelIslandList();
+		return orCreatePixelIslandList.sortBySizeDescending();
 	}
 
 	public void readAndProcessInputFile(File file) {

@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 
 import org.apache.log4j.Logger;
 import org.contentmine.graphics.svg.util.ImageIOUtil;
+import org.contentmine.image.ImageUtil;
  
 /**
  * Image histogram equalization
@@ -48,7 +49,7 @@ public class HistogramEqualization {
 		if (inputFile == null || !inputFile.exists() || inputFile.isDirectory() || inputFile.isHidden()) {
 			throw new IOException("cannot read file (does not exist or is not readable): "+inputFile);
 		}
-		this.originalImage = ImageIO.read(inputFile);
+		this.originalImage = ImageUtil.readImage(inputFile);
 	}
 	
 	public void setImage(BufferedImage image) {

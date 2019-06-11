@@ -28,32 +28,12 @@ public class ColorAnalyzerTest {
 
 	private final static Logger LOG = Logger.getLogger(ColorAnalyzerTest.class);
 	
-//	@Test
-//	public void countColors() throws Exception {
-//		BufferedImage image = ImageIO.read(new File(ImageAnalysisFixtures.TEXT_DIR, "phylo.jpg"));
-//		ColorAnalyzer analyzer = new ColorAnalyzer(image);
-//		analyzer.setXYRange(new Int2Range(new IntRange(0, 300), new IntRange(50, 300)));
-//		LOG.trace(analyzer.getWidth()+"/"+analyzer.getHeight());
-//		analyzer.set4Bits(true);
-//		Multiset<Integer> colorSet = analyzer.createColorSet();
-//		for (Entry entry : colorSet.entrySet()) {
-//			if (entry.getCount() < 10) continue;
-//			int ll = (Integer)entry.getElement();
-//			HueChromaLuminance hcl = HueChromaLuminance.createHCLfromRGB(ll);
-//			//System.out.println(hcl+" "+Integer.toHexString(ll)+" "+entry.getCount());
-//		}
-////		List<Integer> colorList = new ArrayList<Integer>(colorSet);
-////		Collections.sort(colorList);
-////		for (Integer color : colorList) {
-////			System.out.println(Integer.toHexString(color));
-////		}
-//	}
 	
 	@Test
 		public void testPosterize() {
 			int nvalues = 4; // i.e. 16-bit color
 			nvalues = 2;
-			BufferedImage image = UtilImageIO.loadImage(new File(ImageAnalysisFixtures.PROCESSING_DIR, "phylo.jpg").toString());
+			BufferedImage image = ImageUtil.readImage(new File(ImageAnalysisFixtures.PROCESSING_DIR, "phylo.jpg"));
 			ImageUtil.flattenImage(image, nvalues);
 			ColorAnalyzer colorAnalyzer = new ColorAnalyzer(image);
 			Multiset<RGBColor> set = colorAnalyzer.getOrCreateColorSet();

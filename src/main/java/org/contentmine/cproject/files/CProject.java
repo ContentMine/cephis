@@ -954,7 +954,7 @@ public class CProject extends CContainer {
 		for (CTree cTree : cTreeList) {
 			cTree.setDebugLevel(debugLevel);
 			String name = cTree.getName();
-	        System.out.println("cTree: "+name);
+	        System.out.println(">cTree>: "+name);
 	        cTree.setPDFDocumentProcessor(pdfDocumentProcessor);
 			cTree.processPDFTree();
 		}

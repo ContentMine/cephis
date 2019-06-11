@@ -69,7 +69,7 @@ public class HOCRTest {
 	 * 
 	 */
 	@Test
-	public void testHOCRSharpen() throws IOException {
+	public void testHOCRSharpen() {
 		BufferedImage newImage = null;
 		String fileRoot = "adrenaline0";
 		IntArray array = new IntArray(new int[]{1, 1, 1});
@@ -80,7 +80,7 @@ public class HOCRTest {
 		array = ImageUtil.EDGE_ARRAY;
 		File targetDir = new File(SVGHTMLFixtures.EARLY_CHEM_TARGET_DIR, fileRoot);
 		File chemFile = new File(SVGHTMLFixtures.EARLY_CHEM_DIR, fileRoot + ".png");
-		BufferedImage image = ImageIO.read(chemFile);
+		BufferedImage image = ImageUtil.readImage(chemFile);
 		if (image != null) {
 			RGBImageMatrix rgbMatrix = RGBImageMatrix.extractMatrix(image);
 			RGBImageMatrix rgbMatrix1 = rgbMatrix.applyFilter(array);
