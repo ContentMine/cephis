@@ -388,10 +388,17 @@ public abstract class XMLUtil implements XMLConstants {
 	 */
 	public static Element parseXML(String xmlString) throws RuntimeException {
 		Element root = null;
+		if (xmlString == null) {
+			throw new RuntimeException("null xml");
+		}
+		if (xmlString.trim().length() == 0) {
+			throw new RuntimeException("empty xml");
+		}
 		try {
 			Document doc = new Builder().build(new StringReader(xmlString));
 			root = doc.getRootElement();
 		} catch (Exception e) {
+			System.out.println(">xml>"+xmlString+"<");
 			throw new RuntimeException(e);
 		}
 		return root;

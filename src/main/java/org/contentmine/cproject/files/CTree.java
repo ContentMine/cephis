@@ -1713,7 +1713,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		File svgDir = this.getExistingSVGDir();
 		if (svgDir != null && !CMFileUtil.shouldMake(forceMake, svgDir, existingFulltextPDF)) {
 //			DebugPrint.infoPrintln(debugLevel, "make is skipped: "+existingFulltextPDF);
-			System.out.print(" skipped ");
+			System.out.print("make skipped ");
 			return;
 		}
 		PDDocument document = null;

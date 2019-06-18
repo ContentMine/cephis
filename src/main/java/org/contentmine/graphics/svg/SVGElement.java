@@ -46,6 +46,7 @@ import org.contentmine.eucl.euclid.RealRange.Direction;
 import org.contentmine.eucl.euclid.RealRangeArray;
 import org.contentmine.eucl.euclid.RealSquareMatrix;
 import org.contentmine.eucl.euclid.Transform2;
+import org.contentmine.eucl.euclid.Util;
 import org.contentmine.eucl.xml.XMLConstants;
 import org.contentmine.eucl.xml.XMLUtil;
 import org.contentmine.graphics.AbstractCMElement;
@@ -129,7 +130,7 @@ public class SVGElement extends GraphicsElement {
 		COMMON_ATT_NAMES.add(StyleBundle.FONT_SIZE);
 	}
 
-	protected static final String BOUNDING_BOX = "boundingBox";
+	public static final String BOUNDING_BOX = "boundingBox";
 	
 	private Element userElement;
 	private String strokeSave;
@@ -887,6 +888,7 @@ public class SVGElement extends GraphicsElement {
 	// be careful as transforms require several places in matrix
 	private void formatCommonAttributes(int places) {
 		formatTransform(places);
+		formatFontSize(places);
 		// maybe more later
 	}
 
@@ -1927,6 +1929,17 @@ public class SVGElement extends GraphicsElement {
 	public void setParentID(String id) {
 		if (id != null) {
 			this.addAttribute(new Attribute(PARENT_ID, id));
+		}
+	}
+
+	public void formatFontSize(int size) {
+		if (this != null) {
+			setFontSize(Util.format(getFontSize(), size));
+		}
+	}
+	public void formatOpacity(int size) {
+		if (this != null) {
+			setOpacity(Util.format(getOpacity(), size));
 		}
 	}
 

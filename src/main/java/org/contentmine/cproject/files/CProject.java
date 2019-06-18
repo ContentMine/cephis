@@ -140,6 +140,7 @@ public class CProject extends CContainer {
 	private BiMap<File, File> newFileByOld;
 	private JsonArray renamedFileFileArray;
 	private PDFDocumentProcessor pdfDocumentProcessor;
+	private List<String> omitRegexList;
 	
 	public static void main(String[] args) {
 		CProject cProject = new CProject();
@@ -1107,9 +1108,21 @@ public class CProject extends CContainer {
 		List<File> oldFiles = new ArrayList<File>(newFileByOld.keySet());
 		List<File> newFiles = new ArrayList<File>();
 		for (File oldFile : oldFiles) {
-			File newFile = newFileByOld.get(oldFile);
-			newFiles.add(newFile);
-			addMappedFilesToRenamedFileArray(oldFile, newFile);
+			boolean omit = false;
+			if (omitRegexList != null) {
+				for (String omitRegex : omitRegexList) {
+					String name = oldFile.getName();
+					if (Pattern.matches(omitRegex, name)) {
+						omit = true;
+						break;
+					}
+				}
+			}
+			if (!omit) {
+				File newFile = newFileByOld.get(oldFile);
+				newFiles.add(newFile);
+				addMappedFilesToRenamedFileArray(oldFile, newFile);
+			}
 		}
 		
 		if (newFiles.size() > 0) {
@@ -1247,6 +1260,10 @@ public class CProject extends CContainer {
 
 	public String getName() {
 		return directory == null ? null : directory.getName();
+	}
+
+	public void setOmitRegexList(List<String> omitRegexList) {
+		this.omitRegexList = omitRegexList;
 	}
 
 

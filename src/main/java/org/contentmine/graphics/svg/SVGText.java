@@ -1646,6 +1646,18 @@ public class SVGText extends SVGElement {
 	public static void sortByX(List<SVGText> textList) {
 		Collections.sort(textList, new XComparator());
 	}
+
+	/** if svgText has sibling rect treat as a bounding box.
+	 * normally used when third party programs create this box
+	 */
+	public void addBBoxAttributeFromSiblingRect() {
+		List<Element> rects = XMLUtil.getQueryElements(this, "../*[local-name()='"+SVGRect.TAG+"']");
+		if (rects.size() > 0) {
+			Real2Range bbox = ((SVGRect)rects.get(0)).getBoundingBox();
+			this.addAttribute(new Attribute(SVGElement.BOUNDING_BOX, bbox.toString()));
+		}
+	}
+
 	
 
 

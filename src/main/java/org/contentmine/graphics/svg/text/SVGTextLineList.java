@@ -226,7 +226,6 @@ public class SVGTextLineList extends SVGG implements List<SVGTextLine> {
 		String xpath = ".//*[local-name()='"+SVGG.TAG+"' and @class='"+SVGTextLine.TAG+"' and *[local-name()='"+SVGText.TAG+"']]";
 		List<SVGElement> textLines = SVGUtil.getQuerySVGElements(svgElement, 
 				xpath);
-//		LOG.debug(xpath + "//" + textLineList.size());
 		SVGTextLineList textLineList = new SVGTextLineList();
 		for (SVGElement tl : textLines) {
 			SVGTextLine textLine = SVGTextLine.createSVGTextLine(tl);
