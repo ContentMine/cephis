@@ -45,7 +45,6 @@ public class AxialPixelFrequencies {
 				}
 				xFrequencies.setElementAt(i, totalBlack);
 			}
-//			LOG.debug(xFrequencies);
 		}
 	}
 	private void calculateYAxialPixelFrequenciesFromImage() {
@@ -61,7 +60,6 @@ public class AxialPixelFrequencies {
 				}
 				yFrequencies.setElementAt(i, totalBlack);
 			}
-//			LOG.debug(yFrequencies);
 		}
 	}
 
