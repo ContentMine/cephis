@@ -83,7 +83,7 @@ public class HOCRReader extends InputReader {
 	private static final String LOW_CONF_COL = "red";
 	private static final String UNEDITED_COL = "green";
 //	private static final String LINE_COL = "yellow";
-	private static final String LINE_COL = "orange";
+	private static final String LINE_COL = "darkgray";
 	
 	private static final double DEFAULT_FONT_SIZE = 10.0;
 	
