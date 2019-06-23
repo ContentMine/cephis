@@ -33,6 +33,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.Util;
 import org.contentmine.graphics.html.HtmlElement;
+import org.contentmine.graphics.html.HtmlHtml;
 
 import nu.xom.Attribute;
 import nu.xom.Builder;
@@ -1509,6 +1510,16 @@ public abstract class XMLUtil implements XMLConstants {
 	 */
 	public static String localNameXPath(String localName) {
 		return "*[local-name()='" + localName + "']";
+	}
+
+	public static void writeQuietly(Element element, File xmlFile, int indent) {
+		if (element != null && xmlFile != null) {
+			try {
+				XMLUtil.debug(element, xmlFile, indent);
+			} catch (IOException e) {
+				throw new RuntimeException("Cannot write file: "+xmlFile, e);
+			}
+		}
 	}
 
 }

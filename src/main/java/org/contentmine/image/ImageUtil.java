@@ -357,9 +357,9 @@ public class ImageUtil {
 		int imageHeight = image.getHeight();
 		int xMin = xRange.getMin();
 		int yMin = yRange.getMin();
-		int clipWidth = xRange.getRange();
+		int clipWidth = xRange.getRange() + 1; // min and max inclusive
 		clipWidth = Math.min(clipWidth, imageWidth - xMin);
-		int clipHeight = yRange.getRange();
+		int clipHeight = yRange.getRange() + 1;
 		clipHeight = Math.min(clipHeight, imageHeight - yMin);
 		if (clipWidth > 0 && clipHeight > 0) {
 			subImage = new BufferedImage(clipWidth, clipHeight, image.getType());

@@ -60,7 +60,11 @@ public class HtmlA extends HtmlElement {
 	}
 
 	public void setTarget(Target target) {
-		this.setAttribute(TARGET, target.toString());
+		this.setTarget(target.toString());
+	}
+
+	public void setTarget(String s) {
+		this.setAttribute(TARGET, s);
 	}
 
 	public String getHref() {

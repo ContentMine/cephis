@@ -183,7 +183,7 @@ public class SVGLineList extends SVGG implements Iterable<SVGLine> {
 		}
 		return g;
 	}
-
+	
 	/** merges lines (H or V).
 	 * See LineMerger
 	 * modifies 'this'

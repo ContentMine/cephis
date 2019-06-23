@@ -85,7 +85,7 @@ public abstract class FloodFill {
 	public PixelIslandList getIslandList() {
 		ensureIslandList();
 		if (!fillIslands()) {
-			LOG.error("TOO_MANY_ISLANDS > "+maxIslands+" maybe requires imageprocessing?");
+			System.err.println(">island overflow> "+maxIslands /* + " maybe requires imageprocessing?"*/);
 		}
 		for (PixelIsland island : islandList) {
 			island.setDiagonal(diagonal);
