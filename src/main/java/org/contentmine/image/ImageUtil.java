@@ -950,6 +950,8 @@ public class ImageUtil {
 		}
 		try {
 			image = ImageIO.read(file);
+		} catch (IndexOutOfBoundsException e) {
+			throw new RuntimeException("Cannot read image, probably corrupt file: "+file);
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot read image: "+file);
 		}
