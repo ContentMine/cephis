@@ -366,6 +366,7 @@ public class HOCRReader extends InputReader {
 					HtmlDiv htmlDiv = (HtmlDiv) child;
 					if (OCR_PAGE.equals(htmlDiv.getClassAttribute())) {
 						HtmlSVG page = this.createPageFromTesseract(htmlDiv);
+//						LOG.debug("page "+page.svg.toXML());
 						wordPageList.appendChild(page.svg);
 						newBody.appendChild(page.html); 
 					} else {
@@ -443,6 +444,7 @@ public class HOCRReader extends InputReader {
 				HtmlSpan htmlSpan = (HtmlSpan) child;
 				if (OCR_LINE.equals(htmlSpan.getClassAttribute())) {
 					HtmlSVG line = this.createLineFromTesseract(htmlSpan);
+//					LOG.debug("line "+line.toString());
 					svgPara.appendChild(line.svg);
 					htmlP.appendChild(line.html);
 				} else {
@@ -456,6 +458,8 @@ public class HOCRReader extends InputReader {
 	}
 
 	private HtmlSVG createLineFromTesseract(HtmlSpan lineSpan) {
+		boolean fontSizeAnnotation = false;
+
 		SVGWordLine svgLine = new SVGWordLine();
 		HOCRReader.copyAttributes(lineSpan, svgLine);
 		HtmlSpan htmlLineSpan = new HtmlSpan();
@@ -467,38 +471,53 @@ public class HOCRReader extends InputReader {
 		
 		Real2Range bbox = hocrTitle.getBoundingBox();
 		if (bbox.getXRange().getRange() > MIN_WIDTH && bbox.getYRange().getRange() > MIN_WIDTH) {
-			boolean largeText = false;
 			hocrTitle.addAttributes(svgLine);
-			hocrTitle.appendChild(svgLine, bbox);
-			SVGShape rect = SVGRect.createFromReal2Range(bbox);
-			rect.setFill(LINE_COL);
-			rect.setOpacity(RECT_OPACITY);
-			svgLine.appendChild(rect);
-			Double fontSize = svgLine.getBoundingBox().getYRange().getRange();
-			if (fontSize > getMaxFontSize()) {
-				LOG.trace("largeText "+fontSize);
-				fontSize = getMaxFontSize();
-				largeText = true;
+			if (fontSizeAnnotation) {
+				hocrTitle.addTextSizeAnnotation(svgLine, bbox);
 			}
-			svgLine.setFontSize(fontSize);
+			addRectForBBox(svgLine, bbox);
+			boolean largeText = setFontSize(svgLine);
 			svgLine.setSVGClassName(LINE);
 			Elements childs = lineSpan.getChildElements();
 			for (int i = 0; i < childs.size(); i++) {
 				Element child = childs.get(i);
-				if (child instanceof HtmlSpan) {
-					HtmlSpan htmlSpan1 = (HtmlSpan) child;
-					String classAttribute = htmlSpan1.getClassAttribute();
-					if (OCRX_WORD.equals(classAttribute)) {
-						addWord(svgLine, htmlLineSpan, largeText, htmlSpan1);
-					} else if (classAttribute == null) {
-						// ? error
-					} else {
-						LOG.debug("omitted attribute: "+classAttribute);
-					}
-				}
+				addWordsFromLineSpan(svgLine, htmlLineSpan, largeText, child);
 			}
 		}
 		return htmlSVG;
+	}
+
+	private void addWordsFromLineSpan(SVGWordLine svgLine, HtmlSpan htmlLineSpan, boolean largeText, Element child) {
+		if (child instanceof HtmlSpan) {
+			HtmlSpan htmlSpan1 = (HtmlSpan) child;
+			String classAttribute = htmlSpan1.getClassAttribute();
+			if (OCRX_WORD.equals(classAttribute)) {
+				addWord(svgLine, htmlLineSpan, largeText, htmlSpan1);
+			} else if (classAttribute == null) {
+				// ? error
+			} else {
+				LOG.debug("omitted attribute: "+classAttribute);
+			}
+		}
+	}
+
+	private boolean setFontSize(SVGWordLine svgLine) {
+		boolean largeText = false;
+		Double fontSize = svgLine.getBoundingBox().getYRange().getRange();
+		if (fontSize > getMaxFontSize()) {
+			LOG.trace("largeText "+fontSize);
+			fontSize = getMaxFontSize();
+			largeText = true;
+		}
+		svgLine.setFontSize(fontSize);
+		return largeText;
+	}
+
+	private void addRectForBBox(SVGWordLine svgLine, Real2Range bbox) {
+		SVGShape rect = SVGRect.createFromReal2Range(bbox);
+		rect.setFill(LINE_COL);
+		rect.setOpacity(RECT_OPACITY);
+		svgLine.appendChild(rect);
 	}
 
 	private void addTitle(HOCRTitle hocrTitle) {
@@ -593,6 +612,7 @@ public class HOCRReader extends InputReader {
 	}
 
 	private HtmlSVG createWordFromTesseract(HtmlSpan htmlSpan0) {
+		boolean annotateTextSize = false;
 		LOG.trace("createWordFromTesseract");
 		SVGWord svgWord = new SVGWord();
 		HOCRReader.copyAttributes(htmlSpan0, svgWord);
@@ -610,7 +630,9 @@ public class HOCRReader extends InputReader {
 				SVGShape rect = SVGRect.createFromReal2Range(bbox);
 				rect.setFill(UNEDITED_COL);
 				rect.setOpacity(RECT_OPACITY);
-				hocrTitle.appendChild(svgWord, bbox);
+				if (annotateTextSize) {
+					hocrTitle.addTextSizeAnnotation(svgWord, bbox);
+				}
 				svgWord.appendChild(rect);
 				svgWord.setSVGClassName(WORD);
 				Elements childs = htmlSpan0.getChildElements();
@@ -1101,5 +1123,6 @@ class HtmlSVG {
 		this.html = html;
 		this.svg = svg;
 	}
+	
 
 }

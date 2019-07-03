@@ -260,7 +260,7 @@ public class HOCRTitle {
 		return sb.toString();
 	}
 
-	void appendChild(SVGElement svgElement, Real2Range bbox) {
+	void addTextSizeAnnotation(SVGElement svgElement, Real2Range bbox) {
 		Double size = getSize();
 		if (size != null) {
 			SVGText text = new SVGText(bbox.getLLURCorners()[0], ""+size);

@@ -1,6 +1,8 @@
 package org.contentmine.graphics.svg;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -73,6 +75,31 @@ public class SVGUtil {
 		} catch (Exception e) {
 			throw new RuntimeException("cannot parse input stream", e);
 		}
+	}
+
+	/** creates an SVGElement
+	 * 
+	 * @param is
+	 * @return
+	 */
+	public static SVGElement parseToSVGElement(File file) {
+		Element element = null;
+		if (file == null) {
+			throw new RuntimeException("null SVG file");
+		}
+		if (!file.exists()) {
+			throw new RuntimeException("SVG file does not exist: "+file);
+		}
+		if (file.isDirectory()) {
+			throw new RuntimeException("SVG file is directory: "+file);
+		}
+		FileInputStream fis;
+		try {
+			fis = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException("BUG file does not exist: +file");
+		}
+		return parseToSVGElement(fis);
 	}
 
 	public static List<SVGElement> getQuerySVGElements(AbstractCMElement svgElement, String xpath) {
