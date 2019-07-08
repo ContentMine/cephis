@@ -1133,8 +1133,9 @@ public class CProject extends CContainer {
 
 	private void runMakeProjectCommandLine(String suffix) {
 //				Collections.sort(newFiles);
-		this.run("--project "+this.getDirectory()+" --" +
-            MAKE_PROJECT + " (\\1)/" + CTree.FULLTEXT + "."+suffix + " --fileFilter .*/(.*)\\." + suffix);
+		String args = "--project "+this.getDirectory()+" --" +
+            MAKE_PROJECT + " (\\1)/" + CTree.FULLTEXT + "."+suffix + " --fileFilter .*/(.*)\\." + suffix;
+		this.run(args);
 	}
 
 	private void addMappedFilesToRenamedFileArray(File oldFile, File newFile) {
@@ -1167,6 +1168,30 @@ public class CProject extends CContainer {
 		return files;
 	}
 
+	public void deleteCTrees(CTreeList treeList) throws IOException {
+		for (CTree cTree : treeList) {
+			deleteCTree(cTree);
+		}
+	}
+	
+	public void deleteCTree(CTree cTree) throws IOException {
+		if (cTree != null) {
+			File cTreeDirectory = cTree.getDirectory();
+			// make sure this is a child of this, just to be safe
+			File parentFile = cTreeDirectory != null ? cTreeDirectory.getParentFile() : null;
+			if (this.directory.toString().equals(parentFile.toString())) {
+				LOG.debug("deleting: "+cTreeDirectory);
+				FileUtils.forceDelete(cTreeDirectory);
+			}
+		}
+	}
+
+	/** this doesn't look right!!
+	 * 
+	 * @param suffix
+	 * @param files
+	 * @return
+	 */
 	private List<File> removeFulltext(String suffix, List<File> files) {
 		List<File> newFiles = new ArrayList<File>();
 		for (File file : files) {

@@ -206,9 +206,10 @@ public class CMFileUtil {
 		if (fileList == null) {
 			throw new RuntimeException("no files in CMFileUtil");
 		}
-		if (maxLength < 1) {
-			throw new RuntimeException("filename lengths must be greater than 0");
-		}
+//		if (maxLength < 1) {
+//			return null;
+//			throw new RuntimeException("filename lengths must be greater than 0");
+//		}
 		getOrCreateNewFileByOldFile();
 		Multiset<String> basenameSet = HashMultiset.create();
 		for (File oldFile : fileList) {
@@ -220,11 +221,14 @@ public class CMFileUtil {
 			String oldFilename = oldFile.getAbsolutePath().toString();
 			String basename = FilenameUtils.getBaseName(oldFilename);
 			String extension = FilenameUtils.getExtension(oldFilename);
-			basename = compressBase(basenameSet, basename, maxLength);
+			if (maxLength > 0) {
+				basename = compressBase(basenameSet, basename, maxLength);
+			}
 			File newFile = new File(parent, basename+"."+extension);
 			String newFilename = newFile.getAbsolutePath().toString();
 			try {
-				if (newFilename.equalsIgnoreCase(oldFilename)) {
+				if (maxLength == 0) {
+				} else if (newFilename.equalsIgnoreCase(oldFilename)) {
 					// differ only in case, so rename and rename back
 					newFile = CMFileUtil.convertNameToLowerCase(oldFile);
 					if (!newFile.exists()) {
@@ -377,12 +381,12 @@ public class CMFileUtil {
 	 * @throws IOException
 	 */
 	public static void forceMove(File srcFile, File destFile) throws IOException {
-		System.out.println("S "+srcFile+ "=> "+destFile);
-		System.out.println("del "+destFile);
+//		System.out.println("S "+srcFile+ "=> "+destFile);
+//		System.out.println("del "+destFile);
 		CMFileUtil.forceDelete(destFile);
-		System.out.println("CP "+srcFile+ "=> "+destFile);
+//		System.out.println("CP "+srcFile+ "=> "+destFile);
 		CMFileUtil.forceCopy(srcFile, destFile);
-		System.out.println("del "+srcFile);
+//		System.out.println("del "+srcFile);
 		CMFileUtil.forceDelete(srcFile);
 	}
 

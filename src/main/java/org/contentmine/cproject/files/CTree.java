@@ -2003,5 +2003,25 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return metadataEntry;
 	}
 
-
+	/** create a project for the tree. 
+	 * if null, locates parent directory and create project from that
+	 * no current check as to whether more than one project, so use with care.
+	 * (ideally should check all siblings)
+	 * i.e. if re-used carelessly might create different Project with different resources
+	 * 
+	 * will set this project
+	 * @return
+	 */
+	public CProject getOrCreateProject() {
+		if (this.cProject == null) {
+			File file = getDirectory();
+			if (file != null) {
+				File parentFile = file.getParentFile();
+				if (parentFile != null) {
+					this.cProject = new CProject(parentFile);
+				}
+			}
+		}
+		return cProject;
+	}
 }
