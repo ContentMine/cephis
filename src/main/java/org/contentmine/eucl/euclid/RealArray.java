@@ -366,9 +366,10 @@ public class RealArray extends ArrayBase implements Iterable<Double> {
         this(strings.length);
         for (int i = 0; i < strings.length; i++) {
         	try {
-        		array[i] = Real.parseDouble(strings[i]);
+        		String db = strings[i];
+				array[i] = (db.trim().equals("") || db.equals("NaN")) ? Double.NaN : Real.parseDouble(db);
         	} catch (Exception e) {
-        		throw new EuclidRuntimeException("Bad array element at ("+i+") :"+strings[i]+":");
+        		throw new EuclidRuntimeException("Bad array element at ("+i+") :"+strings[i]+":", e);
         	}
         }
     }

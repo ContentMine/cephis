@@ -27,6 +27,7 @@ import java.awt.geom.GeneralPath;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -483,7 +484,7 @@ public class GraphicsElement extends AbstractCMElement implements SVGConstants {
 		}
 	}
 
-	private Object getSubStyle(String attName) {
+	public Object getSubStyle(String attName) {
 		if (useStyleAttribute) {
 			StyleBundle styleBundle = getStyleBundle();
 			return (styleBundle == null ? null : styleBundle.getSubStyle(attName));
@@ -829,6 +830,7 @@ public class GraphicsElement extends AbstractCMElement implements SVGConstants {
 	public static boolean isEmptyValue(String value) {
 		return value == null || value.trim().length() == 0;
 	}
+	
 	
 }
 

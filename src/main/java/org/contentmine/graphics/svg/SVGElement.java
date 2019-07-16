@@ -1966,4 +1966,32 @@ public class SVGElement extends GraphicsElement {
 		}
 		return elementList;
 	}
+
+	/** gets elements with specific attribute values (not floats) 
+	 * allows for style bundle
+	 * 
+	 * @param elementList
+	 * @param attName
+	 * @param attVal
+	 * @return
+	 */
+	public static List<SVGElement> getElementsWithAttribute(List<? extends SVGElement> elementList, String attName, String attVal) {
+	List<SVGElement> newElementList = new ArrayList<>();
+		for (SVGElement element : elementList) {
+			String elementAttVal = null;
+			Object obj = element.getSubStyle(attName);
+			elementAttVal = obj == null ? null : String.valueOf(obj);
+			elementAttVal = elementAttVal != null ? elementAttVal : element.getAttributeValue(attVal) ;
+			if (attVal.equals(elementAttVal)) {
+//				LOG.debug("a "+attName+"/"+attVal);
+				newElementList.add(element);
+			} else {
+//				LOG.debug("NOT "+attName+"/"+elementAttVal);
+			}
+		}
+		return newElementList;
+	}
+
+
+
 }
