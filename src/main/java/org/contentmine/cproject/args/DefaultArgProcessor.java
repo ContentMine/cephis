@@ -1112,7 +1112,7 @@ public class DefaultArgProcessor {
 	protected void runMethodsOfType(String methodNameType) {
 		List<ArgumentOption> optionList = getOptionsWithMethod(methodNameType);
 		for (ArgumentOption option : optionList) {
-			LOG.debug("option "+option+" "+this.getClass());
+			LOG.trace("option "+option+" "+this.getClass());
 			String methodName = null;
 			try {
 				methodName = option.getMethodName(methodNameType);
