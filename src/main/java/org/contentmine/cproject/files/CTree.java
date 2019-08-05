@@ -279,11 +279,12 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	// this is confusing. there are (a) explicit images and (b) images extracted from PDFs
 //	public static final String IMAGE_DIR         = "image/";
 	public static final String FRONT_DIR         = "front/";
+	public static final String PDF_DIR           = "pdf/";
 	public static final String PDF_IMAGES_DIR    = "pdfimages/";
 	public static final String RAW_IMAGES_DIR    = "rawimages/";
-	public static final String SVG_IMAGES_DIR    = "svgimages/"; // not sure where these come from
-	public static final String PDF_DIR           = "pdf/";
 	public static final String RESULTS_DIR       = "results/";
+	public static final String SECTIONS_DIR      = "sections/";
+	public static final String SVG_IMAGES_DIR    = "svgimages/"; // not sure where these come from
 	public static final String SUPPLEMENTAL_DIR  = "supplement/";
 	public static final String SVG_DIR           = "svg/";
 	public static final String TABLE_DIR         = "table/";
@@ -298,6 +299,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 					FRONT_DIR,
 					PDF_IMAGES_DIR,
 					RAW_IMAGES_DIR,
+					SECTIONS_DIR,
 					SVG_IMAGES_DIR,
 					PDF_DIR,
 					RESULTS_DIR,
@@ -436,7 +438,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	private File frontDir;
 	private PDFDocumentProcessor pdfDocumentProcessor;
 	private boolean forceMake = false;
-	private TreeImageManager pdfImageManager;;
+	private TreeImageManager pdfImageManager;
 
 	public CTree() {
 		super();
@@ -571,22 +573,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	}
 	
 	public void createDirectory(File dir, boolean delete) {
-		if (dir == null) {
-			throw new RuntimeException("Null directory");
-		}
 		this.directory = dir;
-		if (delete && dir.exists()) {
-			try {
-				FileUtils.forceDelete(dir);
-			} catch (IOException e) {
-				throw new RuntimeException("Cannot delete directory: "+dir, e);
-			}
-		}
-		try {
-			FileUtils.forceMkdir(dir);
-		} catch (IOException e) {
-			throw new RuntimeException("Cannot make directory: "+dir+" already exists");
-		} // maybe 
+		CMFileUtil.createDirectory(dir, delete);
 	}
 
 	public void readDirectory(File dir) {
@@ -655,7 +643,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return directory != null && isExistingFile(new File(directory, fileType));
 	}
 	
-	// ---
+	// FULLTEXT_XML =========================
 	/** checks that this 
 	 * 
 	 * @return
@@ -682,7 +670,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(FULLTEXT_XML);
 	}
 	
-	// ----
+	// FULLTEXT_HTML =========================
 
 	public boolean hasFulltextHTML() {
 		return hasExistingDirectory() && isExistingFile(getExistingFulltextHTML());
@@ -696,7 +684,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(FULLTEXT_HTML);
 	}
 
-	// ----
+	// FULLTEXT_XHTML =========================
 
 	public boolean hasFulltextXHTML() {
 		return hasExistingDirectory() && isExistingFile(getExistingFulltextXHTML());
@@ -720,7 +708,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(FULLTEXT_XHTML);
 	}
 
-	// ---
+	// QUICKSCRAPE_MD =========================
 	public boolean hasQuickscrapeMD() {
 		return isExistingFile(new File(directory,  Type.QUICKSCRAPE.getCTreeMDFilename()));
 	}
@@ -743,7 +731,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile( Type.QUICKSCRAPE.getCTreeMDFilename());
 	}
 
-	// ---
+	// SCHOLARLY_HTML =========================
 	public boolean hasScholarlyHTML() {
 		return getExistingScholarlyHTML() != null;
 	}
@@ -766,7 +754,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(SCHOLARLY_HTML);
 	}
 	
-	// ---
+	// FULLTEXT_PDF =========================
 	public boolean hasFulltextPDF() {
 		return getExistingFulltextPDF() != null;
 	}
@@ -779,7 +767,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(FULLTEXT_PDF);
 	}
 
-	// ---
+	// FULLTEXT_PDFTXT =========================
 	public boolean hasFulltextPDFTXT() {
 		return getExistingFulltextPDFTXT() != null;
 	}
@@ -792,7 +780,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(FULLTEXT_PDF_TXT);
 	}
 
-	// ---
+	// FULLTEXT_DOCX =========================
 	
 	public boolean hasFulltextDOCX() {
 		return getExistingFulltextDOCX() != null;
@@ -806,7 +794,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(FULLTEXT_DOCX);
 	}
 
-	// ---
+	// RESULTS =========================
 	public boolean hasResultsDir() {
 		return getExistingResultsDir() != null;
 	}
@@ -825,7 +813,7 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedFile(RESULTS_DIR);
 	}
 
-	// ---
+	// IMAGES =========================
 	public boolean hasImageDir() {
 		return getExistingImageDir() != null;
 	}
@@ -845,6 +833,8 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return getExistingReservedDirectory(RAW_IMAGES_DIR, false);
 	}
 
+	// PDF_IMAGES =========================
+
 	public File getExistingPDFImagesDir() {
 		return getExistingReservedDirectory(PDF_IMAGES_DIR, false);
 	}
@@ -854,6 +844,25 @@ public class CTree extends CContainer implements Comparable<CTree> {
 	}
 
 	public File getExistingImageFile(String filename) {
+		File imageFile = null;
+		File imageDir = getExistingImageDir();
+		if (imageDir != null) {
+			imageFile = new File(imageDir, filename);
+		}
+		return isExistingFile(imageFile) ? imageFile : null;
+	}
+
+	// SECTIONS =========================
+
+	public File getExistingSectionsDir() {
+		return getExistingReservedDirectory(SECTIONS_DIR, false);
+	}
+
+	public File getOrCreateExistingSectionsDir() {
+		return getExistingReservedDirectory(SECTIONS_DIR, true);
+	}
+
+	public File getExistingSectionsFile(String filename) {
 		File imageFile = null;
 		File imageDir = getExistingImageDir();
 		if (imageDir != null) {
@@ -1181,14 +1190,18 @@ public class CTree extends CContainer implements Comparable<CTree> {
 
 
 	File getResultsDirectory() {
-		File resultsDirectory = new File(getDirectory(), RESULTS_DIRECTORY_NAME);
-		return resultsDirectory;
+		return new File(getDirectory(), RESULTS_DIRECTORY_NAME);
 	}
 
 	File getRawImagesDirectory() {
-		File imageDirectory = new File(getDirectory(), RAW_IMAGES_DIR);
-		return imageDirectory;
+		return new File(getDirectory(), RAW_IMAGES_DIR);
 	}
+
+	File getSectionsDirectory() {
+		File directory = getDirectory();
+		return new File(directory, SECTIONS_DIR);
+	}
+
 
 	public ResultsElement getResultsElement(String pluginName, String methodName) {
 		File resultsDir = getExistingResultsDir();
@@ -1788,14 +1801,43 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		return image;
  	}
 
+	/** creates top level sections/ directory 
+	 * */
+	public File makeSectionsDir(boolean delete) {
+		File sectionsDirectory = getSectionsDirectory();
+//		LOG.debug("sd: "+sectionsDirectory);
+		CMFileUtil.createDirectory(sectionsDirectory, delete);
+		return sectionsDirectory;
+ 	}
+
+	/** returns sections/<sectionName> directory if it exists 
+	 * */
+	public File getExistingSectionDirectory(String sectionName) {
+		File sectionDir = null;
+		File existingSectionsDir = getExistingSectionsDir();
+		if (sectionName != null) {
+			if (existingSectionsDir != null) {
+				File sectionFile = new File(existingSectionsDir, sectionName);
+				sectionDir = sectionFile.exists() ? sectionFile : null;
+			}
+		}
+		return sectionDir;
+ 	}
+
+	/** creates  sections/sectionName directory 
+	 * */
+	public File makeSectionDir(String sectionName, boolean delete) {
+		boolean delete0 = false;
+		File sectionsDir = makeSectionsDir(delete0);
+		File sectionDir = new File(sectionsDir, sectionName);
+		CMFileUtil.createDirectory(sectionDir, delete);
+		return sectionDir;
+ 	}
+
+
 	public String createSVGFilename(Int2 pageImage) {
 		return "page" + pageImage.getX() + "." + pageImage.getY() + "." + CTree.SVG;
 	}
-
-//	public File getOrCreateDerivedImagesDir() {
-//		File derivedImagesDir = new File(getExistingPDFImagesDir(), "derived/");
-//		return derivedImagesDir;
-//	}
 
 	void createAndWriteScholorlyHtml() {
 		List<File> svgFiles = getExistingSVGFileList();
@@ -2023,5 +2065,14 @@ public class CTree extends CContainer implements Comparable<CTree> {
 			}
 		}
 		return cProject;
+	}
+
+	public HtmlTagger getHtmlTagger() {
+		return htmlTagger;
+	}
+
+	public void setHtmlTagger(HtmlTagger htmlTagger) {
+		this.htmlTagger = htmlTagger;
+		htmlTagger.setCTree(this);
 	}
 }

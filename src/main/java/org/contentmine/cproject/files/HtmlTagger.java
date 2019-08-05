@@ -7,4 +7,6 @@ package org.contentmine.cproject.files;
  */
 public interface HtmlTagger {
 
+	void setCTree(CTree cTree);
+
 }

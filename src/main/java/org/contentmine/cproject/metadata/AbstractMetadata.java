@@ -581,7 +581,14 @@ public abstract class AbstractMetadata /*implements MetadataEntry*/ {
 	public static final String CONTRIBUTORS     = "contributors";
 	public static final String COPYRIGHT        = "copyright";
 	public static final String CREATORS         = "creators";
-	public static final String DATE             = "date";
+	
+	public static final String TITL = "titl";
+	public static final String ABST = "abst";
+	public static final String AUTH = "auth";
+	public static final String DATE = "date";
+	public static final String JOUR = "jour";
+
+//	public static final String DATE             = DATE;
 	//	citation_springer_api_url x 117
 	
 	protected static final String DC_CREATOR = "dc.creator";
@@ -1217,13 +1224,14 @@ ARRAY translator; [{"affiliation":[],"family":"Munder","given":"Marc"},{"affilia
 
 	public HtmlDiv createSimpleHtml() {
 		HtmlDiv div = new HtmlDiv();
-		div.appendChild(createSpan("titl", this.getTitle(), 30));
+		div.appendChild(createSpan(TITL, this.getTitle(), 30));
 		div.appendChild(new HtmlBr());
-//		div.appendChild(createSpan("jour", this.getJournal(), 15));
-		div.appendChild(createSpan("auth", String.valueOf(this.getAuthorString()), 15));
-//		div.appendChild(createSpan("date", String.valueOf(this.getDate()), 6));
+		div.appendChild(createSpan(DATE, String.valueOf(this.getDate()), 6));
+		div.appendChild(" ");
+		div.appendChild(createSpan(JOUR, this.getJournal(), 15));
+//		div.appendChild(createSpan(AUTH, String.valueOf(this.getAuthorString()), 15));
 		div.appendChild(new HtmlBr());
-		div.appendChild(createSpan("abst", String.valueOf(this.getAbstract()), 30));
+		div.appendChild(createSpan(ABST, String.valueOf(this.getAbstract()), 30));
 		
 		return div;
 	}

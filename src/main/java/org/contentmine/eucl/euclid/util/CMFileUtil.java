@@ -404,6 +404,27 @@ public class CMFileUtil {
 		}
 	}
 
+	/** physically creates directory 
+	 * */
+	public static void createDirectory(File dir, boolean delete) {
+		if (dir == null) {
+			throw new RuntimeException("Null directory");
+		}
+		if (delete && dir.exists()) {
+			try {
+				FileUtils.forceDelete(dir);
+			} catch (IOException e) {
+				throw new RuntimeException("Cannot delete directory: "+dir, e);
+			}
+		}
+		try {
+			FileUtils.forceMkdir(dir);
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot make directory: "+dir+" already exists");
+		} // maybe 
+	}
+
+
 
 
 }
