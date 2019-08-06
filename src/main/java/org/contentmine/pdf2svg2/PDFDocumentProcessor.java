@@ -157,7 +157,7 @@ public class PDFDocumentProcessor {
 					CTree.FULLTEXT_PAGE+CTree.DOT+key.getZeroBasedSerialString()+CTree.DOT+CTree.SVG));
 				}
 			}
-			LOG.debug("\nwrote SVG to: "+svgDir);
+			LOG.trace("\nwrote SVG to: "+svgDir);
 		}
 	}
 
