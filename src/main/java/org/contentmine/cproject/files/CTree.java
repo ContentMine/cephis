@@ -2075,4 +2075,20 @@ public class CTree extends CContainer implements Comparable<CTree> {
 		this.htmlTagger = htmlTagger;
 		htmlTagger.setCTree(this);
 	}
+
+	public List<String> extractWords() {
+		List<String> rawWords = null;
+		if (this == null) {
+			LOG.warn("null tree");
+		} else if (hasScholarlyHTML()) {
+			rawWords = extractWordsFromScholarlyHtml();
+		} else if (hasFulltextPDFTXT()) {
+			rawWords = extractWordsFromPDFTXT();
+		} else {
+			String msg = "No scholarlyHtml or PDFTXT: "+getDirectory();
+			LOG.trace(msg);
+		}
+		LOG.trace("raw words " + (rawWords != null ? rawWords.size() : null));
+		return rawWords;
+	}
 }

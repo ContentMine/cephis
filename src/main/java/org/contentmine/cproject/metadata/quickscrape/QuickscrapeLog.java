@@ -203,7 +203,7 @@ public class QuickscrapeLog {
 
 	public void writeNoCaptureRecords(CProjectArgProcessor cProjectArgProcessor) throws IOException {
 		List<QSRecord> records = getNoCaptureRecords();
-		File noCaptureFile = new File(cProjectArgProcessor.cProject.getDirectory(), cProjectArgProcessor.quickscrapeCaptureFilename);
+		File noCaptureFile = new File(cProjectArgProcessor.getCProject().getDirectory(), cProjectArgProcessor.quickscrapeCaptureFilename);
 		writeRecords("noCaptures", records, noCaptureFile);
 	}
 
@@ -232,7 +232,7 @@ public class QuickscrapeLog {
 
 	public void writeNo200Records(CProjectArgProcessor cProjectArgProcessor) throws IOException {
 		List<QSRecord> records = getNo200s();
-		File no200File = new File(cProjectArgProcessor.cProject.getDirectory(), cProjectArgProcessor.quickscrapeNo200Filename);
+		File no200File = new File(cProjectArgProcessor.getCProject().getDirectory(), cProjectArgProcessor.quickscrapeNo200Filename);
 		writeRecords("no200", records, no200File);
 	}
 }

@@ -129,6 +129,7 @@ public class ContentProcessor {
 	 * @param resultsDirectoryName
 	 */
 	public List<File> createResultsDirectoriesAndOutputResultsElement(String name) {
+		System.out.println("createResultsDirectoryAndOutputResultsElement: "+name);
 		File optionDirectory = new File(cmTree.getResultsDirectory(), name);
 		List<File> outputDirectoryList = new ArrayList<File>();
 		for (ResultsElement resultsElement : resultsElementList) {
@@ -140,14 +141,16 @@ public class ContentProcessor {
 	}
 
 	public File createResultsDirectoryAndOutputResultsElement(
-			ArgumentOption option, ResultsElement resultsElement/*, String resultsDirectoryName*/) {
-		File optionDirectory = new File(cmTree.getResultsDirectory(), option.getName());
+			 String optionName,  ResultsElement resultsElement) {
+		System.out.println("createResultsDirectoryAndOutputResultsElement: "+optionName);
+		File optionDirectory = new File(cmTree.getResultsDirectory(), optionName);
 		File outputDirectory = createResultsDirectoryAndOutputResultsElement(optionDirectory, resultsElement);
 		return outputDirectory;
 		
 	}
 
 	private File createResultsDirectoryAndOutputResultsElement(File optionDirectory, ResultsElement resultsElement) {
+		System.out.println("createResultsDirectoryAndOutputResultsElement: dir "+optionDirectory);
 		File resultsSubDirectory = null;
 		String title = resultsElement.getTitle();
 		if (title == null) {

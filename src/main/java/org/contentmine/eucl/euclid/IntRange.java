@@ -53,6 +53,7 @@ public class IntRange implements EuclidConstants, Comparable<IntRange> {
 	
 	private final static Pattern CURLY_PATTERN1 = Pattern.compile("\\{([^,]+)\\}");
 	private final static Pattern CURLY_PATTERN2 = Pattern.compile("\\{([^,]+),([^,]+)\\}");
+	private final static Pattern WILD_PATTERN2 = Pattern.compile("\\s*[\\(\\{]?\\s*(\\-?\\d+)[,|\\s+]\\s*(\\-?\\d+)\\s*[\\)\\}]?\\s*"); // crude
 	private final static String ANY = "*";
 
 	public final static IntRangeComparator ASCENDING_MIN_COMPARATOR = new IntRangeComparator(End.MIN);
@@ -105,6 +106,37 @@ public class IntRange implements EuclidConstants, Comparable<IntRange> {
         minval = (int) Math.round(r.minval);
         maxval = (int) Math.round(r.maxval);
     }
+
+    /** create from integers
+     * traps invalid IntRange
+     * 
+     * @param min
+     * @param max
+     * @return null if invalid
+     */
+    public static IntRange create(int min, int max) {
+    	return min > max ? null : new IntRange(min, max);
+    }
+    
+    /** create from strings in the wild such as 
+     * 1,3
+     * {1,3}
+     * (1, 3)
+     * -3 -1
+     * @param s
+     * @return null if fails
+     */
+    public static IntRange parse(String s) {
+    	IntRange intRange = null;
+    	if (s != null) {
+    		Matcher matcher = WILD_PATTERN2.matcher(s);
+			if (matcher.matches()) {
+    			intRange = IntRange.create(Integer.valueOf(matcher.group(1)), Integer.valueOf(matcher.group(2)));
+    		}
+    	}
+    	return intRange;
+    }
+    
     /**
      * a Range is only valid if its maxval is not less than its minval; this
      * tests for uninitialised ranges

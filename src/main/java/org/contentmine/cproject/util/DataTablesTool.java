@@ -502,7 +502,7 @@ public class DataTablesTool {
 
 	public void setMetadataByTreename(Map<String, AbstractMetadata> metadataByCTreename) {
 		if (metadataByCTreename == null) {
-			throw new RuntimeException("Null metadataByTreename");
+			LOG.warn("Null metadataByTreename");
 		}
 		this.metadataByCTreename = metadataByCTreename;
 	}

@@ -19,6 +19,8 @@ package org.contentmine.eucl.euclid.euclid;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.contentmine.eucl.euclid.IntArray;
 import org.contentmine.eucl.euclid.IntRange;
 import org.junit.Assert;
@@ -32,6 +34,10 @@ import org.junit.Test;
  * 
  */
 public class IntRangeTest {
+	private static final Logger LOG = Logger.getLogger(IntRangeTest.class);
+	static {
+		LOG.setLevel(Level.DEBUG);
+	}
 
 	IntRange i0;
 	IntRange i1;
@@ -297,4 +303,34 @@ public class IntRangeTest {
 		intArray = new IntRange().createArray();
 		Assert.assertEquals("()", intArray.toString());
 	}
+	
+	@Test
+	public void testCreate() {
+		IntRange intRange;
+		intRange = IntRange.create(1, 2);
+		Assert.assertEquals("(1,2)", intRange.toString());
+		intRange = IntRange.create(1, 1);
+		Assert.assertEquals("(1,1)", intRange.toString());
+		intRange = IntRange.create(1, 0);
+		Assert.assertNull(intRange);
+		intRange = IntRange.create(-1, 0);
+		Assert.assertEquals("(-1,0)", intRange.toString());
+	}
+	
+	@Test
+	public void testParse() {
+		IntRange intRange;
+		intRange = IntRange.parse("{1,2}");
+		Assert.assertEquals("(1,2)", intRange.toString());
+		intRange = IntRange.parse("(1,2)");
+		Assert.assertEquals("(1,2)", intRange.toString());
+		intRange = IntRange.parse(" (1, 2) ");
+		Assert.assertEquals("(1,2)", intRange.toString());
+		intRange = IntRange.parse(" {1, 2} ");
+		Assert.assertEquals("(1,2)", intRange.toString());
+		intRange = IntRange.parse(" -1, 2 ");
+		Assert.assertEquals("(-1,2)", intRange.toString());
+	}
+	
+
 }

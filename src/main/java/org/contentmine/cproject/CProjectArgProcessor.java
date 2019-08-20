@@ -18,6 +18,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.contentmine.CHESConstants;
+import org.contentmine.cproject.args.AbstractTool;
 import org.contentmine.cproject.args.ArgIterator;
 import org.contentmine.cproject.args.ArgumentOption;
 import org.contentmine.cproject.args.DefaultArgProcessor;
@@ -100,6 +101,10 @@ public class CProjectArgProcessor extends DefaultArgProcessor {
 		this();
 		setDefaults();
 		parseArgs(args);
+	}
+
+	public CProjectArgProcessor(AbstractTool abstractTool) {
+		super(abstractTool);
 	}
 
 	private void setDefaults() {

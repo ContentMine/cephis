@@ -195,8 +195,8 @@ public class DefaultArgProcessor {
 	protected List<DefaultStringDictionary> dictionaryList;
 	private String filterExpression;
 	private File outputFile;
-	public String outputDirName;
-	public CProject cProject;
+	private String outputDirName;
+	protected CProject cProject;
 	
 	private ProjectSnippetsTree projectSnippetsTree;
 	private ProjectFilesTree projectFilesTree;
@@ -210,9 +210,10 @@ public class DefaultArgProcessor {
 	private Level exceptionLevel;
 	protected Pattern fileFilterPattern;
 	private IOFileFilter ioFileFilter;
-	public String outputFileRegex;
+	protected String outputFileRegex;
 	protected CHESRunner runner;
 	private boolean debug;
+	protected AbstractTool abstractTool;
 
 	protected List<ArgumentOption> getArgumentOptionList() {
 		return argumentOptionList;
@@ -231,6 +232,10 @@ public class DefaultArgProcessor {
 	public DefaultArgProcessor(Class clazz) {
 		ensureDefaultLogFiles();
 		readArgumentOptions(clazz, getArgsResource());
+	}
+
+	public DefaultArgProcessor(AbstractTool abstractTool) {
+		this.abstractTool = abstractTool;
 	}
 
 	private void ensureDefaultLogFiles() {
@@ -1117,7 +1122,7 @@ public class DefaultArgProcessor {
 			try {
 				methodName = option.getMethodName(methodNameType);
 				if (methodName != null) {
-					LOG.trace("DBG running method: "+methodName);
+					AbstractTool.debug(abstractTool, 1, "method: "+methodName, LOG);
 					instantiateAndRunMethod(option, methodName);
 				}
 			} catch (IllegalArgumentException ee) {
@@ -1572,6 +1577,18 @@ public class DefaultArgProcessor {
 
 	public void setDebug(boolean debug) {
 		this.debug = debug;
+	}
+
+	public AbstractTool getAbstractTool() {
+		return abstractTool;
+	}
+
+	public void setAbstractTool(AbstractTool abstractTool) {
+		this.abstractTool = abstractTool;
+	}
+
+	public int getVerbosityInt() {
+		return (getAbstractTool() == null) ? 0 : getAbstractTool().getVerbosityInt();
 	}
 
 }
