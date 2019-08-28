@@ -411,6 +411,10 @@ public class ArgumentOption {
 	}
 
 	public void setParseMethod(String parseMethodName) {
+		LOG.trace("parseMethod: "+parseMethodName);
+		if (parseMethodName.equals("parseSearch")) {
+//			LOG.debug("Parse search");
+		}
 		if (parseMethodName != null) {
 			try {
 				Method method = argProcessorClass.getMethod(parseMethodName, ArgumentOption.class, ArgIterator.class);

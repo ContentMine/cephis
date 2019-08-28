@@ -451,14 +451,6 @@ public class DefaultArgProcessor {
 		setFilter(filterStrings);
 	}
 
-	// move to ami
-	/**
-	public void parseDictionary(ArgumentOption option, ArgIterator argIterator) {
-		List<String> dictionarySources = argIterator.createTokenListUpToNextNonDigitMinus(option);
-		createAndAddDictionaries(dictionarySources);
-	}
-*/
-
 	public void runMakeDocs(ArgumentOption option) {
 		transformArgs2html();
 	}
@@ -491,7 +483,7 @@ public class DefaultArgProcessor {
 	}
 
 	public void outputMethod(ArgumentOption option) {
-		LOG.trace("output method not written");
+		LOG.warn("output method not written");
 	}
 
 	public void outputAnalysis(ArgumentOption option) {
@@ -815,41 +807,6 @@ public class DefaultArgProcessor {
 		}
 	}
 
-/**
- * move to ami
- * @param dictionarySources
- */
-	/*
-	public void createAndAddDictionaries(List<String> dictionarySources) {
-		ensureDictionaryList();
-		for (String dictionarySource : dictionarySources) {
-			InputStream is = null;
-			String dictionaryResource = AMI_DICTIONARY_RESOURCE+dictionarySource;
-			if (!dictionaryResource.endsWith(DOT_XML)) {
-				dictionaryResource = dictionaryResource+DOT_XML;
-			}
-			LOG.trace(dictionaryResource);
-			is = this.getClass().getResourceAsStream(dictionaryResource);
-			if (is == null) {
-				is = new ResourceLocation().getInputStreamHeuristically(dictionarySource);
-			}
-			if (is == null) {
-				throw new RuntimeException("cannot read/create inputStream for dictionary: "+dictionarySource);
-			}
-			DefaultStringDictionary dictionary = DefaultStringDictionary.createDictionary(dictionarySource, is);
-			if (dictionary == null) {
-				throw new RuntimeException("cannot read/create dictionary: "+dictionarySource);
-			}
-			dictionaryList.add(dictionary);
-		}
-	}
-
-	protected void ensureDictionaryList() {
-		if (dictionaryList == null) {
-			dictionaryList = new ArrayList<DefaultStringDictionary>();
-		}
-	}
-*/
 
 	protected void printVersion() {
 		DefaultArgProcessor.getVersionManager().printVersion();
@@ -1103,10 +1060,12 @@ public class DefaultArgProcessor {
 	}
 	
 	public void runRunMethodsOnChosenArgOptions() {
+		LOG.debug("run:");
 		runMethodsOfType(ArgumentOption.RUN_METHOD);
 	}
 
 	public void runOutputMethodsOnChosenArgOptions() {
+		LOG.debug("output: ");
 		runMethodsOfType(ArgumentOption.OUTPUT_METHOD);
 	}
 
@@ -1117,13 +1076,13 @@ public class DefaultArgProcessor {
 	protected void runMethodsOfType(String methodNameType) {
 		List<ArgumentOption> optionList = getOptionsWithMethod(methodNameType);
 		for (ArgumentOption option : optionList) {
-			LOG.trace("option "+option+" "+this.getClass());
+			LOG.debug("option "+option+" "+this.getClass());
 			String methodName = null;
 			try {
 				methodName = option.getMethodName(methodNameType);
 				if (methodName != null) {
 					AbstractTool.debug(abstractTool, 1, "method: "+methodName, LOG);
-					instantiateAndRunMethod(option, methodName);
+ 					instantiateAndRunMethod(option, methodName);
 				}
 			} catch (IllegalArgumentException ee) {
 				throw ee;
@@ -1227,6 +1186,7 @@ public class DefaultArgProcessor {
 				throw new RuntimeException(methodName+"; "+this.getClass()+"; "+option.getClass()+"; \nmethod not implemented: ", nsme);
 			}
 			try {
+				LOG.debug("running meth/opt: "+method.getName() + " / "+option);
 				method.setAccessible(true);
  				method.invoke(this, option);
 			} catch (IllegalArgumentException e) {
@@ -1268,7 +1228,7 @@ public class DefaultArgProcessor {
 	 * 
 	 */
 	public void runAndOutput() {
-		LOG.trace("MAIN LOOP "+cTreeList);
+		LOG.debug("MAIN LOOP "+cTreeList);
 		ensureCTreeList();
 		if (cTreeList.size() == 0) {
 			CProject cProject = null;
