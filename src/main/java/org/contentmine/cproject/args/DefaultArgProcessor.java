@@ -483,7 +483,7 @@ public class DefaultArgProcessor {
 	}
 
 	public void outputMethod(ArgumentOption option) {
-		LOG.warn("output method not written");
+		//LOG.warn("output method not written");
 	}
 
 	public void outputAnalysis(ArgumentOption option) {
@@ -1060,12 +1060,12 @@ public class DefaultArgProcessor {
 	}
 	
 	public void runRunMethodsOnChosenArgOptions() {
-		LOG.debug("run:");
+		LOG.trace("run:");
 		runMethodsOfType(ArgumentOption.RUN_METHOD);
 	}
 
 	public void runOutputMethodsOnChosenArgOptions() {
-		LOG.debug("output: ");
+		LOG.trace("output: ");
 		runMethodsOfType(ArgumentOption.OUTPUT_METHOD);
 	}
 
@@ -1076,12 +1076,12 @@ public class DefaultArgProcessor {
 	protected void runMethodsOfType(String methodNameType) {
 		List<ArgumentOption> optionList = getOptionsWithMethod(methodNameType);
 		for (ArgumentOption option : optionList) {
-			LOG.debug("option "+option+" "+this.getClass());
+			LOG.trace("option "+option+" "+this.getClass());
 			String methodName = null;
 			try {
 				methodName = option.getMethodName(methodNameType);
 				if (methodName != null) {
-					AbstractTool.debug(abstractTool, 1, "method: "+methodName, LOG);
+//					AbstractTool.debug(abstractTool, 1, "method: "+methodName, LOG);
  					instantiateAndRunMethod(option, methodName);
 				}
 			} catch (IllegalArgumentException ee) {
@@ -1186,7 +1186,7 @@ public class DefaultArgProcessor {
 				throw new RuntimeException(methodName+"; "+this.getClass()+"; "+option.getClass()+"; \nmethod not implemented: ", nsme);
 			}
 			try {
-				LOG.debug("running meth/opt: "+method.getName() + " / "+option);
+				LOG.trace("running meth/opt: "+method.getName() + " / "+option);
 				method.setAccessible(true);
  				method.invoke(this, option);
 			} catch (IllegalArgumentException e) {
@@ -1228,7 +1228,7 @@ public class DefaultArgProcessor {
 	 * 
 	 */
 	public void runAndOutput() {
-		LOG.debug("MAIN LOOP "+cTreeList);
+		LOG.trace("MAIN LOOP "+cTreeList);
 		ensureCTreeList();
 		if (cTreeList.size() == 0) {
 			CProject cProject = null;
